@@ -268,7 +268,7 @@ Level: A (three Core sentences), from the Foundations and Integrity Review (Chat
 Level: A (L-506 and the Opening IN-OPEN), proposed by ChatGPT 6 (OpenAI) at the Originator's request; set out in Companion 70.6.
 - Core: the general AI disclosure is given once per session, in the Opening on "Welcome Navigator"; later answers in the same session carry no generic caveat line and state specific qualifications (assumptions, uncertainty, source gaps, the status of a statement) where they matter; a new session repeats the disclosure; an output saved to the record (navigation, APE, Bulletin entry) keeps the line, since it is read without its session; host platform notices are kept.
 - Tools on ratification: tools/format_check.py requires the line in the Opening and in saved records, not in every conversational output.
-- Until ratified, L-506 stands and every output carries the line.
+- RATIFIED by ESC on 20 November 2026 (D-23) and applied: Core L-506, L-467, L-549, IN-OPEN, Part 2, Part 8.0 and Rule 35; Companion 70.6; tools/intro_output.py and scripts/m193_m225.py.
 
 ## CA-37: Foundational programs (20 November 2026)
 Level: B, from three explorations by ChatGPT 6 (OpenAI), relayed by the Originator.

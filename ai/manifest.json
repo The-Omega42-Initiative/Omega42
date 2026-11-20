@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev450.md": {
-   "chars": 1338653,
-   "tokens_est": 334664,
-   "sha256": "17932cd902b162928631ae8833bedc94b28911ef1641d36785cb67ac873363b3"
+   "chars": 1339103,
+   "tokens_est": 334776,
+   "sha256": "78e086ad0981c661765ef7e1102a809d36e43fb6bc06cc16ac6992d61baeb00b"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2015998,
-   "tokens_est": 504000,
-   "sha256": "c94afefaf7abe08f11b6c8e63e8f69e89f440c425736079a0110f7823c9f9ba5"
+   "chars": 2016390,
+   "tokens_est": 504098,
+   "sha256": "eea1fa55c1bbf87d85e59f83eacb43bb90e7ac6c2b42623fa009234ed6bbe799"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 477959,
-   "tokens_est": 119490,
-   "sha256": "f99db6e05e90d9780eaa1e28d0d7cae4534de4650bf35ce7f0fa3b0093126916"
+   "chars": 478004,
+   "tokens_est": 119501,
+   "sha256": "5c526e123caf8b7c3a505c2edc575d4c8ae5d8cb8f670d4135c42536e5726802"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -33,9 +33,9 @@
   {
    "doc": "Core",
    "heading": "PART 0: INTRODUCTION TO OMEGA42 (IN)",
-   "chars": 102067,
-   "tokens_est": 25517,
-   "sha256": "532096f8e3b1e39565fddecbb37247a9abc1757899466d33b5ae9bb3457a79d4"
+   "chars": 102119,
+   "tokens_est": 25530,
+   "sha256": "c97e7a251e119e9bf424c92ccd701fe4f9417b1f063d1990a87322bf6c648545"
   },
   {
    "doc": "Core",
@@ -82,9 +82,9 @@
   {
    "doc": "Core",
    "heading": "PART 0.0.5: RULES FOR FUTURE PROTOCOL BUILDERS",
-   "chars": 24867,
-   "tokens_est": 6217,
-   "sha256": "3dda1dcabae581ef33999d77cbff1149e19ff07fe1b9f1a268fc6e8fe3d95522"
+   "chars": 24841,
+   "tokens_est": 6210,
+   "sha256": "d7f96b5aec889ec8390a71826df61c044287b5533e7edfaece01cff5638f9881"
   },
   {
    "doc": "Core",
@@ -467,9 +467,9 @@
   {
    "doc": "Core",
    "heading": "PART 2: NAVIGATION MECHANISM",
-   "chars": 83601,
-   "tokens_est": 20900,
-   "sha256": "b415303b4fa307e2f0a88cc8a702710a93b72b7df247d178ae1cb8442599e004"
+   "chars": 83614,
+   "tokens_est": 20904,
+   "sha256": "d2eeebd807f034807d3e409cfe667fe8652d9d3cd3e1f49cd4129f563b38f440"
   },
   {
    "doc": "Core",
@@ -1076,9 +1076,9 @@
   {
    "doc": "Core",
    "heading": "5.2 Key Constitutional Laws",
-   "chars": 190937,
-   "tokens_est": 47734,
-   "sha256": "baf15b481fc121fe5f62d5f9fcc2806699425e6d7a59c62d4c2335464d769f29"
+   "chars": 191342,
+   "tokens_est": 47836,
+   "sha256": "1c0e8827ae52996e8e4019973e19eef5e1a633fed4002d62a5f5ca1d328f5652"
   },
   {
    "doc": "Core",
@@ -1125,9 +1125,9 @@
   {
    "doc": "Core",
    "heading": "8.0 Canonical Output Skeleton and Execution Status",
-   "chars": 23115,
-   "tokens_est": 5779,
-   "sha256": "a8a20466ce2cc14e159c498773262fbb7c396dc90e1d733765f2a660b3fe86ee"
+   "chars": 23121,
+   "tokens_est": 5780,
+   "sha256": "31a39f7f8c5fd8013c516bc372467a95695fa328d12baf5e3959b1d2a9fa75eb"
   },
   {
    "doc": "Core",
@@ -2315,9 +2315,9 @@
   {
    "doc": "Companion",
    "heading": "PART 70: WHAT AN AI NAVIGATOR CAN GET WRONG [PROTOCOL, adopted as Core L-506]",
-   "chars": 4486,
-   "tokens_est": 1122,
-   "sha256": "b2e3b0eff0958ce74441deacb5d9e5aa6594f4110330d37c82b146544b76e43f"
+   "chars": 4639,
+   "tokens_est": 1160,
+   "sha256": "dc567b07b62dde9cef7e8aa95b12a30fae9164cf948e29473256806af267cb3d"
   },
   {
    "doc": "Companion",
@@ -5325,9 +5325,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 183450,
-   "tokens_est": 45863,
-   "sha256": "19b2475e15f423480a5710a2e125ae9f350ebcac6a11386a7f68fd12fdb84dc8"
+   "chars": 183689,
+   "tokens_est": 45922,
+   "sha256": "efebfb2a17bf25d1b9a6d366984372ff0ed4320f80b7786c7de0aa82374a2e01"
   }
  ]
 }

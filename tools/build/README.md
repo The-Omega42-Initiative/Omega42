@@ -11,6 +11,7 @@ The layout of a build session:
 
 The scripts:
 - `dx.py` -- the document object: paragraphs read from and written to `word/document.xml`;
+- `mv.py` -- the paragraph moves `embed_all.py` imports: `cut`, `insert_after` and `para_like`;
 - `docedit.py` -- `rep(prefix, old, new)` changes text inside the one paragraph that starts with `prefix`; `after(prefix, texts, like)` inserts paragraphs after it in the style of another;
 - `prebuild.sh` -- the records computed before the embed (the SRP files, the hash of the format check in the release record);
 - `embed_all.py` -- every file of the repository embedded in the two documents as a block (Core L-493, Appendix R);

@@ -9,6 +9,5 @@ EXECUTION: [SCRIPT-CAPABLE / TEXT-ONLY] (L-456) | CONTEXT EXPOSURE: [what has be
 MEMORY: [ON / OFF / UNKNOWN] | REASONING MODE: [as declared, or UNDECLARED]
 SESSION: [session id] DATE: [date]
 ======= END NAVIGATOR IDENTITY BLOCK =======
-AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its wording and may shape its reading; recompute what can be recomputed and judge the rest.
 NAVIGATOR: [model identifier] ([organization]) * V335 Rev.450 STABLE * [date]
 ESC

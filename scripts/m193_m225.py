@@ -470,11 +470,15 @@ MENU = r"(?:whether|do|would) you (?:want|like|prefer)\b[^\n]{0,120}navigation[^
 
 def audit_opening(text, add):
     """Opening Response (Core Part 2, L-467): the greeting, the Opening, 'Ask your first question.', the signature. Nothing else:
-    no menu, no preamble, and no notice -- the Friendly Notes, the Identity Block and the AI caveat close the first navigation."""
+    no menu, no preamble, and no notice -- the AI CAVEAT follows the close, the session's one disclosure (L-506, D-23); the
+    Friendly Notes and the Identity Block close the first navigation."""
     if not re.search(r'Ask your first question\.', text):
         add('FAIL', 'Opening: doorway', 'the Opening ends with "Ask your first question." (Core Part 2, Opening Response)')
-    if re.search(r'NAVIGATOR IDENTITY BLOCK|AI CAVEAT', text):
-        add('FAIL', 'Opening: notice', 'the Opening carries no Identity Block and no caveat; they close the first navigation (L-467)')
+    if re.search(r'NAVIGATOR IDENTITY BLOCK', text):
+        add('FAIL', 'Opening: notice', 'the Opening carries no Identity Block; it closes the first navigation (L-467)')
+    end = text.find('======= END INTRODUCTION =======')
+    if end >= 0 and 'AI CAVEAT' in text[:end]:
+        add('FAIL', 'Opening: caveat', 'the AI CAVEAT follows the close of the Opening, never stands inside it (L-467, L-506)')
     if re.search(MENU, text, re.I):
         add('FAIL', 'Opening: menu', 'a menu of modes is offered before any Domain Strike (FR-2, Opening Response)')
     if re.search(r'^\s*(?:Thank you|Thanks)\b', text, re.I):

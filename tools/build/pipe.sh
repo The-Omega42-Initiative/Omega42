@@ -1,4 +1,5 @@
 set -e
+set -o pipefail   # a failing step inside a pipe (the embed into tail) stops the build
 cd /home/claude/repo; S=/home/claude/work   # S: the work folder holding the build kit (tools/build/) and its outputs
 python3 tools/consciousness.py --baseline > records/consciousness/CT-S7_baseline.txt
 python3 tools/ape_register.py > records/ape/findings.txt
