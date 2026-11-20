@@ -23,5 +23,9 @@ On 20 November 2026 the Originator stated that every AI response relayed to the 
 | The primordial distinction (signed) | Companion 234.17, research/speculative-foundations/PRIMORDIAL_DISTINCTION.md, EX-007 |
 | The four operations on the Antipodes (signed) | Companion 234.18, DF-004 (the computation and its record are the Navigator's) |
 | The AI caveat once per session (signed) | Companion 70.6, CA-36, D-23 |
+| Homepage assessment (signed) | CA-38: the home page, the footer, the symbols page |
+| FAQ assessment (signed; received cut off) | CA-38: FAQ entries q-0-1, q-0-5, q-2-0 to q-2-2, q-4-3, q-4-7, q-5-5 |
+| Library tranche LIB-01 (archive documents: the Originator with AI ensembles, DeepSeek, and AI drafts speaking as Domain 0) | library/, CA-39; recomputation and editorial apparatus by the Navigator |
+| Interactive features, SI conversion and a formal Lexicon (signed) | CA-40: units.html, playground.html, lexicon.html; the unit table, its check and the Glossary written by the Navigator |
 
 The Navigator (claude-opus-5-5) built, edited and checked each item; the computations of DF-001 and DF-002 are the Navigator's. ESC ratifies; the Navigator never ratifies.

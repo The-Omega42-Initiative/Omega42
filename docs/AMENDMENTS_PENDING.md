@@ -275,3 +275,23 @@ Level: B, from three explorations by ChatGPT 6 (OpenAI), relayed by the Originat
 - Companion 234.15 (O42-MOR-01, Mathematical Origins of Reality), 234.16 (the relationship register, seven kinds), 234.17 (O42-PD-01, the primordial distinction), 234.18 (O42-ANT-01, the four operations on the Antipodes).
 - research/mathematical-origins/PROGRAM.md; research/speculative-foundations/PRIMORDIAL_DISTINCTION.md; records/relationships/register.json; frontier program FP-4; DF-004 with records/frontier/df_004.py (in CI); EX-007 and EX-008; the Speculative Foundations page and an FAQ entry.
 
+## CA-38: Home page and FAQ refinements (20 November 2026)
+Level: B, from two website assessments by ChatGPT 6 (OpenAI), relayed by the Originator.
+- Home page: the repeated-question wording (a later reading can change because the person, the knowledge or the Navigator changed); AI agreement is not independent confirmation; "one coherent exploration"; the DF-002 teaser states its comparison set and coefficient measure (with coefficients 0 to 8 Fibonacci has the smallest sum; with -4 to 4, (-1, 1) ties); four entry points and four ways of working below the question; a Discovery of the Week chosen from the Bulletin (records/frontier/register.json, featured); a kind and scope line on every teaser; a back-to-top control; the emblem invitation; on the symbols page a pause control and the role of each point.
+- Footer: the licenses cover the published text and code; no patents and no assertion (PATENT_PLEDGE.md); ideas free to use; the names held by the Company, not yet registered.
+- FAQ: the coordinate described as reproducible and computed from wording, not meaning, and changed by rewording; the Navigator's technical requirements (code execution, browsing, disclosure of capabilities); rules separated from current practice in a new table (q-4-7). The FAQ assessment arrived cut off after its third priority; the rest can be applied when it is resent.
+
+## CA-39: The Library archive collection, tranche LIB-01 (20 November 2026)
+Level: B, on the Originator's instruction to supplement the Library from Google Drive and OneDrive with computations and enhancements.
+- library/: six HISTORICAL editions (four philosophical papers of September 2026 from Google Drive; two formal pieces of the 2025 book material from OneDrive), each with a name check, a recomputation, a concordance and the text or a summary.
+- records/library/recompute_lib01.py (in CI): 26 computed statements; 15 hold, 3 restated, 6 do not hold, 2 without derivation. Corrections include: the (2, 5) orbit's digit counts (4 and 5 each occur five times); "the unique seed pair" (the orbit is distinctive, not the pair); rootless even unimodular lattices beyond dimension 24; and the Coherence Calculus axioms A2, A3 and A4 (accumulation at 3, 6, 9; 27 domains; a 42-node boundary), none of which holds.
+- records/library/register.json with the queue; the site page collection.html and one page per edition; the site's Markdown renderer gains tables and code blocks.
+
+## CA-40: Interactive tools, the measurement converter and the Lexicon and Glossary (20 November 2026)
+Level: B, from an exploration by ChatGPT 6 (OpenAI) at the Originator's request.
+- units.html: conversion into SI and back across 13 quantities (length, mass, time, temperature, area, volume, speed, force, energy, power, pressure, frequency, angle) and the SI prefixes, with the formula and both definitions shown, a reverse button and a copy of the working. The table (records/units/units.json) is checked on every change by an independent derivation in exact fractions (site/test/units_check.py: 97 checks). Units are offered only within one quantity, so incompatible conversions cannot be made.
+- playground.html: the four operations on the Antipodes (whole numbers and modulo 9) and the 81-state explorer (loops, T and its inverse, the Antipode half a period on), each with the mathematics shown.
+- lexicon.html: a Glossary of 65 established terms (the Core's Words Explained and standard usage), 15 protocol terms with type, authority and version, and the Lexicon of 103 readings (Companion Part 211), side by side where a term has both; downloadable as api/glossary.json and api/lexicon.json.
+- Definition types: established, adopted, adapted, proposed, speculative. Where the Core defines a term, the Core governs.
+- Roadmap, not built: the relationship explorer as a network view of records/relationships/register.json; the Hypothesis Laboratory (speculative, formal and empirical modes, complementary); the research map; challenge and contribution forms beyond submit.html; a personal notebook; giving the Navigator the Lexicon by default (the Navigator prompt can attach api/lexicon.json); PDF and CSV exports.
+

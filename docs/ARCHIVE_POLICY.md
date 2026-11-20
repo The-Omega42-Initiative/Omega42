@@ -43,3 +43,8 @@ Instead, each document family is read against the current record. What carries f
 
 - The register is regenerated from a fresh Drive search whenever the Originator asks. The search runs in a session with Drive access, and identifiers never leave that session.
 - New material placed in Drive reaches the record through the submission forms, not by synchronizing the archive.
+
+## Applied: LIB-01 (20 November 2026)
+
+On the Originator's instruction, the first family was published as Library editions: the Philosophical Foundations documents of September 2026, with two formal pieces of the 2025 book material from OneDrive. See library/README.md and records/library/register.json. The last builds of each protocol line remain in the queue.
+

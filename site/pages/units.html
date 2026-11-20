@@ -1,0 +1,40 @@
+<!--{"title": "Measurement converter", "desc": "Convert between SI and other units and back, with the exact definition of every unit and the working shown. Runs on your device.", "nav": "units", "scripts": ["units.js"]}-->
+<div class="wide">
+<section class="band">
+  <div class="stack">
+    <div class="eyebrow">Tools · SI and back</div>
+    <h1>Every measure, <em>in the units of the world.</em></h1>
+    <p class="lede">Convert into the International System of Units (SI) and back, across thirteen quantities. Each result shows the formula and the definition of both units, so you can check it by hand. Units are only offered within the same quantity, so metres can never be turned into kilograms.</p>
+  </div>
+</section>
+
+<section class="grid2 conv" id="conv" style="align-items:start">
+  <div class="stack">
+    <div class="ask-row"><label for="c-q" class="mono">Quantity</label><select id="c-q"></select></div>
+    <div class="ask-row"><label for="c-x" class="mono">Value</label><input id="c-x" type="text" inputmode="decimal" value="1" autocomplete="off"></div>
+    <div class="ask-row"><label for="c-from" class="mono">From</label><select id="c-from"></select></div>
+    <div class="ask-row"><label for="c-to" class="mono">To</label><select id="c-to"></select></div>
+    <div class="ask-row"><label for="c-sig" class="mono">Significant figures</label><select id="c-sig"><option>4</option><option>6</option><option selected>8</option><option>10</option><option>12</option><option>15</option></select></div>
+    <div class="ctas"><button type="button" class="btn ghost" id="c-swap">Reverse the conversion ⇄</button><button type="button" class="btn ghost" id="c-copy">Copy result and working</button></div>
+  </div>
+  <div class="stack">
+    <div class="eyebrow">Result</div>
+    <p id="c-out" class="conv-out" aria-live="polite"></p>
+    <div class="eyebrow">Show the mathematics</div>
+    <p id="c-math" class="note conv-math"></p>
+  </div>
+</section>
+
+<section class="grid2" style="align-items:start">
+  <div class="stack">
+    <div class="eyebrow">How it is kept right</div>
+    <h2>Two derivations that must agree</h2>
+    <p>The unit table stores each factor as an exact decimal where the unit is defined exactly: the inch is 0.0254 m, the pound 0.45359237 kg, the US gallon 231 cubic inches, the electronvolt 1.602176634 × 10⁻¹⁹ J. A separate program derives every factor again from those definitions in exact fractions, without reading the stored value, and checks them against each other with fixtures of known answers, on every change to the repository (<code>python3 site/test/units_check.py</code>).</p>
+    <p class="note">Sources of the definitions: the BIPM SI Brochure (9th edition) and NIST Special Publication 811. The display uses ordinary floating point; where more than 15 significant figures matter, use the exact factor shown. The calorie is the thermochemical calorie and the BTU the International Table BTU; other variants differ slightly.</p>
+  </div>
+  <div class="stack">
+    <div class="eyebrow">SI prefixes</div>
+    <div class="scroll" style="max-height:22rem"><table><thead><tr><th>Symbol</th><th>Name</th><th>Factor</th></tr></thead><tbody id="c-pre"></tbody></table></div>
+  </div>
+</section>
+</div>

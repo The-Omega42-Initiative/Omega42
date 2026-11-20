@@ -313,6 +313,30 @@
    "level": "B",
    "level_source": "declared",
    "date": "2026-11-20"
+  },
+  {
+   "id": "CA-38",
+   "title": "CA-38: Home page and FAQ refinements (20 November 2026)",
+   "status": "RECORDED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-20"
+  },
+  {
+   "id": "CA-39",
+   "title": "CA-39: The Library archive collection, tranche LIB-01 (20 November 2026)",
+   "status": "RECORDED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-20"
+  },
+  {
+   "id": "CA-40",
+   "title": "CA-40: Interactive tools, the measurement converter and the Lexicon and Glossary (20 November 2026)",
+   "status": "RECORDED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-20"
   }
  ],
  "approval": {

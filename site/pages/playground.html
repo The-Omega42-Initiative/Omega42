@@ -1,0 +1,36 @@
+<!--{"title": "Mathematical playground", "desc": "Explore Omega42's own mathematics by hand: the four operations on the Antipodes, and all 81 states of the law with their loops, inverses and mirrors.", "nav": "playground", "scripts": ["playground.js"]}-->
+<div class="wide">
+<section class="band">
+  <div class="stack">
+    <div class="eyebrow">Tools · the mathematical playground</div>
+    <h1>Touch the mathematics <em>yourself.</em></h1>
+    <p class="lede">Two instruments for Omega42's own arithmetic. Choose a digit and watch what its Antipode does under addition, subtraction, division and multiplication. Then select any of the 81 states and follow the law around its loop, backwards and forwards, to its mirror half a period away. Every number is computed in your browser, and the mathematics is shown beside it.</p>
+  </div>
+</section>
+
+<section class="grid2" style="align-items:start">
+  <div class="stack">
+    <div class="eyebrow">The four operations on the Antipodes</div>
+    <h2>A digit and its Antipode</h2>
+    <div class="ask-row"><label for="ap-x" class="mono">Digit x: <output id="ap-xv">4</output></label><input id="ap-x" type="range" min="0" max="9" value="4" oninput="document.getElementById('ap-xv').textContent=this.value"></div>
+    <div class="ask-row"><label for="ap-mode" class="mono">Setting</label><select id="ap-mode"><option value="int">Whole numbers: A(x) = 9 − x</option><option value="mod">Modulo 9: A(x) = −x</option></select></div>
+    <div class="scroll"><table><thead><tr><th>Operation</th><th>Working</th><th>Result</th></tr></thead><tbody id="ap-out"></tbody></table></div>
+    <p id="ap-note" class="note"></p>
+    <p class="note">Mathematical facts, recomputed in <code>records/frontier/df_004.py</code> (Bulletin DF-004). What addition, subtraction, division and multiplication mean for balance and distinction is an interpretation (Companion 234.18).</p>
+  </div>
+  <div class="stack">
+    <div class="eyebrow">The 81-state explorer</div>
+    <h2>Every state, every loop</h2>
+    <div id="st-grid" class="st-grid" role="group" aria-label="The 81 states (a, b): rows a, columns b"></div>
+    <div class="ctas"><button type="button" class="btn ghost" id="st-back">← Step back</button><button type="button" class="btn ghost" id="st-play">Play</button><button type="button" class="btn ghost" id="st-step">Step →</button></div>
+    <p id="st-info" class="note" aria-live="polite"></p>
+    <p id="st-legend" class="note mono"></p>
+    <details class="assume"><summary>Show the mathematics</summary><ul>
+      <li>The law: T(a, b) = (b, a + b), keeping the remainder after dividing by 9. Its inverse: T⁻¹(a, b) = (b − a, a).</li>
+      <li>The 81 states fall into five loops: one still point (0, 0), one loop of 8 inside the 3-layer, and three loops of 24.</li>
+      <li>Twelve steps of the law turn every state into its negative (T¹² = −I modulo 9), so each state meets its Antipode half a period on.</li>
+      <li>Numbers on the grid count steps from the selected state; the outlined cell is its Antipode.</li>
+    </ul></details>
+  </div>
+</section>
+</div>

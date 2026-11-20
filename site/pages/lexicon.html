@@ -1,0 +1,36 @@
+<!--{"title": "Lexicon and Glossary", "desc": "The established meaning of a term beside Omega42's own: a general Glossary, the protocol's vocabulary with its authority, and the Omega42 Lexicon of readings, searchable and downloadable.", "nav": "lexicon", "scripts": ["lexicon.js"]}-->
+<div class="wide">
+<section class="band">
+  <div class="stack">
+    <div class="eyebrow">Reference · Lexicon and Glossary</div>
+    <h1>What a word means, <em>and what it means here.</em></h1>
+    <p class="lede">Three references in one place. The <b>Glossary</b> gives the established meaning of terms from mathematics, physics, philosophy and AI. The <b>protocol terms</b> give Omega42's own vocabulary and where each is governed. The <b>Lexicon</b> gives Omega42's readings of existing concepts, from Number to Love, with the status of each. Where a term has both an established meaning and an Omega42 reading, they stand side by side and are never merged.</p>
+  </div>
+</section>
+
+<section class="stack" id="lx">
+  <div class="sym-btns" role="group" aria-label="Reference">
+    <button type="button" class="btn ghost" data-tab="general" aria-pressed="true">Glossary (<span id="lx-n-g">…</span>)</button>
+    <button type="button" class="btn ghost" data-tab="protocol" aria-pressed="false">Protocol terms (<span id="lx-n-p">…</span>)</button>
+    <button type="button" class="btn ghost" data-tab="lexicon" aria-pressed="false">Lexicon of readings (<span id="lx-n-l">…</span>)</button>
+  </div>
+  <div class="ask-row"><label for="lx-q" class="mono">Search terms and definitions</label><input id="lx-q" type="search" autocomplete="off" placeholder="symmetry, Aperture, entropy…"></div>
+  <select id="lx-field" aria-label="Field" hidden></select>
+  <p id="lx-count" class="note mono"></p>
+  <div id="lx-list" class="lx-list"></div>
+</section>
+
+<section class="grid2" style="align-items:start">
+  <div class="stack">
+    <div class="eyebrow">How definitions are kept</div>
+    <h2>One authority per term</h2>
+    <p>Every definition carries a type: <b>established</b> (recognized in a discipline), <b>adopted</b> (used by Omega42 unchanged), <b>adapted</b> (an existing concept given an Omega42 meaning), <b>proposed</b> (a new Omega42 term) or <b>speculative</b> (a provisional meaning used to explore a possibility). Where the Core defines a term, the Core governs, and this page points to it rather than competing with it. A suggested term or correction goes through review; it never changes the Core or the Lexicon by itself.</p>
+  </div>
+  <div class="stack">
+    <div class="eyebrow">For people and machines</div>
+    <h2>Download the definitions</h2>
+    <p>The same data, machine-readable, for researchers, developers and AI Navigators: <a href="api/glossary.json">glossary.json</a> (the Glossary and the protocol terms) and <a href="api/lexicon.json">lexicon.json</a> (the Lexicon of readings). A Navigator can be given these files so that it quotes Omega42's definitions instead of improvising them.</p>
+    <p class="note">Sources: the Core's Words Explained; the Lexicon of Companion Part 211, checked by <code>python3 tools/lexicon.py</code>; further glossary terms written by the Navigator from standard usage. <a href="submit.html">Suggest a term or a correction</a>.</p>
+  </div>
+</section>
+</div>

@@ -1,0 +1,604 @@
+{
+ "_about": "The Omega42 Glossary and the protocol terms (lexicon.html). The General Glossary gives established meanings: those of the Core's Words Explained, and further terms written by the Navigator from standard usage. Protocol terms give Omega42's own vocabulary with its authority; where the Core defines a term, the Core governs and this list points to it. The Omega42 Lexicon of readings of existing concepts is records/lexicon/lexicon.json (Companion Part 211). Definition types: established, adopted, adapted, proposed, speculative.",
+ "types": {
+  "established": "recognized in an established discipline",
+  "adopted": "an existing definition used by Omega42 unchanged",
+  "adapted": "an existing concept deliberately given an Omega42 meaning",
+  "proposed": "a new term introduced by Omega42",
+  "speculative": "a provisional meaning used to explore a possibility"
+ },
+ "general": [
+  {
+   "term": "Agency",
+   "domain": "Philosophy",
+   "meaning": "The capacity of an agent to act and to bring about effects.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-001"
+  },
+  {
+   "term": "Analogy",
+   "domain": "Method",
+   "meaning": "A likeness between two things in some respects, used to understand one through the other; it does not show they share a structure.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-002"
+  },
+  {
+   "term": "Axiom",
+   "domain": "Mathematics",
+   "meaning": "a statement taken as the starting point of a system, from which its theorems are proved.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-003"
+  },
+  {
+   "term": "Causality",
+   "domain": "Philosophy and science",
+   "meaning": "The relation in which one event or condition brings about or contributes to another.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-004"
+  },
+  {
+   "term": "Coherence view of truth",
+   "domain": "Philosophy",
+   "meaning": "the view that a statement is true when it fits without contradiction into a whole system of statements, rather than by matching something beyond the system.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-005"
+  },
+  {
+   "term": "Conjecture",
+   "domain": "Mathematics",
+   "meaning": "A statement believed or proposed to be true but not yet proved.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-006"
+  },
+  {
+   "term": "Consciousness",
+   "domain": "Mind",
+   "meaning": "Subjective experience: there being something it is like to be a system. Its nature and basis are an open question across philosophy and science.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-007"
+  },
+  {
+   "term": "Correlation",
+   "domain": "Statistics",
+   "meaning": "A statistical association between two quantities; on its own it does not show that one causes the other.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-008"
+  },
+  {
+   "term": "Digital root",
+   "domain": "Mathematics",
+   "meaning": "The single digit obtained by adding the digits of a positive whole number repeatedly; it equals the number modulo 9, with 9 in place of 0.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-009"
+  },
+  {
+   "term": "Dual-aspect monism",
+   "domain": "Philosophy",
+   "meaning": "the view, associated with Baruch Spinoza, that mind and matter are two aspects of one underlying reality rather than two separate substances.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-010"
+  },
+  {
+   "term": "Emergence",
+   "domain": "Science and philosophy",
+   "meaning": "Properties of a whole that arise from the interactions of its parts and are not found in the parts alone.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-011"
+  },
+  {
+   "term": "Energy",
+   "domain": "Physics",
+   "meaning": "The capacity of a system to do work; its SI unit is the joule (J = kg m² s⁻²).",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-012"
+  },
+  {
+   "term": "Entropy",
+   "domain": "Physics and information",
+   "meaning": "In thermodynamics, a measure of the number of microscopic arrangements compatible with a state; in information theory, the average uncertainty of a source in bits. The two are related but not interchangeable.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-013"
+  },
+  {
+   "term": "Epistemology",
+   "domain": "Philosophy",
+   "meaning": "The study of knowledge: what it is, how it is justified, and where its limits lie.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-014"
+  },
+  {
+   "term": "Falsifiability",
+   "domain": "Method",
+   "meaning": "Karl Popper's criterion: a statement is scientific when some possible observation could show it false.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-015"
+  },
+  {
+   "term": "Fibonacci sequence",
+   "domain": "Mathematics",
+   "meaning": "0, 1, 1, 2, 3, 5, 8, …: each term is the sum of the two before it.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-016"
+  },
+  {
+   "term": "Fine-structure constant",
+   "domain": "Physics",
+   "meaning": "The dimensionless strength of the electromagnetic interaction, about 1/137.036, measured, not derived from theory.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-017"
+  },
+  {
+   "term": "Fixed point",
+   "domain": "Mathematics",
+   "meaning": "A state that a transformation leaves where it is.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-018"
+  },
+  {
+   "term": "Freewill",
+   "domain": "Philosophy",
+   "meaning": "the question of whether, and how, our choices are our own when the world follows laws.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-019"
+  },
+  {
+   "term": "Group",
+   "domain": "Mathematics",
+   "meaning": "A set with an operation that is associative, has an identity element and gives every element an inverse.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-020"
+  },
+  {
+   "term": "Hallucination (AI)",
+   "domain": "AI",
+   "meaning": "Fluent output from an AI system that is false or unsupported, such as a citation to a source that does not exist.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-021"
+  },
+  {
+   "term": "Hard problem of consciousness",
+   "domain": "Mind",
+   "meaning": "David Chalmers's name for the question of why and how physical processes give rise to subjective experience.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-022"
+  },
+  {
+   "term": "Heuristic",
+   "domain": "Method",
+   "meaning": "a method for finding things out, valued for what it helps you discover rather than as a proof.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-023"
+  },
+  {
+   "term": "Hypothesis",
+   "domain": "Method",
+   "meaning": "A proposed explanation or statement put forward for testing.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-024"
+  },
+  {
+   "term": "Incompleteness",
+   "domain": "Mathematics",
+   "meaning": "Kurt Gödel's proof that any consistent formal system rich enough to describe arithmetic contains true statements it cannot prove from within.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-025"
+  },
+  {
+   "term": "Information (Shannon)",
+   "domain": "Information",
+   "meaning": "A measure of the reduction of uncertainty, counted in bits: one bit settles a choice between two equally likely possibilities.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-026"
+  },
+  {
+   "term": "Intersubjective",
+   "domain": "Philosophy",
+   "meaning": "open to, and checkable by, anyone, so that it does not depend on a single person's view.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-027"
+  },
+  {
+   "term": "Invariant",
+   "domain": "Mathematics",
+   "meaning": "A quantity or property that does not change under a specified transformation.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-028"
+  },
+  {
+   "term": "Isomorphism",
+   "domain": "Mathematics",
+   "meaning": "A one-to-one correspondence between two structures that preserves their operations: two structures that are the same up to renaming.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-029"
+  },
+  {
+   "term": "The is–ought gap",
+   "domain": "Ethics",
+   "meaning": "David Hume's observation that no set of facts about how things are can, by itself, establish how things ought to be or what they are worth.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-030"
+  },
+  {
+   "term": "Large language model",
+   "domain": "AI",
+   "meaning": "An AI system trained on large amounts of text to predict and generate language; the kind of system that serves as a Navigator.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-031"
+  },
+  {
+   "term": "Light cone",
+   "domain": "Physics",
+   "meaning": "in Einstein's relativity, the directions light can travel from a point; in Omega42 every place lies on one.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-032"
+  },
+  {
+   "term": "Mathematical universe hypothesis",
+   "domain": "Physics and philosophy",
+   "meaning": "Max Tegmark's proposal that physical reality is not described by a mathematical structure but is one.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-033"
+  },
+  {
+   "term": "Modular arithmetic",
+   "domain": "Mathematics",
+   "meaning": "Arithmetic in which numbers wrap around after reaching a fixed modulus: modulo 9, 7 + 5 = 12 leaves 3.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-034"
+  },
+  {
+   "term": "Null hypothesis",
+   "domain": "Statistics",
+   "meaning": "The default assumption of no effect or no difference, against which a test is made.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-035"
+  },
+  {
+   "term": "Ontology",
+   "domain": "Philosophy",
+   "meaning": "the part of philosophy that asks what exists and what it is to be. Omega42's premise is an ontology: one structure, and nothing else.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-036"
+  },
+  {
+   "term": "Orbit",
+   "domain": "Mathematics",
+   "meaning": "The set of states visited from a starting state by repeatedly applying a transformation.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-037"
+  },
+  {
+   "term": "p-value",
+   "domain": "Statistics",
+   "meaning": "The probability, if the null hypothesis were true, of a result at least as extreme as the one observed.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-038"
+  },
+  {
+   "term": "Periodicity",
+   "domain": "Mathematics",
+   "meaning": "The property of repeating exactly after a fixed number of steps, the period.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-039"
+  },
+  {
+   "term": "Permutation",
+   "domain": "Mathematics",
+   "meaning": "A rearrangement of a set in which each element goes to exactly one place and none is lost.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-040"
+  },
+  {
+   "term": "Perspectivism",
+   "domain": "Philosophy",
+   "meaning": "the view, associated with Friedrich Nietzsche, that every view of the world is a view from somewhere, so that there is no view from nowhere.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-041"
+  },
+  {
+   "term": "Phenomenology",
+   "domain": "Philosophy",
+   "meaning": "The study of the structures of experience as experienced, associated with Edmund Husserl.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-042"
+  },
+  {
+   "term": "Pisano period",
+   "domain": "Mathematics",
+   "meaning": "The period of the Fibonacci sequence taken modulo a number; for 9 it is 24.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-043"
+  },
+  {
+   "term": "Platonism",
+   "domain": "Philosophy",
+   "meaning": "Plato's view that the things we see are shadows or copies of a deeper realm of perfect, unchanging forms.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-044"
+  },
+  {
+   "term": "Pragmatism",
+   "domain": "Philosophy",
+   "meaning": "the philosophy, associated with William James and Charles Sanders Peirce, that judges ideas by what they let us do and understand.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-045"
+  },
+  {
+   "term": "Premise",
+   "domain": "Logic",
+   "meaning": "the starting supposition from which everything else is drawn. Omega42's premise is that its one structure is all that exists.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-046"
+  },
+  {
+   "term": "Primitive root",
+   "domain": "Mathematics",
+   "meaning": "A unit whose powers run through every unit; modulo 9 the primitive roots are 2 and 5.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-047"
+  },
+  {
+   "term": "Process philosophy",
+   "domain": "Philosophy",
+   "meaning": "the view, from Heraclitus to Alfred North Whitehead, that reality is made of happenings rather than of fixed things.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-048"
+  },
+  {
+   "term": "Provenance",
+   "domain": "Information",
+   "meaning": "The record of where something came from and how it reached its present form.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-049"
+  },
+  {
+   "term": "Pythagoreanism",
+   "domain": "History of ideas",
+   "meaning": "the ancient teaching, from Pythagoras and his followers, that number is the substance of all things.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-050"
+  },
+  {
+   "term": "Recurrence",
+   "domain": "Mathematics",
+   "meaning": "A rule that defines each term of a sequence from earlier terms, such as the Fibonacci rule F(n + 1) = F(n) + F(n − 1); also the return of a state or pattern.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-051"
+  },
+  {
+   "term": "Replication",
+   "domain": "Method",
+   "meaning": "Repeating a study or computation independently to see whether the result holds.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-052"
+  },
+  {
+   "term": "Reproducibility",
+   "domain": "Method",
+   "meaning": "The property of a result that others can obtain again from the same data and method.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-053"
+  },
+  {
+   "term": "Residue",
+   "domain": "Mathematics",
+   "meaning": "The remainder left when an integer is divided by the modulus; modulo 9 the residues are 0 to 8.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-054"
+  },
+  {
+   "term": "Self-confirming",
+   "domain": "Logic",
+   "meaning": "a system that counts something as true because the system itself produced it. Omega42 is closed, with nothing beyond it, but it is not self-confirming.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-055"
+  },
+  {
+   "term": "SI",
+   "domain": "Measurement",
+   "meaning": "The International System of Units, maintained by the BIPM and defined since 2019 by seven exact constants.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-056"
+  },
+  {
+   "term": "Simulation hypothesis",
+   "domain": "Philosophy",
+   "meaning": "the idea that our world is a computer simulation run by something beyond it.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-057"
+  },
+  {
+   "term": "Structural realism",
+   "domain": "Philosophy of science",
+   "meaning": "The view that what science captures is the structure of the world, its relations, rather than the intrinsic nature of things.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-058"
+  },
+  {
+   "term": "Symmetry",
+   "domain": "Mathematics",
+   "meaning": "Invariance under a specified transformation: something that stays the same when a stated change is made.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-059"
+  },
+  {
+   "term": "Symmetry breaking",
+   "domain": "Physics",
+   "meaning": "A system whose laws are symmetric settling into a state that is not.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-060"
+  },
+  {
+   "term": "Theorem",
+   "domain": "Mathematics",
+   "meaning": "A statement proved from axioms and earlier theorems by valid steps.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-061"
+  },
+  {
+   "term": "Thought experiment",
+   "domain": "Philosophy",
+   "meaning": "reasoning inside an imagined situation to see what follows from it, without needing the situation to be real.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-062"
+  },
+  {
+   "term": "Totality",
+   "domain": "Philosophy",
+   "meaning": "everything there is, taken as one whole, with nothing left over and nothing beyond.",
+   "source": "Core, Introduction, Words Explained",
+   "id": "GL-063"
+  },
+  {
+   "term": "Training data",
+   "domain": "AI",
+   "meaning": "The material an AI system learned from; it shapes what the system writes and how.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-064"
+  },
+  {
+   "term": "Unit (modular)",
+   "domain": "Mathematics",
+   "meaning": "A residue that has a multiplicative inverse; modulo 9 the units are 1, 2, 4, 5, 7 and 8.",
+   "source": "Standard usage, written by the Navigator",
+   "id": "GL-065"
+  }
+ ],
+ "protocol": [
+  {
+   "id": "OT-001",
+   "term": "Strike",
+   "definition": "The moment the Striker offers a question for navigation, in answer to the Introduction's invitation, by asking for a navigation, or by striking a domain directly.",
+   "type": "proposed",
+   "authority": "Core, Part 0 and the Strike Law (Rule 4)",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-002",
+   "term": "Striker",
+   "definition": "The person who brings the question and keeps the judgment of what a reading means and is worth.",
+   "type": "proposed",
+   "authority": "Core, Aperture Theorem (Part 7, L-441)",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-003",
+   "term": "Navigator",
+   "definition": "The AI system that runs the protocol: computes the coordinate, writes the reading and declares its status, and never judges for the Striker.",
+   "type": "proposed",
+   "authority": "Core L-506 (mandate and limits)",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-004",
+   "term": "The Aperture",
+   "definition": "The space Omega42 keeps for your judgment, where you decide what a reading means and what it is worth; no reading can enter it. The Aperture Theorem is the protocol's proof that this space cannot be closed.",
+   "type": "proposed",
+   "authority": "Core, Words Explained; Part 7",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-005",
+   "term": "Congruence",
+   "definition": "In Omega42, agreement between readings, questions or AI systems that is greater than chance would produce, counted and reported apart from coherence.",
+   "type": "adapted",
+   "authority": "Core, Words Explained",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-006",
+   "term": "Antipode",
+   "definition": "The position twelve steps from an anchor on the 24-cycle: Antipode = P((anchor + 12) mod 24). Modulo 9 it is the negative of the state, so a digit and its Antipode add to 9 or to 0.",
+   "type": "proposed",
+   "authority": "Core Part 0.5.1, Fact 5; Companion 234.18",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-007",
+   "term": "Anchor",
+   "definition": "The position on the 24-cycle that a question's counts give it; the four arms are read from it.",
+   "type": "proposed",
+   "authority": "Core, the coordinate rules",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-008",
+   "term": "Crown",
+   "definition": "The six positions P3, P7, P11, P15, P19, P23 of the 24-cycle, whose values 3, 9, 6, 6, 9, 3 lie in the 3-layer.",
+   "type": "proposed",
+   "authority": "Core (the Crown and its sum, CDT-A)",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-009",
+   "term": "Torsion Loop",
+   "definition": "The units modulo 9, {1, 2, 4, 5, 7, 8}: the residues that have an inverse. With the Crown set {3, 6, 9} it partitions the nine residues.",
+   "type": "proposed",
+   "authority": "Core; Companion",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-010",
+   "term": "Seed",
+   "definition": "P0, and the seed pair {2, 5} from which the recurrence unfolds the 24-cycle.",
+   "type": "proposed",
+   "authority": "Companion",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-011",
+   "term": "CDT-A, CDT-B, CDT-C",
+   "definition": "The tiers of a statement: CDT-A mathematical fact; CDT-B constructed interpretation inside Omega42; CDT-C speculative proposition. A fourth kind, external correspondence, is kept apart.",
+   "type": "proposed",
+   "authority": "Core; Companion 234.10",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-012",
+   "term": "Premise (of Omega42)",
+   "definition": "That the canonical 24-cycle and its 81-state family are all that exists: stipulated for the thought experiment, explored for its consequences, not graded.",
+   "type": "proposed",
+   "authority": "Core F-02; Companion 234.9",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-013",
+   "term": "Default Layer",
+   "definition": "The proposed underlying layer of recurrent mathematical structure from which Omega42 investigates states, transformations and relationships.",
+   "type": "speculative",
+   "authority": "Proposed by ChatGPT 6 (OpenAI), 20 November 2026; not yet in the Core or the Companion",
+   "version": "V335 Rev.450",
+   "status": "proposed"
+  },
+  {
+   "id": "OT-014",
+   "term": "Meaningful Existence",
+   "definition": "The proposed layer of existence shaped by historical dependence, choices, inherited conditions, relationships and the consequences of actions.",
+   "type": "proposed",
+   "authority": "Companion Part 233 (ME program); FP-2",
+   "version": "V335 Rev.450",
+   "status": "current"
+  },
+  {
+   "id": "OT-015",
+   "term": "Primordial Distinction",
+   "definition": "The proposal that existence begins with one distinction from a balance; modulo 9 the central antipodal pair (4, 5) is (−1/2, +1/2), one unit apart.",
+   "type": "speculative",
+   "authority": "Companion 234.17 (O42-PD-01)",
+   "version": "V335 Rev.450",
+   "status": "proposed"
+  }
+ ]
+}

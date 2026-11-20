@@ -16,11 +16,11 @@ import congruence as cg
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
 NAV = [('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('expert-desk', 'Expert Exploration Desk'), ('vision', 'The Omega42 paper')]),
-       ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('symbols', 'The symbols of Omega42'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
+       ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
        ('FAQ', [('faq', 'Frequently asked questions')]),
        ('Protocol', [('protocol', 'Core and Companion'), ('for-ai', 'For AI systems'), ('apps', 'Free and commercial editions')]),
        ('Research', [('research', 'Research frontiers'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
-       ('Library', [('library', 'Discoveries and explorations'), ('catalogue', 'Catalogue'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
+       ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas')]),
        ('Governance', [('governance', 'Governance')])]
 
@@ -135,6 +135,9 @@ def build(out, repo):
     man = os.path.join(ROOT, 'records', 'releases', 'manifest.json')
     if os.path.exists(man):
         api['release.json'] = json.load(open(man, encoding='utf-8'))   # the release record (RELEASES.md)
+    for k, rel in (('units.json', ('records', 'units', 'units.json')), ('glossary.json', ('records', 'glossary', 'glossary.json')), ('lexicon.json', ('records', 'lexicon', 'lexicon.json'))):
+        fp = os.path.join(ROOT, *rel)   # the converter's unit table, the Glossary and the Lexicon, for the tools pages and for machines
+        if os.path.exists(fp): api[k] = json.load(open(fp, encoding='utf-8'))
     os.makedirs(os.path.join(out, 'lab'), exist_ok=True)
     shutil.copy(os.path.join(SITE, 'construct_x_lab.html'), os.path.join(out, 'lab', 'index.html'))
     for k, v in api.items():
@@ -185,6 +188,26 @@ def build(out, repo):
             p, html.escape(t), ' · '.join(html.escape(x) for x in tg[:1]), (' · %d sections' % n) if n else '') for p, t, tg, n in toc)
         subs['{{COMPANION_COUNT}}'] = str(len(toc))
         json.dump(index, open(os.path.join(out, 'api', 'companion-search.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    # the Library collection: archive documents as HISTORICAL editions (records/library/register.json, library/)
+    lpath = os.path.join(ROOT, 'records', 'library', 'register.json')
+    if os.path.exists(lpath):
+        lreg, cards = json.load(open(lpath, encoding='utf-8')), []
+        for tr in lreg['tranches']:
+            for e in tr['editions']:
+                fname = 'library-%s-%s.html' % (tr['id'].lower(), e['id'].lower())
+                md = open(os.path.join(ROOT, e['file']), encoding='utf-8').read()
+                body = ('<div class="wide"><article class="col stack libed"><div class="crumbs mono"><a href="collection.html">The archive collection</a> · %s · %s</div>%s'
+                        '<p class="note">Source of this page: <a href="https://github.com/{{REPO}}/blob/main/%s">%s</a> · recompute: <code>python3 %s</code></p></article></div>') % (
+                    html.escape(tr['id']), html.escape(e['id']), md_html(md), html.escape(e['file']), html.escape(e['file']), html.escape(tr['script']))
+                pg = layout.replace('{{TITLE}}', html.escape(e['title'][:80])).replace('{{DESC}}', html.escape('Library edition %s %s: %s (%s), historical, with recomputation.' % (tr['id'], e['id'], e['title'], e['dated']))) \
+                           .replace('{{NAV}}', nav_html('collection')).replace('{{BODY}}', body).replace('{{SCRIPTS}}', '')
+                for k, v in subs.items(): pg = pg.replace(k, v)
+                open(os.path.join(out, fname), 'w', encoding='utf-8').write(pg); pages.append(fname)
+                cards.append('<a class="door c-%s" href="%s"><span class="k">%s · %s · %s · %s</span><h3>%s</h3><p class="note">%s · text: %s · checks: %s</p><span class="go">Open the edition →</span></a>' % (
+                    'violet' if e['source'] == 'Google Drive' else 'cyan', fname, html.escape(tr['id']), html.escape(e['id']), html.escape(e['source']), html.escape(e['dated']),
+                    html.escape(e['title']), html.escape(e['by']), html.escape(e['text']), html.escape(e['checks'])))
+        subs['{{LIBRARY_COLLECTION}}'] = ''.join(cards)
+        subs['{{LIBRARY_QUEUE}}'] = ''.join('<tr><td>%s</td><td>%s</td><td>%s</td></tr>' % (html.escape(q['family']), html.escape(q['count']), html.escape(q['note'])) for q in lreg['queue'])
     for f in sorted(os.listdir(os.path.join(SITE, 'pages'))):
         src = open(os.path.join(SITE, 'pages', f), encoding='utf-8').read()
         m = re.match(r'<!--(\{.*?\})-->\n', src, re.S); meta = json.loads(m.group(1)); body = src[m.end():]
@@ -221,21 +244,38 @@ def build(out, repo):
 
 
 def md_html(text):
-    """A small Markdown subset (headings, paragraphs, lists, bold, italic) for the public paper (docs/VISION.md)."""
+    """A small Markdown subset (headings, paragraphs, lists, bold, italic, inline code, tables, fenced code) for the public paper
+    (docs/VISION.md) and the Library editions (library/)."""
     def inline(t):
         t = html.escape(t, quote=False)
+        t = re.sub(r'`([^`]+)`', r'<code>\1</code>', t)
         t = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', t)
         return re.sub(r'(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])', r'<i>\1</i>', t)
-    out, para, items = [], [], []
+    out, para, items, rows, code = [], [], [], [], None
     def flush():
         if para: out.append('<p>%s</p>' % inline(' '.join(para))); para.clear()
         if items: out.append('<ul>%s</ul>' % ''.join('<li>%s</li>' % inline(i) for i in items)); items.clear()
+        if rows:
+            cells = [[c.strip() for c in r.strip().strip('|').split('|')] for r in rows if not re.match(r'^\|[\s:|-]+\|?$', r.strip())]
+            head, body = cells[0], cells[1:]
+            out.append('<div class="scroll"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (
+                ''.join('<th>%s</th>' % inline(c) for c in head), ''.join('<tr>%s</tr>' % ''.join('<td>%s</td>' % inline(c) for c in r) for r in body)))
+            rows.clear()
     for line in text.splitlines():
-        m = re.match(r'(#{1,3}) (.*)', line)
-        if m: flush(); out.append('<h%d>%s</h%d>' % (len(m.group(1)) + 1, inline(m.group(2)), len(m.group(1)) + 1)); continue
-        if re.match(r'(- |\d+\. )', line): (para and flush()); items.append(re.sub(r'^(- |\d+\. )', '', line)); continue
+        if code is not None:
+            if line.strip().startswith('```'): out.append('<pre><code>%s</code></pre>' % html.escape('\n'.join(code))); code = None
+            else: code.append(line)
+            continue
+        if line.strip().startswith('```'): flush(); code = []; continue
+        if line.lstrip().startswith('|'): (para or items) and flush(); rows.append(line); continue
+        if rows: flush()
+        m = re.match(r'(#{1,6}) (.*)', line)
+        if m: flush(); lv = min(len(m.group(1)) + 1, 6); out.append('<h%d>%s</h%d>' % (lv, inline(m.group(2)), lv)); continue
+        if re.match(r'\s*(- |\d+\. |\* )', line): (para and flush()); items.append(re.sub(r'^\s*(- |\d+\. |\* )', '', line)); continue
+        if line.strip() in ('---', '***'): flush(); out.append('<hr>'); continue
         if not line.strip(): flush(); continue
         para.append(line.strip())
+    if code is not None: out.append('<pre><code>%s</code></pre>' % html.escape('\n'.join(code)))
     flush()
     return '\n'.join(out)
 
@@ -357,25 +397,31 @@ def frontier_html(reg):
         comp = ('<h3>What was computed</h3><p>%s <span class="note">(recompute: <code>python3 %s</code>; <a href="https://github.com/{{REPO}}/blob/main/%s">the script</a>)</span></p>' % (E(d['computed']), E(d['script']), E(d['script']))) if d['computed'] else ''
         comp += ('<details class="assume"><summary>Model and assumptions</summary><ul>%s</ul></details>' % ''.join('<li>%s</li>' % E(a) for a in d.get('assumptions', []))) if d.get('assumptions') else ''
         return ('<article class="entry" id="%s"><div class="row"><span class="chip gold">%s</span><span class="chip cls">%s</span><span class="chip">method: %s</span>%s<span class="note">%s · %s</span></div>'
-                '<h2>%s</h2><p class="lede"><b>What has emerged.</b> %s</p>%s'
+                '<h2>%s</h2><p class="lede"><b>What has emerged.</b> %s</p><p class="note"><b>Scope:</b> %s</p>%s'
                 '<h3>Why it matters</h3><p>%s</p><h3>The discovery itself</h3><p>%s</p>%s<h3>Follow the implications</h3><p>%s</p>'
                 '<h3>The frontier</h3><p>%s</p><blockquote class="fieldnote"><span class="k">Navigator\'s field note</span>%s</blockquote>'
                 '<h3>Join the discovery</h3><p>%s</p><div class="actions"><a class="act" href="submit.html"><b>Extend this idea</b><span>Contribute</span></a>'
                 '<a class="act" href="forum.html"><b>Challenge the reasoning</b><span>Critique</span></a><a class="act" href="speculate.html"><b>Connect it to another field</b><span>Explore</span></a></div>'
                 '<p class="note">Evidence trail: status %s · related %s · Navigator: %s · %s</p></article>') % (
-            E(d['id']), E(d['id']), E(d['class']), E(d['method']), status, E(d['date']), areas, E(d['headline']), E(d['emerged']), series_svg(d['series']),
+            E(d['id']), E(d['id']), E(d['class']), E(d['method']), status, E(d['date']), areas, E(d['headline']), E(d['emerged']), E(d.get('scope', '')), series_svg(d['series']),
             E(d['significance']), E(d['model']), comp, E(d['implications']), E(d['frontier']), E(d['field_note']), E(d['challenge']),
             E(', '.join(d['status'])), E(', '.join(d['related'])), E(d['navigator']), E(d['publication']))
-    lead = reg['entries'][0]
-    more = ''.join('<a class="door c-violet" href="bulletin.html#%s"><span class="k">%s · %s</span><h3>%s</h3><span class="go">Read the announcement →</span></a>' % (
-        E(d['id']), E(d['class']), E(' · '.join(d['areas'])), E(d['headline'])) for d in reg['entries'][1:])
+    def kind(d):
+        if not d.get('script'):
+            return 'Speculative frontier', 'Open exploration'
+        return 'Mathematical result', 'Computed' + (' · questions left open' if 'Open and unresolved' in d['status'] else '')
+    feat = reg.get('featured', {})
+    lead = next((d for d in reg['entries'] if d['id'] == feat.get('id')), reg['entries'][0])
+    more = ''.join('<a class="door c-violet" href="bulletin.html#%s"><span class="k">%s · %s</span><h3>%s</h3><p class="note">Scope: %s</p><span class="go">Read the announcement →</span></a>' % (
+        E(d['id']), E(kind(d)[0] + ' · ' + kind(d)[1]), E(d['id']), E(d['headline']), E(d.get('scope', ''))) for d in reg['entries'] if d is not lead)
     w = reg['weekly']
     weekly = ('<div class="eyebrow">Weekly event · %s · open %s to %s</div><h2>%s</h2><p><b>%s</b></p><p>%s</p><p class="note">%s</p>' % (
         E(w['id']), E(w['opens']), E(w['closes']), E(w['title']), E(w['question']), E('Starting point: ' + w['start']), E(w['recognition'])))
     c = ''.join('<tr><td class="num">%s</td><td>%s</td><td>%s</td></tr>' % (E(x['id']), E(x['challenge']), E(x['expertise'])) for x in reg['challenges'])
     return {'{{BULLETIN_ENTRIES}}': ''.join(card(d) for d in reg['entries']), '{{CHALLENGES}}': c, '{{WEEKLY}}': weekly, '{{UNIVERSE}}': universe_svg(reg),
             '{{BULLETIN_MORE}}': more, '{{LEAD_ID}}': E(lead['id']), '{{LEAD_CLASS}}': E(lead['class']), '{{LEAD_HEADLINE}}': E(lead['headline']),
-            '{{LEAD_EMERGED}}': E(lead['emerged']), '{{LEAD_AREAS}}': E(' · '.join(lead['areas']))}
+            '{{LEAD_EMERGED}}': E(lead['emerged']), '{{LEAD_AREAS}}': E(' · '.join(lead['areas'])), '{{LEAD_WEEK}}': E(feat.get('week', 'just announced')),
+            '{{LEAD_KIND}}': E(kind(lead)[0]), '{{LEAD_STATE}}': E(kind(lead)[1]), '{{LEAD_SCOPE}}': E(lead.get('scope', ''))}
 
 
 def selftest():

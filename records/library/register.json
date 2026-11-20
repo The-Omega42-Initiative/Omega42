@@ -1,0 +1,100 @@
+{
+ "_about": "The Library collection: archive documents published as HISTORICAL Library editions on the Originator's instruction of 20 November 2026 (docs/ARCHIVE_POLICY.md, Decision 3.4). The originals stay unchanged in the Originator's drives; each edition carries a name check, a recomputation (records/library/recompute_lib01.py), a concordance with the current release and, where the text is published, the text as written with formatting cleaned. No file identifiers or links to the drives are kept.",
+ "tranches": [
+  {
+   "id": "LIB-01",
+   "title": "Philosophical foundations and the first formalisms",
+   "date": "2026-11-20",
+   "script": "records/library/recompute_lib01.py",
+   "editions": [
+    {
+     "id": "PF-A",
+     "file": "library/LIB-01/PF-A.md",
+     "title": "The Philosophical Foundations of Omega42 (companion to V336 Rev.2)",
+     "dated": "12 September 2026",
+     "source": "Google Drive",
+     "by": "the Originator (ESC) with a multi-Navigator AI ensemble",
+     "text": "full",
+     "checks": "9 statements: 7 hold, 1 restated, 1 does not hold"
+    },
+    {
+     "id": "PF-B",
+     "file": "library/LIB-01/PF-B.md",
+     "title": "Philosophical Foundations and Operational Clarifications (V336 Rev.1)",
+     "dated": "12 September 2026",
+     "source": "Google Drive",
+     "by": "a multi-Navigator AI ensemble",
+     "text": "summary; the fuller PF-A is published",
+     "checks": "7 statements: 5 hold, 1 restated, 1 does not hold"
+    },
+    {
+     "id": "PF-C",
+     "file": "library/LIB-01/PF-C.md",
+     "title": "The Philosophical Foundations of the AI Omega42 Protocol (revision 431 of V335)",
+     "dated": "6 September 2026",
+     "source": "Google Drive",
+     "by": "DeepSeek as Navigator",
+     "text": "summary; its first part is close to PF-D",
+     "checks": "5 statements: 2 hold, 1 does not hold, 1 not adopted, 1 without derivation"
+    },
+    {
+     "id": "PF-D",
+     "file": "library/LIB-01/PF-D.md",
+     "title": "Counting, Distinction and the Human Frame of Reference (three papers)",
+     "dated": "6 September 2026",
+     "source": "Google Drive",
+     "by": "DeepSeek as Navigator",
+     "text": "full",
+     "checks": "7 statements by kind"
+    },
+    {
+     "id": "BK-A",
+     "file": "library/LIB-01/BK-A.md",
+     "title": "The Mathematical Formalisms (book appendix A)",
+     "dated": "2025",
+     "source": "OneDrive",
+     "by": "an AI system speaking as Domain 0",
+     "text": "full, cleaned",
+     "checks": "7 statements: 4 hold, 1 restated, 1 counts without deriving, 1 without derivation"
+    },
+    {
+     "id": "BK-B",
+     "file": "library/LIB-01/BK-B.md",
+     "title": "The Coherence Calculus",
+     "dated": "2025",
+     "source": "OneDrive",
+     "by": "an AI system speaking as Domain 0",
+     "text": "full, cleaned",
+     "checks": "5 statements: 2 hold, 3 do not hold"
+    }
+   ]
+  }
+ ],
+ "queue": [
+  {
+   "family": "The 2025 Ω42 book (OneDrive): chapters 1 to 17, appendices A to S, glossary",
+   "count": "about 70 files, most in two versions",
+   "note": "next tranche; the personal chapters and the afterword are withheld"
+  },
+  {
+   "family": "Domain 0 works by Claude, DeepSeek, Grok and Qwen (OneDrive)",
+   "count": "about 12 files",
+   "note": "AI outputs kept as received; long"
+  },
+  {
+   "family": "The last build of each protocol line, V333 Rev.387, V335 Rev.442, V336 Rev.2 (Google Drive)",
+   "count": "3 builds",
+   "note": "named in the archive policy as first candidates; audited in records/first_contact/audit.txt"
+  },
+  {
+   "family": "Construct theory: RTCM, THQT, the Construct versions 2 to 12",
+   "count": "about 400 files across both drives",
+   "note": "read against the concordance first"
+  },
+  {
+   "family": "Personal, biographical, lottery and prediction material",
+   "count": "withheld",
+   "note": "never published (docs/ARCHIVE_POLICY.md)"
+  }
+ ]
+}

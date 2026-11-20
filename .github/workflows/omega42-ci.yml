@@ -526,6 +526,8 @@ jobs:
           python3 tools/site_build.py --selftest
           python3 records/integrity/iira_math.py --selftest
           for f in records/frontier/df_*.py; do python3 "$f" > /dev/null; done
+          python3 records/library/recompute_lib01.py > /dev/null
+          python3 site/test/units_check.py
           python3 site/test/strike_cpython.py > /dev/null
           python3 - <<'PY'
           import glob, hashlib, json, sys

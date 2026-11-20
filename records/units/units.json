@@ -1,0 +1,50 @@
+{
+ "_about": "Unit table of the Omega42 converter (site/assets/units.js reads it at build time). Each factor converts one unit into the SI unit of its quantity; temperature units carry a scale and an offset. Factors are exact decimals where the unit is defined exactly; 'def' states the definition. Checked against an independent derivation in site/test/units_check.py. References: the BIPM SI Brochure (9th edition) and NIST SP 811.",
+ "quantities": [
+  {"q": "Length", "si": "m", "units": [
+   ["m", "metre", "1", "SI base unit"], ["km", "kilometre", "1000", "10^3 m"], ["cm", "centimetre", "0.01", "10^-2 m"], ["mm", "millimetre", "0.001", "10^-3 m"],
+   ["um", "micrometre", "0.000001", "10^-6 m"], ["nm", "nanometre", "0.000000001", "10^-9 m"], ["in", "inch", "0.0254", "exactly 0.0254 m (1959)"],
+   ["ft", "foot", "0.3048", "12 in"], ["yd", "yard", "0.9144", "3 ft"], ["mi", "mile", "1609.344", "1760 yd"], ["nmi", "nautical mile", "1852", "exactly 1852 m"],
+   ["au", "astronomical unit", "149597870700", "exactly, IAU 2012"], ["ly", "light-year", "9460730472580800", "c x one Julian year"]]},
+  {"q": "Mass", "si": "kg", "units": [
+   ["kg", "kilogram", "1", "SI base unit"], ["g", "gram", "0.001", "10^-3 kg"], ["mg", "milligram", "0.000001", "10^-6 kg"], ["t", "tonne", "1000", "10^3 kg"],
+   ["lb", "pound", "0.45359237", "exactly 0.45359237 kg (1959)"], ["oz", "ounce", "0.028349523125", "1/16 lb"], ["st", "stone", "6.35029318", "14 lb"]]},
+  {"q": "Time", "si": "s", "units": [
+   ["s", "second", "1", "SI base unit"], ["ms", "millisecond", "0.001", "10^-3 s"], ["us", "microsecond", "0.000001", "10^-6 s"], ["min", "minute", "60", "60 s"],
+   ["h", "hour", "3600", "60 min"], ["d", "day", "86400", "24 h"], ["wk", "week", "604800", "7 d"], ["a", "Julian year", "31557600", "365.25 d (the year of the light-year)"]]},
+  {"q": "Temperature", "si": "K", "affine": true, "units": [
+   ["K", "kelvin", "1", "0", "SI base unit"], ["degC", "degree Celsius", "1", "273.15", "K = degC + 273.15"],
+   ["degF", "degree Fahrenheit", "5/9", "459.67", "K = (degF + 459.67) x 5/9"], ["degR", "degree Rankine", "5/9", "0", "K = degR x 5/9"]]},
+  {"q": "Area", "si": "m2", "units": [
+   ["m2", "square metre", "1", "SI derived"], ["km2", "square kilometre", "1000000", "10^6 m2"], ["ha", "hectare", "10000", "10^4 m2"],
+   ["ft2", "square foot", "0.09290304", "ft^2"], ["acre", "acre", "4046.8564224", "4840 yd^2"], ["mi2", "square mile", "2589988.110336", "mi^2"]]},
+  {"q": "Volume", "si": "m3", "units": [
+   ["m3", "cubic metre", "1", "SI derived"], ["L", "litre", "0.001", "10^-3 m3"], ["mL", "millilitre", "0.000001", "10^-6 m3"],
+   ["in3", "cubic inch", "0.000016387064", "in^3"], ["ft3", "cubic foot", "0.028316846592", "ft^3"],
+   ["galUS", "US gallon", "0.003785411784", "231 in^3"], ["ptUS", "US pint", "0.000473176473", "1/8 US gal"], ["flozUS", "US fluid ounce", "0.0000295735295625", "1/128 US gal"],
+   ["galUK", "imperial gallon", "0.00454609", "exactly 4.54609 L"], ["ptUK", "imperial pint", "0.00056826125", "1/8 imperial gal"], ["flozUK", "imperial fluid ounce", "0.0000284130625", "1/160 imperial gal"]]},
+  {"q": "Speed", "si": "m/s", "units": [
+   ["m/s", "metre per second", "1", "SI derived"], ["km/h", "kilometre per hour", "5/18", "1000 m / 3600 s"], ["mph", "mile per hour", "0.44704", "mi / h"],
+   ["kn", "knot", "463/900", "nmi / h"], ["ft/s", "foot per second", "0.3048", "ft / s"], ["c", "speed of light", "299792458", "exactly, a defining constant"]]},
+  {"q": "Force", "si": "N", "units": [
+   ["N", "newton", "1", "kg m s^-2"], ["kN", "kilonewton", "1000", "10^3 N"], ["dyn", "dyne", "0.00001", "g cm s^-2"],
+   ["kgf", "kilogram-force", "9.80665", "kg x standard gravity 9.80665 m s^-2"], ["lbf", "pound-force", "4.4482216152605", "lb x standard gravity"]]},
+  {"q": "Energy", "si": "J", "units": [
+   ["J", "joule", "1", "kg m^2 s^-2"], ["kJ", "kilojoule", "1000", "10^3 J"], ["erg", "erg", "0.0000001", "dyn cm"],
+   ["cal", "calorie (thermochemical)", "4.184", "exactly 4.184 J"], ["kcal", "kilocalorie", "4184", "10^3 cal"], ["Wh", "watt-hour", "3600", "W x h"],
+   ["kWh", "kilowatt-hour", "3600000", "10^3 Wh"], ["eV", "electronvolt", "1.602176634e-19", "e x 1 V; e exact since 2019"], ["BTU", "British thermal unit (IT)", "1055.05585262", "exactly 1.05505585262 kJ"]]},
+  {"q": "Power", "si": "W", "units": [
+   ["W", "watt", "1", "J s^-1"], ["kW", "kilowatt", "1000", "10^3 W"], ["MW", "megawatt", "1000000", "10^6 W"],
+   ["hp", "horsepower (mechanical)", "745.69987158227022", "550 ft lbf s^-1"], ["PS", "metric horsepower", "735.49875", "75 kgf m s^-1"]]},
+  {"q": "Pressure", "si": "Pa", "units": [
+   ["Pa", "pascal", "1", "N m^-2"], ["kPa", "kilopascal", "1000", "10^3 Pa"], ["bar", "bar", "100000", "10^5 Pa"], ["atm", "standard atmosphere", "101325", "exactly 101325 Pa"],
+   ["torr", "torr", "101325/760", "atm / 760"], ["mmHg", "millimetre of mercury", "133.322387415", "conventional, 13.5951 g cm^-3 x 9.80665 m s^-2 x 1 mm"], ["psi", "pound per square inch", "6894.757293168361", "lbf / in^2"]]},
+  {"q": "Frequency", "si": "Hz", "units": [
+   ["Hz", "hertz", "1", "s^-1"], ["kHz", "kilohertz", "1000", "10^3 Hz"], ["MHz", "megahertz", "1000000", "10^6 Hz"], ["GHz", "gigahertz", "1000000000", "10^9 Hz"], ["rpm", "revolution per minute", "1/60", "1 / 60 s"]]},
+  {"q": "Angle", "si": "rad", "units": [
+   ["rad", "radian", "1", "SI derived (dimensionless)"], ["deg", "degree", "pi/180", "pi/180 rad"], ["arcmin", "arcminute", "pi/10800", "1/60 deg"],
+   ["arcsec", "arcsecond", "pi/648000", "1/3600 deg"], ["turn", "turn", "2*pi", "2 pi rad"]]}
+ ],
+ "prefixes": [["Q","quetta",30],["R","ronna",27],["Y","yotta",24],["Z","zetta",21],["E","exa",18],["P","peta",15],["T","tera",12],["G","giga",9],["M","mega",6],["k","kilo",3],["h","hecto",2],["da","deca",1],
+   ["d","deci",-1],["c","centi",-2],["m","milli",-3],["u","micro",-6],["n","nano",-9],["p","pico",-12],["f","femto",-15],["a","atto",-18],["z","zepto",-21],["y","yocto",-24],["r","ronto",-27],["q","quecto",-30]]
+}

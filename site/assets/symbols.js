@@ -33,9 +33,28 @@
   function place(i) { var p = pt(loop[i % 24]); walker.setAttribute('cx', p[0]); walker.setAttribute('cy', p[1]);
     Object.keys(nodes).forEach(function (k) { nodes[k].classList.toggle('here', +k === loop[i % 24]); });
     var st = document.getElementById('sym-step'); if (st) st.textContent = 'step ' + (i % 24) + ' of 24 · digit ' + loop[i % 24] + ' · twelve steps on: ' + loop[(i + 12) % 24]; }
-  function replay() { stop(); walker.style.display = ''; var i = 0; place(0); if (still) return; timer = setInterval(function () { place(++i); }, 900); }
+  function replay() { stop(); walker.style.display = ''; var i = 0; at = 0; place(0); if (pause) { pause.textContent = 'Pause'; pause.setAttribute('aria-pressed', 'false'); } if (still) return; timer = setInterval(function () { at = ++i; place(i); }, 900); }
   function stop() { if (timer) clearInterval(timer); timer = null; walker.style.display = 'none'; Object.keys(nodes).forEach(function (k) { nodes[k].classList.remove('here'); });
     var st = document.getElementById('sym-step'); if (st) st.textContent = ''; }
   buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-show')); }); });
+  var pause = document.getElementById('sym-pause'), at = 0;
+  if (pause) pause.addEventListener('click', function () {
+    if (timer) { clearInterval(timer); timer = null; pause.textContent = 'Play the loop'; pause.setAttribute('aria-pressed', 'true'); }
+    else { walker.style.display = ''; pause.textContent = 'Pause'; pause.setAttribute('aria-pressed', 'false');
+      if (!still) timer = setInterval(function () { place(++at); }, 900); }
+  });
+  var box = document.getElementById('sym-node');
+  function d9(x) { return ((x % 9) + 9) % 9 || 9; }
+  function role(k) {
+    var r = k % 9, unit = r % 3 !== 0, inv = null;
+    for (var y = 1; y < 9 && unit; y++) if ((r * y) % 9 === 1) inv = y;
+    var pos = []; loop.forEach(function (v, i) { if (v === k) pos.push(i); });
+    var ant = k === 9 ? '9 is its own Antipode (9 = 0 modulo 9)' : 'Its Antipode is ' + (9 - k) + ', the mirror across the vertical axis';
+    return '<b>' + k + '</b> · ' + (unit ? 'a unit modulo 9: on the six-point path; it has an inverse, ' + inv + ' (' + k + ' × ' + inv + ' = ' + (k * inv) + ' = 1 modulo 9)' : 'in the 3-layer: on the triangle; it has no inverse modulo 9') +
+      '. Doubled it gives ' + d9(2 * k) + '. ' + ant + '. On the 24-step loop it appears ' + (pos.length ? pos.length + ' times, at steps ' + pos.join(', ') : 'never') + '.';
+  }
+  Object.keys(nodes).forEach(function (k) { var g = nodes[k]; g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button'); g.setAttribute('aria-label', 'Digit ' + k + ': show its role');
+    function pick() { if (box) box.innerHTML = role(+k); Object.keys(nodes).forEach(function (j) { nodes[j].classList.toggle('picked', j === k); }); }
+    g.addEventListener('click', pick); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } }); });
   show('all');
 })();

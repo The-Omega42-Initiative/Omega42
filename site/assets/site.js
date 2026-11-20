@@ -150,3 +150,8 @@
   });
 })();
 
+/* Back to top: shown after the first screen of scrolling. */
+(function () { var t = document.querySelector('.totop'); if (!t) return;
+  function f() { t.classList.toggle('show', window.scrollY > window.innerHeight * 1.2); }
+  window.addEventListener('scroll', f, {passive: true}); f();
+  t.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({top: 0, behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); }); })();
