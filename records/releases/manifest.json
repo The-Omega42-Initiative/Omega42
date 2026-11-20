@@ -297,6 +297,22 @@
    "level": "A",
    "level_source": "declared",
    "date": "2026-11-20"
+  },
+  {
+   "id": "CA-36",
+   "title": "CA-36: One disclosure, then specific qualifications (O42-UX-01, 20 November 2026)",
+   "status": "RECORDED",
+   "level": "A",
+   "level_source": "declared",
+   "date": "2026-11-20"
+  },
+  {
+   "id": "CA-37",
+   "title": "CA-37: Foundational programs (20 November 2026)",
+   "status": "RECORDED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-20"
   }
  ],
  "approval": {

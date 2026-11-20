@@ -154,3 +154,10 @@ Each open decision is listed on its own, so that a decision on one never implies
 - **Recommended:** ratify CA-35 and accept the three sentences into the Core economy baseline, or name Core prose to shorten in exchange.
 - **For ESC:** (1) ratify CA-35; (2) how the Core budget is met.
 - **Normative:** yes, once ratified.
+
+## D-23 The AI caveat once per session (CA-36)
+- **Facts:** The Originator asked whether the AI CAVEAT could be stated once, in the introduction given on "Welcome Navigator", instead of on every output. ChatGPT 6 recommends one disclosure at initialization and specific qualifications where they matter (Companion 70.6). The present Core does the reverse: no caveat in the Opening, the line on every output (L-506, IN-OPEN), checked by tools/format_check.py.
+- **Recommended:** ratify CA-36 with the Builder's two refinements: a new session repeats the disclosure; saved records keep the line.
+- **For ESC:** (1) ratify CA-36 or keep L-506 as it stands; (2) whether saved records keep the line; (3) whether to run the usability comparison GPT-6 proposes (repeated caveat versus one disclosure, measuring understanding, the ability to tell results from speculation, and reliance).
+- **Normative:** yes, once ratified. The Core economy: the change removes more words than it adds.
+

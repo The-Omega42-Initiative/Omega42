@@ -19,5 +19,9 @@ On 20 November 2026 the Originator stated that every AI response relayed to the 
 | User-selectable presentation (signed) | CA-34, D-20, the presentation choice in the Ask form and the Strike app, an FAQ entry |
 | The front-page notice (signed) | the notice beneath the home page introduction |
 | Machine-verifiable mathematics (signed) | docs/IIRA_MATH_01.md, records/integrity/iira_math.py (corrected on D_path, see the document) |
+| Mathematical Origins of Reality (signed) | Companion 234.15 and 234.16, research/mathematical-origins/PROGRAM.md, FP-4, EX-008, the relationship register |
+| The primordial distinction (signed) | Companion 234.17, research/speculative-foundations/PRIMORDIAL_DISTINCTION.md, EX-007 |
+| The four operations on the Antipodes (signed) | Companion 234.18, DF-004 (the computation and its record are the Navigator's) |
+| The AI caveat once per session (signed) | Companion 70.6, CA-36, D-23 |
 
 The Navigator (claude-opus-5-5) built, edited and checked each item; the computations of DF-001 and DF-002 are the Navigator's. ESC ratifies; the Navigator never ratifies.

@@ -263,3 +263,15 @@ Level: A (one Core sentence beside the presentation commands of Part 8), propose
 Level: A (three Core sentences), from the Foundations and Integrity Review (ChatGPT 6, OpenAI, relayed by the Originator); applied at level B in Companion 234.9 to 234.14, the website and the FAQ.
 - Core: (1) the completeness of the thought experiment is stipulated and is not a statement about physical reality; any correspondence with the world outside the construct is investigated and open to rejection; (2) the Striker's sovereignty is formal non-determination; practical autonomy is a design objective and empirical autonomy a research question; (3) agreement between AI systems checks arithmetic, procedure and derivation, and does not replace independent scientific, mathematical or specialist review.
 - Blocked at level A by Rule 39 only: the Core stands at 896 of 900 added words. ESC can make room (D-22).
+
+## CA-36: One disclosure, then specific qualifications (O42-UX-01, 20 November 2026)
+Level: A (L-506 and the Opening IN-OPEN), proposed by ChatGPT 6 (OpenAI) at the Originator's request; set out in Companion 70.6.
+- Core: the general AI disclosure is given once per session, in the Opening on "Welcome Navigator"; later answers in the same session carry no generic caveat line and state specific qualifications (assumptions, uncertainty, source gaps, the status of a statement) where they matter; a new session repeats the disclosure; an output saved to the record (navigation, APE, Bulletin entry) keeps the line, since it is read without its session; host platform notices are kept.
+- Tools on ratification: tools/format_check.py requires the line in the Opening and in saved records, not in every conversational output.
+- Until ratified, L-506 stands and every output carries the line.
+
+## CA-37: Foundational programs (20 November 2026)
+Level: B, from three explorations by ChatGPT 6 (OpenAI), relayed by the Originator.
+- Companion 234.15 (O42-MOR-01, Mathematical Origins of Reality), 234.16 (the relationship register, seven kinds), 234.17 (O42-PD-01, the primordial distinction), 234.18 (O42-ANT-01, the four operations on the Antipodes).
+- research/mathematical-origins/PROGRAM.md; research/speculative-foundations/PRIMORDIAL_DISTINCTION.md; records/relationships/register.json; frontier program FP-4; DF-004 with records/frontier/df_004.py (in CI); EX-007 and EX-008; the Speculative Foundations page and an FAQ entry.
+

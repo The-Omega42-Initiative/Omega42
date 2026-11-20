@@ -1,0 +1,62 @@
+{
+ "_about": "Relationship register (Companion 234.16). Each relationship recorded between the Omega42 construct and another system is entered as exactly one of seven kinds, at the weakest kind its grounds support. Kinds are not interchangeable. Negative results are kept.",
+ "kinds": [
+  "analogy",
+  "structural correspondence",
+  "mathematical equivalence",
+  "derivation",
+  "physical realization",
+  "empirical correlation",
+  "causal relationship"
+ ],
+ "entries": [
+  {
+   "id": "R-001",
+   "construct": "The Antipode as the digit rule x + A(x) = 9",
+   "other": "The half-turn of the law, T^12 = -I modulo 9",
+   "kind": "mathematical equivalence",
+   "grounds": "records/frontier/df_004.py",
+   "status": "computed"
+  },
+  {
+   "id": "R-002",
+   "construct": "The canonical 24-step loop",
+   "other": "The Fibonacci sequence modulo 9 (Pisano period 24)",
+   "kind": "mathematical equivalence",
+   "grounds": "standard; recomputed by the reference script",
+   "status": "computed"
+  },
+  {
+   "id": "R-003",
+   "construct": "The law with a learned move (DF-001)",
+   "other": "Reachability of a linear control system",
+   "kind": "mathematical equivalence",
+   "grounds": "records/frontier/df_001.py; the connection is standard in control theory",
+   "status": "computed"
+  },
+  {
+   "id": "R-004",
+   "construct": "Zero with one distinction generating the family (Companion 39.6)",
+   "other": "Spontaneous symmetry breaking in physics",
+   "kind": "analogy",
+   "grounds": "shared language of balance and differentiation; no shared formal structure shown",
+   "status": "open"
+  },
+  {
+   "id": "R-005",
+   "construct": "Zero with one distinction generating the family",
+   "other": "The One and the Many in Neoplatonism",
+   "kind": "analogy",
+   "grounds": "Companion 39.6 and 234.17",
+   "status": "open"
+  },
+  {
+   "id": "R-006",
+   "construct": "The 9 and the 24 of the loop",
+   "other": "The periods of the Moon",
+   "kind": "structural correspondence",
+   "grounds": "tested on the How Omega42 works page: the Moon supplies neither the nine nor the twenty-four",
+   "status": "not found"
+  }
+ ]
+}

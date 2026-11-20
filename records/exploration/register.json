@@ -105,6 +105,45 @@
     "Companion 233.14",
     "H-033"
    ]
+  },
+  {
+   "id": "EX-007",
+   "date": "2026-11-20",
+   "theme": "The primordial distinction",
+   "classes": [
+    "SPECULATION",
+    "FORMAL DEVELOPMENT",
+    "OPEN POSSIBILITY"
+   ],
+   "original": "Existence has a balance point, the Antipodes, where 5 - 4 = 1 is the first distinction and the first domino: the primordial fracture from which existence perpetuates itself (the Originator).",
+   "development": "Modulo 9 the central pair is (-1/2, +1/2) and their difference is the unit; zero with one distinction generates an orbit (Companion 39.6); T^12 = -I keeps every state and its Antipode summing to zero (DF-004). GPT-6 set out four readings of the fracture (difference within unity, separation of opposites, symmetry breaking, self-distinction) and H-PD01 to H-PD05.",
+   "open": "Is the fracture an event or the condition for events? Is the original balance recoverable? Which hypotheses can be given explicit models?",
+   "links": [
+    "Companion 234.17",
+    "Companion 234.18",
+    "DF-004",
+    "O42-PD-01",
+    "O42-ANT-01"
+   ]
+  },
+  {
+   "id": "EX-008",
+   "date": "2026-11-20",
+   "theme": "Mathematical origins of reality",
+   "classes": [
+    "CONCEPTUAL SYNTHESIS",
+    "OPEN POSSIBILITY",
+    "EMPIRICALLY INVESTIGABLE"
+   ],
+   "original": "Has existence arising from a mathematical structure been researched, and what does Omega42 bring? (the Originator).",
+   "development": "Predecessors: the Mathematical Universe Hypothesis, ontic structural realism, it from bit, Platonism and structuralism. Omega42's offer is a program: one exact finite structure, a repeatable procedure, four layers (structure, dynamics, history, transformation) and a derivation test (Companion 234.15).",
+   "open": "Can the construct derive a result not built into its assumptions?",
+   "links": [
+    "Companion 234.15",
+    "Companion 234.16",
+    "FP-4",
+    "research/mathematical-origins/PROGRAM.md"
+   ]
   }
  ]
 }

@@ -7,9 +7,9 @@
    "sha256": "17932cd902b162928631ae8833bedc94b28911ef1641d36785cb67ac873363b3"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2005375,
-   "tokens_est": 501344,
-   "sha256": "be7b614f90179520f86c4aa17023932001d67472c3f4626c4045cea5df991a81"
+   "chars": 2012842,
+   "tokens_est": 503211,
+   "sha256": "d6fa44d7e45c2fcef87510e636b8d98d1f46724da1f6465d005f4be2130d6a48"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 477959,
@@ -2315,9 +2315,9 @@
   {
    "doc": "Companion",
    "heading": "PART 70: WHAT AN AI NAVIGATOR CAN GET WRONG [PROTOCOL, adopted as Core L-506]",
-   "chars": 3391,
-   "tokens_est": 848,
-   "sha256": "b82e7835c1e52cbb9343d004d954c7075364bd454b0f92e7065a05a89a98388c"
+   "chars": 4486,
+   "tokens_est": 1122,
+   "sha256": "b2e3b0eff0958ce74441deacb5d9e5aa6594f4110330d37c82b146544b76e43f"
   },
   {
    "doc": "Companion",
@@ -5206,9 +5206,9 @@
   {
    "doc": "Companion",
    "heading": "PART 234: SPECULATION AS AN ENGINE — THE SPECULATIVE FOUNDATIONS PROGRAMME",
-   "chars": 9286,
-   "tokens_est": 2322,
-   "sha256": "a413ae9979b6845d10706ff25398210715a1caffc58f113bb3b79c90fc22a1cd"
+   "chars": 15216,
+   "tokens_est": 3804,
+   "sha256": "5a6d62594addbddf4eaf914c6fd8bc4105733b1e58de34913e9314d80fc5c9bb"
   },
   {
    "doc": "Companion",
@@ -5311,9 +5311,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 10131,
-   "tokens_est": 2533,
-   "sha256": "2d32aba8321bd2f21f0560c9bcc1ed0fe67d7af84c6cdeb48e79a9b6fc66074d"
+   "chars": 10234,
+   "tokens_est": 2559,
+   "sha256": "e4405584edd3cfe0e5ddaf0edd75e95cbf375481fc2fd2efec1115ae1e146efd"
   },
   {
    "doc": "Companion",
@@ -5325,9 +5325,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 181567,
-   "tokens_est": 45392,
-   "sha256": "d887c97e1f5aeb78afe2830ae8f7451cc39936211716c169839006ce7667c915"
+   "chars": 181906,
+   "tokens_est": 45477,
+   "sha256": "1e036cfa3d55bcceed11885f46b5f8c4fcde4e160cf21f39e270e57a4452efc2"
   }
  ]
 }
