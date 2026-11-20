@@ -7,9 +7,9 @@
    "sha256": "17932cd902b162928631ae8833bedc94b28911ef1641d36785cb67ac873363b3"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2000247,
-   "tokens_est": 500062,
-   "sha256": "0bc893b3005170d986cfacaa871dba6d029a057bd7fbedaf7486e6a075cd5c6f"
+   "chars": 2005375,
+   "tokens_est": 501344,
+   "sha256": "be7b614f90179520f86c4aa17023932001d67472c3f4626c4045cea5df991a81"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 477959,
@@ -1321,9 +1321,9 @@
   {
    "doc": "Companion",
    "heading": "PART 0: FREQUENTLY ASKED QUESTIONS",
-   "chars": 33367,
-   "tokens_est": 8342,
-   "sha256": "5ceb728e1696a33fec087f5d6e598b29d63cd1181df6b4cfc4d917575b505d67"
+   "chars": 33870,
+   "tokens_est": 8468,
+   "sha256": "54ef598ef71aa873bdd32a2113db47e5e311f0745528fe66f9bba39ae4292d3b"
   },
   {
    "doc": "Companion",
@@ -5206,9 +5206,9 @@
   {
    "doc": "Companion",
    "heading": "PART 234: SPECULATION AS AN ENGINE — THE SPECULATIVE FOUNDATIONS PROGRAMME",
-   "chars": 4760,
-   "tokens_est": 1190,
-   "sha256": "3051f27343393e92b236cc9050fe6b0b5670fad4499dd8c17e4d233a99e6d3b5"
+   "chars": 9286,
+   "tokens_est": 2322,
+   "sha256": "a413ae9979b6845d10706ff25398210715a1caffc58f113bb3b79c90fc22a1cd"
   },
   {
    "doc": "Companion",
@@ -5325,9 +5325,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 181468,
-   "tokens_est": 45367,
-   "sha256": "28fed6213dd195ed2a75619b0ef2c2df36f07fa166c15e1ae637a8a452e86dc5"
+   "chars": 181567,
+   "tokens_est": 45392,
+   "sha256": "d887c97e1f5aeb78afe2830ae8f7451cc39936211716c169839006ce7667c915"
   }
  ]
 }

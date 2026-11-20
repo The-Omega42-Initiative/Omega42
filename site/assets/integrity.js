@@ -1,4 +1,4 @@
-/* Information integrity: build a Navigator prompt on the visitor's device (nothing is sent anywhere). */
+/* Information integrity: build a Navigator prompt on the visitor's device (this page sends nothing to a server). */
 (function () {
   var f = document.getElementById('ii-form'); if (!f) return;
   var T = {comprehensive: 'a comprehensive investigation (all six modules, combined as the material requires)',

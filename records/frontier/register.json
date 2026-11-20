@@ -117,7 +117,15 @@
     "FP-2"
    ],
    "publication": "published at the Originator's request, 20 November 2026 (launch edition)",
-   "method": "Hybrid"
+   "method": "Hybrid",
+   "assumptions": [
+    "A learned move is one fixed vector u, here (0, 1), (1, 0) or (0, 3); the history is the choice of u.",
+    "At every step the move is available, and the system chooses whether to apply it: v(t+1) = T v(t) or T v(t) + u.",
+    "The reachable set at horizon n is the set of states reachable at exactly step n over all 2^n choice sequences (a union over sequences, not over earlier steps).",
+    "'All 81' means all 81 states are reachable at exactly step 9 and at every later step; counting every state visited at any step up to n, all 81 are reached by step 8 (3, 7, 14, 25, 40, 57, 72, 81).",
+    "The result does not depend on the starting state: from every one of the 81 starts a unit move reaches all 81 at exactly step 9, and the move (0, 3) stays within 9 states.",
+    "The model is a finite construct; its reading for human habits is a speculative proposition, not a finding."
+   ]
   },
   {
    "id": "DF-002",
@@ -149,7 +157,12 @@
     "XC-02"
    ],
    "publication": "published at the Originator's request, 20 November 2026 (launch edition)",
-   "method": "Direct Omega analysis"
+   "method": "Direct Omega analysis",
+   "assumptions": [
+    "Laws x(n+1) = p x(n) + q x(n-1) modulo 9 with q a unit (54 laws), each read as a permutation of the 81 pairs (a, b).",
+    "The cycle type is the multiset of loop lengths; two laws with the same cycle type are conjugate as permutations of the 81 states.",
+    "Linear conjugacy would require equal trace p and equal determinant -q; the 16 laws have 16 different pairs, so none is linearly conjugate to another."
+   ]
   },
   {
    "id": "DF-003",
@@ -182,7 +195,11 @@
     "XC-05"
    ],
    "publication": "published at the Originator's request, 20 November 2026 (launch edition)",
-   "method": "Open speculation"
+   "method": "Open speculation",
+   "assumptions": [
+    "No computation; the entry sets two families of answers side by side and makes no choice between them.",
+    "The two-reading model of Omega42 (EX-005) is used as a frame for stating both families, not as evidence for either."
+   ]
   }
  ],
  "challenges": [

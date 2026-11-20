@@ -148,3 +148,9 @@ Each open decision is listed on its own, so that a decision on one never implies
 - **Applied:** the name is replaced by "the Originator (ESC)" in the README, CITATION.cff, .zenodo.json, GOVERNANCE.md, LICENSES.md, the governance page, two APE submissions and the Core and Companion front matter (one Core paragraph re-accepted in the Rule 39 baseline); in archive/2025-10/ the name, web addresses and e-mail are withheld and two personal documents withdrawn; the website carries a short origin of Omega42.
 - **Not yet changed (needs the Originator's own GitHub account):** the repository address and the website address, which contain the account name; the git history, which keeps the earlier files and one commit author name. See the migration steps in the conversation of 20 November 2026.
 - **Status:** DECIDED by ESC (instruction of 20 November 2026).
+
+## D-22 Epistemic precision (CA-35) and the Core word budget
+- **Facts:** The Originator asked that every correction of the Foundations and Integrity Review be applied (docs/FOUNDATIONS_REVIEW_2026-11-20.md). All are applied in the Companion, the website, the FAQ, the Bulletin and the IIRA record. Three of them belong in the Core, which is 4 words below the Rule 39 limit.
+- **Recommended:** ratify CA-35 and accept the three sentences into the Core economy baseline, or name Core prose to shorten in exchange.
+- **For ESC:** (1) ratify CA-35; (2) how the Core budget is met.
+- **Normative:** yes, once ratified.

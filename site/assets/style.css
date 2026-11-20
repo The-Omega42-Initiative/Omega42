@@ -283,3 +283,4 @@ fieldset.modes label { display: flex; gap: .5rem; align-items: baseline; flex-wr
 .qcat .go { font-family: var(--mono); font-size: .78rem; color: var(--accent); }
 .notice { font-size: .95rem; color: #d9d5f0; max-width: 40rem; padding: .6rem .9rem; border-left: 3px solid #8fe9ff; background: rgba(143,233,255,.07); border-radius: 0 8px 8px 0; }
 .notice a { color: #8fe9ff; }
+.assume { border: 1px dashed var(--rule); border-radius: 10px; padding: .6rem .9rem; } .assume summary { cursor: pointer; font-family: var(--mono); font-size: .8rem; color: var(--violet); } .assume ul { margin: .5rem 0 0; }

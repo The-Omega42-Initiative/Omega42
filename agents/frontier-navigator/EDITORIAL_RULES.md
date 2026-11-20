@@ -25,3 +25,5 @@ The public face of the Daily Frontier is **The Discovery Bulletin** (`bulletin.h
 **The Great Omega42 Challenge:** each week one intriguing open question, with a public record of contributions, a closing date and a published summary of the strongest ideas. Insight, constructive criticism and useful negative results are recognized, not only agreement.
 
 **The Discovery Universe:** every announcement is a node on the map, joined to related records by the kind of relationship (derivation, formal mapping, analogy, program), never by undifferentiated lines (`links` in the register).
+
+**Model and assumptions:** every mathematical announcement lists its assumptions (what the model allows, what counts as reachable or equal, whether the result depends on the starting point) in an "assumptions" list, shown on the page under "Model and assumptions", and links its script. Each announcement ends with its evidence trail: status, related records, Navigator, publication.

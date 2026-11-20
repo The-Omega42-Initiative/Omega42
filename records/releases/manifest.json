@@ -289,6 +289,14 @@
    "level": "A",
    "level_source": "declared",
    "date": "2026-11-20"
+  },
+  {
+   "id": "CA-35",
+   "title": "CA-35: Epistemic precision (20 November 2026)",
+   "status": "RECORDED",
+   "level": "A",
+   "level_source": "declared",
+   "date": "2026-11-20"
   }
  ],
  "approval": {

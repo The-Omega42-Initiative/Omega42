@@ -4,13 +4,26 @@ Proposed by ChatGPT 6 (OpenAI), relayed by the Originator on 20 November 2026; i
 
 Any AI, researcher or programmer can check every number here without trusting Omega42: run `python3 records/integrity/iira_math.py` (standard library only; checked on Python 3.11, 3.12 and 3.13), or translate it into another language and compare.
 
-## Three verification levels
+## Three verification levels, recorded per module
 
-1. **Arithmetic:** can another system reproduce the numbers? (modular arithmetic, matrix products, probabilities, statistics)
-2. **Mathematics:** are the definitions, assumptions, equations and derivations valid? (invertibility, loop decomposition, convergence, independence assumptions)
-3. **Application:** does the method work on real information-integrity problems? (benchmarks, misinformation, source reconstruction)
+1. **Computational reproduction:** the worked examples and stated assertions reproduce (this script, in CI).
+2. **Mathematical review:** definitions, assumptions, derivations and edge cases examined by a reviewer independent of the author.
+3. **Application validation:** the method tested on real or controlled information-integrity problems against suitable baselines.
 
-A method can pass level 1 and fail level 2, or pass levels 1 and 2 and fail level 3. Every module below is at levels 1 and 2. Level 3 is untested for all of them.
+Passing a worked example does not promote a module to level 2. Each module carries its own status at each level:
+
+| Module | Level 1 | Level 2 | Level 3 | Open point for review |
+|---|---|---|---|---|
+| M1 Omega42 law | passes | pending | not applicable | none known; independently checkable |
+| M2 Robust anomaly | passes | pending | untested | needs a stated, suitable reference population |
+| M3 JSD | passes | pending | untested | how the distributions are built must be documented |
+| M4 Independent sources | passes | pending | untested | valid for the supplied weights; the groups need evidence, and N_eff is not a count of verified sources |
+| M5 Bayesian evidence | passes | pending | untested | needs defensible priors and likelihood ratios; dependence must be modeled, not assumed away |
+| M6 Claim drift | passes | pending | untested | the three dimensions are ordinal: equal spacing and equal weights are assumptions, so the distance is an exploratory index, not a validated measure |
+| M7 Propagation | passes | pending | untested | row-stochastic alone does not give equal shares; the example's W is doubly stochastic, irreducible and aperiodic |
+| M8 Provenance completeness | passes | pending | untested | applicable fields, evidence quality and missing data need definitions |
+| M9 Entropy | passes | pending | untested | uncertainty over proposed explanations, not uncertainty about truth |
+| M10 81-state map | passes | pending | untested | the 0 to 8 grading scales need an operational basis; that the loop carries meaning is the hypothesis H-IIE06 |
 
 ## The verification contract
 
@@ -26,7 +39,7 @@ Every mathematical record states: RESEARCH ID · MATHEMATICAL CLAIM · STATUS ·
 | M4 | Effective number of independent source groups | N_eff = 1 / Σ w_k² | one group: 1; five equal: 5; groups 6, 2, 2 of ten: 2.2727 | The groups themselves must be established from evidence |
 | M5 | Evidence in odds form | posterior odds = prior odds × Π LR_k, for conditionally independent evidence | LR 3 and 4 from even odds: 12 : 1, 0.9231; if the second only copies the first: 3 : 1, 0.75 | Multiplying dependent evidence overstates confidence |
 | M6 | Claim drift | c = (assertion, scope, causal strength) on 0..4; d Euclidean; D_path = Σ steps, D_direct = d(C₀, Cₙ) | C₀ = (1, 2, 0), C₃ = (4, 3, 4): √26 = 5.099; D_path ≥ D_direct always | The scale needs validation and annotator agreement |
-| M7 | Linear propagation | x(t + 1) = W x(t), W row-stochastic | x(1) = (0.5, 0, 0.5), x(2) = (0.25, 0.25, 0.5); this W is doubly stochastic, so x(t) → (⅓, ⅓, ⅓) | Real spread is nonlinear: thresholds, reinforcement, forgetting |
+| M7 | Linear propagation | x(t + 1) = W x(t), W row-stochastic | x(1) = (0.5, 0, 0.5), x(2) = (0.25, 0.25, 0.5); this W is doubly stochastic, irreducible and aperiodic, so x(t) → (⅓, ⅓, ⅓); row-stochastic alone would not give equal shares | Real spread is nonlinear: thresholds, reinforcement, forgetting |
 | M8 | Provenance completeness | P_c = verified applicable fields / applicable fields | 4 of 5: 0.8 | 80 % of fields verified, not 80 % authentic |
 | M9 | Uncertainty over explanations | H = −Σ p log₂ p | (0.5, 0.3, 0.2): 1.4855 bits | A measure of what is not known, not a truth score |
 | M10 | The 81-state information map (experimental) | two characteristics on nine levels → (a, b) ∈ (Z/9)²; report its loop | 1, 8 and 72 states on loops of length 1, 8 and 24; (2, 5) is on a 24-loop | Well defined; whether the loop carries meaning is H-IIE06, untested |

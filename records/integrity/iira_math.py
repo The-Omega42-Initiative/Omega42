@@ -5,8 +5,9 @@ example. Any AI or person can run it, translate it into another language and com
 (docs/IIRA_MATH_01.md gives the verification contract and the three verification levels). Proposed by ChatGPT 6 (OpenAI),
 relayed by the Originator, 20 November 2026; implemented and checked by the Navigator (claude-opus-5-5).
 
-The modules are established mathematics (verification levels 1 and 2). Whether they, or Omega42's own 81-state structure,
-help with real information-integrity problems is level 3 and is untested (H-IIE01 to H-IIE06).
+Verification levels (docs/IIRA_MATH_01.md): level 1, computational reproduction, passes for every module (this script);
+level 2, independent mathematical review of definitions, assumptions and edge cases, is pending for every module; level 3,
+application to real or controlled problems against baselines, is untested (H-IIE01 to H-IIE06).
 
   python3 records/integrity/iira_math.py            the verification report (every module, its inputs and its result)
   python3 records/integrity/iira_math.py --selftest the assertions only; exit status 0 when all hold
@@ -86,7 +87,9 @@ def path_and_direct(chain):
     return sum(dist(chain[i - 1], chain[i]) for i in range(1, len(chain))), dist(chain[0], chain[-1])
 
 
-# M7 -- linear propagation. x(t+1) = W x(t), W row-stochastic (W_ij >= 0, rows sum to 1).
+# M7 -- linear propagation. x(t+1) = W x(t), W row-stochastic (W_ij >= 0, rows sum to 1). Row-stochastic W keeps a
+# constant vector constant but does not by itself even out exposure; convergence to equal shares needs more: here W is
+# doubly stochastic (columns also sum to 1), irreducible and aperiodic.
 def step(W, x):
     return [sum(W[i][j] * x[j] for j in range(len(x))) for i in range(len(W))]
 
@@ -147,7 +150,7 @@ def run():
     chk('M7', 'x(1), x(2) from x(0) = (1, 0, 0)', (x1, x2), x1 == [0.5, 0, 0.5] and x2 == [0.25, 0.25, 0.5])
     x = [1, 0, 0]
     for _ in range(60): x = step(W, x)
-    chk('M7', 'x(60): this W is doubly stochastic, so exposure evens out to 1/3', [round(v, 6) for v in x], all(abs(v - 1 / 3) < 1e-9 for v in x))
+    chk('M7', 'x(60): this W is doubly stochastic, irreducible, aperiodic: evens out to 1/3', [round(v, 6) for v in x], all(abs(v - 1 / 3) < 1e-9 for v in x))
     chk('M8', 'P_c with 4 of 5 fields verified', provenance_completeness(4, 5), provenance_completeness(4, 5) == 0.8)
     h = entropy([0.5, 0.3, 0.2])
     chk('M9', 'H(0.5, 0.3, 0.2) in bits', round(h, 4), abs(h - 1.4854752972273344) < 1e-12)
@@ -161,7 +164,7 @@ def run():
 if __name__ == '__main__':
     R = run(); bad = [r for r in R if not r[3]]
     if '--selftest' not in sys.argv:
-        print('O42-IIRA-MATH-01 VERIFICATION REPORT (levels 1 and 2: arithmetic and mathematics; level 3, usefulness, is untested)')
+        print('O42-IIRA-MATH-01 VERIFICATION REPORT (level 1, computational reproduction; level 2 independent review pending; level 3 untested)')
         for m, label, value, ok in R: print('%-4s %-62s %-40s %s' % (m, label, value, 'PASS' if ok else 'FAIL'))
     print('IIRA MATH SELFTEST: %s (%d checks, %d failed)' % ('PASS' if not bad else 'FAIL', len(R), len(bad)))
     sys.exit(1 if bad else 0)

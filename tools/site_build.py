@@ -354,17 +354,18 @@ def frontier_html(reg):
     def card(d):
         status = ''.join('<span class="chip">%s</span>' % E(x) for x in d['status'])
         areas = ' · '.join(E(a) for a in d['areas'])
-        comp = ('<h3>What was computed</h3><p>%s <span class="note">(recompute: <code>python3 %s</code>)</span></p>' % (E(d['computed']), E(d['script']))) if d['computed'] else ''
+        comp = ('<h3>What was computed</h3><p>%s <span class="note">(recompute: <code>python3 %s</code>; <a href="https://github.com/{{REPO}}/blob/main/%s">the script</a>)</span></p>' % (E(d['computed']), E(d['script']), E(d['script']))) if d['computed'] else ''
+        comp += ('<details class="assume"><summary>Model and assumptions</summary><ul>%s</ul></details>' % ''.join('<li>%s</li>' % E(a) for a in d.get('assumptions', []))) if d.get('assumptions') else ''
         return ('<article class="entry" id="%s"><div class="row"><span class="chip gold">%s</span><span class="chip cls">%s</span><span class="chip">method: %s</span>%s<span class="note">%s · %s</span></div>'
                 '<h2>%s</h2><p class="lede"><b>What has emerged.</b> %s</p>%s'
                 '<h3>Why it matters</h3><p>%s</p><h3>The discovery itself</h3><p>%s</p>%s<h3>Follow the implications</h3><p>%s</p>'
                 '<h3>The frontier</h3><p>%s</p><blockquote class="fieldnote"><span class="k">Navigator\'s field note</span>%s</blockquote>'
                 '<h3>Join the discovery</h3><p>%s</p><div class="actions"><a class="act" href="submit.html"><b>Extend this idea</b><span>Contribute</span></a>'
                 '<a class="act" href="forum.html"><b>Challenge the reasoning</b><span>Critique</span></a><a class="act" href="speculate.html"><b>Connect it to another field</b><span>Explore</span></a></div>'
-                '<p class="note">Related: %s · Navigator: %s · %s</p></article>') % (
+                '<p class="note">Evidence trail: status %s · related %s · Navigator: %s · %s</p></article>') % (
             E(d['id']), E(d['id']), E(d['class']), E(d['method']), status, E(d['date']), areas, E(d['headline']), E(d['emerged']), series_svg(d['series']),
             E(d['significance']), E(d['model']), comp, E(d['implications']), E(d['frontier']), E(d['field_note']), E(d['challenge']),
-            E(', '.join(d['related'])), E(d['navigator']), E(d['publication']))
+            E(', '.join(d['status'])), E(', '.join(d['related'])), E(d['navigator']), E(d['publication']))
     lead = reg['entries'][0]
     more = ''.join('<a class="door c-violet" href="bulletin.html#%s"><span class="k">%s · %s</span><h3>%s</h3><span class="go">Read the announcement →</span></a>' % (
         E(d['id']), E(d['class']), E(' · '.join(d['areas'])), E(d['headline'])) for d in reg['entries'][1:])
