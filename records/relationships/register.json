@@ -57,6 +57,22 @@
    "kind": "structural correspondence",
    "grounds": "tested on the How Omega42 works page: the Moon supplies neither the nine nor the twenty-four",
    "status": "not found"
+  },
+  {
+   "id": "R-007",
+   "construct": "Units and 3-layer of the integers modulo 9",
+   "other": "The six-point path and the triangle of the nine-point figure (Enneagram)",
+   "kind": "mathematical equivalence",
+   "grounds": "records/frontier/df_005.py: the same partition of the nine positions; both symmetric under the Antipode",
+   "status": "computed"
+  },
+  {
+   "id": "R-008",
+   "construct": "The Omega42 loop as a diagram of recurrence",
+   "other": "The nine-point figure as a diagram of process (Gurdjieff)",
+   "kind": "analogy",
+   "grounds": "shared reading as figures of recurring process; different constructions (Fibonacci law and 1/7); no historical link known",
+   "status": "open"
   }
  ]
 }

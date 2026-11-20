@@ -284,3 +284,54 @@ fieldset.modes label { display: flex; gap: .5rem; align-items: baseline; flex-wr
 .notice { font-size: .95rem; color: #d9d5f0; max-width: 40rem; padding: .6rem .9rem; border-left: 3px solid #8fe9ff; background: rgba(143,233,255,.07); border-radius: 0 8px 8px 0; }
 .notice a { color: #8fe9ff; }
 .assume { border: 1px dashed var(--rule); border-radius: 10px; padding: .6rem .9rem; } .assume summary { cursor: pointer; font-family: var(--mono); font-size: .8rem; color: var(--violet); } .assume ul { margin: .5rem 0 0; }
+
+/* The emblem: the nine-point figure with the Omega42 loop (index, symbols.html) */
+.hero-side { align-self: start; display: grid; gap: 2rem; justify-items: center; }
+.emblem-link { display: grid; justify-items: center; gap: .6rem; text-decoration: none; color: inherit; border-radius: 1rem; padding: .5rem; }
+.emblem-link:focus-visible { outline: 2px solid #7fe3f5; outline-offset: 4px; }
+svg.emblem { width: min(100%, 21rem); height: auto; display: block; overflow: visible; }
+.emblem .rim { fill: none; stroke: rgba(185, 180, 214, .28); stroke-width: 1; }
+.emblem .tri { fill: none; stroke: #e8bd5c; stroke-opacity: .55; stroke-width: 1.4; }
+.emblem .hex { fill: none; stroke: #b9a6ff; stroke-opacity: .45; stroke-width: 1.4; }
+.emblem .lp { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: emb-draw 5s ease-in-out 1.6s forwards; }
+.emblem .lp.a { stroke: #7fe3f5; } .emblem .lp.b { stroke: #ff7ab8; }
+.emblem .lp-full { fill: none; stroke: none; }
+.emblem .walker { fill: #fff; opacity: 0; animation: emb-fade .8s ease 7s forwards; filter: drop-shadow(0 0 6px #8fe9ff); }
+.emblem .node circle { fill: #1a1048; stroke: rgba(185, 180, 214, .6); stroke-width: 1.2; }
+.emblem .node text { font-family: var(--mono); font-size: 13px; fill: #eceaf7; text-anchor: middle; }
+.emblem .node.tri-n circle { stroke: #e8bd5c; } .emblem .node.tri-n text { fill: #e8bd5c; font-weight: 600; }
+.emblem .node, .emblem .tri, .emblem .hex { opacity: 0; animation: emb-fade .9s ease forwards; }
+.emblem .node { animation-delay: calc(var(--i) * .09s); }
+.emblem .tri, .emblem .hex { animation-delay: 1s; }
+.emblem .halo { transform-origin: 180px 180px; animation: emb-breathe 9s ease-in-out 7s infinite; }
+.emblem-link:hover .halo { opacity: 1.6; }
+.emblem-cap { display: grid; gap: .15rem; text-align: center; font-family: var(--mono); font-size: .75rem; color: #b9b4d6; letter-spacing: .02em; }
+.emblem-cap b { font-family: var(--display); font-size: 1.15rem; font-weight: 500; color: #eceaf7; letter-spacing: 0; }
+.emblem-cap .go { color: #7fe3f5; margin-top: .25rem; }
+.emblem-link:hover .go { text-decoration: underline; }
+@keyframes emb-draw { to { stroke-dashoffset: 0; } }
+@keyframes emb-fade { to { opacity: 1; } }
+@keyframes emb-breathe { 0%, 100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.06); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .emblem .lp { animation: none; stroke-dashoffset: 0; }
+  .emblem .node, .emblem .tri, .emblem .hex { animation: none; opacity: 1; }
+  .emblem .walker { display: none; } .emblem .halo { animation: none; }
+}
+@media (max-width: 820px) { .hero-side { align-self: auto; } svg.emblem { width: min(100%, 16rem); } }
+svg.symfig { width: min(100%, 30rem); height: auto; display: block; margin: 0 auto; }
+.symfig .rim { fill: none; stroke: var(--rule); }
+.symfig .axis { stroke: var(--muted); stroke-dasharray: 4 6; opacity: 0; transition: opacity .4s; }
+.symfig .axis.on { opacity: .7; }
+.symfig .L { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; opacity: .12; transition: opacity .5s; }
+.symfig .L.on { opacity: 1; }
+.symfig .tri { stroke: var(--gold); } .symfig .hex { stroke: var(--violet); } .symfig .dbl { stroke: var(--lime); }
+.symfig .lpa { stroke: var(--cyan); } .symfig .lpb { stroke: var(--magenta); } .symfig .mir { stroke: var(--orange); stroke-dasharray: 5 5; }
+.symfig .node circle { fill: var(--raised); stroke: var(--rule); stroke-width: 1.4; transition: stroke .3s, fill .3s; }
+.symfig .node text { font-family: var(--mono); font-size: 15px; fill: var(--fg); text-anchor: middle; }
+.symfig .node.t circle { stroke: var(--gold); } .symfig .node.t text { fill: var(--gold); font-weight: 600; }
+.symfig .node.here circle { stroke: var(--cyan); stroke-width: 3; }
+.symfig .walker { fill: var(--cyan); }
+.sym-btns { display: flex; flex-wrap: wrap; gap: .5rem; }
+.sym-btns .btn[aria-pressed="true"] { border-color: var(--accent); background: var(--gold-soft); }
+.sym-cap { border-left: 3px solid var(--gold); padding: .25rem 0 .25rem 1rem; min-height: 9rem; }
+.sym-cap .kind { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }

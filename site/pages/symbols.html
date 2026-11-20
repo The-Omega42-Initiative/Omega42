@@ -1,0 +1,71 @@
+<!--{"title": "The symbols of Omega42", "desc": "The emblem on the home page: the traditional nine-point figure with the Omega42 loop drawn through it. What the two share exactly, where they differ, and what stays an open question.", "nav": "symbols", "scripts": ["symbols.js"]}-->
+<div class="wide">
+<section class="band">
+  <div class="stack">
+    <div class="eyebrow">The symbols of Omega42 · structure, recurrence and transformation</div>
+    <h1>Nine points. <em>One loop.</em></h1>
+    <p class="lede">The emblem on the home page sets the Omega42 loop inside the traditional nine-point figure known as the Enneagram. They come from different places and are built in different ways, yet some of what they share is exact. This page keeps the exact, the historical and the speculative apart, and lets you switch each layer on and off.</p>
+  </div>
+</section>
+
+<section class="grid2 sym" style="align-items:start">
+  <div class="stack">
+    <svg id="sym-fig" class="symfig" viewBox="0 0 400 400" role="img" aria-label="The nine-point figure: nine positions on a circle, 9 at the top, 1 to 8 clockwise, with switchable layers"></svg>
+    <p id="sym-step" class="mono note" aria-live="polite" style="text-align:center;min-height:1.4em"></p>
+  </div>
+  <div class="stack">
+    <div class="eyebrow">Switch a layer</div>
+    <div class="sym-btns" role="group" aria-label="Layers">
+      <button type="button" class="btn ghost" data-show="all">Emblem</button>
+      <button type="button" class="btn ghost" data-show="tri">Triangle 3 · 6 · 9</button>
+      <button type="button" class="btn ghost" data-show="hex">Six-point path</button>
+      <button type="button" class="btn ghost" data-show="loop">The Omega42 loop</button>
+      <button type="button" class="btn ghost" data-show="mirror">The mirror</button>
+      <button type="button" class="btn ghost" data-show="dbl">Doubling</button>
+    </div>
+    <div id="sym-cap" class="sym-cap" aria-live="polite"></div>
+    <div hidden>
+      <div data-cap="all"><span class="kind">The emblem</span><p>The nine-point figure (gold triangle, violet six-point path) with the Omega42 loop drawn through it: the first twelve steps in cyan, the next twelve in magenta. The two halves are mirror images, and that is exact.</p></div>
+      <div data-cap="tri"><span class="kind">Mathematical fact</span><p>The triangle joins 3, 6 and 9: the multiples of three, which Omega42 calls the 3-layer (9 is 0 when you count modulo nine). The loop lands on the triangle every fourth step and only then, because a Fibonacci number is divisible by 3 exactly when its index is divisible by 4.</p></div>
+      <div data-cap="hex"><span class="kind">Mathematical fact</span><p>The path 1 → 4 → 2 → 8 → 5 → 7 → 1 follows the repeating digits of 1/7 = 0.142857142857… Its six digits are exactly the numbers that have an inverse modulo nine, the units. The triangle and the path divide the nine positions the way Omega42's arithmetic divides them. The order of the path comes from 1/7, not from the Omega42 law.</p></div>
+      <div data-cap="loop"><span class="kind">Mathematical fact</span><p>The canonical loop: add the last two numbers and keep the remainder after dividing by nine. 9, 1, 1, 2, 3, 5, 8, 4, 3, 7, 1, 8, then 9, 8, 8, 7, 6, 4, 1, 5, 6, 2, 8, 1, and round again. Each digit and the digit twelve steps on add to 9 or to 0. Of the loop's 19 distinct chords, 4 are lines of the nine-point figure, all on the six-point path; whether that is more than chance has not been examined.</p></div>
+      <div data-cap="mirror"><span class="kind">Mathematical fact</span><p>The Antipode of a digit is 9 minus it: 1 and 8, 2 and 7, 3 and 6, 4 and 5. On the figure the Antipode is the left-right mirror, and the whole nine-point figure is symmetric under it. So is the loop: its second half is the mirror of its first, because twelve steps of the law turn every state into its negative (T¹² = −I modulo 9).</p></div>
+      <div data-cap="dbl"><span class="kind">Mathematical fact</span><p>Doubling from 1, modulo nine, gives 1, 2, 4, 8, 7, 5 and back to 1: the same six digits as the path of 1/7, visited in another order. In Omega42, doubling is the move that turns one voice of the law into the next (Companion 52.2).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Keeping things apart</div>
+  <h2>Shared, different, open</h2>
+  <div class="scroll"><table><thead><tr><th>Statement</th><th>Kind</th></tr></thead><tbody>
+    <tr><td>The six-point path visits exactly the units modulo nine; the triangle is the 3-layer</td><td>Mathematical fact (DF-005)</td></tr>
+    <tr><td>The figure and the loop are both symmetric under the Antipode, the left-right mirror</td><td>Mathematical fact (DF-004, DF-005)</td></tr>
+    <tr><td>The loop meets the triangle every fourth step</td><td>Mathematical fact</td></tr>
+    <tr><td>The path's order comes from 1/7; the loop's order comes from the Fibonacci law. They are different constructions</td><td>Mathematical fact</td></tr>
+    <tr><td>Both figures can be read as diagrams of recurring process and transformation</td><td>Constructed interpretation</td></tr>
+    <tr><td>The 1/7 of the path and the 1/7 of the Omega42 Aperture are the same number; no structure connecting them has been shown</td><td>Open: a coincidence of number until one is found</td></tr>
+    <tr><td>Omega42 has a historical link with the Enneagram</td><td>None known; Omega42 was not derived from it</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="grid2" style="align-items:start">
+  <div class="stack">
+    <div class="eyebrow">The Enneagram</div>
+    <h2>A diagram of process</h2>
+    <p>G. I. Gurdjieff taught the nine-pointed figure to students in Russia from around 1916, as a figure of process and transformation: the triangle and the six-point path drew his laws of three and of seven. P. D. Ouspensky recorded the teaching in <i>In Search of the Miraculous</i>, published in 1949. The nine personality types associated with the figure today are a later, separate development, begun by Oscar Ichazo in the 1960s and elaborated by Claudio Naranjo from the 1970s. Omega42 uses the geometry of the figure as a point of comparison. It is not based on Gurdjieff's teaching and does not endorse the personality system.</p>
+  </div>
+  <div class="stack">
+    <div class="eyebrow">The Omega42 structure</div>
+    <h2>Eighty-one states, one law</h2>
+    <p>Every pair of digits (a, b) moves to (b, a + b), keeping the remainder after dividing by nine. The 81 pairs fall into five loops: one still point, one loop of 8, and three of 24. The emblem draws the first digit of the canonical 24-step loop; the full world is the <a href="explore.html">81 states</a> and what a question opens in it.</p>
+  </div>
+</section>
+
+<section class="feature-q stack">
+  <div class="eyebrow">The open question</div>
+  <h2>Do different mathematics of recurrence share common principles?</h2>
+  <p>The nine-point figure and the Omega42 loop divide the nine positions in the same way and share the same mirror, although one is built from 1/7 and the other from the Fibonacci law. Is that because any figure on nine positions that respects multiplication modulo nine must do so, or does it point to something more particular? Every relationship found is entered in the relationship register by kind, from analogy to derivation (Companion 234.16), and the computation is open to anyone: <code>python3 records/frontier/df_005.py</code>.</p>
+  <div class="ctas"><a class="btn" href="index.html#ask-q">Ask Omega42 about it</a><a class="btn ghost" href="bulletin.html">The Discovery Bulletin</a><a class="btn ghost" href="speculate.html">Speculative Foundations</a></div>
+</section>
+</div>

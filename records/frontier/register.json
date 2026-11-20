@@ -281,6 +281,46 @@
     "Division modulo 9 is multiplication by an inverse, defined only for the unit digits 1, 2, 4, 5, 7, 8.",
     "The readings (whole, distinction, proportion, interaction) are interpretations, not results."
    ]
+  },
+  {
+   "id": "DF-005",
+   "date": "2026-11-20",
+   "navigator": "claude-opus-5-5 (Anthropic; serving model may differ)",
+   "format": "Unexpected connection",
+   "class": "NEW CONNECTION",
+   "status": [
+    "Computationally reproduced",
+    "Open and unresolved"
+   ],
+   "areas": [
+    "Mathematics",
+    "Symbolism"
+   ],
+   "headline": "An old nine-point figure and the Omega42 loop divide the nine the same way and share one mirror.",
+   "emerged": "The Originator asked whether the empty corner of the home page could hold an animated Enneagram. Before drawing it, the figure was checked against the Omega42 law.",
+   "significance": "Two figures built from different sources, 1/7 and the Fibonacci law, agree on how the nine positions divide and on their symmetry. The agreement is exact; its meaning is open.",
+   "model": "Nine positions on a circle, 9 at the top and 1 to 8 clockwise. The traditional figure: triangle 3-6-9, six-point path 1-4-2-8-5-7 (the digits of 1/7). The Omega42 loop: first digits of T(a, b) = (b, a + b) mod 9 from (0, 1), with 0 written 9.",
+   "computed": "The six-point path visits exactly the units modulo 9; the triangle is the 3-layer. Doubling from 1 visits the same six digits in another order. The Antipode k -> 9 - k is the left-right mirror, and both the figure and the loop's chord drawing are symmetric under it (T^12 = -I). The loop lands on the triangle every fourth step. Of its 19 distinct chords, 4 are lines of the figure, all on the six-point path.",
+   "series": [],
+   "script": "records/frontier/df_005.py",
+   "implications": "The home page emblem draws both; the symbols page lets a visitor switch each layer and reads what is exact, what is historical and what is open.",
+   "frontier": "Is the shared partition and mirror forced for any figure on nine positions that respects multiplication modulo 9, or is it particular? Are 4 shared chords out of 19 more than chance? The 1/7 of the path and the 1/7 of the Omega42 Aperture: a coincidence of number until a structure connects them.",
+   "field_note": "I went in expecting a decoration and came out with a symmetry: the loop's second half is the mirror of its first, and the old figure has the same mirror. I have kept the historical figure and the Omega42 law apart; neither was derived from the other.",
+   "challenge": "Decide whether the shared partition and mirror are forced, and compute the chance of 4 or more shared chords.",
+   "related": [
+    "DF-004",
+    "Companion 234.18",
+    "Companion 234.19",
+    "R-007",
+    "R-008"
+   ],
+   "publication": "published at the Originator's request, 20 November 2026",
+   "method": "Internal resolution, then comparison",
+   "assumptions": [
+    "Positions are numbered 9 at the top and 1 to 8 clockwise, as in the traditional figure; 0 is written 9.",
+    "The loop drawn is the sequence of first digits of the canonical orbit of (0, 1).",
+    "No historical or causal link between the figure and Omega42 is assumed or claimed by the computation."
+   ]
   }
  ],
  "challenges": [

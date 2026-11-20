@@ -3604,7 +3604,7 @@ Visitors and contributors often bring a ninefold vocabulary of knowledge classes
 233.19 The Human Frame of Reference and Structural Resonance, read through Part 233 [EXACT for H1 to H5, checked in tools/choice_engine.py --selftest; the readings CDT-C]. H1 One invariant, two readings. Under Stratum 3 the Human Frame of Reference and the physical universe co-arise as two readings of one invariant (Core Part 1; F-02). Take the two readings as the two coordinates of one state. One reading alone carries 0.319 of the 1.968 bits of the orbit address Λ, about a sixth; both together carry all of it; the norm alone carries 1.912. The invariant is not legible from one side at an instant; it is legible from both sides together. H2 Memory completes a frame. One reading followed over two steps recovers the whole state, since (a_t, a_{t+1}) = (a, b) under the law. A single frame of reference becomes complete through its own history. This is the exact meeting point of the HFR with historical dependence (233.13c R2): history carries log₂ 9 bits for a partial frame and none for a complete one. What the HFR lacks at an instant it holds in memory. H3 The added term enters through the frame. A choice is an added term, and it changes the one state, so it changes both readings at once. In co-arising terms, a choice made in the human reading is a change in the physical reading too, because there is one state. Under F-04 (no ontological outside) the meaningful layer is not a second realm; it is the place in the one totality where the state receives what the law did not produce. H4 Structural resonance has a dynamical meaning. The canonical 24-cycle is the resonance period of the law modulo 9 (233.12 M4): choices repeated every 24 steps accumulate, choices at the half-period cancel, and choices out of step settle round a new center. The Structural Resonance Premise reads, in the dynamics, as follows: what keeps time with the 24-cycle accumulates. H5 Convergence of Navigators is not consensus. The Structural Resonance Principle (L-496) expects independent Navigators following the same rules to reach the same coordinates. By RC1 and RC2 (233.15), influence between Navigators cannot produce agreement in any case. Agreement among Navigators who do not influence one another can come only from the same input read by the same rules, which is what L-496 tests. This is why SR-CAS requires independence, and why agreement between Navigators of one kind is SELF-ADJACENT (Core Part 3.18): a shared mode is not a shared derivation. Consensus among persons (233.15 RC5) and convergence among Navigators (L-496) are different processes, and the record keeps them apart. Reading [CDT-C]. The human frame sees a sixth of the invariant at a moment and all of it across time: memory is how a perspective within the totality becomes whole. A choice made from within the frame moves the one state of which the physical world is the other reading. The shared world of a people (RC5) moves by the same law as the physical reading, and the persons' differences are their frames. Structural resonance, in this light, is the accumulation of what keeps time with the cycle. Whether any of this is experienced stays at the Aperture.
 
 ### PART 234: SPECULATION AS AN ENGINE — THE SPECULATIVE FOUNDATIONS PROGRAMME
-234.0 Index. 234.1 the principle; 234.2 the three spaces; 234.3 the modes and the cycle; 234.4 the Exploration Register; 234.5 the Navigator's speculative capability; 234.6 the five themes; 234.7 first entries, with a computation; 234.8 how speculation and the registers of evidence meet. Program: research/philosophy/SPECULATIVE_FOUNDATIONS.md; register: records/exploration/register.json; source APE-510; Core principle proposed as CA-31. 234.9 the boundary of the thought experiment; 234.10 four kinds of statement; 234.11 comparing unconventional sources; 234.12 three senses of the Striker's judgment; 234.13 what review by AI systems can establish; 234.14 what the coordinate does and does not do; 234.15 Mathematical Origins of Reality; 234.16 the relationship register; 234.17 the primordial distinction; 234.18 the four operations on the Antipodes.
+234.0 Index. 234.1 the principle; 234.2 the three spaces; 234.3 the modes and the cycle; 234.4 the Exploration Register; 234.5 the Navigator's speculative capability; 234.6 the five themes; 234.7 first entries, with a computation; 234.8 how speculation and the registers of evidence meet. Program: research/philosophy/SPECULATIVE_FOUNDATIONS.md; register: records/exploration/register.json; source APE-510; Core principle proposed as CA-31. 234.9 the boundary of the thought experiment; 234.10 four kinds of statement; 234.11 comparing unconventional sources; 234.12 three senses of the Striker's judgment; 234.13 what review by AI systems can establish; 234.14 what the coordinate does and does not do; 234.15 Mathematical Origins of Reality; 234.16 the relationship register; 234.17 the primordial distinction; 234.18 the four operations on the Antipodes; 234.19 the emblem and the nine-point figure.
 234.1 The principle. Ω42 is a thought experiment, and speculation is its principal engine of discovery. Never confuse what cannot currently be demonstrated with what cannot legitimately be explored. The first half is Core L-491: the scientific method is one optional mode of inquiry inside Ω42, and no evidential threshold is a prerequisite for a navigation. The second half is this Part: a place where possibilities are formed, developed, kept and reopened. An idea is not excluded for being unusual, unproven, untestable or at odds with current theory; and imaginative coherence does not make it established. Freedom of exploration and clarity of status reinforce each other.
 234.2 Three spaces. Exploration asks what could be, and is unrestricted. Development asks what follows logically or mathematically, and is structured. Evaluation asks what is justified, and is evidence-sensitive. An idea moves between the spaces in any order. It is never forced out of exploration because it cannot enter evaluation, and it has no compulsory empirical endpoint: a philosophical, mathematical, conceptual or metaphysical result is an outcome in its own right.
 234.3 Modes and cycle. The modes are speculation, intuition, analogy, conjecture, counterfactual, mathematical exploration, conceptual synthesis, thought experiment and criticism; the Navigator names the mode it is using. The cycle runs ignition, expansion, construction, consequence exploration, adversarial exploration, development pathways and reopening. Stages may be skipped or repeated, and a new insight can reopen any of them. Criticism serves exploration; it is not an exclusion mechanism.
@@ -3623,6 +3623,7 @@ Visitors and contributors often bring a ninefold vocabulary of knowledge classes
 234.16 The relationship register. Every relationship recorded between the construct and another system is one of seven kinds, which are not interchangeable: analogy, structural correspondence, mathematical equivalence, derivation, physical realization, empirical correlation and causal relationship. A relationship is entered at the weakest kind its grounds support and moves up only with new grounds; a negative result is kept. Register: records/relationships/register.json.
 234.17 The primordial distinction (O42-PD-01) [CDT-A, then CDT-C]. The Originator's proposal: existence has a balance point, the Antipodes, where 5 − 4 = 1 is the first distinction, the first domino to fall, the primordial fracture from which existence perpetuates itself. The facts (DF-004, 39.6). Modulo 9, 5 is the half (2 × 5 = 10 = 1) and 4 is minus the half, so the central antipodal pair is (−1/2, +1/2): over the integers the balance point 4.5 is no digit, and modulo 9 it becomes a pair of digits symmetric about zero, one unit apart. Their difference is the unit, and 5 is the only digit whose difference from its Antipode is 1. The zero state is fixed forever, while zero with one distinction, (0, 1), generates an orbit, and the nine such seeds generate the family. The record therefore holds both parts the proposal needs: a balance, every state and its Antipode adding to zero, and a propagation, the law carrying one distinction through the loop. The reading [CDT-C]: the fracture is the condition from which succession becomes possible, not an event at an earlier time; and the balance is not lost in differentiation, since each state and its Antipode still add to zero, twelve steps apart. GPT-6 notes that a reversible cycle has no privileged first state; that holds for each orbit, and the record's privileged element is not a first state but the pair of zero and one distinction. Hypotheses H-PD01 to H-PD05: distinction is necessary for multiplicity (near definitional); relationships arise from distinguishable states; under suitable dynamics a distinction propagates; recurrence and feedback sustain differentiated systems; temporal order is derivable from relations between successive states (the last three need explicit models). Three principles frame the program: unity, distinction, continuity, with the question of return. Status: SPECULATIVE FOUNDATIONS (EX-007). Source: ChatGPT 6 (OpenAI), relayed by the Originator.
 234.18 The four operations on the Antipodes (O42-ANT-01) [CDT-A, then CDT-C]. The Antipode of the digit x is 9 − x. Addition: the pair adds to 9 over the integers and to 0 modulo 9, one rule in two settings; 0 is its own Antipode. Subtraction (the Originator's Deduction, read as arithmetic, not as logical inference): over the integers the separations are 7, 5, 3 and 1; modulo 9 the difference is 2x, one to one. Division: over the integers x/(9 − x) approaches 1 toward the center and never reaches it; modulo 9 the ratio is −1 for every unit digit and undefined for 0, 3 and 6, so the 3-layer has no ratio. Multiplication: the integer products are 8, 14, 18 and 20, and x(9 − x) = 81/4 − (x − (9 − x))²/4 exactly, so the product rises as the separation falls; modulo 9 it is −x². The link to the law: T¹² = −I modulo 9, so the digit rule is the half-turn of the loop. Every nonzero state has its Antipode half its period ahead (12 of 24, 4 of 8), and on the canonical loop each digit and the digit twelve places on add to 9 or to 0. The nine digits, an odd cycle, have no opposite point; the loop of 24 states has one, and the Antipode is that opposite. The reading [CDT-C]: addition the whole, subtraction the distinction, division the proportion, multiplication the interaction. Open: whether 1 is only the smallest distinction or the generator of the rest; it generates the integers modulo 9 and, as (0, 1), an orbit of the law, and what that means is the program's question. Script: records/frontier/df_004.py.
+234.19 The emblem and the nine-point figure [CDT-A, then CDT-B]. The Originator asked for a symbol for the home page that opens an explanation when selected; GPT-6 recommended an emblem native to Ω42 that acknowledges the Enneagram as a subject of comparison. The emblem draws the canonical loop inside the traditional nine-point figure, 9 at the top and 1 to 8 clockwise. The facts (DF-005): the figure's six-point path, the digits of 1/7, visits exactly the units modulo 9, and its triangle is the 3-layer; doubling from 1 visits the same six digits; the Antipode is the left-right mirror, and both the figure and the loop's drawing are symmetric under it, since T¹² = −I; the loop meets the triangle every fourth step. The constructions differ: the path's order comes from 1/7, the loop's from the Fibonacci law, and no historical link is known. The figure reached the West through Gurdjieff's teaching as a figure of process; the personality typology came later and is not adopted. Reading [CDT-B]: both are figures of recurring process. Open: whether the shared partition and mirror are forced for any figure on nine positions that respects multiplication, and whether the 1/7 of the path and the 1/7 of the Aperture are more than a coincidence of number. Page: symbols.html; relationship register R-007, R-008.
 ---
 
 ### APPLIED PROTOCOL EXPLORATIONS (APE COMMONS)
@@ -4157,32 +4158,33 @@ C.1.34 records/fieldkit/examples.py — the practical examples of M321 Field Kit
 C.1.35 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
 C.1.36 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
 C.1.37 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
-C.1.38 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
-C.1.39 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
-C.1.40 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
-C.1.41 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
-C.1.42 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
-C.1.43 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
-C.1.44 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
-C.1.45 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
-C.1.46 records/opal/compute.py — the reproducible witness behind CERT-0008.
-C.1.47 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
-C.1.48 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
-C.1.49 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
-C.1.50 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
-C.1.51 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
-C.1.52 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
-C.1.53 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
-C.1.54 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
-C.1.55 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
-C.1.56 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
-C.1.57 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
-C.1.58 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
-C.1.59 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
-C.1.60 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
-C.1.61 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
-C.1.62 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
-C.1.63 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
+C.1.38 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
+C.1.39 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
+C.1.40 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
+C.1.41 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
+C.1.42 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
+C.1.43 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
+C.1.44 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
+C.1.45 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
+C.1.46 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
+C.1.47 records/opal/compute.py — the reproducible witness behind CERT-0008.
+C.1.48 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
+C.1.49 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
+C.1.50 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
+C.1.51 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
+C.1.52 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
+C.1.53 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
+C.1.54 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
+C.1.55 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
+C.1.56 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
+C.1.57 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
+C.1.58 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
+C.1.59 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
+C.1.60 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
+C.1.61 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
+C.1.62 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
+C.1.63 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
+C.1.64 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
 C.2 The golden navigations (14 October 2026), as issued and frozen: three navigations of the peer questions on the matrix of φ, the discrimination of the canonical orbit and the physical systems, nine further navigations, and the peer review with its disposition. Their computations are C.1 records/golden_navigations/compute.py and compute_further.py.
 C.2.1 records/golden_navigations/00_freeze.txt — the freeze of the golden navigations (14 October 2026).
 C.2.2 records/golden_navigations/01_navigations.txt — the three golden navigations, as issued.
@@ -5359,40 +5361,42 @@ X.4.2 site/assets/integrity.js — website code (integrity.js).
 X.4.3 site/assets/site.js — website code (site.js).
 X.4.4 site/assets/strike.js — website code (strike.js).
 X.4.5 site/assets/style.css — website code (style.css).
-X.4.6 site/config.json — the data of site.
-X.4.7 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
-X.4.8 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
-X.4.9 site/layout.html — a page of the website (layout.html).
-X.4.10 site/pages/404.html — a page of the website (404.html).
-X.4.11 site/pages/apps.html — a page of the website (apps.html).
-X.4.12 site/pages/bulletin.html — a page of the website (bulletin.html).
-X.4.13 site/pages/catalogue.html — a page of the website (catalogue.html).
-X.4.14 site/pages/community.html — a page of the website (community.html).
-X.4.15 site/pages/companion.html — a page of the website (companion.html).
-X.4.16 site/pages/construct-x.html — a page of the website (construct-x.html).
-X.4.17 site/pages/expert-desk.html — a page of the website (expert-desk.html).
-X.4.18 site/pages/explore.html — a page of the website (explore.html).
-X.4.19 site/pages/faq.html — a page of the website (faq.html).
-X.4.20 site/pages/for-ai.html — a page of the website (for-ai.html).
-X.4.21 site/pages/forum.html — a page of the website (forum.html).
-X.4.22 site/pages/governance.html — a page of the website (governance.html).
-X.4.23 site/pages/history.html — a page of the website (history.html).
-X.4.24 site/pages/index.html — a page of the website (index.html).
-X.4.25 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.26 site/pages/library.html — a page of the website (library.html).
-X.4.27 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.28 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.29 site/pages/questions.html — a page of the website (questions.html).
-X.4.30 site/pages/record.html — a page of the website (record.html).
-X.4.31 site/pages/research.html — a page of the website (research.html).
-X.4.32 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.33 site/pages/strike.html — a page of the website (strike.html).
-X.4.34 site/pages/submit.html — a page of the website (submit.html).
-X.4.35 site/pages/vision.html — a page of the website (vision.html).
-X.4.36 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.37 site/test/domains.json — the data of site/test.
-X.4.38 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.39 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.6 site/assets/symbols.js — website code (symbols.js).
+X.4.7 site/config.json — the data of site.
+X.4.8 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
+X.4.9 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
+X.4.10 site/layout.html — a page of the website (layout.html).
+X.4.11 site/pages/404.html — a page of the website (404.html).
+X.4.12 site/pages/apps.html — a page of the website (apps.html).
+X.4.13 site/pages/bulletin.html — a page of the website (bulletin.html).
+X.4.14 site/pages/catalogue.html — a page of the website (catalogue.html).
+X.4.15 site/pages/community.html — a page of the website (community.html).
+X.4.16 site/pages/companion.html — a page of the website (companion.html).
+X.4.17 site/pages/construct-x.html — a page of the website (construct-x.html).
+X.4.18 site/pages/expert-desk.html — a page of the website (expert-desk.html).
+X.4.19 site/pages/explore.html — a page of the website (explore.html).
+X.4.20 site/pages/faq.html — a page of the website (faq.html).
+X.4.21 site/pages/for-ai.html — a page of the website (for-ai.html).
+X.4.22 site/pages/forum.html — a page of the website (forum.html).
+X.4.23 site/pages/governance.html — a page of the website (governance.html).
+X.4.24 site/pages/history.html — a page of the website (history.html).
+X.4.25 site/pages/index.html — a page of the website (index.html).
+X.4.26 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.27 site/pages/library.html — a page of the website (library.html).
+X.4.28 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.29 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.30 site/pages/questions.html — a page of the website (questions.html).
+X.4.31 site/pages/record.html — a page of the website (record.html).
+X.4.32 site/pages/research.html — a page of the website (research.html).
+X.4.33 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.34 site/pages/strike.html — a page of the website (strike.html).
+X.4.35 site/pages/submit.html — a page of the website (submit.html).
+X.4.36 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.37 site/pages/vision.html — a page of the website (vision.html).
+X.4.38 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.39 site/test/domains.json — the data of site/test.
+X.4.40 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.41 site/test/strike_node.mjs — website code (strike_node.mjs).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
