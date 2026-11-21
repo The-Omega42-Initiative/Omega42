@@ -148,6 +148,28 @@ and the state count is
 ]
 Reduction (R_{n+1}\to R_n) commutes with (T), because the transition matrix has integer entries. The orbit classification also gives the lift pattern: the zero orbit lifts to zero plus one 8-cycle; every nonzero orbit lifts to three cycles, each with three times the period. One canonical Ω42 depth step is two generic exponent steps.
 
+## 5A. Canonical-depth census examples
+
+Substitute (n=2d) into the generic census:
+
+| Canonical depth (d) | Modulus | States | Orbits | Period distribution |
+|---:|---:|---:|---:|---|
+| 1 | 9 | 81 | 5 | (1\times1, 1\times8, 3\times24) |
+| 2 | 81 | 6,561 | 41 | (1\times1, 1\times8, 3\times24, 9\times72, 27\times216) |
+| 3 | 729 | 531,441 | 365 | (1\times1, 1\times8, 3\times24, 9\times72, 27\times216, 81\times648, 243\times1944) |
+
+The number before each multiplication sign is the number of orbits of that period. The longest-period orbit counts are therefore 3, 27 and 243 at depths 1, 2 and 3 respectively. K2 selects the one among these that contains the frozen seed; it does not imply there is only one longest-period orbit.
+
+### Worked invariant calculation at depth 2
+
+At (d=2), (n=4), modulus (81):
+
+- Seed (x=(2,5)): (r=0), (Q=4+10-25=-11), so (c=-11\pmod{81}=70\sim11). Its period is (8\cdot3^3=216).
+- Scaled state (3x=(6,15)): (r=1), (Q=-99), so (Q/9=-11\pmod{27}=16\sim11). Its period is (8\cdot3^2=72).
+- Zero state ((0,0)): separate fixed orbit of period 1.
+
+These illustrate why the valuation component matters: the two nonzero states share the same reduced norm representative up to sign, but their valuation depths and periods differ.
+
 ## 6. K1/K2 criteria: precise interpretation
 
 ### K1 — first-coordinate coverage
