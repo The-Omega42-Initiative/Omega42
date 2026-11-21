@@ -1,0 +1,39 @@
+name: Ω42 K4 cross-language verification
+on:
+  pull_request:
+    paths:
+      - "site/omega42-engine.mjs"
+      - "site/omega42-research.mjs"
+      - "tools/omega42_k4_reference.py"
+      - "tests/omega42-*"
+      - "tests/test_omega42_k4_reference.py"
+      - "tests/fixtures/omega42-k4-vectors.json"
+      - ".github/workflows/omega42-k4-cross-language.yml"
+  push:
+    branches:
+      - navigator-performance-kernel-v1
+    paths:
+      - "site/omega42-engine.mjs"
+      - "site/omega42-research.mjs"
+      - "tools/omega42_k4_reference.py"
+      - "tests/omega42-*"
+      - "tests/test_omega42_k4_reference.py"
+      - "tests/fixtures/omega42-k4-vectors.json"
+      - ".github/workflows/omega42-k4-cross-language.yml"
+jobs:
+  cross-language:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python reference tests
+        run: python tests/test_omega42_k4_reference.py
+      - name: JavaScript K2, K3 and K4 tests
+        run: node --test tests/omega42-engine.test.mjs tests/omega42-research.test.mjs tests/omega42-k4-cross-language.test.mjs
+      - name: Emit verification record
+        run: python tools/omega42_k4_verify.py

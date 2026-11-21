@@ -1,0 +1,23 @@
+name: Omega42 K5 Proof Obligation Audit
+on:
+  push:
+    branches: [navigator-performance-kernel-v1]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  proof-obligation-register:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run K5 audit metadata tests
+        run: python tests/test_omega42_k5_audit.py
+      - name: Run exhaustive finite tower recomputation tests
+        run: python tests/test_omega42_k5_finite_recompute.py
+      - name: Emit proof-obligation audit
+        run: python tools/omega42_k5_audit.py
+      - name: Emit finite recomputation record
+        run: python tools/omega42_k5_finite_recompute.py

@@ -1,0 +1,30 @@
+{
+  "module": "K7",
+  "name": "Knowledge and Discovery Network",
+  "status": "proposal",
+  "files": [
+    "site/omega42-knowledge-k7.mjs",
+    "tests/omega42-knowledge-k7.test.mjs",
+    "schemas/knowledge-network-k7.schema.json",
+    "proposals/navigator-performance-v1/K7_KNOWLEDGE_DISCOVERY_NETWORK.md",
+    "proposals/navigator-performance-v1/WEBSITE_DIRECT_NAVIGATOR_ACCESS.md"
+  ],
+  "capabilities": [
+    "typed-knowledge-network",
+    "dependency-validation",
+    "discovery-paths",
+    "explicit-contradiction-register",
+    "K3-normalization"
+  ],
+  "limits": [
+    "not-a-theorem-prover",
+    "not-semantic-contradiction-resolution",
+    "not-source-authentication",
+    "not-deployed"
+  ],
+  "compatibility": {
+    "canonicalProtocolModified": false,
+    "k6RegisterIntegration": false,
+    "websiteRuntimeIntegration": false
+  }
+}\n

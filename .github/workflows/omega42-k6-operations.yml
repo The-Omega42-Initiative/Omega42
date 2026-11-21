@@ -1,0 +1,17 @@
+name: Omega42 K6 Navigator Operations
+on:
+  push:
+    branches: [navigator-performance-kernel-v1]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  navigator-operations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run K6 operations tests
+        run: node --test tests/navigator-operations-k6.test.mjs

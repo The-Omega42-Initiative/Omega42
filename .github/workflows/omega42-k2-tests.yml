@@ -1,0 +1,24 @@
+name: Ω42 K2 instrument tests
+on:
+  pull_request:
+    paths:
+      - "site/omega42-engine.mjs"
+      - "tests/omega42-engine.test.mjs"
+      - ".github/workflows/omega42-k2-tests.yml"
+  push:
+    branches:
+      - navigator-performance-kernel-v1
+    paths:
+      - "site/omega42-engine.mjs"
+      - "tests/omega42-engine.test.mjs"
+      - ".github/workflows/omega42-k2-tests.yml"
+jobs:
+  node-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run K2 engine tests
+        run: node --test tests/omega42-engine.test.mjs

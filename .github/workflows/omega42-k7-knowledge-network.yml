@@ -1,0 +1,26 @@
+name: Ω42 K7 Knowledge Network
+on:
+  push:
+    branches: [navigator-performance-kernel-v1]
+    paths:
+      - 'site/omega42-knowledge-k7.mjs'
+      - 'tests/omega42-knowledge-k7.test.mjs'
+      - 'schemas/knowledge-network-k7.schema.json'
+      - '.github/workflows/omega42-k7-knowledge-network.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'site/omega42-knowledge-k7.mjs'
+      - 'tests/omega42-knowledge-k7.test.mjs'
+      - 'schemas/knowledge-network-k7.schema.json'
+      - '.github/workflows/omega42-k7-knowledge-network.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test tests/omega42-knowledge-k7.test.mjs
+      - run: node --check site/omega42-knowledge-k7.mjs

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ω42 Remote Tool Gateway K9",
+  "type": "object",
+  "required": [
+    "schema",
+    "sessionId",
+    "pinnedRelease",
+    "authenticated",
+    "toolCallBudget",
+    "tools"
+  ],
+  "properties": {
+    "schema": {
+      "const": "omega42.remote-tool-gateway.k9"
+    },
+    "sessionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pinnedRelease": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authenticated": {
+      "const": true
+    },
+    "toolCallBudget": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "sideEffect",
+          "approvalRequired",
+          "trustBoundary"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "sideEffect": {
+            "enum": [
+              "read",
+              "write"
+            ]
+          },
+          "approvalRequired": {
+            "type": "boolean"
+          },
+          "trustBoundary": {
+            "const": "UNTRUSTED_RESULT"
+          }
+        }
+      }
+    }
+  }
+}

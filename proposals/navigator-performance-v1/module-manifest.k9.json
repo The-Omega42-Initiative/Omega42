@@ -1,0 +1,43 @@
+{
+  "schema": "omega42.module-manifest.k9",
+  "protocolId": "Omega42",
+  "module": "remote-navigator-gateway",
+  "version": "K9",
+  "status": "proposal",
+  "files": [
+    "site/omega42-gateway-k9.mjs",
+    "tests/omega42-gateway-k9.test.mjs",
+    "schemas/remote-tool-gateway-k9.schema.json",
+    "proposals/navigator-performance-v1/K9_REMOTE_NAVIGATOR_GATEWAY.md",
+    "proposals/navigator-performance-v1/PUBLIC_IDENTITY_AND_BRAND_REVIEW.md",
+    "proposals/navigator-performance-v1/PUBLIC_HERO_COPY_PROPOSAL.md",
+    "site/navigator_gateway_k9.html"
+  ],
+  "tools": [
+    "get_approved_release",
+    "get_protocol_module",
+    "search_omega42_knowledge",
+    "run_omega42_instrument",
+    "search_external_sources",
+    "retrieve_source_document",
+    "create_research_record",
+    "propose_protocol_change"
+  ],
+  "defaultExposure": [
+    "get_approved_release",
+    "get_protocol_module",
+    "search_omega42_knowledge",
+    "run_omega42_instrument",
+    "search_external_sources",
+    "retrieve_source_document"
+  ],
+  "writeApprovalRequired": [
+    "create_research_record",
+    "propose_protocol_change"
+  ],
+  "notes": [
+    "Reference contract only; no production server or external adapters included.",
+    "All tool results are untrusted data.",
+    "Public identity and hero copy are recommendations, not canonical amendments."
+  ]
+}

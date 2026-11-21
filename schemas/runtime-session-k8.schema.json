@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Omega42 Runtime Session K8",
+  "type": "object",
+  "required": [
+    "sessionId",
+    "protocolId",
+    "release",
+    "documentDigests",
+    "requiredDocuments",
+    "model",
+    "capabilities",
+    "policy",
+    "executionStatus"
+  ],
+  "properties": {
+    "sessionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocolId": {
+      "const": "Omega42"
+    },
+    "release": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifestDigest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "documentDigests": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-fA-F0-9]{64}$"
+      }
+    },
+    "requiredDocuments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy": {
+      "const": "release-pinned"
+    },
+    "executionStatus": {
+      "enum": [
+        "INITIALIZED",
+        "READY",
+        "BLOCKED"
+      ]
+    },
+    "verifiedDocuments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}\n

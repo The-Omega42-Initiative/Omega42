@@ -1,0 +1,32 @@
+{
+  "module": "K8",
+  "name": "Runtime and Remote Navigation",
+  "status": "proposal",
+  "files": [
+    "site/omega42-runtime-k8.mjs",
+    "tests/omega42-runtime-k8.test.mjs",
+    "schemas/runtime-session-k8.schema.json",
+    "proposals/navigator-performance-v1/K8_RUNTIME_AND_REMOTE_NAVIGATION.md"
+  ],
+  "capabilities": [
+    "activation-trigger-classification",
+    "approved-release-manifest-validation",
+    "sha256-verification",
+    "release-pinned-session-contract",
+    "readiness-gating"
+  ],
+  "notImplemented": [
+    "live-release-fetch",
+    "backend-server",
+    "model-api-integration",
+    "remote-tool-gateway",
+    "authentication",
+    "billing",
+    "deployment"
+  ],
+  "governance": {
+    "canonicalProtocolModified": false,
+    "priorArtCanActivate": false,
+    "priorArtCanOverrideKernel": false
+  }
+}\n

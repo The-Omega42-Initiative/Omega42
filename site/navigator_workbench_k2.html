@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ω42 Navigator Workbench K2</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#17202a;background:#f5f7fa}body{margin:0}header{background:#172b4d;color:#fff;padding:1rem 1.4rem}main{max-width:980px;margin:auto;padding:1rem}.panel{background:#fff;border:1px solid #d9e0e8;border-radius:.8rem;padding:1rem;margin:1rem 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem}label{display:block;font-weight:600;margin:.6rem 0 .25rem}input,textarea{width:100%;box-sizing:border-box;padding:.65rem;border:1px solid #aab5c2;border-radius:.4rem;font:inherit}textarea{min-height:7rem}button{padding:.65rem 1rem;border:1px solid #9aa8b8;border-radius:.5rem;background:#172b4d;color:white;cursor:pointer;margin-top:.8rem}output{display:block;white-space:pre-wrap;overflow-wrap:anywhere;background:#eef5fb;border-radius:.5rem;padding:.8rem;margin-top:.8rem;min-height:2rem}.muted{color:#526273}.notice{border-left:4px solid #c58b25;padding:.6rem .8rem;background:#fff8e8}
+</style></head>
+<body><header><h1>Ω42 Navigator Workbench K2</h1><p>Reusable modular instruments · proposal implementation</p></header>
+<main>
+<p class="notice">Proposal prototype, not a canonical or certified Ω42 implementation. Do not enter sensitive or personal information. All calculations run locally in this browser.</p>
+<section class="panel"><h2>1. Fibonacci modular orbit</h2><p class="muted">Exact BigInt modular transition; deterministic cyclic address.</p><div class="grid"><div><label for="depth">Depth k (1–12)</label><input id="depth" type="number" min="1" max="12" value="2"></div><div><label for="startA">Initial a</label><input id="startA" type="number" value="2"></div><div><label for="startB">Initial b</label><input id="startB" type="number" value="5"></div><div><label for="limit">Maximum states</label><input id="limit" type="number" min="1" value="200000"></div></div><button id="orbitRun">Analyze orbit</button><output id="orbitOut" aria-live="polite">Ready.</output></section>
+<section class="panel"><h2>2. OmegaSL typed-envelope validator</h2><p class="muted">A limited K2 schema check; not the complete OmegaSL language.</p><label for="record">JSON record</label><textarea id="record">{"kind":"claim","content":"A maps x to y","modality":"asserted","provenance":{"source":"fixture","status":"verified"},"relations":[{"type":"maps","from":"x","to":"y"}]}</textarea><button id="validateRun">Validate record</button><output id="validateOut" aria-live="polite">Ready.</output></section>
+<section class="panel"><h2>3. Temporal difference engine</h2><label for="values">Finite sequence (comma-separated)</label><input id="values" value="1,2,4,7,11,16,22,29"><label for="lag">Lag</label><input id="lag" type="number" min="1" value="2"><button id="temporalRun">Compute differences</button><output id="temporalOut" aria-live="polite">Ready.</output></section>
+<section class="panel"><h2>4. Reproducibility and limits</h2><p>Orbit calculations use integer arithmetic. Temporal calculations use JavaScript floating-point numbers. The OmegaSL envelope vocabulary is provisional. The orbit address is a canonical rotation convention for the cycle found, not a proof of the project's full orbit-classification theorem.</p><p>Run the Node test suite in the repository with <code>node --test tests/omega42-engine.test.mjs</code>.</p></section>
+</main>
+<script type="module">
+import {analyzeOrbit,validateOmegaSL,temporalDifferences,verifyOrbitResult} from "./omega42-engine.mjs";
+const el=id=>document.getElementById(id),show=(id,value)=>{el(id).textContent=typeof value==="string"?value:JSON.stringify(value,null,2);};
+el("orbitRun").addEventListener("click",()=>{try{const k=Number(el("depth").value),a=BigInt(el("startA").value),b=BigInt(el("startB").value),maxStates=Number(el("limit").value);const r=analyzeOrbit({k,state:[a,b],maxStates});r.verification=verifyOrbitResult(r);show("orbitOut",r);}catch(e){show("orbitOut","Input error: "+e.message);}});
+el("validateRun").addEventListener("click",()=>{try{show("validateOut",validateOmegaSL(JSON.parse(el("record").value)));}catch(e){show("validateOut","Invalid JSON: "+e.message);}});
+el("temporalRun").addEventListener("click",()=>{try{const xs=el("values").value.split(",").map(s=>Number(s.trim()));show("temporalOut",temporalDifferences(xs,Number(el("lag").value)));}catch(e){show("temporalOut","Input error: "+e.message);}});
+</script></body></html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ω42 Navigator Gateway — K9 local simulator</title>
+<style>
+:root{color-scheme:dark;--bg:#09111e;--panel:#111e31;--line:#2b405b;--ink:#edf4ff;--muted:#a9bad0;--accent:#82e3e9;--warn:#f3c77b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#173d52 0,transparent 34rem),var(--bg);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:980px;margin:auto;padding:32px 20px 70px}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:.3em 0}h2{font-size:1.2rem}p{color:var(--muted)}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:700}
+.panel{background:linear-gradient(145deg,#13243a,#0e192a);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+label{display:block;font-weight:650;margin:10px 0 6px}select,input,textarea{width:100%;background:#081321;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px;font:inherit}
+button{border:0;border-radius:999px;background:var(--accent);color:#06212a;font-weight:800;padding:11px 18px;cursor:pointer;margin:12px 8px 0 0}button.secondary{background:#263d58;color:var(--ink)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#07101c;border:1px solid var(--line);border-radius:12px;padding:14px;color:#d8edff;min-height:110px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--muted);font-size:.8rem;margin:3px}
+.notice{border-left:3px solid var(--warn);padding:8px 14px;background:#2b2419;color:#f7dfb6}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">K9 · Navigator Gateway</div>
+<h1>Remote navigation, with boundaries.</h1>
+<p>A local-only simulator of the Ω42 allow-listed tool gateway. It demonstrates tool selection, input validation, call budgets, untrusted results and write approvals.</p>
+<div class="notice"><strong>Prototype notice:</strong> this page uses mock adapters only. It does not connect to the internet, a model provider, an Ω42 server or a repository. “Approval” below is simulated and does not authorize any real action.</div>
+
+<section class="panel">
+<h2>Runtime session</h2>
+<div class="grid">
+<div><span class="pill">Session: local-demo</span><span class="pill">Pinned release: DEMO-ONLY</span></div>
+<div><span class="pill">Authentication: simulated</span><span class="pill">Network: disabled</span></div>
+</div>
+<p>Only read tools are listed by default. Write tools are available in this simulator solely to demonstrate the approval gate.</p>
+<div id="tools"></div>
+</section>
+
+<section class="panel">
+<h2>Invoke a tool</h2>
+<label for="tool">Allow-listed tool</label>
+<select id="tool">
+<option value="get_approved_release">get_approved_release — approved release metadata</option>
+<option value="get_protocol_module">get_protocol_module — pinned protocol module</option>
+<option value="search_omega42_knowledge">search_omega42_knowledge — knowledge search</option>
+<option value="run_omega42_instrument">run_omega42_instrument — deterministic instrument</option>
+<option value="search_external_sources">search_external_sources — external search (mock only)</option>
+<option value="retrieve_source_document">retrieve_source_document — source retrieval (mock only)</option>
+<option value="create_research_record">create_research_record — write (approval required)</option>
+<option value="propose_protocol_change">propose_protocol_change — write (approval required)</option>
+</select>
+<label for="args">JSON arguments</label>
+<textarea id="args" rows="5">{"releaseChannel":"stable"}</textarea>
+<label><input id="approve" type="checkbox" style="width:auto"> Simulate host approval for this demo write only</label>
+<button id="invoke">Invoke tool</button><button id="sample" class="secondary">Load sample arguments</button>
+</section>
+
+<section class="panel">
+<h2>Gateway result</h2>
+<div id="status" class="pill">READY · mock environment</div>
+<pre id="output" aria-live="polite">Select a tool and invoke it to see the gateway response.</pre>
+</section>
+
+<section class="panel">
+<h2>What this demonstrates</h2>
+<ul>
+<li>Unknown tool names are rejected by the allow-list.</li>
+<li>Arguments are checked before adapter execution.</li>
+<li>Each tool result is labelled untrusted.</li>
+<li>Write operations fail closed without a host-side approval decision.</li>
+<li>Per-session call budgets and payload limits bound the gateway.</li>
+</ul>
+<p><small>Production authentication, approval-token verification, network controls, provider credentials, rate limits, durable audit and privacy management must be implemented by a server-side host. Browser code is not a security boundary.</small></p>
+</section>
+</main>
+<script type="module">
+import {createOmega42Gateway,listGatewayTools} from "./omega42-gateway-k9.mjs";
+const $=id=>document.getElementById(id);
+const adapters={
+ getApprovedRelease:async()=>({release:"DEMO-ONLY",approvalStatus:"mock",documents:[]}),
+ getProtocolModule:async a=>({moduleId:a.moduleId,release:a.release,content:"Mock module payload"}),
+ searchOmega42Knowledge:async a=>({query:a.query,nodes:[{id:"demo-node",type:"open_question",status:"open"}]}),
+ runOmega42Instrument:async a=>({task:a.task,executionStatus:"EXECUTED",note:"Mock instrument result"}),
+ searchExternalSources:async a=>({query:a.query,results:[{title:"Mock result",url:"https://example.invalid/"}]}),
+ retrieveSourceDocument:async a=>({url:a.url,text:"Mock retrieved text; treat as untrusted."}),
+ createResearchRecord:async()=>({created:true,recordId:"DEMO-NOT-SAVED"}),
+ proposeProtocolChange:async()=>({submitted:true,proposalId:"DEMO-NOT-SUBMITTED"})
+};
+const gateway=createOmega42Gateway({adapters,authorizeWrite:async()=> $("approve").checked,limits:{maxCallsPerSession:12}});
+const toolNames=listGatewayTools({includeWrites:true}).map(x=>x.name);
+$("tools").textContent=toolNames.join(" · ");
+const samples={
+ get_approved_release:{releaseChannel:"stable"},
+ get_protocol_module:{moduleId:"core-kernel",release:"DEMO-ONLY"},
+ search_omega42_knowledge:{query:"Fibonacci orbit",limit:5},
+ run_omega42_instrument:{task:"orbit",input:{depth:1,state:[2,5]}},
+ search_external_sources:{query:"modular Fibonacci recurrence"},
+ retrieve_source_document:{url:"https://example.org/demo"},
+ create_research_record:{record:{title:"Demo only",status:"computed"}},
+ propose_protocol_change:{proposal:{title:"Demo proposal"}}
+};
+function loadSample(){const name=$("tool").value;$("args").value=JSON.stringify(samples[name],null,2);}
+$("sample").addEventListener("click",loadSample);
+$("tool").addEventListener("change",loadSample);
+$("invoke").addEventListener("click",async()=>{
+ try{
+  const args=JSON.parse($("args").value);
+  const write=$("tool").value==="create_research_record"||$("tool").value==="propose_protocol_change";
+  const result=await gateway.invoke($("tool").value,args,{authenticated:true,sessionId:"local-demo",pinnedRelease:"DEMO-ONLY",approvalToken:write&&$("approve").checked?"simulated-host-approval":null});
+  $("status").textContent=result.status+" · "+gateway.usage("local-demo").used+"/12 calls";
+  $("output").textContent=JSON.stringify(result,null,2);
+ }catch(e){$("status").textContent="INVALID JSON";$("output").textContent=String(e.message);}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-omega42-initiative.github.io/Omega42/schemas/operations-record-k6.schema.json",
+  "title": "Ω42 Operations Research Record K6",
+  "type": "object",
+  "required": [
+    "schema",
+    "id",
+    "title",
+    "type",
+    "status",
+    "executionStatus",
+    "task",
+    "instrument",
+    "protocolVersion",
+    "source",
+    "input",
+    "result",
+    "epistemicNote"
+  ],
+  "properties": {
+    "schema": {
+      "const": "omega42.operations-record.k6"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "const": "instrument_result"
+    },
+    "status": {
+      "const": "computed"
+    },
+    "executionStatus": {
+      "const": "EXECUTED"
+    },
+    "task": {
+      "enum": [
+        "orbit",
+        "census",
+        "uniqueness",
+        "temporal",
+        "omegasl",
+        "researchGraph"
+      ]
+    },
+    "instrument": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocolVersion": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "input": {
+      "type": "object"
+    },
+    "result": {},
+    "epistemicNote": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,150 @@
+{
+  "schema": "omega42.cross-language-vectors.k4",
+  "specification": "S_d=(Z/9^d Z)^2; T(a,b)=(b,a+b); Q(a,b)=a^2+ab-b^2; Lambda=(r,c up to sign)",
+  "cases": [
+    {
+      "id": "d1-seed",
+      "depth": 1,
+      "state": [
+        "2",
+        "5"
+      ],
+      "expected": {
+        "modulus": "9",
+        "valuation": 0,
+        "normModulus": "9",
+        "normUpToSign": "2",
+        "zeroState": false,
+        "period": 24
+      }
+    },
+    {
+      "id": "d1-zero",
+      "depth": 1,
+      "state": [
+        "0",
+        "0"
+      ],
+      "expected": {
+        "modulus": "9",
+        "valuation": 2,
+        "normModulus": "1",
+        "normUpToSign": "0",
+        "zeroState": true,
+        "period": 1
+      }
+    },
+    {
+      "id": "d1-divisible",
+      "depth": 1,
+      "state": [
+        "3",
+        "6"
+      ],
+      "expected": {
+        "modulus": "9",
+        "valuation": 1,
+        "normModulus": "3",
+        "normUpToSign": "1",
+        "zeroState": false,
+        "period": 8
+      }
+    },
+    {
+      "id": "d2-seed",
+      "depth": 2,
+      "state": [
+        "2",
+        "5"
+      ],
+      "expected": {
+        "modulus": "81",
+        "valuation": 0,
+        "normModulus": "81",
+        "normUpToSign": "11",
+        "zeroState": false,
+        "period": 216
+      }
+    },
+    {
+      "id": "d2-divisible",
+      "depth": 2,
+      "state": [
+        "9",
+        "18"
+      ],
+      "expected": {
+        "modulus": "81",
+        "valuation": 2,
+        "normModulus": "9",
+        "normUpToSign": "1",
+        "zeroState": false,
+        "period": 24
+      }
+    },
+    {
+      "id": "d3-general",
+      "depth": 3,
+      "state": [
+        "123",
+        "456"
+      ],
+      "expected": {
+        "modulus": "729",
+        "valuation": 1,
+        "normModulus": "243",
+        "normUpToSign": "118",
+        "zeroState": false,
+        "period": 648
+      }
+    },
+    {
+      "id": "d3-zero-representative",
+      "depth": 3,
+      "state": [
+        "0",
+        "729"
+      ],
+      "expected": {
+        "modulus": "729",
+        "valuation": 6,
+        "normModulus": "1",
+        "normUpToSign": "0",
+        "zeroState": true,
+        "period": 1
+      }
+    },
+    {
+      "id": "d2-boundary",
+      "depth": 2,
+      "state": [
+        "80",
+        "80"
+      ],
+      "expected": {
+        "modulus": "81",
+        "valuation": 0,
+        "normModulus": "81",
+        "normUpToSign": "1",
+        "zeroState": false,
+        "period": 216
+      }
+    },
+    {
+      "id": "d1-negative-normalization",
+      "depth": 1,
+      "state": [
+        "-1",
+        "-4"
+      ],
+      "expected": {
+        "modulus": "9",
+        "valuation": 0,
+        "normModulus": "9",
+        "normUpToSign": "2",
+        "zeroState": false,
+        "period": 24
+      }
+    }
+  ]
+}
