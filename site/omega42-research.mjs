@@ -1,5 +1,5 @@
 "use strict";
-import { analyzeOrbit, modulus3, fibonacciStep } from "./omega42-engine.mjs";
+import { analyzeOrbit, fibonacciStep } from "./omega42-engine.mjs";
 
 function pow3(n) { return 3n ** BigInt(n); }
 function modBig(n, m) { return ((n % m) + m) % m; }
@@ -58,7 +58,9 @@ export function analyzeOmega42Orbit({ depth, state, maxStates = 200000 }) {
   return {
     ...raw,
     schema: "omega42.orbit-analysis.k3",
+    depth,
     omega42Depth: depth,
+    genericExponent: 2 * depth,
     modulus: modulus.toString(),
     canonicalInvariant: omega42OrbitInvariant(state, depth),
     addressRole: "secondary deterministic cycle address; canonical classification is canonicalInvariant"
