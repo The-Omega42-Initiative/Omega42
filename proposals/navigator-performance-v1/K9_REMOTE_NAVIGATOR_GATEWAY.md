@@ -30,7 +30,7 @@ The first six are not automatically live: the runtime must configure their adapt
 1. Authenticate the user and create a K8 session pinned to an approved release.
 2. Supply only task-relevant tool definitions to the model.
 3. Validate requested tool name and JSON arguments against the allow-list.
-4. Enforce per-session call budgets, input/output byte limits and bounded timeouts.
+4. Enforce per-session call budgets, input/output byte limits and bounded timeouts; the adapter receives an AbortSignal when the timeout fires (cancellation remains adapter-dependent).
 5. Require a host-side approval authorizer for every write. The model cannot approve itself.
 6. Call the configured adapter and return a typed execution result.
 7. Mark retrieved or generated adapter content UNTRUSTED_RESULT; preserve source attribution in the calling application.
@@ -46,7 +46,7 @@ Write approval must be bound server-side to the exact action and arguments. A mo
 
 ## Reference module
 
-site/omega42-gateway-k9.mjs supplies the allow-list, tool schemas, read/write classification, input validation, HTTPS checks, authentication gate, host-provided write authorizer, per-session call budget, input/output limits, timeouts, untrusted-result marking and adapter injection. It is provider-independent and contains no network client or credentials.
+site/omega42-gateway-k9.mjs supplies the allow-list, tool schemas, read/write classification, input validation, HTTPS checks, authentication gate, host-provided write authorizer, per-session call budget, input/output limits, timeout cancellation requests via AbortSignal, untrusted-result marking and adapter injection. All operations other than release resolution require a pinned release context. It is provider-independent and contains no network client or credentials.
 
 ## Not implemented
 
