@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   omega42Modulus, omega42OrbitInvariant, analyzeOmega42Orbit,
-  enumerateOmega42Orbits, validateResearchGraph
+  enumerateOmega42Orbits, checkOmega42Uniqueness, validateResearchGraph
 } from "../site/omega42-research.mjs";
 
 test("canonical Ω42 depth uses modulus 9^d", () => {
@@ -49,6 +49,30 @@ test("exhaustive depth-2 census agrees with canonical 41-loop result", () => {
   assert.equal(r.orbitCount,41);
   assert.equal(r.invariantCompleteForEnumeratedSpace,true);
   assert.equal(r.invariantDistinctAcrossEnumeratedOrbits,true);
+});
+
+test("frozen K1/K2 uniqueness criteria reproduce at canonical depths 1 and 2", () => {
+  const d1=checkOmega42Uniqueness(1);
+  assert.equal(d1.longestPeriod,24);
+  assert.equal(d1.longestPeriodOrbitCount,3);
+  assert.equal(d1.k1MatchesLongestPeriod,true);
+  assert.equal(d1.k2SeedOccurrencesAmongLongestLoops,1);
+  assert.equal(d1.k2Unique,true);
+  const d2=checkOmega42Uniqueness(2);
+  assert.equal(d2.longestPeriod,216);
+  assert.equal(d2.longestPeriodOrbitCount,27);
+  assert.equal(d2.k1MatchesLongestPeriod,true);
+  assert.equal(d2.k2SeedOccurrencesAmongLongestLoops,1);
+  assert.equal(d2.k2Unique,true);
+});
+
+test("frozen K1/K2 uniqueness criteria reproduce at canonical depth 3", () => {
+  const d3=checkOmega42Uniqueness(3);
+  assert.equal(d3.longestPeriod,1944);
+  assert.equal(d3.longestPeriodOrbitCount,243);
+  assert.equal(d3.k1MatchesLongestPeriod,true);
+  assert.equal(d3.k2SeedOccurrencesAmongLongestLoops,1);
+  assert.equal(d3.k2Unique,true);
 });
 
 test("research graph accepts typed provenance and valid dependencies", () => {
