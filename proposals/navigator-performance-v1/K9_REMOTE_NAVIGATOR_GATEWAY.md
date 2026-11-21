@@ -59,3 +59,7 @@ A. Contract and adapter tests. B. Server authentication, release resolver and in
 ## Acceptance criteria
 
 Unknown tools and unauthenticated calls fail closed; invalid arguments, unsafe URLs and over-budget requests are rejected; only allow-listed tools execute; writes require host-verified approval; results are bounded and marked untrusted; release remains pinned; secrets never enter browser code; and no deployment or certification claim is made without operational evidence.
+
+## Local simulator
+
+The proposal branch includes site/navigator_gateway_k9.html, a local-only browser simulator. It uses mock adapters, makes no network requests and does not submit or persist records. Simulated write approval demonstrates the gate only; it is not a real authorization mechanism.
