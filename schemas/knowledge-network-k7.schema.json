@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-omega42-initiative.github.io/Omega42/schemas/knowledge-network-k7.schema.json",
+  "title": "Ω42 Knowledge Network K7",
+  "type": "object",
+  "required": [
+    "schema",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "schema": {
+      "const": "omega42.knowledge-network.k7"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "statement",
+        "status",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "definition",
+            "axiom",
+            "lemma",
+            "theorem",
+            "computation",
+            "instrument",
+            "interpretation",
+            "application",
+            "open_question",
+            "conjecture",
+            "source"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "proved",
+            "computed",
+            "reconstructed",
+            "source_reported",
+            "conjectured",
+            "speculative",
+            "disputed",
+            "open",
+            "provisional"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "source"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "section": {
+              "type": "string"
+            },
+            "commit": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "required": [
+        "from",
+        "to",
+        "type"
+      ],
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "depends_on",
+            "derives_from",
+            "proves",
+            "computed_by",
+            "supports",
+            "contradicts",
+            "applies_to",
+            "refines",
+            "challenges"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}\n
