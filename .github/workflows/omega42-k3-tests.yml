@@ -1,0 +1,26 @@
+name: Ω42 K3 research infrastructure tests
+on:
+  pull_request:
+    paths:
+      - "site/omega42-research.mjs"
+      - "tests/omega42-research.test.mjs"
+      - "schemas/research-graph-k3.schema.json"
+      - ".github/workflows/omega42-k3-tests.yml"
+  push:
+    branches:
+      - navigator-performance-kernel-v1
+    paths:
+      - "site/omega42-research.mjs"
+      - "tests/omega42-research.test.mjs"
+      - "schemas/research-graph-k3.schema.json"
+      - ".github/workflows/omega42-k3-tests.yml"
+jobs:
+  node-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run K2 and K3 tests
+        run: node --test tests/omega42-engine.test.mjs tests/omega42-research.test.mjs
