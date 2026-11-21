@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ω42 Knowledge Network K7</title>
+<style>
+:root{font-family:system-ui,sans-serif;color-scheme:light dark}body{max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}header{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}.panel{border:1px solid #8886;border-radius:12px;padding:1rem;margin:1rem 0}button,input,select,textarea{font:inherit;padding:.6rem;border-radius:8px;border:1px solid #8888}button{cursor:pointer}textarea{width:100%;min-height:120px;box-sizing:border-box}pre{white-space:pre-wrap;overflow-wrap:anywhere}.muted{opacity:.75}.row{display:flex;gap:.5rem;flex-wrap:wrap}.node{padding:.7rem;border:1px solid #8886;border-radius:8px;margin:.4rem 0}.status{font-weight:600}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #3984ff;outline-offset:2px}
+</style></head><body>
+<header><div><h1>Ω42 Knowledge Network</h1><p class="muted">K7 proposal · typed research graph explorer</p></div><a href="navigator_workbench_k6.html">K6 Operations Workbench</a></header>
+<section class="panel"><h2>Load a graph</h2><p>Paste a K7 graph or import a K3 research graph. This prototype runs locally in your browser.</p><textarea id="source" aria-label="Knowledge graph JSON"></textarea><div class="row"><button id="load">Validate and load</button><button id="sample">Load sample</button><button id="export">Export normalized K7</button><input id="file" type="file" accept="application/json" aria-label="Import JSON file"></div><p id="status" role="status" aria-live="polite" class="muted">No graph loaded.</p></section>
+<section class="panel"><h2>Explore</h2><div class="row"><input id="query" placeholder="Search node titles and statements" aria-label="Search nodes"><select id="type" aria-label="Filter by node type"><option value="">All node types</option></select></div><div id="nodes"></div></section>
+<section class="panel"><h2>Discovery routes</h2><select id="question" aria-label="Choose open question"><option value="">Select an open question</option></select><button id="discover">Find connected research</button><div id="routes"></div></section>
+<section class="panel"><h2>Explicit contradiction register</h2><div id="contradictions" class="muted">Load a graph to inspect recorded contradiction edges.</div></section>
+<script type="module">
+import {validateKnowledgeNetwork,normalizeK3ResearchGraph,findDiscoveryPaths,listContradictionCandidates} from "./omega42-knowledge-k7.mjs";
+const $=id=>document.getElementById(id);let current=null;
+const sample={schema:"omega42.knowledge-network.k7",metadata:{title:"K7 sample"},nodes:[
+{id:"def-fib",type:"definition",title:"Fibonacci transition",statement:"T(a,b)=(b,a+b)",status:"reconstructed",provenance:{source:"Ω42 mathematical framework"}},
+{id:"thm-orbit",type:"theorem",title:"Finite orbit result",statement:"A theorem node requiring its full proof record",status:"proved",provenance:{source:"Mathematical proof register"}},
+{id:"inst-orbit",type:"instrument",title:"Orbit engine",statement:"Computes finite modular orbits",status:"computed",provenance:{source:"K3/K6 implementation"}},
+{id:"question",type:"open_question",title:"Can the orbit invariant guide new navigation instruments?",statement:"Open research question",status:"open",provenance:{source:"K7 demonstration"}},
+{id:"claim-a",type:"conjecture",title:"Candidate extension A",statement:"A conjectural extension",status:"conjectured",provenance:{source:"Illustrative sample"}},
+{id:"claim-b",type:"interpretation",title:"Alternative interpretation",statement:"A competing interpretation",status:"speculative",provenance:{source:"Illustrative sample"}}
+],edges:[
+{from:"thm-orbit",to:"def-fib",type:"depends_on"},
+{from:"question",to:"inst-orbit",type:"applies_to"},
+{from:"question",to:"thm-orbit",type:"supports"},
+{from:"claim-a",to:"claim-b",type:"contradicts",note:"Illustrative registered disagreement"}
+]};
+function render(){
+ if(!current)return;
+ const q=$("query").value.toLowerCase(),t=$("type").value;
+ const ns=current.nodes.filter(n=>(!t||n.type===t)&&(!q||(n.title+" "+n.statement).toLowerCase().includes(q)));
+ $("nodes").replaceChildren();
+ for(const n of ns){const d=document.createElement("article");d.className="node";const h=document.createElement("strong");h.textContent=n.title;const p=document.createElement("p");p.textContent=n.statement;const m=document.createElement("small");m.textContent=n.id+" · "+n.type+" · "+n.status+" · "+n.provenance.source;d.append(h,p,m);$("nodes").append(d);}
+ const old=$("question").value;$("question").replaceChildren(new Option("Select an open question",""));
+ for(const n of current.nodes.filter(n=>n.type==="open_question"))$("question").add(new Option(n.title,n.id));
+ $("question").value=old;
+ $("contradictions").replaceChildren();
+ const cs=listContradictionCandidates(current);
+ if(!cs.length)$("contradictions").textContent="No explicit contradiction edges recorded.";
+ for(const c of cs){const p=document.createElement("p");p.textContent=c.from.title+" ↔ "+c.to.title+" — "+c.note;$("contradictions").append(p);}
+}
+function load(raw){let g=JSON.parse(raw);if(g.schema==="omega42.research-graph.k3")g=normalizeK3ResearchGraph(g);const v=validateKnowledgeNetwork(g);$("status").textContent=v.valid?"Valid K7 graph: "+v.nodeCount+" nodes, "+v.edgeCount+" edges.":"Invalid: "+v.errors.join("; ");if(!v.valid){current=null;return;}current=g;const types=[...new Set(g.nodes.map(n=>n.type))];$("type").replaceChildren(new Option("All node types",""));for(const t of types)$("type").add(new Option(t,t));render();}
+$("load").onclick=()=>{try{load($("source").value)}catch(e){$("status").textContent="Could not load graph: "+e.message}};
+$("sample").onclick=()=>{$("source").value=JSON.stringify(sample,null,2);load($("source").value)};
+$("query").oninput=render;$("type").onchange=render;
+$("discover").onclick=()=>{if(!current||!$("question").value){$("routes").textContent="Select a question first.";return;}try{const paths=findDiscoveryPaths(current,$("question").value);$("routes").replaceChildren();for(const x of paths){const p=document.createElement("p");p.textContent=x.path.join(" → ")+" · "+x.interpretation;$("routes").append(p);}if(!paths.length)$("routes").textContent="No connected candidate paths found."}catch(e){$("routes").textContent=e.message}};
+$("export").onclick=()=>{if(!current)return;const blob=new Blob([JSON.stringify(current,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="omega42-knowledge-network-k7.json";a.click();URL.revokeObjectURL(a.href)};
+$("file").onchange=async e=>{const f=e.target.files[0];if(f){$("source").value=await f.text();try{load($("source").value)}catch(err){$("status").textContent=err.message}}};
+</script></body></html>
