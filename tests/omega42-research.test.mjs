@@ -15,6 +15,8 @@ test("the same sample is canonical depth 1, not depth 2", () => {
   const r = analyzeOmega42Orbit({depth:1,state:[2,5]});
   assert.equal(r.modulus,"9");
   assert.equal(r.period,24);
+  assert.equal(r.depth,1);
+  assert.equal(r.genericExponent,2);
   assert.equal(r.omega42Depth,1);
   assert.equal(r.canonicalInvariant.depth,1);
 });
