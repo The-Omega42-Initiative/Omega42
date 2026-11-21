@@ -1,0 +1,133 @@
+{
+  "schema": "omega42.proof-obligations.k5",
+  "version": 1,
+  "convention": {
+    "genericExponent": "n",
+    "canonicalDepth": "d",
+    "relation": "n=2d",
+    "modulus": "3^n=9^d"
+  },
+  "obligations": [
+    {
+      "id": "ALG-001",
+      "title": "Transition is multiplication by phi and Q is its norm",
+      "status": "reconstructed-proof",
+      "dependsOn": [],
+      "claim": "T(a,b)=(b,a+b); Q(a,b)=a^2+ab-b^2; Q(Tx)=-Q(x).",
+      "evidence": "K5 sections 1-2"
+    },
+    {
+      "id": "ALG-002",
+      "title": "Unit criterion and valuation depth",
+      "status": "reconstructed-proof",
+      "dependsOn": [
+        "ALG-001"
+      ],
+      "claim": "R_1 is F_9; x is a unit iff its coordinates are not both divisible by 3; nonzero x=3^r u with u a unit modulo 3^(n-r).",
+      "evidence": "K5 section 2"
+    },
+    {
+      "id": "ORD-001",
+      "title": "Exact order of phi modulo 3^n",
+      "status": "reconstructed-proof",
+      "dependsOn": [
+        "ALG-001"
+      ],
+      "claim": "ord_(3^n)(A)=8*3^(n-1), using A^8=I+3C and det(C) nonzero modulo 3.",
+      "evidence": "K5 section 3"
+    },
+    {
+      "id": "NORM-001",
+      "title": "Norm surjectivity on units",
+      "status": "reconstructed-proof",
+      "dependsOn": [
+        "ALG-002"
+      ],
+      "claim": "N:R_n^× -> (Z/3^nZ)^× is onto by residue-field surjectivity and trace-controlled digit lifting.",
+      "evidence": "K5 section 4.1"
+    },
+    {
+      "id": "ORB-001",
+      "title": "Powers of phi equal the norm plus-or-minus-one subgroup",
+      "status": "reconstructed-proof",
+      "dependsOn": [
+        "ORD-001",
+        "NORM-001"
+      ],
+      "claim": "<phi>={u in R_n^×:N(u)=+/-1}.",
+      "evidence": "K5 section 4.2"
+    },
+    {
+      "id": "ORB-002",
+      "title": "Complete orbit invariant Lambda",
+      "status": "reconstructed-proof",
+      "dependsOn": [
+        "ALG-002",
+        "ORB-001"
+      ],
+      "claim": "For nonzero x, valuation r and Q(x)/9^r modulo 3^(n-r), up to sign, classify its orbit; zero is separate.",
+      "evidence": "K5 theorem 4.3"
+    },
+    {
+      "id": "CEN-001",
+      "title": "Orbit census",
+      "status": "deduced",
+      "dependsOn": [
+        "ORD-001",
+        "ORB-002"
+      ],
+      "claim": "One zero orbit and 3^(m-1) orbits of length 8*3^(m-1) for each m=1..n.",
+      "evidence": "K5 section 5"
+    },
+    {
+      "id": "LIFT-001",
+      "title": "Reduction compatibility and lift pattern",
+      "status": "deduced",
+      "dependsOn": [
+        "ORB-002",
+        "CEN-001"
+      ],
+      "claim": "Reduction commutes with T; zero lifts to zero plus an 8-cycle, other orbits lift to three cycles with triple period.",
+      "evidence": "K5 section 5; verify against canonical Part 102"
+    },
+    {
+      "id": "K1-001",
+      "title": "K1 first-coordinate coverage iff maximum period",
+      "status": "reconstructed-proof",
+      "dependsOn": [
+        "ORB-002",
+        "ORD-001"
+      ],
+      "claim": "A unit orbit visits every first-coordinate residue; a nonunit orbit cannot.",
+      "evidence": "K5 section 6; discriminant and Hensel lifting"
+    },
+    {
+      "id": "K2-001",
+      "title": "K2 seed occurrence interpretation",
+      "status": "deduced",
+      "dependsOn": [
+        "ORD-001"
+      ],
+      "claim": "Seed (2,5) is a unit and occurs once in the disjoint orbit partition; this selects its orbit but is not an independent classification theorem.",
+      "evidence": "K5 section 6"
+    },
+    {
+      "id": "SRC-001",
+      "title": "Canonical reference-script scope labels",
+      "status": "review-required",
+      "dependsOn": [],
+      "claim": "Distinguish exhaustive finite loops, sampled finite loops, and symbolic all-depth arguments in arithmetic.py output.",
+      "evidence": "K5 section 7"
+    },
+    {
+      "id": "BRIDGE-001",
+      "title": "24-position protocol to 3-adic tower bridge",
+      "status": "open",
+      "dependsOn": [
+        "ORB-002"
+      ],
+      "claim": "No canonical map from question-space coordinates to tower states is specified in the audited files.",
+      "evidence": "Open architecture question"
+    }
+  ]
+}
