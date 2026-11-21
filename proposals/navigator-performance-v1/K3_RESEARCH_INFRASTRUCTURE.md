@@ -55,6 +55,11 @@ The repository's tower arithmetic states that the loop is completely determined 
 
 These are finite checks. They do not prove the general classification theorem. The theorem's all-depth force comes from its mathematical derivation, not from passing a test suite.
 
+K3 also reproduces the separate frozen depth-uniqueness criteria K1/K2 recorded in `records/tower/nested.py` (SEQ 49; Core MATH-32 to MATH-40, L-523):
+- K1: the first coordinate visits every residue; the qualifying loops are exactly the longest-period loops.
+- K2: after selecting the longest-period loops, the frozen seed (2,5) occurs exactly once.
+The implementation reports these as finite checks at depths 1–3 (expected longest periods 24, 216, 1944; 3, 27, 243 longest loops respectively). These criteria are distinct from the complete orbit invariant Λ. They are not changed, redefined, or promoted by K3.
+
 ## Three verification levels
 
 - **Level 1 — computational reproduction:** implementation agrees with specified finite cases.
