@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ω42 Navigator Operations Workbench K6</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#172536;background:#f4f7fa}body{margin:0}header{background:#172b4d;color:#fff;padding:1rem 1.4rem}main{max-width:1100px;margin:auto;padding:1rem}.panel{background:#fff;border:1px solid #d8e0e8;border-radius:.8rem;padding:1rem;margin:1rem 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}label{display:block;font-weight:650;margin:.65rem 0 .25rem}input,select,textarea{box-sizing:border-box;width:100%;padding:.65rem;border:1px solid #aab7c5;border-radius:.4rem;font:inherit}textarea{min-height:10rem;font-family:ui-monospace,monospace}button{padding:.65rem 1rem;border:0;border-radius:.45rem;background:#172b4d;color:#fff;cursor:pointer;margin:.6rem .4rem .2rem 0}button.secondary{background:#52677d}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #d49b32;outline-offset:2px}output,pre{display:block;white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f8;border-radius:.45rem;padding:.8rem;margin-top:.8rem;min-height:2rem}.note{border-left:4px solid #bd8b2d;padding:.65rem .8rem;background:#fff8e9}.muted{color:#596a7b}.status{font-weight:700}footer{padding:1rem;color:#596a7b}
+</style>
+</head>
+<body>
+<header><h1>Ω42 Navigator Operations Workbench K6</h1><p>Instrument selection · exact computation · provenance · knowledge register</p></header>
+<main>
+<p class="note">K6 proposal instrument. Calculations run locally in this browser. Do not enter sensitive personal data. Computed outputs are not automatically proofs, semantic truths or application validations. This workbench does not alter the canonical question coordinate, M296, M327, four-arm navigation or Core output contract.</p>
+
+<section class="panel">
+<h2>1. Navigator instrument router</h2>
+<p class="muted">Choose an operation explicitly, or ask the deterministic trigger selector to recommend one. Ambiguous intent is sent back for clarification rather than guessed.</p>
+<div class="grid">
+<div><label for="task">Operation</label><select id="task">
+<option value="auto">Auto-select from intent</option>
+<option value="orbit">Orbit analysis and Λ</option>
+<option value="census">Finite orbit census</option>
+<option value="uniqueness">K1/K2 finite check</option>
+<option value="temporal">Temporal differences</option>
+<option value="omegasl">OmegaSL envelope validation</option>
+<option value="researchGraph">Research graph validation</option>
+</select></div>
+<div><label for="intent">Intent / task description</label><input id="intent" value="Analyze the Fibonacci orbit and norm invariant"></div>
+</div>
+<label for="inputJson">Instrument input JSON</label>
+<textarea id="inputJson">{
+  "depth": 1,
+  "state": [2, 5]
+}</textarea>
+<button id="run">Select and execute</button>
+<button id="sample" class="secondary">Load sample for selected operation</button>
+<output id="route" aria-live="polite">Ready. Select an operation and execute.</output>
+</section>
+
+<section class="panel">
+<h2>2. Execution and epistemic status</h2>
+<p>Execution status records whether an instrument actually ran. Result status records what kind of claim the output supports. These fields must not be conflated.</p>
+<pre id="result" aria-live="polite">No instrument has run.</pre>
+</section>
+
+<section class="panel">
+<h2>3. Knowledge Register</h2>
+<p class="muted">Store a computed instrument record with its input and output. Register IDs must be unique. The register remains local to this browser session until exported.</p>
+<div class="grid">
+<div><label for="recordId">Record ID</label><input id="recordId" value="K6-RECORD-001"></div>
+<div><label for="recordTitle">Record title</label><input id="recordTitle" value="Canonical depth-1 orbit sample"></div>
+</div>
+<button id="record">Create record from last execution</button>
+<button id="append" class="secondary">Append record to register</button>
+<button id="export" class="secondary">Export register JSON</button>
+<output id="registerOut" aria-live="polite">Register empty. Execute an instrument to create a record.</output>
+</section>
+
+<section class="panel">
+<h2>4. Builder and Navigator controls</h2>
+<ul>
+<li>Instrument selection is deterministic and inspectable.</li>
+<li>Exact integer orbit calculations use the existing BigInt engine.</li>
+<li>Temporal calculations inherit the K2 floating-point limitation.</li>
+<li>Graph validation checks structure and dependencies, not source authenticity or proof validity.</li>
+<li>Computed records cannot be silently promoted to proved.</li>
+<li>All user-provided text is rendered with textContent, not HTML injection.</li>
+</ul>
+<p>Run tests: <code>node --test tests/navigator-operations-k6.test.mjs</code>.</p>
+</section>
+<footer>Ω42 K6 proposal · Builder review required · Human judgment remains authoritative.</footer>
+</main>
+<script type="module">
+import {
+  OPERATIONS, runNavigation, createResearchRecord,
+  createEmptyRegister, appendResearchRecord, validateResearchRecord
+} from "./navigator-operations-k6.mjs";
+const $=id=>document.getElementById(id);
+const show=(id,value)=>{$(id).textContent=typeof value==="string"?value:JSON.stringify(value,null,2);};
+let lastExecution=null,lastInput=null,register=createEmptyRegister({createdBy:"K6 local workbench"}),pendingRecord=null;
+const samples={
+  orbit:{depth:1,state:[2,5]},
+  census:{depth:1},
+  uniqueness:{depth:1},
+  temporal:{values:[1,2,4,7,11,16],lag:2},
+  omegasl:{record:{kind:"claim",content:"T maps a state to its successor",modality:"asserted",provenance:{source:"K6 sample",status:"reconstructed"},relations:[]}},
+  researchGraph:{graph:{schema:"omega42.research-graph.k3",nodes:[{id:"D-T",type:"definition",title:"Fibonacci transition",status:"proved",provenance:{source:"Core mathematical definition"}}],edges:[]}}
+};
+$("sample").addEventListener("click",()=>{
+ const task=$("task").value;
+ if(task==="auto"){show("route","Choose a specific operation before loading its sample.");return;}
+ $("inputJson").value=JSON.stringify(samples[task],null,2);
+});
+$("run").addEventListener("click",()=>{
+ try{
+  const input=JSON.parse($("inputJson").value);
+  const run=runNavigation({task:$("task").value,intent:$("intent").value,input});
+  show("route",run.selection);
+  if(run.executionStatus!=="EXECUTED"){lastExecution=null;lastInput=null;pendingRecord=null;show("result",run);return;}
+  lastExecution=run.execution;lastInput=input;pendingRecord=null;
+  show("result",run.execution);
+ }catch(e){lastExecution=null;lastInput=null;pendingRecord=null;show("result","Execution error: "+e.message);}
+});
+$("record").addEventListener("click",()=>{
+ try{
+  if(!lastExecution)throw new Error("Run an instrument successfully first.");
+  pendingRecord=createResearchRecord({
+   id:$("recordId").value.trim(),title:$("recordTitle").value.trim(),
+   task:lastExecution.task,input:lastInput,execution:lastExecution
+  });
+  show("registerOut",{record:pendingRecord,validation:validateResearchRecord(pendingRecord)});
+ }catch(e){show("registerOut","Record error: "+e.message);}
+});
+$("append").addEventListener("click",()=>{
+ try{
+  if(!pendingRecord)throw new Error("Create a record first.");
+  register=appendResearchRecord(register,pendingRecord);
+  pendingRecord=null;
+  show("registerOut",register);
+ }catch(e){show("registerOut","Register error: "+e.message);}
+});
+$("export").addEventListener("click",()=>{
+ const blob=new Blob([JSON.stringify(register,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="omega42-operations-register-k6.json";a.click();URL.revokeObjectURL(url);
+});
+</script>
+</body></html>
