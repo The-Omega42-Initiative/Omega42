@@ -32,7 +32,7 @@ function validateArgs(def,args){
  }
  return errors;
 }
-function withTimeout(promise,ms){let timer;return Promise.race([Promise.resolve(promise),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error("tool timed out")),ms);})]).finally(()=>clearTimeout(timer));}
+function withTimeout(promise,ms,controller){let timer;return Promise.race([Promise.resolve(promise),new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();reject(new Error("tool timed out; adapter cancellation requested"));},ms);})]).finally(()=>clearTimeout(timer));}
 export function listGatewayTools({includeWrites=false}={}){return DEFINITIONS.filter(d=>includeWrites||d.sideEffect===READ).map(d=>({type:"function",name:d.name,description:d.description,parameters:d.schema,strict:true}));}
 export function createOmega42Gateway({adapters={},authorizeWrite=async()=>false,limits={},clock=()=>Date.now()}={}){
  const budget={...GATEWAY_LIMITS,...limits},counters=new Map();
@@ -43,6 +43,7 @@ export function createOmega42Gateway({adapters={},authorizeWrite=async()=>false,
   if(bytes(args)>budget.maxInputBytes)return {ok:false,status:"DENIED",error:"tool input exceeds size limit"};
   const errors=validateArgs(def,args);if(errors.length)return {ok:false,status:"INVALID_INPUT",errors};
   const sessionId=String(context.sessionId||"");if(!sessionId)return {ok:false,status:"DENIED",error:"runtime session required"};
+  if(name!=="get_approved_release"&&!(typeof context.pinnedRelease==="string"&&context.pinnedRelease.trim()))return {ok:false,status:"DENIED",error:"release-pinned session required"};
   const count=counters.get(sessionId)||0;if(count>=budget.maxCallsPerSession)return {ok:false,status:"BUDGET_EXHAUSTED",error:"session tool-call budget exhausted"};
   if(def.sideEffect===WRITE){
    const approved=await authorizeWrite({tool:name,args,approvalToken:context.approvalToken||null,principal:context.principal||null,sessionId});
@@ -53,7 +54,8 @@ export function createOmega42Gateway({adapters={},authorizeWrite=async()=>false,
   counters.set(sessionId,count+1);
   const timeoutMs=Math.min(Math.max(Number(context.timeoutMs)||budget.defaultTimeoutMs,100),budget.maxTimeoutMs);
   try{
-   const result=await withTimeout(adapter(args,{sessionId,principal:context.principal||null,release:context.pinnedRelease||null,trustBoundary:"UNTRUSTED_TOOL_RESULT"}),timeoutMs);
+   const controller=new AbortController();
+   const result=await withTimeout(adapter(args,{sessionId,principal:context.principal||null,release:context.pinnedRelease||null,trustBoundary:"UNTRUSTED_TOOL_RESULT",signal:controller.signal}),timeoutMs,controller);
    if(bytes(result)>budget.maxOutputBytes)return {ok:false,status:"OUTPUT_LIMIT",error:"tool output exceeds size limit"};
    return {ok:true,status:"EXECUTED",tool:name,sideEffect:def.sideEffect,trust:"UNTRUSTED_RESULT",result,remainingCalls:budget.maxCallsPerSession-count-1,timestamp:new Date(clock()).toISOString()};
   }catch(error){return {ok:false,status:"FAILED",tool:name,error:String(error?.message||error)};}
