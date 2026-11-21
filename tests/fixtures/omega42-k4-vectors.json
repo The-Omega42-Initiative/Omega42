@@ -129,6 +129,22 @@
         "zeroState": false,
         "period": 216
       }
+    },
+    {
+      "id": "d1-negative-normalization",
+      "depth": 1,
+      "state": [
+        "-1",
+        "-4"
+      ],
+      "expected": {
+        "modulus": "9",
+        "valuation": 0,
+        "normModulus": "9",
+        "normUpToSign": "2",
+        "zeroState": false,
+        "period": 24
+      }
     }
   ]
 }
