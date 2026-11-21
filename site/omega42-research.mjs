@@ -120,6 +120,60 @@ export function enumerateOmega42Orbits(depth, { maxTotalStates = 1000000 } = {})
   };
 }
 
+
+/**
+ * Reproduces the repository's frozen depth-uniqueness criteria K1/K2.
+ * K1: first coordinate visits every residue, and this holds exactly for
+ * longest-period loops. K2: the frozen seed (2,5) occurs exactly once among
+ * the longest-period loops. This is a finite check, not a replacement proof.
+ */
+export function checkOmega42Uniqueness(depth, { seed = [2, 5], maxTotalStates = 1000000 } = {}) {
+  const modulus = omega42Modulus(depth);
+  const total = modulus * modulus;
+  if (total > BigInt(maxTotalStates)) throw new RangeError("state-space limit exceeded");
+  if (!Array.isArray(seed) || seed.length !== 2) throw new TypeError("seed must be [a,b]");
+  const seedA = modBig(BigInt(seed[0]), modulus), seedB = modBig(BigInt(seed[1]), modulus);
+  const seen = new Set(), orbits = [];
+  for (let a = 0n; a < modulus; a++) {
+    for (let b = 0n; b < modulus; b++) {
+      if (seen.has(a + "," + b)) continue;
+      const startA = a, startB = b, firstCoordinates = new Set();
+      let x = a, y = b, period = 0, seedOccurrences = 0;
+      do {
+        seen.add(x + "," + y);
+        firstCoordinates.add(x.toString());
+        if (x === seedA && y === seedB) seedOccurrences++;
+        [x, y] = fibonacciStep([x, y], modulus);
+        period++;
+        if (period > Number(total)) throw new Error("orbit traversal exceeded state-space bound");
+      } while (x !== startA || y !== startB);
+      orbits.push({ period, firstCoordinateCount: firstCoordinates.size, seedOccurrences });
+    }
+  }
+  const longestPeriod = Math.max(...orbits.map(o => o.period));
+  const longest = orbits.filter(o => o.period === longestPeriod);
+  const k1Qualifying = orbits.filter(o => o.firstCoordinateCount === Number(modulus));
+  const k1MatchesLongestPeriod = k1Qualifying.length === longest.length &&
+    k1Qualifying.every(o => o.period === longestPeriod);
+  const seedOccurrences = longest.reduce((n, o) => n + o.seedOccurrences, 0);
+  return {
+    schema: "omega42.uniqueness-check.k3",
+    status: "EXECUTED",
+    depth,
+    modulus: modulus.toString(),
+    totalStates: total.toString(),
+    orbitCount: orbits.length,
+    longestPeriod,
+    longestPeriodOrbitCount: longest.length,
+    k1QualifyingOrbitCount: k1Qualifying.length,
+    k1MatchesLongestPeriod,
+    seed: [seedA.toString(), seedB.toString()],
+    k2SeedOccurrencesAmongLongestLoops: seedOccurrences,
+    k2Unique: seedOccurrences === 1,
+    interpretation: "Finite reproduction of the frozen K1/K2 criteria; not a proof for all depths."
+  };
+}
+
 const NODE_TYPES = new Set(["definition","claim","theorem","derivation","instrument","test","dataset","decision","source","open_question"]);
 const NODE_STATUSES = new Set(["proved","deduced","computed","source-reported","conjecture","interpretation","provisional","rejected","superseded"]);
 const EDGE_TYPES = new Set(["depends_on","supports","implements","tests","contradicts","refines","supersedes","interprets","derived_from"]);
