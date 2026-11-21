@@ -1,0 +1,58 @@
+{
+  "schema": "omega42.module-manifest.k6",
+  "version": "K6-proposal",
+  "status": "proposal",
+  "convention": {
+    "canonicalDepth": "d",
+    "genericExponent": "n",
+    "relation": "n=2d",
+    "modulus": "9^d=3^(2d)"
+  },
+  "modules": [
+    {
+      "id": "K6-ROUTER",
+      "path": "site/navigator-operations-k6.mjs",
+      "role": "deterministic instrument selection and orchestration",
+      "status": "proposal"
+    },
+    {
+      "id": "K6-WORKBENCH",
+      "path": "site/navigator_workbench_k6.html",
+      "role": "browser interface and local knowledge register",
+      "status": "proposal"
+    },
+    {
+      "id": "K6-RECORD-SCHEMA",
+      "path": "schemas/operations-record-k6.schema.json",
+      "role": "typed computed-result record",
+      "status": "proposal"
+    },
+    {
+      "id": "K6-TESTS",
+      "path": "tests/navigator-operations-k6.test.mjs",
+      "role": "router, execution, provenance and register tests",
+      "status": "proposal"
+    },
+    {
+      "id": "K6-CI",
+      "path": ".github/workflows/omega42-k6-operations.yml",
+      "role": "Node test automation",
+      "status": "proposal"
+    }
+  ],
+  "operations": [
+    "orbit",
+    "census",
+    "uniqueness",
+    "temporal",
+    "omegasl",
+    "researchGraph"
+  ],
+  "limitations": [
+    "Does not alter canonical Core, M296, M327, four-arm navigation or output contract.",
+    "Temporal differences inherit JavaScript floating-point semantics.",
+    "Research graph validation does not authenticate sources or prove claims.",
+    "Register export is local and not a secure multi-user data service.",
+    "Instrument selection is deterministic trigger routing, not model self-modification."
+  ]
+}
