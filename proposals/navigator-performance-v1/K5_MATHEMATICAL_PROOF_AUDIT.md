@@ -220,6 +220,26 @@ Recommendation: label each output separately as `EXHAUSTIVE_FINITE`, `SAMPLED_FI
 - K1/K2 selection criteria remain distinct from Λ.
 - A lexicographic cycle address remains a display/indexing convention, not the classification invariant.
 
+## 8A. Exhaustive finite recomputation instrument
+
+Added `tools/omega42_k5_finite_recompute.py`, an independent direct enumerator bounded to canonical depths 1–3. It:
+- walks every state in each finite space;
+- checks that Λ remains constant along each orbit;
+- rejects Λ collisions between distinct enumerated orbits;
+- verifies complete state coverage;
+- computes the period census;
+- reproduces K1 first-coordinate coverage and K2 seed membership.
+
+The same computation was independently recomputed in the current analysis session. Results:
+
+| Depth | States visited | Distinct Λ classes / orbits | Longest period | Longest orbits | K1 matches | K2 seed on max orbit |
+|---:|---:|---:|---:|---:|---|---|
+| 1 | 81 | 5 / 5 | 24 | 3 | Yes | Yes, once |
+| 2 | 6,561 | 41 / 41 | 216 | 27 | Yes | Yes, once |
+| 3 | 531,441 | 365 / 365 | 1,944 | 243 | Yes | Yes, once |
+
+**Execution distinction:** the session recomputation is an independently written finite calculation from the definitions. The repository script and its CI workflow have now been added for reproducibility; their latest-head CI result remains pending until GitHub Actions completes. These finite results corroborate the all-depth argument but do not replace it.
+
 ## 9. Builder actions
 
 1. Compare the reconstructed lemmas with Companion Part 102 and preserve canonical wording where it is stronger or more precise.
