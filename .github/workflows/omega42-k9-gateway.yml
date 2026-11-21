@@ -1,0 +1,26 @@
+name: Ω42 K9 Remote Navigator Gateway
+on:
+  push:
+    branches: [navigator-performance-kernel-v1]
+    paths:
+      - 'site/omega42-gateway-k9.mjs'
+      - 'tests/omega42-gateway-k9.test.mjs'
+      - 'schemas/remote-tool-gateway-k9.schema.json'
+      - '.github/workflows/omega42-k9-gateway.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'site/omega42-gateway-k9.mjs'
+      - 'tests/omega42-gateway-k9.test.mjs'
+      - 'schemas/remote-tool-gateway-k9.schema.json'
+      - '.github/workflows/omega42-k9-gateway.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test tests/omega42-gateway-k9.test.mjs
+      - run: node --check site/omega42-gateway-k9.mjs
