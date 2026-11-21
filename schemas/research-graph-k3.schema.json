@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-omega42-initiative.github.io/Omega42/schemas/research-graph-k3.schema.json",
+  "title": "Ω42 Research Graph K3",
+  "type": "object",
+  "required": ["schema", "nodes", "edges"],
+  "properties": {
+    "schema": {"const": "omega42.research-graph.k3"},
+    "nodes": {"type":"array","items":{"$ref":"#/$defs/node"}},
+    "edges": {"type":"array","items":{"$ref":"#/$defs/edge"}},
+    "metadata": {"type":"object"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "node": {
+      "type":"object",
+      "required":["id","type","title","status","provenance"],
+      "properties":{
+        "id":{"type":"string","minLength":1},
+        "type":{"enum":["definition","claim","theorem","derivation","instrument","test","dataset","decision","source","open_question"]},
+        "title":{"type":"string","minLength":1},
+        "statement":{"type":"string"},
+        "status":{"enum":["proved","deduced","computed","source-reported","conjecture","interpretation","provisional","rejected","superseded"]},
+        "provenance":{"type":"object","required":["source"],"properties":{
+          "source":{"type":"string","minLength":1},
+          "section":{"type":"string"},
+          "commit":{"type":"string"},
+          "content_sha256":{"type":"string","pattern":"^[a-fA-F0-9]{64}$"},
+          "recorded_at":{"type":"string","format":"date-time"}
+        },"additionalProperties":true},
+        "verification":{"type":"object","properties":{
+          "computational_reproduction":{"enum":["pass","fail","pending","not-applicable"]},
+          "mathematical_review":{"enum":["pass","fail","pending","not-applicable"]},
+          "application_validation":{"enum":["pass","fail","pending","not-applicable"]},
+          "reviewer_independent":{"type":"boolean"},
+          "method":{"type":"string"}
+        },"additionalProperties":true},
+        "tags":{"type":"array","items":{"type":"string"}}
+      },
+      "additionalProperties":false
+    },
+    "edge": {
+      "type":"object",
+      "required":["from","to","type"],
+      "properties":{
+        "from":{"type":"string","minLength":1},
+        "to":{"type":"string","minLength":1},
+        "type":{"enum":["depends_on","supports","implements","tests","contradicts","refines","supersedes","interprets","derived_from"]},
+        "note":{"type":"string"}
+      },
+      "additionalProperties":false
+    }
+  }
+}
