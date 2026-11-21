@@ -1,0 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {analyzeOrbit,modulus3,temporalDifferences,validateOmegaSL,verifyOrbitResult} from "../site/omega42-engine.mjs";
+test("3-adic modulus",()=>{assert.equal(modulus3(1),3n);assert.equal(modulus3(4),81n);});
+test("k=2 sample has period 24",()=>{const r=analyzeOrbit({k:2,state:[2,5]});assert.equal(r.modulus,"9");assert.equal(r.transientLength,0);assert.equal(r.period,24);assert.equal(verifyOrbitResult(r).valid,true);});
+test("canonical address stable from another point on same cycle",()=>{const a=analyzeOrbit({k:2,state:[2,5]}),b=analyzeOrbit({k:2,state:a.canonicalCycle[7]});assert.deepEqual(a.canonicalCycle,b.canonicalCycle);});
+test("OmegaSL accepts valid typed record",()=>{assert.equal(validateOmegaSL({kind:"claim",content:"A maps x to y",modality:"asserted",provenance:{source:"fixture",status:"verified"},relations:[{type:"maps",from:"x",to:"y"}]}).valid,true);});
+test("OmegaSL rejects malformed record",()=>{const r=validateOmegaSL({kind:"claim",content:"x",modality:"asserted",relations:[{}]});assert.equal(r.valid,false);assert.ok(r.errors.length>=2);});
+test("temporal differences match worked example",()=>{const r=temporalDifferences([1,2,4,7,11,16,22,29],2);assert.deepEqual(r.firstDifference,[1,2,3,4,5,6,7]);assert.deepEqual(r.secondLagDifference,[4,4,4,4]);});
+test("invalid lag rejected",()=>{assert.throws(()=>temporalDifferences([1,2],2),RangeError);});
