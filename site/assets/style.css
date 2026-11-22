@@ -293,7 +293,7 @@ svg.emblem { width: min(100%, 21rem); height: auto; display: block; overflow: vi
 .emblem .rim { fill: none; stroke: rgba(185, 180, 214, .28); stroke-width: 1; }
 .emblem .outer-glow { fill: none; stroke: #8fe9ff; stroke-width: 4; opacity: .2; transform-origin: 180px 180px; animation: emb-edge-pulse 4.8s ease-in-out infinite; }
 .emblem .facets { pointer-events: none; }
-.emblem .facet { stroke: rgba(255,255,255,.18); stroke-width: .8; stroke-linejoin: round; opacity: .12; animation: emb-facet-glint 5.8s ease-in-out calc(var(--i) * -.63s) infinite; }
+.emblem .facet { stroke: rgba(255,255,255,.18); stroke-width: .8; stroke-linejoin: round; opacity: .12; animation: emb-facet-glint 5.8s ease-in-out var(--delay) infinite; }
 .emblem .facet:nth-child(1) { fill: #62d9f2; }
 .emblem .facet:nth-child(2) { fill: #9c83ff; }
 .emblem .facet:nth-child(3) { fill: #ff77b7; }
@@ -315,7 +315,7 @@ svg.emblem { width: min(100%, 21rem); height: auto; display: block; overflow: vi
 .emblem .node.arriving circle { fill: #f7fdff; stroke: #fff; stroke-width: 2.5; filter: drop-shadow(0 0 8px #8fe9ff); }
 .emblem .node.arriving text { fill: #10152d; font-weight: 700; filter: drop-shadow(0 0 3px #fff); }
 .emblem .node, .emblem .tri, .emblem .hex { opacity: 0; animation: emb-reveal-cycle 30s ease 1.6s infinite; }
-.emblem .node { animation-delay: calc(1.6s + var(--i) * .09s); }
+.emblem .node { animation-delay: var(--delay); }
 .emblem .tri, .emblem .hex { animation-delay: 2.6s; }
 .emblem .halo { transform-origin: 180px 180px; animation: emb-breathe 9s ease-in-out infinite; }
 .emblem-link:hover .halo { opacity: 1.6; }
