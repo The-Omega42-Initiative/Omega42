@@ -24,6 +24,7 @@ assert signature==[(1,1),(1,2),(1,2),(2,2)],signature
 assert s.Poly(p,T,extension=z).degree()==9
 # Degree 1 singleton, two repeated linear roots, and two roots of a
 # squarefree quadratic, each doubled: 1+2+2+2+2 = 9.
-assert s.gcd(factors[-1][0],factors[-1][0].diff()).degree()==0 if factors[-1][0].degree()==2 else True
+assert p.gcd(p.diff()).degree()==4
+assert sum(f.degree() for f, _ in factors)==5
 print("PASS exact characteristic polynomial factor degrees and powers:",signature)
 print("CERTIFIED N=9 joint multiplicities (1,2,2,2,2)")
