@@ -602,3 +602,10 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - Hardened proposal-only `path_b_d5_execution_preflight.py` against non-mapping fields and non-string status/procedure/CWD (`7e31120b3ac1a4b18dea7be726ef521196ce8cba`), and `path_b_d5_execution_contract.py` against non-string expected SHA-256 (`314ab7f7a3961546bd001bc696b56e0d32251c53`).
 - Added 10 adversarial malformed-input controls in `tools/path_b_d5_malformed_inputs_test.py` (`6cda4d59431ba7e199f5a5ac955c199f42eabba8`), wired to isolation workflow (`b27c4ad1315acc7a4ed49271d14c5db6cc20538e`). [Run 45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) queued at observation. These pure tests check rejection without exceptions and **execute no procedures**.
 - D5 Originator approval and sandbox remain absent; no canonical changes.
+
+
+## O. D5 pure-module no-execution AST guard (23 November 2026)
+
+- At inspection, recent proposal isolation runs including [45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) remained **queued** (runner backlog); no pass claimed for malformed-input suite.
+- Added `tools/path_b_d5_no_execution_boundary_test.py` at `248cb043f6cae76077f5a106512af1176ee38e9d`. Static AST guard rejects direct subprocess/network/dynamic import APIs, eval/exec and file-writing calls in three proposal-only pure D5 modules. Seven adversarial guard fixtures check detection and one allowed hashing operation. Wired into proposal isolation at `dae6f9592e830624a2ac2dc67f4d4d45519a5b45`. **CI pending**.
+- Important: this AST guard is only a regression tripwire; it cannot prove absence of side effects or provide a sandbox. No certificate execution, no canonical modifications, no merge/deploy. Next: check CI backlog and tighten approval provenance model without implementing executor.
