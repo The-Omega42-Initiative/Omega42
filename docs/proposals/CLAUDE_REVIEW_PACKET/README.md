@@ -36,5 +36,5 @@ This folder gathers the current Path B technical evidence and the next decisions
 - L-493 and the canonical Core/Companion remain unchanged.
 - The D1b wrapper is experimental and separate from canonical checker code.
 - The dedicated D1b prototype workflow passed; full Omega42 CI was still running when this packet was prepared.
-- D5a Path B strict-wrapper validation passed: eight synthetic current-date fixtures pass A1–A4 with 8/8 coverage, and 11/11 negative controls are rejected. Raw M314's duplicate-extra defect is isolated by the wrapper; minimal-package isolation is pending. See the validation report.
+- D5a Path B strict-wrapper validation passed: eight synthetic current-date fixtures pass A1–A4 with 8/8 coverage, and 11/11 negative controls are rejected. Raw M314's duplicate-extra defect is isolated by the wrapper; minimal-package isolation passed. See the validation report.
 - This packet does not approve package boundaries, amend release policy, certify compatibility, or authorise a release.
