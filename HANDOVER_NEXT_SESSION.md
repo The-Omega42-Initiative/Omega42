@@ -289,6 +289,23 @@ A draft PR is open: https://github.com/The-Omega42-Initiative/Omega42/pull/3 . I
 
 Compact Core and Compact Companion are planned derivatives, not yet created. They must preserve all mandatory rules and remain subordinate to the Main Core.
 
+## 10A. Multi-AI Co-Builder collaboration
+
+The Originator has authorised Claude Opus 5.5 to participate as an independent Co-Builder. This is an authorised project role, but no direct Claude endpoint or connected Claude integration was available in the ChatGPT session that prepared this handover. Do not claim Claude has reviewed or changed anything until its actual response is received.
+
+A separate draft PR has been opened:
+- PR #4: https://github.com/The-Omega42-Initiative/Omega42/pull/4
+- Branch: co-builder-onboarding
+- CO_BUILDER_PROTOCOL.md: proposed role/authority/provenance/disagreement and GitHub workflow.
+- CO_BUILDER_TASK_PACKET_CLAUDE_OPUS_5_5.md: independent review request for website PR #3, legal/governance architecture, Public Foundation Release roadmap and mathematical next steps.
+
+The collaboration model is:
+- Originator: foundational intent, priorities and final human authority.
+- ChatGPT: Navigator/Integrator, continuity, implementation and synthesis.
+- Claude Opus 5.5: independent Co-Builder/challenger, once its actual review is supplied.
+
+PR #4 is draft and unmerged. The protocol is a working proposal, not yet adopted governance. The next session should inspect PR #4 and the task packet, and then incorporate Claude's actual response with provenance. Preserve disagreements; do not manufacture consensus.
+
 ## 10. Broader programmes
 
 ### Idea Discovery Network
