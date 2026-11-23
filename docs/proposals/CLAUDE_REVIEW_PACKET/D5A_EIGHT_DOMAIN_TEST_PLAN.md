@@ -1,6 +1,6 @@
 # D5a — Eight-Domain Fixture Coverage Test Plan
 
-**Status:** Path B strict wrapper implemented; eight-domain synthetic baseline and 11 negative controls passed; raw M314 duplicate defect isolated; minimal-package isolation pending  
+**Status:** Path B strict wrapper and isolated D5a package validation passed; raw M314 duplicate defect remains isolated by the wrapper  
 **Prepared:** 23 November 2026  
 **Target profile:** D5a ordinary Navigator conformance  
 **Canonical practice-set source:** `records/conformance/practice_set.txt`
@@ -128,16 +128,18 @@ The isolated package must exclude `docs/`, `omega42.identity.json` and unrelated
 
 The existing profile's lack of Core/Companion documents and selected research registers should remain explicitly tested.
 
-## 8. Reproduced duplicate-domain defect
+## 8. Reproduced duplicate-domain defect and Path B containment
 
-Source inspection and the executed negative controls establish:
+Source inspection and executed controls establish:
 
-- The report uses a set of passing domain strings to compute coverage.
-- A duplicate that replaces a missing domain leaves the missing domain uncovered, so the overall verdict is non-compatible.
-- A duplicate extra file alongside one passing file for each of the eight domains is accepted: the report sees 8/8 coverage, all files pass, and returns compatible despite nine files.
-- No explicit duplicate-domain diagnostic is emitted.
+- Raw M314 uses a set of passing domain strings to compute coverage.
+- A duplicate that replaces a missing domain leaves the missing domain uncovered, so the raw verdict is non-compatible.
+- A duplicate extra file alongside one passing file for each of the eight domains is accepted by raw M314: it sees 8/8 coverage and returns compatible despite nine files.
+- Raw M314 emits no dedicated duplicate-domain diagnostic.
 
-The current acceptance rule must therefore be stronger than set coverage: require exactly one passing file for every required domain, reject repeated in-set domains and unexpected extras, and report the duplicate explicitly. This correction is proposed only; it has not been applied to the canonical checker.
+The experimental Path B guard, `tools/path_b_d5a_guard.py`, enforces exactly one file per exact practice-set domain, exactly one `DOMAIN VERBATIM` line per file, no repeated domain, and no unexpected or missing domain. It then delegates all per-file A1–A4 checks to canonical M314. The guard rejects both duplicate controls and emits an explicit diagnostic.
+
+The Path B wrapper contains the defect at the package boundary. It does not repair or alter canonical M314, which remains unchanged.
 
 ## 9. Deliverables
 
@@ -165,21 +167,23 @@ This is a profile-level test, not a full Omega42 release, not legal/governance a
 
 ## 11. Experimental implementation and validation (23 November 2026)
 
-The harness, strict package guard and dedicated workflow are now present:
+The harness, strict package guard and dedicated workflow are present:
 
 - `tools/path_b_d5a_fixture_test.py`
+- `tools/path_b_d5a_guard.py`
 - `.github/workflows/path-b-d5a-fixtures.yml`
 - [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)
 
-Run [45155915840](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915840), source commit `0f79cb22a16026ae7c6f6caa05f10d4c28ab1ea7):
+Run [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105), source commit `4b1cd709627d58701a0fb6a5eaf8e80128b6e14b`:
 
-- Eight current-date synthetic fixtures: 8/8 A1–A4 and A3 format checks passed.
-- M314 baseline: `COMPATIBLE (SCRIPT-CAPABLE)`.
-- Ten negative controls: all ten returned `NOT YET COMPATIBLE`.
-- Additional duplicate-with-complete-coverage control: nine passing files for eight domains returned `COMPATIBLE (SCRIPT-CAPABLE)`.
+- Eight current-date synthetic fixtures: 8/8 A1–A4 and current A3 format checks passed.
+- Baseline verdict: `COMPATIBLE (SCRIPT-CAPABLE)`.
+- Negative controls: 11/11 rejected, including duplicate-domain and multiple-domain-line cases.
+- Duplicate extra with all eight domains otherwise covered: Path B guard returned `NOT YET COMPATIBLE`; raw M314 returned `COMPATIBLE (SCRIPT-CAPABLE)`.
+- Isolated minimal package: PASS. The declared runtime closure ran without Core/Companion documents, identity JSON or unrelated research registers.
 
-This reproduces an acceptance defect in `conformance.report()`: it does not enforce exactly one file per required domain. A duplicate replacing a missing domain is caught through missing coverage, but a duplicate extra file is accepted when the full set is otherwise covered. The report also has no explicit duplicate diagnostic.
+The first isolation attempt found the active `records/frameworks/lens_relevance.json` dependency; adding it resolved the failure. The validated runtime closure is listed in Section 7 and in the validation report.
 
-The dedicated workflow is intentionally failing until this defect is resolved. The canonical checker has not been changed. The harness uses synthetic prose and synthetic trigger markers, so the result is mechanical conformance-fixture evidence, not a claim of semantic navigation quality.
+The canonical M314 duplicate defect remains unchanged. The Path B wrapper contains it for this experimental package profile. Synthetic prose and trigger markers mean this is mechanical execution/format evidence, not semantic navigation-quality evidence.
 
-**D5a status:** baseline mechanics demonstrated; acceptance criterion not complete.
+**D5a status:** Path B strict-wrapper profile validation complete. This is not a full Omega42 release, not L-493 approval and not certification of a deployed system.
