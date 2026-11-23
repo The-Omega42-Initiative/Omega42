@@ -49,7 +49,7 @@ def test(k, r):
                     queue.append(nxt)
         assert reached == points, (k, r, key, len(reached), len(points))
         # Relative finite mass agrees with Haar cylinder mass at level k.
-        assert len(points)*3**(r-1) == 8*3**(2*(k-j)-2)*3**(2*j)
+        assert len(points)*3**(h-1) == 8*3**(2*n-2)
     if r < k:
         deeper = {p: label(*p, k, r+1) for p in
                   ((a,b) for a in range(m) for b in range(m))}
