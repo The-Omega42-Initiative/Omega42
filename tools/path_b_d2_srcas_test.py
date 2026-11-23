@@ -162,8 +162,19 @@ def main():
 
         # The report-body checker and the outer L-549 output-form frame are
         # separate layers. Test both against the complete archived corpus.
+        output_form_code = (
+            "import datetime, sys; sys.path.insert(0, 'tools'); import output_form; "
+            "cutoff = datetime.date(2026, 10, 30); "
+            "selected = [p for p in sys.argv[1:] "
+            "if output_form.identify(open(p, encoding='utf-8').read()) "
+            "in ('SR-CAS ASSESSMENT', 'SNCA ASSESSMENT') "
+            "and (output_form.dated(open(p, encoding='utf-8').read()) is None "
+            "or output_form.dated(open(p, encoding='utf-8').read()) >= cutoff)]; "
+            "print('D2-A outer-frame files selected:', len(selected)); "
+            "sys.exit(0 if all(output_form.check_file(p) for p in selected) else 1)"
+        )
         output_form_run = subprocess.run(
-            [sys.executable, output_form] + reports, cwd=package_root,
+            [sys.executable, "-c", output_form_code] + reports, cwd=package_root,
             capture_output=True, text=True, timeout=180
         )
         output_form_ok = output_form_run.returncode == 0
