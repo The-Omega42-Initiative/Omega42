@@ -76,20 +76,20 @@ These are executed boundary-control results, not merely source-derived suspicion
 
 `tools/path_b_d2_srcas_guard.py` is a non-canonical wrapper. It calls the unchanged canonical checker and adds checks for:
 - consistency between the verbatim MATCH value and PROCEED/HALT verdict;
-- exactly one Base Score, comparison-class weight and weighted-index field per SR-CAS report;
+- exactly one T1, T1.5, T2, T2.5 and T3 component field, Base Score, comparison-class weight and weighted-index field per proceeding SR-CAS report;
 - numeric comparison-class weight and weighted index;
 - recomputation of the weighted index;
-- exactly one Base Score and two-axis status line per SNCA report;
+- exactly one T1.5, T2, T3, Base Score and two-axis status line per SNCA report;
 - the four-field shape of a halted VERBATIM MISMATCH report;
 - balanced report delimiters and exactly one fresh PRE-SR-CAS verification block for each SR-CAS report;
-- exactly one fresh M270 gate for each proceeding SR-CAS report;
+- exactly one fresh M270 gate after the verification block for each proceeding SR-CAS report;\n- halted/proceeding classification is derived from the dedicated verification block, not incidental report prose;
 - rejection of a current file with no complete assessment report, while preserving the historical exemption.
 
 ### First wrapper defect and correction
 
 The first strict-wrapper run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed. Its field counter only matched labels at the beginning of a line. In the canonical SR-CAS format, Base Score, comparison-class weight and weighted index can appear inline within the COMPONENT VECTOR line. The wrapper therefore falsely rejected valid synthetic and archived reports.
 
-The counter has been corrected to count the exact field labels wherever they occur in the report body, including inside COMPONENT VECTOR. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45162894788](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894788) was queued at last check. **No pass is claimed until it completes.**
+The field-position counter now recognizes exact labels at line starts or after COMPONENT VECTOR pipes, while ignoring incidental prose mentions. The guard also checks the five SR-CAS component scores and three SNCA component scores for uniqueness, pairs each report with its own fresh verification block and M270 gate, and derives HALT/PROCEED only from that verification block. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45162894788](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894788) was queued at last check. **No pass is claimed until it completes.**
 
 The wrapper respects the existing historical date exemption. It does not edit or replace `tools/srcas_check.py`.
 
