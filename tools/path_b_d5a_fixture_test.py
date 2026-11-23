@@ -19,9 +19,9 @@ import format_check as fc
 import output_id as oi
 
 SET = os.path.join(ROOT, "records", "conformance", "practice_set.txt")
-FIXED_DATE = datetime.date(2026, 10, 19)  # synthetic format fixture before later date-gated requirements
+FIXED_DATE = datetime.date(2026, 10, 19)  # before later date-gated requirements
 INSTANCE = ("INSTANCE (L-513): NI-0123456789abcdef | ISSUER: SCRIPT | "
-            "ISSUED: 2026-11-19T00:00:00Z | SEQ: 1 | PREV: NONE")
+            "ISSUED: 2026-10-19T00:00:00Z | SEQ: 1 | PREV: NONE")
 
 def domains():
     return cf.load_set(SET)
@@ -45,6 +45,19 @@ def build_fixture(tag, domain):
     text = fc._fill_for_test(raw)
     text = re.sub(r"^INSTANCE \(L-513\):.*$", INSTANCE, text, flags=re.M)
     text = replace_m310(text)
+    trigger_lines = []
+    if fc._math(domain):
+        trigger_lines += [
+            "M269 MATHEMATICAL DOMAIN EXTRACTION AUDIT TRAIL",
+            "SYNTHETIC FIXTURE: trigger marker only; not a mathematical audit.",
+            "M139 SYNTHETIC FIXTURE TRIGGER MARKER",
+            "M142 SYNTHETIC FIXTURE TRIGGER MARKER",
+        ]
+    if len(domain.split()) > 30:
+        trigger_lines += ["M127 SYNTHETIC FIXTURE TRIGGER MARKER"]
+    if trigger_lines:
+        marker = "M207 NAVIGATOR INTERFERENCE"
+        text = text.replace(marker, "\n".join(trigger_lines) + "\n" + marker, 1)
     return finish_output_id(text)
 
 def verdict_for(items):
@@ -88,7 +101,7 @@ def main():
         ("non-practice domain", [(first_name, first_text.replace(rows[0][1], "A domain outside this practice set", 1))] + fixtures[1:]),
         ("wrong anchor", [(first_name, mutate_first(first_text, r"ANCHOR P\d+", "ANCHOR P9"))] + fixtures[1:]),
         ("wrong arm", [(first_name, mutate_first(first_text, r"Yang P\d+", "Yang P1"))] + fixtures[1:]),
-        ("wrong layer-one state", [(first_name, mutate_first(first_text, r"state \(\d+, \d+\)", "state (8, 8)"))] + fixtures[1:]),
+        ("wrong layer-one state", [(first_name, mutate_first(first_text, r"(?m)(^\(1\) INTERNAL.*?state )\(\d+, \d+\)", r"\g<1>(8, 8)"))] + fixtures[1:]),
         ("missing required format marker", [(first_name, first_text.replace("LENSES SELECTED (L-494): NONE", "LENS SELECTION OMITTED", 1))] + fixtures[1:]),
         ("duplicate while another domain absent", fixtures[:-1] + [("duplicate.txt", fixtures[0][1])]),
         ("empty fixture", [(first_name, "")] + fixtures[1:]),
@@ -107,19 +120,31 @@ def main():
                 failures.append(label + ": verdict " + got)
         except Exception as exc:
             print("[PASS] %s -> explicit hard error %s" % (label, repr(exc)))
-    duplicate_report, _ = verdict_for(fixtures[:-1] + [("duplicate.txt", fixtures[0][1])])
-    duplicate_diagnostic = "duplicate" in duplicate_report.lower()
-    print("DUPLICATE DIAGNOSTIC: %s" % ("PRESENT" if duplicate_diagnostic else "ABSENT (coverage still prevents compatibility)"))
+
+    duplicate_report, duplicate_verdict = verdict_for(fixtures[:-1] + [("duplicate.txt", fixtures[0][1])])
+    duplicate_diagnostic = bool(re.search(r"\bduplicate domain\b", duplicate_report, re.I))
+    print("DUPLICATE-WITH-MISSING-DOMAIN: %s; explicit diagnostic: %s" %
+          (duplicate_verdict, "PRESENT" if duplicate_diagnostic else "ABSENT"))
+
+    _, full_duplicate_verdict = verdict_for(fixtures + [("duplicate-extra.txt", fixtures[0][1])])
+    duplicate_extra_rejected = full_duplicate_verdict == "NOT YET COMPATIBLE"
+    print("DUPLICATE-WITH-COMPLETE-COVERAGE: %s" % full_duplicate_verdict)
+    if not duplicate_extra_rejected:
+        print("KNOWN DEFECT: M314 accepts nine passing files for eight domains; it does not enforce exactly one file per domain.")
 
     print("\nSUMMARY")
     print("Synthetic fixtures: %d" % len(fixtures))
     print("Baseline: %s" % verdict)
-    print("Negative controls: %d/%d rejected" % (len(tests), len(tests)))\n    print("Exact-one-file-per-domain enforcement: %s" % ("PASS" if duplicate_extra_rejected else "DEFECT IN CURRENT CHECKER"))
+    print("Negative controls: %d/%d rejected" % (len(tests), len(tests)))
+    print("Exact-one-file-per-domain enforcement: %s" % ("PASS" if duplicate_extra_rejected else "DEFECT IN CURRENT CHECKER"))
     print("Duplicate diagnostic: %s" % ("present" if duplicate_diagnostic else "absent"))
     print("No historical navigation was edited or relabelled.")
     print("No synthetic fixture was written into the repository.")
+
     if verdict not in ("COMPATIBLE (SCRIPT-CAPABLE)", "COMPATIBLE (TEXT-ONLY)"):
         failures.append("baseline did not achieve a compatible 8/8 verdict")
+    if not duplicate_extra_rejected:
+        failures.append("M314 accepts a duplicate extra file even when all eight domains are covered")
     if failures:
         print("D5a RESULT: FAIL")
         for item in failures:
