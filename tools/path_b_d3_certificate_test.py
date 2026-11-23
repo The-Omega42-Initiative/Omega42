@@ -24,6 +24,12 @@ def main():
         checker = os.path.join(package_root, "tools", "certify.py")
         os.makedirs(os.path.dirname(checker), exist_ok=True)
         shutil.copy2(source, checker)
+        guard_source = os.path.join(ROOT, "tools", "path_b_d3_certificate_guard.py")
+        guard = os.path.join(package_root, "tools", "path_b_d3_certificate_guard.py")
+        if not os.path.isfile(guard_source):
+            print("D3 FAIL: strict certificate guard missing")
+            return 1
+        shutil.copy2(guard_source, guard)
         certs = []
         for path in sorted(glob.glob(os.path.join(ROOT, "records", "certificates", "CERT-*.txt"))):
             rel = os.path.relpath(path, ROOT)
@@ -54,6 +60,17 @@ def main():
             failures.append("no certificate records copied")
             print("No certificate records found")
         run(["--list"], "Certificate inventory command")
+        if certs:
+            strict_run = subprocess.run([sys.executable, guard] + certs, cwd=package_root,
+                                        capture_output=True, text=True, timeout=120)
+            strict_ok = strict_run.returncode == 0
+            print("All archived certificates strict-guard: %s (exit %d)" %
+                  ("PASS" if strict_ok else "FINDINGS", strict_run.returncode))
+            print((strict_run.stdout or "")[-8000:])
+            if strict_run.stderr:
+                print("STRICT STDERR:", strict_run.stderr[-2000:])
+            if not strict_ok:
+                failures.append("strict guard reported findings in archived certificate corpus")
 
         # Static validation must not execute the command named in PROCEDURE.
         sys.path.insert(0, os.path.join(package_root, "tools"))
@@ -83,7 +100,33 @@ def main():
             print(p.stderr)
             failures.append("synthetic certificate failed static syntax check")
 
-        # Probe field-content and duplicate-field acceptance without changing canonical code.
+        # Probe canonical field-content and duplicate-field handling.
+        blank_subject = sample.replace("SUBJECT: x", "SUBJECT: ")
+        blank_ok = certify.check(blank_subject) == []
+        print("%-58s %s" % ("Canonical checker rejects blank SUBJECT",
+                            "PASS" if not blank_ok else "KNOWN DEFECT: ACCEPTED"))
+        duplicate_subject = sample.replace("RESULT: x", "SUBJECT: duplicate\nRESULT: x")
+        duplicate_ok = certify.check(duplicate_subject) == []
+        print("%-58s %s" % ("Canonical checker rejects duplicate SUBJECT",
+                            "PASS" if not duplicate_ok else "KNOWN DEFECT: ACCEPTED"))
+
+        # The strict wrapper must reject both malformed controls.
+        strict_controls = [
+            ("blank SUBJECT", blank_subject),
+            ("duplicate SUBJECT", duplicate_subject),
+        ]
+        strict_ok = True
+        for name, content in strict_controls:
+            path = os.path.join(package_root, "strict-negative-" + str(len(name)) + ".txt")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(content)
+            p = subprocess.run([sys.executable, guard, path], cwd=package_root,
+                               capture_output=True, text=True, timeout=30)
+            rejected = p.returncode == 1
+            print("  strict negative control %-35s %s" % (name, "REJECTED" if rejected else "ACCEPTED"))
+            strict_ok &= rejected
+        if not strict_ok:
+            failures.append("strict guard accepted a blank or duplicate field")
         blank_subject = sample.replace("SUBJECT: x", "SUBJECT: ")
         blank_ok = certify.check(blank_subject) == []
         print("%-58s %s" % ("Canonical checker rejects blank SUBJECT",
