@@ -7,6 +7,8 @@ They are never submissions, accepted records, or prior-art disclosures.
 import datetime
 import os
 import re
+import shutil
+import subprocess
 import sys
 import tempfile
 
@@ -99,6 +101,44 @@ def mutate_first(text, pattern, replacement):
         raise AssertionError("negative-control mutation did not match: " + pattern)
     return changed
 
+
+def run_isolated_package():
+    """Copy only the declared D5a execution closure and run this harness there."""
+    closure = [
+        "scripts/canonical_reference.py",
+        "scripts/m193_m225.py",
+        "scripts/crc60_and_m267.py",
+        "tools/conformance.py",
+        "tools/congruence.py",
+        "tools/bashar_lens.py",
+        "tools/format_check.py",
+        "tools/aperture_audit.py",
+        "tools/frame_audit.py",
+        "tools/output_id.py",
+        "tools/manifestation.py",
+        "tools/consciousness.py",
+        "tools/adaptors.py",
+        "tools/adaptor_rules.py",
+        "tools/utility.py",
+        "tools/path_b_d5a_guard.py",
+        "tools/path_b_d5a_fixture_test.py",
+        "records/conformance/practice_set.txt",
+    ]
+    with tempfile.TemporaryDirectory(prefix="omega42-d5a-package-") as package_root:
+        for rel in closure:
+            source = os.path.join(ROOT, rel)
+            if not os.path.isfile(source):
+                return 1, "", "missing declared closure file: " + rel
+            target = os.path.join(package_root, rel)
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            shutil.copy2(source, target)
+        script = os.path.join(package_root, "tools", "path_b_d5a_fixture_test.py")
+        result = subprocess.run(
+            [sys.executable, script, "--isolated-child"],
+            cwd=package_root, capture_output=True, text=True, timeout=180
+        )
+        return result.returncode, result.stdout, result.stderr
+
 def main():
     rows = domains()
     if len(rows) != 8 or len({domain for _, domain in rows}) != 8:
@@ -187,6 +227,16 @@ def main():
         failures.append("raw M314 duplicate acceptance was not reproduced; inspect canonical checker")
     if not duplicate_diagnostic:
         failures.append("Path B guard did not provide a duplicate-domain diagnostic")
+    if "--isolated-child" not in sys.argv:
+        isolated_rc, isolated_out, isolated_err = run_isolated_package()
+        isolated_ok = isolated_rc == 0 and "D5a RESULT: PASS" in isolated_out
+        print("\nISOLATED MINIMAL-PACKAGE RESULT: %s" % ("PASS" if isolated_ok else "FAIL"))
+        print(isolated_out[-3000:])
+        if isolated_err:
+            print("ISOLATED STDERR: " + isolated_err[-2000:])
+        if not isolated_ok:
+            failures.append("D5a isolated package closure did not pass")
+
     if failures:
         print("D5a RESULT: FAIL")
         for item in failures:
