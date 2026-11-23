@@ -130,3 +130,8 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 
 - Hardened proposal preflight against non-mapping and non-string status/procedure/CWD at `7e31120b3ac1a4b18dea7be726ef521196ce8cba`; approval contract against non-string output digest at `314ab7f7a3961546bd001bc696b56e0d32251c53`.
 - Added 10 synthetic malformed-input rejection controls (`6cda4d59431ba7e199f5a5ac955c199f42eabba8`) and isolation CI step (`b27c4ad1315acc7a4ed49271d14c5db6cc20538e`). [CI 45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) queued at last inspection. **No execution**, no canonical changes. Verify CI next.
+
+## D5 AST no-execution regression tripwire
+
+- Added proposal-only `tools/path_b_d5_no_execution_boundary_test.py` (`248cb043f6cae76077f5a106512af1176ee38e9d`) and CI wiring (`dae6f9592e830624a2ac2dc67f4d4d45519a5b45`). Checks three pure D5 modules for obvious execution/network/write APIs and tests seven adversarial/safe fixtures. **Static only, not sandbox assurance.**
+- Previous malformed-input CI [45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) still queued at inspection. New guard CI pending. No canonical changes or procedures executed.
