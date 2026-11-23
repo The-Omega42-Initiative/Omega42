@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""Path B D2 isolated validation for SR-CAS/SNCA format checking.
+
+Copies the standard-library checker and its explicit assessment/trigger inputs
+into a temporary package. Does not invoke the automatic review generator.
+"""
+import glob
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO = ROOT
+
+
+def copy_tree_files(source_pattern, package_root, prefix):
+    copied = []
+    for source in sorted(glob.glob(os.path.join(ROOT, source_pattern))):
+        if not os.path.isfile(source):
+            continue
+        rel = os.path.relpath(source, ROOT)
+        target = os.path.join(package_root, rel)
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        shutil.copy2(source, target)
+        copied.append(target)
+    return copied
+
+
+def main():
+    failures = []
+    with tempfile.TemporaryDirectory(prefix="omega42-d2-srcas-") as package_root:
+        checker_src = os.path.join(ROOT, "tools", "srcas_check.py")
+        if not os.path.isfile(checker_src):
+            print("D2 FAIL: tools/srcas_check.py is missing")
+            return 1
+        checker = os.path.join(package_root, "tools", "srcas_check.py")
+        os.makedirs(os.path.dirname(checker), exist_ok=True)
+        shutil.copy2(checker_src, checker)
+
+        reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
+        submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
+        print("D2 isolated package inputs: checker=1, SR-CAS/SNCA records=%d, APE submissions=%d" %
+              (len(reports), len(submissions)))
+
+        def run(args, label, expected=0):
+            p = subprocess.run([sys.executable, checker] + args, cwd=package_root,
+                               capture_output=True, text=True, timeout=180)
+            ok = p.returncode == expected
+            print("%-58s %s (exit %d, expected %d)" % (label, "PASS" if ok else "FAIL", p.returncode, expected))
+            if p.stdout:
+                print(p.stdout[-9000:])
+            if p.stderr:
+                print("STDERR:", p.stderr[-2500:])
+            if not ok:
+                failures.append(label)
+            return p
+
+        run(["--selftest"], "Canonical SR-CAS/SNCA checker selftest")
+
+        if reports:
+            run(reports, "All archived SR-CAS/SNCA records format-check")
+        else:
+            failures.append("no records/srcas/*.txt inputs copied")
+            print("No SR-CAS/SNCA records found")
+
+        # The owed trigger is a separate operational assertion. Preserve its
+        # actual result as evidence; do not conflate it with checker integrity.
+        owed = subprocess.run([sys.executable, checker, "--owed"], cwd=package_root,
+                              capture_output=True, text=True, timeout=180)
+        print("OWED-ON-RECEIPT AUDIT: %s (exit %d)" %
+              ("PASS" if owed.returncode == 0 else "FINDINGS", owed.returncode))
+        print((owed.stdout or "")[-12000:])
+        if owed.stderr:
+            print("OWED STDERR:", owed.stderr[-2000:])
+
+        # Exercise the command's no-report failure and historical date boundary.
+        sys.path.insert(0, os.path.join(package_root, "tools"))
+        import srcas_check
+        no_report = os.path.join(package_root, "no-report.txt")
+        with open(no_report, "w", encoding="utf-8") as f:
+            f.write("A plain text file with no assessment block.\n")
+        p = subprocess.run([sys.executable, checker, no_report], cwd=package_root,
+                           capture_output=True, text=True, timeout=30)
+        ok = p.returncode == 1 and "no SR-CAS or SNCA report found" in p.stdout
+        print("%-58s %s" % ("A current undated file with no report fails", "PASS" if ok else "FAIL"))
+        if not ok:
+            failures.append("no-report file was not rejected")
+
+        # Date exemption is a reporting rule, not a blanket bypass of the checker.
+        historical = "DATED 29 October 2026\n"
+        current = "DATED 30 October 2026\n"
+        old_ok = srcas_check.dated_from(historical) is False
+        new_ok = srcas_check.dated_from(current) is True
+        print("%-58s %s" % ("Pre-31-Oct historical exemption boundary", "PASS" if old_ok and new_ok else "FAIL"))
+        if not (old_ok and new_ok):
+            failures.append("historical date boundary incorrect")
+
+        # Negative arithmetic control against the canonical checker function.
+        bad = srcas_check.GOOD_V + srcas_check.GOOD_R.replace("Base Score: 0.79", "Base Score: 0.90")
+        results = srcas_check.check(bad)
+        arithmetic_rejected = bool(results) and any("does not recompute" in x for x in results[0][2])
+        print("%-58s %s" % ("Incorrect SR-CAS Base Score is rejected", "PASS" if arithmetic_rejected else "FAIL"))
+        if not arithmetic_rejected:
+            failures.append("incorrect SR-CAS Base Score accepted")
+
+        # Negative SNCA control: wrong weighted formula must fail.
+        bad_sn = srcas_check.GOOD_S.replace("Base Score: 0.31", "Base Score: 0.50")
+        results = srcas_check.check(bad_sn)
+        snca_rejected = bool(results) and any("does not recompute" in x for x in results[0][2])
+        print("%-58s %s" % ("Incorrect SNCA Base Score is rejected", "PASS" if snca_rejected else "FAIL"))
+        if not snca_rejected:
+            failures.append("incorrect SNCA Base Score accepted")
+
+    print("D2 RESULT: %s" % ("FAIL" if failures else "PASS"))
+    for failure in failures:
+        print(" - " + failure)
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
