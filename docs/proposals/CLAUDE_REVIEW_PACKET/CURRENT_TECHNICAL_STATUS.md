@@ -71,7 +71,22 @@ The harness also tests a minimal temporary package. Its first isolation attempt 
 All fixtures are synthetic structural test artefacts. The essay, current-knowledge/reach content and M269/M139–M142/M127 trigger markers are not substantive research or semantic navigation. The result demonstrates mechanical acceptance, not answer quality or the quality of AI reasoning.
 
 See [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md), the [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md), [the harness](../../../tools/path_b_d5a_fixture_test.py) and [the strict guard](../../../tools/path_b_d5a_guard.py).
-## 5. Additional checker questions to test
+## 5. D3 — Static certificate validation
+
+D3 is deliberately separated from D5 procedure execution.
+
+- The isolated static package contains `tools/certify.py` and the 10 archived certificate records.
+- The harness uses `--check`, `--list` and direct static `check()` calls only. It deliberately does not invoke `--selftest`, because the canonical self-test calls `verify()` and executes a shell procedure.
+- The synthetic procedure field contains a side-effect command; the harness verifies that `--check` does not execute it.
+- Source and controls show that canonical `certify.check()` accepts blank and duplicate SUBJECT fields. The experimental strict guard rejects these.
+- The strict guard also requires one balanced certificate block, unique fields, a `CERT-####` identifier, a relative non-traversing CWD, a valid digest unless REGISTERED, and a nonempty finding statement.
+- Nine strict negative controls cover blank/duplicate fields, malformed ID, traversal, Windows UNC path, invalid digest, duplicate block and unbalanced opening/closing markers.
+
+The D3 workflow [45162503895](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503895) was queued at last check. No D3 pass is claimed. No certificate procedure has been executed, no certificate has been re-certified or withdrawn, and no canonical checker has been changed.
+
+See the [D3 validation report](D3_CERTIFICATE_STATIC_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d3_certificate_test.py), [strict guard](../../../tools/path_b_d3_certificate_guard.py) and [D5 execution-boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md).
+
+## 6. Additional checker questions to test
 
 Source inspection of `tools/conformance.py` shows:
 - coverage is represented as a set of exact domain strings;
@@ -83,7 +98,7 @@ Source inspection of `tools/conformance.py` shows:
 
 The duplicate, malformed, empty, missing-domain, wrong-domain and multiple-domain-line behaviours have been exercised. The strict release-profile wrapper catches the raw M314 duplicate defect without changing canonical code. Minimal-package isolation passed with the declared closure. This profile is limited to the eight English/Latin practice-set domains; it does not establish a cross-lingual adaptor package closure.
 
-## 6. Claude review questions
+## 7. Claude review questions
 
 Claude is asked to independently assess:
 
@@ -97,7 +112,7 @@ Claude is asked to independently assess:
 
 Please separate formal technical findings, implementation recommendations, governance questions and legal questions. Preserve disagreements rather than forcing consensus.
 
-## 6. Authority and status
+## 8. Authority and status
 
 - Path B is still a proposal.
 - L-493 is unchanged and remains authoritative.
