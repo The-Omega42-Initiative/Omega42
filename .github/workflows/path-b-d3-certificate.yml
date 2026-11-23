@@ -1,0 +1,21 @@
+name: Path B D3 certificate static validation
+
+on:
+  push:
+    branches:
+      - proposal/path-b-release-packaging
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  d3-certificate-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate certificates without executing procedures
+        run: python tools/path_b_d3_certificate_test.py
