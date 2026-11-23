@@ -82,7 +82,7 @@ D3 is deliberately separated from D5 procedure execution.
 - The strict guard also requires one balanced certificate block, unique fields, a `CERT-####` identifier, a relative non-traversing CWD, a valid digest unless REGISTERED, and a nonempty finding statement.
 - Nine strict negative controls cover blank/duplicate fields, malformed ID, traversal, Windows UNC path, invalid digest, duplicate block and unbalanced opening/closing markers.
 
-The D3 workflow [45162503895](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503895) was queued at last check. No D3 pass is claimed. No certificate procedure has been executed, no certificate has been re-certified or withdrawn, and no canonical checker has been changed.
+The D3 workflow [45162894748](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894748) was queued at last check. No D3 pass is claimed. No certificate procedure has been executed, no certificate has been re-certified or withdrawn, and no canonical checker has been changed.
 
 See the [D3 validation report](D3_CERTIFICATE_STATIC_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d3_certificate_test.py), [strict guard](../../../tools/path_b_d3_certificate_guard.py) and [D5 execution-boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md).
 
