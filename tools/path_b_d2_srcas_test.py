@@ -194,7 +194,7 @@ def main():
         strict_controls = [
             ("MATCH NO with PROCEED", good_sr.replace("MATCH: YES", "MATCH: NO")),
             ("second report reuses prior verification", good_sr + srcas_check.GOOD_R),
-            ("unclosed report marker", "======= SNCA ASSESSMENT REPORT =======\\nDOMAIN: incomplete\\n"),
+            ("unclosed report marker", "======= SNCA ASSESSMENT REPORT =======\nDOMAIN: incomplete\n"),
             ("MATCH YES with HALT", good_sr.replace("VERDICT: PROCEED", "VERDICT: HALT -- VERBATIM MISMATCH")),
             ("duplicate MATCH line", good_sr.replace("MATCH: YES\nVERDICT:", "MATCH: YES\nMATCH: YES\nVERDICT:")),
             ("missing exact MATCH line", good_sr.replace("MATCH: YES", "MATCH: MAYBE")),
