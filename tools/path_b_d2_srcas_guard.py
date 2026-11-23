@@ -14,9 +14,10 @@ import srcas_check
 
 
 def _count_line(body, label):
-    # Critical score fields may share the COMPONENT VECTOR line. Count each
-    # exact label wherever it appears, not only at the beginning of a line.
-    return len(re.findall(re.escape(label), body))
+    # Score fields may begin a line or follow a pipe in COMPONENT VECTOR.
+    # Count only field-position labels, not incidental prose mentions.
+    pattern = r"(?mi)(?:^|\\|\\s*)\\s*" + re.escape(label) + r"\\s*"
+    return len(re.findall(pattern, body))
 
 
 def strict_findings(text):
