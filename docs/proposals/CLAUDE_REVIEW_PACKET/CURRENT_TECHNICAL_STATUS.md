@@ -3,7 +3,8 @@
 **Prepared:** 23 November 2026  
 **Branch:** `proposal/path-b-release-packaging`  
 **Review-packet baseline:** the packet was created after the experimental validation on `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`.  
-**D1b prototype source commit tested:** `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`\n**Latest D5a fixture source commit tested:** `0f79cb22a16026ae7c6f6caa05f10d4c28ab1ea7`
+**D1b prototype source commit tested:** `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`
+**Latest D5a fixture source commit tested:** `f706551e0986f07c7bab22bbbbf36f2222bfd9ab`
 
 ## 1. Workflow evidence
 
