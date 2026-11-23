@@ -82,19 +82,22 @@ For the complete set:
 
 ## 6. Negative controls
 
-The suite should independently demonstrate that the overall result is `NOT YET COMPATIBLE` when:
+The experimental harness has exercised ten controls, each of which returned `NOT YET COMPATIBLE`:
 
-1. One domain fixture is removed.
-2. One fixture's domain is changed to a non-practice-set domain.
-3. An anchor is changed.
-4. One arm is changed.
-5. A required layer-one field is changed.
-6. A required format marker is removed.
-7. One domain is duplicated while another is absent.
-8. A fixture file is empty or malformed.
-9. A fixture is valid individually but has the wrong exact domain wording.
+1. One domain fixture removed.
+2. One fixture's domain changed to a non-practice-set domain.
+3. Anchor changed.
+4. One arm changed.
+5. Required layer-one state changed.
+6. Required format marker removed.
+7. One domain duplicated while another is absent.
+8. Empty fixture.
+9. Malformed fixture.
+10. Valid fixture with wrong exact wording in `DOMAIN VERBATIM`.
 
-The current `conformance.report()` implementation must be examined for duplicate handling and malformed-file behaviour. The test harness must not assume these cases are correctly rejected until it has executed them. If a defect is found, document it and keep the canonical checker unchanged unless separately authorised.
+An additional control supplied nine passing files while all eight domains remained represented. The current report returned `COMPATIBLE (SCRIPT-CAPABLE)`, contrary to the exact-one-file-per-domain acceptance criterion. This is a reproduced M314 defect. The report also emits no dedicated duplicate-domain diagnostic. See the [validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md).
+
+The canonical checker remains unchanged. A future checker correction or wrapper must reject the duplicate-extra case and preserve per-file diagnostics before D5a can be complete.
 
 ## 7. Package boundary and data exclusions
 
@@ -120,11 +123,16 @@ The isolated package must exclude `docs/`, `omega42.identity.json` and unrelated
 
 The existing profile's lack of Core/Companion documents and selected research registers should remain explicitly tested.
 
-## 8. Potential implementation issue: duplicate domains
+## 8. Reproduced duplicate-domain defect
 
-The current report logic adds a domain to a set when a passing fixture is found. A duplicate valid fixture does not itself add a new domain, so an absent domain should remain uncovered. However, the report currently processes each file and may not emit a dedicated duplicate warning. Add an explicit duplicate-domain assertion to the test harness; do not rely only on the final verdict.
+Source inspection and the executed negative controls establish:
 
-Also test the case where one duplicate is valid and another duplicate is invalid, and the case where one domain is repeated while another is absent. Preserve per-file diagnostics.
+- The report uses a set of passing domain strings to compute coverage.
+- A duplicate that replaces a missing domain leaves the missing domain uncovered, so the overall verdict is non-compatible.
+- A duplicate extra file alongside one passing file for each of the eight domains is accepted: the report sees 8/8 coverage, all files pass, and returns compatible despite nine files.
+- No explicit duplicate-domain diagnostic is emitted.
+
+The current acceptance rule must therefore be stronger than set coverage: require exactly one passing file for every required domain, reject repeated in-set domains and unexpected extras, and report the duplicate explicitly. This correction is proposed only; it has not been applied to the canonical checker.
 
 ## 9. Deliverables
 
