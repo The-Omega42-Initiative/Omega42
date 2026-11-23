@@ -5,7 +5,8 @@ on:
     branches:
       - proposal/path-b-release-packaging
     paths:
-      - "tools/path_b_d5a_fixture_test.py"\n      - "tools/path_b_d5a_guard.py"
+      - "tools/path_b_d5a_fixture_test.py"
+      - "tools/path_b_d5a_guard.py"
       - "tools/conformance.py"
       - "tools/format_check.py"
       - "tools/congruence.py"
