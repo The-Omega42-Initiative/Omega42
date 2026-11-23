@@ -156,6 +156,12 @@ def main():
             print("D2 FAIL: tools/output_form.py is missing for the outer-frame audit")
             return 1
         shutil.copy2(output_form_src, output_form_dest)
+        account_check_src = os.path.join(ROOT, "tools", "account_check.py")
+        account_check_dest = os.path.join(package_root, "tools", "account_check.py")
+        if not os.path.isfile(account_check_src):
+            print("D2 FAIL: tools/account_check.py is missing for the dispatch audit")
+            return 1
+        shutil.copy2(account_check_src, account_check_dest)
 
         reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
@@ -221,6 +227,32 @@ def main():
         print("%-58s %s" % ("Outer-frame checker rejects wrong declared form", "PASS" if wrong_form_rejected else "FAIL"))
         if not wrong_form_rejected:
             failures.append("outer-frame checker accepted wrong declared form")
+
+        # Source-level regression characterization: the output-form registry
+        # declares account_check.py for NAVIGATOR'S ACCOUNT, but form_checks()
+        # currently falls through to marker-only PASS. Preserve this known gap
+        # as evidence without modifying the canonical dispatcher.
+        import account_check
+        malformed_account = (
+            "QUESTION VERBATIM: synthetic malformed account\\n"
+            "NAVIGATOR'S ACCOUNT (L-509): synthetic marker only\\n"
+        )
+        account_form = output_form.identify(malformed_account)
+        declared = next((entry[3] for entry in output_form.FORMS if entry[0] == account_form), None)
+        dispatch = output_form.form_checks(malformed_account, account_form)
+        direct = account_check.check(malformed_account)
+        mismatch = (
+            account_form == "NAVIGATOR'S ACCOUNT" and
+            declared == "tools/account_check.py" and
+            bool(dispatch) and all(item[0] == "PASS" for item in dispatch) and
+            any(not ok for ok, _ in direct)
+        )
+        print("%-62s %s" % (
+            "Navigator Account declared checker vs actual dispatch",
+            "CONFIRMED KNOWN GAP" if mismatch else "NOT REPRODUCED"
+        ))
+        if not mismatch:
+            failures.append("Navigator Account checker/dispatch mismatch not reproduced")
 
         # D2-B is tested in its own temporary package, separate from D2-A's
         # archive and receipt-audit corpus. This is a NAVIGATION-input profile.
