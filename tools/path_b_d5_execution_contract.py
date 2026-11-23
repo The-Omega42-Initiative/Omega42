@@ -5,9 +5,8 @@ An explicit approval record is required even after the command preflight.
 This module NEVER calls subprocess or certificate verify. A passing contract
 does NOT guarantee an executable's safety; isolation is a separate requirement.
 """
+import datetime
 import hashlib
-import json
-import os
 import re
 
 from path_b_d5_execution_preflight import preflight
@@ -32,6 +31,8 @@ def evaluate(fields, approval, root, now_utc):
             issues.append("approval missing " + key)
     if issues:
         return False, issues
+    if not isinstance(fields.get("PROCEDURE"), str):
+        return False, issues + ["procedure must be text"]
     procedure = fields["PROCEDURE"]
     digest = hashlib.sha256(procedure.encode("utf-8")).hexdigest()
     if approval["procedure_sha256"] != digest:
@@ -46,10 +47,20 @@ def evaluate(fields, approval, root, now_utc):
         issues.append("approval scope not restricted to single-certificate review")
     if not isinstance(approval["approved_by"], str) or not approval["approved_by"].strip():
         issues.append("approver identity absent")
-    if not isinstance(approval["expires_utc"], str) or not re.fullmatch(
-            r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ", approval["expires_utc"]):
-        issues.append("approval expiry malformed")
-    elif approval["expires_utc"] <= now_utc:
+    def parse_utc(value):
+        if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ", value):
+            return None
+        try:
+            return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
+        except ValueError:
+            return None
+    expiry = parse_utc(approval["expires_utc"])
+    now = parse_utc(now_utc)
+    if expiry is None:
+        issues.append("approval expiry malformed or impossible date")
+    if now is None:
+        issues.append("current UTC time malformed or impossible date")
+    if expiry is not None and now is not None and expiry <= now:
         issues.append("approval expired")
     expected = fields.get("RESULT SHA-256", "")
     if not HEX.fullmatch(expected):
