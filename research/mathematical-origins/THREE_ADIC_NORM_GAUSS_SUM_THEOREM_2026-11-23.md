@@ -47,7 +47,7 @@ Let \(p_k(r)=3^{-2k}\#\{(a,b):Q(a,b)\equiv r\pmod{3^k}\}\). Its finite Fourier t
 \widehat p_k(t)=3^{-2k}S_k(t)
 =\begin{cases}
 1,&t=0,\\
-(-1)^{k-v}3^{-(2k-v)},&0\ne t,\ v=v_3(t).
+(-1)^{k-v}3^{v-k},&0\ne t,\ v=v_3(t).
 \end{cases}
 \]
 
