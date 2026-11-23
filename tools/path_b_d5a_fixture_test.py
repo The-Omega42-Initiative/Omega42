@@ -106,7 +106,7 @@ def main():
         ("duplicate while another domain absent", fixtures[:-1] + [("duplicate.txt", fixtures[0][1])]),
         ("empty fixture", [(first_name, "")] + fixtures[1:]),
         ("malformed fixture", [(first_name, "not a navigation\n")] + fixtures[1:]),
-        ("wrong exact domain wording", [(first_name, first_text.replace(rows[0][1], rows[0][1].replace("time", "Time"), 1))] + fixtures[1:]),
+        ("wrong exact domain wording", [(first_name, first_text.replace("DOMAIN VERBATIM: " + rows[0][1], "DOMAIN VERBATIM: " + rows[0][1].replace("time", "Time"), 1))] + fixtures[1:]),
     ]
 
     print("\nNEGATIVE-CONTROL MATRIX")
