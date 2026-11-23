@@ -26,7 +26,7 @@ Here 1/2 means the inverse of two modulo N.
 **Proof.** Weyl multiplication obeys W_xW_y=ζ^([x,y]/2)W_(x+y). Exact Egorov gives W_yV=VW_(G^(−1)y). Trace invariance under conjugation by W_y gives, for arbitrary x,
 \[
 \operatorname{Tr}(VW_x)=
-\zeta^{([x,y]+[G^{-1}y,x-y])/2}
+\zeta^{(-[x,y]+[G^{-1}y,x-y])/2}
 \operatorname{Tr}(VW_{x+(G^{-1}-I)y}).
 \]
 Set x=0 and choose y=(G^(−1)−I)^(−1)x_target. The first term [0,y] vanishes, yielding
