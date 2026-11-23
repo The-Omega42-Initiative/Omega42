@@ -81,12 +81,11 @@ Therefore a process may produce a result with reduced coverage while appearing t
 
 ### 4.3 Skeleton generation is a separate capability
 
-The `--skeleton` path is not the same as checking an existing output. It:
+The `--skeleton` path is not the same as checking an existing output. It invokes `scripts/canonical_reference.py --navigate` through `subprocess.run` to generate canonical blocks and imports `tools/utility.py` to call only `utility.request_of()` for request classification and avenue selection.
 
-- invokes `scripts/canonical_reference.py --navigate` through `subprocess.run` to generate canonical blocks;
-- imports `tools/utility.py` to determine request type and generate additional content.
+The command-specific trace is now documented in [PATH_B_SKELETON_GENERATION_CLOSURE_AUDIT.md](PATH_B_SKELETON_GENERATION_CLOSURE_AUDIT.md). Its generation-only closure is `format_check.py`, `utility.py`, `manifestation.py` and `scripts/canonical_reference.py`; M193/M225 is additionally required only when full format-check coverage is also claimed. The other record-reading utility functions are not active on the skeleton path.
 
-The utility module has a wider import and record-reading surface, including manifestation, congruence, CRC-60/M267, adaptors and consciousness-related helpers. This audit has not yet traced every function selected by every skeleton request, so it does not assert a complete file-read closure for skeleton generation.
+The skeleton path also has fail-open behaviour: it catches utility import failures and substitutes generic request labels, and it ignores the canonical subprocess return code. The isolated negative controls reproduce both gaps.
 
 **Candidate profiles:**
 - OPR-D1a — existing-output format check;
