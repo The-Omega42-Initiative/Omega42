@@ -1,12 +1,14 @@
 # D2 — SR-CAS / SNCA Package Validation and Audit
 
-**Status:** D2-A canonical baseline passed. The experimental strict guard now includes fail-closed no-report and delimiter controls, historical-exemption preservation, per-report verification/M270 pairing, unique component-score fields and expanded negative controls. The latest isolated run is queued. D2-B NAVIGATION-only package validation and the active-date outer L-549 frame audit are also pending.
+**Status:** D2-A canonical baseline passed. The expanded strict guard and D2-B NAVIGATION-only profile have been exercised. The first two expanded D2 runs failed for test-harness reasons: a literal newline in the duplicate-SNCA-T2 negative control, and a D2-B synthetic pair that did not supply the explicit per-relation verdicts required by M193/M225. Both harness defects have been corrected on the proposal branch. The latest D2 run is in progress; no pass is claimed yet.
 **Prepared:** 23 November 2026
 **Branch:** `proposal/path-b-release-packaging`
 **D2-A canonical baseline source commit:** `aeddcfd669734cc068c845ad4be7861706163c43`
 **D2-A canonical baseline workflow:** [45159025998](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159025998)
 **First strict-wrapper attempt:** [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) — failed; wrapper defect diagnosed
-**Latest D2 validation workflow:** [45163029382](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163029382) — queued at last check
+**First expanded D2 run:** [45163557806](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163557806) — failed: D2-B lacked explicit relation verdicts; duplicate-T2 control was double-escaped
+**Second expanded D2 run:** [45174263744](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174263744) — strict negative controls passed; D2-B still failed because the synthetic pair did not supply the M193/M225 per-relation verdict map
+**Latest D2 validation workflow:** [45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) — in progress on the corrected harness
 **Harness:** `tools/path_b_d2_srcas_test.py`
 **Experimental guard:** `tools/path_b_d2_srcas_guard.py`
 
@@ -90,7 +92,7 @@ These are executed boundary-control results, not merely source-derived suspicion
 
 The first strict-wrapper run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed. Its field counter only matched labels at the beginning of a line. In the canonical SR-CAS format, Base Score, comparison-class weight and weighted index can appear inline within the COMPONENT VECTOR line. The wrapper therefore falsely rejected valid synthetic and archived reports.
 
-The field-position counter now recognizes exact labels at line starts or after COMPONENT VECTOR pipes, while ignoring incidental prose mentions. The guard also checks the five SR-CAS component scores and three SNCA component scores for uniqueness, pairs each report with its own fresh verification block and M270 gate, and derives HALT/PROCEED only from that verification block. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45163029382](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163029382) was queued at last check. **No pass is claimed until it completes.**
+The field-position counter now recognizes exact labels at line starts or after COMPONENT VECTOR pipes, while ignoring incidental prose mentions. The guard also checks the five SR-CAS component scores and three SNCA component scores for uniqueness, pairs each report with its own fresh verification block and M270 gate, and derives HALT/PROCEED only from that verification block. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The first expanded run [45163557806](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163557806) revealed that the duplicate-SNCA-T2 control contained a literal backslash-n rather than a second line. The second run [45174263744](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174263744) confirmed that the corrected negative control was rejected, and all 13 strict negative controls behaved as intended. The latest run [45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) tests the corrected harness. **No pass is claimed until it completes.**
 
 The wrapper respects the existing historical date exemption. It does not edit or replace `tools/srcas_check.py`.
 
@@ -127,9 +129,9 @@ The harness now:
 4. explicitly imports the format checker and asserts that its M193/Jargon scanner is available, because the canonical format checker historically catches scanner import errors and can silently set `_JS = None`;
 5. explicitly imports the adaptor layer, verifies the registry is readable, and checks that an English question routes to CANONICAL;
 6. runs the automatic runner's self-test;
-7. runs a navigation-pair smoke test and checks for SNCA, SR-CAS, MATCH: YES and VERDICT: PROCEED.
+7. runs a navigation-pair smoke test and checks for SNCA, SR-CAS, MATCH: YES and VERDICT: PROCEED. The synthetic driver calls the runner's `run()` function with an explicit per-relation verdict map, because the M193/M225 structural comparison intentionally requires a Navigator's MATCH/PARTIAL/DIFFERENT judgments for every relation present in both syntheses.
 
-The pair is intentionally a duplicate copy of `seq_0133.txt`. It proves that the declared NAVIGATION profile can mechanically execute the runner, not that two independent Navigators agree.
+The pair is intentionally a duplicate copy of `seq_0133.txt`; the synthetic test supplies MATCH for each relation in the declared relation order. It proves that the declared NAVIGATION profile can mechanically execute the runner when the required adjudication input is supplied. It does **not** prove that two independent Navigators agree, that MATCH is the correct judgment, or that the runner can autonomously decide T1.5-S.
 
 This closure is **NAVIGATION-only**. It is not a universal D2-B package. Other input forms expand the closure: SR-CAS/SNCA reports require `tools/srcas_check.py`; CERTIFICATE requires the static checker `tools/certify.py`; INTRODUCTION requires `tools/intro_output.py` and its data registry; other forms need their own profile declaration and tests. D2-B remains incomplete until those form profiles are separately audited.
 
