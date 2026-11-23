@@ -414,3 +414,12 @@ The source-level import and dynamic-loading trace is recorded in [PATH_B_IMPORT_
 The next-stage command trace is recorded in [PATH_B_COMMAND_SPECIFIC_READ_CLOSURE_AUDIT.md](PATH_B_COMMAND_SPECIFIC_READ_CLOSURE_AUDIT.md). It identifies the active file-read closures for the canonical reference, existing-output format checks, output-form dispatch, specialised SR-CAS/certificate/Introduction checks, the identity manifest and the ordinary conformance command. It also separates optional modes such as skeleton generation, repository-wide owed-assessment checks and privileged certificate procedure execution.
 
 The principal result is that imported modules do not make every associated research register mandatory: the ordinary conformance `--check` path uses a much smaller active data closure than its import graph suggests. The audit is source-level and remains subject to clean-room testing; it does not change canonical policy or L-493.
+
+
+## 21. Supporting minimal package prototype results
+
+Four capability-specific package prototypes have now been assembled in temporary isolated workspaces and exercised by the dedicated [Path B prototype-isolation workflow](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45151260191). The test record is [PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md](PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md).
+
+On tested source commit `b8e7b0384aa86b53ca526d4c28d6ddb1196fa55d`, C1, D1a, D4 and the D5a smoke test passed. The D5a test deliberately used one historical navigation outside the eight-domain public practice set: its individual required checks passed, while the overall result correctly remained NOT YET COMPATIBLE. This is not a full-set certification.
+
+The prototypes support capability-specific package boundaries, but they do not yet establish every command closure, full multilingual conformance, skeleton-generation closure, or equivalence to L-493. The existing release gate remains untouched and authoritative.
