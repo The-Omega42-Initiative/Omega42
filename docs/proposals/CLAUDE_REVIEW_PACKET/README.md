@@ -14,6 +14,7 @@ This folder gathers the current Path B technical evidence and the next decisions
 3. [D5a eight-domain fixture test plan](D5A_EIGHT_DOMAIN_TEST_PLAN.md)
 4. [D5a eight-domain validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)
 5. [D2 SR-CAS/SNCA validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md)
+6. [D5 certificate execution boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md)
 5. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
 
 ## Source material
@@ -33,6 +34,11 @@ This folder gathers the current Path B technical evidence and the next decisions
 - [D2 isolated validation harness](../../../tools/path_b_d2_srcas_test.py)
 - [D2 strict wrapper](../../../tools/path_b_d2_srcas_guard.py)
 - [D2 validation workflow](../../../.github/workflows/path-b-d2-srcas.yml)
+- [D3 static certificate harness](../../../tools/path_b_d3_certificate_test.py)
+- [D3 static certificate guard](../../../tools/path_b_d3_certificate_guard.py)
+- [D3 validation workflow](../../../.github/workflows/path-b-d3-certificate.yml)
+- [D4 Introduction harness](../../../tools/path_b_d4_introduction_test.py)
+- [D4 validation workflow](../../../.github/workflows/path-b-d4-introduction.yml)
 
 ## Status and authority boundaries
 
@@ -41,5 +47,7 @@ This folder gathers the current Path B technical evidence and the next decisions
 - The D1b wrapper is experimental and separate from canonical checker code.
 - The dedicated D1b prototype workflow passed; full Omega42 CI was still running when this packet was prepared.
 - D5a Path B strict-wrapper validation passed: eight synthetic current-date fixtures pass A1–A4 with 8/8 coverage, and 11/11 negative controls are rejected. Raw M314's duplicate-extra defect is isolated by the wrapper; minimal-package isolation passed. See the validation report.
-- D2-A canonical SR-CAS/SNCA checker baseline passed in isolation: 9/9 self-tests, all 58 archived report files, and the 197/197 APE receipt audit. A stricter Path B guard is under test; D2-B automatic review generation remains a separate, unaudited dependency profile. See the D2 report.
+- D2-A canonical SR-CAS/SNCA checker baseline passed in isolation: 9/9 self-tests, all 58 archived report files, and the 197/197 APE receipt audit. The strict Path B wrapper is being corrected against the archive; D2-B now has a separate real-navigation-pair smoke test. See the D2 report.
+- D3 static certificate validation is under test. It excludes `--selftest` because that command executes certificate procedures; the D3 profile uses `--check` only. See the D5 execution-boundary audit.
+- D4 Introduction output, Core correspondence, legitimacy and philosophical-register checks have an isolated test harness; results are pending.
 - This packet does not approve package boundaries, amend release policy, certify compatibility, or authorise a release.

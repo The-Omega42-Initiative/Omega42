@@ -1,6 +1,6 @@
 # D2 — SR-CAS / SNCA Package Validation and Audit
 
-**Status:** Canonical checker profile passed; strict Path B guard validation is pending.  
+**Status:** Canonical D2-A checker baseline passed; strict Path B guard and D2-B runner smoke test are under validation.  
 **Prepared:** 23 November 2026  
 **Branch:** \`proposal/path-b-release-packaging\`  
 **Canonical baseline source commit:** \`aeddcfd669734cc068c845ad4be7861706163c43\`  
@@ -35,7 +35,7 @@ Its direct dynamic imports are:
 
 The output-form registry dynamically loads different checkers according to the incoming form. A navigation invokes \`tools/format_check.py\`, which in turn loads the canonical reference and M193/M225 scanner. Other forms can invoke certificate, Introduction or other checkers. Therefore the full D2-B closure depends on the declared input-form profile; it cannot be inferred from the three direct imports alone.
 
-**No claim is made that the full automatic generation runner has been isolated or validated by D2-A.** The D2-A package must not be described as the complete SR-CAS/SNCA runtime.
+**No claim is made that the full automatic generation runner has been isolated or validated by D2-A.** The latest harness now adds a separate D2-B smoke test using two copies of `records/instances/seq_0133.txt`. It tests the automatic runner's self-test and navigation-pair path in a temporary package. This is a mechanical duplicate-input fixture, not an independent cross-Navigator comparison. Its result is pending. The D2-A package must not be described as the complete SR-CAS/SNCA runtime.
 
 ## 2. Canonical D2-A baseline result
 
