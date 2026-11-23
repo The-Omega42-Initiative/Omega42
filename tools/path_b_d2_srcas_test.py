@@ -38,8 +38,10 @@ def main():
         checker = os.path.join(package_root, "tools", "srcas_check.py")
         os.makedirs(os.path.dirname(checker), exist_ok=True)
         shutil.copy2(checker_src, checker)
-
-        reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
+        guard_src = os.path.join(ROOT, "tools", "path_b_d2_srcas_guard.py")
+        guard = os.path.join(package_root, "tools", "path_b_d2_srcas_guard.py")
+        if not os.path.isfile(guard_src):\n            print("D2 FAIL: tools/path_b_d2_srcas_guard.py is missing")\n            return 1\n        shutil.copy2(guard_src, guard)
+\n        reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
         print("D2 isolated package inputs: checker=1, SR-CAS/SNCA records=%d, APE submissions=%d" %
               (len(reports), len(submissions)))
@@ -59,6 +61,40 @@ def main():
 
         run(["--selftest"], "Canonical SR-CAS/SNCA checker selftest")
 
+        # The Path B wrapper is tested separately from the unchanged canonical checker.
+        sys.path.insert(0, os.path.join(package_root, "tools"))
+        import path_b_d2_srcas_guard as strict_guard
+        good_sr = srcas_check.GOOD_V + srcas_check.GOOD_R
+        good_sn = srcas_check.GOOD_S
+        sr_path = os.path.join(package_root, "synthetic-sr.txt")
+        sn_path = os.path.join(package_root, "synthetic-sn.txt")
+        with open(sr_path, "w", encoding="utf-8") as f:
+            f.write(good_sr)
+        with open(sn_path, "w", encoding="utf-8") as f:
+            f.write(good_sn)
+        good_profile = strict_guard.check_file(sr_path) and strict_guard.check_file(sn_path)
+        print("%-58s %s" % ("Strict guard accepts complete SR-CAS and SNCA baselines",
+                            "PASS" if good_profile else "FAIL"))
+        if not good_profile:
+            failures.append("strict guard rejected complete synthetic baseline")
+
+        strict_controls = [
+            ("MATCH NO with PROCEED", good_sr.replace("MATCH: YES", "MATCH: NO")),
+            ("missing numeric comparison weight", good_sr.replace("Comparison-class weight (L-416): x1.5", "Comparison-class weight (L-416): N/A")),
+            ("missing numeric weighted index", good_sr.replace("Weighted index: 1.00", "Weighted index: N/A")),
+            ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\nMANDATORY CORRECTIONS: none")),
+        ]
+        strict_ok = True
+        for name, content in strict_controls:
+            path = os.path.join(package_root, "negative-" + str(len(name)) + ".txt")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(content)
+            rejected = not strict_guard.check_file(path)
+            print("  strict negative control %-35s %s" % (name, "REJECTED" if rejected else "ACCEPTED"))
+            strict_ok &= rejected
+        if not strict_ok:
+            failures.append("strict guard accepted one or more negative controls")
+
         if reports:
             run(reports, "All archived SR-CAS/SNCA records format-check")
         else:
@@ -76,7 +112,6 @@ def main():
             print("OWED STDERR:", owed.stderr[-2000:])
 
         # Exercise the command's no-report failure and historical date boundary.
-        sys.path.insert(0, os.path.join(package_root, "tools"))
         import srcas_check
         no_report = os.path.join(package_root, "no-report.txt")
         with open(no_report, "w", encoding="utf-8") as f:
