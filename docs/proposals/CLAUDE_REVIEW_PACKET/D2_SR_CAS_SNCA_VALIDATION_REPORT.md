@@ -6,7 +6,7 @@
 **D2-A canonical baseline source commit:** `aeddcfd669734cc068c845ad4be7861706163c43`
 **D2-A canonical baseline workflow:** [45159025998](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159025998)
 **First strict-wrapper attempt:** [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) — failed; wrapper defect diagnosed
-**Latest D2 validation workflow:** [45162503870](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503870) — queued at last check
+**Latest D2 validation workflow:** [45162894788](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894788) — queued at last check
 **Harness:** `tools/path_b_d2_srcas_test.py`
 **Experimental guard:** `tools/path_b_d2_srcas_guard.py`
 
@@ -89,7 +89,7 @@ These are executed boundary-control results, not merely source-derived suspicion
 
 The first strict-wrapper run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed. Its field counter only matched labels at the beginning of a line. In the canonical SR-CAS format, Base Score, comparison-class weight and weighted index can appear inline within the COMPONENT VECTOR line. The wrapper therefore falsely rejected valid synthetic and archived reports.
 
-The counter has been corrected to count the exact field labels wherever they occur in the report body, including inside COMPONENT VECTOR. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45162503870](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503870) was queued at last check. **No pass is claimed until it completes.**
+The counter has been corrected to count the exact field labels wherever they occur in the report body, including inside COMPONENT VECTOR. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45162894788](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894788) was queued at last check. **No pass is claimed until it completes.**
 
 The wrapper respects the existing historical date exemption. It does not edit or replace `tools/srcas_check.py`.
 
@@ -101,9 +101,9 @@ Expanded D2-A package closure under validation:
 - `records/srcas/*.txt` (58 files);
 - `submissions/ape/APE-*.md` (466 files, required by the `--owed` trigger audit).
 
-The checker and output-form registry have no third-party Python dependency for the SR-CAS/SNCA input profile. The corpus and submission files are data inputs, not imported code. The outer-frame audit selects only files identified as SR-CAS/SNCA and dated on or after the report-check enforcement boundary (30 October 2026); `output_form.py` applies its own 7 November 2026 L-549 declaration threshold. At least one eligible assessment output is required.
+The checker and output-form registry have no third-party Python dependency for the SR-CAS/SNCA input profile. The corpus and submission files are data inputs, not imported code. The harness exercises the outer L-549 frame with a synthetic current-date output containing both a complete SR-CAS and SNCA report. It verifies that the frame passes, and that missing SUMMARY and a wrong declared form are rejected. This is a frame-mechanics test, not a corpus-wide outer-frame audit.
 
-The strict wrapper is an experimental additional package-profile layer. Its expanded corpus-wide result, the outer-frame audit and the receipt audit are pending on the latest harness run.
+The strict wrapper is an experimental additional package-profile layer. Its expanded corpus-wide result, synthetic outer-frame controls, D2-B NAVIGATION profile and receipt audit are pending on the latest harness run. The receipt audit now forms a required harness assertion rather than a log-only observation.
 
 ## 6. D2-B NAVIGATION-input package closure
 
