@@ -35,7 +35,7 @@ The arithmetic reference executed its known-answer self-test, calibration and na
 
 The format checker passed its built-in self-test and checked the supplied historical navigation in an isolated package containing its canonical reference and M193/M225 scanner. No Core/Companion DOCX or research register was needed.
 
-This test confirms the declared scanner was present in the package. It does **not** yet prove the current checker fails closed when the scanner is intentionally removed; source inspection shows its exception handler can disable the scanner and continue. That remains a required design correction for a future full-conformance package.
+This test confirms the declared scanner was present in the package. The negative-control package deliberately omitted `scripts/m193_m225.py`; the dynamic import set `_JS = None`, yet `format_check.py --selftest` still exited successfully. This is direct executable evidence of degraded-mode acceptance. A future package claiming full conformance must fail closed or explicitly mark the result as reduced coverage. No canonical checker was modified.
 
 ### D4
 
@@ -75,7 +75,7 @@ The initial failure was a test-harness formatting defect, not evidence of a sour
 
 ## 7. Next work
 
-1. Add negative tests for missing required dynamic modules and require explicit degraded-capability reporting or fail-closed behaviour in any future checker design.
+1. Convert the observed D1a missing-scanner gap into an approved fail-closed design change or a package wrapper that refuses to claim full conformance when a required scanner is absent. The negative control is now in the harness.
 2. Build a D5a fixture suite with one valid navigation for each practice-set domain, or an approved synthetic fixture set with independently recomputed outputs.
 3. Trace and prototype D1b skeleton generation separately, including `tools/utility.py` and its selected data dependencies.
 4. Prototype specialised Introduction, SR-CAS and certificate profiles individually; keep certificate procedure execution isolated and disabled by default.
