@@ -104,7 +104,7 @@ The isolated D4 harness copies six declared inputs into a temporary package: `in
 
 The checks establish mechanical/textual correspondence under the canonical checker, not the truth or persuasiveness of the underlying philosophical or legitimacy arguments. The harness now round-trips `--first-render` through `--first` to validate the Friendly Notes and Navigator Identity Block template. This is not yet a check of a real first-navigation record from a live session.
 
-The latest D4 workflow [45163111390](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163111390) was queued at last check. No D4 pass is claimed.
+The latest D4 workflow [45163422397](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163422397) was queued at last check. No D4 pass is claimed.
 
 See the [D4 validation report](D4_INTRODUCTION_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d4_introduction_test.py) and [workflow](../../../.github/workflows/path-b-d4-introduction.yml).
 

@@ -6,7 +6,7 @@
 **Canonical implementation:** `tools/intro_output.py`
 **Harness:** `tools/path_b_d4_introduction_test.py`
 **Workflow:** `.github/workflows/path-b-d4-introduction.yml`
-**Latest workflow:** [45163111390](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163111390) — queued at last check
+**Latest workflow:** [45163422397](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163422397) — queued at last check
 
 ## 1. D4 scope
 
@@ -67,7 +67,7 @@ The profile tests the Opening and its Core/register correspondence. It does not 
 
 ## 6. Workflow and authority
 
-The latest isolated workflow [45163111390](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163111390) was queued at last check. No result is assumed.
+The latest isolated workflow [45163422397](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163422397) was queued at last check. No result is assumed.
 
 - Path B remains a proposal.
 - No canonical Introduction, JSON register, Core or Companion file has been changed by this harness.

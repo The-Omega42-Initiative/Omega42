@@ -1,6 +1,6 @@
 # D2 — SR-CAS / SNCA Package Validation and Audit
 
-**Status:** D2-A canonical baseline passed. The experimental strict guard now includes fail-closed no-report and delimiter controls, historical-exemption preservation, per-report verification/M270 pairing and expanded negative controls. The latest isolated run is queued. D2-B NAVIGATION-only package validation and the active-date outer L-549 frame audit are also pending.
+**Status:** D2-A canonical baseline passed. The experimental strict guard now includes fail-closed no-report and delimiter controls, historical-exemption preservation, per-report verification/M270 pairing, unique component-score fields and expanded negative controls. The latest isolated run is queued. D2-B NAVIGATION-only package validation and the active-date outer L-549 frame audit are also pending.
 **Prepared:** 23 November 2026
 **Branch:** `proposal/path-b-release-packaging`
 **D2-A canonical baseline source commit:** `aeddcfd669734cc068c845ad4be7861706163c43`
