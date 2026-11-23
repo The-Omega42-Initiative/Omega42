@@ -1,6 +1,6 @@
 # D5a — Eight-Domain Fixture Coverage Test Plan
 
-**Status:** Harness implemented; eight-domain synthetic baseline passed; exact-one-file-per-domain acceptance remains blocked by a reproduced M314 defect  
+**Status:** Path B strict wrapper implemented; eight-domain synthetic baseline and 11 negative controls passed; raw M314 duplicate defect isolated; minimal-package isolation pending  
 **Prepared:** 23 November 2026  
 **Target profile:** D5a ordinary Navigator conformance  
 **Canonical practice-set source:** `records/conformance/practice_set.txt`
@@ -160,7 +160,7 @@ This is a profile-level test, not a full Omega42 release, not legal/governance a
 
 ## 11. Experimental implementation and validation (23 November 2026)
 
-The harness and dedicated workflow are now present:
+The harness, strict package guard and dedicated workflow are now present:
 
 - `tools/path_b_d5a_fixture_test.py`
 - `.github/workflows/path-b-d5a-fixtures.yml`
