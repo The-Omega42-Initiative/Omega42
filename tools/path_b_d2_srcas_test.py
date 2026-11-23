@@ -63,6 +63,7 @@ def main():
 
         # The Path B wrapper is tested separately from the unchanged canonical checker.
         sys.path.insert(0, os.path.join(package_root, "tools"))
+        import srcas_check
         import path_b_d2_srcas_guard as strict_guard
         good_sr = srcas_check.GOOD_V + srcas_check.GOOD_R
         good_sn = srcas_check.GOOD_S
