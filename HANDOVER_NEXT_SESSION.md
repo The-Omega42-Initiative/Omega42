@@ -253,21 +253,28 @@ Do not falsely claim unimplemented systems are deployed. Boldness and accurate s
 
 Branch: revelation-first-website-handover
 
-Changes already committed:
-- site/pages/index.html: hero leads with “Explore the unknown through mathematics and AI”; defines Omega42 as a human-conceived mathematical exploration framework and AI protocol; presents the human–mathematics–AI relationship; adds immediate Main Core and Main Companion access linking to protocol.html; includes “Welcome Navigator” onboarding; adds Human Aperture feature linking to aperture.html; reframes multi-AI and human roles.
+Changes committed on this branch:
+- site/pages/index.html: hero leads with “Explore the unknown through mathematics and AI”; defines Omega42 as a human-conceived mathematical exploration framework and AI protocol; presents the human–mathematics–AI relationship; adds immediate Main Core and Main Companion access linking to protocol.html; includes “Welcome Navigator” onboarding; adds Human Aperture feature linking to aperture.html; reframes multi-AI and human roles; rewrites the frontier paragraph to be discovery-led.
 - site/pages/explore.html: stronger human–mathematics–AI opening; five Navigator roles; replaces defensive epistemology sections with an AI exploration and mathematical-world narrative.
+- site/pages/aperture.html: new dedicated Human Aperture page presenting the 1/7 motif, exact modular arithmetic, Human = 5 symbolic assignment and the six-machine/one-human architectural interpretation.
+- site/pages/faq.html: strengthens the definition and AI role; reframes coordinate, thought experiment, AI review and capability answers; corrects the prior-art answer.
+- site/pages/research.html: reframes research as a broad, cross-disciplinary programme.
+- site/pages/symbols.html: discovery-led presentation of the Enneagram comparison and 1/7 motif.
 - README.md: replaces defensive introduction with a positive account of Omega42's ambition and AI's central role; rewrites the one-paragraph definition.
 - docs/VISION.md: strengthens abstract around human revelation, mathematical structure and AI; rewrites AI Navigator section with five functional roles.
+- PRIOR_ART.md: corrects the opening overclaim; publication is described as prior art against claims covering the subject matter actually disclosed, not as a universal bar to later patents.
+- HANDOVER_NEXT_SESSION.md: this project continuity package.
 
-Known commit SHAs at the time these files were updated:
-- Homepage: ae87c83fc5c7ccbf8ccf56d0c2f06f5a7aa34b18
-- Explore page: f0d1e16c922c543567eddfb7ec92b3d8050ba029
-- README: 36e298f0a3dfdc6741729fb3fc20dc1cc2782be8
-- Vision: fc4d1b6cae4618d7817911c37b8bdb1c2cdd3df1
+Known file-update commits on the branch:
+- Homepage hero/docs/Aperture: ae87c83fc5c7ccbf8ccf56d0c2f06f5a7aa34b18; final homepage frontier paragraph: a3c50cac5c6eff255e6093c89df7fea248f2968b.
+- Explore page: f0d1e16c922c543567eddfb7ec92b3d8050ba029.
+- README: 36e298f0a3dfdc6741729fb3fc20dc1cc2782be8.
+- Vision: fc4d1b6cae4618d7817911c37b8bdb1c2cdd3df1.
+- Aperture page: d6255cec2c694de8467537d428c4045180d71bde.
+- First handover file creation: 43a7e8d201df77671df4821087235767f86542c6.
+- FAQ, Research, Symbols and Prior Art were updated subsequently; inspect the current branch to retrieve their latest file/commit state rather than relying on earlier SHAs.
 
-These are sequential commits on the same branch. No PR has yet been opened for this revision. CI and browser rendering have not yet been checked.
-
-A dedicated Aperture page and this handover document are being added to the same branch. Verify their commits and links before opening the PR.
+No PR has yet been opened for this revision. CI and browser rendering have not yet been checked. The Aperture and handover pages are present on this branch; verify their links and rendered output before opening the PR.
 
 ### Next website tasks
 
