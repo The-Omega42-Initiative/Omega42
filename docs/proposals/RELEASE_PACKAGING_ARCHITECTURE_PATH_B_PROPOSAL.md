@@ -423,3 +423,10 @@ Four capability-specific package prototypes have now been assembled in temporary
 On tested source commit `788f507ff2d57806518a93dc1c64c961f010d6c2`, C1, D1a, D4 and the D5a smoke test passed. The D5a test deliberately used one historical navigation outside the eight-domain public practice set: its individual required checks passed, while the overall result correctly remained NOT YET COMPATIBLE. This is not a full-set certification.
 
 The prototypes support capability-specific package boundaries. The negative-control test also demonstrates that the current format checker can pass its self-test when the full M193 scanner is absent; this is a concrete fail-closed gap to address before any package claims full conformance. The prototypes do not yet establish every command closure, full multilingual conformance, skeleton-generation closure, or equivalence to L-493. The existing release gate remains untouched and authoritative.
+
+
+## 22. Supporting skeleton-generation closure audit
+
+The D1b skeleton-generation trace is recorded in [PATH_B_SKELETON_GENERATION_CLOSURE_AUDIT.md](PATH_B_SKELETON_GENERATION_CLOSURE_AUDIT.md). It distinguishes the four-file generation-only closure from the additional M193/M225 scanner required when full format checking is also claimed.
+
+The isolated prototype reproduced two further fail-open behaviours: missing `utility.py` causes generic request placeholders to be substituted while the command succeeds; missing the canonical reference subprocess causes generated blocks to be omitted while the command still succeeds. Both are recorded as known gaps. The D1b package boundary is therefore technically small, but a future full-fidelity package must enforce required dependencies and subprocess success.
