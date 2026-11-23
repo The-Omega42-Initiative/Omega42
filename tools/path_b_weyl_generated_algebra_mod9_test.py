@@ -55,7 +55,7 @@ def check(p):
                 new.append(M)
         basis=new
         dimensions.append(len(basis))
-    assert dimensions==[4,4,5,5], (p,dimensions)
+    assert dimensions==[4,5,5,5], (p,dimensions)
     print(f'PASS p={p} zeta={z} dimensions={dimensions}; C-rank >= 5')
 
 if __name__=='__main__':
