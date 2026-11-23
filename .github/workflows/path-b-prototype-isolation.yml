@@ -25,5 +25,7 @@ jobs:
         run: python3 tools/path_b_prototype_test.py
       - name: Characterize D2-B registered-form dispatch without running checkers
         run: python3 tools/path_b_d2b_form_registry_contract_test.py
+      - name: Test D2-B local output-form dispatch with synthetic controls
+        run: python3 tools/path_b_d2b_local_dispatch_test.py
       - name: Characterize D5 semantics without executing certificate procedures
         run: python3 tools/path_b_d5_certificate_semantics_test.py
