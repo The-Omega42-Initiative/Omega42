@@ -13,7 +13,7 @@ A successful NAVIGATION profile must not be represented as proof that every regi
 
 ## 2. Registered form dispatch
 
-The current `output_form.py` register contains twelve forms:
+The current `output_form.py` register contains thirteen forms:
 
 | Registered form | Declared checker | Actual `form_checks()` dispatch | Profile status |
 |---|---|---|---|
@@ -89,3 +89,7 @@ This proposed correction is not applied to canonical `tools/output_form.py`. It 
 - D3 remains static-only; no certificate procedure has been executed.
 - No package has been released or certified.
 - This report is a review artefact, not a communication to Claude. No Claude communication has occurred.
+
+## 8. Registry-count correction and isolated characterization (23 November 2026)
+
+The registered-form table above contains **13** forms, not twelve. The count in Section 2 was corrected to match the current `FORMS` list in `tools/output_form.py`. The proposal-only `tools/path_b_d2b_form_registry_contract_test.py` statically parses the registry and checks its cardinality, the two declared marker-only forms, and the known missing Navigator's Account dispatch. This test does not invoke checkers or certificate procedures. It was added to the proposal-only `path-b-prototype-isolation` workflow; **workflow validation is pending** at the time of this note. The dispatch mismatch remains uncorrected in canonical code.
