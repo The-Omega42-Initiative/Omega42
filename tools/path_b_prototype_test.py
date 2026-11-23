@@ -8,6 +8,7 @@ This is proposal evidence, not a canonical release validator or a replacement fo
 from __future__ import annotations
 
 import hashlib
+import re
 import shutil
 import subprocess
 import sys
@@ -123,11 +124,13 @@ def profile_d5a(base: Path) -> None:
     # individual required computations execute and pass, not that one fixture certifies a system.
     check = run("D5a per-navigation conformance smoke test", pkg,
                 ["tools/conformance.py", "--check", "inputs"], expect=1)
-    for required in ("A1 anchor     PASS", "A2 arms       PASS", "A3 format     PASS", "A4 layer 1    PASS", "OUTSIDE SET"):
-        if required not in check.stdout:
-            raise AssertionError(f"D5a smoke test missing expected evidence: {required}")
+    for label in ("A1 anchor", "A2 arms", "A3 format", "A4 layer 1"):
+        if not re.search(re.escape(label) + r"\\s+PASS\\b", check.stdout):
+            raise AssertionError(f"D5a smoke test missing required passing check {label}:\\n{check.stdout[-7000:]}")
+    if "OUTSIDE SET" not in check.stdout:
+        raise AssertionError(f"D5a smoke test did not identify the fixture as outside the set:\\n{check.stdout[-7000:]}")
     if "NOT YET COMPATIBLE" not in check.stdout:
-        raise AssertionError("D5a one-fixture smoke test should not claim full set compatibility")
+        raise AssertionError(f"D5a one-fixture smoke test should not claim full set compatibility:\\n{check.stdout[-7000:]}")
     print("PASS D5a correctly distinguishes a passing per-file check from full-set compatibility")
 
 
