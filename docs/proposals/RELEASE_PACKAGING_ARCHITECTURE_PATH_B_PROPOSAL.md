@@ -407,3 +407,10 @@ The first-pass dependency analysis is recorded in [PATH_B_DEPENDENCY_AUDIT.md](P
 ## 19. Supporting import and dynamic-loading audit
 
 The source-level import and dynamic-loading trace is recorded in [PATH_B_IMPORT_AND_DYNAMIC_LOADING_AUDIT.md](PATH_B_IMPORT_AND_DYNAMIC_LOADING_AUDIT.md). It distinguishes the small standard-library arithmetic reference from format, output-form, identity and full conformance profiles. The trace is not yet a clean-room execution or a complete command-specific file-read closure.
+
+
+## 20. Supporting command-specific file-read and data-dependency audit
+
+The next-stage command trace is recorded in [PATH_B_COMMAND_SPECIFIC_READ_CLOSURE_AUDIT.md](PATH_B_COMMAND_SPECIFIC_READ_CLOSURE_AUDIT.md). It identifies the active file-read closures for the canonical reference, existing-output format checks, output-form dispatch, specialised SR-CAS/certificate/Introduction checks, the identity manifest and the ordinary conformance command. It also separates optional modes such as skeleton generation, repository-wide owed-assessment checks and privileged certificate procedure execution.
+
+The principal result is that imported modules do not make every associated research register mandatory: the ordinary conformance `--check` path uses a much smaller active data closure than its import graph suggests. The audit is source-level and remains subject to clean-room testing; it does not change canonical policy or L-493.
