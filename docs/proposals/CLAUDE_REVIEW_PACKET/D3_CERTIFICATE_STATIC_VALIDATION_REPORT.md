@@ -7,7 +7,7 @@
 **Experimental guard:** \`tools/path_b_d3_certificate_guard.py\`  
 **Harness:** \`tools/path_b_d3_certificate_test.py\`  
 **Workflow:** \`.github/workflows/path-b-d3-certificate.yml\`  
-**Latest workflow:** [45162503895](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503895) — queued at last check
+**Latest workflow:** [45162894748](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894748) — queued at last check
 
 ## 1. Capability boundary
 
@@ -80,7 +80,7 @@ The static package does not prove that future procedure execution is safe. CWD l
 
 ## 7. Workflow and authority
 
-The latest isolated workflow [45162503895](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503895) was queued at last check. No result is assumed.
+The latest isolated workflow [45162894748](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162894748) was queued at last check. No result is assumed.
 
 - Path B remains a proposal.
 - Canonical \`certify.py\`, Core, Companion, CI policy and L-493 are unchanged.
