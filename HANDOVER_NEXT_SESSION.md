@@ -594,3 +594,11 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - Previous D5 UTC expiry hardening passed [proposal isolation run 45196126632](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196126632) at `0e67d2b0`. The full canonical CI run was still in progress at observation; no release PASS asserted.
 - Added proposal-only `tools/path_b_d5_result_semantics.py` (`d2e859980b9d06e50f13ee0eb7913ef7567df8c2`) and 17 synthetic controls `tools/path_b_d5_result_semantics_test.py` (`f0a66a1425ee020cd5b9b62be72b03a4cd9e0020`), integrated into prototype isolation at `1664dd8661fdac91f9242ee936bc7d5e317d57cf`. **CI outcome pending**. The pure classifier accepts supplied raw stdout bytes and exit/timeout/truncation metadata, distinguishes VERIFIED, MISMATCH, FAILED, SKIPPED, NOT_RUN, INVALID and NOT_CERTIFIED. It requires exit 0, explicit no-timeout/no-truncation, and exact byte digest; REGISTERED/WITHDRAWN never become VERIFIED. **No procedures are run or authorized.**
 - The D5 execution isolation decision record remains pending Originator/Claude review. No canonical changes, merges or deployments.
+
+
+## N. D5 malformed-input hardening (23 November 2026)
+
+- D5 pure result classifier (17 synthetic cases) integrated at `1664dd8661fdac91f9242ee936bc7d5e317d57cf`; [isolation run 45196540227](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196540227) was queued at initial inspection. Do **not** claim passed without checking the run.
+- Hardened proposal-only `path_b_d5_execution_preflight.py` against non-mapping fields and non-string status/procedure/CWD (`7e31120b3ac1a4b18dea7be726ef521196ce8cba`), and `path_b_d5_execution_contract.py` against non-string expected SHA-256 (`314ab7f7a3961546bd001bc696b56e0d32251c53`).
+- Added 10 adversarial malformed-input controls in `tools/path_b_d5_malformed_inputs_test.py` (`6cda4d59431ba7e199f5a5ac955c199f42eabba8`), wired to isolation workflow (`b27c4ad1315acc7a4ed49271d14c5db6cc20538e`). [Run 45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) queued at observation. These pure tests check rejection without exceptions and **execute no procedures**.
+- D5 Originator approval and sandbox remain absent; no canonical changes.
