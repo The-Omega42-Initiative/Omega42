@@ -45,7 +45,7 @@ def main():
             return 1
         shutil.copy2(guard_src, guard)
 
-\n        reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
+        reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
         print("D2 isolated package inputs: checker=1, SR-CAS/SNCA records=%d, APE submissions=%d" %
               (len(reports), len(submissions)))
