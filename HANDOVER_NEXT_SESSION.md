@@ -257,6 +257,7 @@ Changes committed on this branch:
 - site/pages/index.html: hero leads with “Explore the unknown through mathematics and AI”; defines Omega42 as a human-conceived mathematical exploration framework and AI protocol; presents the human–mathematics–AI relationship; adds immediate Main Core and Main Companion access linking to protocol.html; includes “Welcome Navigator” onboarding; adds Human Aperture feature linking to aperture.html; reframes multi-AI and human roles; rewrites the frontier paragraph to be discovery-led.
 - site/pages/explore.html: stronger human–mathematics–AI opening; five Navigator roles; replaces defensive epistemology sections with an AI exploration and mathematical-world narrative.
 - site/pages/aperture.html: new dedicated Human Aperture page presenting the 1/7 motif, exact modular arithmetic, Human = 5 symbolic assignment and the six-machine/one-human architectural interpretation.
+- tools/site_build.py: adds The Human Aperture to the Explore navigation group; the builder automatically renders all page templates in site/pages/.
 - site/pages/faq.html: strengthens the definition and AI role; reframes coordinate, thought experiment, AI review and capability answers; corrects the prior-art answer.
 - site/pages/research.html: reframes research as a broad, cross-disciplinary programme.
 - site/pages/symbols.html: discovery-led presentation of the Enneagram comparison and 1/7 motif.
