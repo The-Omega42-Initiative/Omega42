@@ -70,7 +70,7 @@ def run_d2b_navigation_profile():
             lines.append("D2-B missing-dependency control %-42s %s" %
                          (rel, "REJECTED" if rejected else "ACCEPTED"))
             if not rejected:
-                return 1, "\\n".join(lines), "preflight failed open for " + rel
+                return 1, "\n".join(lines), "preflight failed open for " + rel
             shutil.copy2(os.path.join(ROOT, rel), target)
 
         runner = os.path.join(package_root, "tools", "srcas_run.py")
@@ -80,7 +80,7 @@ def run_d2b_navigation_profile():
                      ("PASS" if selftest.returncode == 0 else "FAIL", selftest.returncode))
         lines.append((selftest.stdout or "")[-4000:])
         if selftest.returncode != 0:
-            return 1, "\\n".join(lines), selftest.stderr or ""
+            return 1, "\n".join(lines), selftest.stderr or ""
 
         nav_a = os.path.join(package_root, "records", "instances", "seq_0133.txt")
         nav_b = os.path.join(package_root, "records", "instances", "seq_0133-copy.txt")
@@ -97,9 +97,9 @@ def run_d2b_navigation_profile():
                      ("PASS" if pair_ok else "FAIL", pair.returncode))
         lines.append(output[-10000:])
         if not pair_ok:
-            return 1, "\\n".join(lines), pair.stderr or ""
+            return 1, "\n".join(lines), pair.stderr or ""
         lines.append("D2-B NAVIGATION PROFILE: PASS")
-    return 0, "\\n".join(lines), ""
+    return 0, "\n".join(lines), ""
 
 
 def main():
@@ -143,7 +143,7 @@ def main():
         # archive and receipt-audit corpus. This is a NAVIGATION-input profile.
         d2b_rc, d2b_out, d2b_err = run_d2b_navigation_profile()
         d2b_ok = d2b_rc == 0 and "D2-B NAVIGATION PROFILE: PASS" in d2b_out
-        print("\\nD2-B isolated NAVIGATION profile: %s" % ("PASS" if d2b_ok else "FAIL"))
+        print("\nD2-B isolated NAVIGATION profile: %s" % ("PASS" if d2b_ok else "FAIL"))
         print(d2b_out[-12000:])
         if d2b_err:
             print("D2-B STDERR:", d2b_err[-3000:])
