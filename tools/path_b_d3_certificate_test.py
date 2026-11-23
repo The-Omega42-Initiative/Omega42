@@ -115,22 +115,33 @@ def main():
                             "PASS" if not duplicate_ok else "KNOWN DEFECT: ACCEPTED"))
 
         # The strict wrapper must reject both malformed controls.
+        invalid_id = sample.replace("CERTIFICATE: CERT-9998", "CERTIFICATE: CERT-98")
+        path_traversal = sample.replace("CWD: .", "CWD: ../outside")
+        invalid_digest = sample.replace("RESULT SHA-256: " + "0" * 64, "RESULT SHA-256: xyz")
+        duplicate_block = sample + "\\n" + sample
         strict_controls = [
             ("blank SUBJECT", blank_subject),
             ("duplicate SUBJECT", duplicate_subject),
+            ("invalid certificate identifier", invalid_id),
+            ("CWD path traversal", path_traversal),
+            ("invalid result digest", invalid_digest),
+            ("duplicate certificate block", duplicate_block),
         ]
         strict_ok = True
-        for name, content in strict_controls:
-            path = os.path.join(package_root, "strict-negative-" + str(len(name)) + ".txt")
+        for control_index, (name, content) in enumerate(strict_controls, 1):
+            path = os.path.join(package_root, "strict-negative-%02d.txt" % control_index)
             with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
             p = subprocess.run([sys.executable, guard, path], cwd=package_root,
                                capture_output=True, text=True, timeout=30)
             rejected = p.returncode == 1
-            print("  strict negative control %-35s %s" % (name, "REJECTED" if rejected else "ACCEPTED"))
+            canonical_accepts = certify.check(content) == []
+            print("  strict negative control %-35s %s | canonical accepts: %s" %
+                  (name, "REJECTED" if rejected else "ACCEPTED",
+                   "YES" if canonical_accepts else "NO"))
             strict_ok &= rejected
         if not strict_ok:
-            failures.append("strict guard accepted a blank or duplicate field")
+            failures.append("strict guard accepted one or more malformed certificate controls")
 
     print("D3 RESULT: %s" % ("FAIL" if failures else "PASS"))
     for failure in failures:
