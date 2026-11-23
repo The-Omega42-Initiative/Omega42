@@ -397,3 +397,8 @@ No decision is recorded by this proposal.
 ## 17. Supporting preliminary classification register
 
 A preliminary, explicitly incomplete repository classification register has been prepared at [PATH_B_PRELIMINARY_CLASSIFICATION_REGISTER.md](PATH_B_PRELIMINARY_CLASSIFICATION_REGISTER.md). It is a seed inventory for review, not a complete tree export or approved package manifest. It records known file classifications, unresolved boundaries and the work required to complete dependency tracing. It does not amend L-493 or canonical documents.
+
+
+## 18. Supporting dependency audit
+
+The first-pass dependency analysis is recorded in [PATH_B_DEPENDENCY_AUDIT.md](PATH_B_DEPENDENCY_AUDIT.md). It distinguishes text-only navigation, arithmetic recomputation, conformance/identity verification, and public-service operation as separate dependency profiles. The audit is tied to a complete repository tree at a fixed commit, but its import/runtime/build dependency tracing remains in progress. Its classifications are provisional and it does not amend L-493.
