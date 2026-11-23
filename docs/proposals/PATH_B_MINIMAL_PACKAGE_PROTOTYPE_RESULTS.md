@@ -3,8 +3,8 @@
 **Status:** Experimental package-isolation tests completed  
 **Date:** 23 November 2026  
 **Source branch:** `proposal/path-b-release-packaging`  
-**Tested source commit:** `b8e7b0384aa86b53ca526d4c28d6ddb1196fa55d`  
-**Workflow:** [path-b-prototype-isolation run 45151260191](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45151260191)  
+**Tested source commit:** `788f507ff2d57806518a93dc1c64c961f010d6c2`  
+**Workflow:** [path-b-prototype-isolation run 45151595912](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45151260191)  
 **Harness:** `tools/path_b_prototype_test.py`  
 **Normative status:** Non-normative experimental evidence only.
 
