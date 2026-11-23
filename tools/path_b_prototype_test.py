@@ -112,6 +112,32 @@ def profile_d1b(base: Path) -> None:
         raise AssertionError("D1b did not generate the findings presentation skeleton")
     run("D1b combined format and skeleton self-test", pkg, ["tools/format_check.py", "--selftest"])
 
+    # Negative control 1: utility.py is absent. skeleton() catches the import failure
+    # and substitutes generic request labels instead of failing.
+    no_utility = base / "D1b-missing-utility"
+    copy_file("scripts/canonical_reference.py", no_utility)
+    copy_file("scripts/m193_m225.py", no_utility)
+    copy_file("tools/format_check.py", no_utility)
+    copy_file("tools/manifestation.py", no_utility)
+    degraded_u = run("D1b negative-control missing utility", no_utility,
+                     ["tools/format_check.py", "--skeleton", "What is time?"])
+    if "REQUEST (L-502): request kind -- avenues avenues" not in degraded_u.stdout:
+        raise AssertionError("D1b missing-utility fallback was not observed")
+    print("KNOWN GAP D1b: skeleton generation silently substitutes generic request labels without utility.py")
+
+    # Negative control 2: canonical_reference.py is absent. The subprocess return code
+    # is ignored and skeleton generation still exits successfully without generated blocks.
+    no_canonical = base / "D1b-missing-canonical"
+    copy_file("scripts/m193_m225.py", no_canonical)
+    copy_file("tools/format_check.py", no_canonical)
+    copy_file("tools/utility.py", no_canonical)
+    copy_file("tools/manifestation.py", no_canonical)
+    degraded_c = run("D1b negative-control missing canonical subprocess", no_canonical,
+                     ["tools/format_check.py", "--skeleton", "What is time?"])
+    if "[1] MATH-GATE" in degraded_c.stdout:
+        raise AssertionError("D1b missing-canonical control unexpectedly generated canonical blocks")
+    print("KNOWN GAP D1b: skeleton generation ignores a failed canonical subprocess and exits successfully")
+
 
 def profile_d4(base: Path) -> None:
     pkg = base / "D4"
