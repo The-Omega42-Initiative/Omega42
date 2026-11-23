@@ -117,6 +117,7 @@ def main():
         # The strict wrapper must reject both malformed controls.
         invalid_id = sample.replace("CERTIFICATE: CERT-9998", "CERTIFICATE: CERT-98")
         path_traversal = sample.replace("CWD: .", "CWD: ../outside")
+        unc_path = sample.replace("CWD: .", "CWD: " + chr(92) * 2 + "server" + chr(92) + "share")
         invalid_digest = sample.replace("RESULT SHA-256: " + "0" * 64, "RESULT SHA-256: xyz")
         duplicate_block = sample + "\\n" + sample
         unclosed_open = sample + "\\n" + certify.OPEN + "\\nCERTIFICATE: CERT-0000\\n"
@@ -126,6 +127,7 @@ def main():
             ("duplicate SUBJECT", duplicate_subject),
             ("invalid certificate identifier", invalid_id),
             ("CWD path traversal", path_traversal),
+            ("Windows UNC CWD", unc_path),
             ("invalid result digest", invalid_digest),
             ("duplicate certificate block", duplicate_block),
             ("unclosed extra opening marker", unclosed_open),
