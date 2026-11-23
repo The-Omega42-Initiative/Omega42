@@ -12,7 +12,8 @@ This folder gathers the current Path B technical evidence and the next decisions
 1. [Current technical status and review questions](CURRENT_TECHNICAL_STATUS.md)
 2. [D1b guard validation report](D1B_GUARD_VALIDATION.md)
 3. [D5a eight-domain fixture test plan](D5A_EIGHT_DOMAIN_TEST_PLAN.md)
-4. [D5a eight-domain validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)\n5. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
+4. [D5a eight-domain validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)
+5. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
 
 ## Source material
 
@@ -24,7 +25,10 @@ This folder gathers the current Path B technical evidence and the next decisions
 - [D1b skeleton-generation closure audit](../PATH_B_SKELETON_GENERATION_CLOSURE_AUDIT.md)
 - [Minimal package prototype results](../PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md)
 - [Experimental D1b guard](../../../tools/path_b_d1b_guard.py)
-- [Prototype harness](../../../tools/path_b_prototype_test.py)\n- [D5a synthetic fixture harness](../../../tools/path_b_d5a_fixture_test.py)\n- [D5a strict package guard](../../../tools/path_b_d5a_guard.py)\n- [D5a validation workflow](../../../.github/workflows/path-b-d5a-fixtures.yml)
+- [Prototype harness](../../../tools/path_b_prototype_test.py)
+- [D5a synthetic fixture harness](../../../tools/path_b_d5a_fixture_test.py)
+- [D5a strict package guard](../../../tools/path_b_d5a_guard.py)
+- [D5a validation workflow](../../../.github/workflows/path-b-d5a-fixtures.yml)
 
 ## Status and authority boundaries
 
