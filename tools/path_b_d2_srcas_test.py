@@ -234,8 +234,8 @@ def main():
         # as evidence without modifying the canonical dispatcher.
         import account_check
         malformed_account = (
-            "QUESTION VERBATIM: synthetic malformed account\\n"
-            "NAVIGATOR'S ACCOUNT (L-509): synthetic marker only\\n"
+            "QUESTION VERBATIM: synthetic malformed account\n"
+            "NAVIGATOR'S ACCOUNT (L-509): synthetic marker only\n"
         )
         account_form = output_form.identify(malformed_account)
         declared = next((entry[3] for entry in output_form.FORMS if entry[0] == account_form), None)
