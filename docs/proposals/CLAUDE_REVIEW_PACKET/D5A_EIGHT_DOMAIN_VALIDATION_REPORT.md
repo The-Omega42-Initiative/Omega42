@@ -128,7 +128,7 @@ The validated runtime closure comprises:
 - `records/conformance/practice_set.txt`
 - `records/frameworks/lens_relevance.json`
 
-The fixture harness itself is copied into the temporary package only to execute the isolation test; it is test tooling, not part of the runtime closure. The declared closure passed this isolation run. No additional active dependencies were missing in this execution profile.
+The fixture harness itself is copied into the temporary package only to execute the isolation test; it is test tooling, not part of the runtime closure. The declared closure passed this isolation run. No additional active dependencies were missing in this execution profile. Because all eight practice-set domains are English/Latin, this closure does not establish the dependency closure for non-Latin or declared-language adaptor profiles; those require separate package-specific audits.
 
 ## 7. Authority and release status
 
