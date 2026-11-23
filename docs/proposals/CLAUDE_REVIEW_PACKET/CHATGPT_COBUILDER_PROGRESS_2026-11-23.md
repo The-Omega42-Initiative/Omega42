@@ -108,3 +108,9 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - D2-B delegated-checker synthetic test passed in [isolation run 45192731904](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192731904) at `27401218`.
 - Created proposal-only `tools/path_b_d5_execution_preflight.py` (`d4108c5482faf992b803e05fc71827b281838f12`) and `tools/path_b_d5_execution_preflight_test.py` (`c38cf8573c756c83307d106f6a570bd532ac86ba`). Non-executing static checks reject shell syntax, unsafe CWD and non-executable statuses. Negative fixtures include traversal, absolute path, symlink escape and shell expansion. Integrated into isolation CI at `414328366d8c68fbf1648dd7a66cf579327df692`; **result pending**.
 - This preflight is not an execution sandbox, does not prove arbitrary commands safe, and has not been adopted by canonical `certify.py`. Full execution contract and Originator approval remain outstanding. No certificate procedure executed.
+
+## D5 approval binding (non-executing prototype)
+
+- D5 preflight passed in [isolation run 45195019348](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45195019348) at `f3fe7d9d`.
+- Added `tools/path_b_d5_execution_contract.py` (`92436a7c1078879c2f3c3ba41b264578464deca0`) and synthetic negative/positive tests (`689e1759d53f4b5e44142a406bd88e8d17d706fc`), wired at `d2a0ce499dec64be466a5f4110fed3b24fa96be8`. **CI pending**. They bind a supplied approval to certificate ID, exact procedure digest, argv, CWD, scope, expiry and expected result hash; they do not run anything.
+- **Critical caveat:** `approved_by` is untrusted plain text; no cryptographic approval verification, Originator authorization, actual read-only filesystem enforcement, sandbox, allowlist or resource limits exist. A successful synthetic contract check is not authorization to execute. No canonical changes.
