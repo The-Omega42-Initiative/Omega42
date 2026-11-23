@@ -5,7 +5,7 @@
 **Branch:** `proposal/path-b-release-packaging`  
 **Validation source commit:** `54e0e338a95d7af68604ff15ef50a1cc22818eee`  
 **Validation workflow:** [45174322983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322983)  
-**Minimal-package isolation:** included in [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) — PASS  
+**Minimal-package isolation:** included in [45174322983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322983) — PASS  
 **Harness:** `tools/path_b_d5a_fixture_test.py`  
 **Strict wrapper:** `tools/path_b_d5a_guard.py`  
 **Workflow:** `.github/workflows/path-b-d5a-fixtures.yml`
@@ -105,7 +105,7 @@ The first isolation attempt on commit `aedf9b186fda604acbdbc641f57efe48cd95bd64`
 
 `records/frameworks/lens_relevance.json`
 
-The traceback showed that `tools/congruence.py::lenses_of()` loads this registry even when no lens is selected. The file was added to the declared closure. The rerun [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) passed. The isolated package generated all eight synthetic fixtures, passed A1–A4 and the format checks, rejected all eleven negative controls, and reproduced the raw M314 duplicate-extra defect while the wrapper rejected it.
+The traceback showed that `tools/congruence.py::lenses_of()` loads this registry even when no lens is selected. The file was added to the declared closure. The rerun [45174322983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322983) passed. The isolated package generated all eight synthetic fixtures, passed A1–A4 and the format checks, rejected all eleven negative controls, and reproduced the raw M314 duplicate-extra defect while the wrapper rejected it.
 
 The validated runtime closure comprises:
 
