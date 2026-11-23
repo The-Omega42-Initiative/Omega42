@@ -19,9 +19,9 @@ import format_check as fc
 import output_id as oi
 
 SET = os.path.join(ROOT, "records", "conformance", "practice_set.txt")
-FIXED_DATE = datetime.date(2026, 10, 19)  # before later date-gated requirements
+FIXED_DATE = datetime.date(2026, 11, 23)  # current test date; exercise all active date-gated requirements
 INSTANCE = ("INSTANCE (L-513): NI-0123456789abcdef | ISSUER: SCRIPT | "
-            "ISSUED: 2026-10-19T00:00:00Z | SEQ: 1 | PREV: NONE")
+            "ISSUED: 2026-11-23T00:00:00Z | SEQ: 1 | PREV: NONE")
 
 def domains():
     return cf.load_set(SET)
@@ -44,6 +44,26 @@ def build_fixture(tag, domain):
     raw = fc.skeleton(domain, session=1, date=FIXED_DATE)
     text = fc._fill_for_test(raw)
     text = re.sub(r"^INSTANCE \(L-513\):.*$", INSTANCE, text, flags=re.M)
+
+    # The current L-503 rules require a 500+ word essay and an explicit reach status.
+    essay_start = text.index("┌─ EXTENDED RESONANCE ESSAY ─┐")
+    essay_end = text.index("└──────────────┘", essay_start) + len("└──────────────┘")
+    essay = "SYNTHETIC TEST FIXTURE ONLY. " + " ".join(["inquiry"] * 510)
+    essay_block = "┌─ EXTENDED RESONANCE ESSAY ─┐\n" + essay + "\n└──────────────┘"
+    text = text[:essay_start] + essay_block + text[essay_end:]
+
+    # No external retrieval is performed by a synthetic fixture.
+    ck_start = text.index("======= CURRENT KNOWLEDGE (L-503) =======")
+    ck_end_marker = "======= END CURRENT KNOWLEDGE ======="
+    ck_end = text.index(ck_end_marker, ck_start) + len(ck_end_marker)
+    text = text[:ck_start] + "CURRENT KNOWLEDGE (L-503): NOT REQUESTED" + text[ck_end:]
+    text = re.sub(r"^RESEARCHED REACH \(L-503 \(5\)\):.*$", "RESEARCHED REACH (L-503 (5)): NOT REQUESTED", text, flags=re.M)
+
+    # L-532 applies from 31 October; this is explicitly synthetic test metadata.
+    contribution = "NAVIGATOR'S CONTRIBUTION (Domain Zero): COMMON -- synthetic test fixture; STRIKER -- supplied practice-set domain; NAVIGATOR -- generated fixture; OPEN -- no semantic claim."
+    text = text.replace("======= END GENERATIVE OBSERVATIONS =======",
+                        contribution + "\n======= END GENERATIVE OBSERVATIONS =======", 1)
+
     text = replace_m310(text)
     trigger_lines = []
     if fc._math(domain):
