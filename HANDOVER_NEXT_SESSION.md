@@ -685,3 +685,11 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - Pure finite checker `tools/path_b_math_norm_gauss_sum_test.py` (commit `689f067e`) enumerates k=1..4, including imprimitive frequencies. Equivalent independent enumeration was executed locally and matched for representative frequencies at all four levels; committed script has **not been CI-verified**.
 - Updated the **standalone, undeployed** Claude inspection file `site/claude-mathematics-review.html` on separate website-handover branch (`1ab953e5`) at Originator's explicit request to maintain a review copy. No homepage/nav/deployment changes. Previous freeze otherwise respected.
 - Next OMIP step: exact mathematical adapter contract, Fourier inversion, compare shear (MF-42/43), verify tests and Core/Companion parity. No canonical changes.
+
+
+## 2026-11-23 — OMIP exact Fourier–norm adapter
+
+- Implemented `tools/path_b_math_exact_adapter.py` (commit `f1753335`) with exact integer Ramanujan-sum Fourier inversion of norm fibers, independent direct histogram selftest k=1..4, alternating norm, Q² invariant, matrix order identity and unit fiber count. Equivalent local Python code passed all four levels including every norm residue. Committed script not yet CI-verified.
+- Proof and adapter contract `research/mathematical-origins/EXACT_FOURIER_ADAPTER_CONTRACT_2026-11-23.md` (commit `50e94147`): N_k(x)=3^-k(3^(2k)+sum_{r=1}^k 3^(2(k-r))(-3)^r c_(3^r)(x)). Integer-only; proof by Fourier orthogonality and Gauss sums. No physical or semantic claims.
+- Appended links and result to standalone Claude website-source review file (website-handover branch commit `328195c3`), without homepage/nav changes, merge or deployment. This is an explicit review-file exception requested by Originator; broader website freeze remains.
+- Next: run exact committed tests in CI; mathematical proof review, inspect shear invariants MF-42/MF-43; published Core/Companion direct parity still pending.
