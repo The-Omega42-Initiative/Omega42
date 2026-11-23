@@ -26,28 +26,40 @@ def strict_findings(text):
     if not enforced:
         return findings
 
-    for label in ("SR-CAS ASSESSMENT REPORT", "SNCA ASSESSMENT REPORT"):
-        opened = text.count("======= %s =======" % label)
-        closed = text.count("======= END %s =======" % label)
-        if opened != closed:
-            findings.append("%s delimiters are unbalanced: %d opening, %d closing" %
-                            (label, opened, closed))
+    sr_open = "======= SR-CAS ASSESSMENT REPORT ======="
+    sr_end = "======= END SR-CAS ASSESSMENT REPORT ======="
+    sn_open = "======= SNCA ASSESSMENT REPORT ======="
+    sn_end = "======= END SNCA ASSESSMENT REPORT ======="
+    if text.count(sr_open) != text.count(sr_end):
+        findings.append("SR-CAS opening and closing markers are unbalanced")
+    if text.count(sn_open) != text.count(sn_end):
+        findings.append("SNCA opening and closing markers are unbalanced")
+    if not (text.count(sr_open) or text.count(sn_open)):
+        findings.append("at least one complete SR-CAS or SNCA report is required")
 
-    sr_rx = re.compile(
-        r"======= SR-CAS ASSESSMENT REPORT =======(.*?)======= END SR-CAS ASSESSMENT REPORT =======",
-        re.S,
+    sr_rx = re.compile(re.escape(sr_open) + r"(.*?)" + re.escape(sr_end), re.S)
+    sr_matches = list(sr_rx.finditer(text))
+    verification_rx = re.compile(
+        r"======= PRE-SR-CAS VERBATIM VERIFICATION =======(.*?)"
+        r"======= END PRE-SR-CAS VERBATIM VERIFICATION =======", re.S
     )
-    previous_report_end = 0
-    for number, match in enumerate(sr_rx.finditer(text), 1):
+    m270_rx = re.compile(
+        r"======= M270 EXTRACTION RECONCILIATION GATE =======(.*?)"
+        r"======= END M270 EXTRACTION RECONCILIATION GATE =======", re.S
+    )
+    for number, match in enumerate(sr_matches, 1):
         body = match.group(1)
-        segment = text[previous_report_end:match.start()]
+        previous_end = sr_matches[number - 2].end() if number > 1 else 0
+        between = text[previous_end:match.start()]
         prefix = "SR-CAS report %d" % number
-        verifications = srcas_check.blocks(segment, "PRE-SR-CAS VERBATIM VERIFICATION")
+        verifications = list(verification_rx.finditer(between))
         if len(verifications) != 1:
-            findings.append(prefix + ": exactly one fresh PRE-SR-CAS VERBATIM VERIFICATION block must precede this report")
-        verification = verifications[-1] if verifications else ""
-        matches = re.findall(r"(?mi)^\s*MATCH:\s*(YES|NO)\b", verification)
-        verdicts = re.findall(r"(?mi)^\s*VERDICT:\s*(PROCEED|HALT)\b([^\n]*)", verification)
+            findings.append(prefix + ": requires exactly one dedicated pre-SR-CAS verification block")
+            continue
+        verification_match = verifications[0]
+        verification = verification_match.group(1)
+        matches = re.findall(r"\bMATCH:\s*(YES|NO)\b", verification)
+        verdicts = re.findall(r"\bVERDICT:\s*(PROCEED|HALT)\b([^\n]*)", verification)
         if len(matches) != 1:
             findings.append(prefix + ": verification block must contain exactly one MATCH: YES/NO line")
         if len(verdicts) != 1:
@@ -61,19 +73,18 @@ def strict_findings(text):
                 findings.append(prefix + ": MATCH: NO requires HALT -- VERBATIM MISMATCH")
 
         halted = bool(re.search(r"HALT\s*[-—]+\s*VERBATIM MISMATCH", verification + body))
+        after_verification = between[verification_match.end():]
+        m270_blocks = list(m270_rx.finditer(after_verification))
+        if not halted and len(m270_blocks) != 1:
+            findings.append(prefix + ": a proceeding report requires its own M270 gate after verification")
         if halted:
             for label in ("DOMAIN:", "ARCHITECTURES COMPARED", "PER-RUN VERDICT", "MANDATORY CORRECTIONS:"):
                 if _count_line(body, label) != 1:
                     findings.append(prefix + ": halted report requires exactly one %s line" % label.rstrip(":"))
-            previous_report_end = match.end()
             continue
 
-        gates = srcas_check.blocks(segment, "M270 EXTRACTION RECONCILIATION GATE")
-        if len(gates) != 1:
-            findings.append(prefix + ": a proceeding report requires exactly one fresh M270 EXTRACTION RECONCILIATION GATE")
-
         for label in ("Base Score:", "Comparison-class weight", "Weighted index"):
-            if len(re.findall(re.escape(label), body)) != 1:
+            if _count_line(body, label) != 1:
                 findings.append(prefix + ": exactly one %s field is required" % label.rstrip(":"))
 
         weight_tail = body[body.find("Comparison-class weight"):] if "Comparison-class weight" in body else ""
@@ -89,12 +100,8 @@ def strict_findings(text):
             expected = min(1.0, base * multiplier)
             if abs(expected - weighted) > 0.01:
                 findings.append(prefix + ": weighted index does not recompute from Base Score and comparison-class weight")
-        previous_report_end = match.end()
 
-    sn_rx = re.compile(
-        r"======= SNCA ASSESSMENT REPORT =======(.*?)======= END SNCA ASSESSMENT REPORT =======",
-        re.S,
-    )
+    sn_rx = re.compile(re.escape(sn_open) + r"(.*?)" + re.escape(sn_end), re.S)
     for number, match in enumerate(sn_rx.finditer(text), 1):
         body = match.group(1)
         prefix = "SNCA report %d" % number
@@ -103,26 +110,16 @@ def strict_findings(text):
                 findings.append(prefix + ": exactly one %s line is required" % label.rstrip(":"))
     return findings
 
-
 def check_file(path):
     with open(path, encoding="utf-8") as f:
         text = f.read()
-
-    # Match the canonical CLI's explicit historical policy: pre-31-Oct-2026
-    # records are reported, not failed. Do not accidentally apply current
-    # strictness to those records through the lower-level parser API.
-    if not srcas_check.dated_from(text):
-        print("D2 STRICT SR-CAS/SNCA: %s | HISTORICAL EXEMPT (report only)" % path)
+    enforced = srcas_check.dated_from(text)
+    if not enforced:
+        print("D2 STRICT SR-CAS/SNCA: %s | HISTORICAL EXEMPTION (reported, not failed)" % path)
         return True
-
-    parsed_reports = srcas_check.check(text)
     canonical = []
-    if not parsed_reports:
-        canonical.append("no complete SR-CAS or SNCA assessment report found")
-    else:
-        for kind, name, problems in parsed_reports:
-            canonical.extend("%s %s: %s" % (kind, name, p) for p in problems)
-
+    for kind, name, problems in srcas_check.check(text):
+        canonical.extend("%s %s: %s" % (kind, name, p) for p in problems)
     strict = strict_findings(text)
     problems = canonical + strict
     print("D2 STRICT SR-CAS/SNCA: %s | %s" % (path, "PASS" if not problems else "FAIL"))
