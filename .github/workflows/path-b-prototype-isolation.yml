@@ -1,0 +1,25 @@
+name: path-b-prototype-isolation
+on:
+  push:
+    branches:
+      - proposal/path-b-release-packaging
+  pull_request:
+    branches:
+      - main
+    paths:
+      - tools/path_b_prototype_test.py
+      - .github/workflows/path-b-prototype-isolation.yml
+      - docs/proposals/PATH_B_*_AUDIT.md
+      - docs/proposals/RELEASE_PACKAGING_ARCHITECTURE_PATH_B_PROPOSAL.md
+permissions:
+  contents: read
+jobs:
+  isolated-prototypes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build isolated temporary packages and run declared commands
+        run: python3 tools/path_b_prototype_test.py
