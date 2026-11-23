@@ -9,15 +9,16 @@
 
 | Workflow | Run | Result at latest check |
 |---|---:|---|
-| D5a synthetic fixture validation | [45155915840](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915840) | **FAILED AS EXPECTED — baseline 8/8 passed; duplicate-extra negative control exposed M314 defect** |
-| Site check on D5a source commit | [45155916035](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155916035) | **PASS** |
-| Path B prototype isolation on D5a source commit | [45155915912](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915912) | **PASS** |
-| Full Omega42 CI on D5a source commit | [45155915685](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915685) | **IN PROGRESS at last check** |
-| Full Omega42 CI, earlier baseline | [45152494767](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494767) | **FAIL — L-493 self-contained release gate** |
+| D5a strict-wrapper validation | [45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156647211) | **PASS — 8/8 baseline, 11/11 negative controls; raw M314 duplicate defect reproduced and isolated** |
+| D5a minimal-package isolation | [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) | **QUEUED at last check** |
+| Site check | [45155916035](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155916035) | **PASS** |
+| Path B prototype isolation | [45155698194](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155698194) | **PASS** |
+| Full Omega42 CI | [45156136550](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156136550) | **IN PROGRESS at last check** |
+| Earlier full Omega42 CI | [45152494767](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494767) | **FAIL — L-493 self-contained release gate** |
 
-Subsequent documentation-only commits advanced the proposal branch to `c365ad19c8f091486b523d021b3591089d6c9640`. At that head, a new full CI run [45156136550](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156136550) was queued; the site and prototype checks [45156130983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156130983) and [45156131018](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156131018) were also queued. These are not reported as passed.
+The D5a strict-wrapper run is on source commit `f706551e0986f07c7bab22bbbbf36f2222bfd9ab`. The minimal-package isolation run includes the discovered active dependency `records/frameworks/lens_relevance.json`; its result is not yet known.
 
-The earlier full CI run 45152494767 completed with failure at the L-493 self-contained release gate. Later runs had progressed through the earlier checks and were still executing; no full-CI pass or L-493 resolution is claimed.
+The earlier full CI run 45152494767 completed with failure at L-493. Later full-CI runs were still in progress or queued at the last check. No full-CI pass or L-493 resolution is claimed.
 
 ## 2. D1b result
 
@@ -35,20 +36,22 @@ See [D1B_GUARD_VALIDATION.md](D1B_GUARD_VALIDATION.md).
 
 ## 3. D5a current evidence
 
-The dedicated D5a harness now generates eight explicitly synthetic fixtures at runtime from the exact public practice-set domains. On commit `0f79cb22...`, using the current date (23 November 2026) and its date-gated format requirements:
+The Path B D5a harness now generates eight explicitly synthetic fixtures at runtime from the exact public practice-set domains, using the current date (23 November 2026) and current date-gated format requirements.
+
+On [run 45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156647211):
 
 - all eight fixtures passed A1 anchor, A2 arms, A3 format and A4 layer-one checks;
 - the baseline report returned 8/8 coverage and `COMPATIBLE (SCRIPT-CAPABLE)`;
-- ten negative controls (missing domain, non-practice domain, wrong anchor, wrong arm, wrong layer-one state, missing format marker, duplicate with missing domain, empty, malformed and wrong exact domain wording) all returned `NOT YET COMPATIBLE`.
+- eleven negative controls returned `NOT YET COMPATIBLE`, including missing/extra domains, wrong arithmetic fields, malformed/empty fixtures, exact-domain mismatch and multiple DOMAIN VERBATIM lines;
+- the strict guard rejected a duplicate extra file while raw M314 accepted it.
 
-A separate eleventh control supplied nine passing files for eight domains. **M314 returned `COMPATIBLE (SCRIPT-CAPABLE)`**, exposing a defect: `conformance.report()` does not enforce exactly one file per required domain and emits no dedicated duplicate-domain diagnostic. The dedicated D5a workflow is therefore intentionally failing on this acceptance defect. The canonical checker has not been changed.
+The new `tools/path_b_d5a_guard.py` adds exact one-file-per-domain and exactly-one-DOMAIN-VERBATIM-line preflight checks, then delegates per-file conformance to canonical M314. It is experimental and does not modify canonical checker behaviour. The duplicate-extra defect remains in raw `tools/conformance.py::report()`.
 
-All fixtures are temporary, synthetic structural tests. The long essay, current-knowledge/reach content and trigger markers are explicitly synthetic; the trigger markers are not substantive M269/M139–M142/M127 audits. The run establishes mechanical acceptance of the generated fixtures, not semantic quality or the quality of an AI's reasoning.
+The harness also tests a minimal temporary package. Its first isolation attempt exposed an active dependency on `records/frameworks/lens_relevance.json`, loaded by `tools/congruence.py::lenses_of()`. That file has been added to the closure; the rerun [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) was queued at last check.
 
-The earlier D5a prototype remains a smoke test on one historical navigation outside the public set. The first eight historical navigation JSON records inspected do not provide exact matches for all eight prompts. Historical files were not relabelled or edited.
+All fixtures are synthetic structural test artefacts. The essay, current-knowledge/reach content and M269/M139–M142/M127 trigger markers are not substantive research or semantic navigation. The result demonstrates mechanical acceptance, not answer quality or the quality of AI reasoning.
 
-See [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md), the [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md), and [the harness](../../../tools/path_b_d5a_fixture_test.py).
-
+See [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md), the [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md), [the harness](../../../tools/path_b_d5a_fixture_test.py) and [the strict guard](../../../tools/path_b_d5a_guard.py).
 ## 4. Additional checker questions to test
 
 Source inspection of `tools/conformance.py` shows:
@@ -59,7 +62,7 @@ Source inspection of `tools/conformance.py` shows:
 - advisory B1/B2/B3 results are printed as advisory and do not form part of the required A1–A4 `ok` calculation;
 - the overall execution level is derived from whether every supplied file has a valid executed status and output ID.
 
-The duplicate, malformed, empty and missing-domain behaviours above have now been exercised by the D5a harness. The remaining question is whether to correct the canonical checker itself or place strict one-file-per-domain validation in a separately approved release-profile wrapper.
+The duplicate, malformed, empty, missing-domain, wrong-domain and multiple-domain-line behaviours have been exercised. The strict release-profile wrapper catches the raw M314 duplicate defect without changing canonical code. The minimal-package isolation result remains pending.
 
 ## 5. Claude review questions
 
