@@ -102,6 +102,14 @@ def main():
 
         if reports:
             run(reports, "All archived SR-CAS/SNCA records format-check")
+            strict_run = subprocess.run([sys.executable, guard] + reports, cwd=package_root,
+                                        capture_output=True, text=True, timeout=180)
+            strict_ok = strict_run.returncode == 0
+            print("All archived SR-CAS/SNCA records strict-guard: %s (exit %d)" %
+                  ("PASS" if strict_ok else "FINDINGS", strict_run.returncode))
+            print((strict_run.stdout or "")[-12000:])
+            if strict_run.stderr:
+                print("STRICT GUARD STDERR:", strict_run.stderr[-2000:])
         else:
             failures.append("no records/srcas/*.txt inputs copied")
             print("No SR-CAS/SNCA records found")
