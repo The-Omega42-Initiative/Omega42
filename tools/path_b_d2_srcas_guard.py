@@ -49,7 +49,7 @@ def strict_findings(text):
             if match_value == "NO" and not (verdict == "HALT" and "VERBATIM MISMATCH" in tail):
                 findings.append(prefix + ": MATCH: NO requires HALT -- VERBATIM MISMATCH")
 
-        halted = bool(re.search(r"HALT\\s*[-—]+\\s*VERBATIM MISMATCH", verification + body))
+        halted = bool(re.search(r"HALT\s*[-—]+\s*VERBATIM MISMATCH", verification + body))
         if halted:
             for label in ("DOMAIN:", "ARCHITECTURES COMPARED", "PER-RUN VERDICT", "MANDATORY CORRECTIONS:"):
                 if _count_line(body, label) != 1:
