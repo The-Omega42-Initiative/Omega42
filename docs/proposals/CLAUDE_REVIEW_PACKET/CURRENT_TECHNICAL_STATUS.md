@@ -21,7 +21,23 @@ The D5a validation run is on source commit `4b1cd709627d58701a0fb6a5eaf8e80128b6
 
 No full Omega42 CI pass or L-493 resolution is claimed. The latest full-CI and site/prototype runs were queued; an earlier full-CI run remained in progress.
 
-## 2. D1b result
+## 2. D2 — SR-CAS/SNCA validation
+
+The canonical D2-A checker baseline passed in [run 45159025998](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159025998), source commit `aeddcfd669734cc068c845ad4be7861706163c43`:
+
+- 9/9 canonical `srcas_check.py --selftest` cases passed.
+- All 58 archived `records/srcas/*.txt` files passed the canonical checker with zero findings.
+- The receipt audit copied 466 APE submissions and found 197 qualifying APEs from APE-271 onward; all 197 were named in `records/srcas/`.
+- No-report, historical date-boundary, wrong SR-CAS Base Score and wrong SNCA Base Score controls behaved as expected.
+- The isolated package used the standard-library-only checker plus its report corpus and receipt-audit inputs.
+
+D2-A is the completed-assessment checker profile. D2-B is the automatic generator `tools/srcas_run.py`, which dynamically loads the canonical navigation engine, output-form registry and M193/M225. Its transitive closure depends on the form of each received output and has not yet been isolated.
+
+A separate experimental wrapper, `tools/path_b_d2_srcas_guard.py`, adds strict consistency checks for MATCH/PROCEED/HALT, numeric comparison weight and weighted index, and duplicate critical fields. The harness now probes four suspected canonical parser weaknesses and tests the wrapper against the archived corpus. The latest run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) was queued at last check; no strict-wrapper pass is claimed yet.
+
+See the [D2 validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d2_srcas_test.py) and [strict guard](../../../tools/path_b_d2_srcas_guard.py).
+
+## 3. D1b result
 
 The dedicated prototype workflow on `4c96b226...` validates:
 - complete navigation and findings skeleton generation;
@@ -35,7 +51,7 @@ The dedicated prototype workflow on `4c96b226...` validates:
 
 See [D1B_GUARD_VALIDATION.md](D1B_GUARD_VALIDATION.md).
 
-## 3. D5a current evidence
+## 4. D5a current evidence
 
 The Path B D5a harness now generates eight explicitly synthetic fixtures at runtime from the exact public practice-set domains, using the current date (23 November 2026) and current date-gated format requirements.
 
@@ -53,7 +69,7 @@ The harness also tests a minimal temporary package. Its first isolation attempt 
 All fixtures are synthetic structural test artefacts. The essay, current-knowledge/reach content and M269/M139–M142/M127 trigger markers are not substantive research or semantic navigation. The result demonstrates mechanical acceptance, not answer quality or the quality of AI reasoning.
 
 See [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md), the [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md), [the harness](../../../tools/path_b_d5a_fixture_test.py) and [the strict guard](../../../tools/path_b_d5a_guard.py).
-## 4. Additional checker questions to test
+## 5. Additional checker questions to test
 
 Source inspection of `tools/conformance.py` shows:
 - coverage is represented as a set of exact domain strings;
@@ -65,7 +81,7 @@ Source inspection of `tools/conformance.py` shows:
 
 The duplicate, malformed, empty, missing-domain, wrong-domain and multiple-domain-line behaviours have been exercised. The strict release-profile wrapper catches the raw M314 duplicate defect without changing canonical code. Minimal-package isolation passed with the declared closure. This profile is limited to the eight English/Latin practice-set domains; it does not establish a cross-lingual adaptor package closure.
 
-## 5. Claude review questions
+## 6. Claude review questions
 
 Claude is asked to independently assess:
 
