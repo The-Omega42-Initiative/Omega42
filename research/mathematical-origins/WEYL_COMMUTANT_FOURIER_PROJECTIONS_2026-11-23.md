@@ -36,7 +36,7 @@ All Π_h commute with the unitary conjugation superoperator Ad_(U_T), because th
 
 For every h, Π_h(I)=0, since I=W_0 is orthogonal to all primitive Weyl orbit sums. Thus Π_h is neither unital nor trace-preserving (indeed Tr Π_h(I)=0 while Tr I=N), and cannot be a unital completely positive conditional expectation onto an operator subalgebra.
 
-Even after adjoining the identity, the resulting projection is not in general an algebra conditional expectation: at h=k the range span{I}⊕V_even fails multiplicative closure for k=1, as can be checked explicitly using Weyl products; the earlier identity-coefficient obstruction alone proves only V_even itself is not closed, not that span{I}⊕V_even is nonclosed for every k. Therefore **no all-depth nonclosure assertion about the identity-augmented span is made here**.
+Adjoining the identity would repair unitality of an orthogonal projection onto the enlarged linear span, but **does not by itself establish** multiplicative closure, positivity, or an operator-algebra conditional expectation. The earlier identity-coefficient obstruction proves nonclosure of V_even itself, not nonclosure of the identity-augmented span; that stronger question is left open here.
 
 ## Theorem 3: the centralizer label rotation is not symplectic
 
