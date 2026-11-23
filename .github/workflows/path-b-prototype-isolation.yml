@@ -33,6 +33,8 @@ jobs:
         run: python3 tools/path_b_d2b_local_dispatch_test.py
       - name: Inventory L-493 mismatches without changing canonical release gate
         run: python3 tools/path_b_l493_release_diagnostic.py
+      - name: Test D5 per-certificate approval binding without execution
+        run: python3 tools/path_b_d5_execution_contract_test.py
       - name: Test D5 non-executing command preflight with synthetic controls
         run: python3 tools/path_b_d5_execution_preflight_test.py
       - name: Characterize D5 semantics without executing certificate procedures
