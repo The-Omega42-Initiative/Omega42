@@ -267,3 +267,10 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - Exact checker `tools/path_b_spectral_parity_test.py` (`71cad637`) committed, **not yet executed or CI-verified**.
 - Website-section **proposal only** `docs/proposals/MATHEMATICAL_VERIFICATION_LAB_WEBSITE_SECTION_2026-11-23.md` (`de5930d4`): Omega42 Mathematical Verification Lab inviting mathematicians to reproduce, challenge, find counterexamples, review proof dependencies and submit corrections; publication safeguards and no false peer-review claims. No live website changes authorized.
 - Claude standalone review file updated (`2238b821`) on website handover branch; canonical Core/Companion and homepage/nav/deploy unchanged. Await Claude review and explicit approval before website implementation.
+
+
+## 2026-11-23 — decisive Weyl orbit-sum algebra obstruction
+
+- Proof `research/mathematical-origins/WEYL_PRIMITIVE_EVEN_SECTOR_ALGEBRA_OBSTRUCTION_2026-11-23.md` (`aac02fc8`): every primitive A² orbit O modulo N=3^k is antipodally invariant because (A²)^(2*3^(k-1))=−I. With standard odd-N Weyl operators, the identity coefficient in S_O² is |O|=4*3^(k-1); for parity-even E_q=S_(O_q)+S_(O_-q) it is 8*3^(k-1)>0. Every element of the primitive span is traceless, hence this sector is **not closed under multiplication** and cannot be identified naively as a pointwise-label operator subalgebra. Weyl orbit sums are actually HS-orthogonal, Gram diagonal N|O|, giving an isometric *linear* embedding after normalization. Confirm canonical exact Egorov/phase convention before stronger manuscript claims.
+- Test `tools/path_b_weyl_orbit_algebra_obstruction_test.py` (`d62e0112`) committed. Independent local exact integer enumeration **executed and passed k=1..4**; GitHub CI not verified.
+- Claude standalone review page updated (`8a86db50`), no live website/navigation/merge/deployment/canonical changes. The Mathematical Verification Lab remains a proposal awaiting Claude and user approval. Next: test whether a trace-preserving conditional expectation or a module structure relates the label filtration to the full Weyl commutant, without claiming algebra equivalence.
