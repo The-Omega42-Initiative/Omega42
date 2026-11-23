@@ -209,3 +209,10 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - Proof and adapter contract `research/mathematical-origins/EXACT_FOURIER_ADAPTER_CONTRACT_2026-11-23.md` (commit `50e94147`): N_k(x)=3^-k(3^(2k)+sum_{r=1}^k 3^(2(k-r))(-3)^r c_(3^r)(x)). Integer-only; proof by Fourier orthogonality and Gauss sums. No physical or semantic claims.
 - Appended links and result to standalone Claude website-source review file (website-handover branch commit `328195c3`), without homepage/nav changes, merge or deployment. This is an explicit review-file exception requested by Originator; broader website freeze remains.
 - Next: run exact committed tests in CI; mathematical proof review, inspect shear invariants MF-42/MF-43; published Core/Companion direct parity still pending.
+
+
+## 2026-11-23 — depth-r shear orbit census milestone
+
+- New explicit derived theorem `research/mathematical-origins/DEPTH_SHEAR_EXACT_ORBIT_CENSUS_2026-11-23.md` (commit `95a4b080`), **conditional on canonical MF-43's complete orbit invariant**. For 1<=r<=k, shell j with n=k-j, h=min(r,n) has `3^(h-1)` orbits, each of size `8*3^(2n-h-1)`. Total `C(k,r)=(3^r+1)/2+(k-r)*3^(r-1)`. At k=4, r=1..4 counts 5,11,23,41. This is a corollary, not a new proof of MF-43.
+- Committed independent BFS test `tools/path_b_depth_shear_census_test.py` (`38d6f58c`), using **lower** shear `B_r(a,b)=(a,b+3^r*a)`. Equivalent local enumeration passed every pair 1<=r<=k<=4, including complete orbit-size multisets and norm-square invariant constancy. Committed script not yet CI-confirmed.
+- Claude review source page staged-only on separate website-handover branch (`dc4f05f8`), no homepage/nav/merge/deployment changes. Continue mathematics and CI verification; full published Core/Companion text parity remains pending.
