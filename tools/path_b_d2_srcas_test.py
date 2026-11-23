@@ -171,7 +171,7 @@ def main():
             "and (output_form.dated(open(p, encoding='utf-8').read()) is None "
             "or output_form.dated(open(p, encoding='utf-8').read()) >= cutoff)]; "
             "print('D2-A outer-frame files selected:', len(selected)); "
-            "sys.exit(0 if all(output_form.check_file(p) for p in selected) else 1)"
+            "sys.exit(0 if selected and all(output_form.check_file(p) for p in selected) else 1)"
         )
         output_form_run = subprocess.run(
             [sys.executable, "-c", output_form_code] + reports, cwd=package_root,
