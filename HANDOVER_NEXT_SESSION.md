@@ -587,3 +587,10 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - Previous D5 approval-binding synthetic suite **passed** in [isolation run 45195501589](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45195501589) at `3a0f5443`. It remains a pure validator, not real authorization.
 - Hardened proposal-only `tools/path_b_d5_execution_contract.py` at `fb7bdcf37bbcd7f01c94027864bcc3f1eb7f28ef`: validate UTC timestamp calendar semantics and compare parsed aware datetimes, not unchecked lexicographic strings. Extended synthetic tests at `8ae0f6a5cef6f40d80f293ec8250e2a6191ab24d` for impossible dates, invalid hour, malformed current clock and type confusion. **CI for these commits not yet confirmed**.
 - New review artifact `docs/proposals/CLAUDE_REVIEW_PACKET/D5_EXECUTION_ISOLATION_DECISION_RECORD.md` (`352df5a05f284cdf52c79923b71c7381e51be4a8`) enumerates execution threats, missing sandbox/approval/limits controls, and Originator decisions. No execution permitted or performed; no canonical changes.
+
+
+## M. D5 result classification (23 November 2026)
+
+- Previous D5 UTC expiry hardening passed [proposal isolation run 45196126632](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196126632) at `0e67d2b0`. The full canonical CI run was still in progress at observation; no release PASS asserted.
+- Added proposal-only `tools/path_b_d5_result_semantics.py` (`d2e859980b9d06e50f13ee0eb7913ef7567df8c2`) and 17 synthetic controls `tools/path_b_d5_result_semantics_test.py` (`f0a66a1425ee020cd5b9b62be72b03a4cd9e0020`), integrated into prototype isolation at `1664dd8661fdac91f9242ee936bc7d5e317d57cf`. **CI outcome pending**. The pure classifier accepts supplied raw stdout bytes and exit/timeout/truncation metadata, distinguishes VERIFIED, MISMATCH, FAILED, SKIPPED, NOT_RUN, INVALID and NOT_CERTIFIED. It requires exit 0, explicit no-timeout/no-truncation, and exact byte digest; REGISTERED/WITHDRAWN never become VERIFIED. **No procedures are run or authorized.**
+- The D5 execution isolation decision record remains pending Originator/Claude review. No canonical changes, merges or deployments.
