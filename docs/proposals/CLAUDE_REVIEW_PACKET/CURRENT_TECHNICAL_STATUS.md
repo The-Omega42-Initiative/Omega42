@@ -2,7 +2,7 @@
 
 **Prepared:** 23 November 2026  
 **Branch:** `proposal/path-b-release-packaging`  
-**Latest branch commit after review-packet files:** `f1b5ac4f3f266591aa83ad863e8cba63df556fd0`  
+**Review-packet baseline:** the packet was created after the experimental validation on `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`.  
 **Prototype source commit tested:** `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`
 
 ## 1. Workflow evidence
