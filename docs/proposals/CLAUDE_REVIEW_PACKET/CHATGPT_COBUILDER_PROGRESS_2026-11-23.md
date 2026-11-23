@@ -102,3 +102,9 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - All-13-form static matrix passed as part of [isolation run 45192425503](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192425503) at `8b941971`.
 - Added `tools/path_b_d2b_delegated_dispatch_test.py` (`9a7da607562c5f8c13b65c8f7d04f5a380bf0bd0`) to assert FAIL propagation and input forwarding for NAVIGATION, FINDINGS, SR-CAS, SNCA and INTRODUCTION with **mocked** checkers. No certificate procedures or actual checkers run in this test. Integrated in isolation workflow at `7d42e20911c1654b19eb6526d4dd2321f5755dd7`; [run 45192678663](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192678663) queued at inspection.
 - Next: confirm workflow; then build full isolated form-specific positive/negative fixtures and assess Account dispatch fix with explicit approval. L-493 unchanged.
+
+## D5 non-executing preflight prototype
+
+- D2-B delegated-checker synthetic test passed in [isolation run 45192731904](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192731904) at `27401218`.
+- Created proposal-only `tools/path_b_d5_execution_preflight.py` (`d4108c5482faf992b803e05fc71827b281838f12`) and `tools/path_b_d5_execution_preflight_test.py` (`c38cf8573c756c83307d106f6a570bd532ac86ba`). Non-executing static checks reject shell syntax, unsafe CWD and non-executable statuses. Negative fixtures include traversal, absolute path, symlink escape and shell expansion. Integrated into isolation CI at `414328366d8c68fbf1648dd7a66cf579327df692`; **result pending**.
+- This preflight is not an execution sandbox, does not prove arbitrary commands safe, and has not been adopted by canonical `certify.py`. Full execution contract and Originator approval remain outstanding. No certificate procedure executed.
