@@ -556,3 +556,11 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - New proposal-only `tools/path_b_d2b_all_forms_dispatch_matrix_test.py` at commit `36a662cab509bf78f6e6c34a6e648f5ef432b221` statically enumerates all **13** registered forms, checker declarations and explicit/fallback `form_checks()` branches. It explicitly labels the two marker-only forms and the **known erroneous** Navigator's Account marker-only fallback. It does **not** execute form checkers or certificate procedures; this is branch coverage characterization, **not** full substantive form validation.
 - Wired into `path-b-prototype-isolation` at commit `928d66aa1941b270837fd35bc3f30ddd3692f782`. [Run 45192375006](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192375006) was queued at inspection; **validation pending**. Check outcome before calling the test passing.
 - Remaining: form-specific dynamic positive/negative controls for NAVIGATION, FINDINGS, SR-CAS/SNCA and INTRODUCTION, plus independent Account dispatch fix review and safe D5 execution design. No canonical changes.
+
+
+## I. D2-B delegated dispatch test (23 November 2026)
+
+- Verified previous **all-13-form static matrix** integration passed [prototype-isolation run 45192425503](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192425503) at `8b941971`. This is static dispatch characterization, not full semantic validation.
+- Added proposal-only `tools/path_b_d2b_delegated_dispatch_test.py` at `9a7da607562c5f8c13b65c8f7d04f5a380bf0bd0`. It mocks checker loading for NAVIGATION, FINDINGS PRESENTATION, SR-CAS, SNCA and INTRODUCTION, tests that delegated negative results propagate as FAIL, and asserts input forwarding. No real checker or certificate procedure executes. This complements but does not replace existing isolated D2 and D4 actual-checker tests.
+- Wired into isolation CI at `7d42e20911c1654b19eb6526d4dd2321f5755dd7`. [Run 45192678663](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192678663) was **queued at inspection**; do not claim pass until observed.
+- Known Account fallback defect still open; no canonical edits. L-493 diagnosis is recorded in the verified root-cause report.
