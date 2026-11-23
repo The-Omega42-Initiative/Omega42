@@ -120,3 +120,8 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - D5 pure approval contract passed [proposal CI 45195501589](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45195501589) at `3a0f5443`.
 - Hardened UTC expiry validation at `fb7bdcf37bbcd7f01c94027864bcc3f1eb7f28ef`; added malformed/invalid-date and clock negative controls at `8ae0f6a5cef6f40d80f293ec8250e2a6191ab24d`. **New CI outcome not yet observed**.
 - Added `D5_EXECUTION_ISOLATION_DECISION_RECORD.md` (`352df5a05f284cdf52c79923b71c7381e51be4a8`) specifying required sandbox, authenticated single-use approval, fixed executable environment, resource limits, exit-code+raw-digest semantics, lifecycle states and outstanding Originator decisions. **Design only, no certificate execution**; `certify.py` untouched.
+
+## D5 raw-output result semantics (pure prototype)
+
+- D5 approval expiry hardening passed [proposal CI 45196126632](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196126632).
+- Added pure `tools/path_b_d5_result_semantics.py` (`d2e859980b9d06e50f13ee0eb7913ef7567df8c2`) and 17-case synthetic test (`f0a66a1425ee020cd5b9b62be72b03a4cd9e0020`), wired into isolation at `1664dd8661fdac91f9242ee936bc7d5e317d57cf`. **New CI pending**. Distinguishes verified, failed, mismatched, skipped, not run, invalid, and not certified; checks raw-byte digest, exit code 0, no timeout or truncation. No subprocesses or certificate execution. Canonical `certify.py` unchanged.
