@@ -72,7 +72,7 @@ def strict_findings(text):
             if match_value == "NO" and not (verdict == "HALT" and "VERBATIM MISMATCH" in tail):
                 findings.append(prefix + ": MATCH: NO requires HALT -- VERBATIM MISMATCH")
 
-        halted = bool(re.search(r"HALT\s*[-—]+\s*VERBATIM MISMATCH", verification + body))
+        halted = bool(re.search(r"HALT\s*[-—]+\s*VERBATIM MISMATCH", verification))
         after_verification = between[verification_match.end():]
         m270_blocks = list(m270_rx.finditer(after_verification))
         if not halted and len(m270_blocks) != 1:
