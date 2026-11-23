@@ -119,6 +119,8 @@ def main():
         path_traversal = sample.replace("CWD: .", "CWD: ../outside")
         invalid_digest = sample.replace("RESULT SHA-256: " + "0" * 64, "RESULT SHA-256: xyz")
         duplicate_block = sample + "\\n" + sample
+        unclosed_open = sample + "\\n" + certify.OPEN + "\\nCERTIFICATE: CERT-0000\\n"
+        unclosed_close = sample + "\\n" + certify.END
         strict_controls = [
             ("blank SUBJECT", blank_subject),
             ("duplicate SUBJECT", duplicate_subject),
@@ -126,6 +128,8 @@ def main():
             ("CWD path traversal", path_traversal),
             ("invalid result digest", invalid_digest),
             ("duplicate certificate block", duplicate_block),
+            ("unclosed extra opening marker", unclosed_open),
+            ("unmatched extra closing marker", unclosed_close),
         ]
         strict_ok = True
         for control_index, (name, content) in enumerate(strict_controls, 1):
