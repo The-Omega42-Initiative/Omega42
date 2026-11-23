@@ -86,14 +86,15 @@ These are executed boundary-control results, not merely source-derived suspicion
 
 The first strict-wrapper run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed. Its field counter only matched labels at the beginning of a line. In the canonical SR-CAS format, Base Score, comparison-class weight and weighted index can appear inline within the COMPONENT VECTOR line. The wrapper therefore falsely rejected valid synthetic and archived reports.
 
-The counter has been corrected to count the exact field labels wherever they occur in the report body, including inside COMPONENT VECTOR. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45162230316](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162230316) was queued at last check. **No pass is claimed until it completes.**
+The counter has been corrected to count the exact field labels wherever they occur in the report body, including inside COMPONENT VECTOR. The harness separately checks that a canonical halted-report form is accepted and that malformed score fields are rejected. The current harness adds negative controls for contradictory/duplicate/missing MATCH lines, a second report reusing an earlier verification block, unclosed report markers, missing numeric weight/index, duplicate SR-CAS/SNCA fields, a current no-report file and the historical exemption. It also verifies the active-date L-549 output frame through `tools/output_form.py`. The latest run [45162503870](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503870) was queued at last check. **No pass is claimed until it completes.**
 
 The wrapper respects the existing historical date exemption. It does not edit or replace `tools/srcas_check.py`.
 
 ## 5. D2-A package closure
 
-Validated canonical D2-A closure:
-- `tools/srcas_check.py`;
+Expanded D2-A package closure under validation:
+- `tools/srcas_check.py` (report-body checker);
+- `tools/output_form.py` (outer L-549 frame for SR-CAS/SNCA assessment outputs under the active date rules);
 - `records/srcas/*.txt` (58 files);
 - `submissions/ape/APE-*.md` (466 files, required by the `--owed` trigger audit).
 
