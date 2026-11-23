@@ -473,3 +473,16 @@ The initial insertion of the Claude Co-Builder section placed it inside the open
 - The PR body now records the exact run 185 L-493 result and the two policy paths.
 - No workflow result has yet been returned for this exact current head. Treat run 185 results as prior-head evidence only.
 - A source inspection confirms the opening Explore hero text is restored and the Co-Builder section has a closing section tag. This is source-level inspection, not browser-rendered visual validation.
+
+
+## 17. Path B release packaging proposal prepared — 23 November 2026
+
+- Created a separate review branch: `proposal/path-b-release-packaging`, based on main commit `423102f52d31a1ab7590efdee820da486ce97d17`.
+- Added `docs/proposals/RELEASE_PACKAGING_ARCHITECTURE_PATH_B_PROPOSAL.md`, version 0.1, 23 November 2026.
+- Proposal recommends three coordinated packages: Omega42 Protocol Release (OPR), Omega42 Knowledge and Research Release (OKR), and Omega42 Website and Applications Release (OWAR), bound by a top-level manifest, exact versions, hashes, compatibility declarations and provenance.
+- It preserves the current L-493 rule until formal approval and canonical amendment. It explicitly prohibits ad hoc exemptions or weakening the gate.
+- The proposal includes file classification, package boundaries, mandatory policy dependency handling, package-level CI gates, migration phases, risks, open decisions and a dedicated Claude Opus 5.5 review request.
+- No canonical documents, extractor, CI workflow or release policy have been changed. No PR has been opened for the proposal; it is an isolated review branch and is not merged.
+- The Explore page's Claude Co-Builder review materials now link directly to the proposal branch file. This website link is part of PR #3 and remains unmerged/unpublished.
+- Proposal link: https://github.com/The-Omega42-Initiative/Omega42/blob/proposal/path-b-release-packaging/docs/proposals/RELEASE_PACKAGING_ARCHITECTURE_PATH_B_PROPOSAL.md
+- Next: Originator reviews the proposal; Claude independently challenges the package boundaries and CI assurance; only after a decision should an inventory/classification register and prototype package builders be prepared. Do not amend canonical documents or CI until explicitly authorised.
