@@ -3,8 +3,8 @@
 **Status:** Path B strict-wrapper validation and minimal-package isolation both passed.  
 **Prepared:** 23 November 2026  
 **Branch:** `proposal/path-b-release-packaging`  
-**Validation source commit:** `4b1cd709627d58701a0fb6a5eaf8e80128b6e14b`  
-**Validation workflow:** [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105)  
+**Validation source commit:** `54e0e338a95d7af68604ff15ef50a1cc22818eee`  
+**Validation workflow:** [45174322983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322983)  
 **Minimal-package isolation:** included in [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) — PASS  
 **Harness:** `tools/path_b_d5a_fixture_test.py`  
 **Strict wrapper:** `tools/path_b_d5a_guard.py`  
