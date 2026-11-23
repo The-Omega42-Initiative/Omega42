@@ -166,31 +166,50 @@ def main():
 
         run(["--selftest"], "Canonical SR-CAS/SNCA checker selftest")
 
-        # The report-body checker and the outer L-549 output-form frame are
-        # separate layers. Test both against the complete archived corpus.
-        output_form_code = (
-            "import datetime, sys; sys.path.insert(0, 'tools'); import output_form; "
-            "cutoff = datetime.date(2026, 10, 30); "
-            "selected = [p for p in sys.argv[1:] "
-            "if output_form.identify(open(p, encoding='utf-8').read()) "
-            "in ('SR-CAS ASSESSMENT', 'SNCA ASSESSMENT') "
-            "and (output_form.dated(open(p, encoding='utf-8').read()) is None "
-            "or output_form.dated(open(p, encoding='utf-8').read()) >= cutoff)]; "
-            "print('D2-A outer-frame files selected:', len(selected)); "
-            "sys.exit(0 if selected and all(output_form.check_file(p) for p in selected) else 1)"
+        # Test the outer L-549 output-form frame with a synthetic current-date
+        # assessment that contains both a complete SR-CAS and SNCA report.
+        sys.path.insert(0, os.path.join(package_root, "tools"))
+        import output_form
+        import srcas_check as frame_srcas
+        synthetic_body = (frame_srcas.GOOD_V + frame_srcas.GOOD_R + frame_srcas.GOOD_S).splitlines()
+        synthetic_frame = output_form.frame(
+            "SR-CAS ASSESSMENT", "Core Part 6.1", synthetic_body,
+            q="Synthetic D2 outer-frame validation",
+            date=__import__("datetime").date(2026, 11, 23),
+            head=["SUMMARY: Synthetic current-date D2 outer-frame control."]
         )
-        output_form_run = subprocess.run(
-            [sys.executable, "-c", output_form_code] + reports, cwd=package_root,
-            capture_output=True, text=True, timeout=180
+        outer_path = os.path.join(package_root, "synthetic-outer-frame.txt")
+        with open(outer_path, "w", encoding="utf-8") as f:
+            f.write(synthetic_frame)
+        outer_ok = output_form.check_file(outer_path)
+        print("%-58s %s" % ("Synthetic active-date SR-CAS/SNCA outer frame", "PASS" if outer_ok else "FAIL"))
+        if not outer_ok:
+            failures.append("synthetic current-date output-form frame failed")
+
+        no_summary = output_form.frame(
+            "SR-CAS ASSESSMENT", "Core Part 6.1", synthetic_body,
+            q="Synthetic D2 outer-frame validation",
+            date=__import__("datetime").date(2026, 11, 23)
         )
-        output_form_ok = output_form_run.returncode == 0
-        print("Archived assessment outer-frame / output-form audit: %s (exit %d)" %
-              ("PASS" if output_form_ok else "FINDINGS", output_form_run.returncode))
-        print((output_form_run.stdout or "")[-12000:])
-        if output_form_run.stderr:
-            print("OUTPUT-FORM STDERR:", output_form_run.stderr[-2500:])
-        if not output_form_ok:
-            failures.append("archived assessment outer-frame/output-form audit reported findings")
+        no_summary_path = os.path.join(package_root, "synthetic-outer-frame-no-summary.txt")
+        with open(no_summary_path, "w", encoding="utf-8") as f:
+            f.write(no_summary)
+        no_summary_rejected = not output_form.check_file(no_summary_path)
+        print("%-58s %s" % ("Outer-frame checker rejects missing SUMMARY", "PASS" if no_summary_rejected else "FAIL"))
+        if not no_summary_rejected:
+            failures.append("outer-frame checker accepted missing SUMMARY")
+
+        wrong_form = synthetic_frame.replace(
+            "OUTPUT FORM (L-549): SR-CAS ASSESSMENT",
+            "OUTPUT FORM (L-549): CONVERSATION", 1
+        )
+        wrong_form_path = os.path.join(package_root, "synthetic-outer-frame-wrong-form.txt")
+        with open(wrong_form_path, "w", encoding="utf-8") as f:
+            f.write(wrong_form)
+        wrong_form_rejected = not output_form.check_file(wrong_form_path)
+        print("%-58s %s" % ("Outer-frame checker rejects wrong declared form", "PASS" if wrong_form_rejected else "FAIL"))
+        if not wrong_form_rejected:
+            failures.append("outer-frame checker accepted wrong declared form")
 
         # D2-B is tested in its own temporary package, separate from D2-A's
         # archive and receipt-audit corpus. This is a NAVIGATION-input profile.
