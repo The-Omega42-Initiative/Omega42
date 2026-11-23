@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import conformance as m314
 
-DOMAIN = re.compile(r"DOMAIN VERBATIM:\s*(.+)")
+DOMAIN_LINES = re.compile(r"^[ \t]*DOMAIN VERBATIM:[ \t]*(.*)$", re.M)
 
 def strict_report(paths, set_path=m314.SET):
     rows = m314.load_set(set_path)
@@ -33,11 +33,12 @@ def strict_report(paths, set_path=m314.SET):
         except Exception as exc:
             errors.append("%s: cannot read fixture (%s)" % (os.path.basename(path), exc))
             continue
-        match = DOMAIN.search(text)
-        if not match:
-            errors.append("%s: missing DOMAIN VERBATIM" % os.path.basename(path))
+        matches = DOMAIN_LINES.findall(text)
+        if len(matches) != 1:
+            errors.append("%s: expected exactly one DOMAIN VERBATIM line; found %d" %
+                          (os.path.basename(path), len(matches)))
             continue
-        domain = match.group(1).strip()
+        domain = matches[0].strip()
         if domain not in wanted:
             errors.append("%s: domain is outside the exact practice set" % os.path.basename(path))
             continue
@@ -57,23 +58,23 @@ def strict_report(paths, set_path=m314.SET):
         canonical_text = "Canonical M314 report raised: %s" % repr(exc)
         canonical_verdict = "NOT YET COMPATIBLE"
 
-    L = [
+    lines = [
         "PATH B D5a STRICT PACKAGE GUARD",
-        "PROFILE: exactly one readable navigation per exact practice-set domain",
+        "PROFILE: exactly one readable navigation with exactly one DOMAIN VERBATIM line per practice-set domain",
         "INPUT FILES: %d | REQUIRED DOMAINS: %d" % (len(paths), len(wanted)),
     ]
     if errors:
-        L.append("GUARD: FAIL")
-        L.extend("  [FAIL] " + item for item in errors)
+        lines.append("GUARD: FAIL")
+        lines.extend("  [FAIL] " + item for item in errors)
         verdict = "NOT YET COMPATIBLE"
     else:
-        L.append("GUARD: PASS -- exact one-to-one domain/file coverage")
+        lines.append("GUARD: PASS -- exact one-to-one domain/file coverage")
         verdict = canonical_verdict
-    L.append("")
-    L.append(canonical_text)
-    L.append("")
-    L.append("PATH B D5a RESULT: " + verdict)
-    return "\n".join(L), verdict
+    lines.append("")
+    lines.append(canonical_text)
+    lines.append("")
+    lines.append("PATH B D5a RESULT: " + verdict)
+    return "\n".join(lines), verdict
 
 if __name__ == "__main__":
     args = sys.argv[1:]
