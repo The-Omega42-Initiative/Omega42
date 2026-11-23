@@ -274,7 +274,7 @@ Known file-update commits on the branch:
 - First handover file creation: 43a7e8d201df77671df4821087235767f86542c6.
 - FAQ, Research, Symbols and Prior Art were updated subsequently; inspect the current branch to retrieve their latest file/commit state rather than relying on earlier SHAs.
 
-No PR has yet been opened for this revision. CI and browser rendering have not yet been checked. The Aperture and handover pages are present on this branch; verify their links and rendered output before opening the PR.
+A draft PR is open: https://github.com/The-Omega42-Initiative/Omega42/pull/3 . It is PR #3, titled “Revelation-first Omega42 website and next-session handover”, from this branch into main. The branch was 14 commits ahead of main when the PR was opened. The PR is unmerged and remains draft. The latest PR head at opening was 7a01bd99ff6f6593d5ed667c6c2d6393d7a81cad; this handover update itself will advance the branch, so inspect the current head before relying on that SHA. No workflow runs or status checks were returned for the head at the time of this handover. CI and browser rendering have not yet been checked. The Aperture and handover pages are present; verify their links and rendered output before requesting review.
 
 ### Next website tasks
 
