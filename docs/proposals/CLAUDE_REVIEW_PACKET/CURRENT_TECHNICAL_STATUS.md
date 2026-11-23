@@ -10,16 +10,16 @@
 
 | Workflow | Run | Result at latest check |
 |---|---:|---|
-| D5a strict-wrapper validation | [45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156647211) | **PASS — 8/8 baseline, 11/11 negative controls; raw M314 duplicate defect reproduced and isolated** |
-| D5a minimal-package isolation | [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) | **QUEUED at last check** |
-| Site check | [45155916035](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155916035) | **PASS** |
-| Path B prototype isolation | [45155698194](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155698194) | **PASS** |
-| Full Omega42 CI | [45156136550](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156136550) | **IN PROGRESS at last check** |
+| D5a strict-wrapper + isolated-package validation | [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) | **PASS — 8/8 baseline, 11/11 negative controls, isolated closure passed** |
+| Site check on current packet branch | [45157377285](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157377285) | **QUEUED at last check** |
+| Path B prototype isolation | [45157370442](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157370442) | **QUEUED at last check** |
+| Full Omega42 CI | [45157370501](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157370501) | **QUEUED at last check** |
+| Earlier full Omega42 CI | [45156136550](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156136550) | **IN PROGRESS at last check** |
 | Earlier full Omega42 CI | [45152494767](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494767) | **FAIL — L-493 self-contained release gate** |
 
-The D5a strict-wrapper run is on source commit `f706551e0986f07c7bab22bbbbf36f2222bfd9ab`. The minimal-package isolation run includes the discovered active dependency `records/frameworks/lens_relevance.json`; its result is not yet known.
+The D5a validation run is on source commit `4b1cd709627d58701a0fb6a5eaf8e80128b6e14b`. It passed the isolated temporary package containing the declared 18-file runtime closure plus the test harness. The active data dependency `records/frameworks/lens_relevance.json` was discovered by an earlier failed isolation attempt and then added.
 
-The earlier full CI run 45152494767 completed with failure at L-493. Later full-CI runs were still in progress or queued at the last check. No full-CI pass or L-493 resolution is claimed.
+No full Omega42 CI pass or L-493 resolution is claimed. The latest full-CI and site/prototype runs were queued; an earlier full-CI run remained in progress.
 
 ## 2. D1b result
 
@@ -48,7 +48,7 @@ On [run 45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/r
 
 The new `tools/path_b_d5a_guard.py` adds exact one-file-per-domain and exactly-one-DOMAIN-VERBATIM-line preflight checks, then delegates per-file conformance to canonical M314. It is experimental and does not modify canonical checker behaviour. The duplicate-extra defect remains in raw `tools/conformance.py::report()`.
 
-The harness also tests a minimal temporary package. Its first isolation attempt exposed an active dependency on `records/frameworks/lens_relevance.json`, loaded by `tools/congruence.py::lenses_of()`. That file has been added to the closure; the rerun [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) was queued at last check.
+The harness also tests a minimal temporary package. Its first isolation attempt exposed an active dependency on `records/frameworks/lens_relevance.json`, loaded by `tools/congruence.py::lenses_of()`. That file has been added to the closure; the rerun [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) passed.
 
 All fixtures are synthetic structural test artefacts. The essay, current-knowledge/reach content and M269/M139–M142/M127 trigger markers are not substantive research or semantic navigation. The result demonstrates mechanical acceptance, not answer quality or the quality of AI reasoning.
 
