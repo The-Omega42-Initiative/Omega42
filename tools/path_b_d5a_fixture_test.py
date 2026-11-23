@@ -19,7 +19,7 @@ import format_check as fc
 import output_id as oi
 
 SET = os.path.join(ROOT, "records", "conformance", "practice_set.txt")
-FIXED_DATE = datetime.date(2026, 11, 19)  # before the L-503 researched-reach rule dated 20 Nov
+FIXED_DATE = datetime.date(2026, 10, 19)  # synthetic format fixture before later date-gated requirements
 INSTANCE = ("INSTANCE (L-513): NI-0123456789abcdef | ISSUER: SCRIPT | "
             "ISSUED: 2026-11-19T00:00:00Z | SEQ: 1 | PREV: NONE")
 
