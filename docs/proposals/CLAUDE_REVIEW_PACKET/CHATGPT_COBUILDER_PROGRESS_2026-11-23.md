@@ -143,3 +143,7 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 ## D5 cross-binding — envelope versus supplied evidence
 
 - Pure `tools/path_b_d5_provenance_binding.py` (`8cd9570ff8f9a884360c91f1194655a513ddf1ae`) checks envelope commit, certificate/input/sandbox digests and exact procedure string against supplied evidence; 13 synthetic cases (`eb8aaefb643a4c70ba822228c01a1df2e92ca27d`), AST guard extension (`25988d5f391445441f65f9e15ac92735ff4a224d`), CI wiring (`f0293872b3326eba8fb13dae593e183d172ee3fc`). **CI queued/pending**. Does not authenticate evidence, approval or signatures; no execution/canonical changes.
+
+## OMIP Phase 1 — foundation audit initiated
+
+- User-directed pivot to Omega42 Open Mathematical and Innovation Programme (OMIP) roadmap. Created `OMIP_PHASE1_FOUNDATION_AUDIT_2026-11-23.md` (`5064433a8d0b8a02555d58859394dc9af3ceebcc`). Establishes parallel SL/adapter and invention-register tracks, first mathematics/computational-algebra vertical slice, staged technical/publication gates and legal review questions. **Preliminary evidence-bounded audit only**: full canonical document and governance-text inventory still owed; no new constitutional authority, SL adoption, patent pledge or public disclosure. No merge/deploy.
