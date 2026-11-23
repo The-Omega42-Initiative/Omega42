@@ -1,6 +1,6 @@
 # D2 — SR-CAS / SNCA Package Validation and Audit
 
-**Status:** D2-A canonical baseline passed. The expanded strict guard and D2-B NAVIGATION-only profile have been exercised. The first two expanded D2 runs failed for test-harness reasons: a literal newline in the duplicate-SNCA-T2 negative control, and a D2-B synthetic pair that did not supply the explicit per-relation verdicts required by M193/M225. Both harness defects have been corrected on the proposal branch. The latest D2 run is in progress; no pass is claimed yet.
+**Status:** D2-A canonical baseline passed. The expanded strict guard and D2-B NAVIGATION-only profile have been exercised. The first two expanded D2 runs failed for test-harness reasons: a literal newline in the duplicate-SNCA-T2 negative control, and a D2-B synthetic pair that did not supply the explicit per-relation verdicts required by M193/M225. Both harness defects have been corrected on the proposal branch. The corrected D2 validation [45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) passed.
 **Prepared:** 23 November 2026
 **Branch:** `proposal/path-b-release-packaging`
 **D2-A canonical baseline source commit:** `aeddcfd669734cc068c845ad4be7861706163c43`
@@ -8,7 +8,7 @@
 **First strict-wrapper attempt:** [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) — failed; wrapper defect diagnosed
 **First expanded D2 run:** [45163557806](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163557806) — failed: D2-B lacked explicit relation verdicts; duplicate-T2 control was double-escaped
 **Second expanded D2 run:** [45174263744](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174263744) — strict negative controls passed; D2-B still failed because the synthetic pair did not supply the M193/M225 per-relation verdict map
-**Latest D2 validation workflow:** [45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) — in progress on the corrected harness
+**Latest D2 validation workflow:** [45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) — PASS
 **Harness:** `tools/path_b_d2_srcas_test.py`
 **Experimental guard:** `tools/path_b_d2_srcas_guard.py`
 
