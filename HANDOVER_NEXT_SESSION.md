@@ -564,3 +564,11 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - Added proposal-only `tools/path_b_d2b_delegated_dispatch_test.py` at `9a7da607562c5f8c13b65c8f7d04f5a380bf0bd0`. It mocks checker loading for NAVIGATION, FINDINGS PRESENTATION, SR-CAS, SNCA and INTRODUCTION, tests that delegated negative results propagate as FAIL, and asserts input forwarding. No real checker or certificate procedure executes. This complements but does not replace existing isolated D2 and D4 actual-checker tests.
 - Wired into isolation CI at `7d42e20911c1654b19eb6526d4dd2321f5755dd7`. [Run 45192678663](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192678663) was **queued at inspection**; do not claim pass until observed.
 - Known Account fallback defect still open; no canonical edits. L-493 diagnosis is recorded in the verified root-cause report.
+
+
+## J. D5 safe-execution preflight prototype (23 November 2026)
+
+- Previous D2-B delegated-checker contract test passed as part of [isolation run 45192731904](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192731904) at `27401218`. This was a **mocked** dispatch test, not substantive checker validity.
+- Added proposal-only `tools/path_b_d5_execution_preflight.py` (`d4108c5482faf992b803e05fc71827b281838f12`) and synthetic `tools/path_b_d5_execution_preflight_test.py` (`c38cf8573c756c83307d106f6a570bd532ac86ba`). The preflight rejects shell metacharacters, malformed argv quoting, empty/absolute/traversing/nonexistent/escaping CWD, unrecognized statuses, and non-executable REGISTERED/WITHDRAWN lifecycle statuses. Tests include a symlink escape control where supported. This is a **non-executing, conservative preliminary proposal**, not an adopted policy or an execution sandbox.
+- Wired into prototype isolation workflow at `414328366d8c68fbf1648dd7a66cf579327df692`. **CI validation pending** at time of note. No certificate procedure was run and `tools/certify.py` remains untouched.
+- Still required before any safe executor: executable allowlist/capability model, restricted subprocess environment, explicit timeout/output/resource limits, no ambient secrets or network, controlled working tree, return-code enforcement, digest semantics, and Originator approval. Preflight alone cannot prevent malicious executables or side effects.
