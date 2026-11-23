@@ -609,3 +609,11 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - At inspection, recent proposal isolation runs including [45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) remained **queued** (runner backlog); no pass claimed for malformed-input suite.
 - Added `tools/path_b_d5_no_execution_boundary_test.py` at `248cb043f6cae76077f5a106512af1176ee38e9d`. Static AST guard rejects direct subprocess/network/dynamic import APIs, eval/exec and file-writing calls in three proposal-only pure D5 modules. Seven adversarial guard fixtures check detection and one allowed hashing operation. Wired into proposal isolation at `dae6f9592e830624a2ac2dc67f4d4d45519a5b45`. **CI pending**.
 - Important: this AST guard is only a regression tripwire; it cannot prove absence of side effects or provide a sandbox. No certificate execution, no canonical modifications, no merge/deploy. Next: check CI backlog and tighten approval provenance model without implementing executor.
+
+
+## P. D5 approval provenance envelope (23 November 2026)
+
+- At last CI inspection, [isolation run 45197107758](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45197107758) and preceding runs remained **queued**. Do not claim D5 malformed-input, result-classifier or AST-guard suites green until runner completes.
+- Added pure proposal-only `tools/path_b_d5_approval_provenance.py` (`555a8f46eca11dd19aad2747e5f32d68ac37b6d1`) defining a strict canonicalized envelope binding commit, certificate digest, procedure digest, input-manifest digest, sandbox-profile digest, nonce, issue/expiry, authority ID and signature reference. It validates schema and 24-hour maximum validity but **does not authenticate signatures, authority, nonce uniqueness or single use**. A valid envelope is never permission to execute.
+- Added 17 synthetic schema controls in `tools/path_b_d5_approval_provenance_test.py` (`6393290c91bbf36fb861b7f4dc567c5e365465a2`); extended AST guard to the new pure module (`5a0d5c2248e4d2e8bb424b9136901412a50e97e0`); CI integration at `a60b27ac727a9a46ffcba504d288cd46ed3e9d03`. **New CI pending**.
+- No canonical change, merge, deployment or certificate execution. Originator must approve any future authenticated authorization/executor architecture.
