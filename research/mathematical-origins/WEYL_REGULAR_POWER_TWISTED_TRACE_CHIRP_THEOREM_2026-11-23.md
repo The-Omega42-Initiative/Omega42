@@ -19,7 +19,7 @@ Then
 \[
 \boxed{\operatorname{Tr}(V W_N(x))
 =\operatorname{Tr}(V)\,
-\zeta_N^{-\frac12[G^{-1}y,y]}.}
+\zeta_N^{+\frac12[G^{-1}y,y]}.}
 \]
 Here 1/2 means the inverse of two modulo N.
 
@@ -34,12 +34,12 @@ Set x=0 and choose y=(G^(−1)−I)^(−1)x_target. The first term [0,y] vanishe
 \operatorname{Tr}(V)=\zeta^{-[G^{-1}y,y]/2}
 \operatorname{Tr}(VW_{x_target}).
 \]
-**CAUTION:** Solving this equation gives the **opposite sign** for the target trace:
+Solving this equation for the target trace gives:
 \[
 \boxed{\operatorname{Tr}(VW_{x_target})=
 \operatorname{Tr}(V)\,\zeta^{+[G^{-1}y,y]/2}.}
 \]
-This plus-sign formula is the correct one under the stated Weyl convention. The minus-sign display at the start of Theorem B should be read with this correction. The sign is verified by direct conjugation. QED.
+The plus sign follows from solving the conjugation identity for the target trace. QED.
 
 ## Theorem C: unit magnitude of the untwisted trace
 
@@ -77,15 +77,6 @@ For m=1 both traces have modulus one when N/h²>=3, so
 \boxed{C_{k,r}=\operatorname{Tr}(U_N)/\operatorname{Tr}(U_{N/h²}).}
 \]
 If N/h²=1, the one-dimensional quantization is scalar unitary and the same ratio applies. This determines the relative phase **from specified quantizations**, not its absolute value without normalization.
-
-## Sign convention erratum
-
-The **correct** chirp formula is
-\[
-\boxed{\operatorname{Tr}(VW_N(x))
-=\operatorname{Tr}(V)\,\zeta_N^{+[G^{-1}y,y]/2},\quad y=(G^{-1}-I)^{-1}x.}
-\]
-The preliminary negative-sign display in Theorem B is superseded by this explicit erratum. All subsequent consequences depend only on the phase being quadratic or on its vanishing for stabilizer labels and are unaffected.
 
 ## Significance and scope
 
