@@ -17,9 +17,10 @@ import conformance as cf
 import congruence as cg
 import format_check as fc
 import output_id as oi
+import path_b_d5a_guard as guard
 
 SET = os.path.join(ROOT, "records", "conformance", "practice_set.txt")
-FIXED_DATE = datetime.date(2026, 11, 23)  # current test date; exercise all active date-gated requirements
+FIXED_DATE = datetime.date(2026, 11, 23)
 INSTANCE = ("INSTANCE (L-513): NI-0123456789abcdef | ISSUER: SCRIPT | "
             "ISSUED: 2026-11-23T00:00:00Z | SEQ: 1 | PREV: NONE")
 
@@ -59,7 +60,6 @@ def build_fixture(tag, domain):
     text = text[:ck_start] + "CURRENT KNOWLEDGE (L-503): NOT REQUESTED" + text[ck_end:]
     text = re.sub(r"^RESEARCHED REACH \(L-503 \(5\)\):.*$", "RESEARCHED REACH (L-503 (5)): NOT REQUESTED", text, flags=re.M)
 
-    # L-532 applies from 31 October; this is explicitly synthetic test metadata.
     contribution = "NAVIGATOR'S CONTRIBUTION (Domain Zero): COMMON -- synthetic test fixture; STRIKER -- supplied practice-set domain; NAVIGATOR -- generated fixture; OPEN -- no semantic claim."
     text = text.replace("======= END GENERATIVE OBSERVATIONS =======",
                         contribution + "\n======= END GENERATIVE OBSERVATIONS =======", 1)
@@ -80,13 +80,18 @@ def build_fixture(tag, domain):
         text = text.replace(marker, "\n".join(trigger_lines) + "\n" + marker, 1)
     return finish_output_id(text)
 
-def verdict_for(items):
+def run_report(items, strict=True):
     with tempfile.TemporaryDirectory(prefix="omega42-d5a-") as tmp:
         for name, text in items:
-            with open(os.path.join(tmp, name), "w", encoding="utf-8") as f:
-                f.write(text)
-        paths = sorted(os.path.join(tmp, n) for n in os.listdir(tmp))
+            with open(os.path.join(tmp, name), "w", encoding="utf-8") as handle:
+                handle.write(text)
+        paths = sorted(os.path.join(tmp, name) for name in os.listdir(tmp))
+        if strict:
+            return guard.strict_report(paths, SET)
         return cf.report(paths, SET)
+
+def verdict_for(items):
+    return run_report(items, strict=True)
 
 def mutate_first(text, pattern, replacement):
     changed, n = re.subn(pattern, replacement, text, count=1, flags=re.M)
@@ -96,7 +101,7 @@ def mutate_first(text, pattern, replacement):
 
 def main():
     rows = domains()
-    if len(rows) != 8 or len({d for _, d in rows}) != 8:
+    if len(rows) != 8 or len({domain for _, domain in rows}) != 8:
         raise SystemExit("practice set is not exactly eight unique domains")
     fixtures = [(tag + ".txt", build_fixture(tag, domain)) for tag, domain in rows]
 
@@ -104,16 +109,18 @@ def main():
     for (tag, domain), (name, text) in zip(rows, fixtures):
         e = cf.expected(domain)
         _, checks, _, script = cf.check_one(text)
-        fmt = [x for x in fc.check(text) if x[0] == "FAIL"]
+        fmt = [item for item in fc.check(text) if item[0] == "FAIL"]
         print("%s | synthetic | %s | anchor P%d | state %s | norm %d | format failures %d | required %s | %s" %
               (tag, name, e["anchor"], e["state"], e["norm"], len(fmt),
-               "PASS" if all(x[1] for x in checks) else "FAIL",
+               "PASS" if all(item[1] for item in checks) else "FAIL",
                "SCRIPT-CAPABLE" if script else "TEXT-ONLY"))
 
     report, verdict = verdict_for(fixtures)
+    raw_report, raw_verdict = run_report(fixtures, strict=False)
     print("\nBASELINE REPORT")
     print(report)
-    print("BASELINE VERDICT: " + verdict)
+    print("BASELINE VERDICT (Path B guard): " + verdict)
+    print("RAW M314 BASELINE VERDICT: " + raw_verdict)
 
     first_name, first_text = fixtures[0]
     tests = [
@@ -129,48 +136,62 @@ def main():
         ("wrong exact domain wording", [(first_name, first_text.replace("DOMAIN VERBATIM: " + rows[0][1], "DOMAIN VERBATIM: " + rows[0][1].replace("time", "Time"), 1))] + fixtures[1:]),
     ]
 
-    print("\nNEGATIVE-CONTROL MATRIX")
+    print("\nNEGATIVE-CONTROL MATRIX (Path B strict guard)")
     failures = []
+    passed_controls = 0
     for label, items in tests:
         try:
             _, got = verdict_for(items)
             ok = got == "NOT YET COMPATIBLE"
             print("[%s] %s -> %s" % ("PASS" if ok else "FAIL", label, got))
-            if not ok:
+            if ok:
+                passed_controls += 1
+            else:
                 failures.append(label + ": verdict " + got)
         except Exception as exc:
-            print("[PASS] %s -> explicit hard error %s" % (label, repr(exc)))
+            print("[FAIL] %s -> unexpected hard error %s" % (label, repr(exc)))
+            failures.append(label + ": " + repr(exc))
 
     duplicate_report, duplicate_verdict = verdict_for(fixtures[:-1] + [("duplicate.txt", fixtures[0][1])])
     duplicate_diagnostic = bool(re.search(r"\bduplicate domain\b", duplicate_report, re.I))
     print("DUPLICATE-WITH-MISSING-DOMAIN: %s; explicit diagnostic: %s" %
           (duplicate_verdict, "PRESENT" if duplicate_diagnostic else "ABSENT"))
 
-    _, full_duplicate_verdict = verdict_for(fixtures + [("duplicate-extra.txt", fixtures[0][1])])
-    duplicate_extra_rejected = full_duplicate_verdict == "NOT YET COMPATIBLE"
-    print("DUPLICATE-WITH-COMPLETE-COVERAGE: %s" % full_duplicate_verdict)
-    if not duplicate_extra_rejected:
-        print("KNOWN DEFECT: M314 accepts nine passing files for eight domains; it does not enforce exactly one file per domain.")
+    duplicate_items = fixtures + [("duplicate-extra.txt", fixtures[0][1])]
+    _, guarded_duplicate_verdict = run_report(duplicate_items, strict=True)
+    _, raw_duplicate_verdict = run_report(duplicate_items, strict=False)
+    guard_rejects_duplicate = guarded_duplicate_verdict == "NOT YET COMPATIBLE"
+    raw_m314_defect_reproduced = raw_duplicate_verdict.startswith("COMPATIBLE")
+    print("DUPLICATE-WITH-COMPLETE-COVERAGE: Path B guard %s | raw M314 %s" %
+          (guarded_duplicate_verdict, raw_duplicate_verdict))
+    print("RAW M314 DUPLICATE ACCEPTANCE REPRODUCED: %s" % ("YES" if raw_m314_defect_reproduced else "NO"))
 
     print("\nSUMMARY")
     print("Synthetic fixtures: %d" % len(fixtures))
-    print("Baseline: %s" % verdict)
-    print("Negative controls: %d/%d rejected" % (len(tests), len(tests)))
-    print("Exact-one-file-per-domain enforcement: %s" % ("PASS" if duplicate_extra_rejected else "DEFECT IN CURRENT CHECKER"))
-    print("Duplicate diagnostic: %s" % ("present" if duplicate_diagnostic else "absent"))
+    print("Baseline (Path B guard): %s" % verdict)
+    print("Negative controls rejected: %d/%d" % (passed_controls, len(tests)))
+    print("Explicit duplicate diagnostic: %s" % ("present" if duplicate_diagnostic else "absent"))
+    print("Path B exact-one-file-per-domain guard: %s" % ("PASS" if guard_rejects_duplicate else "FAIL"))
+    print("Raw M314 duplicate defect reproduced: %s" % ("YES" if raw_m314_defect_reproduced else "NO"))
     print("No historical navigation was edited or relabelled.")
     print("No synthetic fixture was written into the repository.")
 
     if verdict not in ("COMPATIBLE (SCRIPT-CAPABLE)", "COMPATIBLE (TEXT-ONLY)"):
         failures.append("baseline did not achieve a compatible 8/8 verdict")
-    if not duplicate_extra_rejected:
-        failures.append("M314 accepts a duplicate extra file even when all eight domains are covered")
+    if passed_controls != len(tests):
+        failures.append("one or more negative controls were not rejected")
+    if not guard_rejects_duplicate:
+        failures.append("Path B guard did not reject a duplicate extra file")
+    if not raw_m314_defect_reproduced:
+        failures.append("raw M314 duplicate acceptance was not reproduced; inspect canonical checker")
+    if not duplicate_diagnostic:
+        failures.append("Path B guard did not provide a duplicate-domain diagnostic")
     if failures:
         print("D5a RESULT: FAIL")
         for item in failures:
             print(" - " + item)
         return 1
-    print("D5a RESULT: PASS")
+    print("D5a RESULT: PASS (Path B strict wrapper; canonical M314 defect isolated)")
     return 0
 
 if __name__ == "__main__":
