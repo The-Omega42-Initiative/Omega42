@@ -1,0 +1,21 @@
+name: Path B D2 SR-CAS SNCA isolated validation
+
+on:
+  push:
+    branches:
+      - proposal/path-b-release-packaging
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  d2-srcas-isolation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate SR-CAS and SNCA checker in isolated package
+        run: python tools/path_b_d2_srcas_test.py
