@@ -110,6 +110,8 @@ def main():
             print((strict_run.stdout or "")[-12000:])
             if strict_run.stderr:
                 print("STRICT GUARD STDERR:", strict_run.stderr[-2000:])
+            if not strict_ok:
+                failures.append("strict guard reported findings in archived SR-CAS/SNCA corpus")
         else:
             failures.append("no records/srcas/*.txt inputs copied")
             print("No SR-CAS/SNCA records found")
