@@ -13,9 +13,12 @@ import certify
 
 def strict_findings(text):
     findings = []
+    opening_count = text.count(certify.OPEN)
+    closing_count = text.count(certify.END)
     blocks = re.findall(re.escape(certify.OPEN) + r"(.*?)" + re.escape(certify.END), text, re.S)
-    if len(blocks) != 1:
-        return ["exactly one certificate block is required per certificate file"]
+    if opening_count != 1 or closing_count != 1 or len(blocks) != 1:
+        return ["exactly one balanced certificate block is required per certificate file (open=%d, close=%d, complete=%d)" %
+                (opening_count, closing_count, len(blocks))]
     body = blocks[0]
     values = {}
     for field in certify.FIELDS:
