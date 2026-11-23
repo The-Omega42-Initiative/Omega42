@@ -82,7 +82,8 @@ These are executed boundary-control results, not merely source-derived suspicion
 - exactly one T1.5, T2, T3, Base Score and two-axis status line per SNCA report;
 - the four-field shape of a halted VERBATIM MISMATCH report;
 - balanced report delimiters and exactly one fresh PRE-SR-CAS verification block for each SR-CAS report;
-- exactly one fresh M270 gate after the verification block for each proceeding SR-CAS report;\n- halted/proceeding classification is derived from the dedicated verification block, not incidental report prose;
+- exactly one fresh M270 gate after the verification block for each proceeding SR-CAS report;
+- halted/proceeding classification is derived from the dedicated verification block, not incidental report prose;
 - rejection of a current file with no complete assessment report, while preserving the historical exemption.
 
 ### First wrapper defect and correction
