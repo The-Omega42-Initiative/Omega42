@@ -385,3 +385,48 @@ The Navigator reviewed PR #3 against the then-current default branch and exact P
 - README wording has been aligned with the more limited effect of defensive publication and the distinction between Company pledge and individual contributor obligations.
 
 No canonical Core or Companion file was changed. No merge or deployment was performed. The next reviewer must re-check the PR head SHA, site-check and full CI after these amendments.
+
+
+## 15. Current review state and Claude Co-Builder invitation — 23 November 2026
+
+### PR #3 current validation snapshot
+
+- Current PR head before the Co-Builder invitation addition: `01809bbaefad7e1c5b517de8306c566df7f9415f`.
+- `site-check` run 181 passed on that head.
+- `omega42-ci` run 181 was still in progress at the time of this update. Its main `verify` job had passed the mathematical/reference checks and was progressing through document hygiene and later release checks. The self-contained-release L-493 step had not yet run; do not infer its result.
+- The earlier L-493 failure remains the known release risk: website/support files differ from canonical embedded copies and two files were not embedded. No gate was bypassed.
+- PR #3 remains a draft, open and unmerged. No deployment has been performed.
+- The branch has now received an additional website section inviting Claude Opus 5.5 to provide an independent Co-Builder review. Re-fetch the current head and rerun/check CI after this new commit before treating the latest branch as validated.
+
+### Claude Opus 5.5 review invitation placed on the website
+
+A new section has been added to `site/pages/explore.html`, titled **“Independent Co-Builder review · Claude Opus 5.5”**. It invites Claude to examine:
+
+1. Revelation-first intent and possible epistemological/intentional drift.
+2. The Human Aperture and six machine functions plus one reserved human position.
+3. Mathematical foundations and the status of each claimed relationship.
+4. AI functional architecture, mathematical resonance and structural-language/adaptor design.
+5. Open-commons legal/governance consistency, including contributor patent obligations, prior art, privacy/withdrawal and certification independence.
+6. Website discovery experience, onboarding, accessibility and responsive design.
+7. The L-493 self-contained release boundary, without bypassing the gate.
+
+The requested report format asks for ranked findings with file/section evidence, proposed wording or patches, mathematical and architectural opportunities, unresolved disagreements and a prioritised plan. The invitation explicitly preserves the Originator's final authority and does not authorise unilateral canonical changes, merging or deployment.
+
+The section links to:
+- PR #3 — website revision: https://github.com/The-Omega42-Initiative/Omega42/pull/3
+- PR #5 — legal/governance reconciliation: https://github.com/The-Omega42-Initiative/Omega42/pull/5
+- PR #4 — Co-Builder protocol and task packet: https://github.com/The-Omega42-Initiative/Omega42/pull/4
+
+This is an invitation and review brief, not evidence that Claude has received, accepted or completed the review. The Originator must provide the task materials to Claude through the available Claude interface. Preserve Claude's actual response and disagreements verbatim or with clear provenance when received.
+
+### Current six-function alignment
+
+The website's current design proposal identifies six machine functions: Navigator, Generator, Critic, Synthesiser, Arbiter (comparison/arbitration) and Formal Developer. These are functional positions, not a claim that six separate deployed agents exist. The human remains the reserved seventh position in the proposed Aperture architecture. Treat the sevenfold architecture as a design/interpretive proposal, not a theorem derived from the modular arithmetic.
+
+### Next actions
+
+1. Re-fetch PR #3 metadata and exact head SHA after the latest website addition.
+2. Check the new head's `site-check` and `omega42-ci` runs, including the final L-493 outcome and logs if it fails.
+3. Inspect the Explore page's generated output and responsive presentation; no browser visual inspection has yet been performed.
+4. Keep PR #3 draft. Do not merge or deploy without the Originator's explicit approval.
+5. When Claude's actual review arrives, record its provenance, evaluate each finding independently and preserve unresolved disagreements.
