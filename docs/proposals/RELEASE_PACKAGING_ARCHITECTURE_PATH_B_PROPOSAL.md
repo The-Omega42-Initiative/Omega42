@@ -402,3 +402,8 @@ A preliminary, explicitly incomplete repository classification register has been
 ## 18. Supporting dependency audit
 
 The first-pass dependency analysis is recorded in [PATH_B_DEPENDENCY_AUDIT.md](PATH_B_DEPENDENCY_AUDIT.md). It distinguishes text-only navigation, arithmetic recomputation, conformance/identity verification, and public-service operation as separate dependency profiles. The audit is tied to a complete repository tree at a fixed commit, but its import/runtime/build dependency tracing remains in progress. Its classifications are provisional and it does not amend L-493.
+
+
+## 19. Supporting import and dynamic-loading audit
+
+The source-level import and dynamic-loading trace is recorded in [PATH_B_IMPORT_AND_DYNAMIC_LOADING_AUDIT.md](PATH_B_IMPORT_AND_DYNAMIC_LOADING_AUDIT.md). It distinguishes the small standard-library arithmetic reference from format, output-form, identity and full conformance profiles. The trace is not yet a clean-room execution or a complete command-specific file-read closure.
