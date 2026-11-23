@@ -38,8 +38,8 @@ def strict_findings(text):
         if len(verifications) != 1:
             findings.append(prefix + ": exactly one fresh PRE-SR-CAS VERBATIM VERIFICATION block must precede this report")
         verification = verifications[-1] if verifications else ""
-        matches = re.findall(r"(?mi)^\\s*MATCH:\\s*(YES|NO)\\b", verification)
-        verdicts = re.findall(r"(?mi)^\\s*VERDICT:\\s*(PROCEED|HALT)\\b([^\\n]*)", verification)
+        matches = re.findall(r"(?mi)^\s*MATCH:\s*(YES|NO)\b", verification)
+        verdicts = re.findall(r"(?mi)^\s*VERDICT:\s*(PROCEED|HALT)\b([^\n]*)", verification)
         if len(matches) != 1:
             findings.append(prefix + ": verification block must contain exactly one MATCH: YES/NO line")
         if len(verdicts) != 1:
@@ -52,7 +52,7 @@ def strict_findings(text):
             if match_value == "NO" and not (verdict == "HALT" and "VERBATIM MISMATCH" in tail):
                 findings.append(prefix + ": MATCH: NO requires HALT -- VERBATIM MISMATCH")
 
-        halted = bool(re.search(r"HALT\\s*[-—]+\\s*VERBATIM MISMATCH", verification + body))
+        halted = bool(re.search(r"HALT\s*[-—]+\s*VERBATIM MISMATCH", verification + body))
         if halted:
             for label in ("DOMAIN:", "ARCHITECTURES COMPARED", "PER-RUN VERDICT", "MANDATORY CORRECTIONS:"):
                 if _count_line(body, label) != 1:
@@ -69,7 +69,7 @@ def strict_findings(text):
                 findings.append(prefix + ": exactly one %s field is required" % label.rstrip(":"))
 
         weight_tail = body[body.find("Comparison-class weight"):] if "Comparison-class weight" in body else ""
-        weight_match = re.search(r"(?:x|×)\\s*(\\d+(?:\\.\\d+)?)", weight_tail)
+        weight_match = re.search(r"(?:x|×)\s*(\\d+(?:\.\\d+)?)", weight_tail)
         base = srcas_check.first(body, "Base Score:")
         weighted = srcas_check.first(body, "Weighted index")
         if weight_match is None:
