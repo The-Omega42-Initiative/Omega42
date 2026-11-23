@@ -15,7 +15,7 @@ This folder gathers the current Path B technical evidence and the next decisions
 4. [D5a eight-domain validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)
 5. [D2 SR-CAS/SNCA validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md)
 6. [D5 certificate execution boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md)
-5. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
+6. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
 
 ## Source material
 
@@ -47,7 +47,7 @@ This folder gathers the current Path B technical evidence and the next decisions
 - The D1b wrapper is experimental and separate from canonical checker code.
 - The dedicated D1b prototype workflow passed; full Omega42 CI was still running when this packet was prepared.
 - D5a Path B strict-wrapper validation passed: eight synthetic current-date fixtures pass A1–A4 with 8/8 coverage, and 11/11 negative controls are rejected. Raw M314's duplicate-extra defect is isolated by the wrapper; minimal-package isolation passed. See the validation report.
-- D2-A canonical SR-CAS/SNCA checker baseline passed in isolation: 9/9 self-tests, all 58 archived report files, and the 197/197 APE receipt audit. The strict Path B wrapper is being corrected against the archive; D2-B now has a separate real-navigation-pair smoke test. See the D2 report.
+- D2-A canonical SR-CAS/SNCA checker baseline passed in isolation: 9/9 self-tests, all 58 archived report files, and the 197/197 APE receipt audit. The first strict-wrapper attempt exposed and isolated a wrapper-only field-counting defect; the corrected run is pending. D2-B now has a separate NAVIGATION-only package profile with explicit dynamic-capability checks and fail-closed missing-dependency controls. Its workflow is pending. See the D2 report.
 - D3 static certificate validation is under test. It excludes `--selftest` because that command executes certificate procedures; the D3 profile uses `--check` only. See the D5 execution-boundary audit.
 - D4 Introduction output, Core correspondence, legitimacy and philosophical-register checks have an isolated test harness; results are pending.
 - This packet does not approve package boundaries, amend release policy, certify compatibility, or authorise a release.
