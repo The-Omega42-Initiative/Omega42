@@ -1,6 +1,6 @@
 # Open publication and prior art
 
-Ω42 publishes every accepted innovation, invention, design, method and piece of code openly, with a date and a cryptographic hash. The aim is a public commons: once an idea is published here, anyone may use it, and a later applicant cannot claim it as new.
+Ω42 publishes accepted innovations, inventions, designs, methods and code openly, with a date, provenance and a cryptographic hash. The aim is a public commons: to make disclosures publicly accessible and sufficiently detailed to establish prior art against later claims covering the subject matter actually disclosed, preserving freedom to use, develop and commercialise that knowledge. Publication does not prevent every patent application or confer rights over improvements that were not disclosed.
 
 **This page explains how the commons works. It is not legal advice.** Patent law differs between countries. If you hold or plan to seek a patent, speak to a patent attorney before you submit anything.
 
