@@ -69,3 +69,11 @@ A new **proposal-only** script, `tools/path_b_d2b_form_registry_contract_test.py
 - Integrated the test into the proposal-only prototype-isolation workflow at commit `87db93c7f06646fe4925f082bc6018ee0403ca43`.
 - **Validation pending:** no successful workflow conclusion for this new test was observed at the time of writing. Review any failing assertion before calling it a milestone. No canonical checker or release contract was modified.
 - The previously established static D2-B registry characterization had passed in run [45181616298](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45181616298) at commit `1aaa3b10`.
+
+## Continuity milestone — next-session handover copied to active branch
+
+- The Originator supplied the previous website-revision handover and explicitly requested a **GitHub copy that the next ChatGPT can use to continue**, with instructions kept current.
+- The comprehensive `HANDOVER_NEXT_SESSION.md` was fetched from `revelation-first-website-handover` and copied to the root of **`proposal/path-b-release-packaging`** with a Path B continuation notice and detailed addendum, commit `52ad0a014ef8e9257978442792d4ad64ac745425`. Source material was preserved. The addendum includes current workflow results, P0/P1/P2 tasks, PR #3 website context, and instruction to update **both** this Claude note and the root handover after substantive development work.
+- The dynamic D2-B synthetic dispatch controls were confirmed successful in [prototype isolation run 45181878754](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45181878754) at `40da0ef0`. This is not a canonical Account dispatch fix or full thirteen-form closure.
+- GitHub files are **not automatically ingested** by a new ChatGPT conversation. The Originator should share the root handover URL in the next session; the next assistant must inspect the current branch and CI rather than trusting a stale snapshot.
+- Current root handover: https://github.com/The-Omega42-Initiative/Omega42/blob/proposal/path-b-release-packaging/HANDOVER_NEXT_SESSION.md
