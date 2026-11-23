@@ -23,3 +23,5 @@ jobs:
           python-version: "3.11"
       - name: Build isolated temporary packages and run declared commands
         run: python3 tools/path_b_prototype_test.py
+      - name: Characterize D5 semantics without executing certificate procedures
+        run: python3 tools/path_b_d5_certificate_semantics_test.py
