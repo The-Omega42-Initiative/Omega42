@@ -63,7 +63,7 @@ def evaluate(fields, approval, root, now_utc):
     if expiry is not None and now is not None and expiry <= now:
         issues.append("approval expired")
     expected = fields.get("RESULT SHA-256", "")
-    if not HEX.fullmatch(expected):
+    if not isinstance(expected, str) or not HEX.fullmatch(expected):
         issues.append("expected output digest missing or invalid")
     # This is a request-review gate only. No executable allowlist, sandbox,
     # network isolation, resource limits, or cryptographic approval validation.
