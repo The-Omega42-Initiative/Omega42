@@ -257,7 +257,9 @@ def main():
             ("missing exact MATCH line", good_sr.replace("MATCH: YES", "MATCH: MAYBE")),
             ("missing numeric comparison weight", good_sr.replace("Comparison-class weight (L-416): x1.5", "Comparison-class weight (L-416): N/A")),
             ("missing numeric weighted index", good_sr.replace("Weighted index: 1.00", "Weighted index: N/A")),
+            ("duplicate T1 component", good_sr.replace("T1.5 (Interpretive Integrity):", "T1 (Arithmetic): 1.00\\nT1.5 (Interpretive Integrity):")),
             ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\nMANDATORY CORRECTIONS: none")),
+            ("duplicate SNCA T2 component", good_sn.replace("T2: 0.10", "T2: 0.10\\nT2: 0.10")),
             ("duplicate SNCA Base Score", good_sn.replace("SYNTHESIS: s", "Base Score: 0.31\nSYNTHESIS: s")),
             ("duplicate SNCA two-axis status", good_sn.replace("VERDICT CONFIRMATION: N/A", "STATUS (two axes, L-428): PROCEDURAL FAILURE | COMPARATIVE STATUS: NOT INVESTIGATED\nVERDICT CONFIRMATION: N/A")),
         ]
