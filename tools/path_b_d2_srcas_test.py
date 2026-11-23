@@ -139,6 +139,12 @@ def main():
             print("D2 FAIL: tools/path_b_d2_srcas_guard.py is missing")
             return 1
         shutil.copy2(guard_src, guard)
+        output_form_src = os.path.join(ROOT, "tools", "output_form.py")
+        output_form_dest = os.path.join(package_root, "tools", "output_form.py")
+        if not os.path.isfile(output_form_src):
+            print("D2 FAIL: tools/output_form.py is missing for the outer-frame audit")
+            return 1
+        shutil.copy2(output_form_src, output_form_dest)
 
         reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
