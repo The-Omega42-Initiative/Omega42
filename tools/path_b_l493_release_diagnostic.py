@@ -43,6 +43,16 @@ def main():
                          ("EMBEDDED NOT REQUIRED", extra), ("OUTSIDE EMBEDDED", prohibited)):
         for item in items:
             print("%s: %s" % (label, item))
+    # Publish a bounded machine-readable inventory as Actions check annotations.
+    # These are informational notices, not release errors or a waiver.
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        for label, items in (("NOT EMBEDDED", missing), ("COPY DIFFERS", sorted(differs)),
+                             ("EMBEDDED NOT REQUIRED", extra), ("OUTSIDE EMBEDDED", prohibited)):
+            for item in items[:15]:
+                safe = item.replace("%", "%25").replace("\\r", "%0D").replace("\\n", "%0A")
+                print("::notice title=L-493 %s::%s" % (label, safe))
+        print("::notice title=L-493 totals::missing=%d differing=%d extra=%d prohibited=%d" %
+              (len(missing), len(differs), len(extra), len(prohibited)))
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
             f.write("### L-493 diagnostic (informational, not a waiver)\n\n")
