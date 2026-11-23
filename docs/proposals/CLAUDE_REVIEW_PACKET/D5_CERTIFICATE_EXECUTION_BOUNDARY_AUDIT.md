@@ -67,6 +67,24 @@ Before any general D5 execution profile is adopted, define a separate execution 
 
 A safer command schema is a structured executable/argument list. If backwards compatibility requires existing shell-string certificates, they should be treated as a legacy execution class and run only in a separately isolated, explicitly authorised environment.
 
+### Minimal correctness correction to consider (not applied)
+
+The smallest correction for the confirmed exit-code defect is:
+
+```python
+h, rc = run_procedure(f)
+ok = (rc == 0) and (h == f.get('RESULT SHA-256'))
+return ok, '%s: %s (exit %d, %s) -- %s' % (
+    f.get('CERTIFICATE', path),
+    'REPRODUCED' if ok else 'NOT REPRODUCED: WITHDRAW IT',
+    rc, f.get('STATUS'), h[:16]
+)
+```
+
+This would stop a matching stdout digest with a nonzero exit status from being called reproduced. It is only a correctness correction; it does not make `shell=True`, unrestricted CWD, inherited host permissions or the absence of time/resource limits safe. It must not be treated as permission to execute certificates generally.
+
+A later API revision should also consider representing REGISTERED/WITHDRAWN as an explicit `NOT RUN` / `NOT APPLICABLE` result rather than conflating lifecycle non-execution with a reproduced procedure. That would require checking all callers and exit-status expectations before adoption.
+
 ## 5. Safe D5 boundary characterization — no procedure execution
 
 A separate test script, `tools/path_b_d5_certificate_semantics_test.py`, has been added to characterize the current implementation without running any certificate procedure.
