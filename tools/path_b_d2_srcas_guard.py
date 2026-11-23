@@ -35,8 +35,8 @@ def strict_findings(text):
         if not verifications:
             continue  # canonical checker reports the missing block
         verification = verifications[-1]
-        matches = re.findall(r"(?mi)^\s*MATCH:\s*(YES|NO)\s*$", verification)
-        verdicts = re.findall(r"(?mi)^\s*VERDICT:\s*(PROCEED|HALT)\b([^\n]*)", verification)
+        matches = re.findall(r"\bMATCH:\s*(YES|NO)\b", verification)
+        verdicts = re.findall(r"\bVERDICT:\s*(PROCEED|HALT)\b([^\n]*)", verification)
         if len(matches) != 1:
             findings.append(prefix + ": verification block must contain exactly one MATCH: YES/NO line")
         if len(verdicts) != 1:
