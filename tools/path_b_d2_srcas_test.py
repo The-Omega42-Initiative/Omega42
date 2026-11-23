@@ -97,6 +97,36 @@ def main():
         if not (old_ok and new_ok):
             failures.append("historical date boundary incorrect")
 
+        # Probe the canonical parser's enforcement boundaries. These are
+        # diagnostic findings, not yet adopted policy or patched behaviour.
+        mismatch_proceed = srcas_check.GOOD_V.replace("MATCH: YES", "MATCH: NO")
+        mismatch_result = srcas_check.check(mismatch_proceed)
+        mismatch_accepted = bool(mismatch_result) and not mismatch_result[0][2]
+        print("%-58s %s" % ("Canonical checker rejects MATCH: NO with PROCEED",
+                            "PASS" if not mismatch_accepted else "KNOWN DEFECT: ACCEPTED"))
+
+        missing_weight = srcas_check.GOOD_V + srcas_check.GOOD_R.replace(
+            "Comparison-class weight (L-416): x1.5", "Comparison-class weight (L-416): N/A")
+        weight_result = srcas_check.check(missing_weight)
+        weight_accepted = bool(weight_result) and not weight_result[0][2]
+        print("%-58s %s" % ("Canonical checker requires numeric comparison weight",
+                            "PASS" if not weight_accepted else "KNOWN DEFECT: ACCEPTED"))
+
+        missing_index = srcas_check.GOOD_V + srcas_check.GOOD_R.replace(
+            "Weighted index: 1.00", "Weighted index: N/A")
+        index_result = srcas_check.check(missing_index)
+        index_accepted = bool(index_result) and not index_result[0][2]
+        print("%-58s %s" % ("Canonical checker requires numeric weighted index",
+                            "PASS" if not index_accepted else "KNOWN DEFECT: ACCEPTED"))
+
+        duplicate_base = srcas_check.GOOD_V + srcas_check.GOOD_R.replace(
+            "MANDATORY CORRECTIONS: none",
+            "Base Score: 0.79\nMANDATORY CORRECTIONS: none")
+        duplicate_result = srcas_check.check(duplicate_base)
+        duplicate_accepted = bool(duplicate_result) and not duplicate_result[0][2]
+        print("%-58s %s" % ("Canonical checker rejects duplicate Base Score field",
+                            "PASS" if not duplicate_accepted else "KNOWN DEFECT: ACCEPTED"))
+
         # Negative arithmetic control against the canonical checker function.
         bad = srcas_check.GOOD_V + srcas_check.GOOD_R.replace("Base Score: 0.79", "Base Score: 0.90")
         results = srcas_check.check(bad)
