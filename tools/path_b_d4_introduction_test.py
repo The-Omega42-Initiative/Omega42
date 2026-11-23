@@ -70,6 +70,21 @@ def main():
         if render_ok:
             run(["--check", rendered_path], "Rendered Opening passes checker")
 
+        # Round-trip the first-navigation close (Friendly Notes + Identity
+        # Block) through the same isolated renderer and its --first checker.
+        first_rendered = subprocess.run(
+            [sys.executable, script, "--first-render"],
+            cwd=package_root, capture_output=True, text=True, timeout=60)
+        first_path = os.path.join(package_root, "rendered-first-close.txt")
+        with open(first_path, "w", encoding="utf-8") as f:
+            f.write(first_rendered.stdout)
+        first_render_ok = first_rendered.returncode == 0 and not first_rendered.stderr
+        print("%-62s %s" % ("Renderer produces first-navigation close", "PASS" if first_render_ok else "FAIL"))
+        if not first_render_ok:
+            failures.append("first-navigation close renderer failed")
+        if first_render_ok:
+            run(["--first", first_path], "Rendered first-navigation close passes checker")
+
     print("D4 RESULT: %s" % ("FAIL" if failures else "PASS"))
     for failure in failures:
         print(" - " + failure)
