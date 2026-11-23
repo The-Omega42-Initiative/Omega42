@@ -55,6 +55,8 @@ The D2-B pair is a duplicate copy of `seq_0133.txt` and the synthetic driver sup
 
 The D2-B closure is **NAVIGATION-only**. Other registered input forms require their own dependency closures and tests. No canonical checker was changed.
 
+**D2-B form-dispatch audit:** the twelve-form registry and `form_checks()` dispatch were compared. One mismatch was identified: NAVIGATOR'S ACCOUNT declares `tools/account_check.py` in the registry but currently falls through to marker-only PASS in `form_checks()`. This is a source-level dispatch defect candidate; no canonical code was changed. A proposed minimal correction and test sequence are documented in [D2B_OUTPUT_FORM_DISPATCH_AUDIT.md](D2B_OUTPUT_FORM_DISPATCH_AUDIT.md).
+
 See the [D2 validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d2_srcas_test.py) and [strict guard](../../../tools/path_b_d2_srcas_guard.py).
 ## 3. D1b result
 
