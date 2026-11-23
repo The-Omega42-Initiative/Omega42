@@ -3,7 +3,7 @@
 **Prepared:** 23 November 2026  
 **Branch:** `proposal/path-b-release-packaging`  
 **Review-packet baseline:** the packet was created after the experimental validation on `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`.  
-**Prototype source commit tested:** `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`
+**D1b prototype source commit tested:** `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`\n**Latest D5a fixture source commit tested:** `0f79cb22a16026ae7c6f6caa05f10d4c28ab1ea7`
 
 ## 1. Workflow evidence
 
@@ -33,29 +33,31 @@ See [D1B_GUARD_VALIDATION.md](D1B_GUARD_VALIDATION.md).
 
 ## 3. D5a current evidence
 
-The earlier D5a prototype:
-- recomputed the public practice-set key for all eight domains;
-- checked one historical navigation outside that set;
-- verified its A1 anchor, A2 arms, A3 format and A4 layer-one checks;
-- correctly returned `NOT YET COMPATIBLE` because the one fixture did not cover the eight-domain set.
+The dedicated D5a harness now generates eight explicitly synthetic fixtures at runtime from the exact public practice-set domains. On commit `0f79cb22...`, using the current date (23 November 2026) and its date-gated format requirements:
 
-This was intentionally a smoke test, not a compatibility certification.
+- all eight fixtures passed A1 anchor, A2 arms, A3 format and A4 layer-one checks;
+- the baseline report returned 8/8 coverage and `COMPATIBLE (SCRIPT-CAPABLE)`;
+- ten negative controls (missing domain, non-practice domain, wrong anchor, wrong arm, wrong layer-one state, missing format marker, duplicate with missing domain, empty, malformed and wrong exact domain wording) all returned `NOT YET COMPATIBLE`.
 
-The practice-set domains are CF-01 through CF-08. The first eight historical navigation JSON records inspected do not provide exact matches for those eight prompts; several records instead concern purpose of life or general anesthesia. The D5a smoke-test fixture NAV-2026-0021 is also explicitly outside the public set. Historical files must not be relabelled or edited to manufacture coverage.
+A separate eleventh control supplied nine passing files for eight domains. **M314 returned `COMPATIBLE (SCRIPT-CAPABLE)`**, exposing a defect: `conformance.report()` does not enforce exactly one file per required domain and emits no dedicated duplicate-domain diagnostic. The dedicated D5a workflow is therefore intentionally failing on this acceptance defect. The canonical checker has not been changed.
 
-The next test is defined in [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md). It requires exact-domain fixtures, canonical recomputation, per-file assertions, complete coverage, negative controls and fixture provenance.
+All fixtures are temporary, synthetic structural tests. The long essay, current-knowledge/reach content and trigger markers are explicitly synthetic; the trigger markers are not substantive M269/M139–M142/M127 audits. The run establishes mechanical acceptance of the generated fixtures, not semantic quality or the quality of an AI's reasoning.
+
+The earlier D5a prototype remains a smoke test on one historical navigation outside the public set. The first eight historical navigation JSON records inspected do not provide exact matches for all eight prompts. Historical files were not relabelled or edited.
+
+See [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md), the [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md), and [the harness](../../../tools/path_b_d5a_fixture_test.py).
 
 ## 4. Additional checker questions to test
 
 Source inspection of `tools/conformance.py` shows:
 - coverage is represented as a set of exact domain strings;
 - a domain is counted only when all required per-file checks pass;
-- duplicate valid files do not increase the coverage count, but there is no dedicated duplicate diagnostic in the report;
-- malformed or empty files may raise exceptions during parsing rather than producing a controlled non-compatible report; this requires direct negative-control testing;
+- duplicate valid files do not increase the coverage count, but a ninth duplicate file is accepted when all eight domains are otherwise covered; there is no dedicated duplicate diagnostic in the report;
+- the current synthetic D5a controls for malformed and empty files returned controlled non-compatible reports;
 - advisory B1/B2/B3 results are printed as advisory and do not form part of the required A1–A4 `ok` calculation;
 - the overall execution level is derived from whether every supplied file has a valid executed status and output ID.
 
-These are source observations, not yet all experimentally verified. The eight-domain test plan explicitly includes duplicate, malformed and missing-domain controls.
+The duplicate, malformed, empty and missing-domain behaviours above have now been exercised by the D5a harness. The remaining question is whether to correct the canonical checker itself or place strict one-file-per-domain validation in a separately approved release-profile wrapper.
 
 ## 5. Claude review questions
 
