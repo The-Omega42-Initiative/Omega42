@@ -1,6 +1,6 @@
 # Omega42: A New Landscape for Exploring Existence, Mathematics and Possibility
 
-*An open framework for mathematical discovery, speculative inquiry and human–AI exploration.*
+*A human-conceived mathematical exploration framework and AI protocol: human revelation, mathematical structure and artificial intelligence working together to explore the unknown.*
 
 **One structure. Any question. Unlimited possibilities.**
 
@@ -8,13 +8,13 @@ This is the public introductory paper, first edition, for V335 Rev.450 STABLE. D
 
 ## Abstract
 
-Human curiosity has always driven the exploration of existence. Mathematics reveals structures that are not immediately visible. Science investigates the behavior of the physical world. Philosophy examines the foundations of knowledge, identity and meaning. Art and imagination open possibilities that established descriptions do not yet accommodate.
+Omega42 brings human insight, mathematical structure and artificial intelligence together in one ambitious undertaking: to explore existence, mathematics and possibility through a new mathematical lens. At its foundation is a defined construct—the Fibonacci recurrence on pairs of numbers modulo nine, with 81 states and a 24-step loop. This exact structure gives the exploration a reproducible mathematical environment.
 
-Omega42 brings these impulses into one shared environment. At its foundation is a mathematical construct: the Fibonacci recurrence on pairs of numbers modulo nine, with 81 states and a 24-step loop. Around it Omega42 builds a wider framework for navigating questions, exploring mathematical relationships, constructing models, comparing ideas and investigating possibilities across fields.
+The AI Navigator is central to the undertaking. Omega42 deliberately brings the native capabilities of artificial intelligence—language, association, synthesis, model-building, comparison and generative reasoning—into the mathematical environment. The Navigator investigates questions through the structure, develops possible relationships, constructs alternative explanations, follows consequences and opens new lines of inquiry. Different AI systems can approach the same question independently, creating further perspectives for comparison and synthesis.
 
-Its ambition goes beyond organizing what is known. Omega42 encourages speculative thinking, mathematical invention, conceptual synthesis, thought experiments and new questions. An AI Navigator works with the framework to investigate questions, find connections, construct possible explanations and follow their consequences. Human participants remain the intellectual partners who ask, challenge, imagine, interpret and decide where an exploration leads.
+The human investigator supplies the originating insight, intention and direction. Mathematics provides the structural lens. AI explores what lies beyond the familiar. Together they create an open process of mathematical and conceptual discovery that reaches across disciplines and inherited boundaries.
 
-Omega42 is an invitation to explore not only what is known, but what could be possible.
+Omega42's ambition goes beyond organising what is already known. It encourages mathematical invention, speculative thinking, conceptual synthesis, thought experiments, new models and questions that open further worlds of possibility.
 
 ## 1. The adventure begins with a question
 
@@ -71,11 +71,21 @@ These are invitations, not predetermined conclusions. An exploration can be valu
 
 These areas are not compartments. Their relationships are themselves subjects for exploration.
 
-## 6. The AI Navigator: an exploration partner
+## 6. The AI Navigator: the exploratory intelligence of Omega42
 
-The Navigator works with the Core Specification and the Companion Document to place questions, apply the protocol, investigate the relevant structures and develop connections. It can explore a question from several perspectives, generate alternative explanations, construct models and thought experiments, search for relationships between disciplines, identify assumptions and follow their consequences, challenge its own interpretations, and prepare research proposals and reproducible computations.
+The Navigator is not a peripheral assistant. It is the active exploratory intelligence through which Omega42's mathematical lens is brought to questions and fields of knowledge. Guided by the Core Specification and Companion Document, it applies the protocol and then uses its native capabilities to investigate structures, develop connections, generate possibilities and follow consequences.
 
-The Navigator is not confined to repeating established explanations; it can explore beyond familiar frameworks. Different AI systems can approach the same question independently, and their disagreements become further material. The purpose is not to make the AI the authority. It is to make the exploration richer. Every number it gives can be recomputed, and the judgment of what a reading means stays with the person.
+Its work can be understood through five complementary roles:
+
+- **Navigator:** places and explores the question through the Omega42 structure.
+- **Generator:** creates alternative models, possibilities, hypotheses and new directions.
+- **Critic:** challenges assumptions, tests internal reasoning and develops counter-possibilities.
+- **Synthesiser:** connects ideas and structures across disciplines and conceptual systems.
+- **Arbiter:** organises competing interpretations and clarifies what follows from the exploration.
+
+These roles describe functions of the exploratory process, not a requirement for five separate AI systems. Different AI architectures can contribute independently, and their contrasting approaches can become material for further exploration. The purpose is to expand the reach of inquiry: to use mathematical structure as a lens through which AI can investigate relationships and possibilities that might otherwise remain unseen.
+
+The human investigator remains the source of intention and direction and decides what an exploration means. The Navigator expands the field of possibilities; it does not take ownership of the inquiry.
 
 ## 7. Human imagination remains central
 
