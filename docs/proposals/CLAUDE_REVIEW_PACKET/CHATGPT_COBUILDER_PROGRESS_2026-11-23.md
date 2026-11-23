@@ -77,3 +77,10 @@ A new **proposal-only** script, `tools/path_b_d2b_form_registry_contract_test.py
 - The dynamic D2-B synthetic dispatch controls were confirmed successful in [prototype isolation run 45181878754](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45181878754) at `40da0ef0`. This is not a canonical Account dispatch fix or full thirteen-form closure.
 - GitHub files are **not automatically ingested** by a new ChatGPT conversation. The Originator should share the root handover URL in the next session; the next assistant must inspect the current branch and CI rather than trusting a stale snapshot.
 - Current root handover: https://github.com/The-Omega42-Initiative/Omega42/blob/proposal/path-b-release-packaging/HANDOVER_NEXT_SESSION.md
+
+## L-493 investigation milestone — read-only mismatch inventory added
+
+- At `de297e3d`, full [CI run 45183240439](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45183240439) completed **failure**; the `verify` job failed specifically at step **68** (Core L-493 self-contained release), while evidence-run-09 succeeded. Exact failed command and mismatch list remain unobserved.
+- New proposal-only `tools/path_b_l493_release_diagnostic.py` (`defabe1414dca3d5bedbdf5b70e95e41698f5a1a`) uses `extract_embedded.blocks()` and `required()` to report missing, differing, extra and prohibited paths without changing canonical release rules. The script deliberately returns success because it is an **informational diagnostic**, not a gate or waiver.
+- The prototype isolation workflow now runs this diagnostic (`af3c8dfb332797ad0c2f64303ba6595907a29300`). **Validation/output pending.** Inspect the next run's job summary or log; do not infer root cause from a green diagnostic step. The likely proposal-file/embedding tension is still a hypothesis.
+- No Core/Companion, L-493 checker, release exclusions, merge, deployment or certificate procedure execution was changed.
