@@ -122,7 +122,7 @@ def run_isolated_package():
         "tools/utility.py",
         "tools/path_b_d5a_guard.py",
         "tools/path_b_d5a_fixture_test.py",
-        "records/conformance/practice_set.txt",
+        "records/conformance/practice_set.txt",\n        "records/frameworks/lens_relevance.json",
     ]
     with tempfile.TemporaryDirectory(prefix="omega42-d5a-package-") as package_root:
         for rel in closure:
