@@ -61,6 +61,21 @@ def run_d2b_navigation_profile():
         lines.append("D2-B NAVIGATION closure: " + ", ".join(D2B_NAVIGATION_CLOSURE))
         lines.append("D2-B preflight: PASS")
 
+        # Import-time capability probe: format_check historically suppresses
+        # adaptor and M193 import failures. Require both capabilities explicitly.
+        capability_code = (
+            "import sys; sys.path.insert(0, 'tools'); "
+            "import format_check; assert format_check._JS is not None, 'M193/Jargon scanner unavailable'; "
+            "import adaptors; assert adaptors.registry().get('adaptors'), 'adaptor registry unavailable'; "
+            "assert adaptors.route('What is a human being?')['route'] == 'CANONICAL', 'English route mismatch'"
+        )
+        capability = subprocess.run([sys.executable, "-c", capability_code],
+                                    cwd=package_root, capture_output=True, text=True, timeout=60)
+        lines.append("D2-B dynamic capability probe: %s (exit %d)" %
+                     ("PASS" if capability.returncode == 0 else "FAIL", capability.returncode))
+        if capability.returncode != 0:
+            return 1, "\\n".join(lines), capability.stderr or capability.stdout or ""
+
         # Fail-closed controls: remove one required dependency at a time and
         # prove the profile preflight refuses to run without it.
         for rel in D2B_NAVIGATION_CLOSURE:
