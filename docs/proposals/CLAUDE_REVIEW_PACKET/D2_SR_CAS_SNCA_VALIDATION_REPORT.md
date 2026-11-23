@@ -80,7 +80,10 @@ These are executed boundary-control results, not merely source-derived suspicion
 - numeric comparison-class weight and weighted index;
 - recomputation of the weighted index;
 - exactly one Base Score and two-axis status line per SNCA report;
-- the four-field shape of a halted VERBATIM MISMATCH report;\n- balanced report delimiters and exactly one fresh PRE-SR-CAS verification block for each SR-CAS report;\n- exactly one fresh M270 gate for each proceeding SR-CAS report;\n- rejection of a current file with no complete assessment report, while preserving the historical exemption.
+- the four-field shape of a halted VERBATIM MISMATCH report;
+- balanced report delimiters and exactly one fresh PRE-SR-CAS verification block for each SR-CAS report;
+- exactly one fresh M270 gate for each proceeding SR-CAS report;
+- rejection of a current file with no complete assessment report, while preserving the historical exemption.
 
 ### First wrapper defect and correction
 
