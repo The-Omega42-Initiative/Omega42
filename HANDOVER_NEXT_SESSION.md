@@ -368,3 +368,20 @@ Certification: CERTIFICATION.md
 Contributions: CONTRIBUTING.md
 
 End of handover. Start by checking the current branch and pull-request state, then continue from Section 11.
+
+
+## 14. PR #3 validation update — 23 November 2026
+
+The Navigator reviewed PR #3 against the then-current default branch and exact PR head.
+
+- PR #3 remains open, draft and unmerged; branch `revelation-first-website-handover`.
+- At the review point, the branch was 18 commits ahead of `main` and zero behind.
+- Exact reviewed head: `f843053c262b923658ba47f5a57a00eb72162fb3`.
+- `site-check` run 168 passed: site generation and Pyodide-versus-CPython Strike arithmetic comparison both passed.
+- `omega42-ci` run 168 failed at the self-contained-release check (Core L-493): 11 discrepancies were reported. Nine changed files differed from their embedded copies in the Main Core/Companion; `HANDOVER_NEXT_SESSION.md` and `site/pages/aperture.html` were not embedded. Do not bypass this gate. Resolving it requires an Originator/governance decision about updating canonical documents or the packaging policy.
+- The full CI failure is not a website build failure. No browser-rendered visual inspection was available at this review point.
+- Review identified a mismatch between five Navigator roles and six machine functions in the Aperture description. The branch has since been amended to identify Formal Developer as the sixth function and to align the two pages; verify the new CI run before relying on this amendment.
+- The prior-art process now distinguishes the public submission issue timestamp from the first public availability of the complete enabling disclosure. This is a process clarification, not legal advice.
+- README wording has been aligned with the more limited effect of defensive publication and the distinction between Company pledge and individual contributor obligations.
+
+No canonical Core or Companion file was changed. No merge or deployment was performed. The next reviewer must re-check the PR head SHA, site-check and full CI after these amendments.
