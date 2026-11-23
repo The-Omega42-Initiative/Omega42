@@ -125,3 +125,8 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 
 - D5 approval expiry hardening passed [proposal CI 45196126632](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196126632).
 - Added pure `tools/path_b_d5_result_semantics.py` (`d2e859980b9d06e50f13ee0eb7913ef7567df8c2`) and 17-case synthetic test (`f0a66a1425ee020cd5b9b62be72b03a4cd9e0020`), wired into isolation at `1664dd8661fdac91f9242ee936bc7d5e317d57cf`. **New CI pending**. Distinguishes verified, failed, mismatched, skipped, not run, invalid, and not certified; checks raw-byte digest, exit code 0, no timeout or truncation. No subprocesses or certificate execution. Canonical `certify.py` unchanged.
+
+## D5 malformed-input fail-closed hardening
+
+- Hardened proposal preflight against non-mapping and non-string status/procedure/CWD at `7e31120b3ac1a4b18dea7be726ef521196ce8cba`; approval contract against non-string output digest at `314ab7f7a3961546bd001bc696b56e0d32251c53`.
+- Added 10 synthetic malformed-input rejection controls (`6cda4d59431ba7e199f5a5ac955c199f42eabba8`) and isolation CI step (`b27c4ad1315acc7a4ed49271d14c5db6cc20538e`). [CI 45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) queued at last inspection. **No execution**, no canonical changes. Verify CI next.
