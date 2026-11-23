@@ -80,7 +80,7 @@ The static package does not prove that future procedure execution is safe. CWD l
 
 ## 7. Workflow and authority
 
-The latest isolated workflow [45163029395](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163029395) was queued at last check. No result is assumed.
+The latest isolated workflow [45174322889](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322889) passed.
 
 - Path B remains a proposal.
 - Canonical `certify.py`, Core, Companion, CI policy and L-493 are unchanged.
