@@ -96,3 +96,9 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - Added `tools/path_b_d2b_all_forms_dispatch_matrix_test.py` (`36a662cab509bf78f6e6c34a6e648f5ef432b221`) and wired it into proposal-only isolation (`928d66aa1941b270837fd35bc3f30ddd3692f782`). It statically checks all 13 registry declarations, explicit dispatch branch coverage, two intentional marker-only forms, and the known erroneous Account fallback; no checker or certificate procedure execution.
 - [Isolation run 45192375006](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192375006) was queued at inspection. **Do not claim pass until observed.** This matrix is a source-characterization milestone, not 13/13 substantive validation.
 - The L-493 root cause remains the 38 missing embeddings documented in `L493_VERIFIED_FAILURE_ROOT_CAUSE_2026-11-23.md` at the pinned `de297e3d` commit. No canonical release policy was changed.
+
+## D2-B delegated checker failure-propagation controls
+
+- All-13-form static matrix passed as part of [isolation run 45192425503](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192425503) at `8b941971`.
+- Added `tools/path_b_d2b_delegated_dispatch_test.py` (`9a7da607562c5f8c13b65c8f7d04f5a380bf0bd0`) to assert FAIL propagation and input forwarding for NAVIGATION, FINDINGS, SR-CAS, SNCA and INTRODUCTION with **mocked** checkers. No certificate procedures or actual checkers run in this test. Integrated in isolation workflow at `7d42e20911c1654b19eb6526d4dd2321f5755dd7`; [run 45192678663](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45192678663) queued at inspection.
+- Next: confirm workflow; then build full isolated form-specific positive/negative fixtures and assess Account dispatch fix with explicit approval. L-493 unchanged.
