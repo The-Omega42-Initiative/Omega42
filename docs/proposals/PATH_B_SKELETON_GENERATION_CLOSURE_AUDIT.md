@@ -43,13 +43,13 @@ The active `utility.request_of()` function uses in-source regular expressions an
 | `tools/utility.py` | Active `request_of()` call; request classification and avenue selection |
 | `tools/manifestation.py` | Imported by `utility.py`; currently no record read on this import path |
 | `scripts/canonical_reference.py` | Dynamic import and subprocess-generated navigation blocks; source self-digest |
-| `scripts/m193_m225.py` | Module-level dynamic load by `format_check.py`; full lexical scanner for checker capability |
+| `scripts/m193_m225.py` | Optional for skeleton-only generation; required when the same package also claims full format-check coverage |
 
-**Runtime prerequisites:** Python 3 standard library, subprocess execution of the local canonical script, filesystem read access to the package source files.
+**Runtime prerequisites for D1b-NAV:** Python 3 standard library, subprocess execution of the local canonical script, filesystem read access to the package source files. **D1b-FINDINGS** uses the same four source files under the current module layout but does not invoke the canonical subprocess.
 
 **No active file-data dependency identified for these skeleton commands:** Core DOCX, Companion DOCX, `records/utility/register.json`, `records/congruence/`, `records/frameworks/`, `records/sources/`, `records/enrichment/`, `records/provenance/`, `records/consciousness/`, `records/adaptors/registry.json`, positive-geometry data or navigation archives.
 
-The fact that `utility.py` contains functions that read these records does not make them dependencies of the active `request_of()` call. The same distinction applies to `manifestation.py`: its optional atlas command imports framework comparison and research data, but the import path used by utility request classification does not run that command.
+The fact that `utility.py` contains functions that read these records does not make them dependencies of the active `request_of()` call. The same distinction applies to `manifestation.py`: its optional atlas command imports framework comparison and research data, but the import path used by utility request classification does not run that command. The module-level attempt to load M193/M225 does not make that scanner a skeleton-generation dependency: the skeleton renderer does not call `_JS`. It remains a mandatory dependency for a full-format-check capability.
 
 ## 4. Isolated package prototype
 
@@ -102,15 +102,15 @@ This proposal does not authorise changing the canonical checker. Such a change r
 
 ## 7. Classification recommendation
 
-- **D1b-NAV:** navigation skeleton generation, with the five-file closure in §3.
-- **D1b-FINDINGS:** findings presentation skeleton generation, with the same installed module closure under the current module layout, but without an active canonical subprocess.
-- **D1b-CHECK:** checker capability layered on the same package, with required dynamic scanners and fail-closed preflight.
+- **D1b-NAV:** navigation skeleton generation, with the four-file generation closure in §3.
+- **D1b-FINDINGS:** findings presentation skeleton generation, with the same four-file source closure under the current module layout, but without an active canonical subprocess.
+- **D1b-CHECK:** checker capability layered on the same package; add M193/M225 and enforce fail-closed preflight for all required dynamic scanners.
 - Record-backed utility operations (alignment, holistic response, source survey, provenance, register and enrichment commands) remain separate profiles and must not be silently pulled into D1b.
 
 ## 8. Limitations and next work
 
 This audit does not trace every record-backed command in `utility.py`, run every optional skeleton date/request branch, or establish that the five-file closure is the final normative package. The isolated test proves the selected commands execute in the tested package shape. A later refactor could split `format_check.py` into independent modules and reduce the findings-only closure.
 
-The next technical task is to add the missing-utility and missing-canonical negative controls to the isolated workflow, then decide whether the future packaging contract should enforce fail-closed behaviour through a wrapper or require a canonical code change.
+The isolated workflow now includes negative controls for missing utility and missing canonical subprocess dependencies. The next task is to confirm their observed behaviour and decide whether the future packaging contract should enforce fail-closed behaviour through a wrapper or require a canonical code change.
 
 No canonical documents, `tools/extract_embedded.py`, L-493, existing CI rules, release policy, main branch, PR, merge or deployment has been changed by this audit.
