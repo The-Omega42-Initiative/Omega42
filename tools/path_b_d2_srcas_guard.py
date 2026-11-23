@@ -29,16 +29,17 @@ def strict_findings(text):
         r"======= SR-CAS ASSESSMENT REPORT =======(.*?)======= END SR-CAS ASSESSMENT REPORT =======",
         re.S,
     )
+    previous_report_end = 0
     for number, match in enumerate(sr_rx.finditer(text), 1):
         body = match.group(1)
-        before = text[:match.start()]
+        segment = text[previous_report_end:match.start()]
         prefix = "SR-CAS report %d" % number
-        verifications = srcas_check.blocks(before, "PRE-SR-CAS VERBATIM VERIFICATION")
-        if not verifications:
-            continue  # canonical checker reports the missing block
-        verification = verifications[-1]
-        matches = re.findall(r"\bMATCH:\s*(YES|NO)\b", verification)
-        verdicts = re.findall(r"\bVERDICT:\s*(PROCEED|HALT)\b([^\n]*)", verification)
+        verifications = srcas_check.blocks(segment, "PRE-SR-CAS VERBATIM VERIFICATION")
+        if len(verifications) != 1:
+            findings.append(prefix + ": exactly one fresh PRE-SR-CAS VERBATIM VERIFICATION block must precede this report")
+        verification = verifications[-1] if verifications else ""
+        matches = re.findall(r"(?mi)^\\s*MATCH:\\s*(YES|NO)\\b", verification)
+        verdicts = re.findall(r"(?mi)^\\s*VERDICT:\\s*(PROCEED|HALT)\\b([^\\n]*)", verification)
         if len(matches) != 1:
             findings.append(prefix + ": verification block must contain exactly one MATCH: YES/NO line")
         if len(verdicts) != 1:
@@ -51,19 +52,24 @@ def strict_findings(text):
             if match_value == "NO" and not (verdict == "HALT" and "VERBATIM MISMATCH" in tail):
                 findings.append(prefix + ": MATCH: NO requires HALT -- VERBATIM MISMATCH")
 
-        halted = bool(re.search(r"HALT\s*[-—]+\s*VERBATIM MISMATCH", verification + body))
+        halted = bool(re.search(r"HALT\\s*[-—]+\\s*VERBATIM MISMATCH", verification + body))
         if halted:
             for label in ("DOMAIN:", "ARCHITECTURES COMPARED", "PER-RUN VERDICT", "MANDATORY CORRECTIONS:"):
                 if _count_line(body, label) != 1:
                     findings.append(prefix + ": halted report requires exactly one %s line" % label.rstrip(":"))
+            previous_report_end = match.end()
             continue
+
+        gates = srcas_check.blocks(segment, "M270 EXTRACTION RECONCILIATION GATE")
+        if len(gates) != 1:
+            findings.append(prefix + ": a proceeding report requires exactly one fresh M270 EXTRACTION RECONCILIATION GATE")
 
         for label in ("Base Score:", "Comparison-class weight", "Weighted index"):
             if len(re.findall(re.escape(label), body)) != 1:
                 findings.append(prefix + ": exactly one %s field is required" % label.rstrip(":"))
 
         weight_tail = body[body.find("Comparison-class weight"):] if "Comparison-class weight" in body else ""
-        weight_match = re.search(r"(?:x|×)\s*(\d+(?:\.\d+)?)", weight_tail)
+        weight_match = re.search(r"(?:x|×)\\s*(\\d+(?:\\.\\d+)?)", weight_tail)
         base = srcas_check.first(body, "Base Score:")
         weighted = srcas_check.first(body, "Weighted index")
         if weight_match is None:
@@ -75,6 +81,7 @@ def strict_findings(text):
             expected = min(1.0, base * multiplier)
             if abs(expected - weighted) > 0.01:
                 findings.append(prefix + ": weighted index does not recompute from Base Score and comparison-class weight")
+        previous_report_end = match.end()
 
     sn_rx = re.compile(
         r"======= SNCA ASSESSMENT REPORT =======(.*?)======= END SNCA ASSESSMENT REPORT =======",
