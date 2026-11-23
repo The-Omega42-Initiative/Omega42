@@ -254,6 +254,27 @@ def main():
         if not mismatch:
             failures.append("Navigator Account checker/dispatch mismatch not reproduced")
 
+        # Smoke-test the self-contained local form dispatches. These tests
+        # establish structural checker routing, not semantic truth or the
+        # complete dependency closures of every registered form.
+        test_date = __import__("datetime").date(2026, 11, 23)
+        local_forms = [
+            ("ANSWER", output_form.answer_skeleton("Synthetic answer dispatch", test_date)),
+            ("CONVERSATION", output_form.conversation_skeleton("Synthetic conversation dispatch", test_date)),
+            ("APPLIED PROTOCOL EXPLORATION", output_form.ape_skeleton("Synthetic APE dispatch", test_date)),
+            ("APA", output_form.apa_skeleton("Synthetic APA dispatch", test_date)),
+        ]
+        for expected_form, fixture in local_forms:
+            identified_form = output_form.identify(fixture)
+            checks = output_form.form_checks(fixture, identified_form)
+            passed = identified_form == expected_form and bool(checks) and all(x[0] == "PASS" for x in checks)
+            print("%-62s %s" % (
+                expected_form + " local form dispatch",
+                "PASS" if passed else "FAIL"
+            ))
+            if not passed:
+                failures.append(expected_form + " local form dispatch failed")
+
         # D2-B is tested in its own temporary package, separate from D2-A's
         # archive and receipt-audit corpus. This is a NAVIGATION-input profile.
         d2b_rc, d2b_out, d2b_err = run_d2b_navigation_profile()
