@@ -83,7 +83,16 @@ def strict_findings(text):
                     findings.append(prefix + ": halted report requires exactly one %s line" % label.rstrip(":"))
             continue
 
-        for label in ("Base Score:", "Comparison-class weight", "Weighted index"):
+        for label in (
+            "T1 (Arithmetic):",
+            "T1.5 (Interpretive Integrity",
+            "T2 (Procedural):",
+            "T2.5 (Synthesis Fidelity/SAS):",
+            "T3 (Discovery):",
+            "Base Score:",
+            "Comparison-class weight",
+            "Weighted index",
+        ):
             if _count_line(body, label) != 1:
                 findings.append(prefix + ": exactly one %s field is required" % label.rstrip(":"))
 
@@ -105,7 +114,7 @@ def strict_findings(text):
     for number, match in enumerate(sn_rx.finditer(text), 1):
         body = match.group(1)
         prefix = "SNCA report %d" % number
-        for label in ("Base Score:", "STATUS (two axes"):
+        for label in ("T1.5:", "T2:", "T3:", "Base Score:", "STATUS (two axes"):
             if _count_line(body, label) != 1:
                 findings.append(prefix + ": exactly one %s line is required" % label.rstrip(":"))
     return findings
