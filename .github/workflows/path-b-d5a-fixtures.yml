@@ -4,15 +4,6 @@ on:
   push:
     branches:
       - proposal/path-b-release-packaging
-    paths:
-      - "tools/path_b_d5a_fixture_test.py"
-      - "tools/path_b_d5a_guard.py"
-      - "tools/conformance.py"
-      - "tools/format_check.py"
-      - "tools/congruence.py"
-      - "tools/manifestation.py"
-      - "records/conformance/practice_set.txt"
-      - ".github/workflows/path-b-d5a-fixtures.yml"
   workflow_dispatch:
 
 permissions:
