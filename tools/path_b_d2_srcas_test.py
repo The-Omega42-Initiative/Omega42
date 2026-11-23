@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Path B D2 isolated validation for SR-CAS/SNCA format checking.
-
-Copies the standard-library checker and its explicit assessment/trigger inputs
-into a temporary package. Does not invoke the automatic review generator.
-"""
+"""Path B D2-A checker and D2-B navigation-runner profile validation."""
 import glob
 import os
 import shutil
@@ -28,6 +24,84 @@ def copy_tree_files(source_pattern, package_root, prefix):
     return copied
 
 
+D2B_NAVIGATION_CLOSURE = [
+    "tools/srcas_run.py",
+    "tools/output_form.py",
+    "tools/format_check.py",
+    "tools/adaptors.py",
+    "tools/adaptor_rules.py",
+    "scripts/canonical_reference.py",
+    "scripts/m193_m225.py",
+    "records/adaptors/registry.json",
+    "records/instances/seq_0133.txt",
+]
+
+
+def d2b_preflight(root):
+    missing = [rel for rel in D2B_NAVIGATION_CLOSURE
+               if not os.path.isfile(os.path.join(root, rel))]
+    return missing
+
+
+def run_d2b_navigation_profile():
+    """Run the automatic assessment runner in a separate, declared NAVIGATION-only package."""
+    lines = []
+    with tempfile.TemporaryDirectory(prefix="omega42-d2b-navigation-") as package_root:
+        for rel in D2B_NAVIGATION_CLOSURE:
+            source = os.path.join(ROOT, rel)
+            if not os.path.isfile(source):
+                return 1, "", "missing source dependency: " + rel
+            target = os.path.join(package_root, rel)
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            shutil.copy2(source, target)
+
+        missing = d2b_preflight(package_root)
+        if missing:
+            return 1, "", "D2-B preflight unexpectedly missing: " + ", ".join(missing)
+        lines.append("D2-B NAVIGATION closure: " + ", ".join(D2B_NAVIGATION_CLOSURE))
+        lines.append("D2-B preflight: PASS")
+
+        # Fail-closed controls: remove one required dependency at a time and
+        # prove the profile preflight refuses to run without it.
+        for rel in D2B_NAVIGATION_CLOSURE:
+            target = os.path.join(package_root, rel)
+            os.remove(target)
+            rejected = rel in d2b_preflight(package_root)
+            lines.append("D2-B missing-dependency control %-42s %s" %
+                         (rel, "REJECTED" if rejected else "ACCEPTED"))
+            if not rejected:
+                return 1, "\\n".join(lines), "preflight failed open for " + rel
+            shutil.copy2(os.path.join(ROOT, rel), target)
+
+        runner = os.path.join(package_root, "tools", "srcas_run.py")
+        selftest = subprocess.run([sys.executable, runner, "--selftest"],
+                                  cwd=package_root, capture_output=True, text=True, timeout=120)
+        lines.append("D2-B runner selftest: %s (exit %d)" %
+                     ("PASS" if selftest.returncode == 0 else "FAIL", selftest.returncode))
+        lines.append((selftest.stdout or "")[-4000:])
+        if selftest.returncode != 0:
+            return 1, "\\n".join(lines), selftest.stderr or ""
+
+        nav_a = os.path.join(package_root, "records", "instances", "seq_0133.txt")
+        nav_b = os.path.join(package_root, "records", "instances", "seq_0133-copy.txt")
+        shutil.copy2(nav_a, nav_b)
+        pair = subprocess.run([sys.executable, runner, "NONE", nav_a, nav_b],
+                              cwd=package_root, capture_output=True, text=True, timeout=180)
+        output = pair.stdout or ""
+        pair_ok = (pair.returncode == 0 and
+                   "SNCA, DECIDABLE LAYER" in output and
+                   "SR-CAS, DECIDABLE LAYER" in output and
+                   "MATCH: YES" in output and
+                   "VERDICT: PROCEED" in output)
+        lines.append("D2-B duplicate-navigation mechanical pair: %s (exit %d)" %
+                     ("PASS" if pair_ok else "FAIL", pair.returncode))
+        lines.append(output[-10000:])
+        if not pair_ok:
+            return 1, "\\n".join(lines), pair.stderr or ""
+        lines.append("D2-B NAVIGATION PROFILE: PASS")
+    return 0, "\\n".join(lines), ""
+
+
 def main():
     failures = []
     with tempfile.TemporaryDirectory(prefix="omega42-d2-srcas-") as package_root:
@@ -46,23 +120,6 @@ def main():
         shutil.copy2(guard_src, guard)
 
         reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
-        runner_closure = [
-            "tools/srcas_run.py",
-            "tools/output_form.py",
-            "tools/format_check.py",
-            "scripts/canonical_reference.py",
-            "scripts/m193_m225.py",
-            "records/instances/seq_0133.txt",
-        ]
-        for rel in runner_closure:
-            source = os.path.join(ROOT, rel)
-            target = os.path.join(package_root, rel)
-            if not os.path.isfile(source):
-                failures.append("missing D2-B runner dependency " + rel)
-                print("D2-B missing: " + rel)
-                continue
-            os.makedirs(os.path.dirname(target), exist_ok=True)
-            shutil.copy2(source, target)
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
         print("D2 isolated package inputs: checker=1, SR-CAS/SNCA records=%d, APE submissions=%d" %
               (len(reports), len(submissions)))
@@ -82,39 +139,16 @@ def main():
 
         run(["--selftest"], "Canonical SR-CAS/SNCA checker selftest")
 
-        # D2-B smoke test: the automatic runner receives two copies of one
-        # historical navigation. This is a mechanical fixture, not an
-        # independent cross-Navigator comparison.
-        runner = os.path.join(package_root, "tools", "srcas_run.py")
-        runner_selftest = subprocess.run([sys.executable, runner, "--selftest"], cwd=package_root,
-                                         capture_output=True, text=True, timeout=120)
-        runner_ok = runner_selftest.returncode == 0
-        print("%-58s %s (exit %d)" %
-              ("D2-B automatic runner selftest", "PASS" if runner_ok else "FAIL", runner_selftest.returncode))
-        print((runner_selftest.stdout or "")[-5000:])
-        if runner_selftest.stderr:
-            print("D2-B STDERR:", runner_selftest.stderr[-2000:])
-        if not runner_ok:
-            failures.append("D2-B runner selftest failed")
-
-        nav_a = os.path.join(package_root, "records", "instances", "seq_0133.txt")
-        nav_b = os.path.join(package_root, "records", "instances", "seq_0133-copy.txt")
-        shutil.copy2(nav_a, nav_b)
-        runner_pair = subprocess.run([sys.executable, runner, "NONE", nav_a, nav_b],
-                                     cwd=package_root, capture_output=True, text=True, timeout=180)
-        pair_text = runner_pair.stdout or ""
-        pair_ok = (runner_pair.returncode == 0 and
-                   "SNCA, DECIDABLE LAYER" in pair_text and
-                   "SR-CAS, DECIDABLE LAYER" in pair_text and
-                   "MATCH: YES" in pair_text and
-                   "VERDICT: PROCEED" in pair_text)
-        print("%-58s %s (exit %d)" %
-              ("D2-B isolated NAVIGATION pair smoke test", "PASS" if pair_ok else "FAIL", runner_pair.returncode))
-        print(pair_text[-10000:])
-        if runner_pair.stderr:
-            print("D2-B PAIR STDERR:", runner_pair.stderr[-2500:])
-        if not pair_ok:
-            failures.append("D2-B navigation-pair runner smoke test failed")
+        # D2-B is tested in its own temporary package, separate from D2-A's
+        # archive and receipt-audit corpus. This is a NAVIGATION-input profile.
+        d2b_rc, d2b_out, d2b_err = run_d2b_navigation_profile()
+        d2b_ok = d2b_rc == 0 and "D2-B NAVIGATION PROFILE: PASS" in d2b_out
+        print("\\nD2-B isolated NAVIGATION profile: %s" % ("PASS" if d2b_ok else "FAIL"))
+        print(d2b_out[-12000:])
+        if d2b_err:
+            print("D2-B STDERR:", d2b_err[-3000:])
+        if not d2b_ok:
+            failures.append("D2-B isolated navigation-input profile failed")
 
         # The Path B wrapper is tested separately from the unchanged canonical checker.
         sys.path.insert(0, os.path.join(package_root, "tools"))
