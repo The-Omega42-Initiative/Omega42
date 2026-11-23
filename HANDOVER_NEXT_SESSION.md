@@ -617,3 +617,10 @@ Read the current branch head and CI first. Continue **implementation** rather th
 - Added pure proposal-only `tools/path_b_d5_approval_provenance.py` (`555a8f46eca11dd19aad2747e5f32d68ac37b6d1`) defining a strict canonicalized envelope binding commit, certificate digest, procedure digest, input-manifest digest, sandbox-profile digest, nonce, issue/expiry, authority ID and signature reference. It validates schema and 24-hour maximum validity but **does not authenticate signatures, authority, nonce uniqueness or single use**. A valid envelope is never permission to execute.
 - Added 17 synthetic schema controls in `tools/path_b_d5_approval_provenance_test.py` (`6393290c91bbf36fb861b7f4dc567c5e365465a2`); extended AST guard to the new pure module (`5a0d5c2248e4d2e8bb424b9136901412a50e97e0`); CI integration at `a60b27ac727a9a46ffcba504d288cd46ed3e9d03`. **New CI pending**.
 - No canonical change, merge, deployment or certificate execution. Originator must approve any future authenticated authorization/executor architecture.
+
+
+## Q. D5 provenance cross-binding to evidence (23 November 2026)
+
+- GitHub Actions proposal isolation runs including [45197508373](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45197508373) still **queued** at inspection. No green claim for recent suites.
+- Added pure `tools/path_b_d5_provenance_binding.py` (`8cd9570ff8f9a884360c91f1194655a513ddf1ae`) that checks envelope against separately supplied repository commit, certificate bytes digest, input-manifest digest, sandbox-profile digest, and SHA-256 of exact UTF-8 procedure string. Added 13 synthetic cases (`eb8aaefb643a4c70ba822228c01a1df2e92ca27d`); extended AST non-execution guard (`25988d5f391445441f65f9e15ac92735ff4a224d`); wired into proposal CI (`f0293872b3326eba8fb13dae593e183d172ee3fc`). **New CI pending**.
+- Supplied evidence is not independently authenticated by this code. A matching digest is not Originator authorization or a replay-safe signature. No executor, certificate procedure, canonical change, merge or deployment.
