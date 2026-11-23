@@ -430,3 +430,37 @@ The website's current design proposal identifies six machine functions: Navigato
 3. Inspect the Explore page's generated output and responsive presentation; no browser visual inspection has yet been performed.
 4. Keep PR #3 draft. Do not merge or deploy without the Originator's explicit approval.
 5. When Claude's actual review arrives, record its provenance, evaluate each finding independently and preserve unresolved disagreements.
+
+
+## 16. L-493 result and Explore-page placement correction — 23 November 2026
+
+### Exact current-head CI result before the latest HTML correction
+
+On commit `c23cb9c001297b6c11bdbeccebd55c4bfe4c338e`:
+- `site-check` run 185: PASS.
+- `omega42-ci` run 185: FAIL, solely at the self-contained-release L-493 step in the main `verify` job.
+- The mathematical/reference checks and other earlier verification steps completed successfully.
+- Exact L-493 output: 1,619 embedded blocks; 1,621 required repository files; 12 defined outside files; 11 problems.
+- Not embedded: `HANDOVER_NEXT_SESSION.md`, `site/pages/aperture.html`.
+- Embedded copies differ: `README.md`, `PRIOR_ART.md`, `tools/site_build.py`, `site/pages/explore.html`, `site/pages/faq.html`, `site/pages/index.html`, `site/pages/research.html`, `site/pages/symbols.html`, `docs/VISION.md`.
+- No CI gate was disabled, bypassed or modified.
+
+### Interpretation of the L-493 boundary
+
+The current `tools/extract_embedded.py` implementation defines the self-contained release as every repository file except an explicit `OUTSIDE` set, the exempt package initializer and the archived 2025-10 tree. Its comment says website files and handover notes are not currently exempt. The failure therefore follows the current rule exactly.
+
+Two legitimate policy paths remain:
+- **Path A — canonical document update:** update/version the Main Core and/or Companion so the changed files and new files are embedded byte-for-byte. This preserves the current universal self-containment rule but makes the canonical release documents larger and requires controlled versioning, document regeneration and hash updates.
+- **Path B — formal packaging distinction:** amend the normative release policy to distinguish the self-contained protocol/runtime release from website source, editorial material and session handover/support artifacts that are distributed alongside it but are not required to execute the protocol. This requires an explicit, documented category and precise inventory; it must not become a general-purpose exemption. The checker, Core/Companion wording and tests would all need to change together.
+- Do not implement either path without the Originator's explicit selection and the required governance process. Do not simply add paths to `OUTSIDE` or `EXEMPT` to make CI green.
+
+### Explore page correction
+
+The initial insertion of the Claude Co-Builder section placed it inside the opening eyebrow element. This was corrected in commit `224dfa3b91328cc306f54ad1e7f3e4749eeb48ed`: the opening hero markup was restored and the complete Co-Builder invitation was moved to a standalone section near the end of the Explore page, before the page wrapper closes. The new commit must receive its own `site-check` and `omega42-ci` validation; no result is yet available for this exact head.
+
+### Next actions
+
+1. Check both workflows for exact current head `224dfa3b91328cc306f54ad1e7f3e4749eeb48ed`.
+2. If `site-check` passes, inspect the generated page structure and rendered placement. Do not claim visual validation without a browser rendering.
+3. Present the Originator with the Path A / Path B policy choice before modifying canonical documents, the checker or the normative release contract.
+4. Keep PR #3 draft and unmerged until the chosen packaging policy is authorised and the resulting full CI passes.
