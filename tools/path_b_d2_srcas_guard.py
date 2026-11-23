@@ -92,9 +92,25 @@ def strict_findings(text):
 def check_file(path):
     with open(path, encoding="utf-8") as f:
         text = f.read()
+
+    # Match the canonical CLI's explicit historical policy: pre-31-Oct-2026
+    # records are reported, not failed. Do not accidentally apply current
+    # strictness to those records through the lower-level parser API.
+    if not srcas_check.dated_from(text):
+        print("D2 STRICT SR-CAS/SNCA: %s | HISTORICAL EXEMPT (report only)" % path)
+        return True
+
+    has_report = bool(
+        re.search(r"======= SR-CAS ASSESSMENT REPORT =======", text)
+        or re.search(r"======= SNCA ASSESSMENT REPORT =======", text)
+    )
     canonical = []
-    for kind, name, problems in srcas_check.check(text):
-        canonical.extend("%s %s: %s" % (kind, name, p) for p in problems)
+    if not has_report:
+        canonical.append("no SR-CAS or SNCA assessment report found")
+    else:
+        for kind, name, problems in srcas_check.check(text):
+            canonical.extend("%s %s: %s" % (kind, name, p) for p in problems)
+
     strict = strict_findings(text)
     problems = canonical + strict
     print("D2 STRICT SR-CAS/SNCA: %s | %s" % (path, "PASS" if not problems else "FAIL"))
