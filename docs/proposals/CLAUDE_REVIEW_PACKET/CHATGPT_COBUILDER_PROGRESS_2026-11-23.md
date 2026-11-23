@@ -224,3 +224,10 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - Independent BFS test `tools/path_b_shear_refinement_test.py` (commit `effa9cf1`) checks nesting, equal three-way branching, all orbit counts and increments for k<=4. **Committed, not executed or CI-confirmed this turn.**
 - Standalone Claude review page updated on website handover branch (`d1e2eb12`), without navigation, deployment, merge, or canonical changes. Further website modifications remain frozen except explicit user-requested Claude review copy.
 - Next: run tests/CI; inspect MF-43 completeness proof; build shear partition inverse-limit description and compare with Core/Companion published documents.
+
+
+## 2026-11-23 — inverse-limit shear orbit closure theorem
+
+- Proof `research/mathematical-origins/INVERSE_LIMIT_SHEAR_ORBIT_CLASSIFICATION_2026-11-23.md` (`63d7d310`): for fixed r>=1, K_r=closure of <A,B_r> in GL2(Z3); each nonzero x=3^j u has orbit closure exactly `{3^j v: v primitive, Q(v)^2=Q(u)^2 mod 3^r}`. Each valuation shell contains 3^(r-1) such clopen orbits of Haar mass (8/9)*9^(-j)*3^(-(r-1)). Nested K_r orbits split ternarily and intersect to the pure Fibonacci closure (MF-55). Proof **depends on MF-43's finite orbit completeness** and compactness, not independent reproof.
+- Finite projection/BFS checker `tools/path_b_inverse_limit_shear_test.py` (created `985407f5`, corrected finite-shell mass assertion `e33cb7f0`), committed but not GitHub CI-verified. Independently executed local orbit enumeration for all 1<=r<=k<=4 and verified complete size multisets (counts at k=4: 5,11,23,41).
+- Claude review page staged on website-handover branch (`2642d27d`) without homepage/nav/merge/deploy. Core/Companion untouched. Next: independently audit MF-43 layer-lifting proof and run committed tests via CI; seek canonical DOCX parity.
