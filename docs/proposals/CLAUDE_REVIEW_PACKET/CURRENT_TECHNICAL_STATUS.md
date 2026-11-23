@@ -39,7 +39,7 @@ See [D1B_GUARD_VALIDATION.md](D1B_GUARD_VALIDATION.md).
 
 The Path B D5a harness now generates eight explicitly synthetic fixtures at runtime from the exact public practice-set domains, using the current date (23 November 2026) and current date-gated format requirements.
 
-On [run 45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156647211):
+On the full isolated validation [run 45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105):
 
 - all eight fixtures passed A1 anchor, A2 arms, A3 format and A4 layer-one checks;
 - the baseline report returned 8/8 coverage and `COMPATIBLE (SCRIPT-CAPABLE)`;
@@ -63,7 +63,7 @@ Source inspection of `tools/conformance.py` shows:
 - advisory B1/B2/B3 results are printed as advisory and do not form part of the required A1–A4 `ok` calculation;
 - the overall execution level is derived from whether every supplied file has a valid executed status and output ID.
 
-The duplicate, malformed, empty, missing-domain, wrong-domain and multiple-domain-line behaviours have been exercised. The strict release-profile wrapper catches the raw M314 duplicate defect without changing canonical code. The minimal-package isolation result remains pending.
+The duplicate, malformed, empty, missing-domain, wrong-domain and multiple-domain-line behaviours have been exercised. The strict release-profile wrapper catches the raw M314 duplicate defect without changing canonical code. Minimal-package isolation passed with the declared closure. This profile is limited to the eight English/Latin practice-set domains; it does not establish a cross-lingual adaptor package closure.
 
 ## 5. Claude review questions
 
