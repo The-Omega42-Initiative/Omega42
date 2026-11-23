@@ -10,7 +10,7 @@
 
 ## 1. Result
 
-<badge>PASS — experimental prototype workflow</badge>
+**Result: PASS — experimental prototype workflow.**
 
 The dedicated isolation workflow passed all four package profiles on the tested source commit. The workflow creates four temporary package roots, copies only the declared source/data closure into each, checks that selected unrelated files are absent, and runs the relevant commands under Python 3.11.
 
