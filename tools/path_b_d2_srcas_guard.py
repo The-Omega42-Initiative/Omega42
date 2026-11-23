@@ -77,7 +77,7 @@ def strict_findings(text):
                 findings.append(prefix + ": exactly one %s field is required" % label.rstrip(":"))
 
         weight_tail = body[body.find("Comparison-class weight"):] if "Comparison-class weight" in body else ""
-        weight_match = re.search(r"(?:x|×)\s*(\\d+(?:\.\\d+)?)", weight_tail)
+        weight_match = re.search(r"(?:x|×)\s*(\d+(?:\.\d+)?)", weight_tail)
         base = srcas_check.first(body, "Base Score:")
         weighted = srcas_check.first(body, "Weighted index")
         if weight_match is None:
