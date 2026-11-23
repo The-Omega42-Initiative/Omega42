@@ -178,13 +178,18 @@ def main():
 
         strict_controls = [
             ("MATCH NO with PROCEED", good_sr.replace("MATCH: YES", "MATCH: NO")),
+            ("MATCH YES with HALT", good_sr.replace("VERDICT: PROCEED", "VERDICT: HALT -- VERBATIM MISMATCH")),
+            ("duplicate MATCH line", good_sr.replace("MATCH: YES\\nVERDICT:", "MATCH: YES\\nMATCH: YES\\nVERDICT:")),
+            ("missing exact MATCH line", good_sr.replace("MATCH: YES", "MATCH: MAYBE")),
             ("missing numeric comparison weight", good_sr.replace("Comparison-class weight (L-416): x1.5", "Comparison-class weight (L-416): N/A")),
             ("missing numeric weighted index", good_sr.replace("Weighted index: 1.00", "Weighted index: N/A")),
-            ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\nMANDATORY CORRECTIONS: none")),
+            ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\\nMANDATORY CORRECTIONS: none")),
+            ("duplicate SNCA Base Score", good_sn.replace("SYNTHESIS: s", "Base Score: 0.31\\nSYNTHESIS: s")),
+            ("duplicate SNCA two-axis status", good_sn.replace("VERDICT CONFIRMATION: N/A", "STATUS (two axes, L-428): PROCEDURAL FAILURE | COMPARATIVE STATUS: NOT INVESTIGATED\\nVERDICT CONFIRMATION: N/A")),
         ]
         strict_ok = True
-        for name, content in strict_controls:
-            path = os.path.join(package_root, "negative-" + str(len(name)) + ".txt")
+        for control_index, (name, content) in enumerate(strict_controls, 1):
+            path = os.path.join(package_root, "negative-%02d.txt" % control_index)
             with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
             rejected = not strict_guard.check_file(path)
