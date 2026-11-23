@@ -74,6 +74,22 @@ def profile_d1a(base: Path) -> None:
         raise AssertionError("D1a jargon scanner missing")
     print("PASS D1a required dynamic scanner present")
 
+    # Negative control: remove the scanner while keeping the format checker.
+    # Current code catches the dynamic-load exception, sets _JS=None, and continues.
+    degraded = base / "D1a-missing-scanner"
+    copy_file("scripts/canonical_reference.py", degraded)
+    copy_file("tools/format_check.py", degraded)
+    probe = run("D1a negative-control scanner probe", degraded, [
+        "-c",
+        "import sys; sys.path.insert(0, 'tools'); import format_check; "
+        "assert format_check._JS is None; print('FULL M193 SCANNER UNAVAILABLE')",
+    ])
+    if "FULL M193 SCANNER UNAVAILABLE" not in probe.stdout:
+        raise AssertionError("D1a negative control did not confirm the scanner was absent")
+    run("D1a known degraded-mode self-test (must be recorded as a gap)", degraded,
+        ["tools/format_check.py", "--selftest"])
+    print("KNOWN GAP D1a: checker self-test still passes when the full M193 scanner is absent")
+
 
 def profile_d4(base: Path) -> None:
     pkg = base / "D4"
