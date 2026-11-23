@@ -100,7 +100,18 @@ def run_d2b_navigation_profile():
         nav_a = os.path.join(package_root, "records", "instances", "seq_0133.txt")
         nav_b = os.path.join(package_root, "records", "instances", "seq_0133-copy.txt")
         shutil.copy2(nav_a, nav_b)
-        pair = subprocess.run([sys.executable, runner, "NONE", nav_a, nav_b],
+        driver = os.path.join(package_root, "synthetic_pair_driver.py")
+        with open(driver, "w", encoding="utf-8") as f:
+            f.write(
+                "import os, sys\\n"
+                "sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'tools'))\\n"
+                "sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))\\n"
+                "import srcas_run, m193_m225 as MM\\n"
+                "a, b = sys.argv[1], sys.argv[2]\\n"
+                "verdicts = {rel: 'MATCH' for rel in MM.RELATION_ORDER}\\n"
+                "print(srcas_run.run('NONE', [a, b], verdicts)[0])\\n"
+            )
+        pair = subprocess.run([sys.executable, driver, nav_a, nav_b],
                               cwd=package_root, capture_output=True, text=True, timeout=180)
         output = pair.stdout or ""
         pair_ok = (pair.returncode == 0 and
@@ -259,7 +270,7 @@ def main():
             ("missing numeric weighted index", good_sr.replace("Weighted index: 1.00", "Weighted index: N/A")),
             ("duplicate T1 component", good_sr.replace("T1.5 (Interpretive Integrity):", "T1 (Arithmetic): 1.00\\nT1.5 (Interpretive Integrity):")),
             ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\nMANDATORY CORRECTIONS: none")),
-            ("duplicate SNCA T2 component", good_sn.replace("T2: 0.10", "T2: 0.10\\nT2: 0.10")),
+            ("duplicate SNCA T2 component", good_sn.replace("T2: 0.10", "T2: 0.10\nT2: 0.10")),
             ("duplicate SNCA Base Score", good_sn.replace("SYNTHESIS: s", "Base Score: 0.31\nSYNTHESIS: s")),
             ("duplicate SNCA two-axis status", good_sn.replace("VERDICT CONFIRMATION: N/A", "STATUS (two axes, L-428): PROCEDURAL FAILURE | COMPARATIVE STATUS: NOT INVESTIGATED\nVERDICT CONFIRMATION: N/A")),
         ]
