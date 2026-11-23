@@ -418,11 +418,11 @@ The principal result is that imported modules do not make every associated resea
 
 ## 21. Supporting minimal package prototype results
 
-Four capability-specific package prototypes have now been assembled in temporary isolated workspaces and exercised by the dedicated [Path B prototype-isolation workflow](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45151595912). The test record is [PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md](PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md).
+Five capability profiles/variants have now been exercised in temporary isolated workspaces by the dedicated [Path B prototype-isolation workflow](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152098242). The test record is [PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md](PATH_B_MINIMAL_PACKAGE_PROTOTYPE_RESULTS.md).
 
-On tested source commit `788f507ff2d57806518a93dc1c64c961f010d6c2`, C1, D1a, D4 and the D5a smoke test passed. The D5a test deliberately used one historical navigation outside the eight-domain public practice set: its individual required checks passed, while the overall result correctly remained NOT YET COMPATIBLE. This is not a full-set certification.
+On tested source commit `830049fd31a21e185f8f383f06f86e53967e5bbd`, C1, D1a, D1b, D4 and the D5a smoke test passed. The D5a test deliberately used one historical navigation outside the eight-domain public practice set: its individual required checks passed, while the overall result correctly remained NOT YET COMPATIBLE. This is not a full-set certification.
 
-The prototypes support capability-specific package boundaries. The negative-control test also demonstrates that the current format checker can pass its self-test when the full M193 scanner is absent; this is a concrete fail-closed gap to address before any package claims full conformance. The prototypes do not yet establish every command closure, full multilingual conformance, skeleton-generation closure, or equivalence to L-493. The existing release gate remains untouched and authoritative.
+The prototypes support capability-specific package boundaries. D1b generation-only operation was demonstrated with four source files and no M193/M225 scanner; the full checker adds that scanner as a separate dependency. Negative controls also demonstrate that the current checker can pass its self-test when M193 is absent, and that skeleton generation can silently degrade when utility.py or the canonical subprocess is missing. These are concrete fail-closed gaps to address before any package claims full conformance. The prototypes do not yet establish every command closure, full multilingual conformance, or equivalence to L-493. The existing release gate remains untouched and authoritative.
 
 
 ## 22. Supporting skeleton-generation closure audit
