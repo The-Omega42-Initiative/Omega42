@@ -14,10 +14,11 @@ This folder gathers the current Path B technical evidence and the next decisions
 3. [D5a eight-domain fixture test plan](D5A_EIGHT_DOMAIN_TEST_PLAN.md)
 4. [D5a eight-domain validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)
 5. [D2 SR-CAS/SNCA validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md)
-6. [D4 Introduction validation report](D4_INTRODUCTION_VALIDATION_REPORT.md)
-7. [D3 static certificate validation report](D3_CERTIFICATE_STATIC_VALIDATION_REPORT.md)
-8. [D5 certificate execution boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md)
-9. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
+6. [D2-B output-form dispatch audit](D2B_OUTPUT_FORM_DISPATCH_AUDIT.md)
+7. [D4 Introduction validation report](D4_INTRODUCTION_VALIDATION_REPORT.md)
+8. [D3 static certificate validation report](D3_CERTIFICATE_STATIC_VALIDATION_REPORT.md)
+9. [D5 certificate execution boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md)
+10. [D5a fixture source assessment](D5A_FIXTURE_SOURCE_ASSESSMENT.md)
 
 ## Source material
 
