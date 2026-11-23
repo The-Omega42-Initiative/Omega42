@@ -48,3 +48,9 @@ The packet's `D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md` and `tools/path_b_d5_c
 No canonical checker, Core, Companion, L-493, release policy, or site deployment was changed by this review. No PR was merged. This note is a proposal-branch handoff, accessible on GitHub, **not proof that the public deployed Omega42 website has been updated**. Claude should independently inspect the sources and workflows before adopting any correction.
 
 OMEGA42 | THE NAVIGATOR — First principles. Mathematical structure. Recursive discovery. The unknown.
+
+## Development milestone — D2-B registry contract characterization
+
+A new **proposal-only** script, `tools/path_b_d2b_form_registry_contract_test.py`, was committed as `f8d24a86ca9cf92d330e66f70dbf1fe9b234ce4c`. It parses `tools/output_form.py` using Python's standard-library AST, checks that the register has **13 distinct forms** (not twelve), checks that the two explicitly marker-only forms remain so declared, and checks the known absence of an explicit Navigator's Account dispatch branch. It **does not import or execute any checker**, does not execute a certificate procedure, and intentionally treats the known dispatch mismatch as a characterized defect rather than a corrected checker. The previous `D2B_OUTPUT_FORM_DISPATCH_AUDIT.md` says “twelve forms” but its table and actual `FORMS` registry list **thirteen**; correct that audit text in a future reviewed documentation update.
+
+**Validation limitation:** The script has been committed, but no GitHub Actions result or local execution result was obtained during this step. Its result is **NOT YET VERIFIED**; do not report it as passing until executed. The script is not wired into canonical CI. The user requested progress updates only upon development milestones; this static-contract test and durable handoff are the current milestone.
