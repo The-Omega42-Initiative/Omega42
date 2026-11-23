@@ -135,3 +135,7 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 
 - Added proposal-only `tools/path_b_d5_no_execution_boundary_test.py` (`248cb043f6cae76077f5a106512af1176ee38e9d`) and CI wiring (`dae6f9592e830624a2ac2dc67f4d4d45519a5b45`). Checks three pure D5 modules for obvious execution/network/write APIs and tests seven adversarial/safe fixtures. **Static only, not sandbox assurance.**
 - Previous malformed-input CI [45196801899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45196801899) still queued at inspection. New guard CI pending. No canonical changes or procedures executed.
+
+## D5 provenance envelope — pure schema, not authorization
+
+- Added `tools/path_b_d5_approval_provenance.py` (`555a8f46eca11dd19aad2747e5f32d68ac37b6d1`): canonical SHA-256 envelope covering commit, certificate/procedure/input/sandbox digests, nonce, authority and signature references, issue and expiry. **No signature validation, identity authentication, replay prevention or execution**. Tests at `6393290c91bbf36fb861b7f4dc567c5e365465a2`; AST guard expanded at `5a0d5c2248e4d2e8bb424b9136901412a50e97e0`; workflow step at `a60b27ac727a9a46ffcba504d288cd46ed3e9d03`. CI pending (earlier proposal isolation runs queued).
