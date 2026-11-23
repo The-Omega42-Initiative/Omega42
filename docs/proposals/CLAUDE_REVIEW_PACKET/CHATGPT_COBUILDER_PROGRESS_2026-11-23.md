@@ -62,3 +62,10 @@ A new **proposal-only** script, `tools/path_b_d2b_form_registry_contract_test.py
 - On the latest branch commit, the proposal isolation workflow was queued as [run 45180554826](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45180554826). **At handoff time, it was queued, not passing**. Other workflows were also queued. Do not claim successful validation before checking their conclusions.
 - The user requested **milestone-only** progress updates. Do not imply automatic background monitoring; inspect workflow status on the next development turn.
 - No canonical source, Core, Companion, L-493 policy, release or deployment was altered.
+
+## Development continuation — dynamic D2-B local dispatch controls
+
+- Added proposal-only `tools/path_b_d2b_local_dispatch_test.py` at commit `96d4463f7f2df95c05dfe71eaf4badb84fc04584`. The test exercises positive/negative synthetic `ANSWER`, `APPLIED PROTOCOL EXPLORATION` and `APA` dispatch, `CONVERSATION` frame rejection, explicitly marker-only replication/comparative forms, invalid `CERTIFICATE` **static** rejection, and the known marker-only Navigator's Account defect. It does not call `certify.verify()` or execute any certificate procedure. This is **local dispatch characterization**, not a full 13-form isolated dependency closure.
+- Integrated the test into the proposal-only prototype-isolation workflow at commit `87db93c7f06646fe4925f082bc6018ee0403ca43`.
+- **Validation pending:** no successful workflow conclusion for this new test was observed at the time of writing. Review any failing assertion before calling it a milestone. No canonical checker or release contract was modified.
+- The previously established static D2-B registry characterization had passed in run [45181616298](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45181616298) at commit `1aaa3b10`.
