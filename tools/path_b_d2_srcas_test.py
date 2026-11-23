@@ -103,13 +103,13 @@ def run_d2b_navigation_profile():
         driver = os.path.join(package_root, "synthetic_pair_driver.py")
         with open(driver, "w", encoding="utf-8") as f:
             f.write(
-                "import os, sys\\n"
-                "sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'tools'))\\n"
-                "sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))\\n"
-                "import srcas_run, m193_m225 as MM\\n"
-                "a, b = sys.argv[1], sys.argv[2]\\n"
-                "verdicts = {rel: 'MATCH' for rel in MM.RELATION_ORDER}\\n"
-                "print(srcas_run.run('NONE', [a, b], verdicts)[0])\\n"
+                "import os, sys\n"
+                "sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'tools'))\n"
+                "sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))\n"
+                "import srcas_run, m193_m225 as MM\n"
+                "a, b = sys.argv[1], sys.argv[2]\n"
+                "verdicts = {rel: 'MATCH' for rel in MM.RELATION_ORDER}\n"
+                "print(srcas_run.run('NONE', [a, b], verdicts)[0])\n"
             )
         pair = subprocess.run([sys.executable, driver, nav_a, nav_b],
                               cwd=package_root, capture_output=True, text=True, timeout=180)
@@ -268,7 +268,7 @@ def main():
             ("missing exact MATCH line", good_sr.replace("MATCH: YES", "MATCH: MAYBE")),
             ("missing numeric comparison weight", good_sr.replace("Comparison-class weight (L-416): x1.5", "Comparison-class weight (L-416): N/A")),
             ("missing numeric weighted index", good_sr.replace("Weighted index: 1.00", "Weighted index: N/A")),
-            ("duplicate T1 component", good_sr.replace("T1.5 (Interpretive Integrity):", "T1 (Arithmetic): 1.00\\nT1.5 (Interpretive Integrity):")),
+            ("duplicate T1 component", good_sr.replace("T1.5 (Interpretive Integrity):", "T1 (Arithmetic): 1.00\nT1.5 (Interpretive Integrity):")),
             ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\nMANDATORY CORRECTIONS: none")),
             ("duplicate SNCA T2 component", good_sn.replace("T2: 0.10", "T2: 0.10\nT2: 0.10")),
             ("duplicate SNCA Base Score", good_sn.replace("SYNTHESIS: s", "Base Score: 0.31\nSYNTHESIS: s")),
