@@ -139,3 +139,7 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 ## D5 provenance envelope — pure schema, not authorization
 
 - Added `tools/path_b_d5_approval_provenance.py` (`555a8f46eca11dd19aad2747e5f32d68ac37b6d1`): canonical SHA-256 envelope covering commit, certificate/procedure/input/sandbox digests, nonce, authority and signature references, issue and expiry. **No signature validation, identity authentication, replay prevention or execution**. Tests at `6393290c91bbf36fb861b7f4dc567c5e365465a2`; AST guard expanded at `5a0d5c2248e4d2e8bb424b9136901412a50e97e0`; workflow step at `a60b27ac727a9a46ffcba504d288cd46ed3e9d03`. CI pending (earlier proposal isolation runs queued).
+
+## D5 cross-binding — envelope versus supplied evidence
+
+- Pure `tools/path_b_d5_provenance_binding.py` (`8cd9570ff8f9a884360c91f1194655a513ddf1ae`) checks envelope commit, certificate/input/sandbox digests and exact procedure string against supplied evidence; 13 synthetic cases (`eb8aaefb643a4c70ba822228c01a1df2e92ca27d`), AST guard extension (`25988d5f391445441f65f9e15ac92735ff4a224d`), CI wiring (`f0293872b3326eba8fb13dae593e183d172ee3fc`). **CI queued/pending**. Does not authenticate evidence, approval or signatures; no execution/canonical changes.
