@@ -114,3 +114,9 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - D5 preflight passed in [isolation run 45195019348](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45195019348) at `f3fe7d9d`.
 - Added `tools/path_b_d5_execution_contract.py` (`92436a7c1078879c2f3c3ba41b264578464deca0`) and synthetic negative/positive tests (`689e1759d53f4b5e44142a406bd88e8d17d706fc`), wired at `d2a0ce499dec64be466a5f4110fed3b24fa96be8`. **CI pending**. They bind a supplied approval to certificate ID, exact procedure digest, argv, CWD, scope, expiry and expected result hash; they do not run anything.
 - **Critical caveat:** `approved_by` is untrusted plain text; no cryptographic approval verification, Originator authorization, actual read-only filesystem enforcement, sandbox, allowlist or resource limits exist. A successful synthetic contract check is not authorization to execute. No canonical changes.
+
+## D5 isolation decision record and UTC expiry hardening
+
+- D5 pure approval contract passed [proposal CI 45195501589](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45195501589) at `3a0f5443`.
+- Hardened UTC expiry validation at `fb7bdcf37bbcd7f01c94027864bcc3f1eb7f28ef`; added malformed/invalid-date and clock negative controls at `8ae0f6a5cef6f40d80f293ec8250e2a6191ab24d`. **New CI outcome not yet observed**.
+- Added `D5_EXECUTION_ISOLATION_DECISION_RECORD.md` (`352df5a05f284cdf52c79923b71c7381e51be4a8`) specifying required sandbox, authenticated single-use approval, fixed executable environment, resource limits, exit-code+raw-digest semantics, lifecycle states and outstanding Originator decisions. **Design only, no certificate execution**; `certify.py` untouched.
