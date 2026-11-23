@@ -1,6 +1,6 @@
 # D5a — Eight-Domain Fixture Coverage Test Plan
 
-**Status:** Test design; implementation and execution pending  
+**Status:** Harness implemented; eight-domain synthetic baseline passed; exact-one-file-per-domain acceptance remains blocked by a reproduced M314 defect  
 **Prepared:** 23 November 2026  
 **Target profile:** D5a ordinary Navigator conformance  
 **Canonical practice-set source:** `records/conformance/practice_set.txt`
@@ -148,3 +148,25 @@ D5a eight-domain coverage is complete only when the isolated package:
 6. records the exact source commit and fixture provenance.
 
 This is a profile-level test, not a full Omega42 release, not legal/governance approval and not a replacement for L-493.
+
+
+## 11. Experimental implementation and validation (23 November 2026)
+
+The harness and dedicated workflow are now present:
+
+- `tools/path_b_d5a_fixture_test.py`
+- `.github/workflows/path-b-d5a-fixtures.yml`
+- [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md)
+
+Run [45155915840](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915840), source commit `0f79cb22a16026ae7c6f6caa05f10d4c28ab1ea7):
+
+- Eight current-date synthetic fixtures: 8/8 A1–A4 and A3 format checks passed.
+- M314 baseline: `COMPATIBLE (SCRIPT-CAPABLE)`.
+- Ten negative controls: all ten returned `NOT YET COMPATIBLE`.
+- Additional duplicate-with-complete-coverage control: nine passing files for eight domains returned `COMPATIBLE (SCRIPT-CAPABLE)`.
+
+This reproduces an acceptance defect in `conformance.report()`: it does not enforce exactly one file per required domain. A duplicate replacing a missing domain is caught through missing coverage, but a duplicate extra file is accepted when the full set is otherwise covered. The report also has no explicit duplicate diagnostic.
+
+The dedicated workflow is intentionally failing until this defect is resolved. The canonical checker has not been changed. The harness uses synthetic prose and synthetic trigger markers, so the result is mechanical conformance-fixture evidence, not a claim of semantic navigation quality.
+
+**D5a status:** baseline mechanics demonstrated; acceptance criterion not complete.
