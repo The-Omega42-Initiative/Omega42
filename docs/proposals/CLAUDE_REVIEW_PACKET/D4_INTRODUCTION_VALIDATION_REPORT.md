@@ -1,12 +1,12 @@
 # D4 — Introduction, Core Correspondence and Register Validation
 
-**Status:** Isolated D4 harness implemented. The latest workflow is queued; no D4 pass is claimed.
+**Status:** Isolated D4 validation passed, including the first-navigation close template round-trip.
 **Prepared:** 23 November 2026
 **Branch:** `proposal/path-b-release-packaging`
 **Canonical implementation:** `tools/intro_output.py`
 **Harness:** `tools/path_b_d4_introduction_test.py`
 **Workflow:** `.github/workflows/path-b-d4-introduction.yml`
-**Latest workflow:** [45163422397](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163422397) — queued at last check
+**Latest workflow:** [45174322954](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322954) — PASS
 
 ## 1. D4 scope
 
