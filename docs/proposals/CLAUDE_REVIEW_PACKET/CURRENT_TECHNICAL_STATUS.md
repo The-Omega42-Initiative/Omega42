@@ -8,19 +8,19 @@
 
 ## 1. Workflow evidence
 
-| Workflow | Run | Result at latest check |
+The latest tested source commit is `54e0e338a95d7af68604ff15ef50a1cc22818eee`.
+
+| Workflow | Run | Result |
 |---|---:|---|
-| D5a strict-wrapper + isolated-package validation | [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) | **PASS — 8/8 baseline, 11/11 negative controls, isolated closure passed** |
-| Site check on current packet branch | [45157377285](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157377285) | **QUEUED at last check** |
-| Path B prototype isolation | [45157370442](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157370442) | **QUEUED at last check** |
-| Full Omega42 CI | [45157370501](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157370501) | **QUEUED at last check** |
-| Earlier full Omega42 CI | [45156136550](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156136550) | **IN PROGRESS at last check** |
-| Earlier full Omega42 CI | [45152494767](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494767) | **FAIL — L-493 self-contained release gate** |
+| D2 SR-CAS/SNCA isolation | [45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) | **PASS** |
+| D3 certificate static validation | [45174322889](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322889) | **PASS** |
+| D4 Introduction validation | [45174322954](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322954) | **PASS** |
+| D5a eight-domain fixture validation | [45174322983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322983) | **PASS — 8/8 baseline; 11/11 negative controls** |
+| Path B prototype isolation | [45174322881](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322881) | **PASS** |
+| Site check | [45174323046](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174323046) | **PASS** |
+| Full Omega42 CI | [45174323030](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174323030) | **IN PROGRESS** |
 
-The D5a validation run is on source commit `4b1cd709627d58701a0fb6a5eaf8e80128b6e14b`. It passed the isolated temporary package containing the declared 18-file runtime closure plus the test harness. The active data dependency `records/frameworks/lens_relevance.json` was discovered by an earlier failed isolation attempt and then added.
-
-No full Omega42 CI pass or L-493 resolution is claimed. The latest full-CI and site/prototype runs were queued; an earlier full-CI run remained in progress.
-
+The D2-D5a, prototype-isolation and site-check workflows above completed successfully on the same source commit. The full Omega42 CI is still in progress. No full-CI pass or L-493 resolution is claimed. Earlier failed D2 runs are retained in the history and documented below; the latest corrected D2 run passed.
 ## 2. D2 — SR-CAS/SNCA validation
 
 D2 is split into D2-A (completed assessment checking) and D2-B (automatic assessment generation).
@@ -33,12 +33,29 @@ D2 is split into D2-A (completed assessment checking) and D2-B (automatic assess
 
 **Canonical parser boundary probes:** the harness found three accepted malformed cases: missing numeric comparison-class weight, missing numeric weighted index, and duplicate Base Score field. The tested `MATCH: NO` / `VERDICT: PROCEED` control was rejected. Canonical `tools/srcas_check.py` remains unchanged.
 
-**Strict Path B wrapper:** first run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed because the experimental wrapper counted fields only at line starts, while the canonical COMPONENT VECTOR places the score fields inline. The counter was corrected to count field labels within the report body. The expanded workflow [45163029382](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163029382) was queued at last check; no strict-wrapper pass is yet claimed. The harness now tests current no-report rejection, preservation of the historical exemption, balanced delimiters, a fresh verification/M270 pair for every SR-CAS report, and expanded duplicate/missing-field controls.
+**Strict Path B wrapper:** two expanded attempts exposed harness defects, not canonical record failures. The first [45163557806](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163557806) found that the duplicate-SNCA-T2 negative control had a literal backslash-n instead of a real second line, and the D2-B synthetic pair did not supply the per-relation verdict map required by M193/M225. The second [45174263744](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174263744) confirmed all 13 strict negative controls passed after correcting the newline, but D2-B still failed on the missing verdict map.
 
-**D2-B NAVIGATION-only package:** the harness now runs `srcas_run.py` in a separate temporary package with a declared nine-file closure. It includes fail-closed missing-file controls and explicit capability assertions for the M193 scanner and adaptor registry, because canonical `format_check.py` can silently suppress some dynamic-import failures. It runs the runner self-test and a duplicate-`seq_0133` navigation-pair smoke test. The pair is mechanical, not an independent cross-Navigator comparison. The closure covers NAVIGATION inputs only; other registered forms require separate profile closures. The D2-B NAVIGATION-only closure remains as documented in the D2 report. The latest D2 run [45163029382](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163029382) includes synthetic active-date L-549 outer-frame controls, strict SR-CAS/SNCA checks, the receipt audit assertion and the D2-B NAVIGATION-only package test. It was queued at last check.
+The corrected harness now:
+- creates a real duplicate SNCA T2 field for the negative control;
+- invokes the runner's `run()` function with an explicit synthetic per-relation MATCH map for the identical-record pair;
+- keeps the canonical runner's requirement for per-relation MATCH/PARTIAL/DIFFERENT judgments explicit rather than implying that the tool independently decides them.
+
+**Latest expanded D2 validation:** [run 45174322899](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322899) **PASS**:
+- D2-B nine-file NAVIGATION-only package preflight passed.
+- All nine missing-dependency controls rejected the incomplete package.
+- Dynamic M193/Jargon scanner and adaptor-registry capability probe passed.
+- Runner self-test passed.
+- Duplicate-record mechanical pair passed with explicit relation verdicts.
+- Synthetic active-date L-549 outer frame passed.
+- All 13 strict negative controls were rejected.
+- All 58 archived SR-CAS/SNCA records passed the canonical format check and the experimental strict guard.
+- The 197/197 owed-on-receipt audit passed.
+
+The D2-B pair is a duplicate copy of `seq_0133.txt` and the synthetic driver supplies MATCH for each relation in the declared relation order. It demonstrates mechanical execution when required adjudication input is supplied. It does not demonstrate independent Navigator agreement, prove that MATCH is the correct judgment, or make the runner autonomous in T1.5-S.
+
+The D2-B closure is **NAVIGATION-only**. Other registered input forms require their own dependency closures and tests. No canonical checker was changed.
 
 See the [D2 validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d2_srcas_test.py) and [strict guard](../../../tools/path_b_d2_srcas_guard.py).
-
 ## 3. D1b result
 
 The dedicated prototype workflow on `4c96b226...` validates:
@@ -57,7 +74,7 @@ See [D1B_GUARD_VALIDATION.md](D1B_GUARD_VALIDATION.md).
 
 The Path B D5a harness now generates eight explicitly synthetic fixtures at runtime from the exact public practice-set domains, using the current date (23 November 2026) and current date-gated format requirements.
 
-On the full isolated validation [run 45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105):
+On the latest full isolated validation [run 45174322983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322983):
 
 - all eight fixtures passed A1 anchor, A2 arms, A3 format and A4 layer-one checks;
 - the baseline report returned 8/8 coverage and `COMPATIBLE (SCRIPT-CAPABLE)`;
@@ -82,7 +99,7 @@ D3 is deliberately separated from D5 procedure execution.
 - The strict guard also requires one balanced certificate block, unique fields, a `CERT-####` identifier, a relative non-traversing CWD, a valid digest unless REGISTERED, and a nonempty finding statement.
 - Nine strict negative controls cover blank/duplicate fields, malformed ID, traversal, Windows UNC path, invalid digest, duplicate block and unbalanced opening/closing markers.
 
-The D3 workflow [45163029395](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163029395) was queued at last check. No D3 pass is claimed. No certificate procedure has been executed, no certificate has been re-certified or withdrawn, and no canonical checker has been changed.
+The latest D3 workflow [45174322889](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322889) passed. Ten archived certificates passed the static check and all nine strict negative controls were rejected. No procedure was executed. No certificate procedure has been executed, no certificate has been re-certified or withdrawn, and no canonical checker has been changed.
 
 See the [D3 validation report](D3_CERTIFICATE_STATIC_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d3_certificate_test.py), [strict guard](../../../tools/path_b_d3_certificate_guard.py) and [D5 execution-boundary audit](D5_CERTIFICATE_EXECUTION_BOUNDARY_AUDIT.md).
 
@@ -104,7 +121,7 @@ The isolated D4 harness copies six declared inputs into a temporary package: `in
 
 The checks establish mechanical/textual correspondence under the canonical checker, not the truth or persuasiveness of the underlying philosophical or legitimacy arguments. The harness now round-trips `--first-render` through `--first` to validate the Friendly Notes and Navigator Identity Block template. This is not yet a check of a real first-navigation record from a live session.
 
-The latest D4 workflow [45163422397](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163422397) was queued at last check. No D4 pass is claimed.
+The latest D4 workflow [45174322954](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45174322954) passed. The 13-case self-test, glossary, Opening, Core/register correspondence, current-date render/check and first-navigation close round-trip all passed.
 
 See the [D4 validation report](D4_INTRODUCTION_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d4_introduction_test.py) and [workflow](../../../.github/workflows/path-b-d4-introduction.yml).
 
