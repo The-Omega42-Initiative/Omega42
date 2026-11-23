@@ -194,6 +194,7 @@ def main():
         strict_controls = [
             ("MATCH NO with PROCEED", good_sr.replace("MATCH: YES", "MATCH: NO")),
             ("second report reuses prior verification", good_sr + srcas_check.GOOD_R),
+            ("unclosed report marker", "======= SNCA ASSESSMENT REPORT =======\\nDOMAIN: incomplete\\n"),
             ("MATCH YES with HALT", good_sr.replace("VERDICT: PROCEED", "VERDICT: HALT -- VERBATIM MISMATCH")),
             ("duplicate MATCH line", good_sr.replace("MATCH: YES\nVERDICT:", "MATCH: YES\nMATCH: YES\nVERDICT:")),
             ("missing exact MATCH line", good_sr.replace("MATCH: YES", "MATCH: MAYBE")),
@@ -239,6 +240,8 @@ def main():
         print((owed.stdout or "")[-12000:])
         if owed.stderr:
             print("OWED STDERR:", owed.stderr[-2000:])
+        if owed.returncode != 0:
+            failures.append("SR-CAS/SNCA receipt audit has outstanding assessments")
 
         # Exercise the command's no-report failure and historical date boundary.
         import srcas_check
