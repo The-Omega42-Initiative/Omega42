@@ -78,6 +78,14 @@ def main():
         with open(sn_path, "w", encoding="utf-8") as f:
             f.write(good_sn)
         good_profile = strict_guard.check_file(sr_path) and strict_guard.check_file(sn_path)
+        halt_path = os.path.join(package_root, "synthetic-halt.txt")
+        with open(halt_path, "w", encoding="utf-8") as f:
+            f.write(srcas_check.HALT)
+        halt_profile = strict_guard.check_file(halt_path)
+        print("%-58s %s" % ("Strict guard accepts the canonical halted-report form",
+                            "PASS" if halt_profile else "FAIL"))
+        if not halt_profile:
+            failures.append("strict guard rejected canonical halted-report form")
         print("%-58s %s" % ("Strict guard accepts complete SR-CAS and SNCA baselines",
                             "PASS" if good_profile else "FAIL"))
         if not good_profile:
