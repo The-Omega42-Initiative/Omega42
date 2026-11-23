@@ -206,6 +206,27 @@ def main():
         if not (old_ok and new_ok):
             failures.append("historical date boundary incorrect")
 
+        # The package guard must reject a current file with no report, while
+        # preserving the canonical CLI's pre-31-Oct historical exemption.
+        current_no_report = os.path.join(package_root, "guard-current-no-report.txt")
+        with open(current_no_report, "w", encoding="utf-8") as f:
+            f.write("A current undated file with no assessment report.\\n")
+        guard_rejects_empty = not strict_guard.check_file(current_no_report)
+        print("%-58s %s" % ("Strict guard rejects current no-report file",
+                            "PASS" if guard_rejects_empty else "FAIL"))
+        if not guard_rejects_empty:
+            failures.append("strict guard accepted current no-report file")
+
+        historical_bad = os.path.join(package_root, "guard-historical-bad-report.txt")
+        with open(historical_bad, "w", encoding="utf-8") as f:
+            f.write("DATED 29 October 2026\\n" + srcas_check.GOOD_V +
+                    srcas_check.GOOD_R.replace("Base Score: 0.79", "Base Score: 0.90"))
+        guard_preserves_exemption = strict_guard.check_file(historical_bad)
+        print("%-58s %s" % ("Strict guard preserves historical report exemption",
+                            "PASS" if guard_preserves_exemption else "FAIL"))
+        if not guard_preserves_exemption:
+            failures.append("strict guard did not preserve historical exemption")
+
         # Probe the canonical parser's enforcement boundaries. These are
         # diagnostic findings, not yet adopted policy or patched behaviour.
         mismatch_proceed = srcas_check.GOOD_V.replace("MATCH: YES", "MATCH: NO")
