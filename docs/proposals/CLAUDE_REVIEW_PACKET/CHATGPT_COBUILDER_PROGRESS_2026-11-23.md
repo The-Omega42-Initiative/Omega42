@@ -147,3 +147,11 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 ## OMIP Phase 1 — foundation audit initiated
 
 - User-directed pivot to Omega42 Open Mathematical and Innovation Programme (OMIP) roadmap. Created `OMIP_PHASE1_FOUNDATION_AUDIT_2026-11-23.md` (`5064433a8d0b8a02555d58859394dc9af3ceebcc`). Establishes parallel SL/adapter and invention-register tracks, first mathematics/computational-algebra vertical slice, staged technical/publication gates and legal review questions. **Preliminary evidence-bounded audit only**: full canonical document and governance-text inventory still owed; no new constitutional authority, SL adoption, patent pledge or public disclosure. No merge/deploy.
+
+
+## 23 November 2026 — legal-structure and website alignment continuation
+
+- Added proposal-only counsel issue schedule: [OMEGA42_LEGAL_COUNSEL_INSTRUCTION_RECONCILIATION_2026-11-23.md](docs/proposals/CLAUDE_REVIEW_PACKET/OMEGA42_LEGAL_COUNSEL_INSTRUCTION_RECONCILIATION_2026-11-23.md) (commit `13004e35`). It reconciles the Originator's full attorney instruction brief and preferred staged NPC model with actual `ENTITY.md`, `GOVERNANCE.md`, `PATENT_PLEDGE.md`, and related policies; records the 10 legal design issues and pre-incorporation approval gate. **No incorporation, legal advice, executed undertaking, canonical policy change, merge or deployment.**
+- Critical distinction: the existing company Patent Pledge does **not** bind independent contributors, employers or universities; counsel must design separate voluntary rights-holder undertakings and define covered contributions precisely.
+- Website direction: revelation-first human–mathematics–AI narrative, Navigator and Aperture prominence, direct Main Core/Companion links, detailed scientific qualifications in Scientific Appendix, but no unverified deployment or absolute patent claims. No website files changed in this continuation.
+- CI watch: proposal isolation run [45200274088](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45200274088) at `e8738f51` failed step **Guard D5 pure modules against execution APIs**; this failure predates this legal memo and must be investigated before claiming latest CI green. Other isolated D2/D3/D4/D5a/site runs at that head passed. Canonical CI was still in progress when checked.
