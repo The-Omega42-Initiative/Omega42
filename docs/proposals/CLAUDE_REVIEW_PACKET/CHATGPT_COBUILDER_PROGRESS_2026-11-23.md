@@ -84,3 +84,9 @@ A new **proposal-only** script, `tools/path_b_d2b_form_registry_contract_test.py
 - New proposal-only `tools/path_b_l493_release_diagnostic.py` (`defabe1414dca3d5bedbdf5b70e95e41698f5a1a`) uses `extract_embedded.blocks()` and `required()` to report missing, differing, extra and prohibited paths without changing canonical release rules. The script deliberately returns success because it is an **informational diagnostic**, not a gate or waiver.
 - The prototype isolation workflow now runs this diagnostic (`af3c8dfb332797ad0c2f64303ba6595907a29300`). **Validation/output pending.** Inspect the next run's job summary or log; do not infer root cause from a green diagnostic step. The likely proposal-file/embedding tension is still a hypothesis.
 - No Core/Companion, L-493 checker, release exclusions, merge, deployment or certificate procedure execution was changed.
+
+## VERIFIED L-493 root cause — full CI job log retrieved
+
+At `de297e3d`, [omega42-ci run 45183240439, verify job 137722152058](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45183240439/job/137722152058) printed **1619 embedded blocks, 1657 required files, 12 outside, 38 problems**. **All 38 are missing embeddings**, not mismatched embedded copies. The complete path inventory and non-canonical architectural options are now documented in [L493_VERIFIED_FAILURE_ROOT_CAUSE_2026-11-23.md](L493_VERIFIED_FAILURE_ROOT_CAUSE_2026-11-23.md). This upgrades the previous proposal-file/embedding hypothesis to a verified root cause **for the pinned branch commit**. Do not generalize to the default branch or later commits without checking.
+
+The experimental branch's new files are required by unchanged `tools/extract_embedded.py`, but absent from frozen Core/Companion. Proposed posture: preserve canonical release, run isolated Path B validation separately, and obtain Originator approval before any release-boundary change. No release policy or canonical documents were modified.
