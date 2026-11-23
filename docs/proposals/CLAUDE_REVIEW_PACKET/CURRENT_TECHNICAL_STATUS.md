@@ -23,17 +23,19 @@ No full Omega42 CI pass or L-493 resolution is claimed. The latest full-CI and s
 
 ## 2. D2 — SR-CAS/SNCA validation
 
-The canonical D2-A checker baseline passed in [run 45159025998](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159025998), source commit `aeddcfd669734cc068c845ad4be7861706163c43`:
+D2 is split into D2-A (completed assessment checking) and D2-B (automatic assessment generation).
 
+**D2-A canonical baseline:** [run 45159025998](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159025998) passed on source commit `aeddcfd669734cc068c845ad4be7861706163c43`:
 - 9/9 canonical `srcas_check.py --selftest` cases passed.
-- All 58 archived `records/srcas/*.txt` files passed the canonical checker with zero findings.
+- All 58 archived `records/srcas/*.txt` files passed with zero findings.
 - The receipt audit copied 466 APE submissions and found 197 qualifying APEs from APE-271 onward; all 197 were named in `records/srcas/`.
 - No-report, historical date-boundary, wrong SR-CAS Base Score and wrong SNCA Base Score controls behaved as expected.
-- The isolated package used the standard-library-only checker plus its report corpus and receipt-audit inputs.
 
-D2-A is the completed-assessment checker profile. D2-B is the automatic generator `tools/srcas_run.py`, which dynamically loads the canonical navigation engine, output-form registry and M193/M225. Its transitive closure depends on the form of each received output and has not yet been isolated.
+**Canonical parser boundary probes:** the harness found three accepted malformed cases: missing numeric comparison-class weight, missing numeric weighted index, and duplicate Base Score field. The tested `MATCH: NO` / `VERDICT: PROCEED` control was rejected. Canonical `tools/srcas_check.py` remains unchanged.
 
-A separate experimental wrapper, `tools/path_b_d2_srcas_guard.py`, adds strict consistency checks for MATCH/PROCEED/HALT, numeric comparison weight and weighted index, and duplicate critical fields. The first strict run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed because the wrapper incorrectly expected score fields to start separate lines and did not yet preserve the canonical halted-report form. Those wrapper defects were corrected; the latest run [45160231303](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45160231303) was queued at last check. The latest harness also adds a D2-B smoke test using a duplicated historical navigation as a mechanical fixture, not an independent comparison.
+**Strict Path B wrapper:** first run [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) failed because the experimental wrapper counted fields only at line starts, while the canonical COMPONENT VECTOR places the score fields inline. The counter was corrected to count field labels within the report body. The corrected workflow [45161630188](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45161630188) was queued at last check; no corrected pass is yet claimed.
+
+**D2-B NAVIGATION-only package:** the harness now runs `srcas_run.py` in a separate temporary package with a declared nine-file closure. It includes fail-closed missing-file controls and explicit capability assertions for the M193 scanner and adaptor registry, because canonical `format_check.py` can silently suppress some dynamic-import failures. It runs the runner self-test and a duplicate-`seq_0133` navigation-pair smoke test. The pair is mechanical, not an independent cross-Navigator comparison. The closure covers NAVIGATION inputs only; other registered forms require separate profile closures. The latest harness commit is `7399cc173ad86e51cf4304eb4598bafa20551d54`; its workflow [45161630188](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45161630188) was queued at last check.
 
 See the [D2 validation report](D2_SR_CAS_SNCA_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d2_srcas_test.py) and [strict guard](../../../tools/path_b_d2_srcas_guard.py).
 
