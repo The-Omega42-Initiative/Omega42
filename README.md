@@ -96,8 +96,8 @@ This repository is the home of an open network built around the protocol:
 
 ## Open by design — free ideas, protected name
 
-- **All ideas are free.** Everything in the record — readings, explorations, inventions, code — is openly licensed and free for anyone to explore, extend and build on.
-- **No patents.** The project, and the company that stewards it, own no patent rights and never ask contributors for any ([`PATENT_PLEDGE.md`](PATENT_PLEDGE.md)). Inventions published here become prior art that no one can later monopolise ([`PRIOR_ART.md`](PRIOR_ART.md)).
+- **An open knowledge commons.** Accepted contributions are published under their stated open licences, subject to those licence terms and any applicable third-party rights. They are available to explore, extend and build on.
+- **No project patent enclosure.** The Company pledge states that the project and its stewarding company do not use patents to enclose Omega42 contributions or require contributors to assign patent rights ([`PATENT_PLEDGE.md`](PATENT_PLEDGE.md)). Individual contributor obligations depend on the applicable licence and any separately signed undertaking. Defensive publication can establish prior art against later claims covering adequately disclosed subject matter; it does not prevent every patent filing or cover undisclosed improvements ([`PRIOR_ART.md`](PRIOR_ART.md)).
 - **A protected name.** A legal entity will hold the names *Omega42* and *Ω42* and the badges that mark genuine Ω42 content, so that people can tell what really comes from the project ([`ENTITY.md`](ENTITY.md), [`TRADEMARK.md`](TRADEMARK.md)). The marks protect the signs of origin, never the ideas.
 - **Free forever, with more for specialists.** The protocol, the app and the record are free; a commercial edition will add hosted readings, batches and team services ([`COMMERCIAL.md`](COMMERCIAL.md)).
 
