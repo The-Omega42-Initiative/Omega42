@@ -26,6 +26,13 @@ def strict_findings(text):
     if not enforced:
         return findings
 
+    for label in ("SR-CAS ASSESSMENT REPORT", "SNCA ASSESSMENT REPORT"):
+        opened = text.count("======= %s =======" % label)
+        closed = text.count("======= END %s =======" % label)
+        if opened != closed:
+            findings.append("%s delimiters are unbalanced: %d opening, %d closing" %
+                            (label, opened, closed))
+
     sr_rx = re.compile(
         r"======= SR-CAS ASSESSMENT REPORT =======(.*?)======= END SR-CAS ASSESSMENT REPORT =======",
         re.S,
@@ -108,15 +115,12 @@ def check_file(path):
         print("D2 STRICT SR-CAS/SNCA: %s | HISTORICAL EXEMPT (report only)" % path)
         return True
 
-    has_report = bool(
-        re.search(r"======= SR-CAS ASSESSMENT REPORT =======", text)
-        or re.search(r"======= SNCA ASSESSMENT REPORT =======", text)
-    )
+    parsed_reports = srcas_check.check(text)
     canonical = []
-    if not has_report:
-        canonical.append("no SR-CAS or SNCA assessment report found")
+    if not parsed_reports:
+        canonical.append("no complete SR-CAS or SNCA assessment report found")
     else:
-        for kind, name, problems in srcas_check.check(text):
+        for kind, name, problems in parsed_reports:
             canonical.extend("%s %s: %s" % (kind, name, p) for p in problems)
 
     strict = strict_findings(text)
