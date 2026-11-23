@@ -127,6 +127,12 @@ def main():
         checker = os.path.join(package_root, "tools", "srcas_check.py")
         os.makedirs(os.path.dirname(checker), exist_ok=True)
         shutil.copy2(checker_src, checker)
+        output_form_src = os.path.join(ROOT, "tools", "output_form.py")
+        output_form = os.path.join(package_root, "tools", "output_form.py")
+        if not os.path.isfile(output_form_src):
+            print("D2 FAIL: tools/output_form.py is missing")
+            return 1
+        shutil.copy2(output_form_src, output_form)
         guard_src = os.path.join(ROOT, "tools", "path_b_d2_srcas_guard.py")
         guard = os.path.join(package_root, "tools", "path_b_d2_srcas_guard.py")
         if not os.path.isfile(guard_src):
@@ -153,6 +159,21 @@ def main():
             return p
 
         run(["--selftest"], "Canonical SR-CAS/SNCA checker selftest")
+
+        # The report-body checker and the outer L-549 output-form frame are
+        # separate layers. Test both against the complete archived corpus.
+        output_form_run = subprocess.run(
+            [sys.executable, output_form] + reports, cwd=package_root,
+            capture_output=True, text=True, timeout=180
+        )
+        output_form_ok = output_form_run.returncode == 0
+        print("Archived assessment outer-frame / output-form audit: %s (exit %d)" %
+              ("PASS" if output_form_ok else "FINDINGS", output_form_run.returncode))
+        print((output_form_run.stdout or "")[-12000:])
+        if output_form_run.stderr:
+            print("OUTPUT-FORM STDERR:", output_form_run.stderr[-2500:])
+        if not output_form_ok:
+            failures.append("archived assessment outer-frame/output-form audit reported findings")
 
         # D2-B is tested in its own temporary package, separate from D2-A's
         # archive and receipt-audit corpus. This is a NAVIGATION-input profile.
