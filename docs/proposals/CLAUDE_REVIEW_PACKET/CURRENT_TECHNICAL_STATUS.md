@@ -71,6 +71,16 @@ The harness also tests a minimal temporary package. Its first isolation attempt 
 All fixtures are synthetic structural test artefacts. The essay, current-knowledge/reach content and M269/M139–M142/M127 trigger markers are not substantive research or semantic navigation. The result demonstrates mechanical acceptance, not answer quality or the quality of AI reasoning.
 
 See [D5A_EIGHT_DOMAIN_TEST_PLAN.md](D5A_EIGHT_DOMAIN_TEST_PLAN.md), the [D5a validation report](D5A_EIGHT_DOMAIN_VALIDATION_REPORT.md), [the harness](../../../tools/path_b_d5a_fixture_test.py) and [the strict guard](../../../tools/path_b_d5a_guard.py).
+## 7. D4 — Introduction validation
+
+The isolated D4 harness copies six declared inputs into a temporary package: `intro_output.py`, the Introduction/legitimacy/philosophy JSON registers, the canonical Opening example, and the Core DOCX. It runs the 13-case canonical self-test, Words Explained, Opening example, IN-OPEN/IN-00 correspondence, legitimacy and philosophical register checks, then renders a current-date Opening and rechecks it.
+
+The checks establish mechanical/textual correspondence under the canonical checker, not the truth or persuasiveness of the underlying philosophical or legitimacy arguments. The current profile does not yet test `--first-render` or `--first NAVIGATION.txt`; that is a separate D4 extension.
+
+The latest D4 workflow [45163111390](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45163111390) was queued at last check. No D4 pass is claimed.
+
+See the [D4 validation report](D4_INTRODUCTION_VALIDATION_REPORT.md), [harness](../../../tools/path_b_d4_introduction_test.py) and [workflow](../../../.github/workflows/path-b-d4-introduction.yml).
+
 ## 5. D3 — Static certificate validation
 
 D3 is deliberately separated from D5 procedure execution.
