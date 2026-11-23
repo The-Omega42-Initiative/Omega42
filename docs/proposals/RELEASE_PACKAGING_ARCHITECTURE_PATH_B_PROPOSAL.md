@@ -392,3 +392,8 @@ No decision is recorded by this proposal.
 
 **OMEGA42 | THE NAVIGATOR**  
 *First principles. Mathematical structure. Recursive discovery. The unknown.*
+
+
+## 17. Supporting preliminary classification register
+
+A preliminary, explicitly incomplete repository classification register has been prepared at [PATH_B_PRELIMINARY_CLASSIFICATION_REGISTER.md](PATH_B_PRELIMINARY_CLASSIFICATION_REGISTER.md). It is a seed inventory for review, not a complete tree export or approved package manifest. It records known file classifications, unresolved boundaries and the work required to complete dependency tracing. It does not amend L-493 or canonical documents.
