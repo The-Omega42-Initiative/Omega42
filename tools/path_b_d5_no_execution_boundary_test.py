@@ -15,6 +15,7 @@ PURE = (
     "tools/path_b_d5_execution_contract.py",
     "tools/path_b_d5_result_semantics.py",
     "tools/path_b_d5_approval_provenance.py",
+    "tools/path_b_d5_provenance_binding.py",
 )
 BLOCKED_MODULES = {"subprocess", "socket", "requests", "urllib", "ctypes",
                    "multiprocessing", "importlib", "runpy", "asyncio"}
