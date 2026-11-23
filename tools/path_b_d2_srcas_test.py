@@ -74,7 +74,7 @@ def run_d2b_navigation_profile():
         lines.append("D2-B dynamic capability probe: %s (exit %d)" %
                      ("PASS" if capability.returncode == 0 else "FAIL", capability.returncode))
         if capability.returncode != 0:
-            return 1, "\\n".join(lines), capability.stderr or capability.stdout or ""
+            return 1, "\n".join(lines), capability.stderr or capability.stdout or ""
 
         # Fail-closed controls: remove one required dependency at a time and
         # prove the profile preflight refuses to run without it.
@@ -194,13 +194,13 @@ def main():
         strict_controls = [
             ("MATCH NO with PROCEED", good_sr.replace("MATCH: YES", "MATCH: NO")),
             ("MATCH YES with HALT", good_sr.replace("VERDICT: PROCEED", "VERDICT: HALT -- VERBATIM MISMATCH")),
-            ("duplicate MATCH line", good_sr.replace("MATCH: YES\\nVERDICT:", "MATCH: YES\\nMATCH: YES\\nVERDICT:")),
+            ("duplicate MATCH line", good_sr.replace("MATCH: YES\nVERDICT:", "MATCH: YES\nMATCH: YES\nVERDICT:")),
             ("missing exact MATCH line", good_sr.replace("MATCH: YES", "MATCH: MAYBE")),
             ("missing numeric comparison weight", good_sr.replace("Comparison-class weight (L-416): x1.5", "Comparison-class weight (L-416): N/A")),
             ("missing numeric weighted index", good_sr.replace("Weighted index: 1.00", "Weighted index: N/A")),
-            ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\\nMANDATORY CORRECTIONS: none")),
-            ("duplicate SNCA Base Score", good_sn.replace("SYNTHESIS: s", "Base Score: 0.31\\nSYNTHESIS: s")),
-            ("duplicate SNCA two-axis status", good_sn.replace("VERDICT CONFIRMATION: N/A", "STATUS (two axes, L-428): PROCEDURAL FAILURE | COMPARATIVE STATUS: NOT INVESTIGATED\\nVERDICT CONFIRMATION: N/A")),
+            ("duplicate Base Score field", good_sr.replace("MANDATORY CORRECTIONS: none", "Base Score: 0.79\nMANDATORY CORRECTIONS: none")),
+            ("duplicate SNCA Base Score", good_sn.replace("SYNTHESIS: s", "Base Score: 0.31\nSYNTHESIS: s")),
+            ("duplicate SNCA two-axis status", good_sn.replace("VERDICT CONFIRMATION: N/A", "STATUS (two axes, L-428): PROCEDURAL FAILURE | COMPARATIVE STATUS: NOT INVESTIGATED\nVERDICT CONFIRMATION: N/A")),
         ]
         strict_ok = True
         for control_index, (name, content) in enumerate(strict_controls, 1):
@@ -264,7 +264,7 @@ def main():
         # preserving the canonical CLI's pre-31-Oct historical exemption.
         current_no_report = os.path.join(package_root, "guard-current-no-report.txt")
         with open(current_no_report, "w", encoding="utf-8") as f:
-            f.write("A current undated file with no assessment report.\\n")
+            f.write("A current undated file with no assessment report.\n")
         guard_rejects_empty = not strict_guard.check_file(current_no_report)
         print("%-58s %s" % ("Strict guard rejects current no-report file",
                             "PASS" if guard_rejects_empty else "FAIL"))
@@ -273,7 +273,7 @@ def main():
 
         historical_bad = os.path.join(package_root, "guard-historical-bad-report.txt")
         with open(historical_bad, "w", encoding="utf-8") as f:
-            f.write("DATED 29 October 2026\\n" + srcas_check.GOOD_V +
+            f.write("DATED 29 October 2026\n" + srcas_check.GOOD_V +
                     srcas_check.GOOD_R.replace("Base Score: 0.79", "Base Score: 0.90"))
         guard_preserves_exemption = strict_guard.check_file(historical_bad)
         print("%-58s %s" % ("Strict guard preserves historical report exemption",
