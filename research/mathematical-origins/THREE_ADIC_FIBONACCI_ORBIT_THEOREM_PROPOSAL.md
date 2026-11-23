@@ -10,9 +10,9 @@ Let \(R_k=\mathbb Z/3^k\mathbb Z\), \(k\ge1\), and \(T_k(a,b)=(b,a+b)\), with ma
 \[
 L_{k,s}=8\cdot3^{k-s-1}.
 \]
-There are exactly \(3^{k-s}\) distinct cycles in that valuation stratum. The zero vector is the sole fixed point. Consequently the total number of cycles is
+There are exactly \(3^{k-s-1}\) distinct cycles in that valuation stratum. The zero vector is the sole fixed point. Consequently the total number of cycles is
 \[
-C_k=1+\sum_{r=1}^k3^r=\frac{3^{k+1}-1}{2}.
+C_k=1+\sum_{r=1}^k3^{r-1}=\frac{3^k+1}{2}.
 \]
 At \(k=2\), the 81 states have cycle lengths \(1,8,24,24,24\). At \(k=3\), the 729 states have one 1-cycle, one 8-cycle, three 24-cycles and nine 72-cycles.
 
