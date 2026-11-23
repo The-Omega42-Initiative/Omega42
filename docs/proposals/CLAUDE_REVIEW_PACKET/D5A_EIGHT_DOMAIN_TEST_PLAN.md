@@ -117,7 +117,12 @@ The initial D5a package should retain the active code closure already used by th
 - `tools/consciousness.py`
 - `tools/adaptors.py`
 - `tools/adaptor_rules.py`
+- `tools/utility.py`
+- `tools/path_b_d5a_guard.py`
 - `records/conformance/practice_set.txt`
+- `records/frameworks/lens_relevance.json`
+
+The test harness `tools/path_b_d5a_fixture_test.py` is copied only to execute the isolated validation; it is test tooling, not part of the runtime package closure. The lens relevance registry is an active data dependency because `tools/congruence.py::lenses_of()` loads it even when no lens is selected.
 
 The isolated package must exclude `docs/`, `omega42.identity.json` and unrelated research registers unless execution demonstrates an active dependency for this profile. Fixture files are copied into a dedicated temporary `inputs/` directory.
 
