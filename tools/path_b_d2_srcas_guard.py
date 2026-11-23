@@ -57,8 +57,8 @@ def strict_findings(text):
             continue
 
         for label in ("Base Score:", "Comparison-class weight", "Weighted index"):
-            if _count_line(body, label) != 1:
-                findings.append(prefix + ": exactly one %s line is required" % label.rstrip(":"))
+            if len(re.findall(re.escape(label), body)) != 1:
+                findings.append(prefix + ": exactly one %s field is required" % label.rstrip(":"))
 
         weight_tail = body[body.find("Comparison-class weight"):] if "Comparison-class weight" in body else ""
         weight_match = re.search(r"(?:x|×)\s*(\d+(?:\.\d+)?)", weight_tail)
