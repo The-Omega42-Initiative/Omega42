@@ -37,7 +37,7 @@ The exponent is independent of the choice of y modulo N. In particular, F_m is n
 =\zeta^{-[x,y]/2+[G^{-1}y,x-y]/2}\,
 \operatorname{Tr}(VW_{x+Dy}).
 \]
-Taking x=0 yields F_m(Dy)=F_m(0)ζ^([G^(-1)y,y]/2). If y is in ker D, then G^(-1)y=y, and the same conjugation identity at arbitrary x yields F_m(x)=ζ^{-[x,y]}F_m(x). Hence F_m(x) can be nonzero only if [x,y]=0 for all y∈ker D, i.e. x lies in the symplectic annihilator of ker D. By Theorem A, (ker D)^⊥=3^tR²=im D. If y and y+z both solve Dy=x, then z∈ker D and G^(-1)z=z. The difference of their quadratic exponents is [G^(-1)y,z]+[y,z], up to the vanishing [z,z], and these cross terms vanish modulo N because y is arbitrary but x=Dy lies in the symplectic annihilator of ker D; equivalently [G^(-1)y,z]=[y,z] and 2[y,z] need not vanish. **Safer argument:** the two phase expressions equal because each is obtained from the same exact trace-conjugation identity, provided F_m(0)≠0. Nonvanishing is proved by Parseval below, which is independent of this choice. QED.
+Taking x=0 yields F_m(Dy)=F_m(0)ζ^([G^(-1)y,y]/2). If y is in ker D, then G^(-1)y=y, and the same conjugation identity at arbitrary x yields F_m(x)=ζ^{-[x,y]}F_m(x). Hence F_m(x) can be nonzero only if [x,y]=0 for all y∈ker D, i.e. x lies in the symplectic annihilator of ker D. By Theorem A, (ker D)^⊥=3^tR²=im D. If y and y+z both solve Dy=x, then z∈ker D and G^(-1)z=z. The difference of the numerators is [G^(-1)y,z]+[z,y]=[G^(-1)y−y,z]=[x,z]=0 modulo N, since x belongs to the annihilator of ker D. Thus the phase is independent of the chosen preimage. QED.
 
 ## Theorem C: exact magnitude
 
