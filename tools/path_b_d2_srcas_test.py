@@ -46,6 +46,23 @@ def main():
         shutil.copy2(guard_src, guard)
 
         reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
+        runner_closure = [
+            "tools/srcas_run.py",
+            "tools/output_form.py",
+            "tools/format_check.py",
+            "scripts/canonical_reference.py",
+            "scripts/m193_m225.py",
+            "records/instances/seq_0133.txt",
+        ]
+        for rel in runner_closure:
+            source = os.path.join(ROOT, rel)
+            target = os.path.join(package_root, rel)
+            if not os.path.isfile(source):
+                failures.append("missing D2-B runner dependency " + rel)
+                print("D2-B missing: " + rel)
+                continue
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            shutil.copy2(source, target)
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
         print("D2 isolated package inputs: checker=1, SR-CAS/SNCA records=%d, APE submissions=%d" %
               (len(reports), len(submissions)))
@@ -64,6 +81,40 @@ def main():
             return p
 
         run(["--selftest"], "Canonical SR-CAS/SNCA checker selftest")
+
+        # D2-B smoke test: the automatic runner receives two copies of one
+        # historical navigation. This is a mechanical fixture, not an
+        # independent cross-Navigator comparison.
+        runner = os.path.join(package_root, "tools", "srcas_run.py")
+        runner_selftest = subprocess.run([sys.executable, runner, "--selftest"], cwd=package_root,
+                                         capture_output=True, text=True, timeout=120)
+        runner_ok = runner_selftest.returncode == 0
+        print("%-58s %s (exit %d)" %
+              ("D2-B automatic runner selftest", "PASS" if runner_ok else "FAIL", runner_selftest.returncode))
+        print((runner_selftest.stdout or "")[-5000:])
+        if runner_selftest.stderr:
+            print("D2-B STDERR:", runner_selftest.stderr[-2000:])
+        if not runner_ok:
+            failures.append("D2-B runner selftest failed")
+
+        nav_a = os.path.join(package_root, "records", "instances", "seq_0133.txt")
+        nav_b = os.path.join(package_root, "records", "instances", "seq_0133-copy.txt")
+        shutil.copy2(nav_a, nav_b)
+        runner_pair = subprocess.run([sys.executable, runner, "NONE", nav_a, nav_b],
+                                     cwd=package_root, capture_output=True, text=True, timeout=180)
+        pair_text = runner_pair.stdout or ""
+        pair_ok = (runner_pair.returncode == 0 and
+                   "SNCA, DECIDABLE LAYER" in pair_text and
+                   "SR-CAS, DECIDABLE LAYER" in pair_text and
+                   "MATCH: YES" in pair_text and
+                   "VERDICT: PROCEED" in pair_text)
+        print("%-58s %s (exit %d)" %
+              ("D2-B isolated NAVIGATION pair smoke test", "PASS" if pair_ok else "FAIL", runner_pair.returncode))
+        print(pair_text[-10000:])
+        if runner_pair.stderr:
+            print("D2-B PAIR STDERR:", runner_pair.stderr[-2500:])
+        if not pair_ok:
+            failures.append("D2-B navigation-pair runner smoke test failed")
 
         # The Path B wrapper is tested separately from the unchanged canonical checker.
         sys.path.insert(0, os.path.join(package_root, "tools"))
