@@ -39,7 +39,7 @@ def strict_findings(text):
 
     cwd = values.get("CWD", "")
     normalized_cwd = cwd.replace("\\", "/")
-    if cwd and (os.path.isabs(cwd) or re.match(r"^[A-Za-z]:", cwd)
+    if cwd and (os.path.isabs(normalized_cwd) or re.match(r"^[A-Za-z]:", normalized_cwd)
                 or ".." in normalized_cwd.split("/")):
         findings.append("CWD must be a relative path confined to the package (no absolute path or '..' segment)")
 
