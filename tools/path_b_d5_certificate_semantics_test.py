@@ -24,12 +24,12 @@ def filled_certificate(status, digest):
     text = text.replace("[FILL: the folder it runs in, or .]", ".")
     text = text.replace("[FILL: SHA-256 of the procedure's output]", digest)
     text = text.replace("[FILL: " + " / ".join(certify.STATUSES) + "]", status)
-    return re.sub(r"\\[FILL: [^\\]]*\\]", "x", text)
+    return re.sub(r"\[FILL: [^\]]*\]", "x", text)
 
 
 def main():
     failures = []
-    expected = hashlib.sha256(b"expected stdout\\n").hexdigest()
+    expected = hashlib.sha256(b"expected stdout\n").hexdigest()
     original = certify.run_procedure
     with tempfile.TemporaryDirectory(prefix="omega42-d5-safe-boundary-") as d:
         path = os.path.join(d, "synthetic-certificate.txt")
