@@ -4,6 +4,7 @@
 This guard never executes certificate PROCEDURE text. Canonical certify.py is
 called only through check(); --verify remains a separate privileged profile.
 """
+import os
 import re
 import sys
 sys.path.insert(0, __import__("os").path.dirname(__file__))
@@ -28,6 +29,16 @@ def strict_findings(text):
                 "CWD", "RESULT", "GRADE", "SCOPE", "STATUS", "STATEMENT"):
         if key in values and not values[key]:
             findings.append("%s must not be blank" % key)
+
+    certificate_id = values.get("CERTIFICATE", "")
+    if certificate_id and not re.fullmatch(r"CERT-\\d{4}", certificate_id):
+        findings.append("CERTIFICATE identifier must have the form CERT-####")
+
+    cwd = values.get("CWD", "")
+    normalized_cwd = cwd.replace("\\\\", "/")
+    if cwd and (os.path.isabs(cwd) or re.match(r"^[A-Za-z]:", cwd)
+                or ".." in normalized_cwd.split("/")):
+        findings.append("CWD must be a relative path confined to the package (no absolute path or '..' segment)")
 
     status = values.get("STATUS", "")
     digest = values.get("RESULT SHA-256", "")
