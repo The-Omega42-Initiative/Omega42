@@ -216,3 +216,11 @@ The experimental branch's new files are required by unchanged `tools/extract_emb
 - New explicit derived theorem `research/mathematical-origins/DEPTH_SHEAR_EXACT_ORBIT_CENSUS_2026-11-23.md` (commit `95a4b080`), **conditional on canonical MF-43's complete orbit invariant**. For 1<=r<=k, shell j with n=k-j, h=min(r,n) has `3^(h-1)` orbits, each of size `8*3^(2n-h-1)`. Total `C(k,r)=(3^r+1)/2+(k-r)*3^(r-1)`. At k=4, r=1..4 counts 5,11,23,41. This is a corollary, not a new proof of MF-43.
 - Committed independent BFS test `tools/path_b_depth_shear_census_test.py` (`38d6f58c`), using **lower** shear `B_r(a,b)=(a,b+3^r*a)`. Equivalent local enumeration passed every pair 1<=r<=k<=4, including complete orbit-size multisets and norm-square invariant constancy. Committed script not yet CI-confirmed.
 - Claude review source page staged-only on separate website-handover branch (`dc4f05f8`), no homepage/nav/merge/deployment changes. Continue mathematics and CI verification; full published Core/Companion text parity remains pending.
+
+
+## 2026-11-23 — ternary shear-depth refinement and information theorem
+
+- Proof `research/mathematical-origins/SHEAR_DEPTH_REFINEMENT_FILTRATION_2026-11-23.md` (commit `a7185834`), an explicit **corollary of canonical MF-43**: B_(r+1)=B_r^3 gives descending group filtration; every orbit in shell n=k-j>=r splits into three equal-sized children at r-1 -> r; shallower shells unchanged. Orbit count increment `2*3^(r-2)*(k-r+1)`. Under uniform finite-state counting, conditional orbit-label entropy `(min(r,n)-1)*log(3)`; no semantic interpretation.
+- Independent BFS test `tools/path_b_shear_refinement_test.py` (commit `effa9cf1`) checks nesting, equal three-way branching, all orbit counts and increments for k<=4. **Committed, not executed or CI-confirmed this turn.**
+- Standalone Claude review page updated on website handover branch (`d1e2eb12`), without navigation, deployment, merge, or canonical changes. Further website modifications remain frozen except explicit user-requested Claude review copy.
+- Next: run tests/CI; inspect MF-43 completeness proof; build shear partition inverse-limit description and compare with Core/Companion published documents.
