@@ -1,11 +1,11 @@
 # D5a Eight-Domain Synthetic Validation Report
 
-**Status:** Path B strict-wrapper validation passed; minimal-package isolation is awaiting its latest workflow run.  
+**Status:** Path B strict-wrapper validation and minimal-package isolation both passed.  
 **Prepared:** 23 November 2026  
 **Branch:** \`proposal/path-b-release-packaging\`  
 **Validation source commit:** \`f706551e0986f07c7bab22bbbbf36f2222bfd9ab\`  
-**Validation workflow:** [45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156647211)  
-**Latest minimal-package attempt:** [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) — queued at last check  
+**Validation workflow:** [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105)  
+**Minimal-package isolation:** included in [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) — PASS  
 **Harness:** \`tools/path_b_d5a_fixture_test.py\`  
 **Strict wrapper:** \`tools/path_b_d5a_guard.py\`  
 **Workflow:** \`.github/workflows/path-b-d5a-fixtures.yml\`
@@ -105,9 +105,9 @@ The first isolation attempt on commit \`aedf9b186fda604acbdbc641f57efe48cd95bd64
 
 \`records/frameworks/lens_relevance.json\`
 
-The traceback showed that \`tools/congruence.py::lenses_of()\` loads this registry even when no lens is selected. The file has been added to the declared closure. The next isolation run, [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105), was queued at the time of this report. Its result is not assumed.
+The traceback showed that \`tools/congruence.py::lenses_of()\` loads this registry even when no lens is selected. The file was added to the declared closure. The rerun [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) passed. The isolated package generated all eight synthetic fixtures, passed A1–A4 and the format checks, rejected all eleven negative controls, and reproduced the raw M314 duplicate-extra defect while the wrapper rejected it.
 
-The current candidate closure comprises:
+The validated runtime closure comprises:
 
 - \`scripts/canonical_reference.py\`
 - \`scripts/m193_m225.py\`
@@ -128,7 +128,7 @@ The current candidate closure comprises:
 - \`records/conformance/practice_set.txt\`
 - \`records/frameworks/lens_relevance.json\`
 
-The fixture harness itself is copied into the temporary package only to execute the isolation test; it is test tooling, not part of the runtime closure. The closure remains provisional until the isolated run passes and any further missing active dependencies are resolved.
+The fixture harness itself is copied into the temporary package only to execute the isolation test; it is test tooling, not part of the runtime closure. The declared closure passed this isolation run. No additional active dependencies were missing in this execution profile.
 
 ## 7. Authority and release status
 
@@ -136,7 +136,7 @@ The fixture harness itself is copied into the temporary package only to execute 
 - The strict guard is experimental, not canonical or adopted policy.
 - Raw M314 retains the reproduced duplicate-extra defect.
 - The Path B wrapper passes the 8/8 baseline and 11/11 negative controls.
-- Minimal-package isolation is pending.
+- Minimal-package isolation passed with the declared closure.
 - No canonical checker, Core/Companion document, release policy, L-493 gate or main-branch file has been changed.
 - No package is certified or released by this test.
 - No PR has been opened, merged or deployed.
