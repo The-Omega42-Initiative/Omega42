@@ -4,7 +4,7 @@
 **Branch:** `proposal/path-b-release-packaging`  
 **Review-packet baseline:** the packet was created after the experimental validation on `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`.  
 **D1b prototype source commit tested:** `4c96b226f8389e05554fc6d6f8cf1bc633ac9151`
-**Latest D5a fixture source commit tested:** `4b1cd709627d58701a0fb6a5eaf8e80128b6e14b`
+**Latest D5a fixture source commit tested:** `54e0e338a95d7af68604ff15ef50a1cc22818eee`
 
 ## 1. Workflow evidence
 
