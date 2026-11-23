@@ -3,8 +3,8 @@
 **Status:** Experimental package-isolation tests completed  
 **Date:** 23 November 2026  
 **Source branch:** `proposal/path-b-release-packaging`  
-**Tested source commit:** `788f507ff2d57806518a93dc1c64c961f010d6c2`  
-**Workflow:** [path-b-prototype-isolation run 45151595912](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45151260191)  
+**Tested source commit:** `830049fd31a21e185f8f383f06f86e53967e5bbd`  
+**Workflow:** [path-b-prototype-isolation run 45152098242](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45151260191)  
 **Harness:** `tools/path_b_prototype_test.py`  
 **Normative status:** Non-normative experimental evidence only.
 
@@ -22,6 +22,8 @@ This is not a full Omega42 CI pass, not a release candidate, not an amendment to
 |---|---|---|
 | C1 — canonical arithmetic | Only `scripts/canonical_reference.py`; unrelated `tools/`, `records/`, `docs/` and identity manifest absent. Ran `--test`, `--calibrate`, `--navigate "What is time?"`; verified source SHA output. | PASS |
 | D1a — existing-output format check | Canonical reference, M193/M225 scanner, format checker and one supplied historical navigation. Research registers and canonical DOCX absent. Ran checker self-test and normal existing-output check. | PASS |
+| D1b — skeleton generation | Five-file combined package passed navigation skeleton, findings skeleton and combined self-test. Four-file generation-only package also generated a navigation skeleton without M193/M225. | PASS |
+| D1b negative controls | Deliberately omitted utility.py, then canonical_reference.py. In both cases the CLI still exited successfully with degraded/incomplete output. | KNOWN GAPS REPRODUCED |
 | D4 — identity handshake | Handshake script, identity JSON, digest list and the two canonical DOCX files only. Ran fingerprint, live challenge, manifest check and handshake self-test. | PASS |
 | D5a — ordinary conformance | Active computational modules, standard library and public practice set; one supplied historical navigation. Core/Companion DOCX and selected research registers, including adaptor registry, absent. Ran `--key` and per-navigation `--check`. | PASS — smoke test |
 
@@ -36,6 +38,17 @@ The arithmetic reference executed its known-answer self-test, calibration and na
 The format checker passed its built-in self-test and checked the supplied historical navigation in an isolated package containing its canonical reference and M193/M225 scanner. No Core/Companion DOCX or research register was needed.
 
 This test confirms the declared scanner was present in the package. The negative-control package deliberately omitted `scripts/m193_m225.py`; the dynamic import set `_JS = None`, yet `format_check.py --selftest` still exited successfully. This is direct executable evidence of degraded-mode acceptance. A future package claiming full conformance must fail closed or explicitly mark the result as reduced coverage. No canonical checker was modified.
+
+### D1b
+
+The five-file combined package generated both navigation and findings skeletons and passed the combined checker/skeleton self-test without any `records/` or `docs/` tree. A separate four-file generation-only package—`format_check.py`, `utility.py`, `manifestation.py` and `canonical_reference.py`—generated the navigation skeleton successfully without M193/M225. This establishes that M193/M225 is not an active skeleton-generation dependency; it is needed for the full format-check capability layered onto the same module.
+
+Two negative controls reproduced fail-open behaviour:
+
+- Without `utility.py`, skeleton generation still exited successfully but substituted generic request-kind and avenue placeholders.
+- Without `scripts/canonical_reference.py`, skeleton generation still exited successfully but omitted the canonical generated blocks because the subprocess return code is ignored.
+
+These are KNOWN GAPS, not passing full-fidelity generation. A future D1b wrapper or approved checker change must fail closed or explicitly mark the output degraded.
 
 ### D4
 
@@ -75,7 +88,7 @@ The initial failure was a test-harness formatting defect, not evidence of a sour
 
 ## 7. Next work
 
-1. Convert the observed D1a missing-scanner gap into an approved fail-closed design change or a package wrapper that refuses to claim full conformance when a required scanner is absent. The negative control is now in the harness.
+1. Design a fail-closed wrapper or approved checker change for the D1a missing-scanner gap and the D1b missing-utility/missing-canonical gaps. The negative controls are now in the harness.
 2. Build a D5a fixture suite with one valid navigation for each practice-set domain, or an approved synthetic fixture set with independently recomputed outputs.
 3. Trace and prototype D1b skeleton generation separately, including `tools/utility.py` and its selected data dependencies.
 4. Prototype specialised Introduction, SR-CAS and certificate profiles individually; keep certificate procedure execution isolated and disabled by default.
