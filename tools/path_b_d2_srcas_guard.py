@@ -16,7 +16,7 @@ import srcas_check
 def _count_line(body, label):
     # Score fields may begin a line or follow a pipe in COMPONENT VECTOR.
     # Count only field-position labels, not incidental prose mentions.
-    pattern = r"(?mi)(?:^|\\|\\s*)\\s*" + re.escape(label) + r"\\s*"
+    pattern = r"(?mi)(?:^|\|\s*)\s*" + re.escape(label) + r"\s*"
     return len(re.findall(pattern, body))
 
 
