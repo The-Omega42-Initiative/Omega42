@@ -91,6 +91,28 @@ def profile_d1a(base: Path) -> None:
     print("KNOWN GAP D1a: checker self-test still passes when the full M193 scanner is absent")
 
 
+def profile_d1b(base: Path) -> None:
+    pkg = base / "D1b"
+    for src in (
+        "scripts/canonical_reference.py",
+        "scripts/m193_m225.py",
+        "tools/format_check.py",
+        "tools/utility.py",
+        "tools/manifestation.py",
+    ):
+        copy_file(src, pkg)
+    assert_absent(pkg, ["records", "docs", "omega42.identity.json"], "D1b excludes repository registers and canonical DOCX")
+    skeleton = run("D1b navigation skeleton generation", pkg,
+                   ["tools/format_check.py", "--skeleton", "What is time?"])
+    if "DOMAIN VERBATIM: What is time?" not in skeleton.stdout or "MATH-GATE" not in skeleton.stdout:
+        raise AssertionError("D1b did not generate the expected canonical navigation skeleton")
+    findings = run("D1b findings skeleton generation", pkg,
+                   ["tools/format_check.py", "--skeleton", "findings", "What is time?"])
+    if "FINDINGS BY AVENUE" not in findings.stdout:
+        raise AssertionError("D1b did not generate the findings presentation skeleton")
+    run("D1b combined format and skeleton self-test", pkg, ["tools/format_check.py", "--selftest"])
+
+
 def profile_d4(base: Path) -> None:
     pkg = base / "D4"
     copy_file("tools/handshake.py", pkg)
@@ -157,6 +179,7 @@ def main() -> int:
         base = Path(td)
         profile_c1(base)
         profile_d1a(base)
+        profile_d1b(base)
         profile_d4(base)
         profile_d5a(base)
     print("PATH B MINIMAL PACKAGE PROTOTYPES: PASS")
