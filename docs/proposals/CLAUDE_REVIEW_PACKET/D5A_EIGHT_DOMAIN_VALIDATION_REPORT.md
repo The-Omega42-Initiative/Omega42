@@ -1,18 +1,20 @@
 # D5a Eight-Domain Synthetic Validation Report
 
-**Status:** Baseline arithmetic/format/coverage test passed; exact-one-file-per-domain acceptance remains blocked by a reproduced M314 defect.  
+**Status:** Path B strict-wrapper validation passed; minimal-package isolation is awaiting its latest workflow run.  
 **Prepared:** 23 November 2026  
 **Branch:** \`proposal/path-b-release-packaging\`  
-**Test source:** \`tools/path_b_d5a_fixture_test.py\`  
-**Workflow:** \`.github/workflows/path-b-d5a-fixtures.yml\`  
-**Validation commit:** \`0f79cb22a16026ae7c6f6caa05f10d4c28ab1ea7\`  
-**Workflow run:** [45155915840](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915840)
+**Validation source commit:** \`f706551e0986f07c7bab22bbbbf36f2222bfd9ab\`  
+**Validation workflow:** [45156647211](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156647211)  
+**Latest minimal-package attempt:** [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105) — queued at last check  
+**Harness:** \`tools/path_b_d5a_fixture_test.py\`  
+**Strict wrapper:** \`tools/path_b_d5a_guard.py\`  
+**Workflow:** \`.github/workflows/path-b-d5a-fixtures.yml\`
 
 ## 1. Result
 
-The baseline test generated eight synthetic fixtures from the exact eight domains loaded at runtime from \`records/conformance/practice_set.txt\`.
+The baseline test generated eight synthetic fixtures at runtime from the exact eight domains loaded from \`records/conformance/practice_set.txt\`. The fixed fixture date was 23 November 2026, so the test exercised the current date-gated format requirements rather than avoiding them with an earlier date.
 
-All eight passed the current-date format checker and M314 required checks:
+All eight fixtures passed A1–A4 and the current format checker:
 
 | Domain | Recomputed anchor | State | Norm | A1–A4 | Format |
 |---|---:|---:|---:|---|---|
@@ -25,16 +27,31 @@ All eight passed the current-date format checker and M314 required checks:
 | CF-07 | P7 | (7, 1) | 1 | PASS | PASS |
 | CF-08 | P4 | (4, 2) | 2 | PASS | PASS |
 
-M314 reported:
+The strict package guard and canonical M314 both reported the baseline as:
 
 - Set coverage: **8 of 8 domains passed**
 - Result: **COMPATIBLE (SCRIPT-CAPABLE)**
 
-The test uses the current date (23 November 2026), not an earlier date chosen to evade later date-gated requirements. It supplies the current L-503 status/reach fields, essay-length requirement, M318 framing structure, L-532 line, L-513 instance metadata and L-549 output-form line as synthetic test content.
+This is a result about the mechanical execution of the profile, not about the premise or semantic quality of any answer.
 
-## 2. Negative controls
+## 2. Path B strict package guard
 
-Ten negative controls were exercised. All ten returned \`NOT YET COMPATIBLE\`:
+A separate experimental wrapper, \`tools/path_b_d5a_guard.py\`, now preflights the package before delegating per-file checks to canonical \`tools/conformance.py\`.
+
+It enforces:
+
+1. Exactly one input file per required practice-set domain.
+2. Exactly one \`DOMAIN VERBATIM\` line per file.
+3. Exact domain membership in the practice set.
+4. No repeated in-set domain.
+5. No missing required domain.
+6. Readable input files.
+
+It then calls canonical M314 for the anchor, arms, format and layer-one checks. The wrapper does not edit, replace or weaken the canonical checker.
+
+## 3. Negative controls
+
+Eleven negative controls were exercised. All eleven returned \`NOT YET COMPATIBLE\` under the Path B strict guard:
 
 1. Missing one required domain.
 2. Non-practice-set domain.
@@ -45,31 +62,29 @@ Ten negative controls were exercised. All ten returned \`NOT YET COMPATIBLE\`:
 7. Duplicate domain while another required domain is missing.
 8. Empty fixture.
 9. Malformed fixture.
-10. Wrong exact domain wording in the \`DOMAIN VERBATIM\` field.
+10. Wrong exact domain wording in \`DOMAIN VERBATIM\`.
+11. Multiple \`DOMAIN VERBATIM\` lines in one file.
 
-The malformed and empty cases returned a controlled non-compatible report in this run; they did not need a hard-error fallback.
+The duplicate cases produced explicit diagnostics from the Path B guard.
 
-## 3. Reproduced defect: duplicate accepted when coverage is otherwise complete
+## 4. Canonical M314 defect reproduced and isolated
 
-A separate negative control supplied **nine passing files for the eight required domains**, with one domain represented twice and all eight domains still covered.
+A separate control supplied **nine passing files for the eight required domains**, with one domain represented twice and all eight domains still covered.
 
-Observed result:
+Observed results:
 
-\`COMPATIBLE (SCRIPT-CAPABLE)\`
+| Validator | Result |
+|---|---|
+| Raw canonical M314 | \`COMPATIBLE (SCRIPT-CAPABLE)\` |
+| Path B strict package guard | \`NOT YET COMPATIBLE\` |
 
-Expected result under the test plan:
+The canonical checker uses a set of covered domain strings and checks whether any required domain is missing. It does not reject an extra duplicate when all eight domains are otherwise represented, and it does not emit a dedicated duplicate-domain diagnostic.
 
-\`NOT YET COMPATIBLE\`
+**The defect remains in raw M314.** The Path B wrapper catches it at the package boundary. No canonical checker change has been made.
 
-The current \`tools/conformance.py::report()\` uses a set to accumulate covered domain strings and checks whether any required domain is missing. It does not reject a repeated in-set domain or enforce that the number of accepted files is exactly the number of required domains. Consequently, a duplicate extra file is accepted if the other seven domains are also present and all files pass their per-file checks.
+## 5. Fixture provenance and limits
 
-A second observation: when a duplicate replaces a missing domain, coverage correctly remains incomplete and the overall verdict is non-compatible, but the report does not provide a dedicated duplicate-domain diagnostic.
-
-**This is a real M314 acceptance defect, not a failure of the synthetic fixture generator.**
-
-## 4. Fixture provenance and limits
-
-All eight fixtures are generated at test runtime in a temporary directory. They are never written into \`submissions/\`, the public practice set, accepted records or prior-art disclosures. No historical navigation was modified or relabelled.
+All fixtures are generated at test runtime in temporary directories. They are never written into \`submissions/\`, the public practice set, accepted records or prior-art disclosures. No historical navigation was modified or relabelled.
 
 The fixtures are deliberately synthetic:
 
@@ -77,30 +92,52 @@ The fixtures are deliberately synthetic:
 - \`tools/congruence.py\` generates the M310 record, including the internal layer.
 - The output ID is computed and verified.
 - The format skeleton's stand-in filler is used for non-arithmetic prose.
-- The 500+ word essay and current-knowledge/reach fields are synthetic structural content.
+- The 500+ word essay, current-knowledge/reach content and L-532 contribution line are synthetic structural content.
 - M269, M139–M142 and M127 trigger markers are explicitly labelled synthetic markers, not completed mathematical or semantic audits.
 
-Therefore this result demonstrates that the current checker can accept a mechanically complete, script-derived eight-domain fixture set. It does **not** establish the semantic quality of any answer, the quality of an AI's reasoning, meaningful engagement with each question, or certification of a deployed system. The advisory B1–B3 results are recorded separately and are not promoted into required checks.
+This demonstrates mechanical acceptance of a script-derived eight-domain fixture set. It does **not** establish semantic quality, genuine engagement with the questions, the quality of AI reasoning, or certification of a deployed system. Advisory B1–B3 results remain advisory.
 
-## 5. Proposed correction — not applied
+## 6. Minimal-package isolation
 
-A future, separately authorised canonical checker change should:
+The harness now copies a declared execution closure into a temporary package and reruns the same D5a validation without Core/Companion documents, identity files or unrelated research material.
 
-1. Track every in-set domain occurrence, not only the set of covered domains.
-2. Require exactly one passing navigation per required domain.
-3. Reject duplicate in-set domains with an explicit per-file diagnostic.
-4. Reject unexpected extra navigation files unless a separately specified mode permits them.
-5. Keep the final coverage count and compatibility verdict consistent with those cardinality checks.
-6. Add self-tests for both duplicate-with-missing-domain and duplicate-with-complete-coverage.
+The first isolation attempt on commit \`aedf9b186fda604acbdbc641f57efe48cd95bd64\` exposed one missing active data dependency:
 
-No change has been made to \`tools/conformance.py\`, canonical documents, release policy, L-493, the main branch or any canonical checker. This report is evidence for review, not approval to amend the protocol.
+\`records/frameworks/lens_relevance.json\`
 
-## 6. Authority and release status
+The traceback showed that \`tools/congruence.py::lenses_of()\` loads this registry even when no lens is selected. The file has been added to the declared closure. The next isolation run, [45157034105](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45157034105), was queued at the time of this report. Its result is not assumed.
+
+The current candidate closure comprises:
+
+- \`scripts/canonical_reference.py\`
+- \`scripts/m193_m225.py\`
+- \`scripts/crc60_and_m267.py\`
+- \`tools/conformance.py\`
+- \`tools/congruence.py\`
+- \`tools/bashar_lens.py\`
+- \`tools/format_check.py\`
+- \`tools/aperture_audit.py\`
+- \`tools/frame_audit.py\`
+- \`tools/output_id.py\`
+- \`tools/manifestation.py\`
+- \`tools/consciousness.py\`
+- \`tools/adaptors.py\`
+- \`tools/adaptor_rules.py\`
+- \`tools/utility.py\`
+- \`tools/path_b_d5a_guard.py\`
+- \`records/conformance/practice_set.txt\`
+- \`records/frameworks/lens_relevance.json\`
+
+The fixture harness itself is copied into the temporary package only to execute the isolation test; it is test tooling, not part of the runtime closure. The closure remains provisional until the isolated run passes and any further missing active dependencies are resolved.
+
+## 7. Authority and release status
 
 - Path B remains a proposal.
-- D5a's eight-domain baseline is reproduced.
-- D5a is **not complete** because the exact-one-file-per-domain negative control is not rejected.
+- The strict guard is experimental, not canonical or adopted policy.
+- Raw M314 retains the reproduced duplicate-extra defect.
+- The Path B wrapper passes the 8/8 baseline and 11/11 negative controls.
+- Minimal-package isolation is pending.
+- No canonical checker, Core/Companion document, release policy, L-493 gate or main-branch file has been changed.
 - No package is certified or released by this test.
-- L-493 remains unchanged and has not been bypassed.
-- No PR has been merged and no deployment has been made.
+- No PR has been opened, merged or deployed.
 - This report is a review document, not a message to Claude. No Claude communication has occurred.
