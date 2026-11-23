@@ -93,7 +93,7 @@ def main():
         ("duplicate while another domain absent", fixtures[:-1] + [("duplicate.txt", fixtures[0][1])]),
         ("empty fixture", [(first_name, "")] + fixtures[1:]),
         ("malformed fixture", [(first_name, "not a navigation\n")] + fixtures[1:]),
-        ("wrong exact domain wording", [(first_name, first_text.replace(rows[0][1], rows[0][1] + " ", 1))] + fixtures[1:]),
+        ("wrong exact domain wording", [(first_name, first_text.replace(rows[0][1], rows[0][1].replace("time", "Time"), 1))] + fixtures[1:]),
     ]
 
     print("\nNEGATIVE-CONTROL MATRIX")
@@ -114,7 +114,7 @@ def main():
     print("\nSUMMARY")
     print("Synthetic fixtures: %d" % len(fixtures))
     print("Baseline: %s" % verdict)
-    print("Negative controls: %d/%d rejected" % (len(tests)-1, len(tests)-1))
+    print("Negative controls: %d/%d rejected" % (len(tests), len(tests)))\n    print("Exact-one-file-per-domain enforcement: %s" % ("PASS" if duplicate_extra_rejected else "DEFECT IN CURRENT CHECKER"))
     print("Duplicate diagnostic: %s" % ("present" if duplicate_diagnostic else "absent"))
     print("No historical navigation was edited or relabelled.")
     print("No synthetic fixture was written into the repository.")
