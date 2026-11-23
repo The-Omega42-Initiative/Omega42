@@ -16,7 +16,7 @@ import congruence as cg
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
 NAV = [('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('expert-desk', 'Expert Exploration Desk'), ('vision', 'The Omega42 paper')]),
-       ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
+       ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('aperture', 'The Human Aperture'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
        ('FAQ', [('faq', 'Frequently asked questions')]),
        ('Protocol', [('protocol', 'Core and Companion'), ('for-ai', 'For AI systems'), ('apps', 'Free and commercial editions')]),
        ('Research', [('research', 'Research frontiers'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
