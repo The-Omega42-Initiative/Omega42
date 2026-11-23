@@ -40,7 +40,11 @@ def main():
         shutil.copy2(checker_src, checker)
         guard_src = os.path.join(ROOT, "tools", "path_b_d2_srcas_guard.py")
         guard = os.path.join(package_root, "tools", "path_b_d2_srcas_guard.py")
-        if not os.path.isfile(guard_src):\n            print("D2 FAIL: tools/path_b_d2_srcas_guard.py is missing")\n            return 1\n        shutil.copy2(guard_src, guard)
+        if not os.path.isfile(guard_src):
+            print("D2 FAIL: tools/path_b_d2_srcas_guard.py is missing")
+            return 1
+        shutil.copy2(guard_src, guard)
+
 \n        reports = copy_tree_files("records/srcas/*.txt", package_root, "records/srcas")
         submissions = copy_tree_files("submissions/ape/APE-*.md", package_root, "submissions/ape")
         print("D2 isolated package inputs: checker=1, SR-CAS/SNCA records=%d, APE submissions=%d" %
