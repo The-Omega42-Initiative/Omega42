@@ -112,6 +112,17 @@ def profile_d1b(base: Path) -> None:
         raise AssertionError("D1b did not generate the findings presentation skeleton")
     run("D1b combined format and skeleton self-test", pkg, ["tools/format_check.py", "--selftest"])
 
+    # Minimal generation-only package: M193 is not called by skeleton rendering.
+    skeleton_only = base / "D1b-skeleton-only"
+    for src in ("scripts/canonical_reference.py", "tools/format_check.py",
+                "tools/utility.py", "tools/manifestation.py"):
+        copy_file(src, skeleton_only)
+    minimal = run("D1b minimal generation without M193 scanner", skeleton_only,
+                  ["tools/format_check.py", "--skeleton", "What is time?"])
+    if "DOMAIN VERBATIM: What is time?" not in minimal.stdout:
+        raise AssertionError("D1b minimal generation-only package did not generate the domain block")
+    print("PASS D1b minimal skeleton-generation closure excludes M193 scanner")
+
     # Negative control 1: utility.py is absent. skeleton() catches the import failure
     # and substitutes generic request labels instead of failing.
     no_utility = base / "D1b-missing-utility"
@@ -121,8 +132,8 @@ def profile_d1b(base: Path) -> None:
     copy_file("tools/manifestation.py", no_utility)
     degraded_u = run("D1b negative-control missing utility", no_utility,
                      ["tools/format_check.py", "--skeleton", "What is time?"])
-    if "REQUEST (L-502): request kind -- avenues avenues" not in degraded_u.stdout:
-        raise AssertionError("D1b missing-utility fallback was not observed")
+    if "FILL: request kind" not in degraded_u.stdout or "FILL: avenues" not in degraded_u.stdout:
+        raise AssertionError(f"D1b missing-utility fallback was not observed:\\n{degraded_u.stdout[-5000:]}")
     print("KNOWN GAP D1b: skeleton generation silently substitutes generic request labels without utility.py")
 
     # Negative control 2: canonical_reference.py is absent. The subprocess return code
