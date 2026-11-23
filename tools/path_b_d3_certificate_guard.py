@@ -31,11 +31,11 @@ def strict_findings(text):
             findings.append("%s must not be blank" % key)
 
     certificate_id = values.get("CERTIFICATE", "")
-    if certificate_id and not re.fullmatch(r"CERT-\\d{4}", certificate_id):
+    if certificate_id and not re.fullmatch(r"CERT-\d{4}", certificate_id):
         findings.append("CERTIFICATE identifier must have the form CERT-####")
 
     cwd = values.get("CWD", "")
-    normalized_cwd = cwd.replace("\\\\", "/")
+    normalized_cwd = cwd.replace("\\", "/")
     if cwd and (os.path.isabs(cwd) or re.match(r"^[A-Za-z]:", cwd)
                 or ".." in normalized_cwd.split("/")):
         findings.append("CWD must be a relative path confined to the package (no absolute path or '..' segment)")
