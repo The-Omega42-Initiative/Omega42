@@ -464,3 +464,12 @@ The initial insertion of the Claude Co-Builder section placed it inside the open
 2. If `site-check` passes, inspect the generated page structure and rendered placement. Do not claim visual validation without a browser rendering.
 3. Present the Originator with the Path A / Path B policy choice before modifying canonical documents, the checker or the normative release contract.
 4. Keep PR #3 draft and unmerged until the chosen packaging policy is authorised and the resulting full CI passes.
+
+
+### Follow-up markup and current PR metadata — 23 November 2026
+
+- The Claude review section's placement and closing `</section>` were corrected in commits `224dfa3b91328cc306f54ad1e7f3e4749eeb48ed` and `ed6ab0ce00d82251f34a6b8c36f72a4042a94d0a`. The section now sits as a standalone block near the end of `site/pages/explore.html`, within the page wrapper.
+- Current PR #3 head: `ed6ab0ce00d82251f34a6b8c36f72a4042a94d0a`; PR remains open and draft. No merge or deployment.
+- The PR body now records the exact run 185 L-493 result and the two policy paths.
+- No workflow result has yet been returned for this exact current head. Treat run 185 results as prior-head evidence only.
+- A source inspection confirms the opening Explore hero text is restored and the Co-Builder section has a closing section tag. This is source-level inspection, not browser-rendered visual validation.
