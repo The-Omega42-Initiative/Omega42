@@ -53,13 +53,13 @@ The fact that `utility.py` contains functions that read these records does not m
 
 ## 4. Isolated package prototype
 
-The dedicated prototype harness creates a D1b temporary package containing only the five source files in §3. It asserts that `records/`, `docs/` and `omega42.identity.json` are absent, then runs:
+The dedicated prototype harness tests two package shapes. The combined D1b/checker package contains the five files in §3; a separate generation-only package contains the four-file closure without M193/M225. Both assert that `records/`, `docs/` and `omega42.identity.json` are absent. It runs:
 
 - `python tools/format_check.py --skeleton "What is time?"`;
 - `python tools/format_check.py --skeleton findings "What is time?"`;
 - `python tools/format_check.py --selftest`.
 
-The navigation skeleton is checked for the verbatim domain and generated MATH-GATE block. The findings skeleton is checked for its FINDINGS BY AVENUE structure. The combined checker/skeleton self-test exercises the package without the repository research corpus.
+The navigation skeleton is checked for the verbatim domain and generated MATH-GATE block. The findings skeleton is checked for its FINDINGS BY AVENUE structure. The combined checker/skeleton self-test exercises the five-file package without the repository research corpus. The four-file generation-only package successfully renders a navigation skeleton without M193/M225 present. The dedicated workflow [run 45152098242](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152098242) passed these tests.
 
 The workflow result is recorded in the Path B prototype results document and linked from the packaging proposal.
 
@@ -71,11 +71,13 @@ The current implementation has several paths where a missing dependency does not
 
 The `skeleton()` and `findings_skeleton()` functions wrap the utility import and `request_of()` call in a broad exception handler. On failure, they substitute generic request-kind and avenue placeholders and continue generating output.
 
-This output is not equivalent to a correctly classified skeleton, but the CLI returns success.
+The negative-control package omitted `utility.py`. The CLI still exited successfully and emitted fill-in placeholders for the request kind and avenues. The isolated workflow records this as a KNOWN GAP, not a successful full-fidelity skeleton.
 
 ### 5.2 Missing canonical reference subprocess
 
 `_script_blocks()` calls `subprocess.run()` but does not check the return code or raise on failure. If the canonical script is missing or fails, its stdout may be empty; `skeleton()` can still continue and the CLI still returns success, producing an incomplete skeleton without the generated canonical blocks.
+
+The negative-control package omitted `scripts/canonical_reference.py`. The command still exited successfully but emitted no canonical MATH-GATE block. The isolated workflow records this as a KNOWN GAP.
 
 ### 5.3 Missing dynamic scanner
 
@@ -89,7 +91,7 @@ Failure to dynamically load the canonical reference causes the mathematical-toke
 
 A future package that declares full navigation or findings skeleton generation should:
 
-1. Preflight all five required source files before invoking the generator.
+1. Preflight the four generation dependencies before invoking D1b-NAV or D1b-FINDINGS; require M193/M225 as an additional dependency only when the package also claims full checker coverage.
 2. Verify the canonical reference subprocess exits successfully.
 3. Require non-empty, structurally complete canonical block output before assembling the skeleton.
 4. Treat utility import/request-classification failure as a hard error or explicitly mark the result as degraded and non-conforming.
@@ -109,8 +111,8 @@ This proposal does not authorise changing the canonical checker. Such a change r
 
 ## 8. Limitations and next work
 
-This audit does not trace every record-backed command in `utility.py`, run every optional skeleton date/request branch, or establish that the five-file closure is the final normative package. The isolated test proves the selected commands execute in the tested package shape. A later refactor could split `format_check.py` into independent modules and reduce the findings-only closure.
+This audit does not trace every record-backed command in `utility.py`, run every optional skeleton date/request branch, or establish that the four-file generation closure is the final normative package. The isolated test proves the selected commands execute in the tested package shapes. A later refactor could split `format_check.py` into independent modules and reduce the findings-only closure.
 
-The isolated workflow now includes negative controls for missing utility and missing canonical subprocess dependencies. The next task is to confirm their observed behaviour and decide whether the future packaging contract should enforce fail-closed behaviour through a wrapper or require a canonical code change.
+The isolated workflow has confirmed both negative controls. The next task is to design and test a fail-closed package wrapper (or a separately reviewed canonical code change) so D1b cannot claim successful generation when either the request classifier or canonical subprocess is missing.
 
 No canonical documents, `tools/extract_embedded.py`, L-493, existing CI rules, release policy, main branch, PR, merge or deployment has been changed by this audit.
