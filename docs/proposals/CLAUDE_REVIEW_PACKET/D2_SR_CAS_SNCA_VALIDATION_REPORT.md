@@ -6,7 +6,7 @@
 **D2-A canonical baseline source commit:** `aeddcfd669734cc068c845ad4be7861706163c43`
 **D2-A canonical baseline workflow:** [45159025998](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159025998)
 **First strict-wrapper attempt:** [45159548882](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45159548882) — failed; wrapper defect diagnosed
-**Latest D2 validation workflow:** [45162230316](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162230316) — queued at last check
+**Latest D2 validation workflow:** [45162503870](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45162503870) — queued at last check
 **Harness:** `tools/path_b_d2_srcas_test.py`
 **Experimental guard:** `tools/path_b_d2_srcas_guard.py`
 
