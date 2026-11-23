@@ -99,6 +99,7 @@ def profile_d1b(base: Path) -> None:
         "tools/format_check.py",
         "tools/utility.py",
         "tools/manifestation.py",
+        "tools/path_b_d1b_guard.py",
     ):
         copy_file(src, pkg)
     assert_absent(pkg, ["records", "docs", "omega42.identity.json"], "D1b excludes repository registers and canonical DOCX")
@@ -110,17 +111,23 @@ def profile_d1b(base: Path) -> None:
                    ["tools/format_check.py", "--skeleton", "findings", "What is time?"])
     if "FINDINGS BY AVENUE" not in findings.stdout:
         raise AssertionError("D1b did not generate the findings presentation skeleton")
+    run("D1b guarded navigation generation", pkg,
+        ["tools/path_b_d1b_guard.py", "navigation", "What is time?"])
+    run("D1b guarded findings generation", pkg,
+        ["tools/path_b_d1b_guard.py", "findings", "What is time?"])
     run("D1b combined format and skeleton self-test", pkg, ["tools/format_check.py", "--selftest"])
 
     # Minimal generation-only package: M193 is not called by skeleton rendering.
     skeleton_only = base / "D1b-skeleton-only"
     for src in ("scripts/canonical_reference.py", "tools/format_check.py",
-                "tools/utility.py", "tools/manifestation.py"):
+                "tools/utility.py", "tools/manifestation.py", "tools/path_b_d1b_guard.py"):
         copy_file(src, skeleton_only)
     minimal = run("D1b minimal generation without M193 scanner", skeleton_only,
                   ["tools/format_check.py", "--skeleton", "What is time?"])
     if "DOMAIN VERBATIM: What is time?" not in minimal.stdout:
         raise AssertionError("D1b minimal generation-only package did not generate the domain block")
+    run("D1b guard works without optional M193 scanner", skeleton_only,
+        ["tools/path_b_d1b_guard.py", "navigation", "What is time?"])
     print("PASS D1b minimal skeleton-generation closure excludes M193 scanner")
 
     # Negative control 1: utility.py is absent. skeleton() catches the import failure
@@ -130,6 +137,11 @@ def profile_d1b(base: Path) -> None:
     copy_file("scripts/m193_m225.py", no_utility)
     copy_file("tools/format_check.py", no_utility)
     copy_file("tools/manifestation.py", no_utility)
+    copy_file("tools/path_b_d1b_guard.py", no_utility)
+    guarded_u = run("D1b guard refuses missing utility", no_utility,
+                    ["tools/path_b_d1b_guard.py", "navigation", "What is time?"], expect=2)
+    if "required D1b source file(s) missing" not in guarded_u.stderr:
+        raise AssertionError("D1b guard did not fail closed on missing utility.py")
     degraded_u = run("D1b negative-control missing utility", no_utility,
                      ["tools/format_check.py", "--skeleton", "What is time?"])
     if "FILL: request kind" not in degraded_u.stdout or "FILL: avenues" not in degraded_u.stdout:
@@ -143,6 +155,11 @@ def profile_d1b(base: Path) -> None:
     copy_file("tools/format_check.py", no_canonical)
     copy_file("tools/utility.py", no_canonical)
     copy_file("tools/manifestation.py", no_canonical)
+    copy_file("tools/path_b_d1b_guard.py", no_canonical)
+    guarded_c = run("D1b guard refuses missing canonical reference", no_canonical,
+                    ["tools/path_b_d1b_guard.py", "navigation", "What is time?"], expect=2)
+    if "required D1b source file(s) missing" not in guarded_c.stderr:
+        raise AssertionError("D1b guard did not fail closed on missing canonical_reference.py")
     degraded_c = run("D1b negative-control missing canonical subprocess", no_canonical,
                      ["tools/format_check.py", "--skeleton", "What is time?"])
     if "[1] MATH-GATE" in degraded_c.stdout:
