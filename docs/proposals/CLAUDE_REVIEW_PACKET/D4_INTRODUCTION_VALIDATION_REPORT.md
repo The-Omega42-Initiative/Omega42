@@ -42,7 +42,7 @@ The harness executes:
 4. `--core CORE.docx` — IN-OPEN / IN-00 correspondence, including the eight reasons and main reason.
 5. `--legitimacy CORE.docx` — legitimacy register arguments against the Introduction and their grounds in the Core.
 6. `--philosophy CORE.docx` — Philosophical Register passages and figures against Part 0 of the Core.
-7. `--render` with an explicit Navigator, organisation, date (23 November 2026) and SCRIPT-CAPABLE execution label; then `--check` on the exact rendered output.
+7. `--render` with an explicit Navigator, organisation, date (23 November 2026) and SCRIPT-CAPABLE execution label; then `--check` on the exact rendered output. It also round-trips `--first-render` through `--first` to validate the Friendly Notes and Navigator Identity Block close.
 
 The render is written only inside the temporary package. The repository's canonical JSON, Core DOCX, example and registers are read-only inputs.
 
@@ -61,7 +61,7 @@ It will not establish that the reasons are persuasive, the philosophical positio
 
 ## 5. Scope limitations and future tests
 
-The current harness does not run `--first-render` or `--first NAVIGATION.txt`; it does not yet validate the complete first-navigation close containing Friendly Notes and the Navigator Identity Block. That should be a separate D4 extension with an exact input record and its own closure.
+The harness round-trips the renderer's first-navigation close template through `--first`. This checks the Friendly Notes and Navigator Identity Block structure. It is a template round-trip, not a check of a real first-navigation record from a live session.
 
 The profile tests the Opening and its Core/register correspondence. It does not validate every website page, every Navigator output form, or every language adaptor.
 
