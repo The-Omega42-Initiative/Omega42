@@ -7,15 +7,17 @@
 
 ## 1. Workflow evidence
 
-| Workflow | Run | Result at preparation |
+| Workflow | Run | Result at latest check |
 |---|---:|---|
-| Path B prototype isolation | [45152494717](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494717) | **PASS** |
-| Site check | [45152494684](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494684) | **PASS** |
-| Full Omega42 CI | [45152494767](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494767) | **IN PROGRESS** |
+| D5a synthetic fixture validation | [45155915840](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915840) | **FAILED AS EXPECTED — baseline 8/8 passed; duplicate-extra negative control exposed M314 defect** |
+| Site check on D5a source commit | [45155916035](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155916035) | **PASS** |
+| Path B prototype isolation on D5a source commit | [45155915912](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915912) | **PASS** |
+| Full Omega42 CI on D5a source commit | [45155915685](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45155915685) | **IN PROGRESS at last check** |
+| Full Omega42 CI, earlier baseline | [45152494767](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45152494767) | **FAIL — L-493 self-contained release gate** |
 
-The isolated prototype job passed. The site workflow passed site build and Pyodide-versus-CPython Strike arithmetic comparison.
+Subsequent documentation-only commits advanced the proposal branch to `c365ad19c8f091486b523d021b3591089d6c9640`. At that head, a new full CI run [45156136550](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156136550) was queued; the site and prototype checks [45156130983](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156130983) and [45156131018](https://github.com/The-Omega42-Initiative/Omega42/actions/runs/45156131018) were also queued. These are not reported as passed.
 
-Full Omega42 CI had completed its early reference implementation, SHA, MATH-GATE, selection witness, M193/M225/M243a, media calibration, CRC-60, output audit, overlap, ACG, inventory, comparative annex and earlier evidence checks successfully. The verify job was still running at the document's preparation. Document hygiene was in progress; later checks, including M286, output ID, L-284, M314 conformance and L-493 self-contained release, remained pending. No full-CI conclusion is claimed here.
+The earlier full CI run 45152494767 completed with failure at the L-493 self-contained release gate. Later runs had progressed through the earlier checks and were still executing; no full-CI pass or L-493 resolution is claimed.
 
 ## 2. D1b result
 
