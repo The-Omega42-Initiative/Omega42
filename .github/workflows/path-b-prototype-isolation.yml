@@ -33,6 +33,8 @@ jobs:
         run: python3 tools/path_b_d2b_local_dispatch_test.py
       - name: Inventory L-493 mismatches without changing canonical release gate
         run: python3 tools/path_b_l493_release_diagnostic.py
+      - name: Validate D5 provenance envelopes without signature or execution
+        run: python3 tools/path_b_d5_approval_provenance_test.py
       - name: Guard D5 pure modules against execution APIs
         run: python3 tools/path_b_d5_no_execution_boundary_test.py
       - name: Test D5 malformed input rejection without execution
