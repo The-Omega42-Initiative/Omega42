@@ -125,8 +125,8 @@ def profile_d5a(base: Path) -> None:
     check = run("D5a per-navigation conformance smoke test", pkg,
                 ["tools/conformance.py", "--check", "inputs"], expect=1)
     for label in ("A1 anchor", "A2 arms", "A3 format", "A4 layer 1"):
-        if not re.search(re.escape(label) + r"\\s+PASS\\b", check.stdout):
-            raise AssertionError(f"D5a smoke test missing required passing check {label}:\\n{check.stdout[-7000:]}")
+        if not re.search(re.escape(label) + r"\s+PASS\b", check.stdout):
+            raise AssertionError(f"D5a smoke test missing required passing check {label}:\n{check.stdout[-7000:]}")
     if "OUTSIDE SET" not in check.stdout:
         raise AssertionError(f"D5a smoke test did not identify the fixture as outside the set:\\n{check.stdout[-7000:]}")
     if "NOT YET COMPATIBLE" not in check.stdout:
