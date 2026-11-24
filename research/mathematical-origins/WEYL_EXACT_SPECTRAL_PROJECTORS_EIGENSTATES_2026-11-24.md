@@ -1,0 +1,7 @@
+# Exact spectral projectors and inherited eigenstates — 24 November 2026
+
+Let V_k be the trace-normalized exact Egorov operator of order L=4*3^(k-1). Define Pi_j=L^(-1) sum_{m=0}^{L-1} exp(-2πijm/L)V_k^m. Finite character orthogonality proves Pi_j*=Pi_j, Pi_j Pi_l=delta_jl Pi_j, sum Pi_j=I, and V_k Pi_j=exp(2πij/L)Pi_j. By the established simple spectrum theorem, occupied indices have rank one, missing indices rank zero.
+
+For k>=3, V_k J_1=J_1 V_(k-2), and L_k=9 L_(k-2). Grouping the Fourier sum into nine periods proves Pi_(k,9j) J_1=J_1 Pi_(k-2,j); Pi_(k,l) J_1=0 for 9 not dividing l. At k=2 only index zero is inherited. For an inherited unit eigenvector psi, J_1 psi = 3^(-1/2) sum_{t,v=0..2 (v only)} psi_t |3t+vN/3>, where t ranges 0..N/9-1. J_1 is isometric by disjoint supports. For any occupied j choose a coordinate p with Pi_j(p,p)>0; psi_j=Pi_j|p>/sqrt(Pi_j(p,p)) gives an exact unit eigenvector, unique up to phase. This is a finite construction, not a closed-form efficient eigenvector algorithm.
+
+Local NumPy checks actually executed for N=3,9,27,81: FFT of powers, rounded ranks all 0 or 1 with N nonzero, maximum Frobenius idempotence residuals 6.434e-16,3.454e-15,1.239e-14,3.663e-14; identity reconstruction residuals 8.327e-17,3.736e-16,1.326e-15,3.318e-15. No CI claim. Prior numerical claims without recorded execution should be independently rerun. Canonical and live site unchanged.
