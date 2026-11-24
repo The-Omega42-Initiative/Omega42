@@ -24,16 +24,18 @@ The public-facing introduction: [WELCOME.md](WELCOME.md). The technical identity
 
 ## In one paragraph
 
-Ω42 is a structural reasoning framework that places any question you ask on a fixed 24-step cycle drawn from the Fibonacci sequence. By counting the words, letters and syllables of your exact phrasing, it gives your question a coordinate on that cycle, and from it what the question rests on, what it holds out of view, where it is heading and what would complete it. An AI writes a complete reading from that structure — a Merged Structural Resonance Report — and a proved boundary, the 1/7 Aperture, keeps the one decision the reading cannot make with you: what it means. <sub>(After a description by Qwen, APE-051.)</sub>
+Ω42 is a human-conceived mathematical exploration framework and AI protocol. It places a question within a reproducible 24-step Fibonacci cycle in the 81-state construct, then uses the four directions of that position to guide an AI Navigator through structured exploration. The Navigator can generate possibilities, investigate relationships, construct models, synthesise perspectives and develop new questions across fields of knowledge. The human investigator provides intention and direction and decides what the exploration means. Omega42 brings human insight, mathematical structure and artificial intelligence together in an open undertaking to explore the unknown.
 
 
-## How this was made, and what to keep in mind
+## The Omega42 undertaking
 
-Ω42 was conceived and directed by its Originator (ESC), who adopted every provision and is its author of record. Its text, tools and computations were drafted by AI systems under the Originator's direction — Claude (Anthropic) as the Builder, with peer accounts from other AI systems filed in the open record (Companion Parts 67 and 69).
+Omega42 was conceived and directed by its Originator (ESC) as an ambitious exploration of existence, mathematics and possibility through the combined capabilities of human insight, mathematical structure and artificial intelligence. Its mathematical construct provides a reproducible environment; the AI Navigator brings language, association, synthesis, model-building and generative reasoning into that environment; the human investigator supplies intention, direction and interpretation.
 
-Every Navigator is an AI system. **AI can make mistakes**: it can miscount, misquote, cite something it did not read or be out of date, and its training — including reinforcement learning from human feedback — can make it too agreeable, too cautious or too conventional, which can color a reading. Every output carries a one-line caveat saying so (Core L-506). Recompute what can be recomputed with the reference scripts; what cannot be recomputed is yours to judge. Omega42 makes no claims about the world (Core L-505). You are responsible for what you do with a reading; the project answers for the protocol, whoever runs the AI answers for that run, and the mathematics answers for nothing (Core L-507).
+AI is not an accessory to Omega42. It is a central instrument of the undertaking. The Navigator explores questions through the mathematical structure, develops possible relationships, generates alternative models, connects ideas across fields and follows the consequences of new directions. Different AI systems can explore independently and contribute contrasting perspectives. The project is designed to expand the reach of inquiry beyond familiar disciplinary boundaries.
 
-**What is new, and what is not.** The components are known: counting, the Fibonacci rule, the digital root, the old idea that everything is number, AI language models. The configuration is new: a coordinate anyone can recompute, a reading an AI writes under it and declares, and a judgment kept for you — with a prepared test (M267) that could show the coordinate adds nothing (Core L-508; Companion Part 71).
+The configuration is distinctive: an exact mathematical position, a structured AI exploration, a growing record of relationships and discoveries, and a human investigator who directs the journey. Omega42 invites mathematical invention, speculative development, conceptual synthesis, thought experiments and new questions. Its territory is not predetermined.
+
+The Originator directs the project and remains its author of record. AI systems have contributed to drafting text, tools and computations under that direction, with contributions and development history recorded in the project repository. The Core Specification defines the protocol; the Companion explains its foundations and wider possibilities. Detailed scientific methodology and epistemic treatment belong in the designated scientific materials, not as a limitation on the project's exploratory ambition.
 
 ## Welcome
 
@@ -94,8 +96,8 @@ This repository is the home of an open network built around the protocol:
 
 ## Open by design — free ideas, protected name
 
-- **All ideas are free.** Everything in the record — readings, explorations, inventions, code — is openly licensed and free for anyone to explore, extend and build on.
-- **No patents.** The project, and the company that stewards it, own no patent rights and never ask contributors for any ([`PATENT_PLEDGE.md`](PATENT_PLEDGE.md)). Inventions published here become prior art that no one can later monopolise ([`PRIOR_ART.md`](PRIOR_ART.md)).
+- **An open knowledge commons.** Accepted contributions are published under their stated open licences, subject to those licence terms and any applicable third-party rights. They are available to explore, extend and build on.
+- **No project patent enclosure.** The Company pledge states that the project and its stewarding company do not use patents to enclose Omega42 contributions or require contributors to assign patent rights ([`PATENT_PLEDGE.md`](PATENT_PLEDGE.md)). Individual contributor obligations depend on the applicable licence and any separately signed undertaking. Defensive publication can establish prior art against later claims covering adequately disclosed subject matter; it does not prevent every patent filing or cover undisclosed improvements ([`PRIOR_ART.md`](PRIOR_ART.md)).
 - **A protected name.** A legal entity will hold the names *Omega42* and *Ω42* and the badges that mark genuine Ω42 content, so that people can tell what really comes from the project ([`ENTITY.md`](ENTITY.md), [`TRADEMARK.md`](TRADEMARK.md)). The marks protect the signs of origin, never the ideas.
 - **Free forever, with more for specialists.** The protocol, the app and the record are free; a commercial edition will add hosted readings, batches and team services ([`COMMERCIAL.md`](COMMERCIAL.md)).
 

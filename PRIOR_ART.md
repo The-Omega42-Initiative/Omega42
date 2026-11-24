@@ -1,6 +1,6 @@
 # Open publication and prior art
 
-Ω42 publishes every accepted innovation, invention, design, method and piece of code openly, with a date and a cryptographic hash. The aim is a public commons: once an idea is published here, anyone may use it, and a later applicant cannot claim it as new.
+Ω42 publishes accepted innovations, inventions, designs, methods and code openly, with a date, provenance and a cryptographic hash. The aim is a public commons: to make disclosures publicly accessible and sufficiently detailed to establish prior art against later claims covering the subject matter actually disclosed, preserving freedom to use, develop and commercialise that knowledge. Publication does not prevent every patent application or confer rights over improvements that were not disclosed.
 
 **This page explains how the commons works. It is not legal advice.** Patent law differs between countries. If you hold or plan to seek a patent, speak to a patent attorney before you submit anything.
 
@@ -9,12 +9,12 @@
 When an innovation is accepted (form: *Publish an innovation (prior art)*):
 
 1. Its full text, figures and any code are committed to `submissions/prior-art/` under a disclosure ID such as `PA-2026-0001`.
-2. The intake bot computes the SHA-256 of the disclosure and appends a line to `records/prior_art/ledger.jsonl`: ID, title, contributor, area, the date of first public submission (the issue's creation time, UTC), the date of acceptance, and the hash.
+2. The intake bot computes the SHA-256 of the exact disclosure package and appends a line to `records/prior_art/ledger.jsonl`: ID, title, contributor, area, the public issue-submission timestamp, the date and time the complete enabling disclosure first became publicly accessible, the acceptance timestamp, the immutable version identifier, and the hash.
 3. The commit is pushed to the public repository and the disclosure appears on the site's *Prior Art* page, where it can be searched and cited.
 4. At each release the repository is archived, and where the Zenodo integration is enabled (`.zenodo.json`) the archive receives a DOI. Mirrors at Software Heritage and the Internet Archive are requested by the release workflow.
 5. Optionally, the ledger hash can be anchored with OpenTimestamps; the proof file is stored beside the ledger.
 
-The issue itself is public from the moment it is opened, so the date of disclosure is the issue's creation time, even before review.
+The issue-creation timestamp records when the submission issue became public; it does not automatically establish when a complete, enabling technical disclosure became public. The enabling-disclosure date must identify the first public availability of the exact version containing sufficient technical detail. If the complete enabling disclosure was already included in the public issue at creation, the two timestamps may coincide. Preserve the issue, repository commit, archive and version evidence separately. A hash establishes file integrity, not by itself the date or fact of public accessibility.
 
 ## What a good disclosure contains
 
