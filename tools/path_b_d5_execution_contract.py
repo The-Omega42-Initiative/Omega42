@@ -51,7 +51,7 @@ def evaluate(fields, approval, root, now_utc):
         if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ", value):
             return None
         try:
-            return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
+            return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S%z")
         except ValueError:
             return None
     expiry = parse_utc(approval["expires_utc"])
