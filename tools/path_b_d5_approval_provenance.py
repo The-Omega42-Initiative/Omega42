@@ -21,8 +21,7 @@ def parse_utc(value):
     if not isinstance(value, str) or not UTC.fullmatch(value):
         return None
     try:
-        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(
-            tzinfo=datetime.timezone.utc)
+        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S%z")
     except ValueError:
         return None
 
