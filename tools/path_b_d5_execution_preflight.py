@@ -42,7 +42,7 @@ def preflight(fields, root=ROOT):
     cwd = fields.get("CWD", ".")
     if not isinstance(cwd, str) or not cwd or os.path.isabs(cwd):
         issues.append("CWD must be nonempty and relative to repository root")
-    elif ".." in cwd.replace("\\", "/").split("/"):
+    elif ".." in re.split(r"[/\\]", cwd):
         issues.append("CWD traversal forbidden")
     else:
         if not isinstance(root, (str, os.PathLike)):
