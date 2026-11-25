@@ -243,6 +243,33 @@
    "closure": "each run filed as an APE under Appendix S, with its replies, their hashes and its scores (Core Appendix S.4.2)",
    "avenue": "P",
    "since": "SEQ 132"
+  },
+  {
+   "id": "O-28",
+   "item": "P versus NP read through Omega42: what, if anything, the finite law and its tower say about search versus verification (a registered investigation; no complexity statement follows from a finite system alone)",
+   "needs": "a Navigator and a complexity theorist",
+   "decider": "a written derivation checked under CBX-1",
+   "closure": "a derivation or a precise statement of why none applies, filed in records/",
+   "avenue": "P",
+   "since": "25 November 2026"
+  },
+  {
+   "id": "O-29",
+   "item": "Appendix S (optional, L-491): the cosmological-constant correspondences proposed in the 21 November documents, each checked against its stated arithmetic and, if the Striker opens the Appendix, against measured values",
+   "needs": "the Striker's opening of the Scientific Appendix",
+   "decider": "the arithmetic script and the Appendix S rules",
+   "closure": "each correspondence filed with its arithmetic, its status (CORRESPONDENCE) and its chance",
+   "avenue": "S",
+   "since": "25 November 2026"
+  },
+  {
+   "id": "O-30",
+   "item": "X-OBS-02 at depth 5: does any team of six native-phase observers of one seven-symbol aperture separate all 59,049 states? (seven suffice: RP-01)",
+   "needs": "either Co-Builder",
+   "decider": "exhaustive or certified search, records/cobuilder/xobs02_search.py",
+   "closure": "a six-phase certificate, or a proof that none exists for the aperture class searched",
+   "avenue": "P",
+   "since": "25 November 2026"
   }
  ]
 }

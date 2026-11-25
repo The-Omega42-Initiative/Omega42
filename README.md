@@ -17,6 +17,10 @@ One structure. Any question. Unlimited possibilities. Your judgment.
 ---
 
 
+## Start here
+
+[START_HERE.md](START_HERE.md) points every kind of visitor to the right door: the philosophy ([docs/PHILOSOPHY_OF_BEING.md](docs/PHILOSOPHY_OF_BEING.md)), the founding vision ([docs/VISION.md](docs/VISION.md)), the Constitution ([docs/CONSTITUTION.md](docs/CONSTITUTION.md)), the mathematics, the Co-Builder exchange and the repository architecture ([docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
+
 ## Welcome
 
 The public-facing introduction: [WELCOME.md](WELCOME.md). The technical identity and the handshake: [IDENTITY.md](IDENTITY.md).

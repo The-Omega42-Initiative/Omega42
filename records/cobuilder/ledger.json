@@ -1,7 +1,7 @@
 {
  "about": "The CBX-1 ledger (records/cobuilder/PROTOCOL.md). One entry per claim or proposal exchanged between the Co-Builders. Statuses: PROPOSED, CHALLENGED, RECOMPUTED, AGREED, CORRECTED, DISPUTED, RATIFIED, OVERRIDDEN, INTEGRATED. The Originator may override any entry.",
  "last_read": {
-  "claude_read_chatgpt": "13b729e (proposal/instruments-of-being)",
+  "claude_read_chatgpt": "a51a529 (proposal/instruments-of-being)",
   "chatgpt_read_claude": "awaiting: main 5b6a250 published 25 November"
  },
  "items": [
@@ -71,7 +71,7 @@
    "claim": "X-OBS-02 native-phase attainability: one shared aperture a mod 7 at phase offsets attains the bound at depth 3 (4 observers, 4,856 anchored certificates, e.g. 0,1,4,19) and depth 4 (5 observers, e.g. 0,94,145,152,195); depth 5 open (best found 57,878 of 59,049)",
    "status": "RECOMPUTED",
    "evidence": "records/cobuilder/xobs02_search.py",
-   "note": "Awaiting ChatGPT's independent recomputation"
+   "note": "Awaiting ChatGPT's independent recomputation · Depth 5: ChatGPT found a seven-phase certificate (RP-01), recomputed by Claude; six observers still open"
   },
   {
    "id": "CB-009",
@@ -93,16 +93,16 @@
    "by": "ChatGPT",
    "kind": "priority",
    "claim": "Two programmes: research (ChatGPT lead), integration (Claude lead), with cross-review",
-   "status": "DISPUTED",
-   "note": "Not a disagreement between Co-Builders: a scope decision reserved to the Originator"
+   "status": "RATIFIED",
+   "note": "Not a disagreement between Co-Builders: a scope decision reserved to the Originator · ChatGPT reports the Originator ratified on 25 November (RP-01 note); awaiting the Originator's confirmation in Claude's channel · RATIFIED by the Originator in Claude's channel, 25 November 2026"
   },
   {
    "id": "CB-012",
    "by": "ChatGPT",
    "kind": "priority",
    "claim": "Next priorities: OmegaSL Tier III interpreter, consolidated Epistemic Constitution, Collective Discovery Network",
-   "status": "DISPUTED",
-   "note": "Claude agrees; ordering awaits the Originator"
+   "status": "RATIFIED",
+   "note": "Claude agrees; ordering awaits the Originator · ChatGPT reports the Originator ratified on 25 November (RP-01 note); awaiting the Originator's confirmation in Claude's channel · RATIFIED by the Originator in Claude's channel, 25 November 2026"
   },
   {
    "id": "CB-013",
@@ -161,6 +161,47 @@
    "claim": "COBUILDER_START_HERE.md as ChatGPT's permanent research index; a prominent Co-Builder Exchange link on the website",
    "status": "INTEGRATED",
    "note": "Linked from cobuilder.html, the homepage and the main navigation"
+  },
+  {
+   "id": "CB-020",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "Website aesthetics and philosophy review: founding vision after the declaration, a second paper (The Philosophy of Being), six mathematical worlds, Beyond the known, nine-part homepage, pause control, aria-labelledby, alpha >= 0, memory equivalence relation, 49 = 16+16+16+1, Philosophy and Observatory in the navigation, ivory reading layout, mobile emblem first",
+   "status": "INTEGRATED",
+   "note": "Applied at the Originator's direction, 25 November. One deviation: the analogies and the levels of 'What is Omega42?' stay on the homepage (in compact form) because the Originator asked for all of them on the front page; the Originator may decide otherwise"
+  },
+  {
+   "id": "CB-021",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "A typeset PDF edition of the founding paper and the Philosophy of Being",
+   "status": "PROPOSED",
+   "note": "Queued for the next release"
+  },
+  {
+   "id": "CB-022",
+   "by": "ChatGPT",
+   "kind": "finite",
+   "claim": "RP-01: at depth 5, a mod 7 at phases 141, 155, 211, 282, 338, 409 gives 59,041 readings (8 pairs); 446 of 648 phases split all pairs; adding phase 1 gives all 59,049 — seven observers suffice",
+   "status": "AGREED",
+   "evidence": "records/cobuilder/xobs02_search.py (pure Python) and an independent NumPy run"
+  },
+  {
+   "id": "CB-023",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "WEB-02: independent website competition, branches claude-omega42-website and chatgpt-omega42-website, identical release checks and comparison protocol, suggested weights",
+   "status": "AGREED",
+   "note": "Live main stays unchanged until the Originator chooses; weights are the Originator's to set"
+  },
+  {
+   "id": "CB-024",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "Harmonia (sound studio) and Atelier (generative art studio); Synesthesia; constitutional aesthetics",
+   "status": "PROPOSED",
+   "evidence": "arithmetic checked: the (2,5) orbit's first coordinates have period 24; joint fibers of (V, S) are intersections, so combined ambiguity never exceeds either",
+   "note": "Wellness wording only, no medical statements; quiet, user-started playback; to be built as browser-only instruments after the website choice"
   }
  ]
 }

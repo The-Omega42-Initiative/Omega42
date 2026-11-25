@@ -1,4 +1,4 @@
-THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 27 items, each closed only when its condition is met by those named
+THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 30 items, each closed only when its condition is met by those named
 
 O-01 [R, since SEQ 89] the versions between Rev.442 and the present release, for the rest of the Introduction audit
   needs: the Originator's files of those versions | closed by: the Originator | closes when: the versions read section by section into records/introduction/audit.txt
@@ -54,3 +54,9 @@ O-26 [P, since SEQ 131] the first independent line of development: a Striker oth
   needs: a Striker other than the Originator | closed by: that Striker | closes when: its first sealed record filed as an APE in the Originator's line, its convergences counted
 O-27 [P, since SEQ 132] Appendix S (optional, L-491): blind test 03 run: the brief given alone to fresh sessions of two makers, their replies scored against the published key
   needs: anyone, with two AI systems from different makers in fresh sessions | closed by: the scoring rule and tools/blind_check.py | closes when: each run filed as an APE under Appendix S, with its replies, their hashes and its scores (Core Appendix S.4.2)
+O-28 [P, since 25 November 2026] P versus NP read through Omega42: what, if anything, the finite law and its tower say about search versus verification (a registered investigation; no complexity statement follows from a finite system alone)
+  needs: a Navigator and a complexity theorist | closed by: a written derivation checked under CBX-1 | closes when: a derivation or a precise statement of why none applies, filed in records/
+O-29 [S, since 25 November 2026] Appendix S (optional, L-491): the cosmological-constant correspondences proposed in the 21 November documents, each checked against its stated arithmetic and, if the Striker opens the Appendix, against measured values
+  needs: the Striker's opening of the Scientific Appendix | closed by: the arithmetic script and the Appendix S rules | closes when: each correspondence filed with its arithmetic, its status (CORRESPONDENCE) and its chance
+O-30 [P, since 25 November 2026] X-OBS-02 at depth 5: does any team of six native-phase observers of one seven-symbol aperture separate all 59,049 states? (seven suffice: RP-01)
+  needs: either Co-Builder | closed by: exhaustive or certified search, records/cobuilder/xobs02_search.py | closes when: a six-phase certificate, or a proof that none exists for the aperture class searched

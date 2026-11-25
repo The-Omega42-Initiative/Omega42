@@ -135,6 +135,15 @@
    "why_checks_missed_it": "The threshold was chosen before computing what the bound guarantees.",
    "correction": "RC-01-R1 marked REVISED; RC-01-R2 registered with a tenfold threshold derived from the bound, and verified.",
    "prevention": "A numerical threshold is derived from the stated bound, never chosen by eye."
+  },
+  {
+   "id": "COR-016",
+   "date": "2026-11-25",
+   "what_was_wrong": "Construct v7.0 (21 November documents) stated a phase step of pi/18 for the 24-cycle; one step of a 24-cycle is 2pi/24 = pi/12, and pi/18 does not follow from the construct (it would correspond to a 36-cycle).",
+   "how_detected": "Recomputation while answering the 21 November documents.",
+   "why_checks_missed_it": "The figure arrived in a relayed document outside the release checks.",
+   "correction": "The step of the canonical loop is pi/12; pi/18 is recorded only as the step of a 36-cycle (the CEG-17 shell rotation), not of the native loop.",
+   "prevention": "Every angle quoted for the loop is derived as 2pi/period in the verification script before it is published."
   }
  ]
 }

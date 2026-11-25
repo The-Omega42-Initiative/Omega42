@@ -401,7 +401,7 @@
   "normative_changes_pending_esc": [],
   "navigator_update_needed": "read the Core edition of this release; the date-gated rules in force are listed in docs/AMENDMENTS_PENDING.md"
  },
- "corrections": 15,
+ "corrections": 16,
  "compatibility": "The Companion elaborates the Core and never modifies it (Core Part 10.5.1); where they differ, the Core holds.",
  "checksums": "SHA256SUMS"
 }
