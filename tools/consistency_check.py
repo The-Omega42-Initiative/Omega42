@@ -23,6 +23,7 @@ Checks:
   CLAIM        an affirmative use of "claim" in prose, or an assertion verb aimed at the world (Core L-505)
   OBSOLETE     no retired formulation survives an amendment
   SPELLING     one spelling per word (American -ize / -or / -er forms)
+  XREF-DESC    (INFO) a 'Part N (description)' pointer whose description shares no word with Part N's heading
   DUPLICATE    a normative sentence of 14 or more words stated twice in the Core (8-word shingles,
                overlap 0.6 or more), counted on sentences at least half prose, so that a shared equation,
                formula or definition in symbols is not read as a repetition; deliberate restatements are listed in ALLOWED_RESTATEMENTS
@@ -290,6 +291,23 @@ def main():
         if any(x in txt for x in ALLOWED_RESTATEMENTS):
             continue
         conflict('DUPLICATE', 'Core', sents[b][0], 'restates paragraph [%d]: "%s"' % (sents[a][0], sents[b][1][:100]))
+    # XREF-DESC (INFO): an unqualified "Part N (description)" inside the Companion whose description shares no content word with
+    # Part N's heading -- a pointer that may have outlived a renumbering. Reported for review, never a conflict: a description
+    # may legitimately paraphrase its target (added 25 November 2026, Co-Builder consistency check).
+    stopw = set('the a an of and in to for its as on is it by with from at or what how why this that be are their not one two'.split())
+    cw = lambda s: {w for w in re.findall(r'[a-z]{4,}', s.lower()) if w not in stopw}
+    titles = {}
+    for i, t, code in D['Companion']:
+        m = None if code else re.match(r'^(?:#+\s*)?PART\s+(\d+):\s*(.*)', t)
+        if m:
+            titles.setdefault(m.group(1), m.group(2))
+    for i, t, code in D['Companion']:
+        if code:
+            continue
+        for m in re.finditer(r'(?<!Core )(?<!Companion )\bParts? (\d+)\s*\(([^()0-9]{12,90})\)', t):
+            h = titles.get(m.group(1))
+            if h and not (cw(m.group(2)) & cw(h)):
+                info('XREF-DESC Companion [%d] Part %s described as "%s"; its heading is "%s"' % (i, m.group(1), m.group(2), h[:80]))
     for c in conflicts:
         print(c)
     for x in infos:
