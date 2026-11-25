@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""STP tests H-001..H-004: polarity structure of the Construct's 26 seeds, read from the original workbook.
+"""STP tests H-001..H-004: polarity of the Construct's 26 seeds.
 
 Usage: python3 -I tools/test_seed_pairs.py <path-to-PRIMORDIAL-FRACTURE.xlsx>
 

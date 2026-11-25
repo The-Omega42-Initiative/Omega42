@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""companion_compact.py -- the Companion Document in brief, for AI systems with small context windows.
+"""companion_compact.py -- the compact Companion.
 
 The Companion's prose edition (ai/Omega42_Companion_V335_Rev450.md, rendered from the .docx by tools/ai_edition.py) runs to
 about 500,000 tokens. This tool renders, from that edition and never by hand, a compact edition that fits a small window:

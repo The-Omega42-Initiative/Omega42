@@ -2,14 +2,14 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev450.md": {
-   "chars": 1348252,
-   "tokens_est": 337063,
-   "sha256": "0f366c1cc657ec7570f6fc49c50230944f8038cd3bb75136f4eef1db892dc018"
+   "chars": 1348245,
+   "tokens_est": 337062,
+   "sha256": "7cc40f312405aa328d6c5dc3c0721cdecbc2bad72a63ce1109f50e89f3fbad65"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2026257,
-   "tokens_est": 506565,
-   "sha256": "ff43e30286b095269d8f8a8b72acc432c3434349fa4510893c53c063e7e6f6ba"
+   "chars": 2033585,
+   "tokens_est": 508397,
+   "sha256": "b23760da02e6026c5574d0e43ef554b13aa586590da8e71c1402d30bb82dec97"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 476262,
@@ -1293,9 +1293,9 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 33722,
-   "tokens_est": 8431,
-   "sha256": "a7b43c6642c3a8b900262b551fb8ac7504e1d7fb24489b2d390fd93f2da4a60f"
+   "chars": 33715,
+   "tokens_est": 8429,
+   "sha256": "fdb31a42c9be7e6d366a357d05dd8d782be32f470a6f887d6ff1205e4db6af81"
   },
   {
    "doc": "Companion",
@@ -5388,9 +5388,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 10796,
-   "tokens_est": 2699,
-   "sha256": "0daede50de4d0467f0503b83689ca1aa4061d85d416174b6cc4a58c9a8390373"
+   "chars": 11471,
+   "tokens_est": 2868,
+   "sha256": "a33cee6712ca8d36784ee8e8c05a9d692b55cd78fc46071c76d652dfe14a71bc"
   },
   {
    "doc": "Companion",
@@ -5402,9 +5402,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 187528,
-   "tokens_est": 46882,
-   "sha256": "bf2740bfa77f3aa35d167393bd1a53f148443a5b56092174b6e4d508dd03026c"
+   "chars": 194181,
+   "tokens_est": 48545,
+   "sha256": "916e9f24f9bfe6e068b52aa5f27c4b7950f63d9e3dae07025ac4295593bf519a"
   }
  ]
 }

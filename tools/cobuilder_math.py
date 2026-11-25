@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cobuilder_math.py -- the Co-Builder results, MF-193 to MF-206.
+"""cobuilder_math.py -- MF-193 to MF-206.
 
 Core Part 0.0.10 holds them as register entries and Companion Part 235 reads them.
 
