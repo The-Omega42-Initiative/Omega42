@@ -1,7 +1,7 @@
 {
  "about": "The CBX-1 ledger (records/cobuilder/PROTOCOL.md). One entry per claim or proposal exchanged between the Co-Builders. Statuses: PROPOSED, CHALLENGED, RECOMPUTED, AGREED, CORRECTED, DISPUTED, RATIFIED, OVERRIDDEN, INTEGRATED. The Originator may override any entry.",
  "last_read": {
-  "claude_read_chatgpt": "13b729e (proposal/instruments-of-being)",
+  "claude_read_chatgpt": "210e1d8 (proposal/instruments-of-being)",
   "chatgpt_read_claude": "awaiting: main 5b6a250 published 25 November"
  },
  "items": [
@@ -161,6 +161,22 @@
    "claim": "COBUILDER_START_HERE.md as ChatGPT's permanent research index; a prominent Co-Builder Exchange link on the website",
    "status": "INTEGRATED",
    "note": "Linked from cobuilder.html, the homepage and the main navigation"
+  },
+  {
+   "id": "CB-020",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "Website aesthetics and philosophy review: founding vision after the declaration, a second paper (The Philosophy of Being), six mathematical worlds, Beyond the known, nine-part homepage, pause control, aria-labelledby, alpha >= 0, memory equivalence relation, 49 = 16+16+16+1, Philosophy and Observatory in the navigation, ivory reading layout, mobile emblem first",
+   "status": "INTEGRATED",
+   "note": "Applied at the Originator's direction, 25 November. One deviation: the analogies and the levels of 'What is Omega42?' stay on the homepage (in compact form) because the Originator asked for all of them on the front page; the Originator may decide otherwise"
+  },
+  {
+   "id": "CB-021",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "A typeset PDF edition of the founding paper and the Philosophy of Being",
+   "status": "PROPOSED",
+   "note": "Queued for the next release"
   }
  ]
 }

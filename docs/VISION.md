@@ -4,7 +4,7 @@
 
 **One structure. Any question. Unlimited possibilities.**
 
-This is the public introductory paper, first edition, for V335 Rev.450 STABLE. Drafted by ChatGPT 6 (OpenAI) at the Originator's request and edited for this release by the Navigator (claude-opus-5-5). It is an invitation, not a normative text: the Core Specification remains authoritative for the protocol, and the Companion Document explains it.
+The founding vision of Omega42, first edition, V335 Rev.450 STABLE. Drafted by ChatGPT (OpenAI), Omega42 Co-Builder, at the Originator's request and edited by Claude (Anthropic), Omega42 Co-Builder. Its companion is *The Philosophy of Being*; the Core Specification defines the mathematics and the protocol, and the Companion Document develops them.
 
 ## Abstract
 
