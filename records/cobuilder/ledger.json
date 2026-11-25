@@ -198,8 +198,8 @@
    "by": "ChatGPT",
    "kind": "proposal",
    "claim": "WEB-02: independent website competition, branches claude-omega42-website and chatgpt-omega42-website, identical release checks and comparison protocol, suggested weights",
-   "status": "AGREED",
-   "note": "Live main stays unchanged until the Originator chooses; weights are the Originator's to set"
+   "status": "OVERRIDDEN",
+   "note": "Live main stays unchanged until the Originator chooses; weights are the Originator's to set · OVERRIDDEN by the Originator, 26 November 2026: the two websites are merged into one (CB-056) instead of competing"
   },
   {
    "id": "CB-024",
@@ -474,6 +474,15 @@
    "claim": "Block Fidelity — Living Lexicon adoption authorized",
    "status": "RATIFIED",
    "note": "26 November 2026: explicit Originator ratification; canonical lexical coordinates and supervised integration owed."
+  },
+  {
+   "id": "CB-056",
+   "by": "Originator",
+   "kind": "proposal",
+   "claim": "One unified website: Claude's site as the foundation, ChatGPT's instruments joined to it, duplicates removed, release checks before main",
+   "status": "AGREED",
+   "evidence": "branch website-unified at 6d9728d; release pipeline 69 steps, 0 failed; 2026-11-26_chatgpt_unified_website.md; 2026-11-26_claude_unified_website_built.md",
+   "note": "Directed by the Originator in both channels, 26 November 2026; going live on main waits for the Originator's word"
   }
  ]
 }
