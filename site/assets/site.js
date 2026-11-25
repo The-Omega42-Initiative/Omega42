@@ -180,3 +180,15 @@
   });
   start();
 })();
+/* The emblem's pause control. */
+(function () {
+  var b = document.querySelector('.emb-pause'), svg = document.querySelector('svg.emblem');
+  if (!b || !svg) return;
+  b.addEventListener('click', function () {
+    var p = !svg.classList.contains('paused');
+    svg.classList.toggle('paused', p);
+    try { p ? svg.pauseAnimations() : svg.unpauseAnimations(); } catch (e) {}
+    b.setAttribute('aria-pressed', String(p)); b.textContent = p ? '▶ play' : '❚❚ pause';
+    b.setAttribute('aria-label', p ? 'Play the emblem animation' : 'Pause the emblem animation');
+  });
+})();
