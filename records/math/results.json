@@ -729,7 +729,7 @@
   },
   {
    "id": "MF-67",
-   "statement": "the largest sum of three unit fractions below 1 is 1/2 + 1/3 + 1/7 = 41/42, so the (2, 3, 7) hyperbolic triangle has the least area of any triangle group, pi/42; its angles pi/2, pi/3, pi/7 carry the record's three constants (CAS-YY = -1/2, the prime 3, Omega = 1/7), and 1/2 + 1/3 + 1/7 + 1/42 = 1",
+   "statement": "the largest sum of three unit fractions below 1 is 1/2 + 1/3 + 1/7 = 41/42, so the (2, 3, 7) hyperbolic triangle has the least area of any hyperbolic triangle with angles pi/p, pi/q, pi/r, pi/42 (MF-206); its angles pi/2, pi/3, pi/7 carry the record's three constants (CAS-YY = -1/2, the prime 3, Omega = 1/7), and 1/2 + 1/3 + 1/7 + 1/42 = 1",
    "domain": "triangle groups (p, q, r), p <= q <= r < 60; the hyperbolic plane on which the law acts (MF-62)",
    "derivation": "Gauss-Bonnet: area = pi(1 - 1/p - 1/q - 1/r); exhaustive search; the global minimum is classical (Siegel)",
    "tool": "tools/hurwitz.py",
@@ -2111,6 +2111,160 @@
    "check": "quantum-walk:",
    "depends": "MF-127",
    "does_not_follow": "the asymptotic exponent; Romanelli ties it to the walk's trace map",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-193",
+   "statement": "a seven-symbol aperture h on the 81 states separates them all in three observations, the histories numbering 7, 49 and 81 after one, two and three steps; since 7^2 = 49 < 81 no seven-symbol aperture does it in two, so d_min(7) = 3",
+   "domain": "seven-symbol apertures on the 81 states mod 9",
+   "derivation": "the certificate table of ChatGPT (CB-001), its histories counted exhaustively; the bound by counting",
+   "tool": "tools/cobuilder_math.py",
+   "check": "aperture-optimal:",
+   "depends": "MF-31",
+   "does_not_follow": "that the certificate table is unique, or that a structural aperture attains three: a mod 7 needs six (MF-194)",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-194",
+   "statement": "the structural aperture h = a mod 7 separates 7, 49, 73, 77, 80 and 81 states after 1 to 6 observations, and resolves a state first at round 2 for 25 states, 3 for 44, 4 for 4, 5 for 6 and 6 for 2; modulo 7 the law has order 16 and the 49 pairs split 1 + 16 + 16 + 16",
+   "domain": "the aperture a mod 7 on the 81 states; the law on (Z/7)^2",
+   "derivation": "exhaustive histories of all 81 states; the orbits of the law mod 7",
+   "tool": "tools/cobuilder_math.py",
+   "check": "aperture-mod7:",
+   "depends": "MF-193",
+   "does_not_follow": "that six is least for every coordinate aperture of seven classes: the least length depends on the partition (MF-200)",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-195",
+   "statement": "the shift U of the law on functions of the 81 states has the harmonic j = 0 to 23 with multiplicity m_j = 3 + [3 | j] + [j = 0]; the operators commuting with U have dimension sum m_j^2 = 25 + 7 x 16 + 16 x 9 = 281, and the generic stabilizer sum (m_j - 1)^2 = 143",
+   "domain": "the permutation representation of the law on l^2(81)",
+   "derivation": "on an orbit of length l the characters k carry the harmonic (24/l)k; counting",
+   "tool": "tools/cobuilder_math.py",
+   "check": "harmonics:",
+   "depends": "MF-34",
+   "does_not_follow": "a physical spectrum; the multiplicities are those of the permutation representation only",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-196",
+   "statement": "with L = 2I - U - U*, the coherence operator C_alpha = (I + alpha L/4)^-1, alpha >= 0, acts on the harmonic j by c_j = 1/(1 + alpha sin^2(pi j/24)); it is self-adjoint, positive and a contraction, c_j lies in (0, 1] with c_0 = 1, and it commutes with U",
+   "domain": "the operators on l^2(81) built from the shift",
+   "derivation": "L acts on the harmonic j by 4 sin^2(pi j/24), checked on every eigenvector at alpha = 0, 1/4, 1, 4 and 10",
+   "tool": "tools/cobuilder_math.py",
+   "check": "coherence:",
+   "depends": "MF-195",
+   "does_not_follow": "that C_alpha is invertible for alpha < -1, or a preferred alpha: the family is free in alpha >= 0",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-197",
+   "statement": "the reversible memory T_g(x, m) = (N x, m + g(x)) on states x and memories m mod 9 has its memory function g classified, under g ~ g + f o N - f, by the vector of its five orbit sums, every vector of (Z/9)^5 occurring, so there are 59,049 memory classes; a unit sum on one 24-orbit gives a single cycle of length 216 = 24 x 9",
+   "domain": "the memory extensions of the law mod 9 (CRM-02, CB-003)",
+   "derivation": "orbit sums are coboundary-invariant; a function with zero orbit sums is the coboundary built along each orbit; delta functions reach every vector",
+   "tool": "tools/cobuilder_math.py",
+   "check": "memory:",
+   "depends": "MF-31",
+   "does_not_follow": "that the winding classifies general histories: it classifies full revolutions of each orbit",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-198",
+   "statement": "from modulus 3^k to 3^(k+1) each nonzero orbit of length L lifts to three orbits of length 3L and the still point to the still point and one 8-cycle; the harmonic l has multiplicity m_l = [l = 0] + sum_(j = 1..k) 3^(j - 1)[3^(k - j) | l]; the memory pullback from 81 to 729 states has image 729 = 9 x 3^4 and kernel 81",
+   "domain": "the tower mod 3, 9, 27, 81 (CRC-01 to CRC-04, CB-004)",
+   "derivation": "exhaustive lifting of orbits at k = 1, 2, 3; the multiplicity formula at depths 2 and 3; the rank of the pullback over all 9^5 coefficient vectors",
+   "tool": "tools/cobuilder_math.py",
+   "check": "renormalization:",
+   "depends": "MF-31, MF-197",
+   "does_not_follow": "that winding is kept under lifting: 81 classes are lost in the pullback",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-199",
+   "statement": "two observers of a mod 7 at phases 0 and d need 5, 4, 3, 2, 2, 2, 2, 2, 3, 4, 5, 6, 5, 4, 3, 2, 2, 2, 2, 2, 3, 4, 5 rounds to separate all 81 states for d = 1 to 23; 24 of the 253 anchored triples (0, d, e) separate them in one round, (0, 2, 5) among them",
+   "domain": "teams of the aperture a mod 7 on the 81 states (COT-04, CB-005)",
+   "derivation": "exhaustive over every d and every anchored triple",
+   "tool": "tools/cobuilder_math.py",
+   "check": "collective:",
+   "depends": "MF-194",
+   "does_not_follow": "a rule for the best phase in general: the table is that of a mod 7 at depth 2",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-200",
+   "statement": "over the 378 seven-class apertures that merge two disjoint pairs of values of a, the least trace length that separates all 81 states is 5 for 270, 6 for 78, 7 for 6, 8 for 3, and never for 21",
+   "domain": "coordinate apertures of seven classes on the 81 states (CB-010)",
+   "derivation": "exhaustive over the 378 partitions",
+   "tool": "tools/cobuilder_math.py",
+   "check": "partition:",
+   "depends": "MF-194",
+   "does_not_follow": "that the partition into residues mod 7 is the best: 270 partitions do better",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-201",
+   "statement": "an observer team of seven-symbol readings that separates the 9^k states at depth k needs at least r_min(k) = ceil(k log_7 9) readings, 2, 3, 4, 5 and 6 for k = 1 to 5, and freely constructed observers attain it with the base-7 digits of the state index",
+   "domain": "observers with seven outcomes on (Z/3^k)^2 (COT-06, CB-007)",
+   "derivation": "counting 7^r >= 9^k; the digit construction checked at k = 1, 2, 3",
+   "tool": "tools/cobuilder_math.py",
+   "check": "observer-bound:",
+   "depends": "MF-193",
+   "does_not_follow": "that native-phase observers of one aperture attain it at every depth (MF-202; open at depth 5, O-30)",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-202",
+   "statement": "one shared aperture a mod 7 read at native phases of the law separates every state: at depth 2 by 24 anchored three-observer teams, (0, 2, 5) among them; at depth 3 by four observers (0, 1, 4, 19), one of 4,856 anchored certificates; at depth 4 by five observers (0, 94, 145, 152, 195); at depth 5 the six phases (141, 155, 211, 282, 338, 409) give 59,041 readings of 59,049 and adding phase 1 separates all 59,049, so seven observers suffice",
+   "domain": "the aperture a mod 7 at phases of the law mod 3^k, k = 2 to 5 (X-OBS-02, CB-008, CB-022)",
+   "derivation": "injectivity of the joint reading checked state by state; the depth-3 count of 4,856 in records/cobuilder/xobs02_search.py",
+   "tool": "tools/cobuilder_math.py",
+   "check": "native-phases:",
+   "depends": "MF-199, MF-201",
+   "does_not_follow": "that six observers suffice at depth 5; that is open (O-30)",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-203",
+   "statement": "modulo the split prime 11, x^2 = x + 1 has roots 8 and 4, of orders 10 and 5, and the law splits the 121 pairs as 1 + 2 x 5 + 11 x 10",
+   "domain": "the law mod 11",
+   "derivation": "exhaustive orbit census; the roots by substitution",
+   "tool": "tools/cobuilder_math.py",
+   "check": "split-11:",
+   "depends": "MF-28",
+   "does_not_follow": "a statement about other split primes; each has its own census",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-204",
+   "statement": "the half turn U^12 has eigenspaces of dimension 41 (+1) and 40 (-1); A^12 = -I, so every state is carried to its negative, and (0, 0) is the one state equal to its own negative; Q^2, with Q = a^2 + ab - b^2, is 1, 4 and 7 on the three 24-orbits and 0 on the 8-cycle and the still point, so (period, Q^2) names all five orbits",
+   "domain": "the 81 states mod 9 (SR-01)",
+   "derivation": "dimension count orbit by orbit; Q on one point of each orbit",
+   "tool": "tools/cobuilder_math.py",
+   "check": "half-turn:",
+   "depends": "MF-03",
+   "does_not_follow": "that the antipode of a state is a different state for every state: the still point is its own antipode",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-205",
+   "statement": "a distribution p = (0.1, 0.9) under multipliers (1, 1/3) gives (0.25, 0.75) when they are probability weights and, when they are amplitudes, energy weights (1, 1/9) and (0.5, 0.5), the entropy ln 2; under either reading the entropy rises",
+   "domain": "two-outcome distributions under attenuation (CB-006, corrected)",
+   "derivation": "renormalization of the weighted distribution, exact",
+   "tool": "tools/cobuilder_math.py",
+   "check": "multipliers:",
+   "depends": "none",
+   "does_not_follow": "which reading a given instrument uses: OmegaSL types amplitude and energy multipliers",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-206",
+   "statement": "among hyperbolic triangles with angles pi/p, pi/q, pi/r the least area pi(1 - 1/p - 1/q - 1/r) is pi/42, at (2, 3, 7): with p <= q <= r, p >= 3 gives at least pi/12, p = 2 with q >= 4 at least pi/20, and (2, 3, r) gives pi(1/6 - 1/r), least at r = 7",
+   "domain": "hyperbolic triangles with angles pi over integers (CB-009)",
+   "derivation": "the three cases above, with an enumeration of p <= q <= r < 60",
+   "tool": "tools/cobuilder_math.py",
+   "check": "least-triangle:",
+   "depends": "MF-67",
+   "does_not_follow": "a minimality among hyperbolic triangles with arbitrary angles, whose areas take every positive value below pi",
    "status": "EXACT"
   }
  ]

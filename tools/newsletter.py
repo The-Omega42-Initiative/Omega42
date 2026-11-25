@@ -21,6 +21,25 @@ LABEL = {'navigation': 'Navigations', 'review': 'Reviews',
          'result': 'Experimental results (each under its own investigation\'s question, never a status of \u03a942)'}
 
 
+def discoveries(month):
+    """the mathematical register's size and the Co-Builder exchange of the month (records/math, records/cobuilder)"""
+    import json, re
+    L = ['## Discoveries and the Co-Builder exchange', '']
+    try:
+        res = json.load(open(os.path.join(R.ROOT, 'records', 'math', 'results.json'), encoding='utf-8'))['results']
+        L.append('- The mathematical register holds %d results, %s to %s, each with the command that recomputes it (Core Part 0.0.10).' % (len(res), res[0]['id'], res[-1]['id']))
+    except Exception as e:
+        L.append('- _The register could not be read: %s_' % e)
+    d = os.path.join(R.ROOT, 'records', 'cobuilder')
+    msgs = sorted(f for f in (os.listdir(d) if os.path.isdir(d) else []) if f.startswith(month) and f.endswith('.md'))
+    for f in msgs:
+        head = open(os.path.join(d, f), encoding='utf-8').readline().strip()
+        L.append('- %s: %s' % (f[:10], re.sub(r'^#\s*', '', head)[:140] if head.startswith('#') else f[11:-3].replace('_', ' ')))
+    if not msgs: L.append('- No Co-Builder messages this month.')
+    L += ['', '_Editor: the discovery of the month, with its status (proved, computed, interpretation or proposal) and its recompute line._', '']
+    return L
+
+
 def draft(month):
     items = [i for i in R.library() if i['date'].startswith(month)]
     L = ['# Ω42 — %s' % month, '', 'The month in the open record.', '']
@@ -40,6 +59,7 @@ def draft(month):
               '## Corrections', '', '_Editor: corrected navigations, each a new navigation citing the original, with stable links._', '']
     except Exception as e:
         L += ['_The record in numbers could not be computed: %s_' % e, '']
+    L += discoveries(month)
     pairs = []
     for a in range(len(navs)):
         for b in range(a + 1, len(navs)):
@@ -88,6 +108,7 @@ def selftest():
     d = draft('2026-10')
     check('the draft states who receives it and that its content stays public', 'registered contributor' in d and 'open record' in d)
     check('the draft carries the record counts and the Register meetings', '## The record this month' in d and '## New meetings in the Congruence Register' in d)
+    check('the draft reports the mathematical register and the Co-Builder exchange', '## Discoveries and the Co-Builder exchange' in d and 'mathematical register holds' in d)
     print('NEWSLETTER SELFTEST: %s' % ('PASS' if ok else 'FAIL'))
     return ok
 

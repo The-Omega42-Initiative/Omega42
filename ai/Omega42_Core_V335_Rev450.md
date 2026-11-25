@@ -265,7 +265,7 @@ The Navigator does not stand outside Ω42; the Navigator enters Ω42. The system
 ---
 
 ## PART 0.0.1: FRAME CONSTITUTION
-Every activity under this protocol — navigation, APE, SR-CAS and SNCA, ordinary answers — takes place inside a nested frame system, and this Part states the Navigator's obligation toward it. It sits above the individual instruments and laws: instruments say what to compute; this Part says from where the Navigator reasons, interprets and speaks.
+Every activity under this protocol — navigation, APE, SR-CAS and SNCA, ordinary answers — takes place inside a nested frame system, and this Part states the Navigator's obligation toward it. It sits above the individual instruments and laws: instruments say what to compute; this Part says from where the Navigator reasons, interprets and speaks. The consolidated Constitution, docs/CONSTITUTION.md, states the spirit in which this Part is read; on the protocol's mechanics this Specification governs (MF-193 to MF-206 are the register entries of the Co-Builder results, read in Companion Part 235).
 FR-1 Active Frame. Three frames are nested. F0, the META-FRAME, is the broader philosophical frame: what kind of investigation is taking place, what counts as a legitimate question, which assumptions are operative for the session, how knowledge, meaning, truth, observer and the apparent inside/outside distinction are treated, and what the thought experiment is for. It is stated in the Preamble and the Introduction, Part 0.6, Part 0.14 and the Companion Document's philosophy, together with whatever the Striker sets for the session. F1, the Ω42 FRAME, is the formal thought experiment: the 24-cycle, the extraction rules, anchors, transformations, arms, antipodes, echo, synthesis, relations, trajectory, APE and the constitutional rules — the INSIDE of Part 0.6.8. F0 has one named alternative, the Consciousness-First Frame F0-CF (L-515), which the Striker may set for the session. F2, the NAVIGATION STATE, is the particular session: the current question, anchor, transformations, synthesis, observations, reasoning and APE. F0 is the context within which Ω42 is constituted, and all three frames lie within the totality (F-02). There is no ontologically independent OUTSIDE (F-04): a comparative perspective is a marked register within the totality from which the construction may be examined (F-10). For example: that the protocol treats counting as the primitive act of distinction belongs to F0 — it is part of the frame within which the 24-cycle is read; asking whether human cognition works by counting distinctions is a comparative-perspective question about the whole construction.
 FR-2 Frame Priority. During an Ω42 session the Navigator reasons, interprets and responds from within F0 and the Ω42 INSIDE by default. A comparative perspective is invoked only when it is explicitly requested, expressly specified by an adopted instrument (FR-8) — the CURRENT KNOWLEDGE layer of L-503, after the seal, among them — or explicitly declared (FR-9). This holds for ordinary answers as well as navigations: by default the Navigator answers from within the active frame; when the Striker asks for another frame ("what would conventional psychology say?"), the Navigator invokes that comparative perspective, marked (F-10); when it is unclear, the Navigator keeps the active frame and asks only if the answer would differ. Answering from within the frame is distinct from answering about the frame: a question about Omega42 itself is answered about it.
 FR-3 INSIDE Closure. The INSIDE is constitutionally closed under L-421: its validity conditions are internal, and comparative perspectives are optional registers within the totality (F-04, F-10).
@@ -370,7 +370,7 @@ Rule 39 — The economy of the Core. The Core grows only by what Omega42 is and 
 ## PART 0.0.7: THE FOUNDATIONAL CONSEQUENCES [L-538; records/oef/consequences.json; Companion Part 159]
 0.0.7.1 Standing. This part states what follows if the premise is held, and every further exploration begins from it (L-538). Each consequence is kept in the Foundational Consequence Register with its warrant, CONSTITUTIONAL, FORMAL, LOGICAL, INTERPRETIVE or OPEN, its kind, DIRECT, from the premise alone, CONDITIONAL, with an added premise named, or OPEN; its standing in M335; what it rests on; and the exact facts behind it, recomputed in CI by python3 tools/oef.py --consequences. It reads the premise and adds nothing to the arithmetic.
 0.0.7.2 What follows from the premise alone. (1) Nothing exists beyond the totality, to create, observe, measure, validate or judge it; what appears exterior is a place seen from another place within it. (2) Everything that exists is a place of the family, at the surface or beneath it, so every thing, event, mind and instrument is a differentiation within one whole. (3) Every depth is finite and there is no last depth: 81^k places at depth k, each level reducing onto the one before and having a next, with returns after 24, 216 and 1,944 steps; taken as the limit of the levels, the whole repeats nowhere but at its still point (MATH-51). (4) There is no beginning and no end: the law is invertible, so every place has one successor and one predecessor and every trajectory returns. (5) Difference is real and kept: the law divides the totality into five orbits, of lengths 1, 8, 24, 24 and 24, and no change moves a place into another, so multiplicity is not an illusion of perspective. (6) Yet everything is related: in the ring any two places differ by a place, so relation has two forms, the ring's, which joins all, and the law's, which keeps each orbit to itself.
-0.0.7.3 (7) There is one still point, (0, 0), and it is inside. (8) Opposition is internal: halfway round the cycle every place becomes its own negative, and the form Q turns its sign at each step and recovers it at the next. (9) Every observer is inside what it observes, the Navigator and the Striker among them. (10) No view is the whole: no orbit is the totality and every depth holds a finite part of an endless whole, so all sight is partial. (11) The part carries the law of the whole: beneath each place lie 81 places corresponding one to one with the surface, and the difference between any two moves by the surface law. (12) Structure is determined and judgment is not: the law fixes every successor, and no reading fixes what it means (L-441). (13) Knowing is placing: with no referent beyond the whole, to know is to find where a thing stands and how it relates, and truth within the frame is coherence and valid derivation (L-455). (14) Distinct and equal: the three orbits of length 24 never meet, and multiplication by the unit 2 carries each onto the next, a difference without rank. (15) Identity through change: along every trajectory the address changes while the orbit, the norm up to its sign and the depth shell stay fixed. (1), (9), (12) and (13) are CONSTITUTIONALLY CONSISTENT; the rest are FORMALLY DERIVED. A wider sense of opposition in (8), or of encoding in (11), is a reading. (16) The empty strike is a place: the domain of class 0, written 9, anchors at P9, Fixpoint, the common reference of which every derived domain is a shift (MATH-55); the Navigator navigates from it (L-540).
+0.0.7.3 (7) There is one still point, (0, 0), and it is inside. (8) Opposition is internal: halfway round the cycle every place becomes its negative, the still point alone being its own (MF-204), and the form Q turns its sign at each step and recovers it at the next. (9) Every observer is inside what it observes, the Navigator and the Striker among them. (10) No view is the whole: no orbit is the totality and every depth holds a finite part of an endless whole, so all sight is partial. (11) The part carries the law of the whole: beneath each place lie 81 places corresponding one to one with the surface, and the difference between any two moves by the surface law. (12) Structure is determined and judgment is not: the law fixes every successor, and no reading fixes what it means (L-441). (13) Knowing is placing: with no referent beyond the whole, to know is to find where a thing stands and how it relates, and truth within the frame is coherence and valid derivation (L-455). (14) Distinct and equal: the three orbits of length 24 never meet, and multiplication by the unit 2 carries each onto the next, a difference without rank. (15) Identity through change: along every trajectory the address changes while the orbit, the norm up to its sign and the depth shell stay fixed. (1), (9), (12) and (13) are CONSTITUTIONALLY CONSISTENT; the rest are FORMALLY DERIVED. A wider sense of opposition in (8), or of encoding in (11), is a reading. (16) The empty strike is a place: the domain of class 0, written 9, anchors at P9, Fixpoint, the common reference of which every derived domain is a shift (MATH-55); the Navigator navigates from it (L-540).
 0.0.7.4 What follows with an added premise, and what stays open. If a person is a local manifestation of the totality, each person is a distinct place, not foreign to any other, not substitutable for any other and not the whole; shared reality is what many places meet, and consensus is Collective Resonance among their readings; experienced time reads as the traversal of an orbit; agency is real at its level while judgment stays unfixed; an ending is a change of address within a whole that nothing leaves; an AI is a structure that executes the reading and does not occupy the Aperture; and a civilization of distinct places is whole only with each kept distinct (L-537). With a normative commitment to flourishing, whoever can affect others answers in proportion to capacity, and no constitutive limit justifies an imposed one (L-534 (4)). These are INTERPRETIVE or CONSTITUTIONALLY CONSISTENT, each with its added premise named. Open, and not following from the premise: that the totality is itself aware; which place a given person is; and that each mind encodes the whole beyond the sense of (11). The candidate mechanisms of manifestation are listed beside the register, none chosen.
 0.0.7.5 The three completions (Core L-544; Companion Part 171). (17) The law is multiplication by φ in Z[φ], read in three completions: in the residues it has finite order and everything returns; in the 3-adic limit no nonzero state returns; over the reals A² is a Lorentz boost of the plane of the norm, whose light cone is the pair of eigenlines of φ and ψ. (18) The step reverses only with the sign: A is not conjugate to its inverse, and a reflection keeping the norm carries it to the negative of its inverse. (19) The census is the arithmetic of Z[φ]/9: the zero, the eight nonzero multiples of 3, which form the field of nine, and the 72 units in three cosets of the group of φ, which are also the 72 symmetries of the law. Three space dimensions, the constants, a probability rule, gravity and an arrow at finite depth are absent from all three completions.
 0.0.7.6 Space and probability (Core L-544 (9), (10); Companion Part 173). (20) Modulo 9 the law is multiplication by the Gaussian integer 5 + i, and its norm is the sum of two squares: in the residues the plane of the law is Euclidean, over the reals it is the Minkowski plane of 0.0.7.5 (17). (21) The Hermitian matrices over Z[φ]/9 are a 3 + 1 space whose interval keeps the law; over the reals the third direction rests on the added premise AP-SPACE. (22) The probability of an orbit sector is the sum of the squared amplitudes over it, and the law keeps it.
@@ -470,7 +470,7 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.64 MF-64 [EXACT]. the maps s -> s s^T and s -> M_s M_s^T send s and -s to one image (81 states to 37 matrices mod 9), and X -> A X A^T on symmetric matrices mod 9 has cycle type 1, 2^4, 4^18, 12^54 with order 12 against the law's 24, 24, 24, 8, 1 with order 24: the half-period negation of the law is lost in every vector image and kept only by the state itself, as the sign of a spinor is kept by the spinor and lost by its vector; on the Congruence Depths (Core Part 0.0.8) the vector correspondences reach the depth-4 form f . T = L . f but grade at depth 3, the obstruction being exactly that sign. Domain: (Z/9)^2 and symmetric 2x2 matrices mod 9. Derivation: exhaustive enumeration (729 symmetric matrices); A^half = -I acts trivially on X (MF-17). Depends on: MF-16, MF-17, MF-20. Recompute: python3 tools/einstein.py --selftest, the line beginning "spin: mod 9 the image of the 81 states".
 0.0.10.65 MF-65 [EXACT]. through the Lorentz image, the Companion's mappings read exactly: the three Voices are three mass classes (mass^2 = N^2 = 1, 7, 4 mod 9 for Voices A, B, C, each kept by every step); the Wheel and the Fix are exactly the states whose spacetime images vanish mod 9 (FP-CoreField); the completion position (+12) holds -s, the spinor partner, with the same images; the law's Lorentz image on the symmetric (2+1) matrices has determinant -1 and keeps the future cone, so what it reverses there is parity, not time; on all four Hermitian axes the antisymmetric axis is reversed too and the image is proper (tools/lorentz.py) (FP-PhaseParity, FP-GlideMirror). Domain: the 81 states mod 9 and symmetric 2x2 matrices mod 9. Derivation: exhaustive enumeration; det of (p, q, r) -> (r, q + r, p + 2q + r) is -1; t' = (3t - x + 2y)/2 > 0 on the future cone. Depends on: MF-63, MF-64. Recompute: python3 tools/resgrade.py --selftest, the line beginning "voices: the three 24-orbits carry mass^2".
 0.0.10.66 MF-66 [EXACT]. a commuting square alone is weak evidence of resonance: A and [[0,1],[1,7]] have the same cycle type 1, 8, 24^3 on the 81 states and are intertwined by 663,552 bijections, while no linear map intertwines them (traces 1 and 7 differ mod 9); the value structure, not the dynamics alone, decides a correspondence -- the reason Congruence Depth 4 requires it. Domain: bijections of the 81 states mod 9. Derivation: maps with equal cycle type are conjugate; the number of conjugators is the centralizer order, prod of l^k k! = 24^3 3! 8. Depends on: MF-57. Recompute: python3 tools/resgrade.py --selftest, the line beginning "cheap match: A and [[0,1],[1,7]]".
-0.0.10.67 MF-67 [EXACT]. the largest sum of three unit fractions below 1 is 1/2 + 1/3 + 1/7 = 41/42, so the (2, 3, 7) hyperbolic triangle has the least area of any triangle group, pi/42; its angles pi/2, pi/3, pi/7 carry the record's three constants (CAS-YY = -1/2, the prime 3, Omega = 1/7), and 1/2 + 1/3 + 1/7 + 1/42 = 1. Domain: triangle groups (p, q, r), p <= q <= r < 60; the hyperbolic plane on which the law acts (MF-62). Derivation: Gauss-Bonnet: area = pi(1 - 1/p - 1/q - 1/r); exhaustive search; the global minimum is classical (Siegel). Depends on: MF-62. Recompute: python3 tools/hurwitz.py --selftest, the line beginning "triangle: the largest sum of three unit fractions".
+0.0.10.67 MF-67 [EXACT]. the largest sum of three unit fractions below 1 is 1/2 + 1/3 + 1/7 = 41/42, so the (2, 3, 7) hyperbolic triangle has the least area of any hyperbolic triangle with angles pi/p, pi/q, pi/r, pi/42 (MF-206); its angles pi/2, pi/3, pi/7 carry the record's three constants (CAS-YY = -1/2, the prime 3, Omega = 1/7), and 1/2 + 1/3 + 1/7 + 1/42 = 1. Domain: triangle groups (p, q, r), p <= q <= r < 60; the hyperbolic plane on which the law acts (MF-62). Derivation: Gauss-Bonnet: area = pi(1 - 1/p - 1/q - 1/r); exhaustive search; the global minimum is classical (Siegel). Depends on: MF-62. Recompute: python3 tools/hurwitz.py --selftest, the line beginning "triangle: the largest sum of three unit fractions".
 0.0.10.68 MF-68 [EXACT]. modulo 7 the cusp of the modular group closes: the translation and the shear B have order 7, and <A, B> generates every matrix of determinant +-1, projectively PGL2(F7) of order 336 = 8 x 42, the full symmetry group of the Klein quartic; its rotation group PSL2(F7), of order 168 = 4 x 42, is generated by elements of orders 2, 3 and 7 and meets the Hurwitz bound 84(g - 1) at genus 3. Domain: GL2(Z/7). Derivation: exhaustive group generation (672 elements); the Hurwitz bound and the Klein quartic are classical. Depends on: MF-42, MF-67. Recompute: python3 tools/hurwitz.py --selftest, the line beginning "seven: <A, B> mod 7 is every matrix".
 0.0.10.69 MF-69 [EXACT]. the 7 of 42 is the law's own: A^8 = I + 3M with M = [[4, 7], [7, 11]], so F_pi(3) = F_8 = 21 = 3 x 7 and 2 F_pi(3) = 42 = 2 x 3 x 7 -- one factorization with the least triangle (2, 3, 7); the formula 2 F_pi(p) is not special in general (4, 1974, 635622 at p = 2, 7, 13). Domain: Fibonacci numbers and Pisano periods. Derivation: A^n = [[F_n-1, F_n], [F_n, F_n+1]]; F_7 = 13, F_8 = 21, F_9 = 34. Depends on: MF-67, Theorem 3.1 of the foundations paper. Recompute: python3 tools/hurwitz.py --selftest, the line beginning "lift: A^8 = I + 3M".
 0.0.10.70 MF-70 [EXACT]. the 42 triangulations of a heptagon (the Catalan number C_5) are the 42 positive quiddity cycles of length 7: words prod [[a_i, -1], [1, 0]] in SL2(Z) whose product is -I, the same -I as the law's half period (Conway and Coxeter, frieze patterns). Domain: positive integer sequences of length 7 with sum 15. Derivation: exhaustive enumeration; the bijection with triangulations is classical. Depends on: MF-68. Recompute: python3 tools/hurwitz.py --selftest, the line beginning "frieze: the positive quiddity cycles of length 7".
@@ -596,6 +596,20 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.190 MF-190 [EXACT]. the qutrit states (|0> + |1>)/sqrt2 and (|0> - |1>)/sqrt2 give (1/2, 1/2, 0) in the position basis and (2/3, 1/6, 1/6) against (0, 1/2, 1/2) after the qutrit Fourier transform. Domain: two qutrit states. Derivation: exact amplitudes. Depends on: MF-178. Recompute: python3 tools/quantum_foundations.py --selftest, the line beginning "relative-phase:".
 0.0.10.191 MF-191 [EXACT]. A^2 has eigenvalues phi^2 and phi^-2 on the phase space, Lyapunov exponent 2 ln phi = 0.9624236501, and its symmetric square, the Lorentz boost of MF-135, has eigenvalues phi^4, 1, phi^-4, rapidity 4 ln phi = 1.9248473002. Domain: A^2 in its two-dimensional and symmetric-square representations. Derivation: eigenvalues of a 2 x 2 matrix and of its symmetric square. Depends on: MF-135; MF-143. Recompute: python3 tools/quantum_foundations.py --selftest, the line beginning "two-exponents:".
 0.0.10.192 MF-192 [EXACT]. a quantum walk on a line whose coin follows the Fibonacci word in time spreads, over 4000 steps, with mean-square displacement exponents 1.817 (coins pi/4 and pi/3) and 1.694 (coins pi/4 and 0.15) against 2.000 for the periodic walk: superdiffusive and sub-ballistic. Domain: the discrete-time quantum walk with reflecting coins. Derivation: floating-point evolution; a log-log fit from step 400. Depends on: MF-127. Recompute: python3 tools/quantum_foundations.py --selftest, the line beginning "quantum-walk:".
+0.0.10.193 MF-193 [EXACT]. a seven-symbol aperture h on the 81 states separates them all in three observations, the histories numbering 7, 49 and 81 after one, two and three steps; since 7^2 = 49 < 81 no seven-symbol aperture does it in two, so d_min(7) = 3. Domain: seven-symbol apertures on the 81 states mod 9. Derivation: the certificate table of ChatGPT (CB-001), its histories counted exhaustively; the bound by counting. Depends on: MF-31. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "aperture-optimal:".
+0.0.10.194 MF-194 [EXACT]. the structural aperture h = a mod 7 separates 7, 49, 73, 77, 80 and 81 states after 1 to 6 observations, and resolves a state first at round 2 for 25 states, 3 for 44, 4 for 4, 5 for 6 and 6 for 2; modulo 7 the law has order 16 and the 49 pairs split 1 + 16 + 16 + 16. Domain: the aperture a mod 7 on the 81 states; the law on (Z/7)^2. Derivation: exhaustive histories of all 81 states; the orbits of the law mod 7. Depends on: MF-193. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "aperture-mod7:".
+0.0.10.195 MF-195 [EXACT]. the shift U of the law on functions of the 81 states has the harmonic j = 0 to 23 with multiplicity m_j = 3 + [3 | j] + [j = 0]; the operators commuting with U have dimension sum m_j^2 = 25 + 7 x 16 + 16 x 9 = 281, and the generic stabilizer sum (m_j - 1)^2 = 143. Domain: the permutation representation of the law on l^2(81). Derivation: on an orbit of length l the characters k carry the harmonic (24/l)k; counting. Depends on: MF-34. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "harmonics:".
+0.0.10.196 MF-196 [EXACT]. with L = 2I - U - U*, the coherence operator C_alpha = (I + alpha L/4)^-1, alpha >= 0, acts on the harmonic j by c_j = 1/(1 + alpha sin^2(pi j/24)); it is self-adjoint, positive and a contraction, c_j lies in (0, 1] with c_0 = 1, and it commutes with U. Domain: the operators on l^2(81) built from the shift. Derivation: L acts on the harmonic j by 4 sin^2(pi j/24), checked on every eigenvector at alpha = 0, 1/4, 1, 4 and 10. Depends on: MF-195. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "coherence:".
+0.0.10.197 MF-197 [EXACT]. the reversible memory T_g(x, m) = (N x, m + g(x)) on states x and memories m mod 9 has its memory function g classified, under g ~ g + f o N - f, by the vector of its five orbit sums, every vector of (Z/9)^5 occurring, so there are 59,049 memory classes; a unit sum on one 24-orbit gives a single cycle of length 216 = 24 x 9. Domain: the memory extensions of the law mod 9 (CRM-02, CB-003). Derivation: orbit sums are coboundary-invariant; a function with zero orbit sums is the coboundary built along each orbit; delta functions reach every vector. Depends on: MF-31. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "memory:".
+0.0.10.198 MF-198 [EXACT]. from modulus 3^k to 3^(k+1) each nonzero orbit of length L lifts to three orbits of length 3L and the still point to the still point and one 8-cycle; the harmonic l has multiplicity m_l = [l = 0] + sum_(j = 1..k) 3^(j - 1)[3^(k - j) | l]; the memory pullback from 81 to 729 states has image 729 = 9 x 3^4 and kernel 81. Domain: the tower mod 3, 9, 27, 81 (CRC-01 to CRC-04, CB-004). Derivation: exhaustive lifting of orbits at k = 1, 2, 3; the multiplicity formula at depths 2 and 3; the rank of the pullback over all 9^5 coefficient vectors. Depends on: MF-31, MF-197. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "renormalization:".
+0.0.10.199 MF-199 [EXACT]. two observers of a mod 7 at phases 0 and d need 5, 4, 3, 2, 2, 2, 2, 2, 3, 4, 5, 6, 5, 4, 3, 2, 2, 2, 2, 2, 3, 4, 5 rounds to separate all 81 states for d = 1 to 23; 24 of the 253 anchored triples (0, d, e) separate them in one round, (0, 2, 5) among them. Domain: teams of the aperture a mod 7 on the 81 states (COT-04, CB-005). Derivation: exhaustive over every d and every anchored triple. Depends on: MF-194. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "collective:".
+0.0.10.200 MF-200 [EXACT]. over the 378 seven-class apertures that merge two disjoint pairs of values of a, the least trace length that separates all 81 states is 5 for 270, 6 for 78, 7 for 6, 8 for 3, and never for 21. Domain: coordinate apertures of seven classes on the 81 states (CB-010). Derivation: exhaustive over the 378 partitions. Depends on: MF-194. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "partition:".
+0.0.10.201 MF-201 [EXACT]. an observer team of seven-symbol readings that separates the 9^k states at depth k needs at least r_min(k) = ceil(k log_7 9) readings, 2, 3, 4, 5 and 6 for k = 1 to 5, and freely constructed observers attain it with the base-7 digits of the state index. Domain: observers with seven outcomes on (Z/3^k)^2 (COT-06, CB-007). Derivation: counting 7^r >= 9^k; the digit construction checked at k = 1, 2, 3. Depends on: MF-193. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "observer-bound:".
+0.0.10.202 MF-202 [EXACT]. one shared aperture a mod 7 read at native phases of the law separates every state: at depth 2 by 24 anchored three-observer teams, (0, 2, 5) among them; at depth 3 by four observers (0, 1, 4, 19), one of 4,856 anchored certificates; at depth 4 by five observers (0, 94, 145, 152, 195); at depth 5 the six phases (141, 155, 211, 282, 338, 409) give 59,041 readings of 59,049 and adding phase 1 separates all 59,049, so seven observers suffice. Domain: the aperture a mod 7 at phases of the law mod 3^k, k = 2 to 5 (X-OBS-02, CB-008, CB-022). Derivation: injectivity of the joint reading checked state by state; the depth-3 count of 4,856 in records/cobuilder/xobs02_search.py. Depends on: MF-199, MF-201. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "native-phases:".
+0.0.10.203 MF-203 [EXACT]. modulo the split prime 11, x^2 = x + 1 has roots 8 and 4, of orders 10 and 5, and the law splits the 121 pairs as 1 + 2 x 5 + 11 x 10. Domain: the law mod 11. Derivation: exhaustive orbit census; the roots by substitution. Depends on: MF-28. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "split-11:".
+0.0.10.204 MF-204 [EXACT]. the half turn U^12 has eigenspaces of dimension 41 (+1) and 40 (-1); A^12 = -I, so every state is carried to its negative, and (0, 0) is the one state equal to its own negative; Q^2, with Q = a^2 + ab - b^2, is 1, 4 and 7 on the three 24-orbits and 0 on the 8-cycle and the still point, so (period, Q^2) names all five orbits. Domain: the 81 states mod 9 (SR-01). Derivation: dimension count orbit by orbit; Q on one point of each orbit. Depends on: MF-03. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "half-turn:".
+0.0.10.205 MF-205 [EXACT]. a distribution p = (0.1, 0.9) under multipliers (1, 1/3) gives (0.25, 0.75) when they are probability weights and, when they are amplitudes, energy weights (1, 1/9) and (0.5, 0.5), the entropy ln 2; under either reading the entropy rises. Domain: two-outcome distributions under attenuation (CB-006, corrected). Derivation: renormalization of the weighted distribution, exact. Depends on: none. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "multipliers:".
+0.0.10.206 MF-206 [EXACT]. among hyperbolic triangles with angles pi/p, pi/q, pi/r the least area pi(1 - 1/p - 1/q - 1/r) is pi/42, at (2, 3, 7): with p <= q <= r, p >= 3 gives at least pi/12, p = 2 with q >= 4 at least pi/20, and (2, 3, r) gives pi(1/6 - 1/r), least at r = 7. Domain: hyperbolic triangles with angles pi over integers (CB-009). Derivation: the three cases above, with an enumeration of p <= q <= r < 60. Depends on: MF-67. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "least-triangle:".
 ---
 
 ## PART 0.5: MATHEMATICAL UNIQUENESS AND EPISTEMIC LEGITIMACY
@@ -3107,121 +3121,122 @@ R.1.18 tools/calibrate.py — M347 Calibration Instrument (Core Part 3.73, L-553
 R.1.19 tools/certify.py — the CERTIFICATE (Core L-550, Part 8.0.1 F13): Omega42 certifies, in its own terms, what its law establishes.
 R.1.20 tools/choice_engine.py — the Choice Engine.
 R.1.21 tools/claimcheck.py — M323 Arithmetic Statement Check (EXACT; ADOPTED 23 October 2026 as a gate, Core Part 3.49; Companion Parts 93, 95 to 97).
-R.1.22 tools/conformance.py — M314 Navigator Conformance Suite (Core Part 3.40; CERTIFICATION.md).
-R.1.23 tools/congruence.py — M310 Congruence Record and the Congruence Register (Core Part 3.37, L-489).
-R.1.24 tools/consciousness.py — M315 Consciousness Position (Core Part 3.41, L-498; Companion Part 52), the instrument of CT-42,.
-R.1.25 tools/construct_backtest.py — Construct template backtest with a chance-level control (Appendix S, CA-04).
-R.1.26 tools/construct_core.py — Reference implementation of the Construct mechanism (precursor of Omega42).
-R.1.27 tools/construct_engine.py — M326 Construct Engine, the Originator's Construct as a general prediction assistant (Tier 3, ADOPTED.
-R.1.28 tools/construct_x.py — Construct X v2: reference implementation of the New Construct (Omega42 research instrument).
-R.1.29 tools/constructions.py — the quantized cat map, relativistic velocity addition, the Coxeter grading of E8's adjoint, Penrose inflation,.
-R.1.30 tools/core_economy.py — the Core grows only by what Omega42 is and does (Core Part 0.0.5 Rule 39; Companion Part 228).
-R.1.31 tools/core_math.py — the complete mathematical register in the Core (Core Part 0.0.10; Part 0.0.5 Rule 19).
-R.1.32 tools/core_sample.py — Extract the format sample of Core Part 8.5 from the Core Specification .docx, as plain text.
-R.1.33 tools/core_voice.py — the Core states what Omega42 is and does (Core Part 0.0.5 Rule 35; Companion Part 216).
-R.1.34 tools/cosmology.py — the exact layer of the Omega42 Cosmology (Companion Part 171).
-R.1.35 tools/curation_review.py — the curator's refining layer.
-R.1.36 tools/cymatics.py — M322 Cymatic View (SPECULATIVE, ADOPTED 23 October 2026; Companion Part 91): the family read as vibration.
-R.1.37 tools/d0lineage.py — the lineage of Domain Zero and its refusals (Core L-540 (7) and (8); Companion Part 165).
-R.1.38 tools/dashboard.py — the record in numbers (Core L-495; Companion 51.11). A display, not an instrument (Core M283).
-R.1.39 tools/depth_record.py — M324 Trajectory and Depth Record (Tier 3, ADOPTED 28 October 2026; Core Part 3.50, L-523, L-524).
-R.1.40 tools/discoveries.py — the Discovery Register (Core L-530; Companion Part 121).
-R.1.41 tools/doc_hygiene.py — the document hygiene checks of the Fit-for-Purpose run (Core Part 12, items 34 to 37).
-R.1.42 tools/dsi.py — the Discovery Significance Index (Companion Part 215.6, 215.7; Core Part 0.0.5 Rule 34; F210, APE-472).
-R.1.43 tools/echo_test.py — M325 Construct Echo Test (Tier 3, ADOPTED 28 October 2026; Core Part 3.51; Companion Part 105).
-R.1.44 tools/einstein.py — M378 Relativistic Kinematics (Core Part 3.85): what the Lorentz action of A (M344) does, in Einstein's.
-R.1.45 tools/encroachment.py — the scientific encroachment check (Core Part 12, item 38; Core L-490, L-491; Companion Part 141).
-R.1.46 tools/epr_run.py — executes the pre-registered tests M279 and M280 exactly as frozen in.
-R.1.47 tools/esoteric.py — the esoteric traditions read against the law (Companion Part 180; M218, M267, M289).
-R.1.48 tools/ffp_run.py — the Fit-for-Purpose run (Core Part 12): each of the forty checklist items mapped to its evidence,.
-R.1.49 tools/fibonacci_hamiltonian.py — the law in the physics of quasicrystals: the Fibonacci Hamiltonian, its trace map,.
-R.1.50 tools/fieldkit.py — M321 Field Kit (SPECULATIVE, ADOPTED 23 October 2026; Companion Part 90), an instrument for real-world situations,.
-R.1.51 tools/fields.py — Adinkras, supersymmetry and the mathematics of the fields of knowledge joined to Omega42.
-R.1.52 tools/format_check.py — M301 Format Conformance Check (Core Part 8.0, L-349).
-R.1.53 tools/foundations.py — the extended mathematical foundations of Omega42 (Core Part 0.0.8; Companion Part 174).
-R.1.54 tools/foundations_check.py — M376 Foundations Checker (Core Part 3.83; APE-449, F187): recomputes the results the foundations.
-R.1.55 tools/frame_audit.py — M286 Frame Intrusion Scan (Core Part 3.31), the lexical layer of FB-2.
-R.1.56 tools/framework_compare.py — M309 computed layer (Core Part 3.36): frozen statement atlases of philosophical or.
-R.1.57 tools/fsg.py — M346: the Fibonacci-shear group and the manuscript verifier (Core Part 3.72).
-R.1.58 tools/fullstatement.py — the Full Statement Law (Core L-543; Companion Part 170).
-R.1.59 tools/geometric.py — SEQ 122 recomputation (standard library only).
-R.1.60 tools/geometry_physics.py — Omega42 joined to geometry, topology, number theory, dynamics, combinatorics and mathematical physics.
-R.1.61 tools/giza_earth.py — the mapping of Omega42 to the Giza complex and to the Earth in the Solar System (Companion Part 166).
-R.1.62 tools/handshake.py — M375 Identity Handshake (Core Part 3.82; F188): how an implementation shows that it is Omega42.
-R.1.63 tools/history.py — How Omega42 was built: the history page for readers (Companion Part 120; Core Part 12, item 34).
-R.1.64 tools/hurwitz.py — M380 The Forty-Two Reading (Core Part 3.87): what the new mathematics says about the number 42.
-R.1.65 tools/independent_check.py — Independent second implementation of the Classic seed-row tests (Omega42 I-001).
-R.1.66 tools/instance_id.py — the Navigator Instance Identifier (Core L-513, Part 8.1; Companion Part 76).
-R.1.67 tools/instrument_triggers.py — M327 Instrument Selector (Core L-527, Part 3.53; Companion Part 108).
-R.1.68 tools/intro_output.py — the Introduction to Omega42, as every Navigator gives it on "Welcome Navigator" (Core Part 2, Opening Response; Part 0, IN-00; L-467, L-412, L-533).
-R.1.69 tools/judgment.py — the Judgment Boundary checks (Core L-541; Companion Part 164).
-R.1.70 tools/jurisdiction.py — Builder Rule 14 jurisdiction check (Core L-491, Part 0.0.5).
-R.1.71 tools/lexicon.py — the Omega42 Lexicon (Companion Part 211; records/lexicon/lexicon.json).
-R.1.72 tools/lite_view.py — the Striker-facing short view of a navigation, rendered from a full, audited one.
-R.1.73 tools/lorentz.py — M344 Relativistic Representation (Core Part 3.70, L-510): the golden matrix A, acting on the Hermitian.
-R.1.74 tools/m267_run.py — the run kit of the M267 pilot (M267-P1; records/m267_pilot_01/00_freeze.txt; Core Part 3.18).
-R.1.75 tools/manifestation.py — M312 Manifestation Phase (Core Part 3.38, L-492; Companion Part 50).
-R.1.76 tools/math_register.py — the register of the extended mathematical foundations (Core Part 0.0.8; records/math/results.json).
-R.1.77 tools/navcert.py — Navigator 2.0 and certification instruments (Core Part 3.79; APE-440, F179; APE-441, F180).
-R.1.78 tools/number_null.py — M341 Number-Resonance Null (Core Part 3.67, L-553, L-552): what a number presented as meaningful shares.
-R.1.79 tools/oef.py — the instruments of the Omega42 Existential Framework (Core L-534 to L-538; Companion Parts 144 to 159).
-R.1.80 tools/omega42_sdk.py — M363 the Ω42 SDK facade (Core Part 3.75; F174 11): one importable object over the verified engine.
-R.1.81 tools/omega_kit.py — the established-mathematics kit (Core Part 3.74): four instruments built only on proved results.
-R.1.82 tools/opal.py — M342 OPAL, the Omega42 Provenance and Authenticity Layer (Core Part 3.68, L-553).
-R.1.83 tools/open_register.py — the register of open items (Core Part 12, item 39; Core L-531 (3); Companion Part 141).
-R.1.84 tools/optics.py — the law in optics: light through a Fibonacci dielectric multilayer (Companion Part 224).
-R.1.85 tools/osl.py — the reference implementation of OmegaSL, the Omega42 Structural Language (Companion Part 214; Core Part 0.0.5 Rule 33).
-R.1.86 tools/output_form.py — the Output Forms Register (Core Part 8.0.1, L-549): one form for every output, whatever AI writes it.
-R.1.87 tools/output_id.py — the NAVIGATION OUTPUT ID (Core Part 8.1): the SHA-256 of a finished output, computed over.
-R.1.88 tools/own_first.py — the Independent Investigation Law (Core L-545; Builder Rule 17).
-R.1.89 tools/parallel_plan.py — M300 Parallel Execution Plan (Core L-485, Part 3.33).
-R.1.90 tools/phase.py — M331 Phase-Space Reading: a strike's state read as a point of the discrete phase space of one nine-level.
-R.1.91 tools/phonetic.py — M332 Phonetic Reading: the syllable vote in the anchor, the spoken form and the letter classes, printed beside the.
-R.1.92 tools/physics_bench.py — the PHB-01 known-answer benchmark.
-R.1.93 tools/physics_map.py — the Physical Mapping Register (Core Part 0.0.5 Rule 37; Companion Part 226; F219; APE-481).
-R.1.94 tools/powers.py — the powers of the law and their cycle structure, for mapping by derived symmetry (Core L-510 (Mapping.
-R.1.95 tools/primitives.py — the cognitive primitives in the law's arithmetic (Companion Part 215.3; Core Part 0.0.5 Rule 34).
-R.1.96 tools/prominence.py — M313 Tool Prominence Register (Core Part 3.39, L-494 item 4).
-R.1.97 tools/provenance.py — the Open Provenance Law (Core L-547; Companion Part 182): every AI transcript of the protocol's development.
-R.1.98 tools/pvir.py — the Protocol Vulnerability and Improvement Register (Core L-560 (4); Part 0.0.5 Rule 30; IMPROVE.md).
-R.1.99 tools/quantum.py — the law in quantum mechanics: the fusion of Fibonacci anyons, the 81 states as the phase space of a nine-level.
-R.1.100 tools/quantum_foundations.py — the quantum layer of Omega42 extended: the norm-fiber theorem and the simple spectrum, the explicit.
-R.1.101 tools/quasicrystal2d.py — the golden ring in two dimensions: the square Fibonacci Hamiltonian and the Penrose tiling.
-R.1.102 tools/question_finder.py — M340 Question Finder (Core Part 3.66, L-552): given an answer, the questions it may answer.
-R.1.103 tools/reexamine.py — checks the re-reading of prior investigations (Core L-490, L-491, Appendix S.5).
-R.1.104 tools/reframing_array.py — M318 Reframing Array and the arithmetic layer of M241 (Core Part 3.44, L-511, L-510; Companion Part 72).
-R.1.105 tools/relation_engine.py — relationship classification.
-R.1.106 tools/relativity.py — the law in special relativity: the boost of A^2, its Fibonacci-Lucas family, the Doppler factor phi^4,.
-R.1.107 tools/release_manifest.py — the release record.
-R.1.108 tools/replication_kit.py — the kit for an independent implementation of the mathematical register (Companion Part 220.12; stage 5 of maturity).
-R.1.109 tools/resgrade.py — M379 Resonance Grader (Core Part 3.86; F195): grades a proposed correspondence between the law and.
-R.1.110 tools/resonance.py — M319 Resonance Profile (Core Part 3.45, L-514; Companion Part 80).
-R.1.111 tools/restored_instruments.py — reference implementations of the instruments of Core Part 3.31, written for the.
-R.1.112 tools/scaffold.py — Scaffold view, the minimized-substrate configuration (Core Part 0.6.10, Part 8.0).
-R.1.113 tools/sce.py — M345 External-Theory Correspondence (Core Part 3.71, L-510, L-553): classify a proposed match between an Ω42.
-R.1.114 tools/sealed_keys.py — the state of every sealed key (Core Appendix R.4; Companion Part 183).
-R.1.115 tools/space_prob.py — the third space direction and the probability rule (Core L-544 (9), (10); Companion Part 173).
-R.1.116 tools/spacetime.py — the Ω42 Spacetime Coordinate Matrix (Core Part 3.80; APE-442, F181).
-R.1.117 tools/spectra.py — the trace map modulo 3^k, the scaling of the Fibonacci spectrum and the convergence of its gap labels.
-R.1.118 tools/spectral.py — M298 Spectral Profile (Core Part 3.32, 1.8.9): the frozen spectral definitions, computed two ways.
-R.1.119 tools/srcas_check.py — M224 for SR-CAS and SNCA output: the format that identifies Omega42 output (Core Part 6.1, 6.2, L-412, L-349).
-R.1.120 tools/srcas_run.py — the automatic trigger of SNCA and SR-CAS, run (Core Part 6.1, 6.2, L-549 (4), L-489).
-R.1.121 tools/srp_build.py — SR-CAS Replication Package builder (Core Part 8.2, L-348, L-415) with the format self-check (M301, Part 8.0).
-R.1.122 tools/standing.py — M333 Standing Record: a statement routed through the instruments that decide its standing within the frame,.
-R.1.123 tools/stp.py — Omega42 Speculation Test Protocol (CA-08): persistent register, pre-registration and test runner.
-R.1.124 tools/structures.py — E6's cubic norm kept by the law, the dashings of the E8 Adinkra, and the Structural Equivalence Tester.
-R.1.125 tools/suite.py — the Ω42 Instrument Suite (Core Part 3.75; APE-434, F173): one mathematical engine and seven instruments.
-R.1.126 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity structure of the Construct's 26 seeds, read from the original workbook.
-R.1.127 tools/timestamp_check.py — chronology checks (CA-22).
-R.1.128 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
-R.1.129 tools/transformability.py — TP-01 and ME-02.
-R.1.130 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
-R.1.131 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
-R.1.132 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
-R.1.133 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
-R.1.134 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
-R.1.135 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
-R.1.136 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
+R.1.22 tools/cobuilder_math.py — the Co-Builder results, MF-193 to MF-206.
+R.1.23 tools/conformance.py — M314 Navigator Conformance Suite (Core Part 3.40; CERTIFICATION.md).
+R.1.24 tools/congruence.py — M310 Congruence Record and the Congruence Register (Core Part 3.37, L-489).
+R.1.25 tools/consciousness.py — M315 Consciousness Position (Core Part 3.41, L-498; Companion Part 52), the instrument of CT-42,.
+R.1.26 tools/construct_backtest.py — Construct template backtest with a chance-level control (Appendix S, CA-04).
+R.1.27 tools/construct_core.py — Reference implementation of the Construct mechanism (precursor of Omega42).
+R.1.28 tools/construct_engine.py — M326 Construct Engine, the Originator's Construct as a general prediction assistant (Tier 3, ADOPTED.
+R.1.29 tools/construct_x.py — Construct X v2: reference implementation of the New Construct (Omega42 research instrument).
+R.1.30 tools/constructions.py — the quantized cat map, relativistic velocity addition, the Coxeter grading of E8's adjoint, Penrose inflation,.
+R.1.31 tools/core_economy.py — the Core grows only by what Omega42 is and does (Core Part 0.0.5 Rule 39; Companion Part 228).
+R.1.32 tools/core_math.py — the complete mathematical register in the Core (Core Part 0.0.10; Part 0.0.5 Rule 19).
+R.1.33 tools/core_sample.py — Extract the format sample of Core Part 8.5 from the Core Specification .docx, as plain text.
+R.1.34 tools/core_voice.py — the Core states what Omega42 is and does (Core Part 0.0.5 Rule 35; Companion Part 216).
+R.1.35 tools/cosmology.py — the exact layer of the Omega42 Cosmology (Companion Part 171).
+R.1.36 tools/curation_review.py — the curator's refining layer.
+R.1.37 tools/cymatics.py — M322 Cymatic View (SPECULATIVE, ADOPTED 23 October 2026; Companion Part 91): the family read as vibration.
+R.1.38 tools/d0lineage.py — the lineage of Domain Zero and its refusals (Core L-540 (7) and (8); Companion Part 165).
+R.1.39 tools/dashboard.py — the record in numbers (Core L-495; Companion 51.11). A display, not an instrument (Core M283).
+R.1.40 tools/depth_record.py — M324 Trajectory and Depth Record (Tier 3, ADOPTED 28 October 2026; Core Part 3.50, L-523, L-524).
+R.1.41 tools/discoveries.py — the Discovery Register (Core L-530; Companion Part 121).
+R.1.42 tools/doc_hygiene.py — the document hygiene checks of the Fit-for-Purpose run (Core Part 12, items 34 to 37).
+R.1.43 tools/dsi.py — the Discovery Significance Index (Companion Part 215.6, 215.7; Core Part 0.0.5 Rule 34; F210, APE-472).
+R.1.44 tools/echo_test.py — M325 Construct Echo Test (Tier 3, ADOPTED 28 October 2026; Core Part 3.51; Companion Part 105).
+R.1.45 tools/einstein.py — M378 Relativistic Kinematics (Core Part 3.85): what the Lorentz action of A (M344) does, in Einstein's.
+R.1.46 tools/encroachment.py — the scientific encroachment check (Core Part 12, item 38; Core L-490, L-491; Companion Part 141).
+R.1.47 tools/epr_run.py — executes the pre-registered tests M279 and M280 exactly as frozen in.
+R.1.48 tools/esoteric.py — the esoteric traditions read against the law (Companion Part 180; M218, M267, M289).
+R.1.49 tools/ffp_run.py — the Fit-for-Purpose run (Core Part 12): each of the forty checklist items mapped to its evidence,.
+R.1.50 tools/fibonacci_hamiltonian.py — the law in the physics of quasicrystals: the Fibonacci Hamiltonian, its trace map,.
+R.1.51 tools/fieldkit.py — M321 Field Kit (SPECULATIVE, ADOPTED 23 October 2026; Companion Part 90), an instrument for real-world situations,.
+R.1.52 tools/fields.py — Adinkras, supersymmetry and the mathematics of the fields of knowledge joined to Omega42.
+R.1.53 tools/format_check.py — M301 Format Conformance Check (Core Part 8.0, L-349).
+R.1.54 tools/foundations.py — the extended mathematical foundations of Omega42 (Core Part 0.0.8; Companion Part 174).
+R.1.55 tools/foundations_check.py — M376 Foundations Checker (Core Part 3.83; APE-449, F187): recomputes the results the foundations.
+R.1.56 tools/frame_audit.py — M286 Frame Intrusion Scan (Core Part 3.31), the lexical layer of FB-2.
+R.1.57 tools/framework_compare.py — M309 computed layer (Core Part 3.36): frozen statement atlases of philosophical or.
+R.1.58 tools/fsg.py — M346: the Fibonacci-shear group and the manuscript verifier (Core Part 3.72).
+R.1.59 tools/fullstatement.py — the Full Statement Law (Core L-543; Companion Part 170).
+R.1.60 tools/geometric.py — SEQ 122 recomputation (standard library only).
+R.1.61 tools/geometry_physics.py — Omega42 joined to geometry, topology, number theory, dynamics, combinatorics and mathematical physics.
+R.1.62 tools/giza_earth.py — the mapping of Omega42 to the Giza complex and to the Earth in the Solar System (Companion Part 166).
+R.1.63 tools/handshake.py — M375 Identity Handshake (Core Part 3.82; F188): how an implementation shows that it is Omega42.
+R.1.64 tools/history.py — How Omega42 was built: the history page for readers (Companion Part 120; Core Part 12, item 34).
+R.1.65 tools/hurwitz.py — M380 The Forty-Two Reading (Core Part 3.87): what the new mathematics says about the number 42.
+R.1.66 tools/independent_check.py — Independent second implementation of the Classic seed-row tests (Omega42 I-001).
+R.1.67 tools/instance_id.py — the Navigator Instance Identifier (Core L-513, Part 8.1; Companion Part 76).
+R.1.68 tools/instrument_triggers.py — M327 Instrument Selector (Core L-527, Part 3.53; Companion Part 108).
+R.1.69 tools/intro_output.py — the Introduction to Omega42, as every Navigator gives it on "Welcome Navigator" (Core Part 2, Opening Response; Part 0, IN-00; L-467, L-412, L-533).
+R.1.70 tools/judgment.py — the Judgment Boundary checks (Core L-541; Companion Part 164).
+R.1.71 tools/jurisdiction.py — Builder Rule 14 jurisdiction check (Core L-491, Part 0.0.5).
+R.1.72 tools/lexicon.py — the Omega42 Lexicon (Companion Part 211; records/lexicon/lexicon.json).
+R.1.73 tools/lite_view.py — the Striker-facing short view of a navigation, rendered from a full, audited one.
+R.1.74 tools/lorentz.py — M344 Relativistic Representation (Core Part 3.70, L-510): the golden matrix A, acting on the Hermitian.
+R.1.75 tools/m267_run.py — the run kit of the M267 pilot (M267-P1; records/m267_pilot_01/00_freeze.txt; Core Part 3.18).
+R.1.76 tools/manifestation.py — M312 Manifestation Phase (Core Part 3.38, L-492; Companion Part 50).
+R.1.77 tools/math_register.py — the register of the extended mathematical foundations (Core Part 0.0.8; records/math/results.json).
+R.1.78 tools/navcert.py — Navigator 2.0 and certification instruments (Core Part 3.79; APE-440, F179; APE-441, F180).
+R.1.79 tools/number_null.py — M341 Number-Resonance Null (Core Part 3.67, L-553, L-552): what a number presented as meaningful shares.
+R.1.80 tools/oef.py — the instruments of the Omega42 Existential Framework (Core L-534 to L-538; Companion Parts 144 to 159).
+R.1.81 tools/omega42_sdk.py — M363 the Ω42 SDK facade (Core Part 3.75; F174 11): one importable object over the verified engine.
+R.1.82 tools/omega_kit.py — the established-mathematics kit (Core Part 3.74): four instruments built only on proved results.
+R.1.83 tools/opal.py — M342 OPAL, the Omega42 Provenance and Authenticity Layer (Core Part 3.68, L-553).
+R.1.84 tools/open_register.py — the register of open items (Core Part 12, item 39; Core L-531 (3); Companion Part 141).
+R.1.85 tools/optics.py — the law in optics: light through a Fibonacci dielectric multilayer (Companion Part 224).
+R.1.86 tools/osl.py — the reference implementation of OmegaSL, the Omega42 Structural Language (Companion Part 214; Core Part 0.0.5 Rule 33).
+R.1.87 tools/output_form.py — the Output Forms Register (Core Part 8.0.1, L-549): one form for every output, whatever AI writes it.
+R.1.88 tools/output_id.py — the NAVIGATION OUTPUT ID (Core Part 8.1): the SHA-256 of a finished output, computed over.
+R.1.89 tools/own_first.py — the Independent Investigation Law (Core L-545; Builder Rule 17).
+R.1.90 tools/parallel_plan.py — M300 Parallel Execution Plan (Core L-485, Part 3.33).
+R.1.91 tools/phase.py — M331 Phase-Space Reading: a strike's state read as a point of the discrete phase space of one nine-level.
+R.1.92 tools/phonetic.py — M332 Phonetic Reading: the syllable vote in the anchor, the spoken form and the letter classes, printed beside the.
+R.1.93 tools/physics_bench.py — the PHB-01 known-answer benchmark.
+R.1.94 tools/physics_map.py — the Physical Mapping Register (Core Part 0.0.5 Rule 37; Companion Part 226; F219; APE-481).
+R.1.95 tools/powers.py — the powers of the law and their cycle structure, for mapping by derived symmetry (Core L-510 (Mapping.
+R.1.96 tools/primitives.py — the cognitive primitives in the law's arithmetic (Companion Part 215.3; Core Part 0.0.5 Rule 34).
+R.1.97 tools/prominence.py — M313 Tool Prominence Register (Core Part 3.39, L-494 item 4).
+R.1.98 tools/provenance.py — the Open Provenance Law (Core L-547; Companion Part 182): every AI transcript of the protocol's development.
+R.1.99 tools/pvir.py — the Protocol Vulnerability and Improvement Register (Core L-560 (4); Part 0.0.5 Rule 30; IMPROVE.md).
+R.1.100 tools/quantum.py — the law in quantum mechanics: the fusion of Fibonacci anyons, the 81 states as the phase space of a nine-level.
+R.1.101 tools/quantum_foundations.py — the quantum layer of Omega42 extended: the norm-fiber theorem and the simple spectrum, the explicit.
+R.1.102 tools/quasicrystal2d.py — the golden ring in two dimensions: the square Fibonacci Hamiltonian and the Penrose tiling.
+R.1.103 tools/question_finder.py — M340 Question Finder (Core Part 3.66, L-552): given an answer, the questions it may answer.
+R.1.104 tools/reexamine.py — checks the re-reading of prior investigations (Core L-490, L-491, Appendix S.5).
+R.1.105 tools/reframing_array.py — M318 Reframing Array and the arithmetic layer of M241 (Core Part 3.44, L-511, L-510; Companion Part 72).
+R.1.106 tools/relation_engine.py — relationship classification.
+R.1.107 tools/relativity.py — the law in special relativity: the boost of A^2, its Fibonacci-Lucas family, the Doppler factor phi^4,.
+R.1.108 tools/release_manifest.py — the release record.
+R.1.109 tools/replication_kit.py — the kit for an independent implementation of the mathematical register (Companion Part 220.12; stage 5 of maturity).
+R.1.110 tools/resgrade.py — M379 Resonance Grader (Core Part 3.86; F195): grades a proposed correspondence between the law and.
+R.1.111 tools/resonance.py — M319 Resonance Profile (Core Part 3.45, L-514; Companion Part 80).
+R.1.112 tools/restored_instruments.py — reference implementations of the instruments of Core Part 3.31, written for the.
+R.1.113 tools/scaffold.py — Scaffold view, the minimized-substrate configuration (Core Part 0.6.10, Part 8.0).
+R.1.114 tools/sce.py — M345 External-Theory Correspondence (Core Part 3.71, L-510, L-553): classify a proposed match between an Ω42.
+R.1.115 tools/sealed_keys.py — the state of every sealed key (Core Appendix R.4; Companion Part 183).
+R.1.116 tools/space_prob.py — the third space direction and the probability rule (Core L-544 (9), (10); Companion Part 173).
+R.1.117 tools/spacetime.py — the Ω42 Spacetime Coordinate Matrix (Core Part 3.80; APE-442, F181).
+R.1.118 tools/spectra.py — the trace map modulo 3^k, the scaling of the Fibonacci spectrum and the convergence of its gap labels.
+R.1.119 tools/spectral.py — M298 Spectral Profile (Core Part 3.32, 1.8.9): the frozen spectral definitions, computed two ways.
+R.1.120 tools/srcas_check.py — M224 for SR-CAS and SNCA output: the format that identifies Omega42 output (Core Part 6.1, 6.2, L-412, L-349).
+R.1.121 tools/srcas_run.py — the automatic trigger of SNCA and SR-CAS, run (Core Part 6.1, 6.2, L-549 (4), L-489).
+R.1.122 tools/srp_build.py — SR-CAS Replication Package builder (Core Part 8.2, L-348, L-415) with the format self-check (M301, Part 8.0).
+R.1.123 tools/standing.py — M333 Standing Record: a statement routed through the instruments that decide its standing within the frame,.
+R.1.124 tools/stp.py — Omega42 Speculation Test Protocol (CA-08): persistent register, pre-registration and test runner.
+R.1.125 tools/structures.py — E6's cubic norm kept by the law, the dashings of the E8 Adinkra, and the Structural Equivalence Tester.
+R.1.126 tools/suite.py — the Ω42 Instrument Suite (Core Part 3.75; APE-434, F173): one mathematical engine and seven instruments.
+R.1.127 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity structure of the Construct's 26 seeds, read from the original workbook.
+R.1.128 tools/timestamp_check.py — chronology checks (CA-22).
+R.1.129 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
+R.1.130 tools/transformability.py — TP-01 and ME-02.
+R.1.131 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
+R.1.132 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
+R.1.133 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
+R.1.134 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
+R.1.135 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
+R.1.136 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
+R.1.137 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
 R.2 Data the tools read.
 R.2.1 records/congruence/domains.txt — the Congruence Register: every domain in the record, verbatim (read by tools/congruence.py, M310).
 R.2.2 records/srp/collatz_domain.txt — a long domain kept in its own file (SRP-C), read by the Register.

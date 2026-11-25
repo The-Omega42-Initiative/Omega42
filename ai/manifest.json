@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev450.md": {
-   "chars": 1339934,
-   "tokens_est": 334984,
-   "sha256": "3ac227318d03fe59427e990bf3d0f29b5360650659a71a42076f778ce3b1cc8d"
+   "chars": 1348252,
+   "tokens_est": 337063,
+   "sha256": "0f366c1cc657ec7570f6fc49c50230944f8038cd3bb75136f4eef1db892dc018"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2018449,
-   "tokens_est": 504613,
-   "sha256": "45c5dbac826aa9be8727f2d5b4d59288d3fe887fc868a18be655749dc56b7067"
+   "chars": 2026257,
+   "tokens_est": 506565,
+   "sha256": "ff43e30286b095269d8f8a8b72acc432c3434349fa4510893c53c063e7e6f6ba"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 478222,
-   "tokens_est": 119556,
-   "sha256": "428b7a72b48aec9f0f6ee126a9962186f5d40acabf105c09b5db12d059274eb6"
+   "chars": 476262,
+   "tokens_est": 119066,
+   "sha256": "158cee3e3c7eb2e35305352c8a0f2000c6c81a067142c485954674b0cd31a3ad"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -54,9 +54,9 @@
   {
    "doc": "Core",
    "heading": "PART 0.0.1: FRAME CONSTITUTION",
-   "chars": 9012,
-   "tokens_est": 2253,
-   "sha256": "2f11c6f7adfa7bae3a5cd0342a2d835005c556d9d50b461c6d3afb82bc261408"
+   "chars": 9265,
+   "tokens_est": 2316,
+   "sha256": "0195a47180424ee0448500c195b8cc89ec3f06b4c859d8b0b6a1b547f505a9e3"
   },
   {
    "doc": "Core",
@@ -96,9 +96,9 @@
   {
    "doc": "Core",
    "heading": "PART 0.0.7: THE FOUNDATIONAL CONSEQUENCES [L-538; records/oef/consequences.json; Companion Part 159]",
-   "chars": 5954,
-   "tokens_est": 1489,
-   "sha256": "360d49bf5c284dba2a68674aba14627caf4a3bab4b5c32774ceb7cb4daba07bf"
+   "chars": 5996,
+   "tokens_est": 1499,
+   "sha256": "05aef4e617b160c16a272c4edd446155e5b8caa607f3ba2b3912d282fbcdb9d1"
   },
   {
    "doc": "Core",
@@ -110,9 +110,9 @@
   {
    "doc": "Core",
    "heading": "0.0.10 THE COMPLETE MATHEMATICAL REGISTER",
-   "chars": 98450,
-   "tokens_est": 24613,
-   "sha256": "0e5be770368ae1058df8b0f1f871c78aa8cf7d6eeefa7b1de4ee8494f179619d"
+   "chars": 106397,
+   "tokens_est": 26599,
+   "sha256": "4f86e548e2ecc5cb8e25e18037c5d6b9c47f9af354de4ee9aaeb2d6a99fd57db"
   },
   {
    "doc": "Core",
@@ -1293,9 +1293,9 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 33646,
-   "tokens_est": 8412,
-   "sha256": "5f95368a6a24ee235857c3c560f33d0385123d56aa9e238c7f06592e8743b9c5"
+   "chars": 33722,
+   "tokens_est": 8431,
+   "sha256": "a7b43c6642c3a8b900262b551fb8ac7504e1d7fb24489b2d390fd93f2da4a60f"
   },
   {
    "doc": "Companion",
@@ -4912,9 +4912,79 @@
   {
    "doc": "Companion",
    "heading": "216.1.192 MF-192 (Core Part 0.0.10.192). Does not follow: the asymptotic exponent; Romanelli ties it to the walk's trace map.",
+   "chars": 345,
+   "tokens_est": 86,
+   "sha256": "b7ac0ad0e204545a310f8f266f740a84c19c8c9580b8bb607e60d6f2676f1ed0"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.195 MF-195 (Core Part 0.0.10.195). Does not follow: a physical spectrum; the multiplicities are those of the permutation representation only.",
    "chars": 0,
    "tokens_est": 0,
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.196 MF-196 (Core Part 0.0.10.196). Does not follow: that C_alpha is invertible for alpha < -1, or a preferred alpha: the family is free in alpha >= 0.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.197 MF-197 (Core Part 0.0.10.197). Does not follow: that the winding classifies general histories: it classifies full revolutions of each orbit.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.198 MF-198 (Core Part 0.0.10.198). Does not follow: that winding is kept under lifting: 81 classes are lost in the pullback.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.199 MF-199 (Core Part 0.0.10.199). Does not follow: a rule for the best phase in general: the table is that of a mod 7 at depth 2.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.200 MF-200 (Core Part 0.0.10.200). Does not follow: that the partition into residues mod 7 is the best: 270 partitions do better.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.201 MF-201 (Core Part 0.0.10.201). Does not follow: that native-phase observers of one aperture attain it at every depth (MF-202; open at depth 5, O-30).",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.202 MF-202 (Core Part 0.0.10.202). Does not follow: that six observers suffice at depth 5; that is open (O-30).",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.203 MF-203 (Core Part 0.0.10.203). Does not follow: a statement about other split primes; each has its own census.",
+   "chars": 162,
+   "tokens_est": 41,
+   "sha256": "6851ad5ce436c845daeb0214cf71c324c52616575866a9838b1d4dd46a598f5b"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.205 MF-205 (Core Part 0.0.10.205). Does not follow: which reading a given instrument uses: OmegaSL types amplitude and energy multipliers.",
+   "chars": 169,
+   "tokens_est": 42,
+   "sha256": "5764d91068ab698c8fd50a61d6ea8a45ce6b2ee51b3e4f8b5ad495419441ef04"
   },
   {
    "doc": "Companion",
@@ -5206,9 +5276,16 @@
   {
    "doc": "Companion",
    "heading": "PART 234: SPECULATION AS AN ENGINE — THE SPECULATIVE FOUNDATIONS PROGRAMME",
-   "chars": 16578,
-   "tokens_est": 4145,
-   "sha256": "9990968e6811da3d39a6f097eb4ccd0cdc86491269bf9115be17b21d0c5bec72"
+   "chars": 16574,
+   "tokens_est": 4144,
+   "sha256": "eb258d1b29161bf022cc09382815f14c0aa365d8487bdef508fe168f4b606662"
+  },
+  {
+   "doc": "Companion",
+   "heading": "PART 235: THE CO-BUILDER RESULTS — WHAT THE FOURTEEN SAY [EXACT for the results; the readings CDT-C]",
+   "chars": 3387,
+   "tokens_est": 847,
+   "sha256": "3b2c7934f184204583eb177d798c82ac6a5bc9633dfc06a5399ff5fa24a3d3a8"
   },
   {
    "doc": "Companion",
@@ -5325,9 +5402,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 185339,
-   "tokens_est": 46335,
-   "sha256": "c34b7fc58f28f5ba8647dd9af78248f524d678ffb6b5e94ddec5b682ac1dde29"
+   "chars": 187528,
+   "tokens_est": 46882,
+   "sha256": "bf2740bfa77f3aa35d167393bd1a53f148443a5b56092174b6e4d508dd03026c"
   }
  ]
 }

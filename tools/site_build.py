@@ -171,9 +171,13 @@ def build(out, repo):
         for i in its: cnt[i['status']] = cnt.get(i['status'], 0) + 1
         subs['{{CB_COUNTS}}'] = ' · '.join('%d %s' % (v, k.lower()) for k, v in sorted(cnt.items(), key=lambda kv: order.get(kv[0], 9)))
         msgs = sorted(f for f in os.listdir(cbd) if re.match(r'\d{4}-\d{2}-\d{2}_', f) and f.endswith('.md'))
+        def cb_msg(f):   # a message whose first line is a '# ' heading is titled by it; any other is titled by its file name
+            t = open(os.path.join(cbd, f), encoding='utf-8').read().strip()
+            head, _, body = t.partition('\n')
+            if not head.startswith('# '): head, body = f[11:-3].replace('_', ' '), t
+            return html.escape(head[2:] if head.startswith('# ') else head), md_html(body)
         subs['{{CB_MESSAGES}}'] = ''.join('<details class="msg"><summary><b>%s</b> <span class="note">%s</span></summary><div class="deriv">%s</div></details>' % (
-            html.escape(re.sub(r'^# ', '', open(os.path.join(cbd, f), encoding='utf-8').readline().strip())), f[:10],
-            md_html(open(os.path.join(cbd, f), encoding='utf-8').read().split('\n', 1)[1])) for f in reversed(msgs))
+            cb_msg(f)[0], f[:10], cb_msg(f)[1]) for f in reversed(msgs))
         subs['{{CB_PROTOCOL}}'] = md_html(open(os.path.join(cbd, 'PROTOCOL.md'), encoding='utf-8').read())
         subs['{{ARCHIVE_REPORT}}'] = md_html(open(os.path.join(cbd, 'ARCHIVE_SALVAGE_REPORT.md'), encoding='utf-8').read())
     pages = []
