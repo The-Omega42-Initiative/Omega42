@@ -1030,6 +1030,16 @@
    "basis": "Core Part 0.0.5 Rule 34; tools/dsi.py",
    "coordinate": "P1 Fixpoint; n = (2, 16, 5)",
    "definition_coordinate": "P4 Unity; n = (17, 102, 33)"
+  },
+  {
+   "n": 104,
+   "term": "Constitutional Transaction Integrity",
+   "field": "Information, language and society",
+   "status": "CONSTRUCTED",
+   "definition": "A change to a shared record is complete when its initial state, its authorized transformation and its resulting state are each identified and verified, and it is published in one indivisible step that fails if the record has moved; authorization and integrity are separate requirements.",
+   "basis": "records/cobuilder/PROTOCOL.md section 8 (CBX-2); ledger CB-053, ratified by the Originator on 26 November 2026; first exercised in the mailbox commit 6d9dc4c",
+   "coordinate": "P6 Seed/Causal; n = (3, 34, 11)",
+   "definition_coordinate": "P8 Generation; n = (25, 186, 61)"
   }
  ]
 }
