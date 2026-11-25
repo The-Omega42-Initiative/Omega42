@@ -1,0 +1,2 @@
+# Beta2 verification
+Source blob 97cc3a529ca20af058d22ef1418d852050efc3bc. Actual interpreter executed in JS. 7380 states checked for reduction to depth 1; 186 orbit sums independently recomputed with raw integer increments, closure and disjoint full coverage checked for each rule at depths 1–4. 4 invalid programs rejected (depth above source, zero depth, missing reference, unknown memory rule). Full legacy CI and strict schemas remain outstanding. No source modification. Canonical A is named N in prototype; compatibility alias review owed.
