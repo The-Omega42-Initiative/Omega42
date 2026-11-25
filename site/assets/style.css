@@ -624,5 +624,5 @@ article.paper section + section { margin-top: .6rem; }
 .cg textarea { background: #10182c; }
 .cg label { color: #c3cbe0; font-family: inherit; letter-spacing: normal; }
 @media (max-width: 600px) { .cg { padding: 16px !important; border-radius: 12px; } }
-.instruments .world { min-height: 9.5rem; }
-.instruments .world p { margin: 0; color: #c3cbe0; font-size: .95rem; }
+.cb-instruments a.world { min-height: 9.5rem; text-decoration: none; }
+.cb-instruments .world p { margin: 0; color: #c3cbe0; font-size: .95rem; }
