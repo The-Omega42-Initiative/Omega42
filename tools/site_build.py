@@ -16,10 +16,10 @@ import congruence as cg
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
 NAV = [('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('expert-desk', 'Expert Exploration Desk'), ('vision', 'The Omega42 paper')]),
-       ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
+       ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('observatory', 'The Universal Observatory'), ('derivations', 'Derivations'), ('aperture', 'The Human Aperture'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
        ('FAQ', [('faq', 'Frequently asked questions')]),
        ('Protocol', [('protocol', 'Core and Companion'), ('for-ai', 'For AI systems'), ('apps', 'Free and commercial editions')]),
-       ('Research', [('research', 'Research frontiers'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
+       ('Research', [('research', 'Research frontiers'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations'), ('cobuilder', 'Co-Builder exchange'), ('archive-report', 'Archive salvage report')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas')]),
        ('Governance', [('governance', 'Governance')])]
@@ -152,7 +152,29 @@ def build(out, repo):
     subs = dict(fsubs, **questions_html(json.load(open(os.path.join(ROOT, 'records', 'questions', 'register.json'), encoding='utf-8'))))
     subs.update({'{{VISION}}': vision,
             '{{REPO}}': repo, '{{VERSION}}': version, '{{BASE}}': '', '{{PROTOCOL_ROWS}}': '\n'.join(rows),
-            '{{SCRIPT_SHA_SHORT}}': script_sha[:16], '{{NEWSLETTER_ACTION}}': cfg.get('newsletter', {}).get('form_action') or '#subscribe'})
+            '{{SCRIPT_SHA_SHORT}}': script_sha[:16],
+            '{{CORE_DOCX}}': next(x['docx'] for x in files if x['document'] == 'Core Specification'),
+            '{{COMP_DOCX}}': next(x['docx'] for x in files if x['document'] == 'Companion Document'),
+            '{{CORE_KB}}': str(next(x['bytes'] for x in files if x['document'] == 'Core Specification') // 1024),
+            '{{COMP_KB}}': str(next(x['bytes'] for x in files if x['document'] == 'Companion Document') // 1024), '{{NEWSLETTER_ACTION}}': cfg.get('newsletter', {}).get('form_action') or '#subscribe'})
+    # the Co-Builder exchange (records/cobuilder/, CBX-1): ledger, messages, protocol and the archive salvage report
+    cbd = os.path.join(ROOT, 'records', 'cobuilder')
+    if os.path.isdir(cbd):
+        led = json.load(open(os.path.join(cbd, 'ledger.json'), encoding='utf-8'))
+        order = {'DISPUTED': 0, 'PROPOSED': 1, 'CHALLENGED': 1, 'RECOMPUTED': 2, 'AGREED': 3, 'CORRECTED': 3, 'RATIFIED': 4, 'OVERRIDDEN': 4, 'INTEGRATED': 5}
+        its = sorted(led['items'], key=lambda i: (order.get(i['status'], 9), i['id']))
+        subs['{{CB_LEDGER}}'] = ''.join('<tr><td class="mono">%s</td><td>%s</td><td>%s</td><td><span class="cbs s-%s">%s</span></td><td class="note">%s</td></tr>' % (
+            i['id'], html.escape(i['by']), html.escape(i['claim']), i['status'].lower(), i['status'],
+            html.escape(' · '.join(x for x in (i.get('evidence', ''), i.get('note', '')) if x))) for i in its)
+        cnt = {}
+        for i in its: cnt[i['status']] = cnt.get(i['status'], 0) + 1
+        subs['{{CB_COUNTS}}'] = ' · '.join('%d %s' % (v, k.lower()) for k, v in sorted(cnt.items(), key=lambda kv: order.get(kv[0], 9)))
+        msgs = sorted(f for f in os.listdir(cbd) if re.match(r'\d{4}-\d{2}-\d{2}_', f) and f.endswith('.md'))
+        subs['{{CB_MESSAGES}}'] = ''.join('<details class="msg"><summary><b>%s</b> <span class="note">%s</span></summary><div class="deriv">%s</div></details>' % (
+            html.escape(re.sub(r'^# ', '', open(os.path.join(cbd, f), encoding='utf-8').readline().strip())), f[:10],
+            md_html(open(os.path.join(cbd, f), encoding='utf-8').read().split('\n', 1)[1])) for f in reversed(msgs))
+        subs['{{CB_PROTOCOL}}'] = md_html(open(os.path.join(cbd, 'PROTOCOL.md'), encoding='utf-8').read())
+        subs['{{ARCHIVE_REPORT}}'] = md_html(open(os.path.join(cbd, 'ARCHIVE_SALVAGE_REPORT.md'), encoding='utf-8').read())
     pages = []
     # the Companion Explorer: one page per Part, a contents page and a search index, from the Companion's Markdown (one source)
     cpath = os.path.join(ROOT, 'ai', 'Omega42_Companion_V335_Rev450.md')

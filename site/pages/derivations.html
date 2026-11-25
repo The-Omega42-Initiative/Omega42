@@ -1,0 +1,69 @@
+<!--{"title": "Derivations", "desc": "The mathematical derivations behind every Omega42 gateway: orbits, the antipode, the golden-ratio ring, the 3-adic tower and renormalization, the optimal Aperture, collective observability, spectral architecture, the coherence operator, multiplicity mixing, reversible memory and the pi/42 triangle.", "nav": "derivations"}-->
+<div class="wide">
+<section class="band"><div class="stack">
+  <div class="eyebrow">Derivations · exact and recomputable</div>
+  <h1>Every gateway, <em>derived.</em></h1>
+  <p class="lede">Each section states a result, proves it, and names the check in <a href="https://github.com/{{REPO}}/blob/main/records/cobuilder/verify_cobuilder_2026_11_25.py">verify_cobuilder_2026_11_25.py</a> that recomputes it exhaustively (40 checks, pure Python, under two seconds). Notation: S = (ℤ/9)², N(a, b) = (b, a + b), A = (0 1; 1 1), U the permutation of fields on S induced by N.</p>
+</div></section>
+
+<section class="stack col deriv">
+<h2 id="d1">1. Orbit architecture: 81 = 24 + 24 + 24 + 8 + 1</h2>
+<p><b>Result.</b> N is a bijection of S with five orbits: three of length 24, one of length 8 and the fixed point (0, 0).</p>
+<p><b>Proof.</b> det A = −1 is a unit mod 9, so N is invertible. Modulo 3 the nonzero vectors form one orbit of length 8 (the Pisano period π(3) = 8). Over a state x ≢ 0 mod 3 the period is a multiple of 8 dividing π(9) = 24; since A⁸ ≡ I + 3B (mod 9) with B = (1 1; 1 2) invertible mod 3, A⁸ fixes no such x, so the period is 24, and the 72 such states form three orbits. The 9 states with both coordinates divisible by 3 are 3·(ℤ/3)², a copy of the mod-3 world: one fixed point and one 8-cycle. <span class="chk">Checks R0, R5.</span></p>
+
+<h2 id="d2">2. The antipode: A¹² = −I</h2>
+<p><b>Proof.</b> Fₙ₊₁Fₙ₋₁ − Fₙ² = (−1)ⁿ and Aⁿ = (Fₙ₋₁ Fₙ; Fₙ Fₙ₊₁). F₁₂ = 144 ≡ 0, F₁₁ = 89 ≡ 8 ≡ −1, F₁₃ = 233 ≡ 8 ≡ −1 (mod 9), so A¹² ≡ −I and A²⁴ ≡ I. Every state meets its negative twelve steps along its own orbit. <span class="chk">Check R5.</span></p>
+
+<h2 id="d3">3. The golden-ratio ring and the norm</h2>
+<p><b>Result.</b> Identify (a, b) with a + bφ where φ² = φ + 1. Then φ(a + bφ) = b + (a + b)φ: the law is multiplication by φ. The quadratic form Q(a, b) = a² + ab − b² is the norm N(a + bφ), and Q(Nx) = −Q(x) because N(φ) = −1.</p>
+<p><b>Consequence.</b> Q² is invariant; it takes the values 1, 4 and 7 on the three 24-orbits and 0 on the 8-cycle and the fixed point, so (period, Q²) separates all five orbits. <span class="chk">Checks R5, R7.</span></p>
+
+<h2 id="d4">4. The tower, depth and renormalization</h2>
+<p><b>Result.</b> 3 is inert in ℚ(√5), so Rₖ = ℤ₃[φ]/3ᵏ = (ℤ/3ᵏ)[φ] and the levels of the tower are its finite quotients. At depth k there are (3ᵏ + 1)/2 orbits. Reduction π: Rₖ₊₁ → Rₖ commutes with N; each nonzero orbit of length L lifts to exactly three orbits of length 3L, and the fiber over 0 is the fixed point plus an 8-cycle.</p>
+<p><b>Proof sketch.</b> φ⁸ = 13 + 21φ = 1 + 3(4 + 7φ) with 4 + 7φ a unit, so cubing raises the 3-adic valuation of φ^(8·3ʲ) − 1 by exactly one; orders triple at each level. Counting states gives the three lifts. The fiber over 0 is 3·Rₖ ≅ Rₖ₋₁. <span class="chk">Check R7 (3 → 9 → 27 → 81).</span></p>
+<p><b>Spectral inheritance.</b> The harmonic multiplicities at depth k are m_l = [l = 0] + Σⱼ 3ʲ⁻¹[3ᵏ⁻ʲ ∣ l]. From 81 to 729 states, 48 new harmonics appear, each with multiplicity 9 (432 dimensions), and the 24 inherited harmonics gain 216 dimensions. Fiber averaging J*J splits every field into an inherited part and a detail part, orthogonally. <span class="chk">Check R7.</span></p>
+<p><b>Domain Zero, differentiated.</b> No state returns to 0 under the invertible law. Yet one level deeper, what reads as 0 holds a fixed point and an eight-cycle: apparent nothingness contains unresolved structure.</p>
+
+<h2 id="d5">5. The optimal Aperture: d_min(7) = 3</h2>
+<p><b>Lower bound.</b> An aperture h: S → {0, …, 6} produces at most 7ᵗ histories after t observations. 7² = 49 &lt; 81, so two never separate all states.</p>
+<p><b>Construction.</b> The certificate table (rows a, columns b) below gives 7, 49 and 81 distinct histories after 1, 2 and 3 observations; class sizes 11, 12, 11, 17, 10, 12, 8. A finite certificate plus the counting bound is a complete proof. <span class="chk">Check R1.</span></p>
+<pre class="mono cert">3 2 1 1 1 0 5 4 3
+3 2 0 2 1 1 1 4 5
+3 3 1 1 5 3 1 6 0
+2 0 1 3 0 4 2 5 3
+3 6 3 5 3 5 0 0 3
+6 4 4 3 0 6 2 0 2
+6 2 5 2 4 5 5 6 0
+6 4 5 1 2 4 4 0 2
+5 3 4 5 1 3 3 3 6</pre>
+<p><b>Structural discrimination.</b> The obvious aperture h = a mod 7 gives 7, 49, 73, 77, 80, 81: six observations are needed, and (1, 8) and (8, 1) agree for five. Over all 378 seven-class coordinate apertures (merging two disjoint pairs of the nine values), the minimum is 5 for 270 of them, 6 for 78, 7 for 6, 8 for 3, and 21 never separate every state: six is a property of this particular view, not of seven symbols. <span class="chk">Checks R1b, R8.</span></p>
+
+<h2 id="d6">6. Collective observability</h2>
+<p><b>Result.</b> Three observers of a mod 7 at phases 0, 2 and 5 together determine every state from a single round. Of the 253 anchored triples (0, d, e), exactly 24 do. Two observers at phases 0 and d need 5, 4, 3, 2, 2, 2, 2, 2, 3, 4, 5, 6, 5, 4, 3, 2, 2, 2, 2, 2, 3, 4, 5 rounds for d = 1, …, 23. <span class="chk">Checks R1c, R8.</span></p>
+<p><b>Depth bound.</b> At depth k, n = 9ᵏ states need at least ⌈log₇ n⌉ = 2, 3, 4, 5 seven-symbol readings for k = 1, …, 4; independent observer maps attain it by base-7 digits. Whether shared phase observers attain it beyond depth 2 is open (investigation X-OBS-02).</p>
+
+<h2 id="d7">7. Spectral architecture and the 281-dimensional algebra</h2>
+<p><b>Result.</b> U has eigenvalues e^(2πij/24) with multiplicity m_j = 3 + [3 ∣ j] + [j = 0]: each 24-orbit contributes every 24th root once, the 8-cycle the roots with 3 ∣ j, the fixed point j = 0. The operators commuting with U form M₅ ⊕ 7·M₄ ⊕ 16·M₃, of complex dimension 25 + 112 + 144 = 281. U¹² has eigenspaces of dimensions 41 (+1) and 40 (−1). <span class="chk">Checks R2, R7.</span></p>
+
+<h2 id="d8">8. The coherence operator</h2>
+<p><b>Definition.</b> L = 2I − U − U*, Cα = (I + αL/4)⁻¹, α ≥ 0.</p>
+<p><b>Proof.</b> U is unitary and normal, so L and Cα are functions of U. On a harmonic with eigenvalue λ = e^(2πij/24), L acts by 2 − λ − λ̄ = 4 sin²(πj/24), so Cα acts by c_j = 1/(1 + α sin²(πj/24)) ∈ (0, 1]. Hence Cα commutes with U, is self-adjoint, positive and a contraction, fixes every invariant field (c₀ = 1), and lowers the Dirichlet energy ⟨f, Lf⟩. At α = 4 the fastest harmonic keeps 1/5. <span class="chk">Check R2.</span></p>
+
+<h2 id="d9">9. Multiplicity mixing</h2>
+<p><b>Result.</b> Any unitary V inside the commutant, block-diagonal on the eigenspaces, commutes with U and preserves the energy of a field in every harmonic. Example: swap the normalized constant field on the fixed point with that on a 24-orbit (both are j = 0 vectors). It changes which orbit carries the energy and keeps every harmonic profile: law-preserving generation of alternatives. For a generic field the stabilizer in the product of unitary groups has dimension Σ(m_j − 1)² = 143, its orbit 281 − 143 = 138. <span class="chk">Check R9.</span></p>
+
+<h2 id="d10">10. Reversible memory and its 59,049 classes</h2>
+<p><b>Result.</b> T_g(x, m) = (Nx, m + g(x)) is a bijection of S × ℤ/9 for every g. Running once round an orbit O adds the orbit sum s_O = Σ_{x∈O} g(x). Changing g by a coboundary f∘N − f leaves every orbit sum unchanged, and a g with all orbit sums 0 is a coboundary (solve along the orbit), so the classes are exactly (ℤ/9)⁵ = 59,049.</p>
+<p><b>CRM-01.</b> g = a gives m − b invariant: g = b∘N − b is a coboundary, all orbit sums are 0, and the register records nothing the world does not hold. A unit sum on one 24-orbit makes one cycle of length 24 · 9 = 216. Under deepening, the pullback g∘π multiplies nonzero orbit sums by 3: from depth 2 to 3 it has image 729 and kernel 81, so winding information can be lost by refinement. <span class="chk">Checks R3, R7.</span></p>
+
+<h2 id="d11">11. Why 42</h2>
+<p><b>Result.</b> A hyperbolic triangle with angles π/p, π/q, π/r has area π(1 − 1/p − 1/q − 1/r). Among all integer triples with 1/p + 1/q + 1/r &lt; 1 the largest sum is 1/2 + 1/3 + 1/7 = 41/42, so the (2, 3, 7) triangle has the smallest area of any hyperbolic triangle group, π/42 (curvature −1). <span class="chk">Check R5.</span></p>
+
+<h2 id="d12">12. The other primes</h2>
+<p><b>Result.</b> Modulo 7 the same matrix has order 16 (x² = x + 1 has no root mod 7, so ℤ/7[φ] is the field of 49 elements and its 48 nonzero elements form three orbits of 16). Modulo 11, where 5 is a square, x² = x + 1 has roots 8 and 4 of orders 10 and 5, and 121 = 1 + 2·5 + 11·10. <span class="chk">Checks R5, R7.</span></p>
+
+<h2 id="d13">13. The Aperture arithmetic</h2>
+<p>1/7 ≡ 4 (mod 9) since 7 · 4 = 28 ≡ 1; 7 · 7 = 49 ≡ 1 (mod 24); 2 · 5 ≡ 1 (mod 9), so seed 5 runs seed 2's cycle 1 → 2 → 4 → 8 → 7 → 5 backwards; 5 + 4 ≡ 0 (mod 9); 5 + 7 = 12, the antipode of the 24-loop. The digit sequence from the seeds (2, 5) has period 24 and sum 117, and its terms twelve apart sum to 9, or to 18 where both are 9. <span class="chk">Check R5.</span></p>
+<p class="note">Contributors: gateways 4–6 and 8–10 were developed by ChatGPT (Co-Builder) with an independent contributor to the Originator, and recomputed by Claude (Co-Builder) on 25 November 2026. The exchange is in the <a href="cobuilder.html">Co-Builder record</a>.</p>
+</section>
+</div>

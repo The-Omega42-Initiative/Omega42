@@ -1,0 +1,95 @@
+<!--{"title": "The Universal Observatory of Existence", "desc": "Do not just read the discovery: enter it. Interactive instruments over the exact Omega42 mathematics: the optimal Aperture, collective observability, spectral coherence, reversible memory and the depth tower.", "nav": "observatory", "scripts": ["observatory.js"]}-->
+<div class="wide">
+<section class="band"><div class="stack">
+  <div class="eyebrow">The Universal Observatory of Existence</div>
+  <h1>Do not just read the discovery. <em>Enter it.</em></h1>
+  <p class="lede">Six instruments, each running the exact mathematics of Omega42 in your browser by exhaustive computation over all 81 states. Change a setting and watch the structure answer. Every result here is reproduced by <a href="https://github.com/{{REPO}}/blob/main/records/cobuilder/verify_cobuilder_2026_11_25.py">one script</a>, and every derivation is written out on the <a href="derivations.html">derivations page</a>.</p>
+  <div class="ctas"><a class="btn" href="#ap">Aperture laboratory</a><a class="btn ghost" href="#co">Collective observability</a><a class="btn ghost" href="#ch">Spectral coherence</a><a class="btn ghost" href="#me">Reversible memory</a><a class="btn ghost" href="#dp">Depth tower</a></div>
+</div></section>
+
+<section class="stack obs" id="ap">
+  <div class="eyebrow">Instrument I · the Aperture laboratory · <span class="st proved">proved</span></div>
+  <h2>How much must a limited observer see to know where it is?</h2>
+  <p>An aperture shows only one symbol of a state. Watch successive observations along the loop narrow the possibilities. With seven symbols, two observations give at most 49 histories, fewer than 81 states, so two can never be enough; the optimal aperture recognizes every state after three. The obvious view, a mod 7, needs six.</p>
+  <div id="ap-lab" class="lab">
+    <div class="controls">
+      <label>Aperture<select id="ap-which"><option value="optimal">Optimal seven-symbol aperture</option><option value="a7">a mod 7 (the obvious view)</option><option value="a9">The coordinate a (nine symbols)</option></select></label>
+      <label>True state a<select id="ap-a"></select></label>
+      <label>b<select id="ap-b"></select></label>
+      <label>Observations: <b id="ap-n-out">1</b><input id="ap-n" type="range" min="1" max="8" value="1"></label>
+    </div>
+    <div class="out">
+      <p class="mono">What the observer sees: <b id="ap-trace"></b></p>
+      <p id="ap-cand"></p>
+      <div id="ap-grid" class="grid9" aria-label="The 81 states with the symbol each shows; highlighted states still fit the observations"></div>
+      <p class="note mono">Distinct histories over all 81 states — <span id="ap-counts"></span></p>
+    </div>
+  </div>
+  <p class="note">Try (1, 8) under a mod 7: it agrees with (8, 1) for five observations and parts from it only at the sixth. Under the optimal aperture it is recognized at the third.</p>
+</section>
+
+<section class="stack obs" id="co">
+  <div class="eyebrow">Instrument II · collective observability · <span class="st computed">computed</span></div>
+  <h2>Several partial observers, one complete picture.</h2>
+  <p>Each observer sees only a mod 7, at its own moment of the loop. Alone, each is ambiguous. Together, the right team recognizes every state at once. Of the 253 teams of three anchored at phase 0, exactly 24 do it in a single round; (0, 2, 5) is one of them.</p>
+  <div id="co-lab" class="lab">
+    <div class="controls">
+      <label>Observer 1 phase<input id="co-o1" type="number" min="0" max="23" value="0"></label>
+      <label>Observer 2 phase<input id="co-o2" type="number" min="0" max="23" value="2"></label>
+      <label class="inline"><input id="co-use3" type="checkbox" checked> Observer 3 phase<input id="co-o3" type="number" min="0" max="23" value="5"></label>
+      <label>Rounds each: <b id="co-r-out">1</b><input id="co-r" type="range" min="1" max="6" value="1"></label>
+      <button class="btn ghost" type="button" id="co-preset">Team (0, 2, 5)</button>
+    </div>
+    <div class="out"><p id="co-res"></p><p id="co-need"></p></div>
+  </div>
+</section>
+
+<section class="stack obs" id="ch">
+  <div class="eyebrow">Instrument III · spectral coherence · <span class="st proved">proved</span></div>
+  <h2>Filter a field toward persistence without breaking the law.</h2>
+  <p>The native evolution splits every field on the 81 states into 24 harmonics, with multiplicities 5, 4 (seven times) and 3 (sixteen times): <span id="sp-strip" class="strip"></span>. The coherence operator C<sub>α</sub> = (I + αL/4)<sup>−1</sup> keeps harmonic j with weight 1/(1 + α sin²(πj/24)): invariant fields stay exactly, fast harmonics fade.</p>
+  <div id="ch-lab" class="lab">
+    <div class="controls">
+      <label>Coherence α = <b id="ch-alpha-out">4.0</b><input id="ch-alpha" type="range" min="0" max="20" step="0.1" value="4"></label>
+      <div class="stats small"><div><b id="ch-c0"></b><span>invariant harmonic kept</span></div><div><b id="ch-c12"></b><span>fastest harmonic (j = 12) kept</span></div><div><b id="ch-avg"></b><span>average over all 81 dimensions</span></div></div>
+    </div>
+    <svg id="ch-svg" class="bars" viewBox="0 0 480 160" role="img" aria-label="Response of each of the 24 harmonics"></svg>
+  </div>
+</section>
+
+<section class="stack obs" id="me">
+  <div class="eyebrow">Instrument IV · reversible memory · <span class="st proved">proved</span></div>
+  <h2>A memory that rides the world and can always be undone.</h2>
+  <p>The register T<sub>g</sub>(x, m) = (Nx, m + g(x)) is reversible on all 729 configurations. After one revolution of an orbit the memory moves by the orbit sum s<sub>O</sub>, so every additive memory is classified by five numbers in ℤ/9: 9⁵ = 59,049 classes. CRM-01 (g = a) has every orbit sum 0 and never winds. Set an orbit sum, step forward or back, and watch the period stretch.</p>
+  <div id="me-lab" class="lab">
+    <div class="controls">
+      <div id="me-sums" class="sums"></div>
+      <label>Start a<select id="me-a"></select></label><label>b<select id="me-b"></select></label><label>memory m<select id="me-m"></select></label>
+      <div class="ctas"><button class="btn ghost" type="button" id="me-back">← step back</button><button class="btn" type="button" id="me-fwd">step →</button><button class="btn ghost" type="button" id="me-rev">one revolution ⟳</button><button class="btn ghost" type="button" id="me-reset">reset</button><button class="btn ghost" type="button" id="me-unit">unit winding on (0, 1)'s orbit</button></div>
+    </div>
+    <div class="out">
+      <p class="mono"><b id="me-state"></b> · steps taken <b id="me-steps"></b> · this cycle closes after <b id="me-period"></b> steps</p>
+      <p class="mono">Memory class (orbit sums): <b id="me-class"></b></p>
+      <p id="me-note"></p>
+    </div>
+  </div>
+  <p class="note">Winding classifies what a memory accumulates around the loop; recording a research history in full needs an external, append-only record, which the repository keeps.</p>
+</section>
+
+<section class="stack obs" id="dp">
+  <div class="eyebrow">Instrument V · depth and renormalization · <span class="st proved">proved</span></div>
+  <h2>The same law at every resolution.</h2>
+  <p>The world of 81 states is one level of a tower, (ℤ/3<sup>k</sup>)², the finite quotients of ℤ₃[φ]. Each nonzero orbit lifts to three orbits of three times the length; the states that look like zero at one depth hold a fixed point and an eight-cycle at the next.</p>
+  <div id="dp-lab" class="lab">
+    <div class="controls"><label>Depth k<select id="dp-k"><option value="1">1 · ℤ/3</option><option value="2" selected>2 · ℤ/9 (the native world)</option><option value="3">3 · ℤ/27</option><option value="4">4 · ℤ/81</option></select></label></div>
+    <div class="out"><p id="dp-sum"></p><p class="mono" id="dp-hist"></p><p id="dp-lift"></p></div>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Instrument VI · the discovery engine · in development</div>
+  <h2>OmegaSL Tier III: the instruments as a language.</h2>
+  <p>Derive · Observe · Reconstruct · Discriminate · Transform · Verify · Remember · Discover. The operations above are being written as typed operations of the Omega42 Structural Language, so that a Navigator can compose them, record every step and loss, and have a second AI recompute the result. The specification is a Co-Builder proposal awaiting the Originator's ratification; see the <a href="cobuilder.html">Co-Builder exchange</a>.</p>
+  <div class="ctas"><a class="btn" href="derivations.html">Read the derivations</a><a class="btn ghost" href="index.html#math">Back to the gateways</a><a class="btn ghost" href="playground.html">The playground</a></div>
+</section>
+</div>

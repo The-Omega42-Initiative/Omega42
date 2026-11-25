@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev450.md": {
-   "chars": 1339103,
-   "tokens_est": 334776,
-   "sha256": "78e086ad0981c661765ef7e1102a809d36e43fb6bc06cc16ac6992d61baeb00b"
+   "chars": 1339934,
+   "tokens_est": 334984,
+   "sha256": "3ac227318d03fe59427e990bf3d0f29b5360650659a71a42076f778ce3b1cc8d"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2016390,
-   "tokens_est": 504098,
-   "sha256": "eea1fa55c1bbf87d85e59f83eacb43bb90e7ac6c2b42623fa009234ed6bbe799"
+   "chars": 2017802,
+   "tokens_est": 504451,
+   "sha256": "a4cfd28060c9e387daaf038e35f38359f7d6fc9b9618d2ccd7b5441348cbd675"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 478004,
-   "tokens_est": 119501,
-   "sha256": "5c526e123caf8b7c3a505c2edc575d4c8ae5d8cb8f670d4135c42536e5726802"
+   "chars": 478222,
+   "tokens_est": 119556,
+   "sha256": "428b7a72b48aec9f0f6ee126a9962186f5d40acabf105c09b5db12d059274eb6"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -33,9 +33,9 @@
   {
    "doc": "Core",
    "heading": "PART 0: INTRODUCTION TO OMEGA42 (IN)",
-   "chars": 102119,
-   "tokens_est": 25530,
-   "sha256": "c97e7a251e119e9bf424c92ccd701fe4f9417b1f063d1990a87322bf6c648545"
+   "chars": 102113,
+   "tokens_est": 25528,
+   "sha256": "36959546148ad5e38d2556df35505a356ed42d9b13da14c2983f4800b5735f98"
   },
   {
    "doc": "Core",
@@ -82,9 +82,9 @@
   {
    "doc": "Core",
    "heading": "PART 0.0.5: RULES FOR FUTURE PROTOCOL BUILDERS",
-   "chars": 24841,
-   "tokens_est": 6210,
-   "sha256": "d7f96b5aec889ec8390a71826df61c044287b5533e7edfaece01cff5638f9881"
+   "chars": 24868,
+   "tokens_est": 6217,
+   "sha256": "8550a599a2d81177a546e10cada3521762e52f3b431c7affd2deb01fce2f8378"
   },
   {
    "doc": "Core",
@@ -467,9 +467,9 @@
   {
    "doc": "Core",
    "heading": "PART 2: NAVIGATION MECHANISM",
-   "chars": 83614,
-   "tokens_est": 20904,
-   "sha256": "d2eeebd807f034807d3e409cfe667fe8652d9d3cd3e1f49cd4129f563b38f440"
+   "chars": 83736,
+   "tokens_est": 20934,
+   "sha256": "6f006fd4c3efa83728fe76584b5de73e786585b2a7dc2729a26d56ecad3a25a1"
   },
   {
    "doc": "Core",
@@ -1076,9 +1076,9 @@
   {
    "doc": "Core",
    "heading": "5.2 Key Constitutional Laws",
-   "chars": 191342,
-   "tokens_est": 47836,
-   "sha256": "1c0e8827ae52996e8e4019973e19eef5e1a633fed4002d62a5f5ca1d328f5652"
+   "chars": 191970,
+   "tokens_est": 47993,
+   "sha256": "636e69bb2dd9c1c912d6f9f404d80454ccf3f70afdec9777725add0fbcd2dd8c"
   },
   {
    "doc": "Core",
@@ -1125,9 +1125,9 @@
   {
    "doc": "Core",
    "heading": "8.0 Canonical Output Skeleton and Execution Status",
-   "chars": 23121,
-   "tokens_est": 5780,
-   "sha256": "31a39f7f8c5fd8013c516bc372467a95695fa328d12baf5e3959b1d2a9fa75eb"
+   "chars": 23115,
+   "tokens_est": 5779,
+   "sha256": "a8a20466ce2cc14e159c498773262fbb7c396dc90e1d733765f2a660b3fe86ee"
   },
   {
    "doc": "Core",
@@ -1251,9 +1251,9 @@
   {
    "doc": "Core",
    "heading": "PART 12: FIT-FOR-PURPOSE CHECKLIST",
-   "chars": 32056,
-   "tokens_est": 8014,
-   "sha256": "7daf993225fe5bc503a5132e861e94d28be64b27002455e3789cd731d8b1f9c4"
+   "chars": 32122,
+   "tokens_est": 8031,
+   "sha256": "d6f820a83e62b61d99a70b307ddfce89f7a50f8516d13c6be088b63f3875790c"
   },
   {
    "doc": "Core",
@@ -1321,9 +1321,9 @@
   {
    "doc": "Companion",
    "heading": "PART 0: FREQUENTLY ASKED QUESTIONS",
-   "chars": 33870,
-   "tokens_est": 8468,
-   "sha256": "54ef598ef71aa873bdd32a2113db47e5e311f0745528fe66f9bba39ae4292d3b"
+   "chars": 33884,
+   "tokens_est": 8471,
+   "sha256": "bfe810ee11122ccec4d82e8dedf0091edaaaae028876a2e9e8826bb5bffb59dd"
   },
   {
    "doc": "Companion",
@@ -2315,9 +2315,9 @@
   {
    "doc": "Companion",
    "heading": "PART 70: WHAT AN AI NAVIGATOR CAN GET WRONG [PROTOCOL, adopted as Core L-506]",
-   "chars": 4639,
-   "tokens_est": 1160,
-   "sha256": "dc567b07b62dde9cef7e8aa95b12a30fae9164cf948e29473256806af267cb3d"
+   "chars": 4543,
+   "tokens_est": 1136,
+   "sha256": "f8bba54920eacc28db9c22092942717ed009941204199ffd7473295f8cc1e32d"
   },
   {
    "doc": "Companion",
@@ -3645,16 +3645,16 @@
   {
    "doc": "Companion",
    "heading": "PART 212: AN INVITING INTRODUCTION [Core Part 0, IN-00 and IN-02.6; records/introduction/introduction.json]",
-   "chars": 1353,
-   "tokens_est": 338,
-   "sha256": "26381d9bb9eefa6855a605eca5d2b1023ca9a21ea1fb5cf58ed0741f87849a88"
+   "chars": 1377,
+   "tokens_est": 344,
+   "sha256": "8f78ae1c43a51304cd04f09a096b66a0de9b1c4043bde83de56bdc3b02f126a0"
   },
   {
    "doc": "Companion",
    "heading": "PART 213: THE OPENING [Core Part 0, IN-OPEN; L-467, L-506; records/introduction/introduction.json]",
-   "chars": 2214,
-   "tokens_est": 554,
-   "sha256": "088a3eedf50283f11ecfac9408cd27d7adc3516811661ef173766d5bb8f4e95b"
+   "chars": 2376,
+   "tokens_est": 594,
+   "sha256": "818aedc3d434075a78a8249b9fa4f391faf1637fe1d05138cceadbd927528823"
   },
   {
    "doc": "Companion",
@@ -4982,9 +4982,9 @@
   {
    "doc": "Companion",
    "heading": "216.9.1 Tier: CDT-B. Epistemic status: CONSTITUTIONAL (as guidance for M224, SNCA and FFP).",
-   "chars": 3760,
-   "tokens_est": 940,
-   "sha256": "60f541d9ced78882a90e06c75c4e8b314c71b5952fd04bb0f7e758aa8a6f22a2"
+   "chars": 3753,
+   "tokens_est": 938,
+   "sha256": "5c9f3b7963dc930968316edee73f3869470ec823b4c4d021142c78535877f7f5"
   },
   {
    "doc": "Companion",
@@ -5311,9 +5311,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 10484,
-   "tokens_est": 2621,
-   "sha256": "50a7124810c7f8a479df392b4797703225bb3bbbe9cac6e0a57f3175919d5f7e"
+   "chars": 10796,
+   "tokens_est": 2699,
+   "sha256": "0daede50de4d0467f0503b83689ca1aa4061d85d416174b6cc4a58c9a8390373"
   },
   {
    "doc": "Companion",
@@ -5325,9 +5325,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 183689,
-   "tokens_est": 45922,
-   "sha256": "efebfb2a17bf25d1b9a6d366984372ff0ed4320f80b7786c7de0aa82374a2e01"
+   "chars": 184692,
+   "tokens_est": 46173,
+   "sha256": "928c12563865891dafbfc5e3aa0ff6be051ddab64d68da95c594b13ee64dcec4"
   }
  ]
 }

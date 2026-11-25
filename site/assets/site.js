@@ -155,3 +155,28 @@
   function f() { t.classList.toggle('show', window.scrollY > window.innerHeight * 1.2); }
   window.addEventListener('scroll', f, {passive: true}); f();
   t.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({top: 0, behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); }); })();
+/* The emblem: the white walker brightens each number as it arrives (Co-Builder branch emblem-facet-pulse). */
+(function () {
+  var svg = document.querySelector('svg.emblem');
+  if (!svg || !window.matchMedia || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var walker = svg.querySelector('.walker'); if (!walker) return;
+  var nodes = Array.prototype.map.call(svg.querySelectorAll('.node'), function (g) {
+    var c = g.querySelector('circle'); return { g: g, x: +c.getAttribute('cx'), y: +c.getAttribute('cy') };
+  });
+  var id = 0;
+  function tick() {
+    id = 0; if (document.hidden) return;
+    var m = walker.getCTM && walker.getCTM();
+    if (m) {
+      var best = null, d = Infinity;
+      nodes.forEach(function (n) { var t = Math.hypot(m.e - n.x, m.f - n.y); if (t < d) { d = t; best = n; } });
+      nodes.forEach(function (n) { n.g.classList.toggle('arriving', n === best && d <= 19); });
+    }
+    id = requestAnimationFrame(tick);
+  }
+  function start() { if (!document.hidden && !id) id = requestAnimationFrame(tick); }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { if (id) cancelAnimationFrame(id); id = 0; nodes.forEach(function (n) { n.g.classList.remove('arriving'); }); } else start();
+  });
+  start();
+})();

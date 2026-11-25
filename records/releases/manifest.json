@@ -7,7 +7,7 @@
   "channel": "STABLE",
   "tag": "v335-rev450"
  },
- "date": "2026-11-20",
+ "date": "2026-11-21",
  "change_log": "docs/AMENDMENTS_PENDING.md",
  "amendments": [
   {
@@ -337,6 +337,14 @@
    "level": "B",
    "level_source": "declared",
    "date": "2026-11-20"
+  },
+  {
+   "id": "CA-41",
+   "title": "CA-41: Ratification of CA-35 and CA-36; the Core budget at 1000 words (21 November 2026)",
+   "status": "RECORDED",
+   "level": "C",
+   "level_source": "inferred from the text",
+   "date": "2026-11-21"
   }
  ],
  "approval": {
@@ -387,7 +395,8 @@
    "CA-15",
    "CA-17",
    "CA-19",
-   "CA-21"
+   "CA-21",
+   "CA-41"
   ],
   "normative_changes_pending_esc": [],
   "navigator_update_needed": "read the Core edition of this release; the date-gated rules in force are listed in docs/AMENDMENTS_PENDING.md"

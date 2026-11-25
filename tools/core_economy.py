@@ -12,7 +12,7 @@ and every added or edited paragraph, the register excepted, is free of builder's
   the narration of a record or session; revision history; concessions of weakness, flaw or overstatement; statements of what is
   not yet proved, verified or established; caveats, disclaimers and limitations; contrastive hedges. These belong in the
   Companion (Part 216 for scopes and limits), in the sealed records, and with the examiners (APE, PVIR, SNCA).
-The prose a record adds beyond the register stays within 900 words. A paragraph edited in place (the same opening of 60
+The prose a record adds beyond the register stays within 1000 words. A paragraph edited in place (the same opening of 60
 characters) is read for the markers and not for its kind. An appendix listing is compared without its number, so a listing renumbered by an insertion
 is not new prose.
 
@@ -66,7 +66,7 @@ def problems(cur, base):
         for name, rx in MARKERS:
             m = re.search(rx, line, re.I)
             if m: P.append('%s ("%s"): %s' % (name, m.group(0), line[:100])); break
-    if added_words > 900: P.append('the record adds %d words of prose beyond the register, over 900' % added_words)
+    if added_words > 1000: P.append('the record adds %d words of prose beyond the register, over 1000' % added_words)
     return P, added_words
 def baseline_of(cur, record):
     return {'_about': 'The fingerprint of the Core prose at the last sealed record (Core Part 0.0.5 Rule 39): a hash of every paragraph and its opening of 60 characters. Written by python3 tools/core_economy.py --accept.',

@@ -1,6 +1,6 @@
 QUESTION VERBATIM: Welcome Navigator
 OUTPUT FORM (L-549): INTRODUCTION -- Core IN-00, L-467
-I'm example-model-1, made by Example Lab, your Navigator for this session (Omega42 V335 Rev.450 STABLE, 20 November 2026).
+I'm example-model-1, made by Example Lab, your Navigator for this session (Omega42 V335 Rev.450 STABLE, 12 November 2026).
 ======= INTRODUCTION TO OMEGA42 =======
 Ω42
 Every question has a place.
@@ -29,6 +29,5 @@ The structure is fixed. The territory is endless. What you make of it is yours.
 
 ======= END INTRODUCTION =======
 Ask your first question.
-AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its wording and may shape its reading; recompute what can be recomputed and judge the rest.
-NAVIGATOR: example-model-1 (Example Lab) * V335 Rev.450 STABLE * 20 November 2026
+NAVIGATOR: example-model-1 (Example Lab) * V335 Rev.450 STABLE * 12 November 2026
 ESC

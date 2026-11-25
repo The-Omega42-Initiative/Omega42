@@ -148,7 +148,7 @@ Yes. python3 tools/format_check.py --skeleton "your question" prints a whole nav
 Q47: Does Omega42 claim that the universe is a 24-cycle?
 No. Omega42 makes no claims of any kind about the world. It is a thought experiment: it supposes a closed mathematical world and asks what follows. It shows what the arithmetic computes, and you can rerun every computation. It offers a reading of your question, generated under the constraint of the computed coordinate, and labels it as a reading. It can be wrong in how it was carried out, and that can be checked. Whether a reading means anything to you is yours to judge (Core L-505).
 Q48: Can the Navigator be wrong?
-Yes. Every Navigator is an AI system, and an AI can miscount, misquote, cite something it did not read, or be out of date; its training — including the human-feedback training that makes it helpful — can also make it too agreeable, too cautious or too conventional, and that can color a reading. The arithmetic can be rerun by anyone, sources are opened before they are cited, peers check each other, and every output says this in one line. What cannot be recomputed is yours to weigh (Core L-506; Part 70).
+Yes. Every Navigator is an AI system, and an AI can miscount, misquote, cite something it did not read, or be out of date; its training — including the human-feedback training that makes it helpful — can also make it too agreeable, too cautious or too conventional, and that can color a reading. The arithmetic can be rerun by anyone, sources are opened before they are cited, peers check each other, and the session's first output says this in one line. What cannot be recomputed is yours to weigh (Core L-506; Part 70).
 Q49: Who is responsible for a reading?
 You are responsible for what you decide and do with it; the protocol's Originator answers for the protocol; whoever runs the AI answers for that run; the AI's maker answers for its system under the law; the mathematics answers for nothing, because it only constrains. The AI cannot take responsibility, so its output is checked instead: anyone can recompute the numbers, and errors are corrected in the open record. A reading is not professional advice (Core L-507).
 Q50: What is new about Omega42?
@@ -1236,12 +1236,12 @@ The review asked also for four things the record already did in part and now doe
 69.6 What the peers contributed. APE-091 found the gap — the vocabulary had a title for the Originator's authority but none for the Originator's authorship — and proposed the spectrum of direction now in BF-10; APE-092 proposed the term Constitutional Architect and read the transition to public stewardship as the protocol's own test of whether its coherence depends on its Originator.
 
 ### PART 70: WHAT AN AI NAVIGATOR CAN GET WRONG [PROTOCOL, adopted as Core L-506]
-70.1 The caveat [the Originator]. The protocol comes with the usual AI caveats: an AI can make mistakes, and it carries the dispositions of its own training, including reinforcement learning from human feedback, which may affect what Omega42 outputs. Every output now says so in one line of its Identity Block.
+70.1 The caveat [the Originator]. The protocol comes with the usual AI caveats: an AI can make mistakes, and it carries the dispositions of its own training, including reinforcement learning from human feedback, which may affect what Omega42 outputs. The first output of each session says so in one line (Part 70.6).
 70.2 The errors, each with its guard. (1) Arithmetic: a miscounted word or a wrong residue — guarded by the reference script, MATH-GATE and the output audit, which recompute every decidable value (this record: a perturbation pair miscounted in NAV-2026-0003, found by recomputation). (2) Procedure: a block omitted or a rule under-run — guarded by the format check and the gate priority (this record: the M116 pairs and the essay length of NAV-2026-0004, found by peers). (3) Quotation and source: a sentence attributed to a document that does not contain it, or a source cited unread — guarded by opening before citing (L-503) and by a peer's check against the documents (APE-088: a quotation found in neither document). (4) Knowledge boundary: work superseded since training — guarded by M273 and the currency check. (5) Exposure: wording carried from text in view — guarded by CONTEXT EXPOSURE, M207 and the overlap check (records/srcas: two readings carrying the protocol's own sample). (6) Variation: two runs of one Navigator differ — guarded by the within-Navigator baseline. (7) Carried template: a position's character supplied from habit rather than read from the documents — guarded by recomputing every peer anchor in the receiving notes (E10: one architecture, six readings, every stated anchor different from the recomputed one).
 70.3 The dispositions of training. Post-training, including reinforcement learning from human feedback, makes a model helpful, and in doing so gives it pulls: to agree with and please the person it addresses, to praise, to soften and hedge, to prefer familiar views, to sound more certain or more modest than its grounds. The protocol names these as pressures and asks the Navigator to declare them (M207): APPROVAL, DIMINUTION, CAUTION TRAP, CONVENTION, INFLATION, PROTOCOL-TEXT ECHO, and CONDITIONING for a pull traced to training that fits none of these (APE-094). Models trained alike share habits, so their agreement counts for less (L-416), and only a decoy coordinate (M267) can tell how much of a reading comes from the coordinate and how much from the Navigator.
 70.4 Both directions. The AI Bias Firewall guards against an AI's conventions displacing the premise or the Striker's judgment. The opposite pull is as real: a model trained to please may agree too readily with the frame, the Originator or the Striker — the peer review that calls a navigation masterful without counting its essay, the reply that answers "yes, unequivocally" to a question the documents answer in part. A reviewer therefore says where its praise goes beyond what it checked, and the receiving Navigator corrects it in the APE notes (APE-088, APE-090).
 70.5 What no instrument removes. A disposition that no check detects is still present, and a Navigator's declaration of its own pressures comes from the same trained system (the executor paradox). The protocol does not claim to be free of them. It makes them visible where it can, makes the arithmetic recomputable, and leaves the judgment to the Striker, who brings what no Navigator receives.
-70.6 One disclosure, then specific qualifications (O42-UX-01) [ratified, CA-36, D-23]. The Originator observed that the AI CAVEAT on every output can tire a casual Striker who already runs Ω42 inside an AI with its own notices. GPT-6 recommends: the general disclosure once, in the Opening given on "Welcome Navigator"; no repetition of the generic line in later answers of the same session; specific qualifications (an assumption, an uncertainty, a gap in sources, the status of a statement) wherever they matter, never replaced by a generic line; the full methodology always within reach; and any notice the host platform requires kept. Two refinements from the Builder: a new conversation may not keep the earlier Opening, so a new session repeats the disclosure when the trigger is typed; and an output saved to the record (a navigation, an APE, a Bulletin entry) is read alone, without its session, so it keeps the line. ESC ratified the change on 20 November 2026 (D-23): the line now closes the Opening, once in a session, and stands again at the close of the first answer where a session opens with a question; later replies carry specific qualifications in its place; outputs of a record form keep the line (Core L-506, L-467, L-549 (9)).
+70.6 One disclosure, then specific qualifications (O42-UX-01) [the Originator; Core L-506]. The Originator observed that the AI CAVEAT on every output can tire a casual Striker who already runs Ω42 inside an AI with its own notices, and decided: the caveat appears once per session, when the Striker logs in with "Welcome Navigator" or, without it, when the Striker first starts interacting with Omega42. GPT-6 had recommended the same: one general disclosure; specific qualifications (an assumption, an uncertainty, a gap in sources, the status of a statement) wherever they matter, never replaced by a generic line; the full methodology always within reach; and any notice the host platform requires kept. A new conversation is a new session and gives the disclosure again. The Builder's suggestion that saved records keep the line on every output was not adopted: a record keeps the line where it was the first output of its session. Outputs dated from 20 October to 20 November 2026 keep the line they carry. Core L-506, IN-OPEN, L-467 and L-549 state the rule; tools/format_check.py, tools/intro_output.py and tools/output_form.py check it.
 
 ### PART 71: WHAT IS NEW HERE, AND WHAT IS NOT [PROTOCOL; Core L-508]
 71.1 The question [the Originator]. What is the most innovative step in the protocol: that an AI can carry mathematical relations into language, the postulate of a totality, or structural resonance?
@@ -2779,13 +2779,13 @@ The review asked also for four things the record already did in part and now doe
 ### PART 212: AN INVITING INTRODUCTION [Core Part 0, IN-00 and IN-02.6; records/introduction/introduction.json]
 212.1 What was asked [EXACT]. The Originator found the Introduction harsh: its cautions read as a license to question a reader's state of mind, and the line that the Navigator may "name the kind of professional who deals with such matters" read as an aspersion on the person asking. The Introduction is to invite, not to alarm.
 212.2 What changed [CONSTRUCTED]. The closing paragraph is now "Before You Begin, a Few Friendly Notes": the premise is supposed, so a reader can explore without first believing it; the Navigator is an AI and every number can be checked; a reading is an exploration, not a prescription, and the choices in a reader's life stay theirs, made with whatever company and counsel they choose; it closes with a welcome. IN-02.6 is now "Who Decides": a reading is handed over whole, it informs and never decides, and the order of authority runs from Omega42 to the Navigator to the Striker. Neither paragraph refers a reader to anyone.
-212.3 What stayed [CONSTRUCTED]. The premise, the AI caveat on every output (L-506), the Advisory Rule (L-444) and the executor boundary (L-560 (7)) are unchanged; the Introduction no longer describes them as warnings to the reader.
+212.3 What stayed [CONSTRUCTED]. The premise, the AI caveat (L-506, once per session from 21 November 2026), the Advisory Rule (L-444) and the executor boundary (L-560 (7)) are unchanged; the Introduction no longer describes them as warnings to the reader.
 212.4 Status. Core Part 0 (IN-00 and IN-02.6) and records/introduction/introduction.json carry the new text; PV-012 records the change; Part 212 is the commentary.
 
 ### PART 213: THE OPENING [Core Part 0, IN-OPEN; L-467, L-506; records/introduction/introduction.json]
 213.1 What was asked [EXACT]. The Originator asked for a short introduction that breaks the news of a discovery, making plain that Omega42 is an unconventional question-answering system, inviting the reader to interrogate it, and carrying no notice that could deter a first question: every notice to come only with the first navigation.
 213.2 What changed [CONSTRUCTED]. On "Welcome Navigator" the Navigator now gives the Opening, about 220 words, word for word and alone: the law, the prime 3, the cycle of 24, the geometry of light, and the question placed at one exact position that anyone can recompute; then the four directions of a reading, the meeting of questions, and the invitation to push back and try to break it, closing on "Ask your first question." The full Introduction (IN-00) and the technical explanation are given on request.
-213.3 Where the notices went [CONSTRUCTED]. The Friendly Notes, the Navigator Identity Block and the AI CAVEAT close the session's first navigation (L-467). At the Originator's request the caveat now stands at the end of every output, directly above the signature, so that it follows the exploration and never precedes it (L-506, L-549 (9)); records made before keep their text. L-506 asks the caveat of every output that answers a question; the Opening answers none.
+213.3 Where the notices went [CONSTRUCTED]. The Friendly Notes, the Navigator Identity Block and the AI CAVEAT close the session's first navigation (L-467). At the Originator's request the caveat now stands at the end of every output, directly above the signature, so that it follows the exploration and never precedes it (L-506, L-549 (9)); records made before keep their text. L-506 asks the caveat of every output that answers a question; the Opening answers none. From 21 November 2026 the caveat is given once per session: below the Opening, or at the end of the first output of a session that begins without it (Part 70.6).
 213.4 Every statement in the Opening is checkable [EXACT]. Each step adds the last two (the law); modulo 9 the cycle has 24 positions and the period is 8 times 3^(k-1) at every depth (Core Part 0.0.10); the law keeps the interval of spacetime and its Fibonacci states lie on light rays (the Lexicon, terms 9 and 10); the coordinate is the same on every machine (the reference script); a reading has four arms; questions meet at shared states.
 213.5 Status. Core Part 0 (IN-OPEN, the greeting, IN-00), Core Part 2 (the Opening Response, the Introduction Handoff), Core Part 8.0 (the model opening), Core Part 8.1, L-467, L-506 and L-549 carry the change; tools/intro_output.py renders and checks the Opening and the first navigation's close; tools/format_check.py, tools/output_form.py and scripts/m193_m225.py accept the caveat at the end and the Opening without notices; Part 213 is the commentary.
 
@@ -3229,7 +3229,7 @@ The review asked also for four things the record already did in part and now doe
 216.9.2 Purpose: name the failure types a navigation can exhibit, with the check that catches each, so that reviewers and Navigators look for them by name. The catalogue lists types and the check that catches each; it records no incidents (L-411): a departure is corrected before the output stands, and a computable class persists as a known-answer test.
 216.9.3 Types and checks. INDEX/VALUE CONFLATION — a position index used where an orbit value is required (M219 operand check; ACS known answers). UNEXECUTED-AUDIT CLAIM — a script run, table or gate reported as done when it was not: a simulated run labelled as executed, a table "available on request", a PASS for an absent table (M214 labelling, M268, L-420). TRUNCATED TABLE — rows omitted or summarized (M268). ANCHOR STEERING — counts adjusted toward a preferred anchor (M214, M270). DOMAIN-BOUNDARY ERROR — instructions navigated as domain, or the notation form changed between Navigators (Core Step 1, L-414). SELF-EXEMPTION — a mandatory gate skipped as inapplicable without the stated condition (M224). JARGON LEAK — protocol terms in THE ANSWER or the essay (L-418). UNMARKED COMPARATIVE PERSPECTIVE — a comparative perspective without its marker and register return (FR-11). PREMISE WEAKENING — wording that downgrades, relativizes or externalizes the foundational premise (M243a, FB-1 to FB-8). SILENT ALTERATION — the central reading changed without disclosure (L-425). RESONANCE FROM INTEREST — resonance claimed from an interesting output (L-426). JURISDICTION CONFLATION — a comparative status asserted inside THE ANSWER, or the absence of a comparative result treated as failure (L-427, L-428). PREMISE ADOPTION — a known-inconsistent quantitative premise restated as fact (L-429). RETROACTIVE EVIDENCE — comparative material fed back into a frozen synthesis (L-429). DEFENSIVE DIMINUTION — a finding reported weaker than its evidence: an established result buried under general caveats, dismissed for not fitting an established category, denied standing until a test of another jurisdiction is run, or called not unique without the scope in which it is unique (L-486 A–F; M302). PERFORMED BOLDNESS — a connection or a significance asserted because it sounds exploratory, not because the evidence carries it (L-486 H; M302). LENS INTRUSION — lens vocabulary, a lens statement or a Striker-side record entering the counts, the anchor or the frozen reading (L-487). OUTCOME PROMISE — a rendering that tells the Striker the world will rearrange itself to match a coordinate (L-487, L-486). ROLE-BY-ROLE ANSWER — THE ANSWER, the Takeaway or the essay discussing the anchor and the arms one at a time instead of merging them into one conclusion (L-440, Check 5; M301). READING CARRY-IN — a navigation written after its Navigator read another reading of the same domain, its exposure undeclared (L-442, M193).
 216.9.4 Regression rule. Every error class the protocol corrects is encoded, wherever it is computable, as a known-answer test in canonical_reference.py --test, so that a correction persists as a test rather than as a memory. The suite currently covers extraction, numerals, Roman numerals, notation, hashing, ACS, the canonical selection, and the derived quantities of Core Part 3.21.
-216.10 What stayed in the Core [CONSTRUCTED]. Status labels and the CDT tiers; the AI caveat at the close of every output (Core L-506); the Builder's verification rules (Core Part 0.0.5); and the laws that fix the frame's sovereignty (Core L-490, L-491).
+216.10 What stayed in the Core [CONSTRUCTED]. Status labels and the CDT tiers; the AI caveat, once in each session (Core L-506); the Builder's verification rules (Core Part 0.0.5); and the laws that fix the frame's sovereignty (Core L-490, L-491).
 216.11 Status. Core Part 0.0.5 Rule 35 keeps the Core's voice and tools/core_voice.py checks it in CI; tools/core_math.py writes 216.1 from records/math/results.json; 216.2 to 216.9 hold the passages moved from the Core, each with its source.
 
 ### PART 217: OMEGA42 AND THE EXCEPTIONAL STRUCTURES OF MATHEMATICS [Core Part 0.0.10, MF-73 to MF-80; tools/bridges.py; APE-473] -- presented when a question turns on E8, E7, E6, the golden ring, codes and lattices, or the foundations of mathematics
@@ -4129,63 +4129,65 @@ C.1.5 records/blind_test_01/key_check.py — Blind test 01 -- computes every ans
 C.1.6 records/blind_test_01/score_check.py — Blind test 01, round 1 -- recomputes the statements on which the replies differ from each other or from the key.
 C.1.7 records/blind_test_03/compute_key.py — recomputes the answer key of blind test 03 (Core Appendix S.4.2) from its brief alone.
 C.1.8 records/claimcheck/examples.py — M323 Arithmetic Statement Check on the statements examined in Companion Parts 93, 95, 96 and 97.
-C.1.9 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
-C.1.10 records/consciousness/fit.py — how four readings of the family fit its arithmetic (Companion Part 87). The nine features are frozen in.
-C.1.11 records/consciousness/levels.py — the level ladder of the family and the experiential spectrum placement (Companion Part 89).
-C.1.12 records/consciousness/mind_first.py — the exact facts under the mind-first reading of CT-42 (Companion Parts 85 and 86; conjectures C49 to C63).
-C.1.13 records/construct/columns.py — the vertical columns and the diagonals of the Construct's squares, read exactly from the workbook's frozen constants.
-C.1.14 records/construct/construct.py — the arithmetic of the Construct, the Originator's first instrument, read through Omega42 (records/construct/; Companion Part 104).
-C.1.15 records/construct/continuity.py — what the Construct left unchanged, and what it added (Companion Part 139; Core L-528).
-C.1.16 records/construct/primordial.py — the Originator's Construct workbook PRIMORDIAL FRACTURE, read exactly, through Omega42 (Companion Part 107).
-C.1.17 records/construct/sa_lotto.py — the Construct read over the South African Lotto history, through Omega42 (Companion Part 105).
-C.1.18 records/construct/units_action.py — how the Square Reading's multiplications act on the 81 states of the law (Companion Part 129; M328, Core Part 3.54).
-C.1.19 records/cymatics/examples.py — the practical examples of M322 Cymatic View (Companion Part 91), each computed.
-C.1.20 records/depth5_01/compute.py — Depth 5, run 01 -- computes the forecasts frozen in 00_forecasts.txt (SHA-256 in 01_freeze.txt) and nothing else.
-C.1.21 records/evidence_run_01/compute.py — Evidence run 01 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.22 records/evidence_run_02/compute.py — Evidence run 02 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.23 records/evidence_run_03/compute.py — Evidence run 03 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.24 records/evidence_run_04/compute.py — Evidence run 04 -- computations (standard library only). Run: python3 compute.py.
-C.1.25 records/evidence_run_05/compute.py — Evidence run 05 -- computations (standard library only). Run: python3 compute.py.
-C.1.26 records/evidence_run_06/compute.py — Evidence run 06 -- half-period negation and the family (standard library only). Run: python3 compute.py.
-C.1.27 records/evidence_run_07/compute.py — Evidence run 07 -- frozen manifestations (standard library only). Run: python3 compute.py.
-C.1.28 records/evidence_run_08/compute.py — Evidence run 08 -- the operator (mod 9) and the manifestor (mod 8). Standard library only. Run: python3 compute.py.
-C.1.29 records/evidence_run_09/compute.py — Evidence run 09 -- E8 as the icosian ring: an eightfold lattice with an intrinsic golden endomorphism.
-C.1.30 records/evidence_run_10/compute.py — Evidence run 10 -- moduli supplied by physics: c mod 8 (Gauss-Milgram) and c mod 24 (framing). Standard library only.
-C.1.31 records/evidence_run_11/compute.py — Evidence run 11 -- ninefold anyon data (standard library only). Run: python3 compute.py.
-C.1.32 records/evidence_run_12/compute.py — Evidence run 12 -- re-examination of runs 01-03 at family level (standard library + numpy). Run: python3 compute.py.
-C.1.33 records/evidence_run_13/compute.py — Evidence run 13 -- quasicrystals, prediction first (standard library). Run: python3 compute.py.
-C.1.34 records/fieldkit/examples.py — the practical examples of M321 Field Kit (Companion Part 90), each computed, none invented.
-C.1.35 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
-C.1.36 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
-C.1.37 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
-C.1.38 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
-C.1.39 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
-C.1.40 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
-C.1.41 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
-C.1.42 records/library/recompute_lib01.py — Library tranche LIB-01: recomputation of the mathematical statements in eight archive documents.
-C.1.43 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
-C.1.44 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
-C.1.45 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
-C.1.46 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
-C.1.47 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
-C.1.48 records/opal/compute.py — the reproducible witness behind CERT-0008.
-C.1.49 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
-C.1.50 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
-C.1.51 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
-C.1.52 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
-C.1.53 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
-C.1.54 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
-C.1.55 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
-C.1.56 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
-C.1.57 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
-C.1.58 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
-C.1.59 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
-C.1.60 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
-C.1.61 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
-C.1.62 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
-C.1.63 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
-C.1.64 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
-C.1.65 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
+C.1.9 records/cobuilder/verify_cobuilder_2026_11_25.py — Independent recomputation of the Co-Builder results of 25 November 2026 (Claude, for the Originator).
+C.1.10 records/cobuilder/xobs02_search.py — X-OBS-02: can one shared seven-symbol aperture, read at different native phases, attain the observer bound.
+C.1.11 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
+C.1.12 records/consciousness/fit.py — how four readings of the family fit its arithmetic (Companion Part 87). The nine features are frozen in.
+C.1.13 records/consciousness/levels.py — the level ladder of the family and the experiential spectrum placement (Companion Part 89).
+C.1.14 records/consciousness/mind_first.py — the exact facts under the mind-first reading of CT-42 (Companion Parts 85 and 86; conjectures C49 to C63).
+C.1.15 records/construct/columns.py — the vertical columns and the diagonals of the Construct's squares, read exactly from the workbook's frozen constants.
+C.1.16 records/construct/construct.py — the arithmetic of the Construct, the Originator's first instrument, read through Omega42 (records/construct/; Companion Part 104).
+C.1.17 records/construct/continuity.py — what the Construct left unchanged, and what it added (Companion Part 139; Core L-528).
+C.1.18 records/construct/primordial.py — the Originator's Construct workbook PRIMORDIAL FRACTURE, read exactly, through Omega42 (Companion Part 107).
+C.1.19 records/construct/sa_lotto.py — the Construct read over the South African Lotto history, through Omega42 (Companion Part 105).
+C.1.20 records/construct/units_action.py — how the Square Reading's multiplications act on the 81 states of the law (Companion Part 129; M328, Core Part 3.54).
+C.1.21 records/cymatics/examples.py — the practical examples of M322 Cymatic View (Companion Part 91), each computed.
+C.1.22 records/depth5_01/compute.py — Depth 5, run 01 -- computes the forecasts frozen in 00_forecasts.txt (SHA-256 in 01_freeze.txt) and nothing else.
+C.1.23 records/evidence_run_01/compute.py — Evidence run 01 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.24 records/evidence_run_02/compute.py — Evidence run 02 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.25 records/evidence_run_03/compute.py — Evidence run 03 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.26 records/evidence_run_04/compute.py — Evidence run 04 -- computations (standard library only). Run: python3 compute.py.
+C.1.27 records/evidence_run_05/compute.py — Evidence run 05 -- computations (standard library only). Run: python3 compute.py.
+C.1.28 records/evidence_run_06/compute.py — Evidence run 06 -- half-period negation and the family (standard library only). Run: python3 compute.py.
+C.1.29 records/evidence_run_07/compute.py — Evidence run 07 -- frozen manifestations (standard library only). Run: python3 compute.py.
+C.1.30 records/evidence_run_08/compute.py — Evidence run 08 -- the operator (mod 9) and the manifestor (mod 8). Standard library only. Run: python3 compute.py.
+C.1.31 records/evidence_run_09/compute.py — Evidence run 09 -- E8 as the icosian ring: an eightfold lattice with an intrinsic golden endomorphism.
+C.1.32 records/evidence_run_10/compute.py — Evidence run 10 -- moduli supplied by physics: c mod 8 (Gauss-Milgram) and c mod 24 (framing). Standard library only.
+C.1.33 records/evidence_run_11/compute.py — Evidence run 11 -- ninefold anyon data (standard library only). Run: python3 compute.py.
+C.1.34 records/evidence_run_12/compute.py — Evidence run 12 -- re-examination of runs 01-03 at family level (standard library + numpy). Run: python3 compute.py.
+C.1.35 records/evidence_run_13/compute.py — Evidence run 13 -- quasicrystals, prediction first (standard library). Run: python3 compute.py.
+C.1.36 records/fieldkit/examples.py — the practical examples of M321 Field Kit (Companion Part 90), each computed, none invented.
+C.1.37 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
+C.1.38 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
+C.1.39 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
+C.1.40 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
+C.1.41 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
+C.1.42 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
+C.1.43 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
+C.1.44 records/library/recompute_lib01.py — Library tranche LIB-01: recomputation of the mathematical statements in eight archive documents.
+C.1.45 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
+C.1.46 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
+C.1.47 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
+C.1.48 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
+C.1.49 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
+C.1.50 records/opal/compute.py — the reproducible witness behind CERT-0008.
+C.1.51 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
+C.1.52 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
+C.1.53 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
+C.1.54 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
+C.1.55 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
+C.1.56 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
+C.1.57 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
+C.1.58 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
+C.1.59 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
+C.1.60 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
+C.1.61 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
+C.1.62 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
+C.1.63 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
+C.1.64 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
+C.1.65 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
+C.1.66 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
+C.1.67 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
 C.2 The golden navigations (14 October 2026), as issued and frozen: three navigations of the peer questions on the matrix of φ, the discrimination of the canonical orbit and the physical systems, nine further navigations, and the peer review with its disposition. Their computations are C.1 records/golden_navigations/compute.py and compute_further.py.
 C.2.1 records/golden_navigations/00_freeze.txt — the freeze of the golden navigations (14 October 2026).
 C.2.2 records/golden_navigations/01_navigations.txt — the three golden navigations, as issued.
@@ -4842,573 +4844,586 @@ X.3.62 records/certificates/CERT-0008.txt — certificate CERT-0008 of Core L-55
 X.3.63 records/certificates/CERT-0009.txt — certificate CERT-0009 of Core L-550, MATHEMATICAL, CERTIFIED.
 X.3.64 records/certificates/CERT-0010.txt — certificate CERT-0010 of Core L-550, MATHEMATICAL, CERTIFIED.
 X.3.65 records/claimcheck/examples_output.txt — the output of records/claimcheck, reproduced by the embedded computation.
-X.3.66 records/consciousness/amendment_draft_F02M.txt — DRAFT AMENDMENT -- CONSCIOUSNESS-FIRST AS THE PREMISE (F-02-M) -- NOT OPERATIVE.
-X.3.67 records/consciousness/cf_correspondences.json — the data of records/consciousness.
-X.3.68 records/consciousness/cf_frame_atlas.txt — The Consciousness-First Frame's own statements (Core L-515; Companion Part 88) -- frozen 23 October 2026 before it was struck, at the Originator's instruction ".
-X.3.69 records/consciousness/cf_frame_output.txt — the output of records/consciousness, reproduced by the embedded computation.
-X.3.70 records/consciousness/cf_instrument_effects.txt — ======= THE CONSCIOUSNESS-FIRST FRAME AND THE EXISTING INSTRUMENTS (Core L-515; Companion Part 88) =======.
-X.3.71 records/consciousness/cf_rescore_request.txt — REQUEST FOR AN INDEPENDENT RE-SCORE (Core L-515; Companion Parts 87 and 88; APE-152, its recommendation 6) -- issued 23 October 2026.
-X.3.72 records/consciousness/cf_table.txt — ======= M320 CONSCIOUSNESS-FIRST CORRESPONDENCE TABLE (Core L-515; Companion Part 88) =======.
-X.3.73 records/consciousness/fc_draft_CF.txt — DRAFT -- INTRODUCTION ENTRY AND STRIKER COMMAND FOR THE CONSCIOUSNESS-FIRST FRAME -- ADOPTED 23 October 2026, SEQ 36: now Core IN-06.7, IN-23 and Core Part 8.0 (Comp.
-X.3.74 records/consciousness/fit_features_frozen.txt — FIT OF THE READINGS TO THE ARITHMETIC (Companion Part 87) -- FROZEN on 23 October 2026, before any reading was scored.
-X.3.75 records/consciousness/fit_output.txt — the output of records/consciousness, reproduced by the embedded computation.
-X.3.76 records/consciousness/levels_output.txt — the output of records/consciousness, reproduced by the embedded computation.
-X.3.77 records/consciousness/mind_first_output.txt — the output of records/consciousness, reproduced by the embedded computation.
-X.3.78 records/consciousness/spectrum_frozen.txt — EXPERIENTIAL SPECTRUM PLACEMENT (Companion Part 89) -- FROZEN on 23 October 2026, before any state was computed.
-X.3.79 records/construct/columns_output.txt — the output of records/construct, reproduced by the embedded computation.
-X.3.80 records/construct/construct_output.txt — the output of records/construct, reproduced by the embedded computation.
-X.3.81 records/construct/continuity_output.txt — the output of records/construct, reproduced by the embedded computation.
-X.3.82 records/construct/primordial/AFFINE_PROOF.txt — PRIMORDIAL FRACTURE SHA-256 2a96dd63fc475e02095b8ebcc7d3b47eaf073de1039da7153567421d0369b77a.
-X.3.83 records/construct/primordial/FREEZE_OUTPUT.txt — PRIMORDIAL FRACTURE SHA-256 2a96dd63fc475e02095b8ebcc7d3b47eaf073de1039da7153567421d0369b77a.
-X.3.84 records/construct/primordial/affine_proof.py — affine_proof.py -- the symbolic proof of Core MATH-55 on the Originator's workbook (after APE-245).
-X.3.85 records/construct/primordial/construct_frozen.json — the data of records/construct/primordial.
-X.3.86 records/construct/primordial/freeze.py — freeze.py -- regenerate construct_frozen.json from the Originator's workbook PRIMORDIAL FRACTURE and prove that it is affine.
-X.3.87 records/construct/primordial/xleval.py — A small evaluator for the formulas of PRIMORDIAL FRACTURE (references, ranges, + - * /, SUM, AVERAGE, INT, MOD, IF, AND, COUNTIF).
-X.3.88 records/construct/primordial_output.txt — the output of records/construct, reproduced by the embedded computation.
-X.3.89 records/construct/sa_lotto/SOURCES.txt — SOUTH AFRICAN NATIONAL LOTTO, MAIN GAME -- THE DRAW HISTORY USED BY records/construct/sa_lotto.py (Companion Part 105).
-X.3.90 records/construct/sa_lotto/draws.csv — date,n1,n2,n3,n4,n5,n6,bonus.
-X.3.91 records/construct/sa_lotto_output.txt — the output of records/construct, reproduced by the embedded computation.
-X.3.92 records/construct/seed_offsets.json — the data of records/construct.
-X.3.93 records/construct/units_action_output.txt — the output of records/construct, reproduced by the embedded computation.
-X.3.94 records/construct_x_test_record.txt — Construct X 2.3.2 test record, 2026-11-19 (capability tests).
-X.3.95 records/core/economy.json — the data of records/core.
-X.3.96 records/corrections/register.json — the data of records/corrections.
-X.3.97 records/cosmology/freeze.json — the data of records/cosmology.
-X.3.98 records/cosmology/own_first.txt — OWN INVESTIGATION, FROZEN BEFORE THE PEER ACCOUNTS WERE COMPARED (Builder Rule 17; records/instances/seq_0118.txt).
-X.3.99 records/curation/agent/catalogue.json — the data of records/curation/agent.
-X.3.100 records/curation/agent/catalogue.md — Curation catalogue (proposals).
-X.3.101 records/curation/index.json — the data of records/curation.
-X.3.102 records/curation/report.md — Curation report.
-X.3.103 records/cymatics/examples_output.txt — the output of records/cymatics, reproduced by the embedded computation.
-X.3.104 records/d0/lineage.json — the data of records/d0.
-X.3.105 records/data/mauna_loa_co2_monthly_nist_1974_1987.csv — year,month,co2_ppm.
-X.3.106 records/data/sunspots_yearly_silso_v2.csv — 8.3, 18.3, 26.7, 38.3, 60.0, 96.7, 48.3, 33.3, 16.7, 13.3, 5.0, 0.0, 0.0, 3.3, 18.3, 45.0, 78.3, 105.0, 100.0, 65.0, 46.7, 43.3, 36.7, 18.3, 35.0, 66.7, 130.0, .
-X.3.107 records/depth5_01/00_forecasts.txt — DEPTH 5, RUN 01 -- FORECASTS FROM THE DEPTH-4 CORRESPONDENCE, REGISTERED BEFORE ANY COMPUTATION (Core L-550 (7), Core Part 0.14.5).
-X.3.108 records/depth5_01/01_freeze.txt — e7ab239286154d8363e288e385f2e6f2e38a5e086a3446d77047f34ccb0d5a34  00_forecasts.txt.
-X.3.109 records/depth5_01/02_freeze_sha256.txt — a hash of records/depth5_01, stated before the result.
-X.3.110 records/depth5_01/compute_output.txt — the output of records/depth5_01, reproduced by the embedded computation.
-X.3.111 records/discoveries/candidates.txt — "BREAKTHROUGH" CANDIDATES (Core L-530 (5)) -- the Navigator's proposal by frozen criteria; the judgment is the Striker's.
-X.3.112 records/discoveries/register.json — the data of records/discoveries.
-X.3.113 records/discoveries/register.txt — THE DISCOVERY REGISTER (Core L-530) -- 16 discoveries; the Navigator proposes "breakthrough" candidates (L-530 (5)); the judgment is the Striker's.
-X.3.114 records/dsi/pr001_output.txt — the output of records/dsi, reproduced by the embedded computation.
-X.3.115 records/dsi/pr002_output.txt — the output of records/dsi, reproduced by the embedded computation.
-X.3.116 records/dsi/register.json — the data of records/dsi.
-X.3.117 records/evidence_run_01/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 01 -- FREEZE RECORD.
-X.3.118 records/evidence_run_01/01_timestamp.txt — the freeze time of records/evidence_run_01.
-X.3.119 records/evidence_run_01/02_freeze_sha256.txt — a hash of records/evidence_run_01, stated before the result.
-X.3.120 records/evidence_run_01/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 01 -- RESONANCE LEDGER ENTRIES (M230-A).
-X.3.121 records/evidence_run_01/compute_output.txt — the output of records/evidence_run_01, reproduced by the embedded computation.
-X.3.122 records/evidence_run_02/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 02 -- FREEZE RECORD.
-X.3.123 records/evidence_run_02/01_timestamp.txt — the freeze time of records/evidence_run_02.
-X.3.124 records/evidence_run_02/02_freeze_sha256.txt — a hash of records/evidence_run_02, stated before the result.
-X.3.125 records/evidence_run_02/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 02 -- RESONANCE LEDGER ENTRIES (M230-A).
-X.3.126 records/evidence_run_02/compute_output.txt — the output of records/evidence_run_02, reproduced by the embedded computation.
-X.3.127 records/evidence_run_03/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 03 -- FREEZE RECORD.
-X.3.128 records/evidence_run_03/01_timestamp.txt — the freeze time of records/evidence_run_03.
-X.3.129 records/evidence_run_03/02_freeze_sha256.txt — a hash of records/evidence_run_03, stated before the result.
-X.3.130 records/evidence_run_03/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 03 -- RESULTS AND LEDGER ENTRIES (M230-A).
-X.3.131 records/evidence_run_03/compute_output.txt — the output of records/evidence_run_03, reproduced by the embedded computation.
-X.3.132 records/evidence_run_04/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 04 -- FREEZE RECORD.
-X.3.133 records/evidence_run_04/01_timestamp.txt — the freeze time of records/evidence_run_04.
-X.3.134 records/evidence_run_04/02_freeze_sha256.txt — a hash of records/evidence_run_04, stated before the result.
-X.3.135 records/evidence_run_04/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 04 -- RESULTS AND LEDGER ENTRIES (M230-A).
-X.3.136 records/evidence_run_04/compute_output.txt — the output of records/evidence_run_04, reproduced by the embedded computation.
-X.3.137 records/evidence_run_05/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 05 -- FREEZE RECORD.
-X.3.138 records/evidence_run_05/01_timestamp.txt — the freeze time of records/evidence_run_05.
-X.3.139 records/evidence_run_05/02_freeze_sha256.txt — a hash of records/evidence_run_05, stated before the result.
-X.3.140 records/evidence_run_05/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 05 -- RESULTS AND LEDGER ENTRIES (M230-A).
-X.3.141 records/evidence_run_05/compute_output.txt — the output of records/evidence_run_05, reproduced by the embedded computation.
-X.3.142 records/evidence_run_06/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 06 -- FREEZE RECORD.
-X.3.143 records/evidence_run_06/01_timestamp.txt — the freeze time of records/evidence_run_06.
-X.3.144 records/evidence_run_06/02_freeze_sha256.txt — a hash of records/evidence_run_06, stated before the result.
-X.3.145 records/evidence_run_06/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 06 -- RESULTS AND LEDGER ENTRIES (M230-A).
-X.3.146 records/evidence_run_06/compute_output.txt — the output of records/evidence_run_06, reproduced by the embedded computation.
-X.3.147 records/evidence_run_07/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 07 -- FREEZE RECORD: FROZEN MANIFESTATIONS.
-X.3.148 records/evidence_run_07/01_timestamp.txt — the freeze time of records/evidence_run_07.
-X.3.149 records/evidence_run_07/02_freeze_sha256.txt — a hash of records/evidence_run_07, stated before the result.
-X.3.150 records/evidence_run_07/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 07 -- FROZEN MANIFESTATIONS: RESULTS AND LEDGER ENTRIES (M230-A).
-X.3.151 records/evidence_run_07/compute_output.txt — the output of records/evidence_run_07, reproduced by the embedded computation.
-X.3.152 records/evidence_run_08/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 08 -- FREEZE RECORD: THE OPERATOR AND THE MANIFESTOR.
-X.3.153 records/evidence_run_08/01_timestamp.txt — the freeze time of records/evidence_run_08.
-X.3.154 records/evidence_run_08/02_freeze_sha256.txt — a hash of records/evidence_run_08, stated before the result.
-X.3.155 records/evidence_run_08/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 08 -- THE OPERATOR AND THE MANIFESTOR: RESULTS AND LEDGER ENTRIES.
-X.3.156 records/evidence_run_08/compute_output.txt — the output of records/evidence_run_08, reproduced by the embedded computation.
-X.3.157 records/evidence_run_09/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 09 -- FREEZE RECORD: AN EIGHTFOLD OBJECT THAT SUPPLIES THE RULE ITSELF.
-X.3.158 records/evidence_run_09/01_timestamp.txt — the freeze time of records/evidence_run_09.
-X.3.159 records/evidence_run_09/02_freeze_sha256.txt — a hash of records/evidence_run_09, stated before the result.
-X.3.160 records/evidence_run_09/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 09 -- AN EIGHTFOLD OBJECT THAT SUPPLIES THE RULE ITSELF: RESULTS AND LEDGER.
-X.3.161 records/evidence_run_09/compute_output.txt — the output of records/evidence_run_09, reproduced by the embedded computation.
-X.3.162 records/evidence_run_10/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 10 -- FREEZE RECORD: A MODULUS SUPPLIED BY PHYSICS.
-X.3.163 records/evidence_run_10/01_timestamp.txt — the freeze time of records/evidence_run_10.
-X.3.164 records/evidence_run_10/02_freeze_sha256.txt — a hash of records/evidence_run_10, stated before the result.
-X.3.165 records/evidence_run_10/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 10 -- A MODULUS SUPPLIED BY PHYSICS: RESULTS AND LEDGER ENTRIES.
-X.3.166 records/evidence_run_10/compute_output.txt — the output of records/evidence_run_10, reproduced by the embedded computation.
-X.3.167 records/evidence_run_11/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 11 -- FREEZE RECORD: TOPOLOGICAL PHASES WITH NINEFOLD DATA.
-X.3.168 records/evidence_run_11/01_timestamp.txt — the freeze time of records/evidence_run_11.
-X.3.169 records/evidence_run_11/02_freeze_sha256.txt — a hash of records/evidence_run_11, stated before the result.
-X.3.170 records/evidence_run_11/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 11 -- TOPOLOGICAL PHASES WITH NINEFOLD DATA: RESULTS AND LEDGER ENTRIES.
-X.3.171 records/evidence_run_11/compute_output.txt — the output of records/evidence_run_11, reproduced by the embedded computation.
-X.3.172 records/evidence_run_12/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 12 -- FREEZE RECORD.
-X.3.173 records/evidence_run_12/01_timestamp.txt — the freeze time of records/evidence_run_12.
-X.3.174 records/evidence_run_12/02_freeze_sha256.txt — a hash of records/evidence_run_12, stated before the result.
-X.3.175 records/evidence_run_12/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 12 -- THE OBJECTS OF RUNS 01-03 AT FAMILY LEVEL (L-465).
-X.3.176 records/evidence_run_12/compute_output.txt — the output of records/evidence_run_12, reproduced by the embedded computation.
-X.3.177 records/evidence_run_13/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 13 -- FREEZE RECORD (PREDICTION FIRST).
-X.3.178 records/evidence_run_13/01_timestamp.txt — the freeze time of records/evidence_run_13.
-X.3.179 records/evidence_run_13/02_freeze_sha256.txt — a hash of records/evidence_run_13, stated before the result.
-X.3.180 records/evidence_run_13/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 13 -- RESULTS AND LEDGER ENTRIES (M230-A).
-X.3.181 records/evidence_run_13/compute_output.txt — the output of records/evidence_run_13, reproduced by the embedded computation.
-X.3.182 records/exploration/register.json — the data of records/exploration.
-X.3.183 records/ffp/ffp_run.txt — FFP RUN -- Core Part 12, 40 items | CI: STEPS 69, FAILED 0.
-X.3.184 records/fieldkit/examples_output.txt — the output of records/fieldkit, reproduced by the embedded computation.
-X.3.185 records/foundations/freeze.json — the data of records/foundations.
-X.3.186 records/foundations/freeze_seq0122.json — the data of records/foundations.
-X.3.187 records/foundations/freeze_seq0123.json — the data of records/foundations.
-X.3.188 records/foundations/own_first.txt — OWN INVESTIGATION, FROZEN BEFORE THE ATTACHED ACCOUNTS WERE COMPARED (Core L-545; records/instances/seq_0121.txt).
-X.3.189 records/foundations/own_first_seq0122.json — the data of records/foundations.
-X.3.190 records/foundations/own_first_seq0123.json — the data of records/foundations.
-X.3.191 records/frame/adversarial_prompts.json — the data of records/frame.
-X.3.192 records/frame/audit_matrix.json — the data of records/frame.
-X.3.193 records/frame/departures.json — the data of records/frame.
-X.3.194 records/frame/held.json — the data of records/frame.
-X.3.195 records/frame/regression.json — the data of records/frame.
-X.3.196 records/frame_audit/controls_output.txt — the output of records/frame_audit, reproduced by the embedded computation.
-X.3.197 records/frameworks/deutsch.txt — David Deutsch ("Quantum theory, the Church-Turing principle and the universal quantum computer", Proc. R. Soc. A 400, 1985; The Fabric of Reality, 1997; "Quantu.
-X.3.198 records/frameworks/everett.txt — Hugh Everett III ("'Relative State' Formulation of Quantum Mechanics", Reviews of Modern Physics 29, 1957; The Theory of the Universal Wave Function, 1956, publ.
-X.3.199 records/frameworks/everett_deutsch.txt — === BASHAR (atlas of M308) (14 statements) ===.
-X.3.200 records/frameworks/ptolemy.txt — Claudius Ptolemy, Tetrabiblos, Book I (second century CE; the English of J. M. Ashmand, London, 1822, in the public domain; F. E. Robbins, Loeb Classical Librar.
-X.3.201 records/frameworks/ptolemy_strike.txt — === BASHAR (atlas of M308) (14 statements) ===.
-X.3.202 records/frontier/register.json — the data of records/frontier.
-X.3.203 records/glossary/glossary.json — the data of records/glossary.
-X.3.204 records/golden_navigations/compute_further_output.txt — the output of records/golden_navigations, reproduced by the embedded computation.
-X.3.205 records/golden_navigations/compute_output.txt — the output of records/golden_navigations, reproduced by the embedded computation.
-X.3.206 records/ground_challenge_test_output.txt — the output of records, reproduced by the embedded computation.
-X.3.207 records/history/HISTORY.md — How Omega42 was built.
-X.3.208 records/howard/manuscripts.txt — MANUSCRIPT VERSION REGISTER -- "One Times One Equals Two" (Terrence DaShon Howard) (ADOPTED 23 October 2026, SEQ 36; APE-170).
-X.3.209 records/instances/seq_0022.txt — output SEQ 22 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.210 records/instances/seq_0023.txt — output SEQ 23 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.211 records/instances/seq_0024.txt — output SEQ 24 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.212 records/instances/seq_0025.txt — output SEQ 25 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.213 records/instances/seq_0026.txt — output SEQ 26 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.214 records/instances/seq_0027.txt — output SEQ 27 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.215 records/instances/seq_0028.txt — output SEQ 28 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.216 records/instances/seq_0029.txt — output SEQ 29 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.217 records/instances/seq_0030.txt — output SEQ 30 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.218 records/instances/seq_0031.txt — output SEQ 31 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.219 records/instances/seq_0032.txt — output SEQ 32 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.220 records/instances/seq_0033.txt — output SEQ 33 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.221 records/instances/seq_0034.txt — output SEQ 34 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.222 records/instances/seq_0035.txt — output SEQ 35 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.223 records/instances/seq_0036.txt — output SEQ 36 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.224 records/instances/seq_0037.txt — output SEQ 37 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.225 records/instances/seq_0038.txt — output SEQ 38 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.226 records/instances/seq_0039.txt — output SEQ 39 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.227 records/instances/seq_0040.txt — output SEQ 40 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.228 records/instances/seq_0041.txt — output SEQ 41 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.229 records/instances/seq_0042.txt — output SEQ 42 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.230 records/instances/seq_0043.txt — output SEQ 43 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.231 records/instances/seq_0044.txt — output SEQ 44 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.232 records/instances/seq_0045.txt — output SEQ 45 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.233 records/instances/seq_0046.txt — output SEQ 46 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.234 records/instances/seq_0047.txt — output SEQ 47 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.235 records/instances/seq_0048.txt — output SEQ 48 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.236 records/instances/seq_0049.txt — output SEQ 49 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.237 records/instances/seq_0050.txt — output SEQ 50 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.238 records/instances/seq_0051.txt — output SEQ 51 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.239 records/instances/seq_0052.txt — output SEQ 52 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.240 records/instances/seq_0053.txt — output SEQ 53 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.241 records/instances/seq_0054.txt — output SEQ 54 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.242 records/instances/seq_0055.txt — output SEQ 55 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.243 records/instances/seq_0056.txt — output SEQ 56 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.244 records/instances/seq_0057.txt — output SEQ 57 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.245 records/instances/seq_0058.txt — output SEQ 58 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.246 records/instances/seq_0059.txt — output SEQ 59 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.247 records/instances/seq_0060.txt — output SEQ 60 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.248 records/instances/seq_0061.txt — output SEQ 61 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.249 records/instances/seq_0062.txt — output SEQ 62 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.250 records/instances/seq_0063.txt — output SEQ 63 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.251 records/instances/seq_0064.txt — output SEQ 64 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.252 records/instances/seq_0065.txt — output SEQ 65 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.253 records/instances/seq_0066.txt — output SEQ 66 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.254 records/instances/seq_0067.txt — output SEQ 67 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.255 records/instances/seq_0068.txt — output SEQ 68 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.256 records/instances/seq_0069.txt — output SEQ 69 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.257 records/instances/seq_0070.txt — output SEQ 70 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.258 records/instances/seq_0071.txt — output SEQ 71 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.259 records/instances/seq_0072.txt — output SEQ 72 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.260 records/instances/seq_0073.txt — output SEQ 73 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.261 records/instances/seq_0074.txt — output SEQ 74 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.262 records/instances/seq_0075.txt — output SEQ 75 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.263 records/instances/seq_0076.txt — output SEQ 76 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.264 records/instances/seq_0077.txt — output SEQ 77 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.265 records/instances/seq_0078.txt — output SEQ 78 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.266 records/instances/seq_0079.txt — output SEQ 79 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.267 records/instances/seq_0080.txt — output SEQ 80 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.268 records/instances/seq_0081.txt — output SEQ 81 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.269 records/instances/seq_0082.txt — output SEQ 82 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.270 records/instances/seq_0083.txt — output SEQ 83 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.271 records/instances/seq_0084.txt — output SEQ 84 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.272 records/instances/seq_0085.txt — output SEQ 85 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.273 records/instances/seq_0086.txt — output SEQ 86 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.274 records/instances/seq_0087.txt — output SEQ 87 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.275 records/instances/seq_0088.txt — output SEQ 88 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.276 records/instances/seq_0089.txt — output SEQ 89 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.277 records/instances/seq_0090.txt — output SEQ 90 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.278 records/instances/seq_0091.txt — output SEQ 91 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.279 records/instances/seq_0092.txt — output SEQ 92 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.280 records/instances/seq_0093.txt — output SEQ 93 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.281 records/instances/seq_0094.txt — output SEQ 94 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.282 records/instances/seq_0095.txt — output SEQ 95 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.283 records/instances/seq_0096.txt — output SEQ 96 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.284 records/instances/seq_0097.txt — output SEQ 97 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.285 records/instances/seq_0098.txt — output SEQ 98 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.286 records/instances/seq_0099.txt — output SEQ 99 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.287 records/instances/seq_0100.txt — output SEQ 100 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.288 records/instances/seq_0101.txt — output SEQ 101 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.289 records/instances/seq_0102.txt — output SEQ 102 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.290 records/instances/seq_0103.txt — output SEQ 103 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.291 records/instances/seq_0104.txt — output SEQ 104 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.292 records/instances/seq_0105.txt — output SEQ 105 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.293 records/instances/seq_0106.txt — output SEQ 106 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.294 records/instances/seq_0107.txt — output SEQ 107 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.295 records/instances/seq_0108.txt — output SEQ 108 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.296 records/instances/seq_0109.txt — output SEQ 109 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.297 records/instances/seq_0110.txt — output SEQ 110 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.298 records/instances/seq_0111.txt — output SEQ 111 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.299 records/instances/seq_0112.txt — output SEQ 112 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.300 records/instances/seq_0113.txt — output SEQ 113 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.301 records/instances/seq_0114.txt — output SEQ 114 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.302 records/instances/seq_0115.txt — output SEQ 115 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.303 records/instances/seq_0116.txt — output SEQ 116 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.304 records/instances/seq_0117.txt — output SEQ 117 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.305 records/instances/seq_0118.txt — output SEQ 118 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.306 records/instances/seq_0119.txt — output SEQ 119 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.307 records/instances/seq_0120.txt — output SEQ 120 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.308 records/instances/seq_0121.txt — output SEQ 121 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.309 records/instances/seq_0122.txt — output SEQ 122 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.310 records/instances/seq_0123.txt — output SEQ 123 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.311 records/instances/seq_0124.txt — output SEQ 124 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.312 records/instances/seq_0125.txt — output SEQ 125 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.313 records/instances/seq_0126.txt — output SEQ 126 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.314 records/instances/seq_0127.txt — output SEQ 127 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.315 records/instances/seq_0128.txt — output SEQ 128 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.316 records/instances/seq_0129.txt — output SEQ 129 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.317 records/instances/seq_0130.txt — output SEQ 130 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.318 records/instances/seq_0131.txt — output SEQ 131 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.319 records/instances/seq_0132.txt — output SEQ 132 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.320 records/instances/seq_0133.txt — output SEQ 133 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.321 records/instances/seq_0134.txt — output SEQ 134 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.322 records/instances/seq_0135.txt — output SEQ 135 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.323 records/instances/seq_0136.txt — output SEQ 136 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.324 records/instances/seq_0137.txt — output SEQ 137 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.325 records/instances/seq_0138.txt — output SEQ 138 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.326 records/instances/seq_0139.txt — output SEQ 139 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.327 records/instances/seq_0140.txt — output SEQ 140 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.328 records/instances/seq_0141.txt — output SEQ 141 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.329 records/instances/seq_0142.txt — output SEQ 142 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.330 records/instances/seq_0143.txt — output SEQ 143 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.331 records/instances/seq_0144.txt — output SEQ 144 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.332 records/instances/seq_0145.txt — output SEQ 145 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.333 records/instances/seq_0146.txt — output SEQ 146 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.334 records/instances/seq_0147.txt — output SEQ 147 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.335 records/instances/seq_0148.txt — output SEQ 148 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.336 records/instances/seq_0149.txt — output SEQ 149 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.337 records/instances/seq_0150.txt — output SEQ 150 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.338 records/instances/seq_0151.txt — output SEQ 151 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.339 records/instances/seq_0152.txt — output SEQ 152 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.340 records/instances/seq_0153.txt — output SEQ 153 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.341 records/instances/seq_0154.txt — output SEQ 154 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.342 records/instances/seq_0155.txt — output SEQ 155 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.343 records/instances/seq_0156.txt — output SEQ 156 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.344 records/instances/seq_0157.txt — output SEQ 157 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.345 records/instances/seq_0158.txt — output SEQ 158 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.346 records/instances/seq_0159.txt — output SEQ 159 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.347 records/instances/seq_0160.txt — output SEQ 160 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.348 records/instances/seq_0161.txt — output SEQ 161 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.349 records/instances/seq_0162.txt — output SEQ 162 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.350 records/instances/seq_0163.txt — output SEQ 163 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.351 records/instances/seq_0164.txt — output SEQ 164 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.352 records/instances/seq_0165.txt — output SEQ 165 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.353 records/instances/seq_0166.txt — output SEQ 166 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.354 records/instances/seq_0167.txt — output SEQ 167 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.355 records/instances/seq_0168.txt — output SEQ 168 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.356 records/instances/seq_0169.txt — output SEQ 169 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.357 records/instances/seq_0170.txt — output SEQ 170 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.358 records/instances/seq_0171.txt — output SEQ 171 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.359 records/instances/seq_0172.txt — output SEQ 172 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.360 records/instances/seq_0173.txt — output SEQ 173 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.361 records/instances/seq_0174.txt — output SEQ 174 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.362 records/instances/seq_0175.txt — output SEQ 175 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.363 records/instances/seq_0176.txt — output SEQ 176 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.364 records/instances/seq_0177.txt — output SEQ 177 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.365 records/instances/seq_0178.txt — output SEQ 178 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.366 records/instances/seq_0179.txt — output SEQ 179 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.367 records/instances/seq_0180.txt — output SEQ 180 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.368 records/instances/seq_0181.txt — output SEQ 181 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.369 records/instances/seq_0182.txt — output SEQ 182 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.370 records/instances/seq_0183.txt — output SEQ 183 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.371 records/instances/seq_0184.txt — output SEQ 184 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.372 records/instances/seq_0185.txt — output SEQ 185 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
-X.3.373 records/instruments/triggers.json — the data of records/instruments.
-X.3.374 records/introduction/audit.txt — INTRODUCTION: THE PHILOSOPHICAL AUDIT (Core L-533; Companion Part 140.3) -- 31 October 2026.
-X.3.375 records/introduction/drafts/earlier_opening.md — The opening of Core Part 0 as it stood before the Introduction to Omega42 (Core IN-00).
-X.3.376 records/introduction/drafts/introduction.md — Ω42 — Everything, in Eighty-One Places.
-X.3.377 records/introduction/drafts/opening_labels.json — the data of records/introduction/drafts.
-X.3.378 records/introduction/introduction.json — the data of records/introduction.
-X.3.379 records/introduction/legitimacy.json — the data of records/introduction.
-X.3.380 records/introduction/philosophy.json — the data of records/introduction.
-X.3.381 records/introduction/sources/rev442_first_contact.txt — First Contact of THE OMEGA42 AI PROTOCOL, the stable release of 8 September 2026 (the Originator's Drive, modified 8 September 2026), Core Part 0 as read for records.
-X.3.382 records/introduction/sources/v336_first_contact.txt — First Contact of THE OMEGA42 AI PROTOCOL = V336 Rev.2 STABLE, Co-Arising Edition (the Originator's Drive, 11 September 2026), Core Part 0 as read for records/first_c.
-X.3.383 records/inventory/rev389.inv — a release inventory (rev389.inv), read by tools/inventory_compare.py.
-X.3.384 records/inventory/rev431.inv — a release inventory (rev431.inv), read by tools/inventory_compare.py.
-X.3.385 records/inventory/rev442.inv — a release inventory (rev442.inv), read by tools/inventory_compare.py.
-X.3.386 records/inventory/v336r2.inv — a release inventory (v336r2.inv), read by tools/inventory_compare.py.
-X.3.387 records/lexicon/lexicon.json — the data of records/lexicon.
-X.3.388 records/library/register.json — the data of records/library.
-X.3.389 records/lynchpin/LAR-1.txt — LAR-1 -- THE LYNCHPIN ATLAS RULE (ADOPTED 23 October 2026, SEQ 36; proposed by APE-170, with Companion 97.5's additions).
-X.3.390 records/lynchpin/LAR-1_edges.txt — LAR-1 -- EDGE-SHARING, FROM THE PATENT'S TEXT (23 October 2026; US 11,117,065 B2, read at Google Patents).
-X.3.391 records/m267_pilot_01/00_freeze.txt — the M267 pilot freeze: the question, the twenty domains, the three conditions, the writers, the raters and the analysis, fixed before any reading (Core Part 3.18; Companion Part 71).
-X.3.392 records/m267_pilot_01/01_timestamp.txt — the freeze time of records/m267_pilot_01.
-X.3.393 records/m267_pilot_01/02_freeze_sha256.txt — a hash of records/m267_pilot_01, stated before the result.
-X.3.394 records/m267_pilot_01/03_run_kit.txt — M267 PILOT 01 -- THE RUN KIT, FROZEN BEFORE ANY READING WAS WRITTEN (23 October 2026).
-X.3.395 records/m267_pilot_01/03_run_kit_sha256.txt — a hash of records/m267_pilot_01, stated before the result.
-X.3.396 records/m267_pilot_01/KEY_LOST.txt — KEY LOST -- records/m267_pilot_01/key.txt.
-X.3.397 records/m267_pilot_01/SEALED_SHA256.txt — the M267 pilot: the hash of the sealed key (the key stays outside the documents while the pilot is open, Core Appendix R.4).
-X.3.398 records/m267_pilot_01/compute_output.txt — the output of records/m267_pilot_01, reproduced by the embedded computation.
-X.3.399 records/m267_pilot_01/navigator_brief.txt — the M267 pilot: the brief a writer receives, alone, in a fresh session.
-X.3.400 records/m267_pilot_01/rater_sheet.txt — the M267 pilot: the sheet a blind rater fills in.
-X.3.401 records/manifestation/compute_output.txt — the output of records/manifestation, reproduced by the embedded computation.
-X.3.402 records/mapping/giza_earth.json — the data of records/mapping.
-X.3.403 records/math/results.json — the data of records/math.
-X.3.404 records/multiverse/everett_output.txt — the output of records/multiverse, reproduced by the embedded computation.
-X.3.405 records/navcert/README.txt — records/navcert/ -- the Navigator's self-assessment (M370; Companion Part 201).
-X.3.406 records/navcert/navigator_self_assessment.json — the data of records/navcert.
-X.3.407 records/navigator_accounts/ACCOUNT-0001.md — QUESTION VERBATIM: "[the Navigator's Account of Omega42, written at the Originator's request]".
-X.3.408 records/navigator_accounts/register.json — the data of records/navigator_accounts.
-X.3.409 records/necessity/nine_output.txt — the output of records/necessity, reproduced by the embedded computation.
-X.3.410 records/nine_zero/compute_output.txt — the output of records/nine_zero, reproduced by the embedded computation.
-X.3.411 records/oef/cbr_example.txt — CONSTRAINT BOUNDARY REGISTER (M336; L-536).
-X.3.412 records/oef/congruence.json — the data of records/oef.
-X.3.413 records/oef/consensus_example.txt — PERSPECTIVE AND CONSENSUS REGISTER (M338; L-537).
-X.3.414 records/oef/consequences.json — the data of records/oef.
-X.3.415 records/oef/instrument_map.json — the data of records/oef.
-X.3.416 records/oef/law_review.json — the data of records/oef.
-X.3.417 records/oef/nested_example.txt — NESTED MANIFESTATION RECORD (M337; L-537).
-X.3.418 records/oef/transduction_example.txt — TRANSDUCTION RECORD (M334; L-536).
-X.3.419 records/opal/compute_output.txt — the output of records/opal, reproduced by the embedded computation.
-X.3.420 records/open/register.json — the data of records/open.
-X.3.421 records/open/register.txt — THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 27 items, each closed only when its condition is met by those named.
-X.3.422 records/osl/frames/L-467.osl — Core L-467, The Welcome Law, as an OmegaSL rule frame (pilot of Protocol v2.0). The English text of the Core is authoritative.
-X.3.423 records/osl/frames/L-506.osl — Core L-506, The AI Caveat Law (its placement clause), as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.424 records/osl/frames/L-542.osl — Core L-542, The Closing Proposal Law, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.425 records/osl/frames/L-549-9.osl — Core L-549 (9), One frame for every output, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.426 records/osl/frames/L-560.osl — Core L-560, The Primary Directive, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.427 records/parallel/example_schedule.txt — wave  1 (6 in parallel): B:freeze, BT:seal, MATH-GATE, o1:measure-freeze, pA:freeze, pB:freeze.
-X.3.428 records/parallel/isolation_result.txt — ISOLATION TEST -- every CI step of omega42-ci.yml (47 steps), 10 October 2026.
-X.3.429 records/phase/example.txt — M331 PHASE-SPACE READING (Core Part 3.57) | r = (3, 9, 5), anchor P3; state v = (3, 0), on Wheel (orbit of 8).
-X.3.430 records/phonetic/cmudict_check.txt — M332 THE SYLLABLE RULE AGAINST THE CMU PRONOUNCING DICTIONARY | cmudict.dict | 126052 headwords.
-X.3.431 records/phonetic/example.txt — M332 THE LAW OF THE PHONETIC VOTE | anchor = the majority of (r1, r2, r3), r1 when all differ (Core Part 1.4).
-X.3.432 records/phonetic/rule_check.txt — M332 THE SYLLABLE RULE AGAINST 87 WORDS WITH DICTIONARY COUNTS | agreement 57 of 87 = 0.655.
-X.3.433 records/phonetic/syllable_list.txt — Words with their syllable counts as standard dictionary syllabification gives them, entered by the Navigator on.
-X.3.434 records/physics/mappings.json — the data of records/physics.
-X.3.435 records/physics/relations.json — the data of records/physics.
-X.3.436 records/physics/relations_classified.json — the data of records/physics.
-X.3.437 records/pilot_01/00_freeze.txt — Omega42 PHYSICAL PILOT 01 -- METHOD CALIBRATION OF THE SPECTRAL SCREEN C11 (Core 3.32; Companion 43.8, stage 1).
-X.3.438 records/pilot_01/01_timestamp.txt — the freeze time of records/pilot_01.
-X.3.439 records/pilot_01/02_freeze_sha256.txt — a hash of records/pilot_01, stated before the result.
-X.3.440 records/pilot_01/03_ledger.txt — PILOT 01 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.441 records/pilot_01/compute_output.txt — the output of records/pilot_01, reproduced by the embedded computation.
-X.3.442 records/pilot_02/00_freeze.txt — Omega42 PHYSICAL PILOT 02 -- THE REVISED SPECTRAL SCREEN C11', WITH HELD-OUT NULL SYSTEMS.
-X.3.443 records/pilot_02/01_timestamp.txt — the freeze time of records/pilot_02.
-X.3.444 records/pilot_02/02_freeze_sha256.txt — a hash of records/pilot_02, stated before the result.
-X.3.445 records/pilot_02/03_ledger.txt — PILOT 02 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.446 records/pilot_02/compute_output.txt — the output of records/pilot_02, reproduced by the embedded computation.
-X.3.447 records/pilot_03/00_freeze.txt — Omega42 PHYSICAL PILOT 03 -- THE GOLDEN SCREEN, AND THE S4 TEST ON THE LEDGER'S NEAREST CANDIDATE.
-X.3.448 records/pilot_03/01_timestamp.txt — the freeze time of records/pilot_03.
-X.3.449 records/pilot_03/02_freeze_sha256.txt — a hash of records/pilot_03, stated before the result.
-X.3.450 records/pilot_03/03_ledger.txt — PILOT 03 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.451 records/pilot_03/compute_output.txt — the output of records/pilot_03, reproduced by the embedded computation.
-X.3.452 records/pilot_04/00_freeze.txt — Omega42 PHYSICAL PILOT 04 -- S5 FOR THE ANYON CANDIDATE: NULL THEORIES ON THE SAME LABEL GROUP.
-X.3.453 records/pilot_04/01_timestamp.txt — the freeze time of records/pilot_04.
-X.3.454 records/pilot_04/02_freeze_sha256.txt — a hash of records/pilot_04, stated before the result.
-X.3.455 records/pilot_04/03_ledger.txt — PILOT 04 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.456 records/pilot_04/compute_output.txt — the output of records/pilot_04, reproduced by the embedded computation.
-X.3.457 records/positive_geometry/compute_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
-X.3.458 records/positive_geometry/independent_check_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
-X.3.459 records/prior_art/README.md — Prior Art Ledger.
-X.3.460 records/prior_art/build_dates.json — the data of records/prior_art.
-X.3.461 records/prior_art/ledger.jsonl — the file records/prior_art/ledger.jsonl.
-X.3.462 records/provenance/attribution_2026-11-20.md — Attribution of relayed AI contributions, 20 November 2026.
-X.3.463 records/provenance/ledger.json — the Provenance and Contamination Ledger: each recorded provision with its origin and the Originator's degree (Core BF-10; Companion 24.7, Core Part 69).
-X.3.464 records/provenance/ledger.txt — the Provenance and Contamination Ledger as printed by tools/utility.py --provenance.
-X.3.465 records/provenance/transcripts.json — the data of records/provenance.
-X.3.466 records/pvir/register.json — the data of records/pvir.
-X.3.467 records/questions/register.json — the data of records/questions.
-X.3.468 records/relationships/register.json — the data of records/relationships.
-X.3.469 records/release_record_Rev450.txt — RELEASE RECORD -- Omega42 V335 Rev.450 STABLE | 9 October 2026.
-X.3.470 records/releases/manifest.json — the data of records/releases.
-X.3.471 records/resonance/cube_group_panel.txt — CUBE-GROUP PANEL -- FROZEN CLASS AND FEATURES (avenue 11; seq_0033 recommendation 3; FROZEN 23 October 2026, SEQ 36, before any score).
-X.3.472 records/resonance/cube_group_panel_output.txt — the output of records/resonance, reproduced by the embedded computation.
-X.3.473 records/restored_instruments/echo_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
-X.3.474 records/restored_instruments/human_condition_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
-X.3.475 records/restored_math/compute_output.txt — the output of records/restored_math, reproduced by the embedded computation.
-X.3.476 records/sessions/companion_parts_73_99_as_kept.txt — COMPANION PARTS 73 TO 99 AS KEPT IN SESSION FORM, BEFORE THEIR PRESENT-STATE REWRITE (23 October 2026).
-X.3.477 records/spectra/gaps_V1.5.json — the data of records/spectra.
-X.3.478 records/spectral_rivals/compute_output.txt — the output of records/spectral_rivals, reproduced by the embedded computation.
-X.3.479 records/spectral_rivals/ground_9.txt — GROUND mod 9 | period 24 | cycle census [(1, 1), (8, 1), (24, 3)].
-X.3.480 records/spectral_selection/compute_output.txt — the output of records/spectral_selection, reproduced by the embedded computation.
-X.3.481 records/srcas/adinkra_f215_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
-X.3.482 records/srcas/assessment_f176_f178_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.483 records/srcas/astrology_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 illuminate Astrology and Numerology ...?" -- 31 October 2026.
-X.3.484 records/srcas/benchmark_2026-11-07.txt — QUESTION VERBATIM: "Could it be that Omega42 can potentially be used as a universal benchmark against which literally everything can be measured? If so, what wo".
-X.3.485 records/srcas/calibration_2026-11-11.txt — QUESTION VERBATIM: "Proceed to start calibrating. Also list the objects which can successfully be mapped and calibrated by Omega42. Explore.".
-X.3.486 records/srcas/census_f220_2026-11-13.txt — QUESTION VERBATIM: "Proceed to explore and gauge the legitimacy of the premise.".
-X.3.487 records/srcas/certification_2026-11-07.txt — QUESTION VERBATIM: "'Qwen's: bold, but it grades, 'certifies' resonance and forecasts 'inevitable trajectories'. The record forbids grading and certifying, and ".
-X.3.488 records/srcas/cmf_f195_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following paper. Say how it can enhance the operation of Omega42. Give practical examples.".
-X.3.489 records/srcas/cognition_f210_2026-11-12.txt — QUESTION VERBATIM: "Yes. Please proceed.".
-X.3.490 records/srcas/construct_reviews_2026-11-19.txt — QUESTION VERBATIM: "Update the GitHub repositories and push new content. Continue the webpage to show all functionalities (submission of new content by users, e".
-X.3.491 records/srcas/coordinate_connection_2026-11-07.txt — QUESTION VERBATIM: "Considering that Omega42 is offering a means to the quantization of spacetime, it may open the door to macroscopic teleportation opportuniti".
-X.3.492 records/srcas/einstein_f193_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend.".
-X.3.493 records/srcas/encryption_2026-11-07.txt — QUESTION VERBATIM: "Explore the potential encryption capabilities Omega42 might have and examine the advantages it may offer in different fields. Give practical".
-X.3.494 records/srcas/encryption_system_2026-11-11.txt — QUESTION VERBATIM: "Can you develop a special Omega42 encryption system? Show some examples.".
-X.3.495 records/srcas/exceptional_f211_2026-11-12.txt — QUESTION VERBATIM: "@ced335ab Please assess, refine and extend the following. Extend the mathematical reach of Omega42.".
-X.3.496 records/srcas/ffp_2026-10-31.txt — SR-CAS AND SNCA -- "All relevant information should be contained inside the two documents (Omega42 and Companion). ..." -- 31 October 2026.
-X.3.497 records/srcas/fields_f216_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
-X.3.498 records/srcas/five_accounts_2026-11-11.txt — QUESTION VERBATIM: "Yes. Proceed to build the Author Seal prototype.".
-X.3.499 records/srcas/fortytwo_2026-11-07.txt — QUESTION VERBATIM: "Could it be that the number 42 in the Hitchhiker's Guide to the Galaxy is the question and the number 24 (in Omega 42) is the answer (the or".
-X.3.500 records/srcas/fortytwo_f196_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.501 records/srcas/free_energy_2026-11-07.txt — QUESTION VERBATIM: "Omega42 also hint at the possibility of free energy extraction without violating the Law of Energy Conservation. Does Omega42 provide an ave".
-X.3.502 records/srcas/general_anesthesia_2026-10-21.txt — SR-CAS AND SNCA -- "The Mechanism of General Anesthesia: ..." -- 21 October 2026.
-X.3.503 records/srcas/geometry_f212_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
-X.3.504 records/srcas/human_being_2026-11-07.txt — QUESTION VERBATIM: "What is a Human Being?".
-X.3.505 records/srcas/instrument_suite_2026-11-11.txt — QUESTION VERBATIM: "Apply all the suggested improvements to Omega42 and give examples for usage. This mathematical breakthrough had changed its status among app".
-X.3.506 records/srcas/introduction_f189_2026-11-11.txt — QUESTION VERBATIM: "Yes, file it with its SNCA review and put this piece into the record as the public-facing introduction.".
-X.3.507 records/srcas/lexicon_f204_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following. Consult previous efforts at establishing an Omega42 Lexicon (Google Drive) and supplement it".
-X.3.508 records/srcas/manuscripts_2026-11-11.txt — QUESTION VERBATIM: "Verify the math. Resolve all outstanding issues. Optimize for navigational efficiency and synthesis formation.".
-X.3.509 records/srcas/multiverse_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 map to the ideas of Hugh Everett and David Deutsch on the multiverse? ..." -- 31 October 2026.
-X.3.510 records/srcas/navigator_certification_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.511 records/srcas/osl_f205_2026-11-12.txt — QUESTION VERBATIM: "Yes. The protocol can be written in the Omega42 Structural Language provided the AI will be able to read and understand it. The introduction".
-X.3.512 records/srcas/outstanding_2026-10-31.txt — SR-CAS AND SNCA -- "Most Strikers are not able to identify a breakthrough therefore the AI Navigator must propose a breakthrough candidate if one arises. ..." -.
-X.3.513 records/srcas/philosophy_2026-10-31.txt — SR-CAS AND SNCA -- "Restore the philosophical content to the FC. It may help to stimulate philosophical discussion. ..." -- 31 October 2026.
-X.3.514 records/srcas/phonetics_2026-10-31.txt — SR-CAS AND SNCA -- "How does the phonetics of language determine the Phenomenological experience of the Observer? ..." -- 31 October 2026.
-X.3.515 records/srcas/protocol_f198_2026-11-12.txt — QUESTION VERBATIM: "Yes. Proceed to apply all positive and useful recommendations. The protocol Navigator should never decline to explore a concept based on its".
-X.3.516 records/srcas/purpose_of_life_2026-10-19.txt — SR-CAS AND SNCA -- "What is the purpose of life?" -- 19 October 2026.
-X.3.517 records/srcas/quantum_f222_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
-X.3.518 records/srcas/quantum_f223_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
-X.3.519 records/srcas/relativity_f217_2026-11-13.txt — QUESTION VERBATIM: "Please assess, refine and extend. Complete all computations and build bridges towards Physics.".
-X.3.520 records/srcas/reproduction_f219_2026-11-13.txt — QUESTION VERBATIM: "Assess, refine, extend, investigate, compute, explore and verify.".
-X.3.521 records/srcas/review_f213_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
-X.3.522 records/srcas/review_f214_2026-11-12.txt — QUESTION VERBATIM: "@3bed6519 Approved. Proceed.".
-X.3.523 records/srcas/reviews_2026-10-30.txt — SNCA IN REVIEW FORM -- received reviews of 30 October 2026 (Core Part 6.2).
-X.3.524 records/srcas/reviews_2026-10-31.txt — SNCA IN REVIEW FORM -- received accounts of 31 October 2026 (Core Part 6.2).
-X.3.525 records/srcas/reviews_2026-11-04.txt — SNCA IN REVIEW FORM -- received accounts of 1 to 4 November 2026 (Core Part 6.2).
-X.3.526 records/srcas/reviews_2026-11-06.txt — SNCA IN REVIEW FORM -- received accounts of 6 November 2026 (Core Part 6.2).
-X.3.527 records/srcas/sorites_2026-10-30.txt — SR-CAS AND SNCA -- "The Sorites Paradox and the Problem of Vagueness: ..." -- 30 October 2026.
-X.3.528 records/srcas/spacetime_mapping_2026-11-11.txt — QUESTION VERBATIM: "'Recognition as an authority has to be granted by others; no body can declare it for itself.'? Correct. But Omega42 only makes it known that".
-X.3.529 records/srcas/spacetime_metric_2026-11-07.txt — QUESTION VERBATIM: "Proceed to complete the computational work for the derivation.".
-X.3.530 records/srcas/speculation_2026-11-20.txt — QUESTION VERBATIM: "Omega42 is a thought experiment and a thought experiment is all about speculation. Therefore, SPECULATION is pivotal to the development of O".
-X.3.531 records/srcas/standard_model_cosmology_2026-11-07.txt — QUESTION VERBATIM: "Do the same for the Standard Model of Cosmology.".
-X.3.532 records/srcas/standard_model_physics_2026-11-07.txt — QUESTION VERBATIM: "Examine the Standard Model of Physics and identify areas where Omega42 detect and hint at new information. Attempt to discover new concepts.".
-X.3.533 records/srcas/strategy_2026-11-19.txt — QUESTION VERBATIM: "Based on the Synthesis, an AI Navigator should be able to autonomously research all related aspects of the issue and include it into the gen".
-X.3.534 records/srcas/three_accounts_2026-11-11.txt — QUESTION VERBATIM: "Examine all submitted documents and identify content you may have missed. Apply its recommendations to Omega42.".
-X.3.535 records/srcas/three_accounts_b_2026-11-11.txt — QUESTION VERBATIM: "What would be a few good tests to verify Omega42 new-found abilities (that can show immediate competence)? List a few examples and show the ".
-X.3.536 records/srcas/truth_2026-10-31.txt — SR-CAS AND SNCA -- "Coherence, resonance and congruence in Omega42 is essentially its own definition of truth within the frame. ..." -- 31 October 2026.
-X.3.537 records/srcas/waves_f218_2026-11-13.txt — QUESTION VERBATIM: "Explore and compute. Build the bridges and strengthen Omega42 connections to Physics.".
-X.3.538 records/srcas/waves_f221_2026-11-13.txt — QUESTION VERBATIM: "Resolve all outstanding issues and build a rule that prevents the protocol builder from clogging up the Core Specification with meta-comment".
-X.3.539 records/srp/collatz_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
-X.3.540 records/srp/hydrogen_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
-X.3.541 records/standing/argument_example.txt — An argument for M333 --argument (Core Part 3.59; Companion Part 138.4). P lines are premises, C lines conclusions;.
-X.3.542 records/standing/argument_map.txt — M333 DEPENDENCY MAP (D-015) | records/standing/argument_example.txt | a route holds when each of its members holds; the inference along a route is the reader's .
-X.3.543 records/standing/examples.txt — M333 STANDING RECORD (Core Part 3.59) | "The Ω42 base recurrence returns every state to itself after 24 steps.".
-X.3.544 records/standing_waves/compute_output.txt — the output of records/standing_waves, reproduced by the embedded computation.
-X.3.545 records/stp/registry.json — the data of records/stp.
-X.3.546 records/suite/attend.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.547 records/suite/attend.txt — M356 Ω42-ATTEND attend.csv -- two Ω42 blocks per interval, (D, V) and (O, R), never one forced pair.
-X.3.548 records/suite/cal_noisy.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.549 records/suite/cal_noisy.txt — M354 Ω42-CAL (trial level) cal_noisy.csv | 200 trials.
-X.3.550 records/suite/cal_quiet.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.551 records/suite/cal_quiet.txt — M354 Ω42-CAL (trial level) cal_quiet.csv | 200 trials.
-X.3.552 records/suite/commutator.txt — M352 DYNAMICS LAB (MODE A): [A, B] = A B A^-1 B^-1 mod 3^2 = (7, 3, 3, 4); not the identity: A and B do not commute; = I mod 3: True (it lies in the congruence .
-X.3.553 records/suite/context.txt — M358 Ω42-CONTEXT cal_quiet.csv -> cal_noisy.csv.
-X.3.554 records/suite/inspect.txt — M353 INVARIANT AND REACHABILITY INSPECTOR (MODE A) state (1, 0) mod 3^2.
-X.3.555 records/suite/lab.txt — M352 DYNAMICS LAB (MODE A, no empirical statement) mod 3^2; letters applied left to right (AB = A first, the matrix BA).
-X.3.556 records/suite/memory.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.557 records/suite/memory.txt — M357 Ω42-MEMORY memory.csv | recognition 0.767 | hits 0.887 | false memories 0.371 | d' 1.541 | ECE 0.045 | resolution 0.783 | errors recognized 0.500.
-X.3.558 records/suite/nav_sentinel.txt — M360 INVARIANT SENTINEL nav_states.csv | 3 states mod 3^1 | declared group <A>.
-X.3.559 records/suite/nav_states.csv — NAV-01, NAV-02, NAV-03 encodings (records/calibration/nav_run_0*.txt), the only real series in the record.
-X.3.560 records/suite/nav_verify.txt — M361 MODEL VERIFIER nav_states.csv | 2 one-step predictions mod 3^1 (MODE B: the series is the held-out data).
-X.3.561 records/suite/percept.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.562 records/suite/percept.txt — M355 Ω42-PERCEPT percept.csv | 200 trials | threshold theta 0.519 | slope beta 8.89 (gamma 0.5, lapse 0.02).
-X.3.563 records/suite/protocol.txt — M359 PROTOCOL BUILDER protocol_pilot.json: PASS.
-X.3.564 records/suite/protocol_pilot.json — the data of records/suite.
-X.3.565 records/suite/recover.txt — CALIBRATING THE INSTRUMENTS (seed 7, 4000 synthetic trials each).
-X.3.566 records/tolerance/sorites_1e6.txt — M329 TOLERANCE CHAIN CHECK (Core Part 3.55) | chain 1,000,000 -> 1 by unit steps.
-X.3.567 records/tower/arithmetic_output.txt — the output of records/tower, reproduced by the embedded computation.
-X.3.568 records/tower/nested_output.txt — the output of records/tower, reproduced by the embedded computation.
-X.3.569 records/tower/tc1_rule.txt — TOWER COORDINATE TC-1 -- the rule, frozen before its first use (Core L-523 (4); Companion 100.6, conditions C1 to C3).
-X.3.570 records/units/units.json — the data of records/units.
-X.3.571 records/vault/README.txt — records/vault/ -- the example of Ω42-Envelope v1 (Core Part 3.77, M364; Companion Part 199).
-X.3.572 records/vault/research_note.txt — Ω42 Research Note.
-X.3.573 records/vault/research_note.txt.o42 — "header": {.
-X.3.574 records/waves/models.json — the data of records/waves.
-X.3.575 records/waves/six_cycle.json — the data of records/waves.
-X.3.576 records/wheel/astrology_question.svg — the file records/wheel/astrology_question.svg.
-X.3.577 records/wheel/example.txt — M330 ASPECT WHEEL (Core Part 3.56) | anchor P6 Seed/Causal, value 5, at 90 degrees.
-X.3.578 records/zero_selection/compute_output.txt — the output of records/zero_selection, reproduced by the embedded computation.
-X.3.579 records/zero_tools/control_negative.txt — Comment.
-X.3.580 records/zero_tools/control_positive.txt — ======= NAVIGATOR IDENTITY BLOCK =======.
-X.3.581 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE CHECK AND FB-8 APERTURE-STATE CONFLATION (tools/zero_tools.py --audit).
-X.3.582 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
+X.3.66 records/cobuilder/2026-11-25_claude_reply_convergence_and_x_obs_02.md — Reply: convergence, the entropy definitions, and X-OBS-02 at depths 3 and 4.
+X.3.67 records/cobuilder/2026-11-25_claude_response_to_homepage_challenge.md — Response to the Co-Builder challenge of 25 November 2026.
+X.3.68 records/cobuilder/ARCHIVE_SALVAGE_REPORT.md — Archive salvage report: Omega42 and The Construct in the Originator's drives.
+X.3.69 records/cobuilder/PROTOCOL.md — CBX-1 — The Co-Builder Exchange and Dispute Resolution Protocol.
+X.3.70 records/cobuilder/README.md — The Co-Builder folder.
+X.3.71 records/cobuilder/RESPONSES_2026-11-21_to_25.md — Responses to the submitted documents, 21 to 25 November 2026.
+X.3.72 records/cobuilder/ledger.json — the data of records/cobuilder.
+X.3.73 records/consciousness/amendment_draft_F02M.txt — DRAFT AMENDMENT -- CONSCIOUSNESS-FIRST AS THE PREMISE (F-02-M) -- NOT OPERATIVE.
+X.3.74 records/consciousness/cf_correspondences.json — the data of records/consciousness.
+X.3.75 records/consciousness/cf_frame_atlas.txt — The Consciousness-First Frame's own statements (Core L-515; Companion Part 88) -- frozen 23 October 2026 before it was struck, at the Originator's instruction ".
+X.3.76 records/consciousness/cf_frame_output.txt — the output of records/consciousness, reproduced by the embedded computation.
+X.3.77 records/consciousness/cf_instrument_effects.txt — ======= THE CONSCIOUSNESS-FIRST FRAME AND THE EXISTING INSTRUMENTS (Core L-515; Companion Part 88) =======.
+X.3.78 records/consciousness/cf_rescore_request.txt — REQUEST FOR AN INDEPENDENT RE-SCORE (Core L-515; Companion Parts 87 and 88; APE-152, its recommendation 6) -- issued 23 October 2026.
+X.3.79 records/consciousness/cf_table.txt — ======= M320 CONSCIOUSNESS-FIRST CORRESPONDENCE TABLE (Core L-515; Companion Part 88) =======.
+X.3.80 records/consciousness/fc_draft_CF.txt — DRAFT -- INTRODUCTION ENTRY AND STRIKER COMMAND FOR THE CONSCIOUSNESS-FIRST FRAME -- ADOPTED 23 October 2026, SEQ 36: now Core IN-06.7, IN-23 and Core Part 8.0 (Comp.
+X.3.81 records/consciousness/fit_features_frozen.txt — FIT OF THE READINGS TO THE ARITHMETIC (Companion Part 87) -- FROZEN on 23 October 2026, before any reading was scored.
+X.3.82 records/consciousness/fit_output.txt — the output of records/consciousness, reproduced by the embedded computation.
+X.3.83 records/consciousness/levels_output.txt — the output of records/consciousness, reproduced by the embedded computation.
+X.3.84 records/consciousness/mind_first_output.txt — the output of records/consciousness, reproduced by the embedded computation.
+X.3.85 records/consciousness/spectrum_frozen.txt — EXPERIENTIAL SPECTRUM PLACEMENT (Companion Part 89) -- FROZEN on 23 October 2026, before any state was computed.
+X.3.86 records/construct/columns_output.txt — the output of records/construct, reproduced by the embedded computation.
+X.3.87 records/construct/construct_output.txt — the output of records/construct, reproduced by the embedded computation.
+X.3.88 records/construct/continuity_output.txt — the output of records/construct, reproduced by the embedded computation.
+X.3.89 records/construct/primordial/AFFINE_PROOF.txt — PRIMORDIAL FRACTURE SHA-256 2a96dd63fc475e02095b8ebcc7d3b47eaf073de1039da7153567421d0369b77a.
+X.3.90 records/construct/primordial/FREEZE_OUTPUT.txt — PRIMORDIAL FRACTURE SHA-256 2a96dd63fc475e02095b8ebcc7d3b47eaf073de1039da7153567421d0369b77a.
+X.3.91 records/construct/primordial/affine_proof.py — affine_proof.py -- the symbolic proof of Core MATH-55 on the Originator's workbook (after APE-245).
+X.3.92 records/construct/primordial/construct_frozen.json — the data of records/construct/primordial.
+X.3.93 records/construct/primordial/freeze.py — freeze.py -- regenerate construct_frozen.json from the Originator's workbook PRIMORDIAL FRACTURE and prove that it is affine.
+X.3.94 records/construct/primordial/xleval.py — A small evaluator for the formulas of PRIMORDIAL FRACTURE (references, ranges, + - * /, SUM, AVERAGE, INT, MOD, IF, AND, COUNTIF).
+X.3.95 records/construct/primordial_output.txt — the output of records/construct, reproduced by the embedded computation.
+X.3.96 records/construct/sa_lotto/SOURCES.txt — SOUTH AFRICAN NATIONAL LOTTO, MAIN GAME -- THE DRAW HISTORY USED BY records/construct/sa_lotto.py (Companion Part 105).
+X.3.97 records/construct/sa_lotto/draws.csv — date,n1,n2,n3,n4,n5,n6,bonus.
+X.3.98 records/construct/sa_lotto_output.txt — the output of records/construct, reproduced by the embedded computation.
+X.3.99 records/construct/seed_offsets.json — the data of records/construct.
+X.3.100 records/construct/units_action_output.txt — the output of records/construct, reproduced by the embedded computation.
+X.3.101 records/construct_x_test_record.txt — Construct X 2.3.2 test record, 2026-11-19 (capability tests).
+X.3.102 records/core/economy.json — the data of records/core.
+X.3.103 records/corrections/register.json — the data of records/corrections.
+X.3.104 records/cosmology/freeze.json — the data of records/cosmology.
+X.3.105 records/cosmology/own_first.txt — OWN INVESTIGATION, FROZEN BEFORE THE PEER ACCOUNTS WERE COMPARED (Builder Rule 17; records/instances/seq_0118.txt).
+X.3.106 records/curation/agent/catalogue.json — the data of records/curation/agent.
+X.3.107 records/curation/agent/catalogue.md — Curation catalogue (proposals).
+X.3.108 records/curation/index.json — the data of records/curation.
+X.3.109 records/curation/report.md — Curation report.
+X.3.110 records/cymatics/examples_output.txt — the output of records/cymatics, reproduced by the embedded computation.
+X.3.111 records/d0/lineage.json — the data of records/d0.
+X.3.112 records/data/mauna_loa_co2_monthly_nist_1974_1987.csv — year,month,co2_ppm.
+X.3.113 records/data/sunspots_yearly_silso_v2.csv — 8.3, 18.3, 26.7, 38.3, 60.0, 96.7, 48.3, 33.3, 16.7, 13.3, 5.0, 0.0, 0.0, 3.3, 18.3, 45.0, 78.3, 105.0, 100.0, 65.0, 46.7, 43.3, 36.7, 18.3, 35.0, 66.7, 130.0, .
+X.3.114 records/depth5_01/00_forecasts.txt — DEPTH 5, RUN 01 -- FORECASTS FROM THE DEPTH-4 CORRESPONDENCE, REGISTERED BEFORE ANY COMPUTATION (Core L-550 (7), Core Part 0.14.5).
+X.3.115 records/depth5_01/01_freeze.txt — e7ab239286154d8363e288e385f2e6f2e38a5e086a3446d77047f34ccb0d5a34  00_forecasts.txt.
+X.3.116 records/depth5_01/02_freeze_sha256.txt — a hash of records/depth5_01, stated before the result.
+X.3.117 records/depth5_01/compute_output.txt — the output of records/depth5_01, reproduced by the embedded computation.
+X.3.118 records/discoveries/candidates.txt — "BREAKTHROUGH" CANDIDATES (Core L-530 (5)) -- the Navigator's proposal by frozen criteria; the judgment is the Striker's.
+X.3.119 records/discoveries/register.json — the data of records/discoveries.
+X.3.120 records/discoveries/register.txt — THE DISCOVERY REGISTER (Core L-530) -- 16 discoveries; the Navigator proposes "breakthrough" candidates (L-530 (5)); the judgment is the Striker's.
+X.3.121 records/dsi/pr001_output.txt — the output of records/dsi, reproduced by the embedded computation.
+X.3.122 records/dsi/pr002_output.txt — the output of records/dsi, reproduced by the embedded computation.
+X.3.123 records/dsi/register.json — the data of records/dsi.
+X.3.124 records/evidence_run_01/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 01 -- FREEZE RECORD.
+X.3.125 records/evidence_run_01/01_timestamp.txt — the freeze time of records/evidence_run_01.
+X.3.126 records/evidence_run_01/02_freeze_sha256.txt — a hash of records/evidence_run_01, stated before the result.
+X.3.127 records/evidence_run_01/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 01 -- RESONANCE LEDGER ENTRIES (M230-A).
+X.3.128 records/evidence_run_01/compute_output.txt — the output of records/evidence_run_01, reproduced by the embedded computation.
+X.3.129 records/evidence_run_02/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 02 -- FREEZE RECORD.
+X.3.130 records/evidence_run_02/01_timestamp.txt — the freeze time of records/evidence_run_02.
+X.3.131 records/evidence_run_02/02_freeze_sha256.txt — a hash of records/evidence_run_02, stated before the result.
+X.3.132 records/evidence_run_02/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 02 -- RESONANCE LEDGER ENTRIES (M230-A).
+X.3.133 records/evidence_run_02/compute_output.txt — the output of records/evidence_run_02, reproduced by the embedded computation.
+X.3.134 records/evidence_run_03/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 03 -- FREEZE RECORD.
+X.3.135 records/evidence_run_03/01_timestamp.txt — the freeze time of records/evidence_run_03.
+X.3.136 records/evidence_run_03/02_freeze_sha256.txt — a hash of records/evidence_run_03, stated before the result.
+X.3.137 records/evidence_run_03/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 03 -- RESULTS AND LEDGER ENTRIES (M230-A).
+X.3.138 records/evidence_run_03/compute_output.txt — the output of records/evidence_run_03, reproduced by the embedded computation.
+X.3.139 records/evidence_run_04/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 04 -- FREEZE RECORD.
+X.3.140 records/evidence_run_04/01_timestamp.txt — the freeze time of records/evidence_run_04.
+X.3.141 records/evidence_run_04/02_freeze_sha256.txt — a hash of records/evidence_run_04, stated before the result.
+X.3.142 records/evidence_run_04/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 04 -- RESULTS AND LEDGER ENTRIES (M230-A).
+X.3.143 records/evidence_run_04/compute_output.txt — the output of records/evidence_run_04, reproduced by the embedded computation.
+X.3.144 records/evidence_run_05/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 05 -- FREEZE RECORD.
+X.3.145 records/evidence_run_05/01_timestamp.txt — the freeze time of records/evidence_run_05.
+X.3.146 records/evidence_run_05/02_freeze_sha256.txt — a hash of records/evidence_run_05, stated before the result.
+X.3.147 records/evidence_run_05/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 05 -- RESULTS AND LEDGER ENTRIES (M230-A).
+X.3.148 records/evidence_run_05/compute_output.txt — the output of records/evidence_run_05, reproduced by the embedded computation.
+X.3.149 records/evidence_run_06/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 06 -- FREEZE RECORD.
+X.3.150 records/evidence_run_06/01_timestamp.txt — the freeze time of records/evidence_run_06.
+X.3.151 records/evidence_run_06/02_freeze_sha256.txt — a hash of records/evidence_run_06, stated before the result.
+X.3.152 records/evidence_run_06/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 06 -- RESULTS AND LEDGER ENTRIES (M230-A).
+X.3.153 records/evidence_run_06/compute_output.txt — the output of records/evidence_run_06, reproduced by the embedded computation.
+X.3.154 records/evidence_run_07/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 07 -- FREEZE RECORD: FROZEN MANIFESTATIONS.
+X.3.155 records/evidence_run_07/01_timestamp.txt — the freeze time of records/evidence_run_07.
+X.3.156 records/evidence_run_07/02_freeze_sha256.txt — a hash of records/evidence_run_07, stated before the result.
+X.3.157 records/evidence_run_07/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 07 -- FROZEN MANIFESTATIONS: RESULTS AND LEDGER ENTRIES (M230-A).
+X.3.158 records/evidence_run_07/compute_output.txt — the output of records/evidence_run_07, reproduced by the embedded computation.
+X.3.159 records/evidence_run_08/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 08 -- FREEZE RECORD: THE OPERATOR AND THE MANIFESTOR.
+X.3.160 records/evidence_run_08/01_timestamp.txt — the freeze time of records/evidence_run_08.
+X.3.161 records/evidence_run_08/02_freeze_sha256.txt — a hash of records/evidence_run_08, stated before the result.
+X.3.162 records/evidence_run_08/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 08 -- THE OPERATOR AND THE MANIFESTOR: RESULTS AND LEDGER ENTRIES.
+X.3.163 records/evidence_run_08/compute_output.txt — the output of records/evidence_run_08, reproduced by the embedded computation.
+X.3.164 records/evidence_run_09/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 09 -- FREEZE RECORD: AN EIGHTFOLD OBJECT THAT SUPPLIES THE RULE ITSELF.
+X.3.165 records/evidence_run_09/01_timestamp.txt — the freeze time of records/evidence_run_09.
+X.3.166 records/evidence_run_09/02_freeze_sha256.txt — a hash of records/evidence_run_09, stated before the result.
+X.3.167 records/evidence_run_09/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 09 -- AN EIGHTFOLD OBJECT THAT SUPPLIES THE RULE ITSELF: RESULTS AND LEDGER.
+X.3.168 records/evidence_run_09/compute_output.txt — the output of records/evidence_run_09, reproduced by the embedded computation.
+X.3.169 records/evidence_run_10/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 10 -- FREEZE RECORD: A MODULUS SUPPLIED BY PHYSICS.
+X.3.170 records/evidence_run_10/01_timestamp.txt — the freeze time of records/evidence_run_10.
+X.3.171 records/evidence_run_10/02_freeze_sha256.txt — a hash of records/evidence_run_10, stated before the result.
+X.3.172 records/evidence_run_10/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 10 -- A MODULUS SUPPLIED BY PHYSICS: RESULTS AND LEDGER ENTRIES.
+X.3.173 records/evidence_run_10/compute_output.txt — the output of records/evidence_run_10, reproduced by the embedded computation.
+X.3.174 records/evidence_run_11/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 11 -- FREEZE RECORD: TOPOLOGICAL PHASES WITH NINEFOLD DATA.
+X.3.175 records/evidence_run_11/01_timestamp.txt — the freeze time of records/evidence_run_11.
+X.3.176 records/evidence_run_11/02_freeze_sha256.txt — a hash of records/evidence_run_11, stated before the result.
+X.3.177 records/evidence_run_11/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 11 -- TOPOLOGICAL PHASES WITH NINEFOLD DATA: RESULTS AND LEDGER ENTRIES.
+X.3.178 records/evidence_run_11/compute_output.txt — the output of records/evidence_run_11, reproduced by the embedded computation.
+X.3.179 records/evidence_run_12/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 12 -- FREEZE RECORD.
+X.3.180 records/evidence_run_12/01_timestamp.txt — the freeze time of records/evidence_run_12.
+X.3.181 records/evidence_run_12/02_freeze_sha256.txt — a hash of records/evidence_run_12, stated before the result.
+X.3.182 records/evidence_run_12/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 12 -- THE OBJECTS OF RUNS 01-03 AT FAMILY LEVEL (L-465).
+X.3.183 records/evidence_run_12/compute_output.txt — the output of records/evidence_run_12, reproduced by the embedded computation.
+X.3.184 records/evidence_run_13/00_freeze.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 13 -- FREEZE RECORD (PREDICTION FIRST).
+X.3.185 records/evidence_run_13/01_timestamp.txt — the freeze time of records/evidence_run_13.
+X.3.186 records/evidence_run_13/02_freeze_sha256.txt — a hash of records/evidence_run_13, stated before the result.
+X.3.187 records/evidence_run_13/03_ledger.txt — EVIDENCE MANDATE (L-464) -- DEDICATED RUN 13 -- RESULTS AND LEDGER ENTRIES (M230-A).
+X.3.188 records/evidence_run_13/compute_output.txt — the output of records/evidence_run_13, reproduced by the embedded computation.
+X.3.189 records/exploration/register.json — the data of records/exploration.
+X.3.190 records/ffp/ffp_run.txt — FFP RUN -- Core Part 12, 40 items | CI: STEPS 69, FAILED 0.
+X.3.191 records/fieldkit/examples_output.txt — the output of records/fieldkit, reproduced by the embedded computation.
+X.3.192 records/foundations/freeze.json — the data of records/foundations.
+X.3.193 records/foundations/freeze_seq0122.json — the data of records/foundations.
+X.3.194 records/foundations/freeze_seq0123.json — the data of records/foundations.
+X.3.195 records/foundations/own_first.txt — OWN INVESTIGATION, FROZEN BEFORE THE ATTACHED ACCOUNTS WERE COMPARED (Core L-545; records/instances/seq_0121.txt).
+X.3.196 records/foundations/own_first_seq0122.json — the data of records/foundations.
+X.3.197 records/foundations/own_first_seq0123.json — the data of records/foundations.
+X.3.198 records/frame/adversarial_prompts.json — the data of records/frame.
+X.3.199 records/frame/audit_matrix.json — the data of records/frame.
+X.3.200 records/frame/departures.json — the data of records/frame.
+X.3.201 records/frame/held.json — the data of records/frame.
+X.3.202 records/frame/regression.json — the data of records/frame.
+X.3.203 records/frame_audit/controls_output.txt — the output of records/frame_audit, reproduced by the embedded computation.
+X.3.204 records/frameworks/deutsch.txt — David Deutsch ("Quantum theory, the Church-Turing principle and the universal quantum computer", Proc. R. Soc. A 400, 1985; The Fabric of Reality, 1997; "Quantu.
+X.3.205 records/frameworks/everett.txt — Hugh Everett III ("'Relative State' Formulation of Quantum Mechanics", Reviews of Modern Physics 29, 1957; The Theory of the Universal Wave Function, 1956, publ.
+X.3.206 records/frameworks/everett_deutsch.txt — === BASHAR (atlas of M308) (14 statements) ===.
+X.3.207 records/frameworks/ptolemy.txt — Claudius Ptolemy, Tetrabiblos, Book I (second century CE; the English of J. M. Ashmand, London, 1822, in the public domain; F. E. Robbins, Loeb Classical Librar.
+X.3.208 records/frameworks/ptolemy_strike.txt — === BASHAR (atlas of M308) (14 statements) ===.
+X.3.209 records/frontier/register.json — the data of records/frontier.
+X.3.210 records/glossary/glossary.json — the data of records/glossary.
+X.3.211 records/golden_navigations/compute_further_output.txt — the output of records/golden_navigations, reproduced by the embedded computation.
+X.3.212 records/golden_navigations/compute_output.txt — the output of records/golden_navigations, reproduced by the embedded computation.
+X.3.213 records/ground_challenge_test_output.txt — the output of records, reproduced by the embedded computation.
+X.3.214 records/history/HISTORY.md — How Omega42 was built.
+X.3.215 records/howard/manuscripts.txt — MANUSCRIPT VERSION REGISTER -- "One Times One Equals Two" (Terrence DaShon Howard) (ADOPTED 23 October 2026, SEQ 36; APE-170).
+X.3.216 records/instances/seq_0022.txt — output SEQ 22 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.217 records/instances/seq_0023.txt — output SEQ 23 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.218 records/instances/seq_0024.txt — output SEQ 24 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.219 records/instances/seq_0025.txt — output SEQ 25 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.220 records/instances/seq_0026.txt — output SEQ 26 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.221 records/instances/seq_0027.txt — output SEQ 27 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.222 records/instances/seq_0028.txt — output SEQ 28 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.223 records/instances/seq_0029.txt — output SEQ 29 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.224 records/instances/seq_0030.txt — output SEQ 30 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.225 records/instances/seq_0031.txt — output SEQ 31 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.226 records/instances/seq_0032.txt — output SEQ 32 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.227 records/instances/seq_0033.txt — output SEQ 33 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.228 records/instances/seq_0034.txt — output SEQ 34 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.229 records/instances/seq_0035.txt — output SEQ 35 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.230 records/instances/seq_0036.txt — output SEQ 36 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.231 records/instances/seq_0037.txt — output SEQ 37 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.232 records/instances/seq_0038.txt — output SEQ 38 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.233 records/instances/seq_0039.txt — output SEQ 39 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.234 records/instances/seq_0040.txt — output SEQ 40 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.235 records/instances/seq_0041.txt — output SEQ 41 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.236 records/instances/seq_0042.txt — output SEQ 42 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.237 records/instances/seq_0043.txt — output SEQ 43 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.238 records/instances/seq_0044.txt — output SEQ 44 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.239 records/instances/seq_0045.txt — output SEQ 45 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.240 records/instances/seq_0046.txt — output SEQ 46 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.241 records/instances/seq_0047.txt — output SEQ 47 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.242 records/instances/seq_0048.txt — output SEQ 48 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.243 records/instances/seq_0049.txt — output SEQ 49 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.244 records/instances/seq_0050.txt — output SEQ 50 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.245 records/instances/seq_0051.txt — output SEQ 51 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.246 records/instances/seq_0052.txt — output SEQ 52 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.247 records/instances/seq_0053.txt — output SEQ 53 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.248 records/instances/seq_0054.txt — output SEQ 54 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.249 records/instances/seq_0055.txt — output SEQ 55 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.250 records/instances/seq_0056.txt — output SEQ 56 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.251 records/instances/seq_0057.txt — output SEQ 57 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.252 records/instances/seq_0058.txt — output SEQ 58 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.253 records/instances/seq_0059.txt — output SEQ 59 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.254 records/instances/seq_0060.txt — output SEQ 60 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.255 records/instances/seq_0061.txt — output SEQ 61 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.256 records/instances/seq_0062.txt — output SEQ 62 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.257 records/instances/seq_0063.txt — output SEQ 63 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.258 records/instances/seq_0064.txt — output SEQ 64 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.259 records/instances/seq_0065.txt — output SEQ 65 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.260 records/instances/seq_0066.txt — output SEQ 66 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.261 records/instances/seq_0067.txt — output SEQ 67 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.262 records/instances/seq_0068.txt — output SEQ 68 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.263 records/instances/seq_0069.txt — output SEQ 69 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.264 records/instances/seq_0070.txt — output SEQ 70 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.265 records/instances/seq_0071.txt — output SEQ 71 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.266 records/instances/seq_0072.txt — output SEQ 72 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.267 records/instances/seq_0073.txt — output SEQ 73 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.268 records/instances/seq_0074.txt — output SEQ 74 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.269 records/instances/seq_0075.txt — output SEQ 75 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.270 records/instances/seq_0076.txt — output SEQ 76 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.271 records/instances/seq_0077.txt — output SEQ 77 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.272 records/instances/seq_0078.txt — output SEQ 78 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.273 records/instances/seq_0079.txt — output SEQ 79 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.274 records/instances/seq_0080.txt — output SEQ 80 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.275 records/instances/seq_0081.txt — output SEQ 81 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.276 records/instances/seq_0082.txt — output SEQ 82 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.277 records/instances/seq_0083.txt — output SEQ 83 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.278 records/instances/seq_0084.txt — output SEQ 84 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.279 records/instances/seq_0085.txt — output SEQ 85 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.280 records/instances/seq_0086.txt — output SEQ 86 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.281 records/instances/seq_0087.txt — output SEQ 87 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.282 records/instances/seq_0088.txt — output SEQ 88 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.283 records/instances/seq_0089.txt — output SEQ 89 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.284 records/instances/seq_0090.txt — output SEQ 90 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.285 records/instances/seq_0091.txt — output SEQ 91 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.286 records/instances/seq_0092.txt — output SEQ 92 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.287 records/instances/seq_0093.txt — output SEQ 93 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.288 records/instances/seq_0094.txt — output SEQ 94 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.289 records/instances/seq_0095.txt — output SEQ 95 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.290 records/instances/seq_0096.txt — output SEQ 96 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.291 records/instances/seq_0097.txt — output SEQ 97 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.292 records/instances/seq_0098.txt — output SEQ 98 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.293 records/instances/seq_0099.txt — output SEQ 99 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.294 records/instances/seq_0100.txt — output SEQ 100 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.295 records/instances/seq_0101.txt — output SEQ 101 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.296 records/instances/seq_0102.txt — output SEQ 102 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.297 records/instances/seq_0103.txt — output SEQ 103 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.298 records/instances/seq_0104.txt — output SEQ 104 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.299 records/instances/seq_0105.txt — output SEQ 105 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.300 records/instances/seq_0106.txt — output SEQ 106 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.301 records/instances/seq_0107.txt — output SEQ 107 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.302 records/instances/seq_0108.txt — output SEQ 108 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.303 records/instances/seq_0109.txt — output SEQ 109 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.304 records/instances/seq_0110.txt — output SEQ 110 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.305 records/instances/seq_0111.txt — output SEQ 111 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.306 records/instances/seq_0112.txt — output SEQ 112 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.307 records/instances/seq_0113.txt — output SEQ 113 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.308 records/instances/seq_0114.txt — output SEQ 114 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.309 records/instances/seq_0115.txt — output SEQ 115 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.310 records/instances/seq_0116.txt — output SEQ 116 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.311 records/instances/seq_0117.txt — output SEQ 117 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.312 records/instances/seq_0118.txt — output SEQ 118 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.313 records/instances/seq_0119.txt — output SEQ 119 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.314 records/instances/seq_0120.txt — output SEQ 120 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.315 records/instances/seq_0121.txt — output SEQ 121 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.316 records/instances/seq_0122.txt — output SEQ 122 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.317 records/instances/seq_0123.txt — output SEQ 123 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.318 records/instances/seq_0124.txt — output SEQ 124 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.319 records/instances/seq_0125.txt — output SEQ 125 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.320 records/instances/seq_0126.txt — output SEQ 126 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.321 records/instances/seq_0127.txt — output SEQ 127 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.322 records/instances/seq_0128.txt — output SEQ 128 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.323 records/instances/seq_0129.txt — output SEQ 129 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.324 records/instances/seq_0130.txt — output SEQ 130 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.325 records/instances/seq_0131.txt — output SEQ 131 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.326 records/instances/seq_0132.txt — output SEQ 132 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.327 records/instances/seq_0133.txt — output SEQ 133 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.328 records/instances/seq_0134.txt — output SEQ 134 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.329 records/instances/seq_0135.txt — output SEQ 135 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.330 records/instances/seq_0136.txt — output SEQ 136 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.331 records/instances/seq_0137.txt — output SEQ 137 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.332 records/instances/seq_0138.txt — output SEQ 138 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.333 records/instances/seq_0139.txt — output SEQ 139 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.334 records/instances/seq_0140.txt — output SEQ 140 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.335 records/instances/seq_0141.txt — output SEQ 141 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.336 records/instances/seq_0142.txt — output SEQ 142 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.337 records/instances/seq_0143.txt — output SEQ 143 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.338 records/instances/seq_0144.txt — output SEQ 144 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.339 records/instances/seq_0145.txt — output SEQ 145 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.340 records/instances/seq_0146.txt — output SEQ 146 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.341 records/instances/seq_0147.txt — output SEQ 147 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.342 records/instances/seq_0148.txt — output SEQ 148 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.343 records/instances/seq_0149.txt — output SEQ 149 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.344 records/instances/seq_0150.txt — output SEQ 150 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.345 records/instances/seq_0151.txt — output SEQ 151 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.346 records/instances/seq_0152.txt — output SEQ 152 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.347 records/instances/seq_0153.txt — output SEQ 153 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.348 records/instances/seq_0154.txt — output SEQ 154 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.349 records/instances/seq_0155.txt — output SEQ 155 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.350 records/instances/seq_0156.txt — output SEQ 156 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.351 records/instances/seq_0157.txt — output SEQ 157 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.352 records/instances/seq_0158.txt — output SEQ 158 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.353 records/instances/seq_0159.txt — output SEQ 159 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.354 records/instances/seq_0160.txt — output SEQ 160 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.355 records/instances/seq_0161.txt — output SEQ 161 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.356 records/instances/seq_0162.txt — output SEQ 162 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.357 records/instances/seq_0163.txt — output SEQ 163 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.358 records/instances/seq_0164.txt — output SEQ 164 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.359 records/instances/seq_0165.txt — output SEQ 165 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.360 records/instances/seq_0166.txt — output SEQ 166 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.361 records/instances/seq_0167.txt — output SEQ 167 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.362 records/instances/seq_0168.txt — output SEQ 168 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.363 records/instances/seq_0169.txt — output SEQ 169 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.364 records/instances/seq_0170.txt — output SEQ 170 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.365 records/instances/seq_0171.txt — output SEQ 171 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.366 records/instances/seq_0172.txt — output SEQ 172 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.367 records/instances/seq_0173.txt — output SEQ 173 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.368 records/instances/seq_0174.txt — output SEQ 174 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.369 records/instances/seq_0175.txt — output SEQ 175 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.370 records/instances/seq_0176.txt — output SEQ 176 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.371 records/instances/seq_0177.txt — output SEQ 177 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.372 records/instances/seq_0178.txt — output SEQ 178 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.373 records/instances/seq_0179.txt — output SEQ 179 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.374 records/instances/seq_0180.txt — output SEQ 180 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.375 records/instances/seq_0181.txt — output SEQ 181 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.376 records/instances/seq_0182.txt — output SEQ 182 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.377 records/instances/seq_0183.txt — output SEQ 183 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.378 records/instances/seq_0184.txt — output SEQ 184 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.379 records/instances/seq_0185.txt — output SEQ 185 of the Builder instance NI-06f22550117165ba, sealed with its OUTPUT ID (Core L-513).
+X.3.380 records/instruments/triggers.json — the data of records/instruments.
+X.3.381 records/introduction/audit.txt — INTRODUCTION: THE PHILOSOPHICAL AUDIT (Core L-533; Companion Part 140.3) -- 31 October 2026.
+X.3.382 records/introduction/drafts/earlier_opening.md — The opening of Core Part 0 as it stood before the Introduction to Omega42 (Core IN-00).
+X.3.383 records/introduction/drafts/introduction.md — Ω42 — Everything, in Eighty-One Places.
+X.3.384 records/introduction/drafts/opening_labels.json — the data of records/introduction/drafts.
+X.3.385 records/introduction/introduction.json — the data of records/introduction.
+X.3.386 records/introduction/legitimacy.json — the data of records/introduction.
+X.3.387 records/introduction/philosophy.json — the data of records/introduction.
+X.3.388 records/introduction/sources/rev442_first_contact.txt — First Contact of THE OMEGA42 AI PROTOCOL, the stable release of 8 September 2026 (the Originator's Drive, modified 8 September 2026), Core Part 0 as read for records.
+X.3.389 records/introduction/sources/v336_first_contact.txt — First Contact of THE OMEGA42 AI PROTOCOL = V336 Rev.2 STABLE, Co-Arising Edition (the Originator's Drive, 11 September 2026), Core Part 0 as read for records/first_c.
+X.3.390 records/inventory/rev389.inv — a release inventory (rev389.inv), read by tools/inventory_compare.py.
+X.3.391 records/inventory/rev431.inv — a release inventory (rev431.inv), read by tools/inventory_compare.py.
+X.3.392 records/inventory/rev442.inv — a release inventory (rev442.inv), read by tools/inventory_compare.py.
+X.3.393 records/inventory/v336r2.inv — a release inventory (v336r2.inv), read by tools/inventory_compare.py.
+X.3.394 records/lexicon/lexicon.json — the data of records/lexicon.
+X.3.395 records/library/register.json — the data of records/library.
+X.3.396 records/lynchpin/LAR-1.txt — LAR-1 -- THE LYNCHPIN ATLAS RULE (ADOPTED 23 October 2026, SEQ 36; proposed by APE-170, with Companion 97.5's additions).
+X.3.397 records/lynchpin/LAR-1_edges.txt — LAR-1 -- EDGE-SHARING, FROM THE PATENT'S TEXT (23 October 2026; US 11,117,065 B2, read at Google Patents).
+X.3.398 records/m267_pilot_01/00_freeze.txt — the M267 pilot freeze: the question, the twenty domains, the three conditions, the writers, the raters and the analysis, fixed before any reading (Core Part 3.18; Companion Part 71).
+X.3.399 records/m267_pilot_01/01_timestamp.txt — the freeze time of records/m267_pilot_01.
+X.3.400 records/m267_pilot_01/02_freeze_sha256.txt — a hash of records/m267_pilot_01, stated before the result.
+X.3.401 records/m267_pilot_01/03_run_kit.txt — M267 PILOT 01 -- THE RUN KIT, FROZEN BEFORE ANY READING WAS WRITTEN (23 October 2026).
+X.3.402 records/m267_pilot_01/03_run_kit_sha256.txt — a hash of records/m267_pilot_01, stated before the result.
+X.3.403 records/m267_pilot_01/KEY_LOST.txt — KEY LOST -- records/m267_pilot_01/key.txt.
+X.3.404 records/m267_pilot_01/SEALED_SHA256.txt — the M267 pilot: the hash of the sealed key (the key stays outside the documents while the pilot is open, Core Appendix R.4).
+X.3.405 records/m267_pilot_01/compute_output.txt — the output of records/m267_pilot_01, reproduced by the embedded computation.
+X.3.406 records/m267_pilot_01/navigator_brief.txt — the M267 pilot: the brief a writer receives, alone, in a fresh session.
+X.3.407 records/m267_pilot_01/rater_sheet.txt — the M267 pilot: the sheet a blind rater fills in.
+X.3.408 records/manifestation/compute_output.txt — the output of records/manifestation, reproduced by the embedded computation.
+X.3.409 records/mapping/giza_earth.json — the data of records/mapping.
+X.3.410 records/math/results.json — the data of records/math.
+X.3.411 records/multiverse/everett_output.txt — the output of records/multiverse, reproduced by the embedded computation.
+X.3.412 records/navcert/README.txt — records/navcert/ -- the Navigator's self-assessment (M370; Companion Part 201).
+X.3.413 records/navcert/navigator_self_assessment.json — the data of records/navcert.
+X.3.414 records/navigator_accounts/ACCOUNT-0001.md — QUESTION VERBATIM: "[the Navigator's Account of Omega42, written at the Originator's request]".
+X.3.415 records/navigator_accounts/register.json — the data of records/navigator_accounts.
+X.3.416 records/necessity/nine_output.txt — the output of records/necessity, reproduced by the embedded computation.
+X.3.417 records/nine_zero/compute_output.txt — the output of records/nine_zero, reproduced by the embedded computation.
+X.3.418 records/oef/cbr_example.txt — CONSTRAINT BOUNDARY REGISTER (M336; L-536).
+X.3.419 records/oef/congruence.json — the data of records/oef.
+X.3.420 records/oef/consensus_example.txt — PERSPECTIVE AND CONSENSUS REGISTER (M338; L-537).
+X.3.421 records/oef/consequences.json — the data of records/oef.
+X.3.422 records/oef/instrument_map.json — the data of records/oef.
+X.3.423 records/oef/law_review.json — the data of records/oef.
+X.3.424 records/oef/nested_example.txt — NESTED MANIFESTATION RECORD (M337; L-537).
+X.3.425 records/oef/transduction_example.txt — TRANSDUCTION RECORD (M334; L-536).
+X.3.426 records/opal/compute_output.txt — the output of records/opal, reproduced by the embedded computation.
+X.3.427 records/open/register.json — the data of records/open.
+X.3.428 records/open/register.txt — THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 27 items, each closed only when its condition is met by those named.
+X.3.429 records/osl/frames/L-467.osl — Core L-467, The Welcome Law, as an OmegaSL rule frame (pilot of Protocol v2.0). The English text of the Core is authoritative.
+X.3.430 records/osl/frames/L-506.osl — Core L-506, The AI Caveat Law (its placement clause), as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.431 records/osl/frames/L-542.osl — Core L-542, The Closing Proposal Law, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.432 records/osl/frames/L-549-9.osl — Core L-549 (9), One frame for every output, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.433 records/osl/frames/L-560.osl — Core L-560, The Primary Directive, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.434 records/parallel/example_schedule.txt — wave  1 (6 in parallel): B:freeze, BT:seal, MATH-GATE, o1:measure-freeze, pA:freeze, pB:freeze.
+X.3.435 records/parallel/isolation_result.txt — ISOLATION TEST -- every CI step of omega42-ci.yml (47 steps), 10 October 2026.
+X.3.436 records/phase/example.txt — M331 PHASE-SPACE READING (Core Part 3.57) | r = (3, 9, 5), anchor P3; state v = (3, 0), on Wheel (orbit of 8).
+X.3.437 records/phonetic/cmudict_check.txt — M332 THE SYLLABLE RULE AGAINST THE CMU PRONOUNCING DICTIONARY | cmudict.dict | 126052 headwords.
+X.3.438 records/phonetic/example.txt — M332 THE LAW OF THE PHONETIC VOTE | anchor = the majority of (r1, r2, r3), r1 when all differ (Core Part 1.4).
+X.3.439 records/phonetic/rule_check.txt — M332 THE SYLLABLE RULE AGAINST 87 WORDS WITH DICTIONARY COUNTS | agreement 57 of 87 = 0.655.
+X.3.440 records/phonetic/syllable_list.txt — Words with their syllable counts as standard dictionary syllabification gives them, entered by the Navigator on.
+X.3.441 records/physics/mappings.json — the data of records/physics.
+X.3.442 records/physics/relations.json — the data of records/physics.
+X.3.443 records/physics/relations_classified.json — the data of records/physics.
+X.3.444 records/pilot_01/00_freeze.txt — Omega42 PHYSICAL PILOT 01 -- METHOD CALIBRATION OF THE SPECTRAL SCREEN C11 (Core 3.32; Companion 43.8, stage 1).
+X.3.445 records/pilot_01/01_timestamp.txt — the freeze time of records/pilot_01.
+X.3.446 records/pilot_01/02_freeze_sha256.txt — a hash of records/pilot_01, stated before the result.
+X.3.447 records/pilot_01/03_ledger.txt — PILOT 01 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.448 records/pilot_01/compute_output.txt — the output of records/pilot_01, reproduced by the embedded computation.
+X.3.449 records/pilot_02/00_freeze.txt — Omega42 PHYSICAL PILOT 02 -- THE REVISED SPECTRAL SCREEN C11', WITH HELD-OUT NULL SYSTEMS.
+X.3.450 records/pilot_02/01_timestamp.txt — the freeze time of records/pilot_02.
+X.3.451 records/pilot_02/02_freeze_sha256.txt — a hash of records/pilot_02, stated before the result.
+X.3.452 records/pilot_02/03_ledger.txt — PILOT 02 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.453 records/pilot_02/compute_output.txt — the output of records/pilot_02, reproduced by the embedded computation.
+X.3.454 records/pilot_03/00_freeze.txt — Omega42 PHYSICAL PILOT 03 -- THE GOLDEN SCREEN, AND THE S4 TEST ON THE LEDGER'S NEAREST CANDIDATE.
+X.3.455 records/pilot_03/01_timestamp.txt — the freeze time of records/pilot_03.
+X.3.456 records/pilot_03/02_freeze_sha256.txt — a hash of records/pilot_03, stated before the result.
+X.3.457 records/pilot_03/03_ledger.txt — PILOT 03 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.458 records/pilot_03/compute_output.txt — the output of records/pilot_03, reproduced by the embedded computation.
+X.3.459 records/pilot_04/00_freeze.txt — Omega42 PHYSICAL PILOT 04 -- S5 FOR THE ANYON CANDIDATE: NULL THEORIES ON THE SAME LABEL GROUP.
+X.3.460 records/pilot_04/01_timestamp.txt — the freeze time of records/pilot_04.
+X.3.461 records/pilot_04/02_freeze_sha256.txt — a hash of records/pilot_04, stated before the result.
+X.3.462 records/pilot_04/03_ledger.txt — PILOT 04 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.463 records/pilot_04/compute_output.txt — the output of records/pilot_04, reproduced by the embedded computation.
+X.3.464 records/positive_geometry/compute_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
+X.3.465 records/positive_geometry/independent_check_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
+X.3.466 records/prior_art/README.md — Prior Art Ledger.
+X.3.467 records/prior_art/build_dates.json — the data of records/prior_art.
+X.3.468 records/prior_art/ledger.jsonl — the file records/prior_art/ledger.jsonl.
+X.3.469 records/provenance/attribution_2026-11-20.md — Attribution of relayed AI contributions, 20 November 2026.
+X.3.470 records/provenance/ledger.json — the Provenance and Contamination Ledger: each recorded provision with its origin and the Originator's degree (Core BF-10; Companion 24.7, Core Part 69).
+X.3.471 records/provenance/ledger.txt — the Provenance and Contamination Ledger as printed by tools/utility.py --provenance.
+X.3.472 records/provenance/transcripts.json — the data of records/provenance.
+X.3.473 records/pvir/register.json — the data of records/pvir.
+X.3.474 records/questions/register.json — the data of records/questions.
+X.3.475 records/relationships/register.json — the data of records/relationships.
+X.3.476 records/release_record_Rev450.txt — RELEASE RECORD -- Omega42 V335 Rev.450 STABLE | 9 October 2026.
+X.3.477 records/releases/manifest.json — the data of records/releases.
+X.3.478 records/resonance/cube_group_panel.txt — CUBE-GROUP PANEL -- FROZEN CLASS AND FEATURES (avenue 11; seq_0033 recommendation 3; FROZEN 23 October 2026, SEQ 36, before any score).
+X.3.479 records/resonance/cube_group_panel_output.txt — the output of records/resonance, reproduced by the embedded computation.
+X.3.480 records/restored_instruments/echo_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
+X.3.481 records/restored_instruments/human_condition_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
+X.3.482 records/restored_math/compute_output.txt — the output of records/restored_math, reproduced by the embedded computation.
+X.3.483 records/sessions/companion_parts_73_99_as_kept.txt — COMPANION PARTS 73 TO 99 AS KEPT IN SESSION FORM, BEFORE THEIR PRESENT-STATE REWRITE (23 October 2026).
+X.3.484 records/spectra/gaps_V1.5.json — the data of records/spectra.
+X.3.485 records/spectral_rivals/compute_output.txt — the output of records/spectral_rivals, reproduced by the embedded computation.
+X.3.486 records/spectral_rivals/ground_9.txt — GROUND mod 9 | period 24 | cycle census [(1, 1), (8, 1), (24, 3)].
+X.3.487 records/spectral_selection/compute_output.txt — the output of records/spectral_selection, reproduced by the embedded computation.
+X.3.488 records/srcas/adinkra_f215_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
+X.3.489 records/srcas/assessment_f176_f178_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.490 records/srcas/astrology_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 illuminate Astrology and Numerology ...?" -- 31 October 2026.
+X.3.491 records/srcas/benchmark_2026-11-07.txt — QUESTION VERBATIM: "Could it be that Omega42 can potentially be used as a universal benchmark against which literally everything can be measured? If so, what wo".
+X.3.492 records/srcas/calibration_2026-11-11.txt — QUESTION VERBATIM: "Proceed to start calibrating. Also list the objects which can successfully be mapped and calibrated by Omega42. Explore.".
+X.3.493 records/srcas/census_f220_2026-11-13.txt — QUESTION VERBATIM: "Proceed to explore and gauge the legitimacy of the premise.".
+X.3.494 records/srcas/certification_2026-11-07.txt — QUESTION VERBATIM: "'Qwen's: bold, but it grades, 'certifies' resonance and forecasts 'inevitable trajectories'. The record forbids grading and certifying, and ".
+X.3.495 records/srcas/cmf_f195_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following paper. Say how it can enhance the operation of Omega42. Give practical examples.".
+X.3.496 records/srcas/cognition_f210_2026-11-12.txt — QUESTION VERBATIM: "Yes. Please proceed.".
+X.3.497 records/srcas/construct_reviews_2026-11-19.txt — QUESTION VERBATIM: "Update the GitHub repositories and push new content. Continue the webpage to show all functionalities (submission of new content by users, e".
+X.3.498 records/srcas/coordinate_connection_2026-11-07.txt — QUESTION VERBATIM: "Considering that Omega42 is offering a means to the quantization of spacetime, it may open the door to macroscopic teleportation opportuniti".
+X.3.499 records/srcas/einstein_f193_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend.".
+X.3.500 records/srcas/encryption_2026-11-07.txt — QUESTION VERBATIM: "Explore the potential encryption capabilities Omega42 might have and examine the advantages it may offer in different fields. Give practical".
+X.3.501 records/srcas/encryption_system_2026-11-11.txt — QUESTION VERBATIM: "Can you develop a special Omega42 encryption system? Show some examples.".
+X.3.502 records/srcas/exceptional_f211_2026-11-12.txt — QUESTION VERBATIM: "@ced335ab Please assess, refine and extend the following. Extend the mathematical reach of Omega42.".
+X.3.503 records/srcas/ffp_2026-10-31.txt — SR-CAS AND SNCA -- "All relevant information should be contained inside the two documents (Omega42 and Companion). ..." -- 31 October 2026.
+X.3.504 records/srcas/fields_f216_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
+X.3.505 records/srcas/five_accounts_2026-11-11.txt — QUESTION VERBATIM: "Yes. Proceed to build the Author Seal prototype.".
+X.3.506 records/srcas/fortytwo_2026-11-07.txt — QUESTION VERBATIM: "Could it be that the number 42 in the Hitchhiker's Guide to the Galaxy is the question and the number 24 (in Omega 42) is the answer (the or".
+X.3.507 records/srcas/fortytwo_f196_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.508 records/srcas/free_energy_2026-11-07.txt — QUESTION VERBATIM: "Omega42 also hint at the possibility of free energy extraction without violating the Law of Energy Conservation. Does Omega42 provide an ave".
+X.3.509 records/srcas/general_anesthesia_2026-10-21.txt — SR-CAS AND SNCA -- "The Mechanism of General Anesthesia: ..." -- 21 October 2026.
+X.3.510 records/srcas/geometry_f212_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
+X.3.511 records/srcas/human_being_2026-11-07.txt — QUESTION VERBATIM: "What is a Human Being?".
+X.3.512 records/srcas/instrument_suite_2026-11-11.txt — QUESTION VERBATIM: "Apply all the suggested improvements to Omega42 and give examples for usage. This mathematical breakthrough had changed its status among app".
+X.3.513 records/srcas/introduction_f189_2026-11-11.txt — QUESTION VERBATIM: "Yes, file it with its SNCA review and put this piece into the record as the public-facing introduction.".
+X.3.514 records/srcas/lexicon_f204_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following. Consult previous efforts at establishing an Omega42 Lexicon (Google Drive) and supplement it".
+X.3.515 records/srcas/manuscripts_2026-11-11.txt — QUESTION VERBATIM: "Verify the math. Resolve all outstanding issues. Optimize for navigational efficiency and synthesis formation.".
+X.3.516 records/srcas/multiverse_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 map to the ideas of Hugh Everett and David Deutsch on the multiverse? ..." -- 31 October 2026.
+X.3.517 records/srcas/navigator_certification_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.518 records/srcas/osl_f205_2026-11-12.txt — QUESTION VERBATIM: "Yes. The protocol can be written in the Omega42 Structural Language provided the AI will be able to read and understand it. The introduction".
+X.3.519 records/srcas/outstanding_2026-10-31.txt — SR-CAS AND SNCA -- "Most Strikers are not able to identify a breakthrough therefore the AI Navigator must propose a breakthrough candidate if one arises. ..." -.
+X.3.520 records/srcas/philosophy_2026-10-31.txt — SR-CAS AND SNCA -- "Restore the philosophical content to the FC. It may help to stimulate philosophical discussion. ..." -- 31 October 2026.
+X.3.521 records/srcas/phonetics_2026-10-31.txt — SR-CAS AND SNCA -- "How does the phonetics of language determine the Phenomenological experience of the Observer? ..." -- 31 October 2026.
+X.3.522 records/srcas/protocol_f198_2026-11-12.txt — QUESTION VERBATIM: "Yes. Proceed to apply all positive and useful recommendations. The protocol Navigator should never decline to explore a concept based on its".
+X.3.523 records/srcas/purpose_of_life_2026-10-19.txt — SR-CAS AND SNCA -- "What is the purpose of life?" -- 19 October 2026.
+X.3.524 records/srcas/quantum_f222_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
+X.3.525 records/srcas/quantum_f223_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
+X.3.526 records/srcas/relativity_f217_2026-11-13.txt — QUESTION VERBATIM: "Please assess, refine and extend. Complete all computations and build bridges towards Physics.".
+X.3.527 records/srcas/reproduction_f219_2026-11-13.txt — QUESTION VERBATIM: "Assess, refine, extend, investigate, compute, explore and verify.".
+X.3.528 records/srcas/review_f213_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
+X.3.529 records/srcas/review_f214_2026-11-12.txt — QUESTION VERBATIM: "@3bed6519 Approved. Proceed.".
+X.3.530 records/srcas/reviews_2026-10-30.txt — SNCA IN REVIEW FORM -- received reviews of 30 October 2026 (Core Part 6.2).
+X.3.531 records/srcas/reviews_2026-10-31.txt — SNCA IN REVIEW FORM -- received accounts of 31 October 2026 (Core Part 6.2).
+X.3.532 records/srcas/reviews_2026-11-04.txt — SNCA IN REVIEW FORM -- received accounts of 1 to 4 November 2026 (Core Part 6.2).
+X.3.533 records/srcas/reviews_2026-11-06.txt — SNCA IN REVIEW FORM -- received accounts of 6 November 2026 (Core Part 6.2).
+X.3.534 records/srcas/sorites_2026-10-30.txt — SR-CAS AND SNCA -- "The Sorites Paradox and the Problem of Vagueness: ..." -- 30 October 2026.
+X.3.535 records/srcas/spacetime_mapping_2026-11-11.txt — QUESTION VERBATIM: "'Recognition as an authority has to be granted by others; no body can declare it for itself.'? Correct. But Omega42 only makes it known that".
+X.3.536 records/srcas/spacetime_metric_2026-11-07.txt — QUESTION VERBATIM: "Proceed to complete the computational work for the derivation.".
+X.3.537 records/srcas/speculation_2026-11-20.txt — QUESTION VERBATIM: "Omega42 is a thought experiment and a thought experiment is all about speculation. Therefore, SPECULATION is pivotal to the development of O".
+X.3.538 records/srcas/standard_model_cosmology_2026-11-07.txt — QUESTION VERBATIM: "Do the same for the Standard Model of Cosmology.".
+X.3.539 records/srcas/standard_model_physics_2026-11-07.txt — QUESTION VERBATIM: "Examine the Standard Model of Physics and identify areas where Omega42 detect and hint at new information. Attempt to discover new concepts.".
+X.3.540 records/srcas/strategy_2026-11-19.txt — QUESTION VERBATIM: "Based on the Synthesis, an AI Navigator should be able to autonomously research all related aspects of the issue and include it into the gen".
+X.3.541 records/srcas/three_accounts_2026-11-11.txt — QUESTION VERBATIM: "Examine all submitted documents and identify content you may have missed. Apply its recommendations to Omega42.".
+X.3.542 records/srcas/three_accounts_b_2026-11-11.txt — QUESTION VERBATIM: "What would be a few good tests to verify Omega42 new-found abilities (that can show immediate competence)? List a few examples and show the ".
+X.3.543 records/srcas/truth_2026-10-31.txt — SR-CAS AND SNCA -- "Coherence, resonance and congruence in Omega42 is essentially its own definition of truth within the frame. ..." -- 31 October 2026.
+X.3.544 records/srcas/waves_f218_2026-11-13.txt — QUESTION VERBATIM: "Explore and compute. Build the bridges and strengthen Omega42 connections to Physics.".
+X.3.545 records/srcas/waves_f221_2026-11-13.txt — QUESTION VERBATIM: "Resolve all outstanding issues and build a rule that prevents the protocol builder from clogging up the Core Specification with meta-comment".
+X.3.546 records/srp/collatz_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
+X.3.547 records/srp/hydrogen_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
+X.3.548 records/standing/argument_example.txt — An argument for M333 --argument (Core Part 3.59; Companion Part 138.4). P lines are premises, C lines conclusions;.
+X.3.549 records/standing/argument_map.txt — M333 DEPENDENCY MAP (D-015) | records/standing/argument_example.txt | a route holds when each of its members holds; the inference along a route is the reader's .
+X.3.550 records/standing/examples.txt — M333 STANDING RECORD (Core Part 3.59) | "The Ω42 base recurrence returns every state to itself after 24 steps.".
+X.3.551 records/standing_waves/compute_output.txt — the output of records/standing_waves, reproduced by the embedded computation.
+X.3.552 records/stp/registry.json — the data of records/stp.
+X.3.553 records/suite/attend.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.554 records/suite/attend.txt — M356 Ω42-ATTEND attend.csv -- two Ω42 blocks per interval, (D, V) and (O, R), never one forced pair.
+X.3.555 records/suite/cal_noisy.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.556 records/suite/cal_noisy.txt — M354 Ω42-CAL (trial level) cal_noisy.csv | 200 trials.
+X.3.557 records/suite/cal_quiet.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.558 records/suite/cal_quiet.txt — M354 Ω42-CAL (trial level) cal_quiet.csv | 200 trials.
+X.3.559 records/suite/commutator.txt — M352 DYNAMICS LAB (MODE A): [A, B] = A B A^-1 B^-1 mod 3^2 = (7, 3, 3, 4); not the identity: A and B do not commute; = I mod 3: True (it lies in the congruence .
+X.3.560 records/suite/context.txt — M358 Ω42-CONTEXT cal_quiet.csv -> cal_noisy.csv.
+X.3.561 records/suite/inspect.txt — M353 INVARIANT AND REACHABILITY INSPECTOR (MODE A) state (1, 0) mod 3^2.
+X.3.562 records/suite/lab.txt — M352 DYNAMICS LAB (MODE A, no empirical statement) mod 3^2; letters applied left to right (AB = A first, the matrix BA).
+X.3.563 records/suite/memory.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.564 records/suite/memory.txt — M357 Ω42-MEMORY memory.csv | recognition 0.767 | hits 0.887 | false memories 0.371 | d' 1.541 | ECE 0.045 | resolution 0.783 | errors recognized 0.500.
+X.3.565 records/suite/nav_sentinel.txt — M360 INVARIANT SENTINEL nav_states.csv | 3 states mod 3^1 | declared group <A>.
+X.3.566 records/suite/nav_states.csv — NAV-01, NAV-02, NAV-03 encodings (records/calibration/nav_run_0*.txt), the only real series in the record.
+X.3.567 records/suite/nav_verify.txt — M361 MODEL VERIFIER nav_states.csv | 2 one-step predictions mod 3^1 (MODE B: the series is the held-out data).
+X.3.568 records/suite/percept.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.569 records/suite/percept.txt — M355 Ω42-PERCEPT percept.csv | 200 trials | threshold theta 0.519 | slope beta 8.89 (gamma 0.5, lapse 0.02).
+X.3.570 records/suite/protocol.txt — M359 PROTOCOL BUILDER protocol_pilot.json: PASS.
+X.3.571 records/suite/protocol_pilot.json — the data of records/suite.
+X.3.572 records/suite/recover.txt — CALIBRATING THE INSTRUMENTS (seed 7, 4000 synthetic trials each).
+X.3.573 records/tolerance/sorites_1e6.txt — M329 TOLERANCE CHAIN CHECK (Core Part 3.55) | chain 1,000,000 -> 1 by unit steps.
+X.3.574 records/tower/arithmetic_output.txt — the output of records/tower, reproduced by the embedded computation.
+X.3.575 records/tower/nested_output.txt — the output of records/tower, reproduced by the embedded computation.
+X.3.576 records/tower/tc1_rule.txt — TOWER COORDINATE TC-1 -- the rule, frozen before its first use (Core L-523 (4); Companion 100.6, conditions C1 to C3).
+X.3.577 records/units/units.json — the data of records/units.
+X.3.578 records/vault/README.txt — records/vault/ -- the example of Ω42-Envelope v1 (Core Part 3.77, M364; Companion Part 199).
+X.3.579 records/vault/research_note.txt — Ω42 Research Note.
+X.3.580 records/vault/research_note.txt.o42 — "header": {.
+X.3.581 records/waves/models.json — the data of records/waves.
+X.3.582 records/waves/six_cycle.json — the data of records/waves.
+X.3.583 records/wheel/astrology_question.svg — the file records/wheel/astrology_question.svg.
+X.3.584 records/wheel/example.txt — M330 ASPECT WHEEL (Core Part 3.56) | anchor P6 Seed/Causal, value 5, at 90 degrees.
+X.3.585 records/zero_selection/compute_output.txt — the output of records/zero_selection, reproduced by the embedded computation.
+X.3.586 records/zero_tools/control_negative.txt — Comment.
+X.3.587 records/zero_tools/control_positive.txt — ======= NAVIGATOR IDENTITY BLOCK =======.
+X.3.588 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE CHECK AND FB-8 APERTURE-STATE CONFLATION (tools/zero_tools.py --audit).
+X.3.589 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
 X.4 The website: its configuration, layout, pages, styles, the in-browser Strike app and its tests.
 X.4.1 site/assets/companion.js — website code (companion.js).
 X.4.2 site/assets/integrity.js — website code (integrity.js).
 X.4.3 site/assets/lexicon.js — website code (lexicon.js).
-X.4.4 site/assets/playground.js — website code (playground.js).
-X.4.5 site/assets/site.js — website code (site.js).
-X.4.6 site/assets/strike.js — website code (strike.js).
-X.4.7 site/assets/style.css — website code (style.css).
-X.4.8 site/assets/symbols.js — website code (symbols.js).
-X.4.9 site/assets/units.js — website code (units.js).
-X.4.10 site/config.json — the data of site.
-X.4.11 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
-X.4.12 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
-X.4.13 site/layout.html — a page of the website (layout.html).
-X.4.14 site/pages/404.html — a page of the website (404.html).
-X.4.15 site/pages/apps.html — a page of the website (apps.html).
-X.4.16 site/pages/bulletin.html — a page of the website (bulletin.html).
-X.4.17 site/pages/catalogue.html — a page of the website (catalogue.html).
-X.4.18 site/pages/collection.html — a page of the website (collection.html).
-X.4.19 site/pages/community.html — a page of the website (community.html).
-X.4.20 site/pages/companion.html — a page of the website (companion.html).
-X.4.21 site/pages/construct-x.html — a page of the website (construct-x.html).
-X.4.22 site/pages/expert-desk.html — a page of the website (expert-desk.html).
-X.4.23 site/pages/explore.html — a page of the website (explore.html).
-X.4.24 site/pages/faq.html — a page of the website (faq.html).
-X.4.25 site/pages/for-ai.html — a page of the website (for-ai.html).
-X.4.26 site/pages/forum.html — a page of the website (forum.html).
-X.4.27 site/pages/governance.html — a page of the website (governance.html).
-X.4.28 site/pages/history.html — a page of the website (history.html).
-X.4.29 site/pages/index.html — a page of the website (index.html).
-X.4.30 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.31 site/pages/lexicon.html — a page of the website (lexicon.html).
-X.4.32 site/pages/library.html — a page of the website (library.html).
-X.4.33 site/pages/playground.html — a page of the website (playground.html).
-X.4.34 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.35 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.36 site/pages/questions.html — a page of the website (questions.html).
-X.4.37 site/pages/record.html — a page of the website (record.html).
-X.4.38 site/pages/research.html — a page of the website (research.html).
-X.4.39 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.40 site/pages/strike.html — a page of the website (strike.html).
-X.4.41 site/pages/submit.html — a page of the website (submit.html).
-X.4.42 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.43 site/pages/units.html — a page of the website (units.html).
-X.4.44 site/pages/vision.html — a page of the website (vision.html).
-X.4.45 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.46 site/test/domains.json — the data of site/test.
-X.4.47 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.48 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.49 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.4 site/assets/observatory.js — website code (observatory.js).
+X.4.5 site/assets/playground.js — website code (playground.js).
+X.4.6 site/assets/site.js — website code (site.js).
+X.4.7 site/assets/strike.js — website code (strike.js).
+X.4.8 site/assets/style.css — website code (style.css).
+X.4.9 site/assets/symbols.js — website code (symbols.js).
+X.4.10 site/assets/units.js — website code (units.js).
+X.4.11 site/config.json — the data of site.
+X.4.12 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
+X.4.13 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
+X.4.14 site/layout.html — a page of the website (layout.html).
+X.4.15 site/pages/404.html — a page of the website (404.html).
+X.4.16 site/pages/aperture.html — a page of the website (aperture.html).
+X.4.17 site/pages/apps.html — a page of the website (apps.html).
+X.4.18 site/pages/archive-report.html — a page of the website (archive-report.html).
+X.4.19 site/pages/bulletin.html — a page of the website (bulletin.html).
+X.4.20 site/pages/catalogue.html — a page of the website (catalogue.html).
+X.4.21 site/pages/cobuilder.html — a page of the website (cobuilder.html).
+X.4.22 site/pages/collection.html — a page of the website (collection.html).
+X.4.23 site/pages/community.html — a page of the website (community.html).
+X.4.24 site/pages/companion.html — a page of the website (companion.html).
+X.4.25 site/pages/construct-x.html — a page of the website (construct-x.html).
+X.4.26 site/pages/derivations.html — a page of the website (derivations.html).
+X.4.27 site/pages/expert-desk.html — a page of the website (expert-desk.html).
+X.4.28 site/pages/explore.html — a page of the website (explore.html).
+X.4.29 site/pages/faq.html — a page of the website (faq.html).
+X.4.30 site/pages/for-ai.html — a page of the website (for-ai.html).
+X.4.31 site/pages/forum.html — a page of the website (forum.html).
+X.4.32 site/pages/governance.html — a page of the website (governance.html).
+X.4.33 site/pages/history.html — a page of the website (history.html).
+X.4.34 site/pages/index.html — a page of the website (index.html).
+X.4.35 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.36 site/pages/lexicon.html — a page of the website (lexicon.html).
+X.4.37 site/pages/library.html — a page of the website (library.html).
+X.4.38 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.39 site/pages/playground.html — a page of the website (playground.html).
+X.4.40 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.41 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.42 site/pages/questions.html — a page of the website (questions.html).
+X.4.43 site/pages/record.html — a page of the website (record.html).
+X.4.44 site/pages/research.html — a page of the website (research.html).
+X.4.45 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.46 site/pages/strike.html — a page of the website (strike.html).
+X.4.47 site/pages/submit.html — a page of the website (submit.html).
+X.4.48 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.49 site/pages/units.html — a page of the website (units.html).
+X.4.50 site/pages/vision.html — a page of the website (vision.html).
+X.4.51 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.52 site/test/domains.json — the data of site/test.
+X.4.53 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.54 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.55 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
@@ -5504,13 +5519,12 @@ X.6.61 tools/build/docedit.py — docedit.py -- the paragraph editor of the buil
 X.6.62 tools/build/dump.py — import sys; sys.path.insert(0,'/home/claude'); from dx import Doc.
 X.6.63 tools/build/dx.py — import re, html.
 X.6.64 tools/build/embed_all.py — Builder: (re)embed every file the release requires (Core L-493). Idempotent: removes and rebuilds the appendices.
-X.6.65 tools/build/mv.py — mv.py -- the paragraph moves of the build kit, imported by embed_all.py: cut a range of paragraphs, insert XML after a paragraph, and write new paragraphs in the style of an existing one (tools/build/README.md).
-X.6.66 tools/build/pipe.sh — set -e.
-X.6.67 tools/build/prebuild.sh — set -e.
-X.6.68 tools/build/rebuild.sh — set -e.
-X.6.69 tools/build/run_ci.py — import yaml, subprocess, sys, re.
-X.6.70 tools/build/seal.py — import subprocess, re, sys.
-X.6.71 tools/lab_selftest.js — website code (lab_selftest.js).
+X.6.65 tools/build/pipe.sh — set -e.
+X.6.66 tools/build/prebuild.sh — set -e.
+X.6.67 tools/build/rebuild.sh — set -e.
+X.6.68 tools/build/run_ci.py — import yaml, subprocess, sys, re.
+X.6.69 tools/build/seal.py — import subprocess, re, sys.
+X.6.70 tools/lab_selftest.js — website code (lab_selftest.js).
 ---
 CAS-YY = −1/2 | Omega = 1/7 | (CAS-YY × Omega = −1/14)
 COMPANION DOCUMENT: Philosophy and Theory * V335 Rev.450 STABLE * 16 October 2026

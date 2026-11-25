@@ -268,7 +268,7 @@ Level: A (three Core sentences), from the Foundations and Integrity Review (Chat
 Level: A (L-506 and the Opening IN-OPEN), proposed by ChatGPT 6 (OpenAI) at the Originator's request; set out in Companion 70.6.
 - Core: the general AI disclosure is given once per session, in the Opening on "Welcome Navigator"; later answers in the same session carry no generic caveat line and state specific qualifications (assumptions, uncertainty, source gaps, the status of a statement) where they matter; a new session repeats the disclosure; an output saved to the record (navigation, APE, Bulletin entry) keeps the line, since it is read without its session; host platform notices are kept.
 - Tools on ratification: tools/format_check.py requires the line in the Opening and in saved records, not in every conversational output.
-- RATIFIED by ESC on 20 November 2026 (D-23) and applied: Core L-506, L-467, L-549, IN-OPEN, Part 2, Part 8.0 and Rule 35; Companion 70.6; tools/intro_output.py and scripts/m193_m225.py.
+- Until ratified, L-506 stands and every output carries the line.
 
 ## CA-37: Foundational programs (20 November 2026)
 Level: B, from three explorations by ChatGPT 6 (OpenAI), relayed by the Originator.
@@ -295,3 +295,9 @@ Level: B, from an exploration by ChatGPT 6 (OpenAI) at the Originator's request.
 - Definition types: established, adopted, adapted, proposed, speculative. Where the Core defines a term, the Core governs.
 - Roadmap, not built: the relationship explorer as a network view of records/relationships/register.json; the Hypothesis Laboratory (speculative, formal and empirical modes, complementary); the research map; challenge and contribution forms beyond submit.html; a personal notebook; giving the Navigator the Lexicon by default (the Navigator prompt can attach api/lexicon.json); PDF and CSV exports.
 
+## CA-41: Ratification of CA-35 and CA-36; the Core budget at 1000 words (21 November 2026)
+- ESC decided D-22 and D-23 (docs/DECISIONS_PENDING.md).
+- Rule 39: the prose a record adds beyond the register stays within 1000 words (was 900); tools/core_economy.py checks it.
+- CA-35 ratified: Core L-562, The Epistemic Precision Law: the completeness of the thought experiment is stipulated; the Striker's sovereignty is formal non-determination, practical autonomy a design objective, empirical autonomy a research question; agreement between AI systems does not replace independent review.
+- CA-36 ratified in the Originator's form: the AI caveat once per session, below the Opening on "Welcome Navigator" or at the end of the first output of a session that begins without it; later outputs state the specific qualification each statement needs. Outputs dated from 20 October to 20 November 2026 keep the line they carry.
+- Home page: the section "See More. Explore Further. Discover Connections." (the microscope for ideas), in the Originator's words, with the line "Omega42 · Explore Existence. Discover Structure. Expand Possibility." (21 November 2026).

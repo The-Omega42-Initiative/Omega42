@@ -29,13 +29,22 @@ PROV = re.compile(r"\b(L-\d{3}|M\d{3}|F-\d{2}|FC-\d{2}|Part \d|Step \d|Companion
 NAMES = re.compile(r"\b(Tegmark|Wolfram|ruliad|Pythagoras|Plato|Spinoza|I Ching|tarot|Oulipo|Oblique Strategies)\b")
 
 
+
+ONCE_FROM = (2026, 11, 21)   # from 21 November 2026 the AI CAVEAT is given once per session (Core L-506)
+_MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+def _once(text):
+    """True where the output is dated from 21 November 2026, when the caveat stands only in a session's first output."""
+    m = re.search(r'^NAVIGATOR: .*\*\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\s*$', text, re.M)
+    try: return bool(m) and (int(m.group(3)), _MONTHS.index(m.group(2).lower()) + 1, int(m.group(1))) >= ONCE_FROM
+    except ValueError: return False
+
 def check(text):
     R = []
     def add(ok, item): R.append((bool(ok), item))
     lines = [l for l in text.split('\n')]
     nonblank = [l for l in lines if l.strip()]
     add(nonblank and nonblank[0].startswith('QUESTION VERBATIM: '), 'QUESTION VERBATIM line first (L-499)')
-    add(CAVEAT in text, 'AI CAVEAT line (L-506)')
+    add(CAVEAT in text or _once(text), 'AI CAVEAT line (L-506; from 21 November 2026 in a session\'s first output only)')
     add(re.search(r'DECLARED PRESSURE \(M207\):', text), 'declared pressure (M207)')
     add('SELF-ESTIMATED' in text, "the Navigator's own view labelled SELF-ESTIMATED")
     add(re.search(r'M267|Appendix S|comparative (studies|study|register)', text, re.I) and re.search(r'not yet run|NOT RUN|\bRUN\b|was run|optional|waits?', text), 'the comparative studies\' status stated (Appendix S; L-491)')

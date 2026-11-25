@@ -16,6 +16,7 @@ outputs are identified and checked, and the line is not asked of them. Standard 
 import datetime, importlib.util, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FROM = datetime.date(2026, 11, 7)
+ONCE_FROM = datetime.date(2026, 11, 21)   # from 21 November 2026 the AI CAVEAT is given once per session (Core L-506)
 MONTHS = {m: i + 1 for i, m in enumerate(('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august',
                                            'september', 'october', 'november', 'december'))}
 AI_CAVEAT = ('AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its '
@@ -102,7 +103,8 @@ def declaration_checks(text, form):
         m = DECL.match(lines[1]) if len(lines) > 1 else None
         add(bool(m) and m.group(1).strip() == form, 'OUTPUT FORM second, naming the form (L-549 (2))',
             'identified %s%s' % (form, ', declared %s' % m.group(1).strip() if m else ''))
-    add(AI_CAVEAT in lines or any(l.startswith(AI_CAVEAT[:60]) for l in lines), 'AI CAVEAT line (L-506, L-549 (9))')
+    add(AI_CAVEAT in lines or any(l.startswith(AI_CAVEAT[:60]) for l in lines) or (d is not None and d >= ONCE_FROM),
+        'AI CAVEAT line (L-506, L-549 (9); from 21 November 2026 in a session\'s first output only)')
     add(len(lines) > 2 and lines[-1] == 'ESC' and bool(re.match(r'^NAVIGATOR: .+ \(.+\).* \* V335 Rev\.450 STABLE \* .+$', lines[-2])),
         'Signature last, naming the AI and its maker (L-549 (9))', 'NAVIGATOR: model (organization) * V335 Rev.450 STABLE * date, then ESC')
     if form != 'INTRODUCTION':
@@ -131,7 +133,8 @@ def answer_checks(text):
     out = []; add = lambda ok, item, note='': out.append(('PASS' if ok else 'FAIL', item, note))
     lines = [l.strip() for l in text.split('\n') if l.strip()]
     add(bool(lines) and lines[0].startswith('QUESTION VERBATIM: '), 'QUESTION VERBATIM first (L-499)')
-    add(AI_CAVEAT in lines, 'AI CAVEAT line (L-506)')
+    d = dated(text)
+    add(AI_CAVEAT in lines or (d is not None and d >= ONCE_FROM), 'AI CAVEAT line (L-506; from 21 November 2026 in a session\'s first output only)')
     add(any(l.startswith('BASIS: ') for l in lines), 'BASIS line (L-549 (3))', 'the provisions, records or computations the answer rests on')
     add(CLOSING_LINE in lines, 'Fixed closing line')
     add(len(lines) > 3 and lines[-1] == 'ESC' and lines[-3] == SIG and lines[-2].startswith('NAVIGATOR: '), 'Signature last')

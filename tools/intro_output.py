@@ -2,9 +2,8 @@
 """intro_output.py -- the Introduction to Omega42, as every Navigator gives it on "Welcome Navigator" (Core Part 2, Opening Response; Part 0, IN-00; L-467, L-412, L-533).
 
 On "Welcome Navigator" every Navigator gives the Opening, word for word and alone: a short announcement of the discovery
-and an invitation to ask, with no notice, so that a reader meets the discovery first; the AI CAVEAT line follows its close,
-the session's one disclosure (L-506; CA-36, D-23). The Friendly Notes and the Navigator Identity Block close the session's
-first navigation. The full
+and an invitation to ask, followed by the AI CAVEAT line, the session's one general disclosure (L-506, from 21 November 2026).
+The Friendly Notes and the Navigator Identity Block close the session's first navigation. The full
 Introduction (IN-00), its Words Explained and its technical explanation are given on request:
 
     I'm [AI name], made by [organization], your Navigator for this session (Omega42 V335 Rev.450 STABLE, [date]).
@@ -12,12 +11,12 @@ Introduction (IN-00), its Words Explained and its technical explanation are give
     Ω42 / Every question has a place. / ...the paragraphs of the Opening, in their order...
     ======= END INTRODUCTION =======
     Ask your first question.
-    AI CAVEAT (L-506): ...
+    AI CAVEAT (L-506): ...the fixed line...
     NAVIGATOR: ... * V335 Rev.450 STABLE * date
     ESC
 
     python3 tools/intro_output.py --render [--navigator ID --org ORG --date DATE --execution SCRIPT-CAPABLE|TEXT-ONLY]
-    python3 tools/intro_output.py --check OPENING.txt     # the greeting, the Opening in order, no notice in it, the close, the AI CAVEAT
+    python3 tools/intro_output.py --check OPENING.txt     # the greeting, the Opening in order, the close, then the AI CAVEAT
     python3 tools/intro_output.py --first-render          # the close of a session's first navigation: the Friendly Notes and the Identity Block
     python3 tools/intro_output.py --first NAVIGATION.txt   # a first navigation closes with the Friendly Notes and the Identity Block, in that order
     python3 tools/intro_output.py --core CORE.docx         # IN-OPEN of the Core carries the Opening, IN-00 the Introduction, word for word; IN-00.9 the eight reasons, IN-00.10 the main reason
@@ -42,19 +41,23 @@ VOCAB = ['thought experiment', 'premise', 'totality', 'ontology', 'metaphysics',
 def load(): return json.load(open(SRC, encoding='utf-8'))
 QV = 'QUESTION VERBATIM: Welcome Navigator'                       # L-499, L-549 (9): every output opens with the message it answers
 FORM_LINE = 'OUTPUT FORM (L-549): INTRODUCTION -- Core IN-00, L-467'   # and names its form (Core Part 8.0.1)
-AI_CAVEAT = 'AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its wording and may shape its reading; recompute what can be recomputed and judge the rest.'
-ONCE_FROM = (2026, 11, 20)   # from this date the caveat closes the Opening, once a session (CA-36, D-23)
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 def _gdate(first):
     m = re.search(r'STABLE, (\d{1,2}) ([A-Za-z]+) (\d{4})\)', first)
     try: return (int(m.group(3)), MONTHS.index(m.group(2).lower()) + 1, int(m.group(1))) if m else None
     except ValueError: return None
 norm = lambda s: re.sub(r'\s+', ' ', s.replace('—', '--').replace('“', '"').replace('”', '"').replace('’', "'")).strip()
+CAVEAT = 'AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its wording and may shape its reading; recompute what can be recomputed and judge the rest.'
+ONCE_FROM = (2026, 11, 21)   # from 21 November 2026 the caveat is given once per session: below the Opening (L-506, L-467)
+def _idate(text):
+    m = re.search(r'DATE:\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})', text)
+    try: return (int(m.group(3)), MONTHS.index(m.group(2).lower()) + 1, int(m.group(1))) if m else None
+    except ValueError: return None
 def render(d, nav='[model identifier]', org='[organization]', date='[date]', execution='[SCRIPT-CAPABLE / TEXT-ONLY]'):
     o = d['opening']
     L = [QV, FORM_LINE, d['greeting'].replace('[AI name]', nav).replace('[organization]', org).replace('[date]', date), OPEN, o['title'], o['subtitle'], '']
     for p in o['paragraphs']: L += [p, '']
-    L += [END, o['close'], AI_CAVEAT, 'NAVIGATOR: %s (%s) * V335 Rev.450 STABLE * %s' % (nav, org, date), 'ESC']
+    L += [END, o['close'], CAVEAT, 'NAVIGATOR: %s (%s) * V335 Rev.450 STABLE * %s' % (nav, org, date), 'ESC']
     return '\n'.join(L)
 def identity_block(nav, org, date, execution):
     return ['======= NAVIGATOR IDENTITY BLOCK =======',
@@ -73,8 +76,10 @@ def check_first(text, d):
     i = t.find(n); ib = text.find('======= NAVIGATOR IDENTITY BLOCK ======='); ie = text.find('======= END NAVIGATOR IDENTITY BLOCK =======')
     if i < 0: P.append('the first navigation does not close with the Friendly Notes, word for word')
     if ib < 0 or ie < ib: P.append('the first navigation has no Navigator Identity Block')
-    cv = text.rfind('AI CAVEAT (L-506):'); sg = text.rfind('NAVIGATOR: ')
-    if cv >= 0 and (cv < ie or (sg >= 0 and cv > sg)): P.append('the AI CAVEAT, where a session opened with a question, stands at the end, after the Identity Block and above the signature')
+    cv = text.rfind('AI CAVEAT (L-506):'); sg = text.rfind('NAVIGATOR: '); dt = _idate(text)
+    if dt and dt < ONCE_FROM:   # before 21 November 2026 the first navigation carried the caveat
+        if cv < 0 or cv < ie or (sg >= 0 and cv > sg): P.append('the AI CAVEAT does not stand at the end, after the Identity Block and above the signature')
+    elif cv >= 0: P.append('the AI CAVEAT repeated after the Opening: it is given once per session, below the Opening (L-506)')
     if i >= 0 and ib >= 0 and t.find(norm(text[ib:ib + 40])) < i: P.append('the Friendly Notes come after the Identity Block; they come first')
     if not re.search(r'NAVIGATOR: .+\* V335 Rev\.450 STABLE \*', text[max(ie, 0):]): P.append('no Navigator Signature after the Identity Block')
     return P
@@ -100,15 +105,17 @@ def check(text, d):
         if i < 0: P.append('paragraph "%s" is missing, altered or out of order' % p[:40]); continue
         pos = i + len(norm(p))
     if b[pos:].strip(): P.append('text after the last paragraph of the Opening')
-    if 'AI CAVEAT' in m.group(1): P.append('the AI CAVEAT inside the Opening: it follows the close (L-467, L-506)')
     if 'NAVIGATOR IDENTITY BLOCK' in t: P.append('an Identity Block in the Opening: it closes the first navigation (L-467)')
+    if gd and gd < ONCE_FROM:
+        if 'AI CAVEAT' in t: P.append('a caveat in an Opening dated before 21 November 2026 (L-467 as it then stood)')
+    else:
+        rest0 = t[m.end():].strip().split('\n')
+        if len(rest0) < 2 or rest0[1].strip() != CAVEAT: P.append('the AI CAVEAT line does not stand directly below "%s" (L-506, L-467)' % d['opening']['close'])
+        if t.count('AI CAVEAT') != 1: P.append('the AI CAVEAT is given more than once')
     if norm(notes(d))[:60] in norm(t): P.append('the Friendly Notes in the Opening: they close the first navigation (L-467)')
     rest = t[m.end():].strip().split('\n')
     if not rest or rest[0].strip() != o['close']: P.append('the Opening is not followed directly by "%s"' % o['close'])
     if not re.search(r'NAVIGATOR: .+\* V335 Rev\.450 STABLE \*', t[m.end():]): P.append('no Navigator Signature after the close')
-    elif gd is None or gd >= ONCE_FROM:
-        if len(rest) < 3 or rest[1].strip() != AI_CAVEAT or not rest[2].startswith('NAVIGATOR: '):
-            P.append('the AI CAVEAT line does not stand between the close and the signature, the session\'s one disclosure (L-506, from 20 November 2026)')
     if t[:m.start()].count('\n') > 1: P.append('text between the greeting and the Introduction')
     return P
 def paras(path):
@@ -186,18 +193,20 @@ def philosophy_check(path):
             if ref not in {e['id'] for e in R['entries']}: P.append('%s names %s, which is not in the register' % (m, ref))
     return P, len(R['entries']), len(R['instruments'])
 def selftest():
-    d = load(); good = render(d, 'test-model', 'Test', '4 November 2026', 'SCRIPT-CAPABLE')
-    paras_ = d['paragraphs']; o = d['opening']; first = render_first(d, 'test-model', 'Test', '4 November 2026', 'SCRIPT-CAPABLE')
+    d = load(); good = render(d, 'test-model', 'Test', '21 November 2026', 'SCRIPT-CAPABLE')
+    paras_ = d['paragraphs']; o = d['opening']; first = render_first(d, 'test-model', 'Test', '21 November 2026', 'SCRIPT-CAPABLE')
     cases = [('the rendered Opening passes its own check', check(good, d) == []),
              ('a preamble before the greeting fails', check('Hello! ' + good, d) != []),
              ('a summarized paragraph fails', check(good.replace(o['paragraphs'][1], o['paragraphs'][1][:60]), d) != []),
              ('a missing paragraph fails', check(good.replace(o['paragraphs'][4] + '\n', ''), d) != []),
              ('the Friendly Notes in the Opening fail', check(good.replace(o['paragraphs'][-1], o['paragraphs'][-1] + '\n\n' + notes(d)), d) != []),
-             ('an AI caveat inside the Opening fails', check(good.replace(o['paragraphs'][-1], o['paragraphs'][-1] + '\n' + AI_CAVEAT), d) != []),
-             ('an Opening without the AI caveat after its close fails', check(good.replace(AI_CAVEAT + '\n', '').replace('4 November 2026', '20 November 2026'), d) != []),
-             ('an Opening dated before 20 November 2026 without the caveat passes', check(good.replace(AI_CAVEAT + '\n', '').replace('4 November 2026', '12 November 2026'), d) == []),
+             ('an Opening without the AI caveat below it fails', check(good.replace(CAVEAT + '\n', ''), d) != []),
+             ('an Identity Block in the Opening fails', check(good.replace(o['close'], '======= NAVIGATOR IDENTITY BLOCK =======\n' + o['close']), d) != []),
+             ('an Opening of 4 November 2026 with the caveat fails (the rule then)', check(good.replace('21 November 2026', '4 November 2026'), d) != []),
+             ('an Opening of 4 November 2026 without the caveat passes (the rule then)', check(good.replace('21 November 2026', '4 November 2026').replace(CAVEAT + '\n', ''), d) == []),
              ('a missing close fails', check(good.replace('\n' + o['close'], ''), d) != []),
-             ('the first navigation closes with the Notes and the Identity Block', check_first(first, d) == []),
+             ('the first navigation after the Opening closes with the Notes and the Identity Block', check_first(first, d) == []),
+             ('a first navigation that repeats the caveat fails', check_first(first.replace('ESC', CAVEAT + '\nESC', 1).replace('\nNAVIGATOR: test', '\n' + CAVEAT + '\nNAVIGATOR: test', 1), d) != []),
              ('a first navigation without the Notes fails', check_first(first.replace(notes(d), ''), d) != []),
              ('the words used are explained and the explained are used', terms(d)[0] == []),
              ('the full Introduction keeps the Notes last and offers the technical explanation', paras_[-1]['key'] == 'caveats' and any(p['key'] == 'technical' for p in paras_))]

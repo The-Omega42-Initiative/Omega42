@@ -184,6 +184,7 @@ def reach_checks(text, add):
 
 
 L505_FROM = datetime.date(2026, 10, 20)
+CAVEAT_ONCE_FROM = datetime.date(2026, 11, 21)   # Core L-506: the AI CAVEAT once per session from 21 November 2026
 AI_CAVEAT = 'AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its wording and may shape its reading; recompute what can be recomputed and judge the rest.'
 OLD_FIELDS = re.compile(r'^\s*(?:(?:DEPENDENCY|SUPPRESSION|TRAJECTORY|COMPLETION) CLAIM\b|FIRST-DRAFT CENTRAL CLAIM|FROZEN CENTRAL CLAIM|DRAFT CLAIM (?:SHA-256|HASH)|CENTRAL CLAIM ALIGNMENT)', re.M)
 
@@ -196,6 +197,14 @@ def no_claim_checks(text, add):
     add(not old, 'Field names of L-505 (RELATION, READING)', 'earlier names printed: %s' % ', '.join(sorted(set(o.strip() for o in old))))
     ib = re.search(r'^=+ NAVIGATOR IDENTITY BLOCK =+(.*?)^=+ END NAVIGATOR IDENTITY BLOCK =+', text, re.S | re.M)
     tail = re.sub(r'\s+', ' ', '\n'.join([l for l in text.strip().split('\n') if l.strip()][-8:]))
+    if d >= CAVEAT_ONCE_FROM:   # from 21 November 2026: once per session, below the Opening or at the end of the session's first output
+        prev = re.search(r'\bPREV:\s*([0-9a-f]{64}|NONE)', text)
+        flat = re.sub(r'\s+', ' ', text)
+        if prev and prev.group(1) != 'NONE':
+            add(AI_CAVEAT not in flat, 'AI CAVEAT given once per session, not repeated in a later output (L-506)', 'the session\'s first output or the Opening carries it')
+        elif AI_CAVEAT in flat:
+            add(AI_CAVEAT in tail, 'AI CAVEAT line, at the end above the signature, in a session\'s first output (L-506)', 'the fixed line of Core L-506')
+        return
     add((bool(ib) and AI_CAVEAT in re.sub(r'\s+', ' ', ib.group(1))) or AI_CAVEAT in tail,
         'AI CAVEAT line, at the end above the signature (L-506; in the Identity Block for records before 12 November 2026)', 'the fixed line of Core L-506')
 

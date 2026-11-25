@@ -85,7 +85,7 @@
     hybrid: 'Hybrid: first establish what the Omega42 mathematics shows, then investigate the wider implications, keeping results, external findings and speculation apart.',
     speculate: 'Open speculation: develop possibilities and thought experiments freely, marked as speculation.',
     formal: 'Formal development: give definitions, equations, derivations, proofs or counterexamples.'};
-  var PRESENT = {ere: 'Presentation: give me only THE ANSWER, the TAKEAWAY and the Extended Resonance Essay as one readable package, without protocol technicalities. Do the full navigation behind it and keep every qualification that changes the meaning, in plain words, with the closing AI caveat. When I say "show the navigation", print the complete navigation without my asking again.',
+  var PRESENT = {ere: 'Presentation: give me only THE ANSWER, the TAKEAWAY and the Extended Resonance Essay as one readable package, without protocol technicalities. Do the full navigation behind it and keep every qualification that changes the meaning, in plain words; give the AI caveat once, at the end of the first answer of the session (Core L-506). When I say "show the navigation", print the complete navigation without my asking again.',
     complete: 'Presentation: the complete navigation, every block and step, then THE ANSWER, the TAKEAWAY and the Extended Resonance Essay.'};
   function present() { var m = document.querySelector('input[name=present]:checked'); return m ? m.value : 'ere'; }
   function mode() { var m = document.querySelector('input[name=mode]:checked'); return m ? m.value : 'auto'; }

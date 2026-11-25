@@ -38,12 +38,21 @@ def fields(text):
     return out
 
 
+
+ONCE_FROM = (2026, 11, 21)   # from 21 November 2026 the AI CAVEAT is given once per session (Core L-506)
+_MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+def _once(text):
+    """True where the output is dated from 21 November 2026, when the caveat stands only in a session's first output."""
+    m = re.search(r'^NAVIGATOR: .*\*\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\s*$', text, re.M)
+    try: return bool(m) and (int(m.group(3)), _MONTHS.index(m.group(2).lower()) + 1, int(m.group(1))) >= ONCE_FROM
+    except ValueError: return False
+
 def check(text):
     P = []
     lines = [l.strip() for l in text.split('\n') if l.strip()]
     if not lines or not lines[0].startswith('QUESTION VERBATIM: '): P.append('QUESTION VERBATIM is not the first line (L-499, L-549 (9))')
     if len(lines) < 2 or not lines[1].startswith('OUTPUT FORM (L-549): CERTIFICATE -- '): P.append('the OUTPUT FORM line does not name CERTIFICATE (L-549 (2))')
-    if AI not in lines: P.append('no AI CAVEAT line (L-506)')
+    if AI not in lines and not _once(text): P.append('no AI CAVEAT line (L-506)')
     if len(lines) < 4 or lines[-1] != 'ESC' or lines[-3] != SIG or not re.match(r'^NAVIGATOR: .+ \(.+\).* \* V335 Rev\.450 STABLE \* .+$', lines[-2]):
         P.append('the signature is not last (L-549 (9))')
     f = fields(text)

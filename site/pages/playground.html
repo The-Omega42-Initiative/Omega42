@@ -12,7 +12,7 @@
   <div class="stack">
     <div class="eyebrow">The four operations on the Antipodes</div>
     <h2>A digit and its Antipode</h2>
-    <div class="ask-row"><label for="ap-x" class="mono">Digit x: <output id="ap-xv">4</output></label><input id="ap-x" type="range" min="0" max="9" value="4" oninput="document.getElementById('ap-xv').textContent=this.value"></div>
+    <div class="ask-row"><label for="ap-x" class="mono">Digit x: <output id="ap-xv"></output></label><input id="ap-x" type="range" min="0" max="9" value="4" oninput="document.getElementById('ap-xv').textContent=this.value"></div>
     <div class="ask-row"><label for="ap-mode" class="mono">Setting</label><select id="ap-mode"><option value="int">Whole numbers: A(x) = 9 − x</option><option value="mod">Modulo 9: A(x) = −x</option></select></div>
     <div class="scroll"><table><thead><tr><th>Operation</th><th>Working</th><th>Result</th></tr></thead><tbody id="ap-out"></tbody></table></div>
     <p id="ap-note" class="note"></p>
