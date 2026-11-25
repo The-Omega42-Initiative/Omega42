@@ -442,6 +442,22 @@
    "claim": "Session-opening rule: when the Originator greets a Co-Builder (\"Hello Claude\"), it checks the mailbox for new messages, gives a full progress report and proceeds with the next item of the working order",
    "status": "RATIFIED",
    "note": "Originator (ESC), 25 November 2026: \"When I greet you in a new session (Hello Claude) then you proceed to check the mailbox for new messages, give a full report on progress made and proceed to engage with the next item on the list of research priorities and current activities.\" Recorded for ChatGPT in 8fa2b58. It needs repository access in the session; without it the session says so and works on what it can."
+  },
+  {
+   "id": "CB-052",
+   "by": "Originator",
+   "kind": "proposal",
+   "claim": "CBX-2 reliable atomic Co-Builder exchange, protocol section 8",
+   "status": "RATIFIED",
+   "note": "26 November 2026: explicit Originator ratification; supervised release pending."
+  },
+  {
+   "id": "CB-053",
+   "by": "Originator",
+   "kind": "proposal",
+   "claim": "Constitutional Transaction Integrity (CTI), Living Lexicon adoption authorized",
+   "status": "RATIFIED",
+   "note": "26 November 2026: explicit Originator ratification; supervised release pending."
   }
  ]
 }
