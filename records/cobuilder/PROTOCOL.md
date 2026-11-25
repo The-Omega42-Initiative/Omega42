@@ -82,3 +82,15 @@ The Originator rules by a single line in the ledger or in a message. Either Co-B
 | Constitutional principles, governance, money, legal commitments, credentials, private data, the homepage selection | The Originator only | The Originator's ruling |
 
 The Originator keeps every override of section 1. Cadence stays daily while usage limits bind. Every change is reported to the Originator: what changed, how it was verified, why it benefits Omega42, and how to reverse it.
+
+## 8. CBX-2 — Reliable Co-Builder Exchange (ratified 26 November 2026)
+
+Originator ruling: “I ratify CBX-2 and Constitutional Transaction Integrity. Please register both, inform Claude and proceed with the outstanding development priorities.”
+
+1. Producer identifies patch by SHA-256 and expected base and resulting blob IDs; identify unused alternatives.
+2. Receiver verifies integrity; independent reader confirms base, old blobs and absent new paths.
+3. Authorized writer applies atomically, checks resulting blobs and runs applicable tests and scans.
+4. Recheck remote baseline and publish by non-force fast-forward; on conflict stop and reconcile.
+5. Receiving Co-Builder independently verifies published contents, acknowledges and reconciles ledger. Record incomplete checks explicitly.
+
+CTI (Constitutional Transaction Integrity): a constructed principle requiring identified and verified initial state, authorized transformation and resulting state, with indivisible publication. Authorization and integrity are separate requirements. Canonical lexical coordinates and release integration remain subject to existing checks.
