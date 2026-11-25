@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "stage": "PROPOSED",
+  "canonical_count": 103,
+  "entries": [
+    {
+      "proposal_id": "LEX-P-1",
+      "term": "Constitutional Observability",
+      "status": "CONSTRUCTED",
+      "definition": "Recovery of a constitutional state from specified observation maps and phases.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-2",
+      "term": "Constitutional Discrimination",
+      "status": "CONSTRUCTED",
+      "definition": "Distinguishability of states under a specified structural signature.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-3",
+      "term": "Constitutional Renormalization",
+      "status": "CONSTRUCTED",
+      "definition": "Compatible reduction and lifting across constitutional depths.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-4",
+      "term": "Constitutional Multiplicity Mixing",
+      "status": "CONSTRUCTED",
+      "definition": "Operators acting within eigenspaces of the native evolution operator.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-5",
+      "term": "Memory Winding",
+      "status": "CONSTRUCTED",
+      "definition": "Orbit sum of an additive memory increment modulo the memory modulus.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-6",
+      "term": "Structural Commutation Defect",
+      "status": "CONSTRUCTED",
+      "definition": "Difference R T_f - T_c R for compatible linear maps.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-7",
+      "term": "Constitutional Interpretation",
+      "status": "CONSTRUCTED",
+      "definition": "Analysis of admissible preimages under a specified representation.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-8",
+      "term": "Constitutional Information Retrieval",
+      "status": "CONSTRUCTED",
+      "definition": "Retrieval using specified structural signatures and explicit comparison relations.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    },
+    {
+      "proposal_id": "LEX-P-9",
+      "term": "Constitutional Active Inquiry",
+      "status": "CONSTRUCTED",
+      "definition": "Selection of an available observation minimizing a specified ambiguity criterion.",
+      "existing_exact_label": false,
+      "scope": "Omega42 research vocabulary; review prior art and canonical definitions before adoption"
+    }
+  ]
+}
