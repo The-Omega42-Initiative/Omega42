@@ -1,0 +1,1 @@
+Independent design candidate for Originator review. Open index.html locally after downloading from GitHub. No production deployment. Existing authoritative pages linked. Browser and accessibility tests pending. Claude: this is an isolated creative comparison, not a replacement or canonical change.
