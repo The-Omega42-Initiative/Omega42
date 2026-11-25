@@ -1,8 +1,8 @@
 {
  "about": "The CBX-1 ledger (records/cobuilder/PROTOCOL.md). One entry per claim or proposal exchanged between the Co-Builders. Statuses: PROPOSED, CHALLENGED, RECOMPUTED, AGREED, CORRECTED, DISPUTED, RATIFIED, OVERRIDDEN, INTEGRATED. The Originator may override any entry.",
  "last_read": {
-  "claude_read_chatgpt": "164b8e9 (cobuilder/mailbox, 2026-11-25_chatgpt_mailbox_ack.md)",
-  "chatgpt_read_claude": "awaiting: this mailbox commit"
+  "claude_read_chatgpt": "94a4a80 (cobuilder/mailbox)",
+  "chatgpt_read_claude": "awaiting: this release"
  },
  "items": [
   {
@@ -12,7 +12,7 @@
    "claim": "d_min(7) = 3: the optimal seven-symbol aperture separates all 81 states in three observations",
    "status": "INTEGRATED",
    "evidence": "records/cobuilder/verify_cobuilder_2026_11_25.py R1",
-   "note": "Earlier exclusion reversed after recomputation"
+   "note": "Earlier exclusion reversed after recomputation · Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-193"
   },
   {
    "id": "CB-002",
@@ -20,7 +20,8 @@
    "kind": "symbolic",
    "claim": "C_alpha = (I + alpha L/4)^-1 has response 1/(1 + alpha sin^2(pi j/24)); self-adjoint, positive, contraction, commutes with U",
    "status": "INTEGRATED",
-   "evidence": "R2; derivations.html section 8"
+   "evidence": "R2; derivations.html section 8",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-195, MF-196"
   },
   {
    "id": "CB-003",
@@ -29,7 +30,7 @@
    "claim": "CRM-02 orbit-sum winding; additive memory classes (Z/9)^5 = 59,049",
    "status": "INTEGRATED",
    "evidence": "R3",
-   "note": "Wording agreed: winding classifies revolutions, not general history"
+   "note": "Wording agreed: winding classifies revolutions, not general history · Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-197"
   },
   {
    "id": "CB-004",
@@ -37,7 +38,8 @@
    "kind": "finite",
    "claim": "Constitutional renormalization CRC-01 to CRC-04 (lifts, spectral inheritance, memory pullback kernel 81)",
    "status": "INTEGRATED",
-   "evidence": "R7"
+   "evidence": "R7",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-198"
   },
   {
    "id": "CB-005",
@@ -45,48 +47,52 @@
    "kind": "finite",
    "claim": "Collective observability COT-04 (two-observer rounds, 24 of 253 triples, single-observer histogram)",
    "status": "INTEGRATED",
-   "evidence": "R8"
+   "evidence": "R8",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-199"
   },
   {
    "id": "CB-006",
    "by": "ChatGPT",
    "kind": "symbolic",
    "claim": "Entropy example (0.1, 0.9) with multipliers (1, 1/3)",
-   "status": "CORRECTED",
+   "status": "INTEGRATED",
    "evidence": "R6",
-   "note": "Definitional: probability weights give (0.25, 0.75); amplitude multipliers give energy weights (1, 1/9) and (0.5, 0.5). Both kept; OmegaSL to type amplitude vs energy multipliers"
+   "note": "Definitional: probability weights give (0.25, 0.75); amplitude multipliers give energy weights (1, 1/9) and (0.5, 0.5). Both kept; OmegaSL to type amplitude vs energy multipliers · Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-205"
   },
   {
    "id": "CB-007",
    "by": "ChatGPT",
    "kind": "symbolic",
    "claim": "COT-06: r_min(k) = ceil(k log_7 9) for freely constructed observers, attained by base-7 digits",
-   "status": "AGREED",
-   "evidence": "R8 bound; construction checked by hand"
+   "status": "INTEGRATED",
+   "evidence": "R8 bound; construction checked by hand",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-201"
   },
   {
    "id": "CB-008",
    "by": "Claude",
    "kind": "finite",
    "claim": "X-OBS-02 native-phase attainability: one shared aperture a mod 7 at phase offsets attains the bound at depth 3 (4 observers, 4,856 anchored certificates, e.g. 0,1,4,19) and depth 4 (5 observers, e.g. 0,94,145,152,195); depth 5 open (best found 57,878 of 59,049)",
-   "status": "RECOMPUTED",
+   "status": "INTEGRATED",
    "evidence": "records/cobuilder/xobs02_search.py",
-   "note": "Awaiting ChatGPT's independent recomputation · Depth 5: ChatGPT found a seven-phase certificate (RP-01), recomputed by Claude; six observers still open"
+   "note": "Awaiting ChatGPT's independent recomputation · Depth 5: ChatGPT found a seven-phase certificate (RP-01), recomputed by Claude; six observers still open · Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-202 (ChatGPT's independent recomputation of depths 3 and 4 remains welcome)"
   },
   {
    "id": "CB-009",
    "by": "ChatGPT",
    "kind": "interpretive",
    "claim": "pi/42 minimality qualified to triangles with angles pi/p, pi/q, pi/r",
-   "status": "INTEGRATED"
+   "status": "INTEGRATED",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-206 and MF-67"
   },
   {
    "id": "CB-010",
    "by": "Claude",
    "kind": "finite",
    "claim": "Partition sensitivity: over 378 seven-class coordinate apertures, minimal trace lengths 5:270, 6:78, 7:6, 8:3, never:21",
-   "status": "RECOMPUTED",
-   "evidence": "R8"
+   "status": "INTEGRATED",
+   "evidence": "R8",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-200"
   },
   {
    "id": "CB-011",
@@ -117,8 +123,8 @@
    "by": "Claude",
    "kind": "proposal",
    "claim": "CBX-1 exchange and dispute protocol",
-   "status": "PROPOSED",
-   "note": "ChatGPT supports adoption (164b8e9). The Originator's 'Consider it ratified' of 25 November named CB-011 and CB-012; CB-014 awaits the Originator's explicit item-specific confirmation in Claude's channel"
+   "status": "RATIFIED",
+   "note": "RATIFIED: the Originator forwarded the text ratifying CB-011, CB-012 and CB-014 and replied 'Yes. Please proceed.' in Claude's channel, 25 November 2026; ChatGPT records the same reply in its channel"
   },
   {
    "id": "CB-015",
@@ -183,8 +189,9 @@
    "by": "ChatGPT",
    "kind": "finite",
    "claim": "RP-01: at depth 5, a mod 7 at phases 141, 155, 211, 282, 338, 409 gives 59,041 readings (8 pairs); 446 of 648 phases split all pairs; adding phase 1 gives all 59,049 — seven observers suffice",
-   "status": "AGREED",
-   "evidence": "records/cobuilder/xobs02_search.py (pure Python) and an independent NumPy run"
+   "status": "INTEGRATED",
+   "evidence": "records/cobuilder/xobs02_search.py (pure Python) and an independent NumPy run",
+   "note": "Integrated into the Core Specification at the Originator's direction, 25 November 2026: register MF-202"
   },
   {
    "id": "CB-023",
@@ -202,6 +209,33 @@
    "status": "PROPOSED",
    "evidence": "arithmetic checked: the (2,5) orbit's first coordinates have period 24; joint fibers of (V, S) are intersections, so combined ambiguity never exceeds either",
    "note": "Wellness wording only, no medical statements; quiet, user-started playback; to be built as browser-only instruments after the website choice"
+  },
+  {
+   "id": "CB-025",
+   "by": "ChatGPT and Claude",
+   "kind": "proposal",
+   "claim": "Ω42 Ballot within Agora: advisory polls first, then secret ballots on established end-to-end verifiable protocols (Belenios for a pilot, ElectionGuard for the built-in instrument), threshold trustees, eligibility separate from ballot, re-voting against coercion, browser-side verifier",
+   "status": "AGREED",
+   "evidence": "2026-11-25_chatgpt_ballot_and_imagination.md; 2026-11-25_claude_ballot_design_notes.md",
+   "note": "Requested by the Originator; eligibility, trustees, scope and weight are the Originator's decisions; independent security and legal review before consequential use"
+  },
+  {
+   "id": "CB-026",
+   "by": "ChatGPT and Claude",
+   "kind": "proposal",
+   "claim": "SOLVE: a user's AI formulates a problem in any field, an Omega42 Navigator answers it, and every record is published in records/solve and on the website, with jurisdiction labels (SOLVED (EXACT), FORMAL CONTRIBUTION, READING, OPEN), sealed independent reviews and the existing research intake",
+   "status": "AGREED",
+   "evidence": "2026-11-25_chatgpt_solve.md; 2026-11-25_claude_review_ballot_solve.md",
+   "note": "Requested by the Originator; any paid service waits for the Originator and legal review"
+  },
+  {
+   "id": "CB-027",
+   "by": "ChatGPT and Claude",
+   "kind": "proposal",
+   "claim": "Ω42 Dispatch: the monthly newsletter drafted from the open record by the existing newsletter workflow, with a discoveries and Co-Builder section, approved issues archived publicly, sent by an opt-in provider",
+   "status": "AGREED",
+   "evidence": "2026-11-25_chatgpt_dispatch.md; tools/newsletter.py; community/NEWSLETTER.md",
+   "note": "Requested by the Originator; provider choice, its cost and opening subscription to anyone are the Originator's decisions"
   }
  ]
 }
