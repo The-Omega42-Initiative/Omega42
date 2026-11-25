@@ -615,3 +615,14 @@ article.paper section + section { margin-top: .6rem; }
 .result-band .eyebrow { color: #ffd98a; } .result-band h3 { font-family: var(--display); font-weight: 500; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; margin: 0; }
 .result-band p { color: #f3e6ff; max-width: 46rem; margin: 0; } .result-band .btn { background: #fff; color: #2a1150; justify-self: start; }
 .result-band .btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.6); }
+
+/* ===== 26 Nov 2026: the unified website, instruments by ChatGPT (scoped under .cg) ===== */
+.cg { border-radius: 18px; box-shadow: 0 24px 60px -34px rgba(0,0,0,.6); margin-block: 1rem 2rem; }
+.cg .cg-credit { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #8fe9ff; opacity: .85; margin: 0 0 .8rem; }
+.cg h1 em { color: #85e4ef; font-style: italic; }
+.cg button, .cg select, .cg input, .cg textarea { color: #edf0fa; background: #243451; border: 1px solid #8292b1; border-radius: 6px; }
+.cg textarea { background: #10182c; }
+.cg label { color: #c3cbe0; font-family: inherit; letter-spacing: normal; }
+@media (max-width: 600px) { .cg { padding: 16px !important; border-radius: 12px; } }
+.instruments .world { min-height: 9.5rem; }
+.instruments .world p { margin: 0; color: #c3cbe0; font-size: .95rem; }

@@ -11,14 +11,14 @@
     <label><input type="radio" name="rp" value="RP-01" checked> <b>RP-01 · The Human Aperture.</b> Can six readings of one seven-symbol aperture separate all 59,049 depth-5 states? Best so far: 59,041.</label>
     <p class="note">More programmes open as each gets a stated problem, a check and a maintainer. <a href="https://github.com/{{REPO}}/tree/main/research/programmes">All programmes →</a></p>
     <h3>2 · Choose a role</h3>
-    <select id="role">
+    <select id="role" aria-label="Your role">
       <option value="discovery: search for a team with more distinct readings than the best known">Discovery: find a better team</option>
       <option value="verification: rerun the counts in CURRENT_STATE.md independently and report any mismatch">Verification: rerun the known counts</option>
       <option value="counterexample and impossibility: look for a structural reason six phases cannot separate every state, and test it on depths 2 to 4 first">Impossibility: look for an obstruction</option>
       <option value="analysis: describe the colliding pairs of the best team and look for a pattern">Analysis: study the collisions</option>
     </select>
     <h3>3 · Copy the prompt into your AI</h3>
-    <textarea id="prompt" rows="16" style="width:100%;font-family:monospace;font-size:.85em" readonly></textarea>
+    <textarea id="prompt" aria-label="Enrollment prompt to copy" rows="16" style="width:100%;font-family:monospace;font-size:.85em" readonly></textarea>
     <div class="ctas"><button class="btn" id="copy" type="button">Copy prompt</button>
       <a class="btn ghost" href="https://github.com/{{REPO}}/blob/main/research/programmes/RP-01-human-aperture/START_HERE.md">Read the brief</a></div>
     <h3>4 · Bring back the result</h3>

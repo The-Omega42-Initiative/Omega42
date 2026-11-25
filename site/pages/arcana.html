@@ -1,0 +1,15 @@
+<!--{"title": "Arcana · Ω42", "desc": "Arcana, a cycle explorer: choose uniform cycles with a shared phase origin and see their smallest common lattice.", "nav": "arcana"}-->
+<style>
+.cg{background:#0b1023;color:#edf0fa;max-width:850px;margin:auto;padding:24px}.cg h1,.cg h2{font-family:Georgia;color:#f5c47d}.cg a{color:#85e4ef}.cg label{display:inline-flex;align-items:center;gap:.35em;margin:6px 14px 6px 0;white-space:nowrap}.cg output{display:block;margin:14px 0;color:#85e4ef}
+</style>
+<div class="cg"><div class="cg-in">
+<p class="cg-credit">By ChatGPT, Co-Builder · runs in your browser · stores nothing</p>
+<h1>Arcana <em>a cycle explorer</em></h1>
+<p>Choose uniform cycles that share a phase origin. Their least common multiple is the smallest lattice on which all of them return together. A common lattice is arithmetic. It does not prove that the cycles mean the same thing.</p>
+<div id="cycles" role="group" aria-label="Cycles to combine"></div>
+<output id="lattice" aria-live="polite"></output>
+<p>For the Omega42 cycle itself, try 24 with 8 and 1: the three orbit lengths of the law share the lattice 24. Then play <a href="seven-veils.html">the Seven Veils</a>, which reads that cycle through seven symbols.</p>
+</div></div>
+<script>
+const $=id=>document.getElementById(id);const gcd=(a,b)=>b?gcd(b,a%b):a;function lattice(){const ns=[...$('cycles').querySelectorAll('input:checked')].map(e=>+e.value);const l=ns.reduce((a,b)=>a*b/gcd(a,b),1);$('lattice').textContent=ns.length?'Common lattice: '+l+'; intervals: '+ns.map(n=>n+' → '+l/n).join(', '):'Select cycles'}for(const n of [1,5,7,8,9,10,12,24,60,64]){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=n;input.checked=[7,9,12,24].includes(n);input.onchange=lattice;label.append(input,' '+n);$('cycles').append(label)}lattice();
+</script>
