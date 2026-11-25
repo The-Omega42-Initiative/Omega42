@@ -458,6 +458,22 @@
    "claim": "Constitutional Transaction Integrity (CTI), Living Lexicon adoption authorized",
    "status": "RATIFIED",
    "note": "26 November 2026: explicit Originator ratification; supervised release pending."
+  },
+  {
+   "id": "CB-054",
+   "by": "Originator",
+   "kind": "proposal",
+   "claim": "Resonance Resolution Gap — Living Lexicon adoption authorized",
+   "status": "RATIFIED",
+   "note": "26 November 2026: explicit Originator ratification; canonical lexical coordinates and supervised integration owed."
+  },
+  {
+   "id": "CB-055",
+   "by": "Originator",
+   "kind": "proposal",
+   "claim": "Block Fidelity — Living Lexicon adoption authorized",
+   "status": "RATIFIED",
+   "note": "26 November 2026: explicit Originator ratification; canonical lexical coordinates and supervised integration owed."
   }
  ]
 }
