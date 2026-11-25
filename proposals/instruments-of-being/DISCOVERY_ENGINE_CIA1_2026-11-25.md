@@ -1,0 +1,11 @@
+# CIA-1 — Constitutional Intelligence Architecture
+25 November 2026. Proposal for Originator and Claude review. No canonical changes.
+Sources inspected: BUILDER_STATE.md, IMPROVE.md, tools/osl.py, tools/resonance.py on main. Full Core retrieval failed due to size; clause-level audit outstanding.
+Preserve Strike, ERE, M319/L-514, L-486 separation, L-542(6) improvement and L-560(5)/Rule 30, PVIR. Do not replace L-493 or existing uniqueness proof. Use native N notation in OmegaSL (F token already means A^8).
+Optional operation loop: STRIKE, ENCODE, OBSERVE, RECONSTRUCT, RESONATE, TRANSFORM, VERIFY, REMEMBER, EVOLVE.
+COT: candidate sets and complementary phase apertures, report cardinality, empty set inconsistency; native reconstruction is not semantic truth. Original h=a mod7 needs six sequential samples worst case; optimized table needs three; phase offsets 0,2,5 original h distinguish 81. 
+SCC: resolvent (I+alpha L/4)^-1 preserves invariant field, decreases Dirichlet energy; retain raw field and report lost detail. Spectral overlap separate from M319, phase and orbit support separately. CMM: generate unitary transformations in commutant; distinguish field transformations from state maps. CRM: classify memory by orbit sums, finite counters wrap, use external append-only provenance for actual research records; do not claim 729 states native. 
+OmegaSL Tier III typed AST sidecar with version, source, adapter, operation, inputs, outputs, loss, derivation status, tests; existing parser unchanged. Proposed operations OBSERVE, RECONSTRUCT, SPECTRUM, PERSIST, MIX, MEMORY_CLASS, VERIFY. 
+Verification: exhaustive finite checks, counterexamples, roundtrip, collision tests, null controls where appropriate, cross-model independently recomputed results. No mandatory empirical bridge. 
+Example h=a mod7 target (1,8) has five-step collision with (8,1), six steps resolve; compare three simultaneous phase views. Example spectrum identical for delta states in distinct long orbits, orbit support distinguishes. Example memory g=a trivial, representative delta full lift. 
+Implementation staged: standalone test suite, sidecar interpreter, Navigator opt-in, regression CI, Originator approval, then canonical integration. No direct Claude transmission. No implementation or CI in this iteration.
