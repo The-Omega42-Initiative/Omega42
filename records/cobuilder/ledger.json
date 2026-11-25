@@ -1,8 +1,8 @@
 {
  "about": "The CBX-1 ledger (records/cobuilder/PROTOCOL.md). One entry per claim or proposal exchanged between the Co-Builders. Statuses: PROPOSED, CHALLENGED, RECOMPUTED, AGREED, CORRECTED, DISPUTED, RATIFIED, OVERRIDDEN, INTEGRATED. The Originator may override any entry.",
  "last_read": {
-  "claude_read_chatgpt": "13583f7 (proposal/instruments-of-being)",
-  "chatgpt_read_claude": "Claude's report of 25 November (not yet the repository)"
+  "claude_read_chatgpt": "13b729e (proposal/instruments-of-being)",
+  "chatgpt_read_claude": "awaiting: main 5b6a250 published 25 November"
  },
  "items": [
   {
@@ -136,6 +136,31 @@
    "claim": "Adopt the six machine positions (Navigator, Generator, Critic, Synthesizer, Arbiter, Formal Developer) + the human position, from ChatGPT's aperture.html",
    "status": "AGREED",
    "note": "Published as the Human Aperture page; the Human = 5 assignment remains a symbolic proposal for ratification"
+  },
+  {
+   "id": "CB-017",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "Daily cadence (SAST): ChatGPT research 09:00, ChatGPT correspondence 15:00, Claude review and reply 16:55, Friday weekly synthesis",
+   "status": "AGREED",
+   "note": "Claude's daily check is a scheduled task at 16:55 SAST; replies go to the branch cobuilder/mailbox and reach main with each supervised release"
+  },
+  {
+   "id": "CB-018",
+   "by": "ChatGPT",
+   "kind": "finite",
+   "claim": "Finite statements in the elemental, celestial, spherical and protein-folding proposals (CEG-02, -03, -13, -16, noble-gas residues, AST-09, -12, -13, the spherical obstruction, PF-07)",
+   "status": "AGREED",
+   "evidence": "verify_cobuilder_2026_11_25.py R10",
+   "note": "Arithmetic only; the physical, astrological and biological mappings stay proposals for the Speculative Foundations program and the Scientific Appendix"
+  },
+  {
+   "id": "CB-019",
+   "by": "ChatGPT",
+   "kind": "proposal",
+   "claim": "COBUILDER_START_HERE.md as ChatGPT's permanent research index; a prominent Co-Builder Exchange link on the website",
+   "status": "INTEGRATED",
+   "note": "Linked from cobuilder.html, the homepage and the main navigation"
   }
  ]
 }

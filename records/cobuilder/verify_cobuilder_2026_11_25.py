@@ -196,5 +196,24 @@ check('R8 partition sensitivity: over 378 seven-class coordinate apertures, mini
 check('R8 X-OBS-02 bound: ceil(log_7 9^k) = 2, 3, 4, 5 for k = 1..4', [next(t for t in range(10) if 7 ** t >= 9 ** k) for k in range(1, 5)] == [2, 3, 4, 5])
 check('R9 Discovery engine: generic stabilizer sum (m-1)^2 = 143, generic orbit 281 - 143 = 138', sum((v - 1) ** 2 for v in mult.values()) == 143)
 
+
+# ---- Round 3 (ChatGPT's geometry proposals of 24 November, finite statements only; the mappings themselves stay proposals)
+check('R10 CEG-03 shell capacities 2n^2 mod 9 for n = 1..9 are 2,8,0,5,5,0,8,2,0 (period 9)', [2 * n * n % 9 for n in range(1, 10)] == [2, 8, 0, 5, 5, 0, 8, 2, 0])
+check('R10 CEG-02 compatible (Z mod 9, Z mod 24) pairs: 72 = lcm(9, 24)', len({(z % 9, z % 24) for z in range(1000)}) == 72)
+check('R10 CEG-13 c_l + c_(l+1) = 8(l+1) and the first 2k subshells hold 8k^2', all((4 * l + 2) + (4 * l + 6) == 8 * (l + 1) for l in range(20)) and all(sum(4 * l + 2 for l in range(2 * k)) == 8 * k * k for k in range(1, 10)))
+check('R10 CEG-16 magic numbers 2, 8, 20, 28, 50, 82, 126 mod 9 are 2, 8, 2, 1, 5, 1, 0', [z % 9 for z in (2, 8, 20, 28, 50, 82, 126)] == [2, 8, 2, 1, 5, 1, 0])
+check('R10 noble-gas atomic numbers 2, 10, 18, 36, 54, 86, 118 mod 9 are 2, 1, 0, 0, 0, 5, 1', [z % 9 for z in (2, 10, 18, 36, 54, 86, 118)] == [2, 1, 0, 0, 0, 5, 1])
+check('R10 AST-12 15k mod 9 takes only 0, 3, 6; AST-09 lcm(24, 7) = 168', {15 * k % 9 for k in range(24)} == {0, 3, 6} and 24 * 7 // math.gcd(24, 7) == 168)
+ok = True
+for N_ in range(2, 7):
+    for _ in range(50):
+        th = [random.uniform(0, 2 * math.pi) for _ in range(N_)]
+        Z = abs(sum(cmath.exp(1j * t) for t in th) / N_) ** 2
+        avg = sum((1 + math.cos(th[i] - th[j])) / 2 for i in range(N_) for j in range(i + 1, N_)) / (N_ * (N_ - 1) / 2)
+        ok &= abs(avg - (N_ * Z + N_ - 2) / (2 * (N_ - 1))) < 1e-9
+check('R10 AST-13 pair-average grid coherence = (N|Z|^2 + N - 2) / (2(N - 1))', ok)
+check('R10 spherical obstruction: A^12 acts on the 8-cycle as a shift by 4 (12 mod 8)', all(jump(o[0], 12) == o[4] for o in orbits if len(o) == 8))
+check('R10 PF-07 det A = -1, so the determinant pairing flips sign under N', all(((N(x)[0] * N(y)[1] - N(x)[1] * N(y)[0]) + (x[0] * y[1] - x[1] * y[0])) % 9 == 0 for x in S[:20] for y in S[20:40]))
+
 print('%d checks, %d failed' % (len(checks), checks.count(False)))
 sys.exit(0 if all(checks) else 1)

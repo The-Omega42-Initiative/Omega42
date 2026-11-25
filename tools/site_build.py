@@ -19,9 +19,10 @@ NAV = [('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('expert-desk', 
        ('Explore', [('questions', 'World of Questions'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('strike', 'Ask a question'), ('explore', 'How Omega42 works'), ('observatory', 'The Universal Observatory'), ('derivations', 'Derivations'), ('aperture', 'The Human Aperture'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
        ('FAQ', [('faq', 'Frequently asked questions')]),
        ('Protocol', [('protocol', 'Core and Companion'), ('for-ai', 'For AI systems'), ('apps', 'Free and commercial editions')]),
-       ('Research', [('research', 'Research frontiers'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations'), ('cobuilder', 'Co-Builder exchange'), ('archive-report', 'Archive salvage report')]),
+       ('Research', [('research', 'Research frontiers'), ('construct-x', 'Construct X laboratory'), ('speculate', 'Speculative Foundations')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas')]),
+       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('archive-report', 'Archive salvage report')]),
        ('Governance', [('governance', 'Governance')])]
 
 
