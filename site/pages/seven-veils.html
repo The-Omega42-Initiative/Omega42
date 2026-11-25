@@ -1,0 +1,106 @@
+<!--{"title": "The Seven Veils · Ω42", "desc": "A playable Omega42 puzzle: find a hidden state among 81 using seven-symbol observations at chosen phases of the native law.", "nav": "seven-veils"}-->
+<style>
+.sv-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;max-width:420px}
+.sv-grid button{aspect-ratio:1;min-width:0;padding:0;font:inherit;font-size:.72rem;border:1px solid var(--line,#8884);border-radius:6px;background:var(--panel,#fff1);color:inherit;cursor:pointer}
+.sv-grid button.cand{background:#36c5e033;border-color:#36c5e0}
+.sv-grid button.out{opacity:.25}
+.sv-grid button.win{background:#f2c46d;color:#111}
+.sv-phases{display:flex;flex-wrap:wrap;gap:4px;max-width:560px}
+.sv-phases button{min-width:2.4em;padding:.3em .4em;font:inherit;border:1px solid var(--line,#8884);border-radius:6px;background:transparent;color:inherit;cursor:pointer}
+.sv-phases button:disabled{opacity:.35;cursor:default}
+.sv-log{font-family:monospace;font-size:.85rem;white-space:pre-wrap}
+.sv-stats{display:flex;gap:1.5em;flex-wrap:wrap}
+.sv-stats b{font-size:1.6rem;display:block}
+</style>
+<div class="wide stack">
+  <div class="col stack">
+    <div class="eyebrow">Play · Chapter IV prototype</div>
+    <h1>The Seven Veils <em>find the hidden state</em></h1>
+    <p class="lede">One of the 81 states is hidden. You can look at it only through a veil: at any phase t you choose, you see one of seven symbols, the first coordinate of A<sup>t</sup>(x) read mod 7. Each look costs a move. Narrow the candidates, then pick the hidden state on the grid.</p>
+    <p class="note">The rules are exact Omega42 mathematics: A(a, b) = (b, a + b mod 9) and h(a, b) = a mod 7. The story is a creative frame. Three well-chosen looks are always enough (CB-035, checked on all 81 states).</p>
+  </div>
+  <div class="panel col stack">
+    <div class="ctas">
+      <label><input type="radio" name="sv-mode" value="1" checked> Solo</label>
+      <label><input type="radio" name="sv-mode" value="2"> Two players, one screen</label>
+      <button class="btn" id="sv-new" type="button">New hidden state</button>
+    </div>
+    <div class="sv-stats" aria-live="polite">
+      <div><b id="sv-left">81</b>candidates left</div>
+      <div><b id="sv-moves">0</b>looks used</div>
+      <div><b id="sv-turn">Player 1</b>to move</div>
+    </div>
+    <h3>Look through the veil at phase t</h3>
+    <div class="sv-phases" id="sv-phases" role="group" aria-label="Observation phases 0 to 23"></div>
+    <h3>The 81 states (a, b)</h3>
+    <div class="sv-grid" id="sv-grid" role="grid" aria-label="States: select one to name it as the hidden state"></div>
+    <div class="sv-log" id="sv-log" aria-live="polite"></div>
+    <div class="ctas"><button class="btn ghost" id="sv-hint" type="button">Mathematical hint</button></div>
+    <p class="note" id="sv-hinttext" hidden>Every state lies on one of five orbits of A (lengths 24, 24, 24, 8, 1), so phases repeat after 24 steps. A look at phase t sees the first coordinate of A<sup>t</sup>(a, b), which is the Fibonacci-type combination F(t−1)·a + F(t)·b mod 9, then read mod 7. Symbols 0 and 1 each cover 18 states (values 0, 7 and 1, 8 mod 9), symbols 2 to 6 cover 9. Looks at phases 0, 2 and 5 separate all 81 states; of all 253 three-phase choices that start at 0, exactly 24 do.</p>
+  </div>
+</div>
+<script>
+(function () {
+  var M = 9, hidden, cand, moves, used, turn, players, done, scores;
+  function N(x) { return [x[1], (x[0] + x[1]) % M]; }
+  function look(x, t) { for (var i = 0; i < t; i++) x = N(x); return x[0] % 7; }
+  var grid = document.getElementById('sv-grid'), ph = document.getElementById('sv-phases'), log = document.getElementById('sv-log');
+  var cells = [];
+  for (var a = 0; a < M; a++) for (var b = 0; b < M; b++) (function (a, b) {
+    var c = document.createElement('button'); c.type = 'button'; c.textContent = a + ',' + b;
+    c.setAttribute('aria-label', 'state ' + a + ', ' + b);
+    c.addEventListener('click', function () { guess(a, b); }); grid.appendChild(c); cells.push([a, b, c]);
+  })(a, b);
+  var pbtn = [];
+  for (var t = 0; t < 24; t++) (function (t) {
+    var p = document.createElement('button'); p.type = 'button'; p.textContent = t;
+    p.setAttribute('aria-label', 'look at phase ' + t);
+    p.addEventListener('click', function () { observe(t); }); ph.appendChild(p); pbtn.push(p);
+  })(t);
+  function render() {
+    cells.forEach(function (e) {
+      var inC = cand.some(function (x) { return x[0] === e[0] && x[1] === e[1]; });
+      e[2].className = done && e[0] === hidden[0] && e[1] === hidden[1] ? 'win' : (inC ? 'cand' : 'out');
+    });
+    pbtn.forEach(function (p, t) { p.disabled = done || used.indexOf(t) >= 0; });
+    document.getElementById('sv-left').textContent = cand.length;
+    document.getElementById('sv-moves').textContent = moves;
+    document.getElementById('sv-turn').textContent = done ? '—' : (players === 2 ? 'Player ' + turn : 'You');
+  }
+  function say(s) { log.textContent = s + '\n' + log.textContent; }
+  function next() { if (players === 2) turn = 3 - turn; }
+  function observe(t) {
+    if (done) return;
+    var s = look(hidden, t); moves++; used.push(t);
+    cand = cand.filter(function (x) { return look(x, t) === s; });
+    say((players === 2 ? 'Player ' + turn + ': ' : '') + 'phase ' + t + ' shows symbol ' + s + ' → ' + cand.length + ' candidate' + (cand.length === 1 ? '' : 's') + ' left.');
+    next(); render();
+  }
+  function guess(a, b) {
+    if (done) return;
+    moves++;
+    if (a === hidden[0] && b === hidden[1]) {
+      done = true;
+      say((players === 2 ? 'Player ' + turn + ' finds' : 'Found') + ' the hidden state (' + a + ', ' + b + ') with ' + moves + ' moves in all.');
+    } else {
+      cand = cand.filter(function (x) { return !(x[0] === a && x[1] === b); });
+      say((players === 2 ? 'Player ' + turn + ': ' : '') + '(' + a + ', ' + b + ') is not the hidden state.');
+      next();
+    }
+    render();
+  }
+  function start() {
+    players = +document.querySelector('input[name="sv-mode"]:checked').value;
+    var r = new Uint32Array(1); (window.crypto || {getRandomValues: function (v) { v[0] = Math.random() * 4294967296; return v; }}).getRandomValues(r);
+    var i = r[0] % 81; hidden = [Math.floor(i / 9), i % 9];
+    cand = []; for (var a = 0; a < M; a++) for (var b = 0; b < M; b++) cand.push([a, b]);
+    moves = 0; used = []; turn = 1; done = false; log.textContent = '';
+    say(players === 2 ? 'New game for two. Take turns: one look or one guess per turn. Whoever names the hidden state wins.' : 'New game. A state is hidden among 81.');
+    render();
+  }
+  document.getElementById('sv-new').addEventListener('click', start);
+  document.querySelectorAll('input[name="sv-mode"]').forEach(function (r) { r.addEventListener('change', start); });
+  document.getElementById('sv-hint').addEventListener('click', function () { var h = document.getElementById('sv-hinttext'); h.hidden = !h.hidden; });
+  start();
+})();
+</script>

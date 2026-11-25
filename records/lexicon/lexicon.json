@@ -1030,6 +1030,36 @@
    "basis": "Core Part 0.0.5 Rule 34; tools/dsi.py",
    "coordinate": "P1 Fixpoint; n = (2, 16, 5)",
    "definition_coordinate": "P4 Unity; n = (17, 102, 33)"
+  },
+  {
+   "n": 104,
+   "term": "Constitutional Transaction Integrity",
+   "field": "Information, language and society",
+   "status": "CONSTRUCTED",
+   "definition": "A change to a shared record is complete when its initial state, its authorized transformation and its resulting state are each identified and verified, and it is published in one indivisible step that fails if the record has moved; authorization and integrity are separate requirements.",
+   "basis": "records/cobuilder/PROTOCOL.md section 8 (CBX-2); ledger CB-053, ratified by the Originator on 26 November 2026; first exercised in the mailbox commit 6d9dc4c",
+   "coordinate": "P6 Seed/Causal; n = (3, 34, 11)",
+   "definition_coordinate": "P8 Generation; n = (25, 186, 61)"
+  },
+  {
+   "n": 105,
+   "term": "Resonance Resolution Gap",
+   "field": "Mathematics and structure",
+   "status": "CONSTRUCTED",
+   "definition": "The difference between harmonic resonance and phase-sensitive fidelity, decomposable into orbit-resolution and phase-resolution components.",
+   "basis": "ledger CB-054, ratified by the Originator on 26 November 2026; R_H - F = (R_H - R_O) + (R_O - F), with 0 <= F <= F_B <= R_O <= R_H <= 1; OmegaSL Tier III beta 5 and beta 6 RESONATE",
+   "coordinate": "P6 Seed/Causal; n = (3, 22, 8)",
+   "definition_coordinate": "P9 Fixpoint; n = (13, 108, 36)"
+  },
+  {
+   "n": 106,
+   "term": "Block Fidelity",
+   "field": "Mathematics and structure",
+   "status": "CONSTRUCTED",
+   "definition": "The sum of the absolute inner products between corresponding harmonic components of normalized constitutional representations.",
+   "basis": "ledger CB-055, ratified by the Originator on 26 November 2026; F_B = sum_j |<v_j, w_j>|; kept by every common block-unitary MIX, and the least value MIX can give R_O; OmegaSL Tier III beta 6",
+   "coordinate": "P2 Generator; n = (2, 13, 4)",
+   "definition_coordinate": "P1 Fixpoint; n = (11, 101, 34)"
   }
  ]
 }
