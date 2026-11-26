@@ -20,7 +20,7 @@ NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-j
        ('Instruments', [('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
        ('Explore', [('questions', 'World of Questions'), ('strike', 'Ask a question'), ('solve', 'SOLVE: bring a problem'), ('explore', 'How Omega42 works'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('speculate', 'Speculative Foundations')]),
        ('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
-       ('Protocol', [('protocol', 'Core and Companion'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
+       ('Protocol', [('protocol', 'Core and Companion'), ('manual', 'The Navigator Instruction Manual'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('innovation', 'The Innovation Commons'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas'), ('governance', 'Governance')]),
        ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('research-development', 'Research and development'), ('archive-report', 'Archive salvage report')])]
@@ -101,7 +101,9 @@ def build(out, repo):
     lite = {}   # the lighter editions (ai/) and the mathematical paper (docs/), served directly beside the .docx files
     for key, rel, label in (('PACK', ('ai', 'Omega42_Navigator_Pack.md'), 'Navigator Pack'), ('COMPACT', ('ai', 'Omega42_Companion_Compact.md'), 'Compact Companion'),
                             ('PAPER', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.md'), 'Mathematical paper (Markdown)'), ('PAPERPDF', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.pdf'), 'Mathematical paper (PDF)'),
-                            ('RD', ('docs', 'RESEARCH_AND_DEVELOPMENT.md'), 'Research and Development Programme (Markdown)')):
+                            ('RD', ('docs', 'RESEARCH_AND_DEVELOPMENT.md'), 'Research and Development Programme (Markdown)'),
+                            ('MANUAL', ('docs', 'NAVIGATOR_MANUAL.md'), 'Navigator Instruction Manual (Markdown)'), ('MANUALPDF', ('docs', 'NAVIGATOR_MANUAL.pdf'), 'Navigator Instruction Manual (PDF)'),
+                            ('MANUALDOCX', ('docs', 'manual', 'Omega42_Navigator_Manual.docx'), 'Navigator Instruction Manual (Word)')):
         src = os.path.join(ROOT, *rel)
         if not os.path.exists(src): continue
         shutil.copy(src, os.path.join(out, 'protocol', rel[-1])); h = sha_file(src)
@@ -188,6 +190,8 @@ def build(out, repo):
         subs['{{REGISTER_FULL}}'] = re.sub(r'\{\{BUILT_ON_(MF-\d+)\}\}', lambda m: '<p class="note">Built on this: %s</p>' % ', '.join(
             '<a href="innovation.html#%s">%s %s</a>' % (x['id'].lower(), x['id'], html.escape(x['title'])) for x in built_on[m.group(1)]) if m.group(1) in built_on else '', subs['{{REGISTER_FULL}}'])
     paper = os.path.join(ROOT, 'docs', 'OMEGA42_MATHEMATICAL_PAPER.md')
+    mnp = os.path.join(ROOT, 'docs', 'NAVIGATOR_MANUAL.md')
+    subs['{{MANUAL_BODY}}'] = md_html(open(mnp, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(mnp) else ''
     rdp = os.path.join(ROOT, 'docs', 'RESEARCH_AND_DEVELOPMENT.md')
     subs['{{RD_BODY}}'] = md_html(open(rdp, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(rdp) else ''
     subs.update({'{{PAPER}}': md_html(open(paper, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(paper) else ''})

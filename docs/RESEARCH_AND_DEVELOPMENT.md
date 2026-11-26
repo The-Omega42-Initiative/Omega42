@@ -309,6 +309,48 @@ Foundation: Every participant and Navigator a potential contributor; Omega42 as 
 
 Next action and acceptance: Grow through W05, S06, G05 and G06; measure contributions applied, not volume.
 
+## W07 — Expanded FAQ
+Area: Website | Priority: High | Status: Live
+
+Foundation: Originator directive: the FAQ covers a wide variety of questions; quick answer, detailed answer, explore with your Navigator.
+
+Next action and acceptance: Status, 26 November 2026 (Claude): 103 questions in twelve territories; three statements corrected (AI memory, depth growth, prior-art scope). Next: territory filter and answer review by ChatGPT.
+
+## W08 — Navigator Instruction Manual
+Area: Website | Priority: High | Status: Live
+
+Foundation: A current manual for anyone who wants to study Omega42, replacing the historical guides.
+
+Next action and acceptance: Status, 26 November 2026 (Claude): third edition live as manual.html with PDF, Word and Markdown downloads; reading paths, eight lessons, the Striker's command library from Core IN-23 and the Constitution. Next: illustrated edition; translations.
+
+## W09 — Interactive lessons
+Area: Website | Priority: Medium | Status: Partly live
+
+Foundation: Learn by doing: the law, the mirror, the loops, the invariant, the tower, observation, OmegaSL, the torus.
+
+Next action and acceptance: The playground, OmegaSL and GEOMETRIA pages cover Lessons 1, 6, 7 and 8; build step-through widgets for the others.
+
+## W10 — Omega42 Academy
+Area: Website | Priority: Medium | Status: Proposal
+
+Foundation: Pathways (Explorer, Student, Practitioner, Researcher, Builder), not qualifications.
+
+Next action and acceptance: Pathways described in the manual; optional progress record for registered participants after G05.
+
+## S08 — Command and capability reference
+Area: Protocol | Priority: High | Status: Partly live
+
+Foundation: Separate the commands the Core defines from convenient natural-language prompts; declare each edition's capabilities.
+
+Next action and acceptance: Manual Part IV and protocol.html editions table live; keep both generated from the Core in a later release.
+
+## G09 — Historical instruction material
+Area: Governance | Priority: Medium | Status: Active
+
+Foundation: The archive holds the Training Manual 2.0, the Navigator's Guide, Study Guides, the Compendium of User Questions, Users' and Beginner's Guides, the Technical Manual V292 GOLD and the Domain Zero instruction sets.
+
+Next action and acceptance: Examined for the third edition (manual Appendix B); deeper review of retired instruments for anything still worth reviving; originals stay private.
+
 ## Source and continuity
 - records/math/results.json; tools/core_math.py; MF49,57,66,72.
 - proposals/instruments-of-being/omegasl_tier3_typed_beta6.js on proposal/instruments-of-being (beta 6 interpreter).
@@ -319,3 +361,4 @@ Next action and acceptance: Grow through W05, S06, G05 and G06; measure contribu
 ## Change history
 2026-11-26: initial consolidated agenda by ChatGPT (30 avenues); no canonical adoption or deployment asserted.
 2026-11-26: Claude recorded statuses after the paper's Parts II to III and the website release, and added W05, W06, S06, S07 and G05 to G08 from the Originator's submission directive and ChatGPT's Collective Discovery Network proposal (38 avenues).
+2026-11-26: Claude added W07 to W10, S08 and G09 from ChatGPT's Instruction Manual and FAQ investigation (44 avenues).

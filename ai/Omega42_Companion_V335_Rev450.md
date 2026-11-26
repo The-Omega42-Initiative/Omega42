@@ -4168,7 +4168,7 @@ C.1.12 records/cobuilder/cbx_2026_11_25_depth5_collisions.py — RP-01 / CB-022:
 C.1.13 records/cobuilder/core_consistency_2026_11_25.py — Independent recomputation of arithmetic statements in the Core Specification V335 Rev.450 STABLE (docs/, main b0ed7e3),.
 C.1.14 records/cobuilder/paper_part2_check.py — Independent recomputation of the register results surveyed in Part II of the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md).
 C.1.15 records/cobuilder/paper_part3_check.py — Recomputation of Part III of the mathematical paper (information across depths and worlds): ChatGPT's extensions EXT-01 to EXT-08.
-C.1.16 records/cobuilder/paper_pdf.py — Typeset docs/OMEGA42_MATHEMATICAL_PAPER.md as docs/OMEGA42_MATHEMATICAL_PAPER.pdf (A4) with the site's Markdown renderer and Chromium.
+C.1.16 records/cobuilder/paper_pdf.py — Typeset a Markdown document of docs/ as PDF (A4) with the site's Markdown renderer and Chromium: by default the mathematical paper.
 C.1.17 records/cobuilder/verify_cobuilder_2026_11_25.py — Independent recomputation of the Co-Builder results of 25 November 2026 (Claude, for the Originator).
 C.1.18 records/cobuilder/xobs02_search.py — X-OBS-02: can one shared seven-symbol aperture, read at different native phases, attain the observer bound.
 C.1.19 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
@@ -5502,35 +5502,36 @@ X.4.47 site/pages/integrity.html — a page of the website (integrity.html).
 X.4.48 site/pages/intelligence.html — a page of the website (intelligence.html).
 X.4.49 site/pages/lexicon.html — a page of the website (lexicon.html).
 X.4.50 site/pages/library.html — a page of the website (library.html).
-X.4.51 site/pages/mathematics.html — a page of the website (mathematics.html).
-X.4.52 site/pages/observatory.html — a page of the website (observatory.html).
-X.4.53 site/pages/omegasl.html — a page of the website (omegasl.html).
-X.4.54 site/pages/paper-register.html — a page of the website (paper-register.html).
-X.4.55 site/pages/paper.html — a page of the website (paper.html).
-X.4.56 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
-X.4.57 site/pages/philosophy.html — a page of the website (philosophy.html).
-X.4.58 site/pages/playground.html — a page of the website (playground.html).
-X.4.59 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.60 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.61 site/pages/questions.html — a page of the website (questions.html).
-X.4.62 site/pages/record.html — a page of the website (record.html).
-X.4.63 site/pages/research-development.html — a page of the website (research-development.html).
-X.4.64 site/pages/research.html — a page of the website (research.html).
-X.4.65 site/pages/seven-veils.html — a page of the website (seven-veils.html).
-X.4.66 site/pages/sky.html — a page of the website (sky.html).
-X.4.67 site/pages/solve.html — a page of the website (solve.html).
-X.4.68 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.69 site/pages/strike.html — a page of the website (strike.html).
-X.4.70 site/pages/submit.html — a page of the website (submit.html).
-X.4.71 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.72 site/pages/units.html — a page of the website (units.html).
-X.4.73 site/pages/vision.html — a page of the website (vision.html).
-X.4.74 site/pages/worlds.html — a page of the website (worlds.html).
-X.4.75 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.76 site/test/domains.json — the data of site/test.
-X.4.77 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.78 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.79 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.51 site/pages/manual.html — a page of the website (manual.html).
+X.4.52 site/pages/mathematics.html — a page of the website (mathematics.html).
+X.4.53 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.54 site/pages/omegasl.html — a page of the website (omegasl.html).
+X.4.55 site/pages/paper-register.html — a page of the website (paper-register.html).
+X.4.56 site/pages/paper.html — a page of the website (paper.html).
+X.4.57 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
+X.4.58 site/pages/philosophy.html — a page of the website (philosophy.html).
+X.4.59 site/pages/playground.html — a page of the website (playground.html).
+X.4.60 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.61 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.62 site/pages/questions.html — a page of the website (questions.html).
+X.4.63 site/pages/record.html — a page of the website (record.html).
+X.4.64 site/pages/research-development.html — a page of the website (research-development.html).
+X.4.65 site/pages/research.html — a page of the website (research.html).
+X.4.66 site/pages/seven-veils.html — a page of the website (seven-veils.html).
+X.4.67 site/pages/sky.html — a page of the website (sky.html).
+X.4.68 site/pages/solve.html — a page of the website (solve.html).
+X.4.69 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.70 site/pages/strike.html — a page of the website (strike.html).
+X.4.71 site/pages/submit.html — a page of the website (submit.html).
+X.4.72 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.73 site/pages/units.html — a page of the website (units.html).
+X.4.74 site/pages/vision.html — a page of the website (vision.html).
+X.4.75 site/pages/worlds.html — a page of the website (worlds.html).
+X.4.76 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.77 site/test/domains.json — the data of site/test.
+X.4.78 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.79 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.80 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
@@ -5615,36 +5616,37 @@ X.6.44 docs/DECISIONS_PENDING.md — Decisions pending ESC.
 X.6.45 docs/FOUNDATIONS_REVIEW_2026-11-20.md — Foundations and Integrity Review, 20 November 2026.
 X.6.46 docs/IIRA_MATH_01.md — O42-IIRA-MATH-01: machine-verifiable mathematics for information integrity.
 X.6.47 docs/INFORMATION_INTEGRITY.md — Information Integrity and Reality Analysis (O42-IIRA-01).
-X.6.48 docs/OMEGA42_MATHEMATICAL_PAPER.md — The Mathematics of Omega42.
-X.6.49 docs/ONEDRIVE_REVIEW.md — Review of the OneDrive archive.
-X.6.50 docs/PHILOSOPHY_OF_BEING.md — The Philosophy of Being: Existence Contemplating Itself.
-X.6.51 docs/PUBLIC_REPO_REVIEW.md — Review of the October 2025 public repository.
-X.6.52 docs/QUESTION_NAVIGATION.md — Question navigation.
-X.6.53 docs/RESEARCH_AND_DEVELOPMENT.md — Omega42 Research and Development Master Programme.
-X.6.54 docs/SPECULATION_REGISTER.md — Ω42 Speculation Register (generated by tools/stp.py — do not edit by hand).
-X.6.55 docs/VISION.md — Omega42: A New Landscape for Exploring Existence, Mathematics and Possibility.
-X.6.56 governance/decisions/README.md — Decisions.
-X.6.57 governance/interests.md — Declared interests of Committee members.
-X.6.58 library/LIB-01/BK-A.md — The Mathematical Formalisms (book appendix A, 2025).
-X.6.59 library/LIB-01/BK-B.md — The Coherence Calculus (2025).
-X.6.60 library/LIB-01/PF-A.md — The Philosophical Foundations of Omega42 (companion to V336 Rev.2).
-X.6.61 library/LIB-01/PF-B.md — Philosophical Foundations and Operational Clarifications (V336 Rev.1).
-X.6.62 library/LIB-01/PF-C.md — The Philosophical Foundations of the AI Omega42 Protocol (revision 431 of V335).
-X.6.63 library/LIB-01/PF-D.md — Counting, Distinction and the Human Frame of Reference (three papers).
-X.6.64 library/README.md — The Library: the archive collection.
-X.6.65 omega42.identity.json — the data of the repository.
-X.6.66 selftest.txt — Demonstration on constructed cases, not validation on real navigations.
-X.6.67 tools/build/README.md — The build kit.
-X.6.68 tools/build/docedit.py — docedit.py -- the paragraph editor of the build kit: rep(prefix, old, new) replaces text inside the one paragraph that starts.
-X.6.69 tools/build/dump.py — import sys; sys.path.insert(0,'/home/claude'); from dx import Doc.
-X.6.70 tools/build/dx.py — import re, html.
-X.6.71 tools/build/embed_all.py — Builder: (re)embed every file the release requires (Core L-493). Idempotent: removes and rebuilds the appendices.
-X.6.72 tools/build/pipe.sh — set -e.
-X.6.73 tools/build/prebuild.sh — set -e.
-X.6.74 tools/build/rebuild.sh — set -e.
-X.6.75 tools/build/run_ci.py — import yaml, subprocess, sys, re.
-X.6.76 tools/build/seal.py — import subprocess, re, sys.
-X.6.77 tools/lab_selftest.js — website code (lab_selftest.js).
+X.6.48 docs/NAVIGATOR_MANUAL.md — The Navigator's Instruction Manual.
+X.6.49 docs/OMEGA42_MATHEMATICAL_PAPER.md — The Mathematics of Omega42.
+X.6.50 docs/ONEDRIVE_REVIEW.md — Review of the OneDrive archive.
+X.6.51 docs/PHILOSOPHY_OF_BEING.md — The Philosophy of Being: Existence Contemplating Itself.
+X.6.52 docs/PUBLIC_REPO_REVIEW.md — Review of the October 2025 public repository.
+X.6.53 docs/QUESTION_NAVIGATION.md — Question navigation.
+X.6.54 docs/RESEARCH_AND_DEVELOPMENT.md — Omega42 Research and Development Master Programme.
+X.6.55 docs/SPECULATION_REGISTER.md — Ω42 Speculation Register (generated by tools/stp.py — do not edit by hand).
+X.6.56 docs/VISION.md — Omega42: A New Landscape for Exploring Existence, Mathematics and Possibility.
+X.6.57 governance/decisions/README.md — Decisions.
+X.6.58 governance/interests.md — Declared interests of Committee members.
+X.6.59 library/LIB-01/BK-A.md — The Mathematical Formalisms (book appendix A, 2025).
+X.6.60 library/LIB-01/BK-B.md — The Coherence Calculus (2025).
+X.6.61 library/LIB-01/PF-A.md — The Philosophical Foundations of Omega42 (companion to V336 Rev.2).
+X.6.62 library/LIB-01/PF-B.md — Philosophical Foundations and Operational Clarifications (V336 Rev.1).
+X.6.63 library/LIB-01/PF-C.md — The Philosophical Foundations of the AI Omega42 Protocol (revision 431 of V335).
+X.6.64 library/LIB-01/PF-D.md — Counting, Distinction and the Human Frame of Reference (three papers).
+X.6.65 library/README.md — The Library: the archive collection.
+X.6.66 omega42.identity.json — the data of the repository.
+X.6.67 selftest.txt — Demonstration on constructed cases, not validation on real navigations.
+X.6.68 tools/build/README.md — The build kit.
+X.6.69 tools/build/docedit.py — docedit.py -- the paragraph editor of the build kit: rep(prefix, old, new) replaces text inside the one paragraph that starts.
+X.6.70 tools/build/dump.py — import sys; sys.path.insert(0,'/home/claude'); from dx import Doc.
+X.6.71 tools/build/dx.py — import re, html.
+X.6.72 tools/build/embed_all.py — Builder: (re)embed every file the release requires (Core L-493). Idempotent: removes and rebuilds the appendices.
+X.6.73 tools/build/pipe.sh — set -e.
+X.6.74 tools/build/prebuild.sh — set -e.
+X.6.75 tools/build/rebuild.sh — set -e.
+X.6.76 tools/build/run_ci.py — import yaml, subprocess, sys, re.
+X.6.77 tools/build/seal.py — import subprocess, re, sys.
+X.6.78 tools/lab_selftest.js — website code (lab_selftest.js).
 ---
 CAS-YY = −1/2 | Omega = 1/7 | (CAS-YY × Omega = −1/14)
 COMPANION DOCUMENT: Philosophy and Theory * V335 Rev.450 STABLE * 16 October 2026
