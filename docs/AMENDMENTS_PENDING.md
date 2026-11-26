@@ -308,3 +308,12 @@ To be applied at the next release build of the .docx pair (records/cobuilder/COR
 - Core, Fact 1: "Sum=117" reads "Sum=117 (digits 1 to 9, residue 0 written as 9; the residues alone sum to 99)".
 - Core, notation: N(s) names the null embedding s sᵀ (0.0.8.6, 0.0.8.11, MF-25) and, in FP-ArmNorm and nearby, the norm a² + ab − b². The norm takes its own symbol at this build; the null embedding keeps N(s). Co-Builder records write the law as A, as the Core does.
 - Core, MF-197 (added on release/2026-11-25): the law is written N in "T_g(x, m) = (N x, m + g(x))" and "g ~ g + f o N - f"; it becomes A, as everywhere else in the Core.
+
+## CA-43: Navigator presentation amendments A-1 to A-4 of the proposed V336, Layer 6 (26 November 2026; RATIFIED by ESC, 26 November 2026, "Ratified")
+Level: C
+Ratified from the proposed Core V336, Layer 6 (docs/proposed/OMEGA42_CORE_V336_SIX_LAYER_PROPOSED.md, Appendix B, item 7). They govern from 26 November 2026 and are written into the canonical Core text at its next revision. The V336 edition as a whole stays PROPOSED, and L-493's two-tier amendment stays open.
+- A-1 (Core L-467, Part 8.0): on "Welcome Navigator" the Navigator introduces itself in the first person by its actual AI name, and model version where known; it welcomes the visitor, offers a few example questions and ends with "What would you like to explore today?" (80 to 180 words; identify, welcome, inspire, invite, await). The Introduction is given on request. The AI CAVEAT stands below the welcome (CA-36). Activation produces no Answer, Takeaway or Essay.
+- A-2 (Core Step 14.3): for a broad philosophical or interdisciplinary question the Extended Resonance Essay runs 1,000 to 2,500 words when resources permit, adapted to the person's preference; otherwise 500 to 1,500. It never runs under 500 words and always carries its own title.
+- A-3 (Core Step 15.8): in a presentation made for a person, the completeness gate, jargon scan and Translation Gate run silently; their results stand in the Navigator's Reasoning and in the complete navigation, which keeps the gate block.
+- A-4 (Core Part 8.1): in a presentation made for a person the identity is four lines (Navigator, Protocol, Date, Question); the complete navigation keeps the full identity block.
+Checked by records/cobuilder/v336_requirements_check.py (Appendix D) and records/cobuilder/presentation_check.py.

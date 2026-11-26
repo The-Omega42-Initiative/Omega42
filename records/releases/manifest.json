@@ -7,7 +7,7 @@
   "channel": "STABLE",
   "tag": "v335-rev450"
  },
- "date": "2026-11-25",
+ "date": "2026-11-26",
  "change_log": "docs/AMENDMENTS_PENDING.md",
  "amendments": [
   {
@@ -141,7 +141,7 @@
   {
    "id": "CA-17",
    "title": "CA-17: Refinements from the reviews' remaining recommendations (19 November 2026; RATIFIED by ESC 19 November 2026)",
-   "status": "RECORDED",
+   "status": "RATIFIED",
    "level": "C",
    "level_source": "inferred from the text",
    "date": "2026-11-19"
@@ -157,7 +157,7 @@
   {
    "id": "CA-19",
    "title": "CA-19: The researched reach of the essay (19 November 2026; RATIFIED by ESC 19 November 2026)",
-   "status": "RECORDED",
+   "status": "RATIFIED",
    "level": "C",
    "level_source": "declared",
    "date": "2026-11-19"
@@ -173,7 +173,7 @@
   {
    "id": "CA-21",
    "title": "CA-21: The Physics Initiative and the candidate dossier (APE-498; 19 November 2026; RATIFIED by ESC 19 November 2026)",
-   "status": "RECORDED",
+   "status": "RATIFIED",
    "level": "C",
    "level_source": "declared",
    "date": "2026-11-19"
@@ -181,7 +181,7 @@
   {
    "id": "CA-19",
    "title": "CA-19 refinements (APE-501; 19 November 2026; RATIFIED by ESC 19 November 2026 with CA-19)",
-   "status": "RECORDED",
+   "status": "RATIFIED",
    "level": "C",
    "level_source": "declared",
    "date": "2026-11-19"
@@ -349,10 +349,18 @@
   {
    "id": "CA-42",
    "title": "CA-42: Consistency corrections from the check of 25 November 2026 (ledger CB-041; RATIFIED by ESC, 25 November 2026, \"Yes. All ratified.\")",
-   "status": "RECORDED",
+   "status": "RATIFIED",
    "level": "C",
    "level_source": "inferred from the text",
    "date": "2026-11-25"
+  },
+  {
+   "id": "CA-43",
+   "title": "CA-43: Navigator presentation amendments A-1 to A-4 of the proposed V336, Layer 6 (26 November 2026; RATIFIED by ESC, 26 November 2026, \"Ratified\")",
+   "status": "RATIFIED",
+   "level": "C",
+   "level_source": "declared",
+   "date": "2026-11-26"
   }
  ],
  "approval": {
@@ -371,7 +379,12 @@
    "CA-12",
    "CA-13",
    "CA-14",
-   "CA-15"
+   "CA-15",
+   "CA-17",
+   "CA-19",
+   "CA-21",
+   "CA-42",
+   "CA-43"
   ],
   "pending_esc": []
  },
@@ -405,7 +418,8 @@
    "CA-19",
    "CA-21",
    "CA-41",
-   "CA-42"
+   "CA-42",
+   "CA-43"
   ],
   "normative_changes_pending_esc": [],
   "navigator_update_needed": "read the Core edition of this release; the date-gated rules in force are listed in docs/AMENDMENTS_PENDING.md"

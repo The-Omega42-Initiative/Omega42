@@ -54,7 +54,7 @@ Three things are said before every first navigation (Core IN-21):
 
 1. Download the **Core Specification** and the **Companion Document** from the protocol page. If your AI has a shorter context window, download the **Navigator Pack** instead, and the **Compact Companion** if it fits.
 2. Open a new conversation with any capable AI assistant and attach the documents.
-3. Type **Welcome Navigator**. The AI presents the Introduction and asks for your question.
+3. Type **Welcome Navigator**. The AI introduces itself by its own name, welcomes you, offers a few example questions and asks what you would like to explore. Ask for the Introduction if you want the full account.
 4. Optionally type **Certify Navigator** to have its arithmetic and format checked before you begin.
 
 If the AI cannot run code, use the Strike app on the website. It runs the unchanged reference script in your browser, and you can paste its result into the conversation so that the Navigator works from computed values.
@@ -73,7 +73,7 @@ You may choose an approach, or let the Navigator decide:
 | Open speculation | Follows a thought experiment wherever it leads, labeled as such |
 | Formal development | Definitions, derivations and proofs |
 
-And you choose what you receive: the **Answer, Takeaway and Essay** (the finished result), or the **complete navigation**, which shows every step, calculation and source.
+And you choose what you receive: the **Answer, Takeaway and Essay** (the finished result), or the **complete navigation**, which shows every step, calculation and source. The Answer, Takeaway and Essay open with four lines naming the Navigator, the protocol, the date and your question. The Essay always carries its own title and goes into neighboring fields. The Navigator runs its quality checks without announcing them, and the AI caveat appears once in a session (ratified 26 November 2026).
 
 ## 6. Reading what comes back
 
@@ -163,7 +163,7 @@ These requests are defined by the Core (IN-23 and the Constitution). Type them a
 
 | Request | Effect |
 |---|---|
-| **Welcome Navigator** | The Navigator presents the Introduction and asks for your question |
+| **Welcome Navigator** | The Navigator introduces itself, welcomes you and asks what you would like to explore; the Introduction on request |
 | **Certify Navigator** | Its arithmetic and format are checked (Core Part 8.0, M314) |
 | **help me phrase it** / **a reframing panel** | Candidate wordings, or up to five reframings, for you to choose from |
 | **primary only** / **strike F2** | Leave out the other framings, or navigate one of them in full |

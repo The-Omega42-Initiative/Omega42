@@ -1,7 +1,8 @@
 """Requirements traceability check for the proposed Core V336 six-layer edition (Appendix D).
 For every row R01 to R60: the V336 section it names exists; that section states the requirement (its key phrases are present);
 every canonical law and Step it cites is defined in the canonical Core V335 Rev.450; and, when ChatGPT's Rev451 candidate is
-supplied, every Rev451 section it cites exists there. Also checks that the human-deliverable sections of Layer 6 keep their
+supplied, every Rev451 section it cites exists there; and that the ratified amendments A-1 to A-4 are marked as such and
+recorded in the ledger (CA-43). Also checks that the human-deliverable sections of Layer 6 keep their
 examples free of protocol terms, outside the list that names them.
 Run: python3 records/cobuilder/v336_requirements_check.py [REV451_CANDIDATE.md]"""
 import re
@@ -100,12 +101,12 @@ for rid, req, src, sec, status in rows:
     if rev:
         cites = re.findall(r'10\.\d+', src) if 'Rev451' in src else []
         ok(f'{rid} Rev451 sections {cites or "none"} exist in the candidate', all(c in rev_secs for c in cites))
-    ok(f'{rid} status is one of STATED, ADDED, AMENDMENT', all(w.split()[0] in ('STATED', 'ADDED', 'AMENDMENT') for w in status.split(', ')))
+    ok(f'{rid} status is one of STATED, ADDED, AMENDMENT', all(w.split()[0] in ('STATED', 'ADDED', 'AMENDMENT', 'RATIFIED') for w in status.split(', ')))
 
 # The amendments named in Appendix D are the ones Appendix B lists, and each names the canonical rule that governs meanwhile.
 appb = v[v.index('# Appendix B.'):v.index('# Appendix C.')]
 ok('A-1 to A-4 recorded in Appendix B with ratification pending', all(a in appb for a in ('A-1', 'A-2', 'A-3', 'A-4')) and 'ratification' in appb)
-ok('every AMENDMENT row names a canonical rule in its section', all(('Canonical' in (section(r[3].split(',')[-1].strip()) or ''))
+ok('every AMENDMENT row names a canonical rule in its section', all(('canonical' in (section(r[3].split(',')[-1].strip()) or '').lower())
    for r in rows if r[4].startswith('AMENDMENT')))
 
 # The Takeaway and Essay sections carry no protocol term outside the excluded-term list of 6.4.1.
@@ -113,6 +114,12 @@ TERMS = ['Yang', 'Yin', 'Antipode', 'Crown', 'Torsion', 'Möbius', 'SR-CAS', 'SA
 for s in ('6.4.3', '6.4.5'):
     t = section(s)
     ok(f'{s} uses no protocol term itself', not any(re.search(r'\b' + re.escape(w), t) for w in TERMS))
+
+# Ratification (26 November 2026): every amendment row is marked RATIFIED and the ledger records it as CA-43.
+ledger = open('docs/AMENDMENTS_PENDING.md', encoding='utf-8').read()
+ok('every AMENDMENT row of Appendix D is marked RATIFIED', all('RATIFIED' in r[4] for r in rows if r[4].startswith('AMENDMENT')))
+ok('the ledger records A-1 to A-4 as CA-43, ratified by ESC', re.search(r'^## CA-43: .*RATIFIED by ESC', ledger, re.M) is not None
+   and all(a in ledger[ledger.index('## CA-43'):] for a in ('A-1', 'A-2', 'A-3', 'A-4')))
 
 print(f'{sum(R)} of {len(R)} checks PASS')
 sys.exit(0 if all(R) else 1)

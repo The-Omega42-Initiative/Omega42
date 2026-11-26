@@ -38,7 +38,7 @@ def amendments(text):
         m = re.match(r'(CA-\d+)', title)
         if not m: continue
         cid = m.group(1); body = p
-        if cid in RATIFIED: status = 'RATIFIED'
+        if cid in RATIFIED or 'RATIFIED by ESC' in title: status = 'RATIFIED'
         elif re.search(r'pending ESC|PENDING ESC', title + body[:600]): status = 'PENDING ESC'
         else: status = 'RECORDED'
         lv = re.search(r'^Level: ([ABC])\b', body, re.M)

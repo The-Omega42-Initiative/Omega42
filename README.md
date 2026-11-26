@@ -150,7 +150,7 @@ This repository is the home of an open network built around the protocol:
 
 ## Start a session
 
-Attach the two documents in `docs/` to a new conversation with any AI and type **Welcome Navigator**. The AI identifies itself, presents the Introduction and asks for your question (Core L-467).
+Attach the two documents in `docs/` to a new conversation with any AI and type **Welcome Navigator**. The AI introduces itself by its own name, welcomes you, offers a few example questions and asks what you would like to explore. The full Introduction is given on request (Core L-467 as amended by CA-43, ratified 26 November 2026).
 
 ## Start here: three commands
 
