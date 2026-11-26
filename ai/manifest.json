@@ -2,9 +2,9 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev450.md": {
-   "chars": 1348245,
-   "tokens_est": 337062,
-   "sha256": "7cc40f312405aa328d6c5dc3c0721cdecbc2bad72a63ce1109f50e89f3fbad65"
+   "chars": 1348296,
+   "tokens_est": 337074,
+   "sha256": "8bffa3d97aa8903beed75c067eda91b10c474466aeb99a77d4c9d04d253bec0c"
   },
   "Omega42_Companion_V335_Rev450.md": {
    "chars": 2033644,
@@ -12,9 +12,9 @@
    "sha256": "ea8dc4f8010972be632f05546d40671ed1b05c139f73d5ca590340160aee3483"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 476262,
-   "tokens_est": 119066,
-   "sha256": "158cee3e3c7eb2e35305352c8a0f2000c6c81a067142c485954674b0cd31a3ad"
+   "chars": 476256,
+   "tokens_est": 119064,
+   "sha256": "22ad75d95a3699818afd73a72b3f38c4a73223ab257a59e4121a80662aca1897"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -33,9 +33,9 @@
   {
    "doc": "Core",
    "heading": "PART 0: INTRODUCTION TO OMEGA42 (IN)",
-   "chars": 102113,
-   "tokens_est": 25528,
-   "sha256": "36959546148ad5e38d2556df35505a356ed42d9b13da14c2983f4800b5735f98"
+   "chars": 102164,
+   "tokens_est": 25541,
+   "sha256": "eb69873c3cfd4da6b231bed56068dcfc6d93ee7fee32cb820de46eb2f44b57ec"
   },
   {
    "doc": "Core",

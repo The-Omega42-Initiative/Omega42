@@ -1,15 +1,104 @@
-<!--{"title": "Arcana · Ω42", "desc": "Arcana, a cycle explorer: choose uniform cycles with a shared phase origin and see their smallest common lattice.", "nav": "arcana"}-->
+<!--{"title": "Arcana · Ω42", "desc": "Arcana, the Oracle of Possibilities: ask any question and receive a symbolic reading drawn by the Omega42 law from the canonical cycle. For entertainment and reflection; it predicts nothing.", "nav": "arcana"}-->
 <style>
-.cg{background:#0b1023;color:#edf0fa;max-width:850px;margin:auto;padding:24px}.cg h1,.cg h2{font-family:Georgia;color:#f5c47d}.cg a{color:#85e4ef}.cg label{display:inline-flex;align-items:center;gap:.35em;margin:6px 14px 6px 0;white-space:nowrap}.cg output{display:block;margin:14px 0;color:#85e4ef}
+.arc{background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(180,140,255,.25),transparent 70%),linear-gradient(180deg,#0a0d27,#120d33 60%,#0b1026);color:#eef1ff;border-radius:22px;padding:clamp(18px,4vw,40px);max-width:980px;margin:1rem auto 2rem;box-shadow:0 30px 80px -40px rgba(0,0,0,.7)}
+.arc h1{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);margin:.2rem 0 .3rem;color:#fff;text-align:center}
+.arc h1 em{color:#ffd36b}
+.arc .sub{text-align:center;color:#c9c3ee;margin:0 auto 1.2rem;max-width:40rem}
+.arc .cg-credit{text-align:center}
+.arc form{display:grid;gap:.7rem;max-width:40rem;margin:0 auto}
+.arc label{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#b9b0ee}
+.arc textarea{width:100%;min-height:5.5rem;font:inherit;font-size:1.1rem;padding:.8rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.25);background:rgba(10,8,35,.7);color:#fff;box-sizing:border-box}
+.arc .row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.arc button{font:inherit;font-weight:600;padding:.65rem 1.2rem;border-radius:99px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.arc button.go{background:linear-gradient(135deg,#ffd36b,#ff9fd4);color:#1a0f33;border:0}
+.arc button:hover,.arc button:focus-visible{border-color:#9eeeff;outline:none;transform:translateY(-1px)}
+.arc .note{font-size:.85rem;color:#a9a3d6;text-align:center;margin:.2rem 0 0}
+.arc .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1rem;margin-top:1.6rem}
+.arc .card{position:relative;padding:1.2rem 1.1rem 1.1rem;border-radius:18px;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.18);animation:arc-in .7s ease both}
+.arc .card:nth-child(2){animation-delay:.25s}.arc .card:nth-child(3){animation-delay:.5s}.arc .card:nth-child(4){animation-delay:.75s}
+.arc .card .role{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#9eeeff}
+.arc .card .sym{font-size:3rem;line-height:1.2;margin:.3rem 0;color:#ffd36b;text-shadow:0 0 18px rgba(255,211,107,.6)}
+.arc .card .num{font-family:var(--mono);font-size:.8rem;color:#c9c3ee}
+.arc .card b{display:block;font-family:var(--display);font-size:1.35rem;font-weight:500;margin:.2rem 0 .4rem}
+.arc .card p{margin:0;color:#dcd8f7;font-size:.97rem}
+.arc .card.mirror{border-color:rgba(158,238,255,.5);background:linear-gradient(160deg,rgba(127,240,255,.14),rgba(255,255,255,.02))}
+.arc .card.mirror .sym{color:#9eeeff;text-shadow:0 0 18px rgba(158,238,255,.6)}
+.arc .why{margin-top:1.2rem;padding:1rem 1.2rem;border-radius:14px;background:rgba(0,0,0,.25);font-size:.92rem;color:#cfcaf2}
+.arc .why code{font-family:var(--mono);color:#ffd36b}
+.arc .reflect{margin-top:1rem;text-align:center;font-family:var(--display);font-size:1.25rem;color:#fff}
+.arc textarea#arc-prompt{min-height:9rem;font-family:var(--mono);font-size:.82rem}
+.arc .deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:.6rem;margin-top:1rem}
+.arc .deck div{padding:.7rem;border-radius:12px;background:rgba(255,255,255,.05);text-align:center;font-size:.85rem;color:#cfcaf2}
+.arc .deck span{display:block;font-size:1.6rem;color:#ffd36b}
+.arc h2{font-family:var(--display);font-weight:500;color:#fff;margin:2.2rem 0 .4rem}
+.arc details{margin-top:1.6rem}
+.arc summary{cursor:pointer;color:#9eeeff;font-family:var(--mono);font-size:.85rem}
+.arc #cycles label{display:inline-flex;gap:.35em;align-items:center;margin:6px 14px 6px 0;text-transform:none;letter-spacing:0;font-size:.95rem;color:#eef1ff}
+.arc output{display:block;margin:.8rem 0;color:#9eeeff}
+@keyframes arc-in{from{opacity:0;transform:translateY(14px) rotateX(25deg)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.arc .card{animation:none}}
 </style>
-<div class="cg"><div class="cg-in">
-<p class="cg-credit">By ChatGPT, Co-Builder · runs in your browser · stores nothing</p>
-<h1>Arcana <em>a cycle explorer</em></h1>
-<p>Choose uniform cycles that share a phase origin. Their least common multiple is the smallest lattice on which all of them return together. A common lattice is arithmetic. It does not prove that the cycles mean the same thing.</p>
+<div class="arc">
+<p class="cg-credit">Designed by ChatGPT (ARC-02) · built by Claude · runs in your browser · stores nothing</p>
+<h1>Arcana <em>the Oracle of Possibilities</em></h1>
+<p class="sub">Every question opens a doorway. Ask anything. The Omega42 law draws your reading from its canonical cycle, the same way every time for the same question.</p>
+<form id="arc-form">
+  <label for="arc-q">Your question</label>
+  <textarea id="arc-q" maxlength="400" placeholder="What new possibility should I explore?"></textarea>
+  <div class="row"><button class="go" type="submit">Reveal my Arcana</button><button type="button" id="arc-daily">The daily Arcana</button></div>
+  <p class="note">For entertainment, imagination and personal reflection only. Arcana predicts nothing and gives no advice: the meaning is yours to make.</p>
+</form>
+<div id="arc-out" aria-live="polite"></div>
+
+<h2>The nine archetypes</h2>
+<p class="sub" style="text-align:left;margin:0">The digits 1 to 9 of the Omega42 world, each given a symbolic face. Nine is the zero of the world, so it stands for the Whole.</p>
+<div class="deck" id="arc-deck"></div>
+
+<details>
+<summary>The cycle explorer (ARC-01): common lattices of cycles</summary>
+<p>Choose uniform cycles that share a phase origin. Their least common multiple is the smallest lattice on which all of them return together. A common lattice is arithmetic; it does not prove that the cycles mean the same thing. Try 24 with 8 and 1: the three orbit lengths of the law share the lattice 24.</p>
 <div id="cycles" role="group" aria-label="Cycles to combine"></div>
 <output id="lattice" aria-live="polite"></output>
-<p>For the Omega42 cycle itself, try 24 with 8 and 1: the three orbit lengths of the law share the lattice 24. Then play <a href="seven-veils.html">the Seven Veils</a>, which reads that cycle through seven symbols.</p>
-</div></div>
+</details>
+</div>
 <script>
-const $=id=>document.getElementById(id);const gcd=(a,b)=>b?gcd(b,a%b):a;function lattice(){const ns=[...$('cycles').querySelectorAll('input:checked')].map(e=>+e.value);const l=ns.reduce((a,b)=>a*b/gcd(a,b),1);$('lattice').textContent=ns.length?'Common lattice: '+l+'; intervals: '+ns.map(n=>n+' → '+l/n).join(', '):'Select cycles'}for(const n of [1,5,7,8,9,10,12,24,60,64]){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=n;input.checked=[7,9,12,24].includes(n);input.onchange=lattice;label.append(input,' '+n);$('cycles').append(label)}lattice();
+(function(){
+var $=function(id){return document.getElementById(id)};
+var A=[null,
+ {n:'The Origin',s:'✧',w:'Beginnings and initiative',r:'Something wants to begin. What would starting, today, look like?'},
+ {n:'The Seed',s:'◇',w:'Potential and generation',r:'A small thing holds a large future. Which seed deserves your care?'},
+ {n:'The Mirror',s:'△',w:'Reflection and perspective',r:'You are seen as you see. What would change if you looked from the other side?'},
+ {n:'The Architect',s:'□',w:'Structure and stability',r:'Freedom grows on a frame. What structure would hold your next step?'},
+ {n:'The Human',s:'✦',w:'Choice and understanding',r:'The choice is yours, and so is its meaning. What do you already know?'},
+ {n:'The Harmony',s:'⬡',w:'Balance and relationship',r:'Two forces, one measure. Where is the balance asking to be found?'},
+ {n:'The Aperture',s:'◉',w:'Discovery and perception',r:'Every view is partial. What have you not yet looked at?'},
+ {n:'The Transformation',s:'∞',w:'Change and continuity',r:'What changes, and what survives the change? Both are true.'},
+ {n:'The Whole',s:'Ω',w:'Completion and renewal',r:'An ending is a return. What is complete, and what begins again?'}];
+var seq=[],s=[2,5];for(var i=0;i<24;i++){seq.push(s.slice());s=[s[1],(s[0]+s[1])%9];}
+var D=function(x){return x===0?9:x};
+var deck=$('arc-deck');for(var k=1;k<=9;k++){var d=document.createElement('div');d.innerHTML='<span>'+A[k].s+'</span><b>'+k+' · '+A[k].n+'</b><br>'+A[k].w;deck.appendChild(d)}
+function phaseOf(q){var t=q.toLowerCase().replace(/[^a-z]/g,''),sum=0;for(var i=0;i<t.length;i++)sum+=t.charCodeAt(i)-96;return {sum:sum,len:t.length,t:sum%24}}
+function card(role,dg,cls){var a=A[dg];return '<div class="card'+(cls?' '+cls:'')+'"><div class="role">'+role+'</div><div class="sym" aria-hidden="true">'+a.s+'</div><div class="num">'+dg+'</div><b>'+a.n+'</b><p>'+a.w+'. '+a.r+'</p></div>'}
+var last=null;
+function reading(q,label,info){
+  var p=info.t,st=seq[p],a=D(st[0]),b=D(st[1]),k=1;while(D(seq[(p+k)%24][0])%3!==0)k++;
+  var turn=D(seq[(p+k)%24][0]);
+  last={q:q,p:p,a:a,b:b};
+  var html='<div class="cards">'+card('What is present',a)+card('What is becoming',b)+card('The turning point · in '+k+' step'+(k>1?'s':''),turn)+'</div>'
+   +'<div class="row" style="margin-top:1rem"><button type="button" id="arc-mirror">Reveal the Mirror</button><button type="button" id="arc-ai">Take this reading to your AI</button></div>'
+   +'<div id="arc-more"></div>'
+   +'<p class="reflect">'+A[a].r+'</p>'
+   +'<div class="why"><b>How this reading was drawn.</b> '+label+' '+(info.src||'The letters of your question, A = 1 to Z = 26, add up to')+' <code>'+info.sum+'</code>; '+info.sum+' mod 24 = phase <code>'+p+'</code> of the canonical cycle from the seeds (2, 5). At that phase the law stands at the state <code>('+st[0]+', '+st[1]+')</code>: its first digit is what is present, its second is what is becoming, and every fourth step the cycle meets the triangle 3, 6, 9, the turning point. Same question, same reading.</div>';
+  $('arc-out').innerHTML=html;
+  $('arc-mirror').onclick=function(){var m=seq[(p+12)%24],ma=D(m[0]),mb=D(m[1]);$('arc-more').innerHTML='<div class="cards">'+card('The Mirror · what is present',ma,'mirror')+card('The Mirror · what is becoming',mb,'mirror')+'</div><p class="note">Twelve steps on, the law carries every state to its negative (A¹² = −I): '+a+' becomes '+ma+' and '+b+' becomes '+mb+', each pair adding to 9. The other side of the same question.</p>'};
+  $('arc-ai').onclick=function(){var m=seq[(p+12)%24];var t='I asked Arcana, the Omega42 Oracle of Possibilities: "'+q+'"\n\nMy reading (drawn by the Omega42 law, phase '+p+' of the canonical cycle, state ('+st[0]+', '+st[1]+')):\n- What is present: '+a+' · '+A[a].n+' ('+A[a].w+')\n- What is becoming: '+b+' · '+A[b].n+' ('+A[b].w+')\n- The turning point, in '+k+' steps: '+turn+' · '+A[turn].n+'\n- The Mirror: '+D(m[0])+' · '+A[D(m[0])].n+' and '+D(m[1])+' · '+A[D(m[1])].n+'\n\nPlease offer an imaginative, reflective interpretation of this reading in relation to my question. This is for entertainment and personal reflection only: do not predict events or give medical, legal or financial advice, and leave the meaning to me.';
+    $('arc-more').innerHTML='<label for="arc-prompt" style="display:block;margin-top:1rem">Copy this into the AI you use</label><textarea id="arc-prompt" readonly></textarea><div class="row" style="margin-top:.5rem"><button type="button" id="arc-copy">Copy</button></div>';
+    $('arc-prompt').value=t;$('arc-copy').onclick=function(){$('arc-prompt').select();try{navigator.clipboard.writeText(t);this.textContent='Copied'}catch(e){document.execCommand&&document.execCommand('copy')}}};
+  $('arc-out').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('arc-form').onsubmit=function(e){e.preventDefault();var q=$('arc-q').value.trim();if(!q){$('arc-q').focus();return}var info=phaseOf(q);if(!info.len){$('arc-out').innerHTML='<p class="note">Ask with at least one letter.</p>';return}reading(q,'Your question.',info)};
+$('arc-daily').onclick=function(){var d=new Date(),day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5),t=day%24;reading('The daily Arcana for '+d.toISOString().slice(0,10),'The daily Arcana.',{sum:day,len:1,t:t,src:'The number of days since 1 January 1970 is'})};
+var gcd=function(a,b){return b?gcd(b,a%b):a};function lattice(){var ns=[].slice.call($('cycles').querySelectorAll('input:checked')).map(function(e){return +e.value});var l=ns.reduce(function(a,b){return a*b/gcd(a,b)},1);$('lattice').textContent=ns.length?'Common lattice: '+l+'; intervals: '+ns.map(function(n){return n+' → '+l/n}).join(', '):'Select cycles'}
+[1,5,7,8,9,10,12,24,60,64].forEach(function(n){var label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=n;input.checked=[7,9,12,24].indexOf(n)>=0;input.onchange=lattice;label.appendChild(input);label.appendChild(document.createTextNode(' '+n));$('cycles').appendChild(label)});lattice();
+})();
 </script>

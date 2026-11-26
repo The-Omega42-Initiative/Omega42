@@ -49,7 +49,7 @@ Take a rule a child can follow: **add the last two numbers and keep only the rem
 
 After twenty-four steps it is back at 2 and 5 — for ever. Start from any of the 81 possible pairs and you land on one of five such loops: three of twenty-four, one of eight, and a single still point. Nothing in this world begins and nothing ends; every position meets its exact mirror twelve steps away; and twenty-four steps bring all 81 pairs home at the same moment.
 
-**Ω42 takes this small, exact world as everything there is** — and lets you ask it anything.
+**Ω42 takes this exact world, eighty-one states at its seed and infinite in its depth, as everything there is** — and lets you ask it anything.
 
 ## What happens when you ask
 
