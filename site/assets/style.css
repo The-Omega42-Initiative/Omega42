@@ -626,3 +626,86 @@ article.paper section + section { margin-top: .6rem; }
 @media (max-width: 600px) { .cg { padding: 16px !important; border-radius: 12px; } }
 .cb-instruments a.world { min-height: 9.5rem; text-decoration: none; }
 .cb-instruments .world p { margin: 0; color: #c3cbe0; font-size: .95rem; }
+
+/* ===== 26 Nov 2026: the doorway (WEB-03A/B) - the emblem as the entrance to Omega42 ===== */
+.doorway { position: relative; margin-inline: calc(50% - 50vw); padding: clamp(2.2rem, 5vw, 4.5rem) 1rem clamp(2.5rem, 5vw, 4rem); color: #eef3ff; overflow: hidden;
+  background: radial-gradient(ellipse 60% 55% at 50% 52%, rgba(120, 220, 255, .22), transparent 70%), radial-gradient(ellipse 50% 60% at 15% 90%, rgba(180, 120, 255, .22), transparent 70%), radial-gradient(ellipse 45% 50% at 88% 12%, rgba(255, 200, 100, .14), transparent 70%), linear-gradient(180deg, #070b1f 0%, #0b1030 55%, #0a0f26 100%); }
+.dw-in { max-width: 74rem; margin: 0 auto; display: grid; justify-items: center; text-align: center; gap: .9rem; }
+.doorway .eyebrow { color: #9eeeff; }
+.doorway h1 { margin: 0; font-size: clamp(2.3rem, 5.6vw, 4.6rem); line-height: 1.05; color: #fff; text-shadow: 0 0 40px rgba(158, 238, 255, .25); }
+.doorway h1 em { color: #ffd36b; }
+.dw-sub { max-width: 46rem; margin: 0; color: #c9d3f2; font-size: clamp(1rem, 1.6vw, 1.2rem); }
+.dw-stage { position: relative; width: min(94vw, 46vw, 40rem); min-width: min(94vw, 22rem); margin: .4rem auto 0; }
+.doorway-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.dw-halo { transform-origin: 200px 200px; animation: dw-breathe 6s ease-in-out infinite; }
+.dw-rim { fill: none; stroke: #e9fbff; stroke-width: 3.2; filter: drop-shadow(0 0 10px #8fe9ff) drop-shadow(0 0 26px rgba(143, 233, 255, .7)); }
+.dw-facets .facet { opacity: .22; stroke: rgba(255, 255, 255, .25); stroke-width: .8; mix-blend-mode: screen; animation: dw-irid 9s ease-in-out infinite; animation-delay: calc(var(--i) * -1s); }
+.dw-tri { fill: none; stroke: #ffd36b; stroke-width: 2.4; stroke-dasharray: 1; stroke-dashoffset: 0; filter: drop-shadow(0 0 6px rgba(255, 211, 107, .8)); }
+.dw-hex { fill: none; stroke: #c8a6ff; stroke-width: 2.2; stroke-dasharray: 1; stroke-dashoffset: 0; filter: drop-shadow(0 0 6px rgba(200, 166, 255, .8)); }
+.dw-seg { stroke-width: 2.6; stroke-linecap: round; opacity: .9; animation: dw-seg-in .5s ease-out; }
+.dw-seg.a { stroke: #ffd36b; filter: drop-shadow(0 0 4px rgba(255, 211, 107, .9)); }
+.dw-seg.b { stroke: #7ff0ff; filter: drop-shadow(0 0 4px rgba(127, 240, 255, .9)); }
+.dw-core { transform-origin: 200px 200px; animation: dw-breathe 4s ease-in-out infinite; }
+.dw-nodes circle { fill: #141a46; stroke: #dff8ff; stroke-width: 1.6; transition: fill .25s, stroke .25s, filter .25s, r .25s; }
+.dw-nodes text { font-family: var(--mono); font-size: 17px; font-weight: 700; fill: #f4f8ff; text-anchor: middle; pointer-events: none; transition: fill .25s; }
+.dw-nodes .crown circle { stroke: #ffd36b; stroke-width: 2.2; } .dw-nodes .crown text { fill: #ffd36b; }
+.dw-nodes .lit circle { fill: #ffffff; stroke: #ffffff; filter: drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 22px #8fe9ff); }
+.dw-nodes .lit text { fill: #0b1030; }
+.dw-walker { fill: #ffffff; opacity: 0; transition: opacity .4s; }
+.antipode .dw-rim { stroke: #fff2cf; filter: drop-shadow(0 0 10px #ffd36b) drop-shadow(0 0 26px rgba(255, 211, 107, .7)); }
+.antipode .dw-facets .facet { filter: hue-rotate(150deg); }
+/* the 30-second performance */
+.doorway[data-stage="Genesis"] .dw-nodes g { animation: dw-appear 2.6s ease both; }
+.doorway[data-stage="Genesis"] .dw-nodes g:nth-child(n) { animation-delay: calc(var(--n, 0) * .1s); }
+.doorway[data-stage="Genesis"] .dw-tri, .doorway[data-stage="Genesis"] .dw-hex { stroke-dashoffset: 1; }
+.doorway[data-stage="Formation"] .dw-tri { animation: dw-draw 1.6s ease forwards; stroke-dashoffset: 1; }
+.doorway[data-stage="Formation"] .dw-hex { animation: dw-draw 1.6s ease 1.2s forwards; stroke-dashoffset: 1; }
+.doorway.paused * { animation-play-state: paused !important; }
+.dw-enter { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 25%; aspect-ratio: 1; border-radius: 50%; display: grid; place-content: center; gap: .1rem; text-decoration: none; color: #0b1030;
+  background: radial-gradient(circle at 40% 35%, #ffffff, #bff4ff 55%, #7fe3f5); box-shadow: 0 0 0 3px rgba(255, 255, 255, .5), 0 0 30px rgba(143, 233, 255, .9), 0 0 70px rgba(143, 233, 255, .5); transition: transform .25s, box-shadow .25s; }
+.dw-enter b { font-family: var(--display); font-size: clamp(1.3rem, 3.2vw, 2.3rem); line-height: 1; }
+.dw-enter span { font-family: var(--mono); font-size: clamp(.6rem, 1vw, .78rem); letter-spacing: .2em; text-transform: uppercase; }
+.dw-enter:hover, .dw-enter:focus-visible { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 0 0 4px #fff, 0 0 44px #bff4ff, 0 0 110px rgba(143, 233, 255, .8); outline: none; }
+.dw-stage:hover .dw-rim { stroke-width: 4.2; }
+.dw-read { margin: 0; font-family: var(--mono); font-size: .82rem; color: #9eeeff; letter-spacing: .04em; min-height: 1.3em; }
+.dw-ctl { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+.dw-ctl button, .dw-how { font-family: var(--mono); font-size: .72rem; letter-spacing: .05em; color: #cfd8f5; background: transparent; border: 1px solid rgba(255, 255, 255, .25); border-radius: 99px; padding: .3rem .8rem; cursor: pointer; text-decoration: none; }
+.dw-ctl button:hover, .dw-ctl button:focus-visible, .dw-how:hover { color: #fff; border-color: #8fe9ff; }
+.dw-tag { margin: .4rem 0 0; font-family: var(--display); font-size: clamp(1.1rem, 2vw, 1.45rem); color: #fff; } .dw-tag em { color: #9eeeff; }
+.dw-paths { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: .4rem; }
+.dw-paths a { padding: .6rem 1.1rem; border-radius: 99px; text-decoration: none; color: #0b1030; background: #ffd36b; font-weight: 600; font-size: .95rem; box-shadow: 0 6px 22px -10px rgba(255, 211, 107, .9); }
+.dw-paths a:nth-child(n+2) { background: rgba(255, 255, 255, .08); color: #eef3ff; border: 1px solid rgba(255, 255, 255, .28); box-shadow: none; }
+.dw-paths a:hover, .dw-paths a:focus-visible { transform: translateY(-2px); border-color: #8fe9ff; }
+@keyframes dw-breathe { 0%, 100% { transform: scale(1); opacity: .75; } 50% { transform: scale(1.045); opacity: 1; } }
+@keyframes dw-irid { 0%, 100% { opacity: .14; filter: hue-rotate(0deg) brightness(1); } 50% { opacity: .38; filter: hue-rotate(40deg) brightness(1.5); } }
+@keyframes dw-draw { to { stroke-dashoffset: 0; } }
+@keyframes dw-appear { from { opacity: 0; transform: scale(.6); transform-box: fill-box; transform-origin: center; } to { opacity: 1; transform: scale(1); transform-box: fill-box; transform-origin: center; } }
+@keyframes dw-seg-in { from { opacity: 0; } to { opacity: .9; } }
+@media (prefers-reduced-motion: reduce) { .doorway * { animation: none !important; transition: none !important; } .dw-tri, .dw-hex { stroke-dashoffset: 0 !important; } }
+@media (max-width: 700px) { .dw-stage { width: 94vw; } .dw-paths a { font-size: .88rem; padding: .5rem .9rem; } }
+/* the Living Frontier (WEB-03D) */
+.frontier-live .fl-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.frontier-live .fl { display: grid; gap: .4rem; align-content: start; padding: 1.1rem 1.2rem; border-radius: 14px; text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--raised); transition: transform .2s, border-color .2s; }
+.frontier-live .fl:hover { transform: translateY(-3px); border-color: #7fe3f5; }
+.frontier-live .fl .k { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan, #2a9fb8); }
+.frontier-live .fl b { font-family: var(--display); font-size: 1.25rem; font-weight: 500; }
+.frontier-live .fl.q { background: linear-gradient(150deg, #101634, #1b1342); color: #eef3ff; border-color: transparent; }
+.frontier-live .fl.q .k { color: #ffd36b; }
+/* instrument identities (WEB-03C) */
+.cb-instruments .world svg.gl { width: 56px; height: 56px; margin-bottom: .2rem; }
+.gl .s1 { stroke: #7fe3f5; } .gl .s2 { stroke: #ffd36b; } .gl .s3 { stroke: #c8a6ff; } .gl .f1 { fill: #7fe3f5; } .gl .f2 { fill: #ffd36b; }
+.gl * { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.gl .f1, .gl .f2 { stroke: none; }
+/* the compass in the header (WEB-03E) */
+.brand .compass { width: 1.55em; height: 1.55em; vertical-align: -.38em; margin-right: .3em; }
+.brand .compass circle.r { fill: none; stroke: currentColor; stroke-width: 1.6; opacity: .8; }
+.brand .compass .p { fill: #7fe3f5; } .brand .compass .p.c { fill: #e2a92f; }
+.brand:hover .compass .r { stroke: #7fe3f5; opacity: 1; }
+main > .wide > .doorway:first-child { margin-top: -2.5rem; }
+.doorway { padding-top: clamp(1.6rem, 3.5vw, 2.8rem); }
+.dw-stage { width: min(94vw, 38rem, 60vh); min-width: min(94vw, 20rem); }
+.dw-seg { stroke-width: 2.1; }
+.brand .compass { width: 1.2em; height: 1.2em; vertical-align: -.22em; margin-right: .22em; }
+.nav { gap: .2rem 1.1rem; }
+.frontier-live .fl-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); }
+.dw-nodes .lit circle { r: 21; }

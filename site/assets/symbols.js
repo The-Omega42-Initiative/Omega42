@@ -5,7 +5,7 @@
   function pt(k) { var a = (-90 + 40 * (k % 9)) * Math.PI / 180; return [C + R * Math.cos(a), C + R * Math.sin(a)]; }
   function path(seq, closed) { return 'M' + seq.map(function (k) { var p = pt(k); return p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' L') + (closed ? ' Z' : ''); }
   function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); (parent || svg).appendChild(e); return e; }
-  var loop = [9, 1, 1, 2, 3, 5, 8, 4, 3, 7, 1, 8, 9, 8, 8, 7, 6, 4, 1, 5, 6, 2, 8, 1];
+  var loop = [2, 5, 7, 3, 1, 4, 5, 9, 5, 5, 1, 6, 7, 4, 2, 6, 8, 5, 4, 9, 4, 4, 8, 3];   // the canonical cycle from the seeds (2, 5), Core Part 1.8
   el('circle', {cx: C, cy: C, r: R, 'class': 'rim'});
   el('line', {x1: C, y1: C - R - 22, x2: C, y2: C + R + 22, 'class': 'axis', 'data-layer': 'mirror'});
   var layers = {
