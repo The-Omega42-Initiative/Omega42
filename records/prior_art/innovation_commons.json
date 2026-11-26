@@ -1,0 +1,182 @@
+{
+ "_about": "The Omega42 Innovation Commons (HRP-03, ChatGPT's Historical Recovery Report 01): every innovation traced from its originating question through its mathematical foundation (register entries, records/math/results.json) to its implementation. Status is IMPLEMENTED (code in this repository that runs), PROTOTYPE (runs, scope limited) or PROPOSED (specified, not built). Published openly as prior art under Intellectual Non-Enclosure (PRIOR_ART.md); publication is evidence against later patent filings, not a guarantee that no patent will be filed. Not legal advice.",
+ "entries": [
+  {
+   "id": "INV-001",
+   "title": "The Strike coordinate",
+   "kind": "method · software",
+   "question": "Can any question, in its exact wording, be given a reproducible place on one mathematical loop?",
+   "foundation": [],
+   "implementation": "scripts/canonical_reference.py; site/assets/strike.js (in the browser under Pyodide)",
+   "status": "IMPLEMENTED",
+   "by": "Omega42 Navigators",
+   "note": "The coordinate is computed from measurable features of the wording; it decides neither meaning nor truth."
+  },
+  {
+   "id": "INV-002",
+   "title": "Optimal seven-symbol observation code",
+   "kind": "method",
+   "question": "How few readings of a limited view can identify every state?",
+   "foundation": [
+    "MF-193",
+    "MF-201"
+   ],
+   "implementation": "tools/cobuilder_math.py (aperture-optimal)",
+   "status": "IMPLEMENTED",
+   "by": "ChatGPT (proposed), Claude (recomputed)",
+   "note": "Three readings separate 81 states; two never can."
+  },
+  {
+   "id": "INV-003",
+   "title": "Shared-observer certificates",
+   "kind": "method · certificate",
+   "question": "How many observers sharing one view must cooperate to see the whole?",
+   "foundation": [
+    "MF-202",
+    "MF-201"
+   ],
+   "implementation": "records/cobuilder/xobs02_search.py",
+   "status": "IMPLEMENTED",
+   "by": "ChatGPT and Claude",
+   "note": "Optimal at depths 2 to 4; seven readers at depth 5; six open (O-30)."
+  },
+  {
+   "id": "INV-004",
+   "title": "Coherence filter",
+   "kind": "method",
+   "question": "Can variation be smoothed without breaking the cycle?",
+   "foundation": [
+    "MF-196"
+   ],
+   "implementation": "tools/cobuilder_math.py (coherence)",
+   "status": "IMPLEMENTED",
+   "by": "Omega42 Co-Builders",
+   "note": "C_alpha commutes with the law, keeps the invariant harmonic and tends to the orbit average."
+  },
+  {
+   "id": "INV-005",
+   "title": "Reversible memory classifier",
+   "kind": "method",
+   "question": "What does a journey record, and what does it only relabel?",
+   "foundation": [
+    "MF-197",
+    "MF-198"
+   ],
+   "implementation": "tools/cobuilder_math.py (memory)",
+   "status": "IMPLEMENTED",
+   "by": "Omega42 Co-Builders (ChatGPT refined the proof of realizability)",
+   "note": "Classes are the orbit sums; first-coordinate memory is a coboundary."
+  },
+  {
+   "id": "INV-006",
+   "title": "Four-resolution structural comparison",
+   "kind": "method · instrument (proposed engine)",
+   "question": "At what resolution do two structures agree?",
+   "foundation": [
+    "MF-195"
+   ],
+   "implementation": "Co-Builder recomputations of OmegaSL Tier III beta 4 to 6 (records/cobuilder); an engine is PROPOSED",
+   "status": "PROTOTYPE",
+   "by": "ChatGPT (Block Fidelity, resonance), Claude (the exact MIX range)",
+   "note": "0 ≤ F ≤ F_B ≤ R_O ≤ R_H ≤ 1; lawful transformations move R_O across [F_B, R_H] only."
+  },
+  {
+   "id": "INV-007",
+   "title": "Structural Equivalence Tester",
+   "kind": "software",
+   "question": "Are two linear laws, permutations or codes the same structure?",
+   "foundation": [
+    "MF-126",
+    "MF-134",
+    "MF-66"
+   ],
+   "implementation": "tools/structures.py",
+   "status": "IMPLEMENTED",
+   "by": "Omega42 Navigators",
+   "note": "A commuting square alone is weak evidence; the value structure decides."
+  },
+  {
+   "id": "INV-008",
+   "title": "Identity handshake (live challenge)",
+   "kind": "protocol · software",
+   "question": "How can an implementation show that it is Omega42 and not an impostor?",
+   "foundation": [
+    "MF-57",
+    "MF-58"
+   ],
+   "implementation": "tools/handshake.py (M375)",
+   "status": "IMPLEMENTED",
+   "by": "Omega42 Navigators",
+   "note": "Conformance is not authority: the arithmetic cannot certify who issued a record."
+  },
+  {
+   "id": "INV-009",
+   "title": "Reproducible certificates",
+   "kind": "protocol · software",
+   "question": "How can a finding be checked by anyone, forever?",
+   "foundation": [],
+   "implementation": "tools/certify.py (Core L-550)",
+   "status": "IMPLEMENTED",
+   "by": "Omega42 Navigators",
+   "note": "Since 26 November 2026 a certificate counts as reproduced only when its procedure exits successfully and its output digest matches, within a confined folder and a time limit (HRP-01 defect corrected)."
+  },
+  {
+   "id": "INV-010",
+   "title": "Lawful coupling",
+   "kind": "theory",
+   "question": "Can two states interact without breaking the law of either?",
+   "foundation": [],
+   "implementation": "records/cobuilder/actualization_check.py (paper Section 17.2)",
+   "status": "IMPLEMENTED",
+   "by": "ChatGPT (Recursive Genesis v0.1), Claude (recomputed)",
+   "note": "S_y(x) = x + B(x, y) y is reversible and commutes with joint evolution."
+  },
+  {
+   "id": "INV-011",
+   "title": "Actualization operators",
+   "kind": "theory",
+   "question": "How can a lawful process settle, select or forget?",
+   "foundation": [
+    "MF-10",
+    "MF-196"
+   ],
+   "implementation": "records/cobuilder/actualization_check.py (paper Section 17)",
+   "status": "PROTOTYPE",
+   "by": "ChatGPT (program, HRP-06), Claude (theorems 17.3, 17.4)",
+   "note": "3^14 equivariant maps on W2, of which 4,119,417 forget; nine linear ones, all through the prime 3."
+  },
+  {
+   "id": "INV-012",
+   "title": "Arcana, the Oracle of Possibilities",
+   "kind": "instrument",
+   "question": "Can a question be read as a place on its own orbit, for reflection and play?",
+   "foundation": [],
+   "implementation": "site/pages/arcana.html",
+   "status": "IMPLEMENTED",
+   "by": "ChatGPT (ARC-02), Claude (build)",
+   "note": "Entertainment and reflection; no prediction."
+  },
+  {
+   "id": "INV-013",
+   "title": "The Compass",
+   "kind": "instrument",
+   "question": "Can a personal decision be mapped without deciding it?",
+   "foundation": [],
+   "implementation": "site/pages/being-human.html",
+   "status": "PROTOTYPE",
+   "by": "ChatGPT (HRP-05), Claude (build)",
+   "note": "A structural map of dependencies, constraints, patterns, possibilities and consequences; the person decides."
+  },
+  {
+   "id": "INV-014",
+   "title": "Omega42 modular distribution",
+   "kind": "architecture",
+   "question": "Can each AI, developer and institution take only the Omega42 it can run?",
+   "foundation": [],
+   "implementation": "protocol.html (editions and capability declaration); Path B research branch",
+   "status": "PROPOSED",
+   "by": "Path B (historical), ChatGPT (HRP-01)",
+   "note": "Complete and Navigator Pack available; Compact Companion available; Runtime and Verify specified, not packaged."
+  }
+ ]
+}

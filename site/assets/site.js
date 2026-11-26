@@ -225,3 +225,28 @@
   var d = new Date(), n = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5), w = W[n % W.length];
   t.textContent = w[0]; l.href = w[1];
 })();
+/* Living Questions (HRP-04): every section heading of a reading page, and any element with data-question, opens as a question
+   in the Strike app. The question carries its source (page, section, release) and travels in session storage, never in a URL. */
+(function () {
+  var V = (document.querySelector('meta[name="o42-version"]') || {}).content || 'V335 Rev.450 STABLE';
+  function go(q, mode) {
+    var data = {q: q, mode: mode || 'explore', present: 'ere', go: '0'};
+    try { sessionStorage.setItem('o42-ask', JSON.stringify(data)); location.href = 'strike.html#from=living'; }
+    catch (err) { location.href = 'strike.html#' + new URLSearchParams(data).toString(); }
+  }
+  var page = document.title.replace(/\s*[·|—-]\s*(Ω42|Omega42).*$/, '');
+  document.querySelectorAll('article.paper h2, article.paper h3, .companion article h2, .lq-scope h2, .lq-scope h3').forEach(function (h) {
+    var t = h.textContent.replace(/^§\s*/, '').replace(/\s+/g, ' ').trim(); if (!t || t.length < 4 || h.querySelector('.lq')) return;
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'lq'; b.textContent = 'Ask about this ↗';
+    b.setAttribute('aria-label', 'Explore "' + t + '" with the Navigator');
+    b.addEventListener('click', function () {
+      go('What does "' + t + '" open up: what rests beneath it, what does it hide, and where does it lead? (from ' + page + ', Omega42 ' + V + ')');
+    });
+    h.appendChild(document.createTextNode(' ')); h.appendChild(b);
+  });
+  document.querySelectorAll('[data-question]').forEach(function (el) {
+    el.classList.add('lq-link'); el.setAttribute('role', 'button'); el.tabIndex = 0;
+    var fire = function () { go(el.getAttribute('data-question'), el.getAttribute('data-mode')); };
+    el.addEventListener('click', fire); el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fire(); } });
+  });
+})();

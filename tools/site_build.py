@@ -15,15 +15,15 @@ import congruence as cg
 
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
-NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-journey', 'The Philosophy of Being: a journey'), ('vision', 'The founding vision'), ('aperture', 'The Human Aperture')]),
-       ('Observatory', [('observatory', 'The Universal Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
+NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-journey', 'The Philosophy of Being: a journey'), ('being-human', 'The Art of Being Human'), ('consciousness', 'The consciousness programme'), ('vision', 'The founding vision'), ('aperture', 'The Human Aperture')]),
+       ('Observatory', [('observatory', 'The Universal Observatory'), ('sky', 'The Celestial Observatory'), ('elements', 'The Elemental Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
        ('Instruments', [('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
        ('Explore', [('questions', 'World of Questions'), ('strike', 'Ask a question'), ('solve', 'SOLVE: bring a problem'), ('explore', 'How Omega42 works'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('speculate', 'Speculative Foundations')]),
        ('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
-       ('Protocol', [('protocol', 'Core and Companion'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
-       ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
+       ('Protocol', [('protocol', 'Core and Companion'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
+       ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('innovation', 'The Innovation Commons'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas'), ('governance', 'Governance')]),
-       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('archive-report', 'Archive salvage report')])]
+       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('research-development', 'Research and development'), ('archive-report', 'Archive salvage report')])]
 
 
 def nav_html(current):
@@ -100,7 +100,8 @@ def build(out, repo):
                     % (label, f, os.path.getsize(src) // 1024, txt, txt, h, h[:16]))
     lite = {}   # the lighter editions (ai/) and the mathematical paper (docs/), served directly beside the .docx files
     for key, rel, label in (('PACK', ('ai', 'Omega42_Navigator_Pack.md'), 'Navigator Pack'), ('COMPACT', ('ai', 'Omega42_Companion_Compact.md'), 'Compact Companion'),
-                            ('PAPER', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.md'), 'Mathematical paper (Markdown)'), ('PAPERPDF', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.pdf'), 'Mathematical paper (PDF)')):
+                            ('PAPER', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.md'), 'Mathematical paper (Markdown)'), ('PAPERPDF', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.pdf'), 'Mathematical paper (PDF)'),
+                            ('RD', ('docs', 'RESEARCH_AND_DEVELOPMENT.md'), 'Research and Development Programme (Markdown)')):
         src = os.path.join(ROOT, *rel)
         if not os.path.exists(src): continue
         shutil.copy(src, os.path.join(out, 'protocol', rel[-1])); h = sha_file(src)
@@ -167,9 +168,28 @@ def build(out, repo):
         subs['{{REGISTER_FULL}}'] = ''.join(
             '<article class="mf" id="%s"><h3><a href="#%s">%s</a> <span class="cbs s-%s">%s</span></h3><p class="mf-st">%s</p><dl>'
             '<dt>Derivation</dt><dd>%s</dd><dt>Domain</dt><dd>%s</dd><dt>Depends on</dt><dd>%s</dd><dt>Recompute</dt><dd><code>%s</code></dd>'
-            '<dt>Does not follow</dt><dd>%s</dd></dl></article>' % (x['id'].lower(), x['id'].lower(), e(x['id']), 'agreed' if x['status'] == 'EXACT' else 'proposed', e(x['status']),
-            e(x['statement']), e(x.get('derivation')), e(x.get('domain')), e(x.get('depends')), e(x.get('tool')), e(x.get('does_not_follow'))) for x in rr)
+            '<dt>Does not follow</dt><dd>%s</dd></dl>{{BUILT_ON_%s}}</article>' % (x['id'].lower(), x['id'].lower(), e(x['id']), 'agreed' if x['status'] == 'EXACT' else 'proposed', e(x['status']),
+            e(x['statement']), e(x.get('derivation')), e(x.get('domain')), e(x.get('depends')), e(x.get('tool')), e(x.get('does_not_follow')), x['id']) for x in rr)
+    comp = os.path.join(ROOT, 'records', 'prior_art', 'innovation_commons.json')   # the Innovation Commons, traced question -> mathematics -> implementation
+    built_on = {}
+    if os.path.exists(comp):
+        cm = json.load(open(comp, encoding='utf-8')); e = lambda x: html.escape(str(x))
+        for x in cm['entries']:
+            for f in x['foundation']: built_on.setdefault(f, []).append(x)
+        subs['{{COMMONS_COUNT}}'] = str(len(cm['entries']))
+        subs['{{COMMONS}}'] = ''.join(
+            '<article class="inv" id="%s"><div class="inv-h"><span class="mono">%s</span> <span class="cbs s-%s">%s</span> <span class="note">%s</span></div><h3>%s</h3>'
+            '<p class="inv-q" data-question="%s">%s</p><dl><dt>Mathematics</dt><dd>%s</dd><dt>Implementation</dt><dd><code>%s</code></dd><dt>Contributors</dt><dd>%s</dd></dl><p class="note">%s</p></article>' % (
+                x['id'].lower(), x['id'], {'IMPLEMENTED': 'agreed', 'PROTOTYPE': 'recomputed', 'PROPOSED': 'proposed'}[x['status']], x['status'], e(x['kind']), e(x['title']),
+                e(x['question']), e(x['question']), ', '.join('<a href="paper-register.html#%s">%s</a>' % (f.lower(), f) for f in x['foundation']) or 'the protocol itself',
+                e(x['implementation']), e(x['by']), e(x['note'])) for x in cm['entries'])
+        json.dump(cm, open(os.path.join(out, 'api', 'innovation.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    if '{{REGISTER_FULL}}' in subs:
+        subs['{{REGISTER_FULL}}'] = re.sub(r'\{\{BUILT_ON_(MF-\d+)\}\}', lambda m: '<p class="note">Built on this: %s</p>' % ', '.join(
+            '<a href="innovation.html#%s">%s %s</a>' % (x['id'].lower(), x['id'], html.escape(x['title'])) for x in built_on[m.group(1)]) if m.group(1) in built_on else '', subs['{{REGISTER_FULL}}'])
     paper = os.path.join(ROOT, 'docs', 'OMEGA42_MATHEMATICAL_PAPER.md')
+    rdp = os.path.join(ROOT, 'docs', 'RESEARCH_AND_DEVELOPMENT.md')
+    subs['{{RD_BODY}}'] = md_html(open(rdp, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(rdp) else ''
     subs.update({'{{PAPER}}': md_html(open(paper, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(paper) else ''})
     for key, v in lite.items():
         subs.update({'{{%s_PATH}}' % key: v['path'], '{{%s_KB}}' % key: str(v['kb']), '{{%s_SHA}}' % key: v['sha']})

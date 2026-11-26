@@ -1,0 +1,66 @@
+<!--{"title": "The Elemental Observatory", "desc": "The periodic table read through Omega42: every element's atomic number as a digital root and a place on the 24-step loop. A constructed lens for exploration, with no chemical inference.", "nav": "elements"}-->
+<div class="wide">
+<section class="band"><div class="stack">
+  <div class="eyebrow">Observatory · the Elemental room</div>
+  <h1>The elements, <em>read on one loop.</em></h1>
+  <p class="lede">Each element is fixed by one whole number, its atomic number Z. Omega42 reads that number in two exact ways: its digital root (Z modulo 9, with 9 for 0) and its place on the canonical 24-step loop (step Z modulo 24). Colour the table by either reading, then select an element.</p>
+  <div class="ctas"><button class="btn" type="button" data-lens="root" aria-pressed="true">Digital root</button><button class="btn ghost" type="button" data-lens="loop" aria-pressed="false">Place on the loop</button><button class="btn ghost" type="button" data-lens="block" aria-pressed="false">Blocks (chemistry)</button></div>
+</div></section>
+<section class="stack">
+  <div class="pt-wrap"><div id="pt" class="pt" role="grid" aria-label="Periodic table"></div></div>
+  <div class="grid2" style="align-items:start">
+    <div class="panel" id="pt-read" aria-live="polite"><p class="note">Select an element.</p></div>
+    <div class="panel gold"><p><b>A constructed lens.</b> The readings are exact arithmetic on Z and nothing more. Chemistry depends on electron configuration, nuclear structure and energy, which Z modulo 9 does not determine. No stability, reactivity or property is inferred from a residue. The noble gases have atomic numbers 2, 10, 18, 36, 54, 86 and 118, with digital roots 2, 1, 9, 9, 9, 5 and 1: a pattern to notice, not a law.</p></div>
+  </div>
+</section>
+</div>
+<script>
+(function () {
+  var S = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"], N = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosphorus", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium", "Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron", "Cobalt", "Nickel", "Copper", "Zinc", "Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium", "Zirconium", "Niobium", "Molybdenum", "Technetium", "Ruthenium", "Rhodium", "Palladium", "Silver", "Cadmium", "Indium", "Tin", "Antimony", "Tellurium", "Iodine", "Xenon", "Caesium", "Barium", "Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium", "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium", "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon", "Francium", "Radium", "Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstadtium", "Roentgenium", "Copernicium", "Nihonium", "Flerovium", "Moscovium", "Livermorium", "Tennessine", "Oganesson"];
+  var D = [2,5,7,3,1,4,5,9,5,5,1,6,7,4,2,6,8,5,4,9,4,4,8,3];
+  var ends = [2, 10, 18, 36, 54, 86, 118];
+  function place(z) {
+    var p = 0; while (z > ends[p]) p++; var s = p ? ends[p - 1] + 1 : 1, o = z - s;
+    if (p === 0) return [1, z === 1 ? 1 : 18, 's'];
+    if (p < 3) return [p + 1, o < 2 ? o + 1 : o + 11, o < 2 ? 's' : 'p'];
+    if (p < 5) return [p + 1, o + 1, o < 2 ? 's' : o < 12 ? 'd' : 'p'];
+    if (o < 2) return [p + 1, o + 1, 's'];
+    if (o < 17) return [p + 4, o + 1, 'f'];   // lanthanides and actinides in their own rows
+    return [p + 1, o - 13, o < 26 ? 'd' : 'p'];
+  }
+  var COL = ['#e8d9b0', '#f3c45f', '#f3a33f', '#e9795b', '#c95f8a', '#8f6bc9', '#5b7fe0', '#4fb3d9', '#7fe3f5'];
+  var lens = 'root', pt = document.getElementById('pt');
+  function root(z) { return z % 9 || 9; }
+  function color(z, b) {
+    if (lens === 'root') return COL[root(z) - 1];
+    if (lens === 'loop') return COL[D[z % 24] - 1];
+    return {s: '#f3c45f', p: '#7fe3f5', d: '#c9b6f0', f: '#f0b6c9'}[b];
+  }
+  function draw() {
+    pt.innerHTML = '';
+    for (var z = 1; z <= 118; z++) (function (z) {
+      var q = place(z), c = document.createElement('button'); c.type = 'button'; c.className = 'pt-c';
+      c.style.gridRow = q[0]; c.style.gridColumn = q[1]; c.style.background = color(z, q[2]);
+      c.innerHTML = '<span class="z">' + z + '</span><b>' + S[z - 1] + '</b>'; c.setAttribute('aria-label', N[z - 1] + ', ' + z);
+      c.addEventListener('click', function () { read(z, q); }); pt.appendChild(c);
+    })(z);
+  }
+  function read(z, q) {
+    var st = z % 24, r = root(z);
+    document.getElementById('pt-read').innerHTML = '<h3>' + N[z - 1] + ' · ' + S[z - 1] + '</h3><p>Atomic number <b>' + z + '</b> · period ' + (q[0] > 7 ? q[0] - 3 : q[0]) + ' · ' + q[2] + '-block</p>' +
+      '<p>Digital root <b>' + r + '</b> (' + z + ' ≡ ' + (z % 9) + ' mod 9). Place on the loop: step <b>' + st + '</b>, digit <b>' + D[st] + '</b>' + (D[st] % 3 === 0 ? ', one of the 3–6–9 stations that recur every fourth step' : '') + '.</p>' +
+      '<p class="note">Elements sharing this digital root: ' + S.filter(function (_, i) { return root(i + 1) === r; }).join(' ') + '</p>' +
+      '<p class="lq-link" id="pt-q">Explore ' + N[z - 1] + ' with the Navigator →</p>';
+    document.getElementById('pt-q').addEventListener('click', function () {
+      try { sessionStorage.setItem('o42-ask', JSON.stringify({q: 'What could ' + N[z - 1] + ' (atomic number ' + z + ') open up when read through Omega42, keeping chemistry and symbol apart?', mode: 'hybrid', present: 'ere', go: '0'})); } catch (e) {}
+      location.href = 'strike.html#from=living';
+    });
+  }
+  document.querySelectorAll('[data-lens]').forEach(function (b) { b.addEventListener('click', function () {
+    lens = b.getAttribute('data-lens');
+    document.querySelectorAll('[data-lens]').forEach(function (x) { var on = x === b; x.setAttribute('aria-pressed', on); x.className = on ? 'btn' : 'btn ghost'; });
+    draw();
+  }); });
+  draw();
+})();
+</script>

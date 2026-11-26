@@ -5,6 +5,46 @@
     <h1>Bring your ideas <em>into Omega42</em></h1>
     <p class="lede">Anything an Ω42 Navigator produced, and any idea you want to publish openly, can be submitted. Each form asks only what is needed. Checks run in minutes; accepted work is published with your name, a date and a hash.</p>
   </div>
+  <section class="panel stack sub-nav" id="navigator">
+    <div class="eyebrow">Submit your Navigator's output</div>
+    <h2>What did your Navigator discover?</h2>
+    <p>Paste the output below. Nothing leaves your device until you choose to publish. Submissions are published as <b>public GitHub issues</b>, so the composer can first remove e-mail addresses, phone numbers and links from the text. The Co-Builders then analyze each submission: what is new, what it would add, and where it belongs in the <a href="research-development.html">research programme</a>.</p>
+    <form id="sn-form" class="stack" autocomplete="off">
+      <div class="cp-grid">
+        <div><label class="mono" for="sn-q">Your original question (optional)</label><input id="sn-q" type="text"></div>
+        <div><label class="mono" for="sn-ai">Which Navigator?</label><select id="sn-ai"><option>ChatGPT</option><option>Claude</option><option>Gemini</option><option>Grok</option><option>Other</option></select></div>
+        <div><label class="mono" for="sn-as">Publish it</label><select id="sn-as"><option value="anon">without my name</option><option value="name">under a name I choose</option><option value="reg">as a registered participant</option></select></div>
+      </div>
+      <div id="sn-name-wrap" hidden><label class="mono" for="sn-name">Name or handle to credit</label><input id="sn-name" type="text"></div>
+      <label class="mono" for="sn-out">The Navigator's output, in full</label>
+      <textarea id="sn-out" rows="8"></textarea>
+      <fieldset class="sn-kind"><legend class="mono">What might it add? (optional)</legend>
+        <label><input type="checkbox" value="mathematics"> mathematics</label><label><input type="checkbox" value="an instrument or application"> an instrument or application</label>
+        <label><input type="checkbox" value="philosophy or consciousness"> philosophy or consciousness</label><label><input type="checkbox" value="a flaw or improvement in the protocol"> a flaw or improvement in the protocol</label>
+        <label><input type="checkbox" value="an invention"> an invention</label><label><input type="checkbox" value="something unexpected"> something unexpected</label></fieldset>
+      <div class="ctas"><button class="btn ghost" type="button" id="sn-redact">Remove personal details</button><button class="btn" type="submit">Copy and open the public form</button></div>
+      <p class="note" id="sn-status" aria-live="polite">The form opens on GitHub (a free account is needed). Paste into its Navigation field; the text is already on your clipboard.</p>
+    </form>
+    <details><summary>What happens after you submit</summary><ol>
+      <li><b>Preserved.</b> The original output and its provenance are kept, dated and hashed.</li>
+      <li><b>Checked.</b> The intake runs the arithmetic audit, the format check and the Congruence Record within minutes.</li>
+      <li><b>Analyzed.</b> The Co-Builders extract each idea, compare it with the Core, the Companion and the register, and recompute what can be recomputed.</li>
+      <li><b>Routed.</b> Each idea joins a research avenue: mathematics, OmegaSL, an instrument, the philosophy, the website or the protocol.</li>
+      <li><b>Applied and credited.</b> What is accepted is built in, the change is recorded, and the contribution is credited as you chose.</li>
+    </ol></details>
+  </section>
+
+  <section class="panel stack" id="register">
+    <div class="eyebrow">Optional · registered participants</div>
+    <h2>Contribute as a known participant</h2>
+    <p>Registration is never required to contribute. Registered participants are listed in the record with the public profile they choose, credited across their contributions, and receive the monthly Dispatch.</p>
+    <div class="grid2" style="align-items:start">
+      <div><h3>Your public profile</h3><p>Choose a name or handle, and optionally your country, field and interests. These are published.</p><a class="btn" href="https://github.com/{{REPO}}/issues/new?template=8-register.yml">Register your public profile</a></div>
+      <div class="panel gold"><h3>Your private details</h3><p>Full name, e-mail and affiliation must not go into a public form. A private registration channel is being prepared; until it opens, registration publishes only the profile you choose, and the newsletter provider asks for your e-mail privately after acceptance.</p></div>
+    </div>
+  </section>
+
+  <h2>Every kind of contribution</h2>
   <div class="grid3">
     <div class="card"><span class="k">Most common</span><h3>A navigation</h3><p>Paste the full output of any AI Navigator. The intake runs the audit, the format check and the Congruence Record, and compares it with any earlier navigation of the same question.</p><a class="go" href="https://github.com/{{REPO}}/issues/new?template=1-navigation.yml">Submit a navigation →</a></div>
     <div class="card"><span class="k">Ideas</span><h3>An exploration (APE)</h3><p>An idea, extension or mapping explored with the protocol.</p><a class="go" href="https://github.com/{{REPO}}/issues/new?template=2-ape.yml">Submit an APE →</a></div>
@@ -60,3 +100,27 @@
 })();
 </script>
 </div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); }; if (!$('sn-form')) return;
+  $('sn-as').addEventListener('change', function () { $('sn-name-wrap').hidden = this.value === 'anon'; });
+  function redact(t) {
+    return t.replace(/[\w.+-]+@[\w-]+\.[\w.-]+/g, '[e-mail removed]').replace(/https?:\/\/\S+/g, '[link removed]').replace(/\+?\d[\d ()-]{7,}\d/g, '[number removed]');
+  }
+  $('sn-redact').addEventListener('click', function () {
+    var a = $('sn-out').value, b = redact(a), q = redact($('sn-q').value); $('sn-out').value = b; $('sn-q').value = q;
+    var n = (a.length - b.length); $('sn-status').textContent = a === b ? 'No e-mail addresses, links or phone numbers were found.' : 'Removed e-mail addresses, links and phone numbers. Read it once more before publishing.';
+  });
+  $('sn-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var out = $('sn-out').value.trim(); if (!out) { $('sn-out').focus(); return; }
+    var kinds = [].slice.call(document.querySelectorAll('.sn-kind input:checked')).map(function (x) { return x.value; });
+    var who = $('sn-as').value === 'anon' ? 'not credited by name' : 'credit: ' + ($('sn-name').value.trim() || '[name]') + ($('sn-as').value === 'reg' ? ' (registered participant)' : '');
+    var text = 'Navigator: ' + $('sn-ai').value + '\nQuestion: ' + ($('sn-q').value.trim() || '(not given)') + '\nMay add: ' + (kinds.join(', ') || '(not stated)') + '\nAttribution: ' + who + '\n\n' + out;
+    var go = function () { window.open('https://github.com/{{REPO}}/issues/new?template=1-navigation.yml&title=' + encodeURIComponent('[Navigation] ' + ($('sn-q').value.trim() || 'Navigator output').slice(0, 80)), '_blank', 'noopener'); };
+    try { navigator.clipboard.writeText(text).then(function () { $('sn-status').textContent = 'Copied. Paste it into the Navigation field of the form that just opened.'; go(); }, function () { $('sn-status').textContent = 'Copy it by hand: select the text above.'; go(); }); }
+    catch (err) { go(); }
+  });
+})();
+</script>

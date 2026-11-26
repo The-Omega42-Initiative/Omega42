@@ -14,6 +14,19 @@
     <tbody>{{PROTOCOL_ROWS}}</tbody>
   </table></div>
   <p class="note">Plain-text renderings are for AI systems that cannot read .docx and for copying. The .docx files are the record; the hashes let you check you have the exact release. Earlier releases are on the repository's Releases page, each archived with its own hashes.</p>
+  <h2 id="editions">Editions and their capabilities</h2>
+  <p>Choose the edition that fits your AI. Every edition declares what it can execute, what it can verify and what it leaves out, so that a partially equipped Navigator is never mistaken for a fully equipped one (the capability declaration, HRP-01).</p>
+  <div class="scroll"><table class="cap">
+    <thead><tr><th>Edition</th><th>For</th><th>Executes</th><th>Verifies</th><th>Leaves out</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><b>Complete</b><br><span class="note">Core + Companion (.docx)</span></td><td>AIs with long context; institutions</td><td>everything: the arithmetic, every instrument, every embedded tool</td><td>the full release checks (69 steps), certificates, identity handshake</td><td>nothing</td><td><span class="cbs s-agreed">AVAILABLE</span></td></tr>
+      <tr><td><b>Essential</b><br><span class="note"><a href="{{PACK_PATH}}" download>Navigator Pack</a>, {{PACK_KB}} KB</span></td><td>AIs with a shorter context window</td><td>the Introduction, the foundations, the navigation mechanism, the output format</td><td>the output format; the arithmetic by hand or with the reference script</td><td>the research registers, most instruments, the embedded tools</td><td><span class="cbs s-agreed">AVAILABLE</span></td></tr>
+      <tr><td><b>Compact</b><br><span class="note"><a href="{{COMPACT_PATH}}" download>Compact Companion</a>, {{COMPACT_KB}} KB</span></td><td>broader reasoning beside the Core or the Pack</td><td>nothing on its own: it explains</td><td>nothing on its own</td><td>the full Companion's appendices</td><td><span class="cbs s-agreed">AVAILABLE</span></td></tr>
+      <tr><td><b>Runtime</b><br><span class="note"><a href="py/canonical_reference.py" download>canonical_reference.py</a></span></td><td>developers who need the exact arithmetic</td><td>the canonical loop, the Strike coordinate, the four directions</td><td>its own SHA-256 ({{SCRIPT_SHA_SHORT}}…)</td><td>the documents, the registers, the instruments</td><td><span class="cbs s-recomputed">SCRIPT ONLY</span></td></tr>
+      <tr><td><b>Verify</b></td><td>institutions auditing a Navigator's output</td><td>the format, coherence, certificate and handshake checks as one package</td><td>declared scanner coverage, successful exits, matching digests</td><td>navigation itself</td><td><span class="cbs s-proposed">PROPOSED</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">A Navigator working from a lighter edition says so in its output and names what it could not check. Where any edition differs from the Core, the Core governs. Packaging of Runtime and Verify follows the Path B research and its conformance tests.</p>
   <h2>Check it yourself</h2>
   <pre>python3 scripts/canonical_reference.py --version     # SCRIPT SHA-256 {{SCRIPT_SHA_SHORT}}…
 python3 scripts/canonical_reference.py --navigate "your question"

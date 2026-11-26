@@ -24,7 +24,7 @@ def step(sub):
     hit = [v for k, v in steps.items() if sub in k]
     return ('PASS' if hit and all(v == 'PASS' for v in hit) else 'FAIL' if hit else 'MISSING'), len(hit)
 def cmd(c):
-    r = subprocess.run(c, shell=True, cwd=REPO, capture_output=True, text=True)
+    r = subprocess.run(c, shell=True, cwd=REPO, capture_output=True, text=True, timeout=1800)
     return r.returncode, (r.stdout + r.stderr).strip().splitlines()
 P = text(CORE); C = text(COMP)
 part10 = P[P.index('PART 10: ABBREVIATIONS'):P.index('PART 11')]

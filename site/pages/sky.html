@@ -1,0 +1,75 @@
+<!--{"title": "The Celestial Observatory", "desc": "The 24-step loop as a wheel of the sky: 15 degrees a step, the classical aspects as the elements of order 2, 3, 4, 6, 8 and 12 of the cycle, opposition as negation. A symbolic instrument beside the real cycles of the sky.", "nav": "sky"}-->
+<div class="wide">
+<section class="band"><div class="stack">
+  <div class="eyebrow">Observatory · the Celestial room</div>
+  <h1>A wheel of the sky, <em>turned by one law.</em></h1>
+  <p class="lede">Read the 24 steps of the canonical loop as 24 directions, fifteen degrees apart. The classical aspects of astrology become exact elements of the cycle, and the opposition, half a turn, becomes negation. Choose two points on the wheel to see the angle between them, the aspect it names and what the mathematics says about it.</p>
+  <div class="ctas"><button class="btn" type="button" id="sk-mode" aria-pressed="false">Show the symbolic layer</button><a class="btn ghost" href="#cycles">The real cycles of the sky</a></div>
+</div></section>
+
+<section class="stack sky">
+  <div class="sky-grid">
+    <svg id="sk-wheel" viewBox="-200 -200 400 400" role="img" aria-label="The 24-step wheel; select two points"></svg>
+    <div class="stack">
+      <div class="panel" id="sk-read" aria-live="polite"><p class="note">Select a point on the wheel, then a second one.</p></div>
+      <p class="note">Formal layer: exact statements about the cycle (Core register MF-36, MF-38; Theorem 2.2 of <a href="paper.html">the paper</a>). Symbolic layer: the twelve signs and the names of the aspects, a cultural tradition read through the wheel, with no predictive meaning.</p>
+    </div>
+  </div>
+</section>
+
+<section class="col stack" id="cycles">
+  <h2>The real cycles of the sky</h2>
+  <p>Long before modern astronomy, people found that the sky's cycles fit together in whole numbers. The fits are close, not exact, and the small differences drift over centuries.</p>
+  <div class="scroll"><table><thead><tr><th>Cycle</th><th>Whole-number fit</th><th>How close</th></tr></thead><tbody>
+    <tr><td>Metonic cycle</td><td>19 tropical years ≈ 235 synodic months</td><td>about two hours apart</td></tr>
+    <tr><td>Saros</td><td>223 synodic months ≈ 242 draconic months ≈ 239 anomalistic months</td><td>eclipses repeat after about 18 years 11 days 8 hours</td></tr>
+    <tr><td>The zodiac</td><td>12 signs of 30°, 360° in all</td><td>a convention, not a measurement</td></tr>
+    <tr><td>The Omega42 wheel</td><td>24 steps of 15°, the Pisano period of 9</td><td>exact: A²⁴ = I</td></tr>
+  </tbody></table></div>
+  <p class="note">The Omega42 wheel is exact because it is arithmetic, not observation. It is a lens for exploring cycles, not a model of the solar system.</p>
+</section>
+</div>
+<script>
+(function () {
+  var D = [2,5,7,3,1,4,5,9,5,5,1,6,7,4,2,6,8,5,4,9,4,4,8,3];
+  var SIGNS = ['♈ Aries','♉ Taurus','♊ Gemini','♋ Cancer','♌ Leo','♍ Virgo','♎ Libra','♏ Scorpio','♐ Sagittarius','♑ Capricorn','♒ Aquarius','♓ Pisces'];
+  var ASP = {0: 'conjunction', 1: 'fifteen degrees', 2: 'semi-sextile', 3: 'semi-square', 4: 'sextile', 5: 'seventy-five degrees', 6: 'square', 7: 'one hundred and five degrees', 8: 'trine', 9: 'sesquiquadrate', 10: 'quincunx', 11: 'one hundred and sixty-five degrees', 12: 'opposition'};
+  var svg = document.getElementById('sk-wheel'), NS = 'http://www.w3.org/2000/svg', sel = [], sym = false;
+  function el(t, a, p) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; }
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  function pos(i, r) { var t = (i * 15 - 90) * Math.PI / 180; return [r * Math.cos(t), r * Math.sin(t)]; }
+  function draw() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    el('circle', {r: 160, fill: 'none', stroke: 'currentColor', 'stroke-opacity': .25});
+    if (sym) for (var s = 0; s < 12; s++) {
+      var a = pos(s * 2, 192), b = pos(s * 2 + 1, 178); el('line', {x1: a[0] * .8, y1: a[1] * .8, x2: a[0], y2: a[1], stroke: 'currentColor', 'stroke-opacity': .2});
+      var t = el('text', {x: b[0], y: b[1], 'text-anchor': 'middle', 'dominant-baseline': 'middle', 'font-size': 15, fill: 'currentColor', 'fill-opacity': .7}); t.textContent = SIGNS[s].split(' ')[0];
+    }
+    if (sel.length === 2) { var p = pos(sel[0], 140), q = pos(sel[1], 140); el('line', {x1: p[0], y1: p[1], x2: q[0], y2: q[1], stroke: '#f3a33f', 'stroke-width': 2.5}); }
+    for (var i = 0; i < 24; i++) (function (i) {
+      var p = pos(i, 140), on = sel.indexOf(i) >= 0, d = D[i];
+      var g = el('g', {tabindex: 0, role: 'button', 'aria-label': 'step ' + i + ', digit ' + d, style: 'cursor:pointer'});
+      el('circle', {cx: p[0], cy: p[1], r: on ? 15 : 12, fill: on ? '#f3a33f' : (d % 3 === 0 ? '#7fe3f5' : 'var(--paper, #fff)'), stroke: 'currentColor', 'stroke-opacity': .5}, g);
+      var t = el('text', {x: p[0], y: p[1] + 1, 'text-anchor': 'middle', 'dominant-baseline': 'middle', 'font-size': 12, fill: '#111'}, g); t.textContent = d;
+      var f = function () { pick(i); }; g.addEventListener('click', f); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); f(); } });
+    })(i);
+  }
+  function pick(i) { if (sel.length === 2) sel = []; if (sel[0] === i) return; sel.push(i); draw(); read(); }
+  function read() {
+    var r = document.getElementById('sk-read');
+    if (sel.length < 2) { r.innerHTML = '<p>Step ' + sel[0] + ' · digit <b>' + D[sel[0]] + '</b> · ' + sel[0] * 15 + '°' + (sym ? ' · ' + SIGNS[Math.floor(sel[0] / 2)] : '') + '</p><p class="note">Now select a second point.</p>'; return; }
+    var d = (sel[1] - sel[0] + 24) % 24, m = Math.min(d, 24 - d), ord = 24 / gcd(m, 24), a = D[sel[0]], b = D[sel[1]];
+    var h = '<p><b>' + m * 15 + '°</b> apart: ' + m + ' step' + (m === 1 ? '' : 's') + (sym ? ', the <b>' + ASP[m] + '</b>' : '') + '.</p>';
+    h += '<p>Formal: the step A<sup>' + m + '</sup> has order ' + (m ? ord : 1) + ' in the cycle' + (m ? ': ' + ord + ' such steps make a full turn.' : '.') + '</p>';
+    if (m === 12) h += '<p>Half a turn is negation: A¹² = −I, so the two states are negatives of each other, and the digits ' + a + ' and ' + b + (a + b === 9 || (a === 9 && b === 9) ? ' complete each other to 9' : '') + '.</p>';
+    if (m === 8) h += '<p>A trine: three steps of 8 close the loop. The three arcs of eight steps are the trine arcs of MF-38, which are not the classes of the step of three.</p>';
+    if (m === 6) h += '<p>A square: A⁶ has order 4, and its square is the opposition.</p>';
+    if (sym) h += '<p class="note">' + SIGNS[Math.floor(sel[0] / 2)] + ' → ' + SIGNS[Math.floor(sel[1] / 2)] + '. Symbolic only: the tradition names the angle; the mathematics names the step.</p>';
+    h += '<p class="lq-link" data-question="What could the ' + (ASP[m] || m * 15 + ' degrees') + ' between two points of a cycle mean in my own life?">Explore what this angle could mean →</p>';
+    r.innerHTML = h;
+    var q = r.querySelector('[data-question]'); if (q) q.addEventListener('click', function () { try { sessionStorage.setItem('o42-ask', JSON.stringify({q: q.getAttribute('data-question'), mode: 'speculate', present: 'ere', go: '0'})); } catch (e) {} location.href = 'strike.html#from=living'; });
+  }
+  document.getElementById('sk-mode').addEventListener('click', function () { sym = !sym; this.setAttribute('aria-pressed', sym); this.textContent = sym ? 'Hide the symbolic layer' : 'Show the symbolic layer'; draw(); if (sel.length) read(); });
+  draw();
+})();
+</script>

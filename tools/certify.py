@@ -74,8 +74,10 @@ def check(text):
 
 
 def run_procedure(f):
-    cwd = os.path.join(ROOT, f.get('CWD', '.')) if f.get('CWD', '.') not in ('', '.') else ROOT
-    r = subprocess.run(f['PROCEDURE'], shell=True, cwd=cwd, capture_output=True, text=True)
+    cwd = os.path.realpath(os.path.join(ROOT, f.get('CWD', '.'))) if f.get('CWD', '.') not in ('', '.') else ROOT
+    if cwd != os.path.realpath(ROOT) and not cwd.startswith(os.path.realpath(ROOT) + os.sep): return '', 'CWD leaves the repository'   # confined to the repository
+    try: r = subprocess.run(f['PROCEDURE'], shell=True, cwd=cwd, capture_output=True, text=True, timeout=600)
+    except subprocess.TimeoutExpired: return '', 'timed out after 600 s'
     return hashlib.sha256(r.stdout.encode('utf-8')).hexdigest(), r.returncode
 
 
@@ -84,8 +86,8 @@ def verify(path):
     if f.get('STATUS', '').startswith(('REGISTERED', 'WITHDRAWN')):
         return True, '%s: %s, not rerun' % (f.get('CERTIFICATE', path), f.get('STATUS'))
     h, rc = run_procedure(f)
-    ok = h == f.get('RESULT SHA-256')
-    return ok, '%s: %s (%s) -- %s' % (f.get('CERTIFICATE', path), 'REPRODUCED' if ok else 'NOT REPRODUCED: WITHDRAW IT', f.get('STATUS'), h[:16])
+    ok = rc == 0 and h == f.get('RESULT SHA-256')   # a matching digest from a failed run is not a reproduction
+    return ok, '%s: %s (%s) -- %s' % (f.get('CERTIFICATE', path), 'REPRODUCED' if ok else 'NOT REPRODUCED: WITHDRAW IT' + ('' if rc == 0 else ' (exit %s)' % rc), f.get('STATUS'), h[:16])
 
 
 def skeleton(q='[FILL: the message answered, exactly as given]'):

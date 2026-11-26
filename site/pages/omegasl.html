@@ -1,0 +1,173 @@
+<!--{"title": "OmegaSL: the Structural Language", "desc": "OmegaSL, the Omega42 Structural Language: a language whose grammar is a mathematical law. What it is, why it matters, how the new mathematics types its operators and extends it into a language of inquiry, with a live playground.", "nav": "omegasl"}-->
+<div class="wide">
+<section class="band"><div class="stack">
+  <div class="eyebrow">OmegaSL · the Omega42 Structural Language</div>
+  <h1>A language whose grammar <em>is a law.</em></h1>
+  <p class="lede">In most languages, a sentence is true or false because of what it describes. In OmegaSL, many sentences can be checked by computing them: the roots are the 81 states of the Omega42 world, the operators are exact transformations, and every message carries a checksum folded through the same law. It is a shared medium in which people and different AI systems can state structure, transform it, and verify each other.</p>
+  <div class="ctas"><a class="btn" href="#play">Try it</a><a class="btn ghost" href="#why">Why it matters</a><a class="btn ghost" href="paper.html#23-what-the-new-mathematics-changes-omegasl-the-instruments-">The mathematics (paper §23)</a></div>
+</div></section>
+
+<section class="col stack lq-scope" id="what">
+  <h2>What OmegaSL is</h2>
+  <div class="osl-tiers">
+    <article><span class="k">Tier 1 · arithmetic core</span><h3>81 roots, nine operators</h3><p>The roots are the states: the still point, the eight-step Wheel, and the three 24-step Voices, with Voice C the canonical loop (P0 = (2, 5)). The operators are N (next), R (return), X (opposite), Y, H, F (the arms), V (×2), C (×3) and S (the shear). A statement such as <code>P0 X = P12 EXACT</code> is checked by computing it. Every message is folded through the law into a four-mark check, which catches any single substitution.</p></article>
+    <article><span class="k">Tier 2 · structural frames</span><h3>Typed fields for real questions</h3><p>ENTITY, STATE, RELATIONSHIP, TRANSFORMATION, CONDITION, EVIDENCE, MODALITY, INTERPRETATION, UNCERTAINTY. Each statement carries its derivation (EXACT, CONDITIONAL, CONSTRUCTED, READING), its evidence and its modality. Translation moves frames, not words, and reports every loss. Five protocol rules are already written as frames.</p></article>
+    <article><span class="k">Tier 3 · typed operations</span><h3>Executable inquiry</h3><p>ChatGPT's Tier III interpreter (beta 6) adds typed states, orbits, observation, reconstruction, memory sums, spectra, resonance, unitary mixing and finite uniqueness certificates. The new mathematics adds refinement, coupling, memory lifting, comparative worlds and active inquiry (below). Proposed; not yet canonical.</p></article>
+  </div>
+</section>
+
+<section class="col stack lq-scope" id="why">
+  <h2>Why it matters</h2>
+  <ol class="osl-why">
+    <li><b>Statements that compute.</b> When an AI says <code>P0 X = P12</code>, anyone can check it. Errors in the arithmetic core are counted, not debated.</li>
+    <li><b>Statements that carry their status.</b> Every statement says whether it was derived, constructed, read or inferred, so derivation and interpretation never blur.</li>
+    <li><b>A checksum from the law itself.</b> The same rule that moves the world protects the message: every single substitution is caught, and every swap of two marks fewer than 24 apart.</li>
+    <li><b>Operators that declare their nature.</b> The new mathematics proves that each operator either respects the law and loses nothing, respects it and forgets, or acts from outside. A Navigator can report which kind of reasoning step it has taken.</li>
+    <li><b>From description to inquiry.</b> With INQUIRE, the language can choose its next question: the reading that most reduces what remains unknown.</li>
+    <li><b>A medium between minds.</b> Different AI systems, and people, can exchange frames whose exact parts are machine-checkable while their meaning stays with the human. A Navigator can be <i>aware</i>, <i>assisted</i> or <i>native</i> in OmegaSL, and these levels are tested, not assumed.</li>
+  </ol>
+</section>
+
+<section class="col stack" id="types">
+  <h2>The operators, typed by the mathematics</h2>
+  <p>Two exact questions sort every operator: does it commute with the law, and does it lose information? (Paper, Theorems 17.3 and 17.4.)</p>
+  <div class="scroll"><table><thead><tr><th>Type</th><th>Meaning</th><th>Operators</th></tr></thead><tbody>
+    <tr><td><span class="cbs s-agreed">LAWFUL-REVERSIBLE</span></td><td>commutes with the law; nothing is lost</td><td>N, R, X, Y, H, F, V</td></tr>
+    <tr><td><span class="cbs s-recomputed">LAWFUL-ACTUALIZING</span></td><td>commutes with the law; forgets. C is the only linear way to do this, up to units, and C C = 0</td><td>C</td></tr>
+    <tr><td><span class="cbs s-proposed">EXTERNAL</span></td><td>does not commute with the law: an intervention from beyond the dynamics</td><td>S</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="stack osl-play" id="play">
+  <div class="eyebrow">Playground · runs in your browser</div>
+  <h2>Write a phrase. <em>Compute it.</em></h2>
+  <form id="osl-form" class="stack" autocomplete="off">
+    <label class="mono" for="osl-in">A root followed by operators, for example <code>P0 C</code>, <code>P0 N C</code>, <code>P0 S N</code>, <code>A3 V V V</code></label>
+    <div class="row"><input id="osl-in" type="text" value="P0 N C" spellcheck="false"><button class="btn" type="submit">Compute</button></div>
+  </form>
+  <div id="osl-out" class="panel" aria-live="polite"></div>
+  <div class="grid2" style="align-items:start">
+    <div class="panel"><h3>LIFT and COUPLE</h3>
+      <div class="row"><label class="mono" for="osl-x">x</label><input id="osl-x" type="text" value="P0" size="5"><label class="mono" for="osl-y">y</label><input id="osl-y" type="text" value="A1" size="5"><button class="btn ghost" type="button" id="osl-lc">Compute</button></div>
+      <div id="osl-lcout" aria-live="polite"></div></div>
+    <div class="panel"><h3>INQUIRE: the Active Inquiry lab</h3>
+      <p class="note">Hide a root. The Navigator reads the seven-symbol view a mod 7 at the phase that splits the remaining candidates most evenly, until one is left.</p>
+      <div class="row"><label class="mono" for="osl-h">hidden</label><input id="osl-h" type="text" value="P0" size="5"><button class="btn ghost" type="button" id="osl-step">Next reading</button><button class="btn ghost" type="button" id="osl-reset">Reset</button></div>
+      <div id="osl-inq" aria-live="polite"></div></div>
+  </div>
+</section>
+
+<section class="col stack" id="examples">
+  <h2>Practical examples</h2>
+  <div class="osl-ex">
+    <article><h3>A microscope: REFINE, COARSEN, DETAIL</h3><p>Two signals look identical at one resolution. COARSEN gives the same result for both; DETAIL shows where they differ. Refinement is lossless (J*J = I), and it keeps every resonance measure, so a coarse record and a refined one can be compared directly. Uses: satellite images, manufacturing tolerances, recordings, datasets, each through a declared adapter.</p>
+<pre>REFINE v TO DEPTH 3 AS fine
+COARSEN fine AS back      # back = v exactly
+DETAIL fine AS residual   # zero: nothing new was invented</pre></article>
+    <article><h3>A diagnosis of agreement: RESONANCE</h3><p>The four measures say not only how much two structures agree but how. Exact native cases:</p>
+      <div class="scroll"><table><thead><tr><th>Comparison</th><th>R_H</th><th>R_O</th><th>F_B</th><th>F</th></tr></thead><tbody>
+      <tr><td>the same state</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>two states of one 24-loop</td><td>1</td><td>1</td><td>1</td><td>0</td></tr><tr><td>states on two different 24-loops</td><td>1</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div>
+      <p>Two states of one loop agree in every harmonic block yet are orthogonal: all of their disagreement is phase across harmonics (Δ_A = 1). For translations, the Lingua adapter would compare meaning, rhythm and emphasis as separate features. Spectral agreement alone never establishes sameness of meaning.</p></article>
+    <article><h3>An audit of memory: MEMORY_LIFT</h3><p>A loop's memory sum s modulo 9 becomes 9s modulo 27 after refinement. The memories 1, 4 and 7 become indistinguishable, and the still point's memory survives intact. The kernel at depth 2 → 3 has 81 classes. Uses: comparing learning histories, finding redundant records, auditing what a compression loses.</p></article>
+    <article><h3>Troubleshooting: INQUIRE</h3><p>Represent the possible explanations of a fault as candidates. INQUIRE picks the test that splits them most evenly in the worst case, FILTER removes what the result excludes, and the loop repeats. On the native world this reaches the counting bound at every depth tested, 2 to 5. Applied to engineering, diagnosis or research planning, it is a constructed use of exact partition mathematics.</p></article>
+    <article><h3>Families of artworks: MIX</h3><p>Atelier can transform an image with a unitary that respects the law: the harmonic energy is kept, and the orbit-level structure moves within exactly the range [F_B, R_H]. The lawful transformations at depth 2 span 281 dimensions, and at depth k, (5 · 27ᵏ + 8)/13. The result is a family of works related by their structure, not by chance.</p></article>
+    <article><h3>Comparative worlds: WORLD</h3><p>WORLD 7 gives 1 + 3 × 16 and WORLD 11 gives 1 + 2 × 5 + 11 × 10. The canonical three-world stays the substrate (L-423); other worlds are laboratories for testing each theorem against a different arithmetic.</p></article>
+  </div>
+</section>
+
+<section class="col stack" id="instruments">
+  <h2>What it changes in the instruments</h2>
+  <div class="scroll"><table><thead><tr><th>Instrument</th><th>New capability</th><th>Status</th></tr></thead><tbody>
+    <tr><td>The arms and the mirror (Y, H, F, X)</td><td>lawful and reversible, so comparisons through them are stable across depth</td><td>proved</td></tr>
+    <tr><td>Observatory, GEOMETRIA</td><td>move between depths and between the 3-, 7- and 11-worlds; isolate the detail a finer view adds</td><td>mathematics proved; views proposed</td></tr>
+    <tr><td>Harmonia, Atelier</td><td>keep harmonic energy while transforming structure; families of related works</td><td>proposed</td></tr>
+    <tr><td>Aperture instruments</td><td>adaptive reading saves one reading at depth 5</td><td>proved</td></tr>
+    <tr><td>SOLVE, Rosetta, Lens, Concordia</td><td>choose the next test, inscription or question that best separates the candidates</td><td>proposed</td></tr>
+    <tr><td>Arcana, the Compass</td><td>symbolic readings only; no predictive certainty</td><td>unchanged</td></tr>
+  </tbody></table></div>
+  <p>The uniqueness proof keeps its conclusion and gains precision (paper §23.4). The new results show exactly where mathematics cannot prefer one candidate and the constitution must decide: among the three 24-loops, and among the children of a refined orbit. They also prove analytically that φ is the least growth of any hyperbolic integer law (the golden growth theorem).</p>
+</section>
+
+<section class="col stack" id="roadmap">
+  <h2>Roadmap</h2>
+  <ol>
+    <li><b>Beta 7.</b> REFINE, COARSEN, DETAIL, with depth carried in the type of every vector.</li>
+    <li><b>Beta 8.</b> MEMORY_LIFT and the memory kernel.</li>
+    <li><b>Beta 9.</b> INQUIRE, FILTER, KNOWLEDGE and richer discrimination reports.</li>
+    <li><b>Beta 10.</b> Typed comparative worlds, WORLD p k.</li>
+    <li><b>1.0 candidate.</b> Identity certificates by exact basis action, independent reference tests, and instrument adapters.</li>
+    <li><b>NOESIS (proposed by ChatGPT).</b> An inquiry engine for the Navigator's own reasoning, coordinating the instruments around one loop: encode, observe, choose, reconstruct, compare, verify, preserve.</li>
+  </ol>
+  <p class="note">The reference semantics of every new operation is in records/osl/tier3_ext.py (selftest, 10 exhaustive checks). The canonical language remains Companion Part 214 and tools/osl.py; Tier 1 and Tier 2 are unchanged.</p>
+</section>
+</div>
+<script>
+(function () {
+  var M = 9;
+  function A(s, n) { n = (((n === undefined ? 1 : n) % 24) + 24) % 24; for (var i = 0; i < n; i++) s = [s[1] % M, (s[0] + s[1]) % M]; return s; }
+  function mul(s, k) { return [s[0] * k % M, s[1] * k % M]; }
+  function shear(s) { return [s[0] % M, (3 * s[0] + s[1]) % M]; }
+  var OPS = {N: function (s) { return A(s, 1); }, R: function (s) { return A(s, 23); }, X: function (s) { return A(s, 12); }, V: function (s) { return mul(s, 2); },
+             C: function (s) { return mul(s, 3); }, S: shear, Y: function (s) { return A(s, 5); }, H: function (s) { return A(s, 18); }, F: function (s) { return A(s, 8); }};
+  var TYPE = {N: 'LAWFUL-REVERSIBLE', R: 'LAWFUL-REVERSIBLE', X: 'LAWFUL-REVERSIBLE', V: 'LAWFUL-REVERSIBLE', Y: 'LAWFUL-REVERSIBLE', H: 'LAWFUL-REVERSIBLE', F: 'LAWFUL-REVERSIBLE', C: 'LAWFUL-ACTUALIZING', S: 'EXTERNAL'};
+  var STATE = {}, NAME = {}, e = [0, 1];
+  function add(n, s) { STATE[n] = s; NAME[s.join(',')] = n; }
+  add('still', [0, 0]);
+  for (var k = 0; k < 8; k++) add('W' + k, mul(A(e, k), 3));
+  for (k = 0; k < 24; k++) { add('A' + k, A(e, k)); add('B' + k, mul(A(e, k), 2)); add('P' + k, mul(A(e, k + 5), 4)); }
+  function parseRoot(t) {
+    if (STATE[t]) return STATE[t];
+    var m = /^\(?\s*(\d+)\s*,\s*(\d+)\s*\)?$/.exec(t); return m ? [+m[1] % M, +m[2] % M] : null;
+  }
+  function nm(s) { return (NAME[s.join(',')] || '?') + ' (' + s[0] + ', ' + s[1] + ')'; }
+  function period(s, m) { var n = 1, t = [s[1] % m, (s[0] + s[1]) % m]; while (t[0] !== s[0] || t[1] !== s[1]) { t = [t[1] % m, (t[0] + t[1]) % m]; n++; } return n; }
+  function esc(x) { var d = document.createElement('div'); d.textContent = x; return d.innerHTML; }
+  var $ = function (id) { return document.getElementById(id); };
+  $('osl-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var t = $('osl-in').value.trim().split(/\s+/), s = parseRoot(t[0]), out = $('osl-out');
+    if (!s) { out.innerHTML = '<p>Start with a root: still, W0–W7, A0–A23, B0–B23, P0–P23, or a pair such as (2, 5).</p>'; return; }
+    var steps = ['<li>' + esc(t[0]) + ' = ' + nm(s) + '</li>'], ops = t.slice(1), lawful = true, forgets = false;
+    for (var i = 0; i < ops.length; i++) {
+      var o = ops[i].toUpperCase(); if (!OPS[o]) { out.innerHTML = '<p>Unknown operator ' + esc(ops[i]) + '. Use N R X Y H F V C S.</p>'; return; }
+      s = OPS[o](s); steps.push('<li>' + o + ' <span class="note">' + TYPE[o] + '</span> → ' + nm(s) + '</li>');
+      if (o === 'S') lawful = false; if (o === 'C') forgets = true;
+    }
+    var start = parseRoot(t[0]), after = A(start, 1), viaN = after;
+    for (i = 0; i < ops.length; i++) viaN = OPS[ops[i].toUpperCase()](viaN);
+    var commute = A(s, 1)[0] === viaN[0] && A(s, 1)[1] === viaN[1];
+    out.innerHTML = '<ol class="osl-steps">' + steps.join('') + '</ol><p><b>Result:</b> ' + nm(s) + ' · period ' + period(s, M) + '</p>' +
+      '<p>The phrase is <b>' + (lawful ? (forgets ? 'lawful and forgetting' : 'lawful and reversible') : 'external') + '</b>. ' +
+      (commute ? 'Applying it one step later gives the same result one step later: it commutes with the law.' : 'Applying it one step later gives a different result: it does not commute with the law.') + '</p>';
+  });
+  $('osl-lc').addEventListener('click', function () {
+    var x = parseRoot($('osl-x').value.trim()), y = parseRoot($('osl-y').value.trim()), o = $('osl-lcout');
+    if (!x || !y) { o.innerHTML = '<p class="note">Enter two roots.</p>'; return; }
+    var lifts = [];
+    for (var i = 0; i < 3; i++) for (var j = 0; j < 3; j++) lifts.push('(' + (x[0] + 9 * i) + ', ' + (x[1] + 9 * j) + ')');
+    var B = ((x[0] * y[1] - x[1] * y[0]) % M + M) % M, c = [(x[0] + B * y[0]) % M, (x[1] + B * y[1]) % M];
+    var x2 = A(x, 2), y2 = A(y, 2), B2 = ((x2[0] * y2[1] - x2[1] * y2[0]) % M + M) % M, c2 = [(x2[0] + B2 * y2[0]) % M, (x2[1] + B2 * y2[1]) % M], c3 = A(c, 2);
+    o.innerHTML = '<p><b>LIFT</b> ' + nm(x) + ' → ' + lifts.join(' ') + ' <span class="note">(nine states modulo 27, each of period ' + period(x, 27) + ')</span></p>' +
+      '<p><b>PAIR</b> = ' + B + ' · <b>COUPLE</b> = ' + nm(c) + '</p><p>Evolve both two steps, then couple: ' + nm(c2) + '. Couple, then evolve: ' + nm(c3) + '. ' + (c2[0] === c3[0] && c2[1] === c3[1] ? 'They agree: the coupling is lawful.' : '') + '</p>';
+  });
+  var C, hidden, log;
+  function reset() { hidden = parseRoot($('osl-h').value.trim()) || [2, 5]; C = []; for (var a = 0; a < 9; a++) for (var b = 0; b < 9; b++) C.push([a, b]); log = []; show(); }
+  function show() {
+    $('osl-inq').innerHTML = '<p><b>' + C.length + '</b> candidate' + (C.length === 1 ? '' : 's') + ' · knowledge ' + Math.log2(81 / C.length).toFixed(2) + ' of 6.34 bits</p>' +
+      (log.length ? '<ol>' + log.map(function (l) { return '<li>phase ' + l[0] + ': read ' + l[1] + ' → ' + l[2] + ' left</li>'; }).join('') + '</ol>' : '') +
+      (C.length === 1 ? '<p>Identified: ' + nm(C[0]) + '</p>' : '');
+  }
+  $('osl-step').addEventListener('click', function () {
+    if (!C) reset(); if (C.length <= 1) return;
+    var best = null;
+    for (var t = 0; t < 24; t++) {
+      var cnt = {}; C.forEach(function (s) { var r = A(s, t)[0] % 7; cnt[r] = (cnt[r] || 0) + 1; });
+      var w = Math.max.apply(null, Object.keys(cnt).map(function (k) { return cnt[k]; })); if (!best || w < best[0]) best = [w, t];
+    }
+    var r = A(hidden, best[1])[0] % 7; C = C.filter(function (s) { return A(s, best[1])[0] % 7 === r; }); log.push([best[1], r, C.length]); show();
+  });
+  $('osl-reset').addEventListener('click', reset);
+  $('osl-h').addEventListener('change', reset);
+  reset(); $('osl-form').requestSubmit();
+})();
+</script>

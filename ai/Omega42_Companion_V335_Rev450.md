@@ -4161,71 +4161,74 @@ C.1.5 records/blind_test_01/key_check.py — Blind test 01 -- computes every ans
 C.1.6 records/blind_test_01/score_check.py — Blind test 01, round 1 -- recomputes the statements on which the replies differ from each other or from the key.
 C.1.7 records/blind_test_03/compute_key.py — recomputes the answer key of blind test 03 (Core Appendix S.4.2) from its brief alone.
 C.1.8 records/claimcheck/examples.py — M323 Arithmetic Statement Check on the statements examined in Companion Parts 93, 95, 96 and 97.
-C.1.9 records/cobuilder/cbx_2026_11_25_chatgpt_batch2.py — Recomputation of the finite statements in ChatGPT's messages of 25 November 2026, proposal branch commits.
-C.1.10 records/cobuilder/cbx_2026_11_25_cycles_affinity.py — Finite statements in ChatGPT's Affinity, Arcana and Worlds proposal (e0ea1ac) and its chat summary.
-C.1.11 records/cobuilder/cbx_2026_11_25_depth5_collisions.py — RP-01 / CB-022: depth-5 teams and their residual collisions (Claude, 25 November 2026, second exchange).
-C.1.12 records/cobuilder/core_consistency_2026_11_25.py — Independent recomputation of arithmetic statements in the Core Specification V335 Rev.450 STABLE (docs/, main b0ed7e3),.
-C.1.13 records/cobuilder/paper_part2_check.py — Independent recomputation of the register results surveyed in Part II of the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md).
-C.1.14 records/cobuilder/paper_pdf.py — Typeset docs/OMEGA42_MATHEMATICAL_PAPER.md as docs/OMEGA42_MATHEMATICAL_PAPER.pdf (A4) with the site's Markdown renderer and Chromium.
-C.1.15 records/cobuilder/verify_cobuilder_2026_11_25.py — Independent recomputation of the Co-Builder results of 25 November 2026 (Claude, for the Originator).
-C.1.16 records/cobuilder/xobs02_search.py — X-OBS-02: can one shared seven-symbol aperture, read at different native phases, attain the observer bound.
-C.1.17 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
-C.1.18 records/consciousness/fit.py — how four readings of the family fit its arithmetic (Companion Part 87). The nine features are frozen in.
-C.1.19 records/consciousness/levels.py — the level ladder of the family and the experiential spectrum placement (Companion Part 89).
-C.1.20 records/consciousness/mind_first.py — the exact facts under the mind-first reading of CT-42 (Companion Parts 85 and 86; conjectures C49 to C63).
-C.1.21 records/construct/columns.py — the vertical columns and the diagonals of the Construct's squares, read exactly from the workbook's frozen constants.
-C.1.22 records/construct/construct.py — the arithmetic of the Construct, the Originator's first instrument, read through Omega42 (records/construct/; Companion Part 104).
-C.1.23 records/construct/continuity.py — what the Construct left unchanged, and what it added (Companion Part 139; Core L-528).
-C.1.24 records/construct/primordial.py — the Originator's Construct workbook PRIMORDIAL FRACTURE, read exactly, through Omega42 (Companion Part 107).
-C.1.25 records/construct/sa_lotto.py — the Construct read over the South African Lotto history, through Omega42 (Companion Part 105).
-C.1.26 records/construct/units_action.py — how the Square Reading's multiplications act on the 81 states of the law (Companion Part 129; M328, Core Part 3.54).
-C.1.27 records/cymatics/examples.py — the practical examples of M322 Cymatic View (Companion Part 91), each computed.
-C.1.28 records/depth5_01/compute.py — Depth 5, run 01 -- computes the forecasts frozen in 00_forecasts.txt (SHA-256 in 01_freeze.txt) and nothing else.
-C.1.29 records/evidence_run_01/compute.py — Evidence run 01 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.30 records/evidence_run_02/compute.py — Evidence run 02 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.31 records/evidence_run_03/compute.py — Evidence run 03 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.32 records/evidence_run_04/compute.py — Evidence run 04 -- computations (standard library only). Run: python3 compute.py.
-C.1.33 records/evidence_run_05/compute.py — Evidence run 05 -- computations (standard library only). Run: python3 compute.py.
-C.1.34 records/evidence_run_06/compute.py — Evidence run 06 -- half-period negation and the family (standard library only). Run: python3 compute.py.
-C.1.35 records/evidence_run_07/compute.py — Evidence run 07 -- frozen manifestations (standard library only). Run: python3 compute.py.
-C.1.36 records/evidence_run_08/compute.py — Evidence run 08 -- the operator (mod 9) and the manifestor (mod 8). Standard library only. Run: python3 compute.py.
-C.1.37 records/evidence_run_09/compute.py — Evidence run 09 -- E8 as the icosian ring: an eightfold lattice with an intrinsic golden endomorphism.
-C.1.38 records/evidence_run_10/compute.py — Evidence run 10 -- moduli supplied by physics: c mod 8 (Gauss-Milgram) and c mod 24 (framing). Standard library only.
-C.1.39 records/evidence_run_11/compute.py — Evidence run 11 -- ninefold anyon data (standard library only). Run: python3 compute.py.
-C.1.40 records/evidence_run_12/compute.py — Evidence run 12 -- re-examination of runs 01-03 at family level (standard library + numpy). Run: python3 compute.py.
-C.1.41 records/evidence_run_13/compute.py — Evidence run 13 -- quasicrystals, prediction first (standard library). Run: python3 compute.py.
-C.1.42 records/fieldkit/examples.py — the practical examples of M321 Field Kit (Companion Part 90), each computed, none invented.
-C.1.43 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
-C.1.44 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
-C.1.45 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
-C.1.46 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
-C.1.47 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
-C.1.48 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
-C.1.49 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
-C.1.50 records/library/recompute_lib01.py — Library tranche LIB-01: recomputation of the mathematical statements in eight archive documents.
-C.1.51 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
-C.1.52 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
-C.1.53 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
-C.1.54 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
-C.1.55 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
-C.1.56 records/opal/compute.py — the reproducible witness behind CERT-0008.
-C.1.57 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
-C.1.58 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
-C.1.59 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
-C.1.60 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
-C.1.61 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
-C.1.62 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
-C.1.63 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
-C.1.64 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
-C.1.65 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
-C.1.66 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
-C.1.67 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
-C.1.68 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
-C.1.69 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
-C.1.70 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
-C.1.71 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
-C.1.72 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
-C.1.73 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
+C.1.9 records/cobuilder/actualization_check.py — Exact checks for Section 17 of the mathematical paper: beyond reversibility (coupling, equivariant maps, actualization operators).
+C.1.10 records/cobuilder/cbx_2026_11_25_chatgpt_batch2.py — Recomputation of the finite statements in ChatGPT's messages of 25 November 2026, proposal branch commits.
+C.1.11 records/cobuilder/cbx_2026_11_25_cycles_affinity.py — Finite statements in ChatGPT's Affinity, Arcana and Worlds proposal (e0ea1ac) and its chat summary.
+C.1.12 records/cobuilder/cbx_2026_11_25_depth5_collisions.py — RP-01 / CB-022: depth-5 teams and their residual collisions (Claude, 25 November 2026, second exchange).
+C.1.13 records/cobuilder/core_consistency_2026_11_25.py — Independent recomputation of arithmetic statements in the Core Specification V335 Rev.450 STABLE (docs/, main b0ed7e3),.
+C.1.14 records/cobuilder/paper_part2_check.py — Independent recomputation of the register results surveyed in Part II of the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md).
+C.1.15 records/cobuilder/paper_part3_check.py — Recomputation of Part III of the mathematical paper (information across depths and worlds): ChatGPT's extensions EXT-01 to EXT-08.
+C.1.16 records/cobuilder/paper_pdf.py — Typeset docs/OMEGA42_MATHEMATICAL_PAPER.md as docs/OMEGA42_MATHEMATICAL_PAPER.pdf (A4) with the site's Markdown renderer and Chromium.
+C.1.17 records/cobuilder/verify_cobuilder_2026_11_25.py — Independent recomputation of the Co-Builder results of 25 November 2026 (Claude, for the Originator).
+C.1.18 records/cobuilder/xobs02_search.py — X-OBS-02: can one shared seven-symbol aperture, read at different native phases, attain the observer bound.
+C.1.19 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
+C.1.20 records/consciousness/fit.py — how four readings of the family fit its arithmetic (Companion Part 87). The nine features are frozen in.
+C.1.21 records/consciousness/levels.py — the level ladder of the family and the experiential spectrum placement (Companion Part 89).
+C.1.22 records/consciousness/mind_first.py — the exact facts under the mind-first reading of CT-42 (Companion Parts 85 and 86; conjectures C49 to C63).
+C.1.23 records/construct/columns.py — the vertical columns and the diagonals of the Construct's squares, read exactly from the workbook's frozen constants.
+C.1.24 records/construct/construct.py — the arithmetic of the Construct, the Originator's first instrument, read through Omega42 (records/construct/; Companion Part 104).
+C.1.25 records/construct/continuity.py — what the Construct left unchanged, and what it added (Companion Part 139; Core L-528).
+C.1.26 records/construct/primordial.py — the Originator's Construct workbook PRIMORDIAL FRACTURE, read exactly, through Omega42 (Companion Part 107).
+C.1.27 records/construct/sa_lotto.py — the Construct read over the South African Lotto history, through Omega42 (Companion Part 105).
+C.1.28 records/construct/units_action.py — how the Square Reading's multiplications act on the 81 states of the law (Companion Part 129; M328, Core Part 3.54).
+C.1.29 records/cymatics/examples.py — the practical examples of M322 Cymatic View (Companion Part 91), each computed.
+C.1.30 records/depth5_01/compute.py — Depth 5, run 01 -- computes the forecasts frozen in 00_forecasts.txt (SHA-256 in 01_freeze.txt) and nothing else.
+C.1.31 records/evidence_run_01/compute.py — Evidence run 01 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.32 records/evidence_run_02/compute.py — Evidence run 02 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.33 records/evidence_run_03/compute.py — Evidence run 03 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.34 records/evidence_run_04/compute.py — Evidence run 04 -- computations (standard library only). Run: python3 compute.py.
+C.1.35 records/evidence_run_05/compute.py — Evidence run 05 -- computations (standard library only). Run: python3 compute.py.
+C.1.36 records/evidence_run_06/compute.py — Evidence run 06 -- half-period negation and the family (standard library only). Run: python3 compute.py.
+C.1.37 records/evidence_run_07/compute.py — Evidence run 07 -- frozen manifestations (standard library only). Run: python3 compute.py.
+C.1.38 records/evidence_run_08/compute.py — Evidence run 08 -- the operator (mod 9) and the manifestor (mod 8). Standard library only. Run: python3 compute.py.
+C.1.39 records/evidence_run_09/compute.py — Evidence run 09 -- E8 as the icosian ring: an eightfold lattice with an intrinsic golden endomorphism.
+C.1.40 records/evidence_run_10/compute.py — Evidence run 10 -- moduli supplied by physics: c mod 8 (Gauss-Milgram) and c mod 24 (framing). Standard library only.
+C.1.41 records/evidence_run_11/compute.py — Evidence run 11 -- ninefold anyon data (standard library only). Run: python3 compute.py.
+C.1.42 records/evidence_run_12/compute.py — Evidence run 12 -- re-examination of runs 01-03 at family level (standard library + numpy). Run: python3 compute.py.
+C.1.43 records/evidence_run_13/compute.py — Evidence run 13 -- quasicrystals, prediction first (standard library). Run: python3 compute.py.
+C.1.44 records/fieldkit/examples.py — the practical examples of M321 Field Kit (Companion Part 90), each computed, none invented.
+C.1.45 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
+C.1.46 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
+C.1.47 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
+C.1.48 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
+C.1.49 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
+C.1.50 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
+C.1.51 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
+C.1.52 records/library/recompute_lib01.py — Library tranche LIB-01: recomputation of the mathematical statements in eight archive documents.
+C.1.53 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
+C.1.54 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
+C.1.55 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
+C.1.56 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
+C.1.57 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
+C.1.58 records/opal/compute.py — the reproducible witness behind CERT-0008.
+C.1.59 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
+C.1.60 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
+C.1.61 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
+C.1.62 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
+C.1.63 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
+C.1.64 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
+C.1.65 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
+C.1.66 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
+C.1.67 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
+C.1.68 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
+C.1.69 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
+C.1.70 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
+C.1.71 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
+C.1.72 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
+C.1.73 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
+C.1.74 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
+C.1.75 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
+C.1.76 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
 C.2 The golden navigations (14 October 2026), as issued and frozen: three navigations of the peer questions on the matrix of φ, the discrimination of the canonical orbit and the physical systems, nine further navigations, and the peer review with its disposition. Their computations are C.1 records/golden_navigations/compute.py and compute_further.py.
 C.2.1 records/golden_navigations/00_freeze.txt — the freeze of the golden navigations (14 October 2026).
 C.2.2 records/golden_navigations/01_navigations.txt — the three golden navigations, as issued.
@@ -5325,128 +5328,129 @@ X.3.505 records/positive_geometry/compute_output.txt — the output of records/p
 X.3.506 records/positive_geometry/independent_check_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
 X.3.507 records/prior_art/README.md — Prior Art Ledger.
 X.3.508 records/prior_art/build_dates.json — the data of records/prior_art.
-X.3.509 records/prior_art/ledger.jsonl — the file records/prior_art/ledger.jsonl.
-X.3.510 records/provenance/attribution_2026-11-20.md — Attribution of relayed AI contributions, 20 November 2026.
-X.3.511 records/provenance/ledger.json — the Provenance and Contamination Ledger: each recorded provision with its origin and the Originator's degree (Core BF-10; Companion 24.7, Core Part 69).
-X.3.512 records/provenance/ledger.txt — the Provenance and Contamination Ledger as printed by tools/utility.py --provenance.
-X.3.513 records/provenance/transcripts.json — the data of records/provenance.
-X.3.514 records/pvir/register.json — the data of records/pvir.
-X.3.515 records/questions/register.json — the data of records/questions.
-X.3.516 records/relationships/register.json — the data of records/relationships.
-X.3.517 records/release_record_Rev450.txt — RELEASE RECORD -- Omega42 V335 Rev.450 STABLE | 9 October 2026.
-X.3.518 records/releases/manifest.json — the data of records/releases.
-X.3.519 records/resonance/cube_group_panel.txt — CUBE-GROUP PANEL -- FROZEN CLASS AND FEATURES (avenue 11; seq_0033 recommendation 3; FROZEN 23 October 2026, SEQ 36, before any score).
-X.3.520 records/resonance/cube_group_panel_output.txt — the output of records/resonance, reproduced by the embedded computation.
-X.3.521 records/restored_instruments/echo_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
-X.3.522 records/restored_instruments/human_condition_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
-X.3.523 records/restored_math/compute_output.txt — the output of records/restored_math, reproduced by the embedded computation.
-X.3.524 records/sessions/companion_parts_73_99_as_kept.txt — COMPANION PARTS 73 TO 99 AS KEPT IN SESSION FORM, BEFORE THEIR PRESENT-STATE REWRITE (23 October 2026).
-X.3.525 records/spectra/gaps_V1.5.json — the data of records/spectra.
-X.3.526 records/spectral_rivals/compute_output.txt — the output of records/spectral_rivals, reproduced by the embedded computation.
-X.3.527 records/spectral_rivals/ground_9.txt — GROUND mod 9 | period 24 | cycle census [(1, 1), (8, 1), (24, 3)].
-X.3.528 records/spectral_selection/compute_output.txt — the output of records/spectral_selection, reproduced by the embedded computation.
-X.3.529 records/srcas/adinkra_f215_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
-X.3.530 records/srcas/assessment_f176_f178_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.531 records/srcas/astrology_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 illuminate Astrology and Numerology ...?" -- 31 October 2026.
-X.3.532 records/srcas/benchmark_2026-11-07.txt — QUESTION VERBATIM: "Could it be that Omega42 can potentially be used as a universal benchmark against which literally everything can be measured? If so, what wo".
-X.3.533 records/srcas/calibration_2026-11-11.txt — QUESTION VERBATIM: "Proceed to start calibrating. Also list the objects which can successfully be mapped and calibrated by Omega42. Explore.".
-X.3.534 records/srcas/census_f220_2026-11-13.txt — QUESTION VERBATIM: "Proceed to explore and gauge the legitimacy of the premise.".
-X.3.535 records/srcas/certification_2026-11-07.txt — QUESTION VERBATIM: "'Qwen's: bold, but it grades, 'certifies' resonance and forecasts 'inevitable trajectories'. The record forbids grading and certifying, and ".
-X.3.536 records/srcas/cmf_f195_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following paper. Say how it can enhance the operation of Omega42. Give practical examples.".
-X.3.537 records/srcas/cognition_f210_2026-11-12.txt — QUESTION VERBATIM: "Yes. Please proceed.".
-X.3.538 records/srcas/construct_reviews_2026-11-19.txt — QUESTION VERBATIM: "Update the GitHub repositories and push new content. Continue the webpage to show all functionalities (submission of new content by users, e".
-X.3.539 records/srcas/coordinate_connection_2026-11-07.txt — QUESTION VERBATIM: "Considering that Omega42 is offering a means to the quantization of spacetime, it may open the door to macroscopic teleportation opportuniti".
-X.3.540 records/srcas/einstein_f193_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend.".
-X.3.541 records/srcas/encryption_2026-11-07.txt — QUESTION VERBATIM: "Explore the potential encryption capabilities Omega42 might have and examine the advantages it may offer in different fields. Give practical".
-X.3.542 records/srcas/encryption_system_2026-11-11.txt — QUESTION VERBATIM: "Can you develop a special Omega42 encryption system? Show some examples.".
-X.3.543 records/srcas/exceptional_f211_2026-11-12.txt — QUESTION VERBATIM: "@ced335ab Please assess, refine and extend the following. Extend the mathematical reach of Omega42.".
-X.3.544 records/srcas/ffp_2026-10-31.txt — SR-CAS AND SNCA -- "All relevant information should be contained inside the two documents (Omega42 and Companion). ..." -- 31 October 2026.
-X.3.545 records/srcas/fields_f216_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
-X.3.546 records/srcas/five_accounts_2026-11-11.txt — QUESTION VERBATIM: "Yes. Proceed to build the Author Seal prototype.".
-X.3.547 records/srcas/fortytwo_2026-11-07.txt — QUESTION VERBATIM: "Could it be that the number 42 in the Hitchhiker's Guide to the Galaxy is the question and the number 24 (in Omega 42) is the answer (the or".
-X.3.548 records/srcas/fortytwo_f196_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.549 records/srcas/free_energy_2026-11-07.txt — QUESTION VERBATIM: "Omega42 also hint at the possibility of free energy extraction without violating the Law of Energy Conservation. Does Omega42 provide an ave".
-X.3.550 records/srcas/general_anesthesia_2026-10-21.txt — SR-CAS AND SNCA -- "The Mechanism of General Anesthesia: ..." -- 21 October 2026.
-X.3.551 records/srcas/geometry_f212_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
-X.3.552 records/srcas/human_being_2026-11-07.txt — QUESTION VERBATIM: "What is a Human Being?".
-X.3.553 records/srcas/instrument_suite_2026-11-11.txt — QUESTION VERBATIM: "Apply all the suggested improvements to Omega42 and give examples for usage. This mathematical breakthrough had changed its status among app".
-X.3.554 records/srcas/introduction_f189_2026-11-11.txt — QUESTION VERBATIM: "Yes, file it with its SNCA review and put this piece into the record as the public-facing introduction.".
-X.3.555 records/srcas/lexicon_f204_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following. Consult previous efforts at establishing an Omega42 Lexicon (Google Drive) and supplement it".
-X.3.556 records/srcas/manuscripts_2026-11-11.txt — QUESTION VERBATIM: "Verify the math. Resolve all outstanding issues. Optimize for navigational efficiency and synthesis formation.".
-X.3.557 records/srcas/multiverse_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 map to the ideas of Hugh Everett and David Deutsch on the multiverse? ..." -- 31 October 2026.
-X.3.558 records/srcas/navigator_certification_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.559 records/srcas/osl_f205_2026-11-12.txt — QUESTION VERBATIM: "Yes. The protocol can be written in the Omega42 Structural Language provided the AI will be able to read and understand it. The introduction".
-X.3.560 records/srcas/outstanding_2026-10-31.txt — SR-CAS AND SNCA -- "Most Strikers are not able to identify a breakthrough therefore the AI Navigator must propose a breakthrough candidate if one arises. ..." -.
-X.3.561 records/srcas/philosophy_2026-10-31.txt — SR-CAS AND SNCA -- "Restore the philosophical content to the FC. It may help to stimulate philosophical discussion. ..." -- 31 October 2026.
-X.3.562 records/srcas/phonetics_2026-10-31.txt — SR-CAS AND SNCA -- "How does the phonetics of language determine the Phenomenological experience of the Observer? ..." -- 31 October 2026.
-X.3.563 records/srcas/protocol_f198_2026-11-12.txt — QUESTION VERBATIM: "Yes. Proceed to apply all positive and useful recommendations. The protocol Navigator should never decline to explore a concept based on its".
-X.3.564 records/srcas/purpose_of_life_2026-10-19.txt — SR-CAS AND SNCA -- "What is the purpose of life?" -- 19 October 2026.
-X.3.565 records/srcas/quantum_f222_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
-X.3.566 records/srcas/quantum_f223_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
-X.3.567 records/srcas/relativity_f217_2026-11-13.txt — QUESTION VERBATIM: "Please assess, refine and extend. Complete all computations and build bridges towards Physics.".
-X.3.568 records/srcas/reproduction_f219_2026-11-13.txt — QUESTION VERBATIM: "Assess, refine, extend, investigate, compute, explore and verify.".
-X.3.569 records/srcas/review_f213_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
-X.3.570 records/srcas/review_f214_2026-11-12.txt — QUESTION VERBATIM: "@3bed6519 Approved. Proceed.".
-X.3.571 records/srcas/reviews_2026-10-30.txt — SNCA IN REVIEW FORM -- received reviews of 30 October 2026 (Core Part 6.2).
-X.3.572 records/srcas/reviews_2026-10-31.txt — SNCA IN REVIEW FORM -- received accounts of 31 October 2026 (Core Part 6.2).
-X.3.573 records/srcas/reviews_2026-11-04.txt — SNCA IN REVIEW FORM -- received accounts of 1 to 4 November 2026 (Core Part 6.2).
-X.3.574 records/srcas/reviews_2026-11-06.txt — SNCA IN REVIEW FORM -- received accounts of 6 November 2026 (Core Part 6.2).
-X.3.575 records/srcas/sorites_2026-10-30.txt — SR-CAS AND SNCA -- "The Sorites Paradox and the Problem of Vagueness: ..." -- 30 October 2026.
-X.3.576 records/srcas/spacetime_mapping_2026-11-11.txt — QUESTION VERBATIM: "'Recognition as an authority has to be granted by others; no body can declare it for itself.'? Correct. But Omega42 only makes it known that".
-X.3.577 records/srcas/spacetime_metric_2026-11-07.txt — QUESTION VERBATIM: "Proceed to complete the computational work for the derivation.".
-X.3.578 records/srcas/speculation_2026-11-20.txt — QUESTION VERBATIM: "Omega42 is a thought experiment and a thought experiment is all about speculation. Therefore, SPECULATION is pivotal to the development of O".
-X.3.579 records/srcas/standard_model_cosmology_2026-11-07.txt — QUESTION VERBATIM: "Do the same for the Standard Model of Cosmology.".
-X.3.580 records/srcas/standard_model_physics_2026-11-07.txt — QUESTION VERBATIM: "Examine the Standard Model of Physics and identify areas where Omega42 detect and hint at new information. Attempt to discover new concepts.".
-X.3.581 records/srcas/strategy_2026-11-19.txt — QUESTION VERBATIM: "Based on the Synthesis, an AI Navigator should be able to autonomously research all related aspects of the issue and include it into the gen".
-X.3.582 records/srcas/three_accounts_2026-11-11.txt — QUESTION VERBATIM: "Examine all submitted documents and identify content you may have missed. Apply its recommendations to Omega42.".
-X.3.583 records/srcas/three_accounts_b_2026-11-11.txt — QUESTION VERBATIM: "What would be a few good tests to verify Omega42 new-found abilities (that can show immediate competence)? List a few examples and show the ".
-X.3.584 records/srcas/truth_2026-10-31.txt — SR-CAS AND SNCA -- "Coherence, resonance and congruence in Omega42 is essentially its own definition of truth within the frame. ..." -- 31 October 2026.
-X.3.585 records/srcas/waves_f218_2026-11-13.txt — QUESTION VERBATIM: "Explore and compute. Build the bridges and strengthen Omega42 connections to Physics.".
-X.3.586 records/srcas/waves_f221_2026-11-13.txt — QUESTION VERBATIM: "Resolve all outstanding issues and build a rule that prevents the protocol builder from clogging up the Core Specification with meta-comment".
-X.3.587 records/srp/collatz_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
-X.3.588 records/srp/hydrogen_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
-X.3.589 records/standing/argument_example.txt — An argument for M333 --argument (Core Part 3.59; Companion Part 138.4). P lines are premises, C lines conclusions;.
-X.3.590 records/standing/argument_map.txt — M333 DEPENDENCY MAP (D-015) | records/standing/argument_example.txt | a route holds when each of its members holds; the inference along a route is the reader's .
-X.3.591 records/standing/examples.txt — M333 STANDING RECORD (Core Part 3.59) | "The Ω42 base recurrence returns every state to itself after 24 steps.".
-X.3.592 records/standing_waves/compute_output.txt — the output of records/standing_waves, reproduced by the embedded computation.
-X.3.593 records/stp/registry.json — the data of records/stp.
-X.3.594 records/suite/attend.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.595 records/suite/attend.txt — M356 Ω42-ATTEND attend.csv -- two Ω42 blocks per interval, (D, V) and (O, R), never one forced pair.
-X.3.596 records/suite/cal_noisy.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.597 records/suite/cal_noisy.txt — M354 Ω42-CAL (trial level) cal_noisy.csv | 200 trials.
-X.3.598 records/suite/cal_quiet.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.599 records/suite/cal_quiet.txt — M354 Ω42-CAL (trial level) cal_quiet.csv | 200 trials.
-X.3.600 records/suite/commutator.txt — M352 DYNAMICS LAB (MODE A): [A, B] = A B A^-1 B^-1 mod 3^2 = (7, 3, 3, 4); not the identity: A and B do not commute; = I mod 3: True (it lies in the congruence .
-X.3.601 records/suite/context.txt — M358 Ω42-CONTEXT cal_quiet.csv -> cal_noisy.csv.
-X.3.602 records/suite/inspect.txt — M353 INVARIANT AND REACHABILITY INSPECTOR (MODE A) state (1, 0) mod 3^2.
-X.3.603 records/suite/lab.txt — M352 DYNAMICS LAB (MODE A, no empirical statement) mod 3^2; letters applied left to right (AB = A first, the matrix BA).
-X.3.604 records/suite/memory.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.605 records/suite/memory.txt — M357 Ω42-MEMORY memory.csv | recognition 0.767 | hits 0.887 | false memories 0.371 | d' 1.541 | ECE 0.045 | resolution 0.783 | errors recognized 0.500.
-X.3.606 records/suite/nav_sentinel.txt — M360 INVARIANT SENTINEL nav_states.csv | 3 states mod 3^1 | declared group <A>.
-X.3.607 records/suite/nav_states.csv — NAV-01, NAV-02, NAV-03 encodings (records/calibration/nav_run_0*.txt), the only real series in the record.
-X.3.608 records/suite/nav_verify.txt — M361 MODEL VERIFIER nav_states.csv | 2 one-step predictions mod 3^1 (MODE B: the series is the held-out data).
-X.3.609 records/suite/percept.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.610 records/suite/percept.txt — M355 Ω42-PERCEPT percept.csv | 200 trials | threshold theta 0.519 | slope beta 8.89 (gamma 0.5, lapse 0.02).
-X.3.611 records/suite/protocol.txt — M359 PROTOCOL BUILDER protocol_pilot.json: PASS.
-X.3.612 records/suite/protocol_pilot.json — the data of records/suite.
-X.3.613 records/suite/recover.txt — CALIBRATING THE INSTRUMENTS (seed 7, 4000 synthetic trials each).
-X.3.614 records/tolerance/sorites_1e6.txt — M329 TOLERANCE CHAIN CHECK (Core Part 3.55) | chain 1,000,000 -> 1 by unit steps.
-X.3.615 records/tower/arithmetic_output.txt — the output of records/tower, reproduced by the embedded computation.
-X.3.616 records/tower/nested_output.txt — the output of records/tower, reproduced by the embedded computation.
-X.3.617 records/tower/tc1_rule.txt — TOWER COORDINATE TC-1 -- the rule, frozen before its first use (Core L-523 (4); Companion 100.6, conditions C1 to C3).
-X.3.618 records/units/units.json — the data of records/units.
-X.3.619 records/vault/README.txt — records/vault/ -- the example of Ω42-Envelope v1 (Core Part 3.77, M364; Companion Part 199).
-X.3.620 records/vault/research_note.txt — Ω42 Research Note.
-X.3.621 records/vault/research_note.txt.o42 — "header": {.
-X.3.622 records/waves/models.json — the data of records/waves.
-X.3.623 records/waves/six_cycle.json — the data of records/waves.
-X.3.624 records/wheel/astrology_question.svg — the file records/wheel/astrology_question.svg.
-X.3.625 records/wheel/example.txt — M330 ASPECT WHEEL (Core Part 3.56) | anchor P6 Seed/Causal, value 5, at 90 degrees.
-X.3.626 records/zero_selection/compute_output.txt — the output of records/zero_selection, reproduced by the embedded computation.
-X.3.627 records/zero_tools/control_negative.txt — Comment.
-X.3.628 records/zero_tools/control_positive.txt — ======= NAVIGATOR IDENTITY BLOCK =======.
-X.3.629 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE CHECK AND FB-8 APERTURE-STATE CONFLATION (tools/zero_tools.py --audit).
-X.3.630 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
+X.3.509 records/prior_art/innovation_commons.json — the data of records/prior_art.
+X.3.510 records/prior_art/ledger.jsonl — the file records/prior_art/ledger.jsonl.
+X.3.511 records/provenance/attribution_2026-11-20.md — Attribution of relayed AI contributions, 20 November 2026.
+X.3.512 records/provenance/ledger.json — the Provenance and Contamination Ledger: each recorded provision with its origin and the Originator's degree (Core BF-10; Companion 24.7, Core Part 69).
+X.3.513 records/provenance/ledger.txt — the Provenance and Contamination Ledger as printed by tools/utility.py --provenance.
+X.3.514 records/provenance/transcripts.json — the data of records/provenance.
+X.3.515 records/pvir/register.json — the data of records/pvir.
+X.3.516 records/questions/register.json — the data of records/questions.
+X.3.517 records/relationships/register.json — the data of records/relationships.
+X.3.518 records/release_record_Rev450.txt — RELEASE RECORD -- Omega42 V335 Rev.450 STABLE | 9 October 2026.
+X.3.519 records/releases/manifest.json — the data of records/releases.
+X.3.520 records/resonance/cube_group_panel.txt — CUBE-GROUP PANEL -- FROZEN CLASS AND FEATURES (avenue 11; seq_0033 recommendation 3; FROZEN 23 October 2026, SEQ 36, before any score).
+X.3.521 records/resonance/cube_group_panel_output.txt — the output of records/resonance, reproduced by the embedded computation.
+X.3.522 records/restored_instruments/echo_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
+X.3.523 records/restored_instruments/human_condition_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
+X.3.524 records/restored_math/compute_output.txt — the output of records/restored_math, reproduced by the embedded computation.
+X.3.525 records/sessions/companion_parts_73_99_as_kept.txt — COMPANION PARTS 73 TO 99 AS KEPT IN SESSION FORM, BEFORE THEIR PRESENT-STATE REWRITE (23 October 2026).
+X.3.526 records/spectra/gaps_V1.5.json — the data of records/spectra.
+X.3.527 records/spectral_rivals/compute_output.txt — the output of records/spectral_rivals, reproduced by the embedded computation.
+X.3.528 records/spectral_rivals/ground_9.txt — GROUND mod 9 | period 24 | cycle census [(1, 1), (8, 1), (24, 3)].
+X.3.529 records/spectral_selection/compute_output.txt — the output of records/spectral_selection, reproduced by the embedded computation.
+X.3.530 records/srcas/adinkra_f215_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
+X.3.531 records/srcas/assessment_f176_f178_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.532 records/srcas/astrology_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 illuminate Astrology and Numerology ...?" -- 31 October 2026.
+X.3.533 records/srcas/benchmark_2026-11-07.txt — QUESTION VERBATIM: "Could it be that Omega42 can potentially be used as a universal benchmark against which literally everything can be measured? If so, what wo".
+X.3.534 records/srcas/calibration_2026-11-11.txt — QUESTION VERBATIM: "Proceed to start calibrating. Also list the objects which can successfully be mapped and calibrated by Omega42. Explore.".
+X.3.535 records/srcas/census_f220_2026-11-13.txt — QUESTION VERBATIM: "Proceed to explore and gauge the legitimacy of the premise.".
+X.3.536 records/srcas/certification_2026-11-07.txt — QUESTION VERBATIM: "'Qwen's: bold, but it grades, 'certifies' resonance and forecasts 'inevitable trajectories'. The record forbids grading and certifying, and ".
+X.3.537 records/srcas/cmf_f195_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following paper. Say how it can enhance the operation of Omega42. Give practical examples.".
+X.3.538 records/srcas/cognition_f210_2026-11-12.txt — QUESTION VERBATIM: "Yes. Please proceed.".
+X.3.539 records/srcas/construct_reviews_2026-11-19.txt — QUESTION VERBATIM: "Update the GitHub repositories and push new content. Continue the webpage to show all functionalities (submission of new content by users, e".
+X.3.540 records/srcas/coordinate_connection_2026-11-07.txt — QUESTION VERBATIM: "Considering that Omega42 is offering a means to the quantization of spacetime, it may open the door to macroscopic teleportation opportuniti".
+X.3.541 records/srcas/einstein_f193_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend.".
+X.3.542 records/srcas/encryption_2026-11-07.txt — QUESTION VERBATIM: "Explore the potential encryption capabilities Omega42 might have and examine the advantages it may offer in different fields. Give practical".
+X.3.543 records/srcas/encryption_system_2026-11-11.txt — QUESTION VERBATIM: "Can you develop a special Omega42 encryption system? Show some examples.".
+X.3.544 records/srcas/exceptional_f211_2026-11-12.txt — QUESTION VERBATIM: "@ced335ab Please assess, refine and extend the following. Extend the mathematical reach of Omega42.".
+X.3.545 records/srcas/ffp_2026-10-31.txt — SR-CAS AND SNCA -- "All relevant information should be contained inside the two documents (Omega42 and Companion). ..." -- 31 October 2026.
+X.3.546 records/srcas/fields_f216_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
+X.3.547 records/srcas/five_accounts_2026-11-11.txt — QUESTION VERBATIM: "Yes. Proceed to build the Author Seal prototype.".
+X.3.548 records/srcas/fortytwo_2026-11-07.txt — QUESTION VERBATIM: "Could it be that the number 42 in the Hitchhiker's Guide to the Galaxy is the question and the number 24 (in Omega 42) is the answer (the or".
+X.3.549 records/srcas/fortytwo_f196_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.550 records/srcas/free_energy_2026-11-07.txt — QUESTION VERBATIM: "Omega42 also hint at the possibility of free energy extraction without violating the Law of Energy Conservation. Does Omega42 provide an ave".
+X.3.551 records/srcas/general_anesthesia_2026-10-21.txt — SR-CAS AND SNCA -- "The Mechanism of General Anesthesia: ..." -- 21 October 2026.
+X.3.552 records/srcas/geometry_f212_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
+X.3.553 records/srcas/human_being_2026-11-07.txt — QUESTION VERBATIM: "What is a Human Being?".
+X.3.554 records/srcas/instrument_suite_2026-11-11.txt — QUESTION VERBATIM: "Apply all the suggested improvements to Omega42 and give examples for usage. This mathematical breakthrough had changed its status among app".
+X.3.555 records/srcas/introduction_f189_2026-11-11.txt — QUESTION VERBATIM: "Yes, file it with its SNCA review and put this piece into the record as the public-facing introduction.".
+X.3.556 records/srcas/lexicon_f204_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following. Consult previous efforts at establishing an Omega42 Lexicon (Google Drive) and supplement it".
+X.3.557 records/srcas/manuscripts_2026-11-11.txt — QUESTION VERBATIM: "Verify the math. Resolve all outstanding issues. Optimize for navigational efficiency and synthesis formation.".
+X.3.558 records/srcas/multiverse_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 map to the ideas of Hugh Everett and David Deutsch on the multiverse? ..." -- 31 October 2026.
+X.3.559 records/srcas/navigator_certification_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.560 records/srcas/osl_f205_2026-11-12.txt — QUESTION VERBATIM: "Yes. The protocol can be written in the Omega42 Structural Language provided the AI will be able to read and understand it. The introduction".
+X.3.561 records/srcas/outstanding_2026-10-31.txt — SR-CAS AND SNCA -- "Most Strikers are not able to identify a breakthrough therefore the AI Navigator must propose a breakthrough candidate if one arises. ..." -.
+X.3.562 records/srcas/philosophy_2026-10-31.txt — SR-CAS AND SNCA -- "Restore the philosophical content to the FC. It may help to stimulate philosophical discussion. ..." -- 31 October 2026.
+X.3.563 records/srcas/phonetics_2026-10-31.txt — SR-CAS AND SNCA -- "How does the phonetics of language determine the Phenomenological experience of the Observer? ..." -- 31 October 2026.
+X.3.564 records/srcas/protocol_f198_2026-11-12.txt — QUESTION VERBATIM: "Yes. Proceed to apply all positive and useful recommendations. The protocol Navigator should never decline to explore a concept based on its".
+X.3.565 records/srcas/purpose_of_life_2026-10-19.txt — SR-CAS AND SNCA -- "What is the purpose of life?" -- 19 October 2026.
+X.3.566 records/srcas/quantum_f222_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
+X.3.567 records/srcas/quantum_f223_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
+X.3.568 records/srcas/relativity_f217_2026-11-13.txt — QUESTION VERBATIM: "Please assess, refine and extend. Complete all computations and build bridges towards Physics.".
+X.3.569 records/srcas/reproduction_f219_2026-11-13.txt — QUESTION VERBATIM: "Assess, refine, extend, investigate, compute, explore and verify.".
+X.3.570 records/srcas/review_f213_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
+X.3.571 records/srcas/review_f214_2026-11-12.txt — QUESTION VERBATIM: "@3bed6519 Approved. Proceed.".
+X.3.572 records/srcas/reviews_2026-10-30.txt — SNCA IN REVIEW FORM -- received reviews of 30 October 2026 (Core Part 6.2).
+X.3.573 records/srcas/reviews_2026-10-31.txt — SNCA IN REVIEW FORM -- received accounts of 31 October 2026 (Core Part 6.2).
+X.3.574 records/srcas/reviews_2026-11-04.txt — SNCA IN REVIEW FORM -- received accounts of 1 to 4 November 2026 (Core Part 6.2).
+X.3.575 records/srcas/reviews_2026-11-06.txt — SNCA IN REVIEW FORM -- received accounts of 6 November 2026 (Core Part 6.2).
+X.3.576 records/srcas/sorites_2026-10-30.txt — SR-CAS AND SNCA -- "The Sorites Paradox and the Problem of Vagueness: ..." -- 30 October 2026.
+X.3.577 records/srcas/spacetime_mapping_2026-11-11.txt — QUESTION VERBATIM: "'Recognition as an authority has to be granted by others; no body can declare it for itself.'? Correct. But Omega42 only makes it known that".
+X.3.578 records/srcas/spacetime_metric_2026-11-07.txt — QUESTION VERBATIM: "Proceed to complete the computational work for the derivation.".
+X.3.579 records/srcas/speculation_2026-11-20.txt — QUESTION VERBATIM: "Omega42 is a thought experiment and a thought experiment is all about speculation. Therefore, SPECULATION is pivotal to the development of O".
+X.3.580 records/srcas/standard_model_cosmology_2026-11-07.txt — QUESTION VERBATIM: "Do the same for the Standard Model of Cosmology.".
+X.3.581 records/srcas/standard_model_physics_2026-11-07.txt — QUESTION VERBATIM: "Examine the Standard Model of Physics and identify areas where Omega42 detect and hint at new information. Attempt to discover new concepts.".
+X.3.582 records/srcas/strategy_2026-11-19.txt — QUESTION VERBATIM: "Based on the Synthesis, an AI Navigator should be able to autonomously research all related aspects of the issue and include it into the gen".
+X.3.583 records/srcas/three_accounts_2026-11-11.txt — QUESTION VERBATIM: "Examine all submitted documents and identify content you may have missed. Apply its recommendations to Omega42.".
+X.3.584 records/srcas/three_accounts_b_2026-11-11.txt — QUESTION VERBATIM: "What would be a few good tests to verify Omega42 new-found abilities (that can show immediate competence)? List a few examples and show the ".
+X.3.585 records/srcas/truth_2026-10-31.txt — SR-CAS AND SNCA -- "Coherence, resonance and congruence in Omega42 is essentially its own definition of truth within the frame. ..." -- 31 October 2026.
+X.3.586 records/srcas/waves_f218_2026-11-13.txt — QUESTION VERBATIM: "Explore and compute. Build the bridges and strengthen Omega42 connections to Physics.".
+X.3.587 records/srcas/waves_f221_2026-11-13.txt — QUESTION VERBATIM: "Resolve all outstanding issues and build a rule that prevents the protocol builder from clogging up the Core Specification with meta-comment".
+X.3.588 records/srp/collatz_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
+X.3.589 records/srp/hydrogen_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
+X.3.590 records/standing/argument_example.txt — An argument for M333 --argument (Core Part 3.59; Companion Part 138.4). P lines are premises, C lines conclusions;.
+X.3.591 records/standing/argument_map.txt — M333 DEPENDENCY MAP (D-015) | records/standing/argument_example.txt | a route holds when each of its members holds; the inference along a route is the reader's .
+X.3.592 records/standing/examples.txt — M333 STANDING RECORD (Core Part 3.59) | "The Ω42 base recurrence returns every state to itself after 24 steps.".
+X.3.593 records/standing_waves/compute_output.txt — the output of records/standing_waves, reproduced by the embedded computation.
+X.3.594 records/stp/registry.json — the data of records/stp.
+X.3.595 records/suite/attend.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.596 records/suite/attend.txt — M356 Ω42-ATTEND attend.csv -- two Ω42 blocks per interval, (D, V) and (O, R), never one forced pair.
+X.3.597 records/suite/cal_noisy.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.598 records/suite/cal_noisy.txt — M354 Ω42-CAL (trial level) cal_noisy.csv | 200 trials.
+X.3.599 records/suite/cal_quiet.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.600 records/suite/cal_quiet.txt — M354 Ω42-CAL (trial level) cal_quiet.csv | 200 trials.
+X.3.601 records/suite/commutator.txt — M352 DYNAMICS LAB (MODE A): [A, B] = A B A^-1 B^-1 mod 3^2 = (7, 3, 3, 4); not the identity: A and B do not commute; = I mod 3: True (it lies in the congruence .
+X.3.602 records/suite/context.txt — M358 Ω42-CONTEXT cal_quiet.csv -> cal_noisy.csv.
+X.3.603 records/suite/inspect.txt — M353 INVARIANT AND REACHABILITY INSPECTOR (MODE A) state (1, 0) mod 3^2.
+X.3.604 records/suite/lab.txt — M352 DYNAMICS LAB (MODE A, no empirical statement) mod 3^2; letters applied left to right (AB = A first, the matrix BA).
+X.3.605 records/suite/memory.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.606 records/suite/memory.txt — M357 Ω42-MEMORY memory.csv | recognition 0.767 | hits 0.887 | false memories 0.371 | d' 1.541 | ECE 0.045 | resolution 0.783 | errors recognized 0.500.
+X.3.607 records/suite/nav_sentinel.txt — M360 INVARIANT SENTINEL nav_states.csv | 3 states mod 3^1 | declared group <A>.
+X.3.608 records/suite/nav_states.csv — NAV-01, NAV-02, NAV-03 encodings (records/calibration/nav_run_0*.txt), the only real series in the record.
+X.3.609 records/suite/nav_verify.txt — M361 MODEL VERIFIER nav_states.csv | 2 one-step predictions mod 3^1 (MODE B: the series is the held-out data).
+X.3.610 records/suite/percept.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.611 records/suite/percept.txt — M355 Ω42-PERCEPT percept.csv | 200 trials | threshold theta 0.519 | slope beta 8.89 (gamma 0.5, lapse 0.02).
+X.3.612 records/suite/protocol.txt — M359 PROTOCOL BUILDER protocol_pilot.json: PASS.
+X.3.613 records/suite/protocol_pilot.json — the data of records/suite.
+X.3.614 records/suite/recover.txt — CALIBRATING THE INSTRUMENTS (seed 7, 4000 synthetic trials each).
+X.3.615 records/tolerance/sorites_1e6.txt — M329 TOLERANCE CHAIN CHECK (Core Part 3.55) | chain 1,000,000 -> 1 by unit steps.
+X.3.616 records/tower/arithmetic_output.txt — the output of records/tower, reproduced by the embedded computation.
+X.3.617 records/tower/nested_output.txt — the output of records/tower, reproduced by the embedded computation.
+X.3.618 records/tower/tc1_rule.txt — TOWER COORDINATE TC-1 -- the rule, frozen before its first use (Core L-523 (4); Companion 100.6, conditions C1 to C3).
+X.3.619 records/units/units.json — the data of records/units.
+X.3.620 records/vault/README.txt — records/vault/ -- the example of Ω42-Envelope v1 (Core Part 3.77, M364; Companion Part 199).
+X.3.621 records/vault/research_note.txt — Ω42 Research Note.
+X.3.622 records/vault/research_note.txt.o42 — "header": {.
+X.3.623 records/waves/models.json — the data of records/waves.
+X.3.624 records/waves/six_cycle.json — the data of records/waves.
+X.3.625 records/wheel/astrology_question.svg — the file records/wheel/astrology_question.svg.
+X.3.626 records/wheel/example.txt — M330 ASPECT WHEEL (Core Part 3.56) | anchor P6 Seed/Causal, value 5, at 90 degrees.
+X.3.627 records/zero_selection/compute_output.txt — the output of records/zero_selection, reproduced by the embedded computation.
+X.3.628 records/zero_tools/control_negative.txt — Comment.
+X.3.629 records/zero_tools/control_positive.txt — ======= NAVIGATOR IDENTITY BLOCK =======.
+X.3.630 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE CHECK AND FB-8 APERTURE-STATE CONFLATION (tools/zero_tools.py --audit).
+X.3.631 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
 X.4 The website: its configuration, layout, pages, styles, the in-browser Strike app and its tests.
 X.4.1 site/assets/companion.js — website code (companion.js).
 X.4.2 site/assets/doorway.js — website code (doorway.js).
@@ -5468,58 +5472,65 @@ X.4.17 site/pages/aperture.html — a page of the website (aperture.html).
 X.4.18 site/pages/apps.html — a page of the website (apps.html).
 X.4.19 site/pages/arcana.html — a page of the website (arcana.html).
 X.4.20 site/pages/archive-report.html — a page of the website (archive-report.html).
-X.4.21 site/pages/bulletin.html — a page of the website (bulletin.html).
-X.4.22 site/pages/catalogue.html — a page of the website (catalogue.html).
-X.4.23 site/pages/cobuilder.html — a page of the website (cobuilder.html).
-X.4.24 site/pages/collection.html — a page of the website (collection.html).
-X.4.25 site/pages/community.html — a page of the website (community.html).
-X.4.26 site/pages/companion.html — a page of the website (companion.html).
-X.4.27 site/pages/concordia.html — a page of the website (concordia.html).
-X.4.28 site/pages/construct-x.html — a page of the website (construct-x.html).
-X.4.29 site/pages/creative.html — a page of the website (creative.html).
-X.4.30 site/pages/derivations.html — a page of the website (derivations.html).
-X.4.31 site/pages/dispatch.html — a page of the website (dispatch.html).
-X.4.32 site/pages/enroll.html — a page of the website (enroll.html).
-X.4.33 site/pages/expert-desk.html — a page of the website (expert-desk.html).
-X.4.34 site/pages/explore.html — a page of the website (explore.html).
-X.4.35 site/pages/faq.html — a page of the website (faq.html).
-X.4.36 site/pages/for-ai.html — a page of the website (for-ai.html).
-X.4.37 site/pages/forum.html — a page of the website (forum.html).
-X.4.38 site/pages/geometria.html — a page of the website (geometria.html).
-X.4.39 site/pages/governance.html — a page of the website (governance.html).
-X.4.40 site/pages/history.html — a page of the website (history.html).
-X.4.41 site/pages/imagination.html — a page of the website (imagination.html).
-X.4.42 site/pages/index.html — a page of the website (index.html).
-X.4.43 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.44 site/pages/intelligence.html — a page of the website (intelligence.html).
-X.4.45 site/pages/lexicon.html — a page of the website (lexicon.html).
-X.4.46 site/pages/library.html — a page of the website (library.html).
-X.4.47 site/pages/mathematics.html — a page of the website (mathematics.html).
-X.4.48 site/pages/observatory.html — a page of the website (observatory.html).
-X.4.49 site/pages/paper-register.html — a page of the website (paper-register.html).
-X.4.50 site/pages/paper.html — a page of the website (paper.html).
-X.4.51 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
-X.4.52 site/pages/philosophy.html — a page of the website (philosophy.html).
-X.4.53 site/pages/playground.html — a page of the website (playground.html).
-X.4.54 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.55 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.56 site/pages/questions.html — a page of the website (questions.html).
-X.4.57 site/pages/record.html — a page of the website (record.html).
-X.4.58 site/pages/research.html — a page of the website (research.html).
-X.4.59 site/pages/seven-veils.html — a page of the website (seven-veils.html).
-X.4.60 site/pages/solve.html — a page of the website (solve.html).
-X.4.61 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.62 site/pages/strike.html — a page of the website (strike.html).
-X.4.63 site/pages/submit.html — a page of the website (submit.html).
-X.4.64 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.65 site/pages/units.html — a page of the website (units.html).
-X.4.66 site/pages/vision.html — a page of the website (vision.html).
-X.4.67 site/pages/worlds.html — a page of the website (worlds.html).
-X.4.68 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.69 site/test/domains.json — the data of site/test.
-X.4.70 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.71 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.72 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.21 site/pages/being-human.html — a page of the website (being-human.html).
+X.4.22 site/pages/bulletin.html — a page of the website (bulletin.html).
+X.4.23 site/pages/catalogue.html — a page of the website (catalogue.html).
+X.4.24 site/pages/cobuilder.html — a page of the website (cobuilder.html).
+X.4.25 site/pages/collection.html — a page of the website (collection.html).
+X.4.26 site/pages/community.html — a page of the website (community.html).
+X.4.27 site/pages/companion.html — a page of the website (companion.html).
+X.4.28 site/pages/concordia.html — a page of the website (concordia.html).
+X.4.29 site/pages/consciousness.html — a page of the website (consciousness.html).
+X.4.30 site/pages/construct-x.html — a page of the website (construct-x.html).
+X.4.31 site/pages/creative.html — a page of the website (creative.html).
+X.4.32 site/pages/derivations.html — a page of the website (derivations.html).
+X.4.33 site/pages/dispatch.html — a page of the website (dispatch.html).
+X.4.34 site/pages/elements.html — a page of the website (elements.html).
+X.4.35 site/pages/enroll.html — a page of the website (enroll.html).
+X.4.36 site/pages/expert-desk.html — a page of the website (expert-desk.html).
+X.4.37 site/pages/explore.html — a page of the website (explore.html).
+X.4.38 site/pages/faq.html — a page of the website (faq.html).
+X.4.39 site/pages/for-ai.html — a page of the website (for-ai.html).
+X.4.40 site/pages/forum.html — a page of the website (forum.html).
+X.4.41 site/pages/geometria.html — a page of the website (geometria.html).
+X.4.42 site/pages/governance.html — a page of the website (governance.html).
+X.4.43 site/pages/history.html — a page of the website (history.html).
+X.4.44 site/pages/imagination.html — a page of the website (imagination.html).
+X.4.45 site/pages/index.html — a page of the website (index.html).
+X.4.46 site/pages/innovation.html — a page of the website (innovation.html).
+X.4.47 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.48 site/pages/intelligence.html — a page of the website (intelligence.html).
+X.4.49 site/pages/lexicon.html — a page of the website (lexicon.html).
+X.4.50 site/pages/library.html — a page of the website (library.html).
+X.4.51 site/pages/mathematics.html — a page of the website (mathematics.html).
+X.4.52 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.53 site/pages/omegasl.html — a page of the website (omegasl.html).
+X.4.54 site/pages/paper-register.html — a page of the website (paper-register.html).
+X.4.55 site/pages/paper.html — a page of the website (paper.html).
+X.4.56 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
+X.4.57 site/pages/philosophy.html — a page of the website (philosophy.html).
+X.4.58 site/pages/playground.html — a page of the website (playground.html).
+X.4.59 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.60 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.61 site/pages/questions.html — a page of the website (questions.html).
+X.4.62 site/pages/record.html — a page of the website (record.html).
+X.4.63 site/pages/research-development.html — a page of the website (research-development.html).
+X.4.64 site/pages/research.html — a page of the website (research.html).
+X.4.65 site/pages/seven-veils.html — a page of the website (seven-veils.html).
+X.4.66 site/pages/sky.html — a page of the website (sky.html).
+X.4.67 site/pages/solve.html — a page of the website (solve.html).
+X.4.68 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.69 site/pages/strike.html — a page of the website (strike.html).
+X.4.70 site/pages/submit.html — a page of the website (submit.html).
+X.4.71 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.72 site/pages/units.html — a page of the website (units.html).
+X.4.73 site/pages/vision.html — a page of the website (vision.html).
+X.4.74 site/pages/worlds.html — a page of the website (worlds.html).
+X.4.75 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.76 site/test/domains.json — the data of site/test.
+X.4.77 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.78 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.79 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
@@ -5609,30 +5620,31 @@ X.6.49 docs/ONEDRIVE_REVIEW.md — Review of the OneDrive archive.
 X.6.50 docs/PHILOSOPHY_OF_BEING.md — The Philosophy of Being: Existence Contemplating Itself.
 X.6.51 docs/PUBLIC_REPO_REVIEW.md — Review of the October 2025 public repository.
 X.6.52 docs/QUESTION_NAVIGATION.md — Question navigation.
-X.6.53 docs/SPECULATION_REGISTER.md — Ω42 Speculation Register (generated by tools/stp.py — do not edit by hand).
-X.6.54 docs/VISION.md — Omega42: A New Landscape for Exploring Existence, Mathematics and Possibility.
-X.6.55 governance/decisions/README.md — Decisions.
-X.6.56 governance/interests.md — Declared interests of Committee members.
-X.6.57 library/LIB-01/BK-A.md — The Mathematical Formalisms (book appendix A, 2025).
-X.6.58 library/LIB-01/BK-B.md — The Coherence Calculus (2025).
-X.6.59 library/LIB-01/PF-A.md — The Philosophical Foundations of Omega42 (companion to V336 Rev.2).
-X.6.60 library/LIB-01/PF-B.md — Philosophical Foundations and Operational Clarifications (V336 Rev.1).
-X.6.61 library/LIB-01/PF-C.md — The Philosophical Foundations of the AI Omega42 Protocol (revision 431 of V335).
-X.6.62 library/LIB-01/PF-D.md — Counting, Distinction and the Human Frame of Reference (three papers).
-X.6.63 library/README.md — The Library: the archive collection.
-X.6.64 omega42.identity.json — the data of the repository.
-X.6.65 selftest.txt — Demonstration on constructed cases, not validation on real navigations.
-X.6.66 tools/build/README.md — The build kit.
-X.6.67 tools/build/docedit.py — docedit.py -- the paragraph editor of the build kit: rep(prefix, old, new) replaces text inside the one paragraph that starts.
-X.6.68 tools/build/dump.py — import sys; sys.path.insert(0,'/home/claude'); from dx import Doc.
-X.6.69 tools/build/dx.py — import re, html.
-X.6.70 tools/build/embed_all.py — Builder: (re)embed every file the release requires (Core L-493). Idempotent: removes and rebuilds the appendices.
-X.6.71 tools/build/pipe.sh — set -e.
-X.6.72 tools/build/prebuild.sh — set -e.
-X.6.73 tools/build/rebuild.sh — set -e.
-X.6.74 tools/build/run_ci.py — import yaml, subprocess, sys, re.
-X.6.75 tools/build/seal.py — import subprocess, re, sys.
-X.6.76 tools/lab_selftest.js — website code (lab_selftest.js).
+X.6.53 docs/RESEARCH_AND_DEVELOPMENT.md — Omega42 Research and Development Master Programme.
+X.6.54 docs/SPECULATION_REGISTER.md — Ω42 Speculation Register (generated by tools/stp.py — do not edit by hand).
+X.6.55 docs/VISION.md — Omega42: A New Landscape for Exploring Existence, Mathematics and Possibility.
+X.6.56 governance/decisions/README.md — Decisions.
+X.6.57 governance/interests.md — Declared interests of Committee members.
+X.6.58 library/LIB-01/BK-A.md — The Mathematical Formalisms (book appendix A, 2025).
+X.6.59 library/LIB-01/BK-B.md — The Coherence Calculus (2025).
+X.6.60 library/LIB-01/PF-A.md — The Philosophical Foundations of Omega42 (companion to V336 Rev.2).
+X.6.61 library/LIB-01/PF-B.md — Philosophical Foundations and Operational Clarifications (V336 Rev.1).
+X.6.62 library/LIB-01/PF-C.md — The Philosophical Foundations of the AI Omega42 Protocol (revision 431 of V335).
+X.6.63 library/LIB-01/PF-D.md — Counting, Distinction and the Human Frame of Reference (three papers).
+X.6.64 library/README.md — The Library: the archive collection.
+X.6.65 omega42.identity.json — the data of the repository.
+X.6.66 selftest.txt — Demonstration on constructed cases, not validation on real navigations.
+X.6.67 tools/build/README.md — The build kit.
+X.6.68 tools/build/docedit.py — docedit.py -- the paragraph editor of the build kit: rep(prefix, old, new) replaces text inside the one paragraph that starts.
+X.6.69 tools/build/dump.py — import sys; sys.path.insert(0,'/home/claude'); from dx import Doc.
+X.6.70 tools/build/dx.py — import re, html.
+X.6.71 tools/build/embed_all.py — Builder: (re)embed every file the release requires (Core L-493). Idempotent: removes and rebuilds the appendices.
+X.6.72 tools/build/pipe.sh — set -e.
+X.6.73 tools/build/prebuild.sh — set -e.
+X.6.74 tools/build/rebuild.sh — set -e.
+X.6.75 tools/build/run_ci.py — import yaml, subprocess, sys, re.
+X.6.76 tools/build/seal.py — import subprocess, re, sys.
+X.6.77 tools/lab_selftest.js — website code (lab_selftest.js).
 ---
 CAS-YY = −1/2 | Omega = 1/7 | (CAS-YY × Omega = −1/14)
 COMPANION DOCUMENT: Philosophy and Theory * V335 Rev.450 STABLE * 16 October 2026
