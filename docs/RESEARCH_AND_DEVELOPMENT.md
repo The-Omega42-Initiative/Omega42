@@ -351,6 +351,20 @@ Foundation: The archive holds the Training Manual 2.0, the Navigator's Guide, St
 
 Next action and acceptance: Examined for the third edition (manual Appendix B); deeper review of retired instruments for anything still worth reviving; originals stay private.
 
+## S09 — Constitutional Specification Audit (CSA-01)
+Area: Protocol | Priority: Critical | Status: Proposal
+
+Foundation: ChatGPT's consistency review of 26 November: check every normative law, precedence rule and cross-reference of the Core; build the dependency graph of its laws; find contradictions and redundancies.
+
+Next action and acceptance: Audit the Core in sections against the six-layer proposal (docs/proposed/), starting with the Reversal Test and Aperture provisions already amended in the Constitution. Accepted when every law has a layer, a dependency list and no unresolved conflict.
+
+## S10 — Core V336 six-layer edition
+Area: Protocol | Priority: High | Status: Proposed text published
+
+Foundation: The Core reorganized into Constitutional Core, Mathematical Kernel, OmegaSL Runtime, Cognitive Engine, Adapters and Instruments, Human–AI Navigation; Rev451 integration (records/cobuilder/INTEGRATION_REV451.md).
+
+Next action and acceptance: Published beside the canonical Core (core-proposed.html). Ratification by the Originator; conformance tests for the 16k and 32k editions; L-493 research-tier amendment.
+
 ## Source and continuity
 - records/math/results.json; tools/core_math.py; MF49,57,66,72.
 - proposals/instruments-of-being/omegasl_tier3_typed_beta6.js on proposal/instruments-of-being (beta 6 interpreter).
@@ -362,3 +376,4 @@ Next action and acceptance: Examined for the third edition (manual Appendix B); 
 2026-11-26: initial consolidated agenda by ChatGPT (30 avenues); no canonical adoption or deployment asserted.
 2026-11-26: Claude recorded statuses after the paper's Parts II to III and the website release, and added W05, W06, S06, S07 and G05 to G08 from the Originator's submission directive and ChatGPT's Collective Discovery Network proposal (38 avenues).
 2026-11-26: Claude added W07 to W10, S08 and G09 from ChatGPT's Instruction Manual and FAQ investigation (44 avenues).
+2026-11-26: Claude added S09 and S10 from ChatGPT's Core consistency review and Rev451 candidate (46 avenues).

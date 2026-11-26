@@ -250,3 +250,13 @@
     el.addEventListener('click', fire); el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fire(); } });
   });
 })();
+// Language preference: opens the public page in machine translation; the English text stays authoritative
+(function () {
+  var sel = document.getElementById('lang-pick'); if (!sel) return;
+  sel.addEventListener('change', function () {
+    var tl = sel.value; if (!tl) return;
+    var u = location.href.split('#')[0];
+    if (/^https?:\/\/(localhost|127\.)/.test(u)) { sel.value = ''; return; }
+    location.href = 'https://translate.google.com/translate?sl=en&tl=' + encodeURIComponent(tl) + '&u=' + encodeURIComponent(u);
+  });
+})();

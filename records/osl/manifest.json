@@ -1,0 +1,308 @@
+{
+ "_about": "The unified OmegaSL instrument manifest: every operation of the Structural Language, its source, its selftest and its status. Tier 1 and Tier 2 are canonical (Companion Part 214); everything else is proposed until a release ratifies it. Overlaps (REFINE, LIFT, RESONANCE, ORBIT, EXPLORE) are merged under one typed signature in Beta 7.",
+ "operations": [
+  {
+   "op": "N",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "R",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "X",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "Y",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "H",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "F",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "V",
+   "family": "Tier 1",
+   "type": "LAWFUL-REVERSIBLE",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "C",
+   "family": "Tier 1",
+   "type": "LAWFUL-ACTUALIZING",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "S",
+   "family": "Tier 1",
+   "type": "EXTERNAL",
+   "source": "tools/osl.py (canonical)",
+   "selftest": "tools/osl.py selftest",
+   "status": "CANONICAL"
+  },
+  {
+   "op": "LIFT",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "REDUCE",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "REFINE",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "COARSEN",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "DETAIL",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "PAIR",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "COUPLE",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "MEMORY",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "MEMORY_LIFT",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "COMMUTANT",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "WORLD",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "INQUIRE",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "KNOWLEDGE",
+   "family": "Tier III reference",
+   "source": "records/osl/tier3_ext.py",
+   "selftest": "records/osl/tier3_ext.py --selftest (10/10)",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "OBSERVE TRACE RECONSTRUCT BLINDSPOT REFINE DISTINGUISH ATTEND",
+   "family": "CIG-01",
+   "source": "proposals/instruments-of-being/osl_cig01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "PLAN ATTEND VERIFY RESET",
+   "family": "OCC-01",
+   "source": "proposals/instruments-of-being/osl_occ01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "DECIDE BRANCH",
+   "family": "OCC-02",
+   "source": "proposals/instruments-of-being/osl_occ02.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "VALUATE ANTICIPATE",
+   "family": "OCC-03",
+   "source": "proposals/instruments-of-being/osl_occ03.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "DIAGNOSE REVISE",
+   "family": "OCC-04",
+   "source": "proposals/instruments-of-being/osl_occ04.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "TRANSLATE ORBIT RECOGNIZE GENERALIZE LEARN",
+   "family": "CLC-01",
+   "source": "proposals/instruments-of-being/osl_clc01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "REFLECT PROFILE COMPARE",
+   "family": "CTA-01",
+   "source": "proposals/instruments-of-being/osl_cta01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "AUTOMORPHISMS CENTRALIZER STABILIZER CLASSIFY",
+   "family": "CTA-02",
+   "source": "proposals/instruments-of-being/osl_cta02.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "FACTORIZE",
+   "family": "CTA-03",
+   "source": "proposals/instruments-of-being/osl_cta03.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "REORDER COMPOSE COMMUTES",
+   "family": "CTA-04",
+   "source": "proposals/instruments-of-being/osl_cta04.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "PROJECT DIRECTIONS ORBIT",
+   "family": "CPG-01",
+   "source": "proposals/instruments-of-being/osl_cpg01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "DECOMPOSE LIFT EVOLVE",
+   "family": "CPG-02",
+   "source": "proposals/instruments-of-being/osl_cpg02.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "MULTIPLICITIES PARITY_DIMENSIONS",
+   "family": "CSG-01",
+   "source": "proposals/instruments-of-being/osl_csg01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "RESONANCE",
+   "family": "CRC-01",
+   "source": "proposals/instruments-of-being/osl_crc01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "GRAM IMPULSE_RANKS",
+   "family": "CRN-01",
+   "source": "proposals/instruments-of-being/osl_crn01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "GREEDY OPTIMAL",
+   "family": "CCO-01",
+   "source": "proposals/instruments-of-being/osl_cco01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "EXPLORE",
+   "family": "CCU-01",
+   "source": "proposals/instruments-of-being/osl_ccu01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "REACH",
+   "family": "CCR-01",
+   "source": "proposals/instruments-of-being/osl_ccr01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "GENERATE",
+   "family": "CGM-01",
+   "source": "proposals/instruments-of-being/osl_cgm01.py (branch proposal/instruments-of-being)",
+   "selftest": "executed by Claude 26 Nov: PASS",
+   "status": "PROPOSED"
+  },
+  {
+   "op": "WORLD DEPTH SEED APPLY ORBIT ORBITS SPECTRUM EXPLORE OBSERVE INQUIRE VERIFY",
+   "family": "Workbench (browser)",
+   "source": "site/pages/workbench.html",
+   "selftest": "browser tests at each release",
+   "status": "PROPOSED"
+  }
+ ]
+}

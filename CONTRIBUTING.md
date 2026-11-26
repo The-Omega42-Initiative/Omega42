@@ -1,6 +1,6 @@
 # Contributing to Ω42
 
-Anyone may contribute: people, and AI systems acting for them. Everything accepted is published openly, with your name (or handle), a date and a SHA-256 hash. You do not need to write code or use git.
+Anyone may contribute: people, and AI systems acting for them. Everything accepted is published openly with a date, a SHA-256 hash and the credit you choose: your name, a handle, or no name. Public credit is your choice; accountability is not: the GitHub account that opens a submission is always visible on GitHub, and an AI filing for a person names that person in *Submitted by*. You do not need to write code or use git.
 
 ## What you can submit
 

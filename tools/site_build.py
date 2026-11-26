@@ -16,11 +16,11 @@ import congruence as cg
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
 NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-journey', 'The Philosophy of Being: a journey'), ('being-human', 'The Art of Being Human'), ('consciousness', 'The consciousness programme'), ('vision', 'The founding vision'), ('aperture', 'The Human Aperture')]),
-       ('Observatory', [('observatory', 'The Universal Observatory'), ('sky', 'The Celestial Observatory'), ('elements', 'The Elemental Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
-       ('Instruments', [('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
+       ('Observatory', [('observatory', 'The Universal Observatory'), ('research-integration', 'Research laboratory (Rev451)'), ('sky', 'The Celestial Observatory'), ('elements', 'The Elemental Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
+       ('Instruments', [('workbench', 'OmegaSL Workbench'), ('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
        ('Explore', [('questions', 'World of Questions'), ('strike', 'Ask a question'), ('solve', 'SOLVE: bring a problem'), ('explore', 'How Omega42 works'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('speculate', 'Speculative Foundations')]),
-       ('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
-       ('Protocol', [('protocol', 'Core and Companion'), ('manual', 'The Navigator Instruction Manual'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
+       ('Discoveries', [('research-center', 'The Research Center'), ('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
+       ('Protocol', [('protocol', 'Core and Companion'), ('core-proposed', 'Core V336, six-layer edition (proposed)'), ('manual', 'The Navigator Instruction Manual'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('innovation', 'The Innovation Commons'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas'), ('governance', 'Governance')]),
        ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('research-development', 'Research and development'), ('discovery-register', 'Research and Discovery Register'), ('archive-report', 'Archive salvage report')])]
@@ -103,13 +103,20 @@ def build(out, repo):
                             ('PAPER', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.md'), 'Mathematical paper (Markdown)'), ('PAPERPDF', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.pdf'), 'Mathematical paper (PDF)'),
                             ('RD', ('docs', 'RESEARCH_AND_DEVELOPMENT.md'), 'Research and Development Programme (Markdown)'),
                             ('MANUAL', ('docs', 'NAVIGATOR_MANUAL.md'), 'Navigator Instruction Manual (Markdown)'), ('MANUALPDF', ('docs', 'NAVIGATOR_MANUAL.pdf'), 'Navigator Instruction Manual (PDF)'),
-                            ('MANUALDOCX', ('docs', 'manual', 'Omega42_Navigator_Manual.docx'), 'Navigator Instruction Manual (Word)')):
+                            ('MANUALDOCX', ('docs', 'manual', 'Omega42_Navigator_Manual.docx'), 'Navigator Instruction Manual (Word)'),
+                            ('C336DOCX', ('docs', 'proposed', 'Omega42_Core_Specification_V336_Six_Layer_PROPOSED.docx'), 'Core Specification V336 six-layer edition, PROPOSED (Word)'),
+                            ('C336PDF', ('docs', 'proposed', 'OMEGA42_CORE_V336_SIX_LAYER_PROPOSED.pdf'), 'Core Specification V336 six-layer edition, PROPOSED (PDF)'),
+                            ('C336MD', ('docs', 'proposed', 'OMEGA42_CORE_V336_SIX_LAYER_PROPOSED.md'), 'Core Specification V336 six-layer edition, PROPOSED (Markdown)')):
         src = os.path.join(ROOT, *rel)
         if not os.path.exists(src): continue
         shutil.copy(src, os.path.join(out, 'protocol', rel[-1])); h = sha_file(src)
         lite[key] = dict(path='protocol/' + rel[-1], kb=os.path.getsize(src) // 1024, sha=h)
         rows.append('<tr><td>%s</td><td><a href="protocol/%s" download>%s</a> <span class="note mono">%d KB</span></td><td></td><td class="num" title="%s">%s…</td></tr>'
                     % (label, rel[-1], rel[-1].rsplit('.', 1)[1], os.path.getsize(src) // 1024, h, h[:16]))
+    prop = [r for r in rows if 'V336 six-layer' in r]
+    rows = [r for r in rows if 'V336 six-layer' not in r]
+    ci = next((i for i, r in enumerate(rows) if '<td>Core' in r), 0)
+    rows[ci + 1:ci + 1] = prop
     script_sha = re.search(r'SCRIPT SHA-256: ([0-9a-f]{64})', os.popen('%s %s --version' % (sys.executable, os.path.join(ROOT, 'scripts', 'canonical_reference.py'))).read())
     script_sha = script_sha.group(1) if script_sha else ''
     protocol = dict(version=version, files=files, reference_script=dict(path='py/canonical_reference.py', sha256=script_sha),
@@ -193,6 +200,19 @@ def build(out, repo):
     for key, rel in (('DREG', ('records', 'cobuilder', 'RESEARCH_DISCOVERY_REGISTER.md')), ('DVER', ('records', 'cobuilder', 'REGISTER_VERIFICATION.md'))):
         fp = os.path.join(ROOT, *rel)
         subs['{{%s_BODY}}' % key] = (md_html(open(fp, encoding='utf-8').read().split('\n', 1)[1]).replace('href="2026-', 'href="https://github.com/%s/blob/main/records/cobuilder/2026-' % repo)) if os.path.exists(fp) else ''
+    omf = os.path.join(ROOT, 'records', 'osl', 'manifest.json')   # the unified OmegaSL instrument manifest
+    if os.path.exists(omf):
+        om = json.load(open(omf, encoding='utf-8'))['operations']; e = lambda x: html.escape(str(x))
+        subs['{{OSL_MANIFEST}}'] = ''.join('<tr><td><code>%s</code></td><td>%s</td><td>%s</td><td class="note">%s</td><td>%s</td></tr>' % (e(o['op']), e(o['family']), e(o.get('type', '—')), e(o['source']), e(o['status'])) for o in om)
+        subs['{{OSL_MANIFEST_COUNT}}'] = str(len(om))
+    c3p = os.path.join(ROOT, 'docs', 'proposed', 'OMEGA42_CORE_V336_SIX_LAYER_PROPOSED.md')
+    subs['{{C336_BODY}}'] = md_html(open(c3p, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(c3p) else ''
+    words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen']
+    ixp = open(os.path.join(ROOT, 'site', 'pages', 'index.html'), encoding='utf-8').read()
+    sec = re.search(r'id="instruments">(.*?)</section>', ixp, re.S)
+    nins = sec.group(1).count('<a class="world"') if sec else 0   # the instrument count is read from the cards themselves
+    subs['{{INSTRUMENT_COUNT}}'] = words[nins] if nins < len(words) else str(nins)
+    subs['{{RELEASE_DATE}}'] = datetime.date.today().strftime('%-d %B %Y')   # the date this site was built and published
     mnp = os.path.join(ROOT, 'docs', 'NAVIGATOR_MANUAL.md')
     subs['{{MANUAL_BODY}}'] = md_html(open(mnp, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(mnp) else ''
     rdp = os.path.join(ROOT, 'docs', 'RESEARCH_AND_DEVELOPMENT.md')

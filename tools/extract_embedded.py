@@ -46,7 +46,9 @@ OUTSIDE = {'docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx': 'the Core 
            'llms.txt': 'the index of the AI reading editions, rendered by tools/ai_edition.py',
            'docs/OMEGA42_MATHEMATICAL_PAPER.pdf': 'the mathematical paper typeset from docs/OMEGA42_MATHEMATICAL_PAPER.md, which is embedded',
            'docs/NAVIGATOR_MANUAL.pdf': 'the Instruction Manual typeset from docs/NAVIGATOR_MANUAL.md, which is embedded',
-           'docs/manual/Omega42_Navigator_Manual.docx': 'the Instruction Manual converted from docs/NAVIGATOR_MANUAL.md, which is embedded'}
+           'docs/manual/Omega42_Navigator_Manual.docx': 'the Instruction Manual converted from docs/NAVIGATOR_MANUAL.md, which is embedded',
+           'docs/proposed/OMEGA42_CORE_V336_SIX_LAYER_PROPOSED.pdf': 'the proposed six-layer Core typeset from its Markdown, which is embedded',
+           'docs/proposed/Omega42_Core_Specification_V336_Six_Layer_PROPOSED.docx': 'the proposed six-layer Core converted from its Markdown, which is embedded'}
 EXEMPT = {'tools/__init__.py'}
 ARCHIVED = 'archive/2025-10/'   # the October 2025 edition, kept unchanged and not embedded (D-15; archive/2025-10/README.md)
 
