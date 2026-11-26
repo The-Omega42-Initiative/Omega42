@@ -76,7 +76,8 @@ def field(f, *names):
 
 # ---------- checks ------------------------------------------------------------------------------------------
 def run(cmd):
-    p = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
+    try: p = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT, timeout=600)
+    except subprocess.TimeoutExpired: return 124, 'timed out after 600 s'
     return p.returncode, (p.stdout + p.stderr)
 
 
@@ -206,11 +207,11 @@ def scope_notes(text):
     for m in re.finditer(r'^\s*COMPARATIVE STATUS[^:\n]*:\s*(.*)$', text, re.M):
         line = m.group(0)
         if not re.search(r'this comparison|DOMAIN SHA-256|ARCHITECTURES COMPARED|between ', line + text[m.end():m.end() + 300], re.I):
-            notes.append('- Comparative scope (L-490 item 4): `%s` does not name the comparison it belongs to.' % line.strip()[:120])
+            notes.append('- Comparative scope (L-490 item 4): the COMPARATIVE STATUS line at line %d does not name the comparison it belongs to.' % (text.count('\n', 0, m.start()) + 1))   # line number, never the text (G07)
     for m in CUMUL.finditer(text):
         ctx = text[max(0, m.start() - 160):m.end() + 160]
         if not re.search(r'records/|version|V335|\d{4}-\d{2}-\d{2}', ctx):
-            notes.append('- Cumulative wording without a named record (L-490 item 5): "%s".' % m.group(0)[:80])
+            notes.append('- Cumulative wording without a named record (L-490 item 5): line %d.' % (text.count('\n', 0, m.start()) + 1))
     return notes or ['- Comparative scope and cumulative wording (L-490): CLEAR.']
 
 
@@ -232,7 +233,7 @@ def stale_claims(text):
         if not STALE.search(sent): continue
         for aid, words in names.items():
             if aid in have and any(re.search(r'\b%s\b' % w, sent, re.I) for w in words):
-                out.append('- Registered item described as still to come (Companion 62.5, E03): %s -- registered as %s (Core Part 3.43): "%s"' % (words[0], aid, sent.strip()[:160]))
+                out.append('- Registered item described as still to come (Companion 62.5, E03): %s -- registered as %s (Core Part 3.43).' % (words[0], aid))
     return sorted(set(out))
 
 

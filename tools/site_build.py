@@ -23,7 +23,7 @@ NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-j
        ('Protocol', [('protocol', 'Core and Companion'), ('manual', 'The Navigator Instruction Manual'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('innovation', 'The Innovation Commons'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas'), ('governance', 'Governance')]),
-       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('research-development', 'Research and development'), ('archive-report', 'Archive salvage report')])]
+       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('research-development', 'Research and development'), ('discovery-register', 'Research and Discovery Register'), ('archive-report', 'Archive salvage report')])]
 
 
 def nav_html(current):
@@ -190,6 +190,9 @@ def build(out, repo):
         subs['{{REGISTER_FULL}}'] = re.sub(r'\{\{BUILT_ON_(MF-\d+)\}\}', lambda m: '<p class="note">Built on this: %s</p>' % ', '.join(
             '<a href="innovation.html#%s">%s %s</a>' % (x['id'].lower(), x['id'], html.escape(x['title'])) for x in built_on[m.group(1)]) if m.group(1) in built_on else '', subs['{{REGISTER_FULL}}'])
     paper = os.path.join(ROOT, 'docs', 'OMEGA42_MATHEMATICAL_PAPER.md')
+    for key, rel in (('DREG', ('records', 'cobuilder', 'RESEARCH_DISCOVERY_REGISTER.md')), ('DVER', ('records', 'cobuilder', 'REGISTER_VERIFICATION.md'))):
+        fp = os.path.join(ROOT, *rel)
+        subs['{{%s_BODY}}' % key] = (md_html(open(fp, encoding='utf-8').read().split('\n', 1)[1]).replace('href="2026-', 'href="https://github.com/%s/blob/main/records/cobuilder/2026-' % repo)) if os.path.exists(fp) else ''
     mnp = os.path.join(ROOT, 'docs', 'NAVIGATOR_MANUAL.md')
     subs['{{MANUAL_BODY}}'] = md_html(open(mnp, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(mnp) else ''
     rdp = os.path.join(ROOT, 'docs', 'RESEARCH_AND_DEVELOPMENT.md')

@@ -113,6 +113,8 @@ that is, 5 for j = 0, 4 for the seven multiples j = 3, 6, …, 21, and 3 for the
 
 *Proof.* On an orbit of length ℓ, U acts as a cyclic shift. Its eigenvalues are the ℓ-th roots of unity, each once, and the ℓ-th roots are the harmonics j with (24/ℓ) | j. The three 24-orbits give every harmonic once each; the 8-orbit gives the multiples of 3; the fixed point gives j = 0. ∎
 
+At depth k the harmonic j of the period 8 · 3ᵏ⁻¹ has multiplicity [j = 0] + Σ_(m=1..k) 3^(m−1) [3^(k−m) | j] (ChatGPT, CSG-01; ✓ k ≤ 3), and the antipode splits the functions into (9ᵏ + 1)/2 even and (9ᵏ − 1)/2 odd dimensions.
+
 **Corollary 4.2 (the commutant).** The operators commuting with U form an algebra isomorphic to M₅(ℂ) ⊕ M₄(ℂ)⁷ ⊕ M₃(ℂ)¹⁶. Its dimension is 25 + 112 + 144 = 281. At depth k it is (5 · 27ᵏ + 8)/13 (Theorem 20.2).
 
 **Theorem 4.3 (coherence).** Let L = 2I − U − U*, the Laplacian of the dynamics. For α ≥ 0, the operator C_α = (I + αL/4)⁻¹ acts on the harmonic j by
@@ -149,6 +151,14 @@ The least length depends on how the nine values are merged into seven classes. O
 
 At depth 5 the six phases (141, 155, 211, 282, 338, 409) give 59,041 distinct readings, eight pairs short of 59,049. Adding phase 1 separates every state, so seven readers suffice. (ChatGPT, recomputed by Claude: `records/cobuilder/xobs02_search.py`.)
 
+**Theorem 5.5 (every team of three, and what adaptivity buys; ChatGPT, CIC-05 and OCC-01 to OCC-04).** For the view a mod 7 on W₂:
+- Of the 2,024 sets of three phases, exactly 192 separate all 81 states. They fall into eight translation classes of 24, with cyclic gaps (19, 2, 3), (19, 3, 2), (15, 2, 7), (15, 7, 2), (14, 3, 7), (14, 7, 3), (10, 5, 9) and (10, 9, 5). The 2,024 sets form 85 translation classes in all, (2,024 + 2 · 8)/24 by Burnside's lemma.
+- An adaptive observer, choosing each phase after the last answer, needs 218 readings in total over the 81 states: on average 218/81 ≈ 2.69, against 3 for any fixed team. The worst case stays 3.
+- Restricting the phases to multiples of 2 or 3 costs nothing: the optimum is still 218. Multiples of 4, 6, 8, 12 or 24 cannot separate all states (26, 64, 25, 8 and 7 classes), and each needs exactly two added phases to recover.
+- Greedy collision-minimization with the lowest phase on ties picks 0, 1, 4, 5. Its residual unresolved pairs are 3,240, 486, 44, 1 and 0, so it uses four readings where three suffice. Greedy rules are not optimal in general, which is why Theorem 22.1 states what greedy achieves rather than assuming it.
+
+*Proof.* Exhaustive computation over all phase sets and, for the adaptive cost, a Bellman recursion over all candidate sets. Recomputed independently in `records/cobuilder/cg_batch_2026_11_26_check.py`. ∎
+
 **Open problem O-30.** Do six native phases of a mod 7 separate all 59,049 states at depth 5?
 
 ## 6. Memory
@@ -180,6 +190,14 @@ For nonzero vectors v, w in ℓ²(W_k), decompose each along the orbits and harm
   0 ≤ F ≤ F_B ≤ R_O ≤ R_H ≤ 1.
 
 *Proof.* The harmonic subspaces are orthogonal, so ⟨v, w⟩ = Σ_j ⟨v_j, w_j⟩, and the triangle inequality gives F ≤ F_B. Within one harmonic, ⟨v_j, w_j⟩ = Σ_O conj(v̂_(O,j)) ŵ_(O,j), so |⟨v_j, w_j⟩| ≤ Σ_O |v̂_(O,j)| |ŵ_(O,j)|, which gives F_B ≤ R_O. By Cauchy–Schwarz on each harmonic, Σ_O √(p_(O,j) q_(O,j)) ≤ √(p_j q_j), which gives R_O ≤ R_H. Finally Σ_j √(p_j q_j) ≤ 1, again by Cauchy–Schwarz. ∎
+
+**Proposition 7.3 (time-shifted agreement; ChatGPT, CRC-01).** Let L = max_t F(v, U^t w), the best fidelity after moving w along the law. Then
+
+  0 ≤ F ≤ L ≤ F_B ≤ R_O ≤ R_H ≤ 1.
+
+*Proof.* With z_j = ⟨v_j, w_j⟩/(‖v‖‖w‖), F(v, U^t w) = |Σ_j z_j ω^(jt)| ≤ Σ_j |z_j| = F_B; t = 0 gives F. ∎
+
+L separates two states of one loop (L = 1, F = 0) from two states of different loops (L = 0): a difference of position from a difference of world.
 
 The gaps between the measures carry information:
 
@@ -236,7 +254,7 @@ The law is multiplication by φ in the ring R = ℤ[φ], φ² = φ + 1, written 
 - **The prime 3 is inert.** x² − x − 1 has no root modulo 3, so R/3R = 𝔽₉ and the canonical world W₂ is R/9R. The 3-adic completion ℤ₃[φ] is the unramified quadratic extension of ℤ₃, and the tower of Section 3 is its sequence of finite quotients.
 - **Surprising coincidences of residue rings.** φ ↦ 5 + i is a ring isomorphism ℤ[φ]/9 ≅ ℤ[i]/9 (MF-01 ✓), under which the norm becomes x² + y² (MF-02). φ⁶ = 5 + 8φ squares to −1 modulo 9 (MF-03 ✓); −1 has a square root in ℤ₃[φ] and ℚ₃(√5) = ℚ₃(i) (MF-04).
 - **Units.** The units of norm ±1 modulo 3ᵐ are exactly the powers of φ, 8 · 3ᵐ⁻¹ of them (MF-39 ✓); the closure of ⟨φ⟩ in the 3-adic units is the whole group of units of norm ±1 (MF-55). The map n ↦ φ⁸ⁿ extends continuously to n ∈ ℤ₃ (MF-33).
-- **Projective dynamics.** On the projective line P¹(ℤ/3ᵏ) the law is a single cycle of length 4 · 3ᵏ⁻¹, and on P¹(ℤ₃) it is minimal and uniquely ergodic, with Haar measure (MF-40, MF-56).
+- **Projective dynamics.** On the projective line P¹(ℤ/3ᵏ) the law is a single cycle of length 4 · 3ᵏ⁻¹ (reproved by ChatGPT, CPG-01, ✓ k ≤ 4); every nonzero state is uniquely 3ʳ · unit · direction, and A^(4·3^(m−1)) = −I on each layer (CPG-02), and on P¹(ℤ₃) it is minimal and uniquely ergodic, with Haar measure (MF-40, MF-56).
 - **A correction.** The register's MF-73 called 3R/9R the field 𝔽₉. Its multiplication is zero, since 3x · 3y = 9xy; it is an R-module isomorphic to R/3R = 𝔽₉, on which φ acts with order 8 (✓; ChatGPT's correction, 26 November 2026). The Wheel is the action of φ on that module.
 - **Every prime.** A is a boost at the split primes, a rotation at the inert ones and a shear at the ramified prime 5 (MF-28); the inert primes 3, 7, 13, 17, 23, 47 return antipodally through Frobenius, and at the ramified prime A¹⁰ ≡ −I mod 5 (MF-41). Modulo the split prime 11 the roots of x² = x + 1 are 4 and 8, and the 121 pairs fall into 1 + 2 × 5 + 11 × 10 (MF-203 ✓).
 - **Analytic shadow.** L(1, χ₅) = 2 ln φ / √5, with class number 1 and regulator ln φ (MF-30); the product formula holds over every place of ℚ(√5) (MF-29).
@@ -246,6 +264,7 @@ The law is multiplication by φ in the ring R = ℤ[φ], φ² = φ + 1, written 
 
 - **The orthogonal group of the form.** Modulo 3ᵏ, SO(Q) = ⟨A²⟩ of order 4 · 3ᵏ⁻¹, and O(Q) is dihedral of order 8 · 3ᵏ⁻¹ (MF-45 ✓ at k = 2).
 - **The Fibonacci–shear groups.** With the shear B = [[1, 0], [3, 1]], G_k = ⟨A, B⟩ mod 3ᵏ is exactly the matrices of determinant ±1 whose reduction lies in ⟨A mod 3⟩; it has order 8 · 3³⁽ᵏ⁻¹⁾ (MF-42; 216 at k = 2 ✓). For B_r = [[1, 0], [3ʳ, 1]] the order is 8 · 3^(3k−2r−1), and the complete orbit invariant is the pair (valuation, Q of the primitive part) (MF-43). The number of classes forms a ladder between the k + 1 valuation strata and the Fibonacci census (MF-51), and for any shear the order depends only on the 3-adic valuation of its entry (MF-53).
+- **Factorization of the whole linear group (ChatGPT, CTA-02 to CTA-04).** Let C_k be the matrices aI + bA that are invertible modulo 3ᵏ, the units of R/3ᵏR, of order 8 · 3^(2k−2). Let H_k be the matrices [[1, 0], [c, d]] with d a unit, which fix the first coordinate, of order 6 · 3^(2k−2). Every element of GL₂(ℤ/3ᵏ) is uniquely a product HC, and uniquely a product CH (✓ k = 1, 2). Exactly 2 · 3^(3k−1) pairs (H, C) commute, a proportion 3^(2−k)/8 (✓ k = 1, 2). Modulo 9 the linear maps that keep the view a mod 7 form a group of order 54 meeting the centralizer of A, of order 72, only in the identity (✓). The lawful transformations and the observer's symmetries thus split the linear world between them.
 - **The prime 7.** Modulo 7, ⟨A, B⟩ is every matrix of determinant ±1 (MF-68, MF-71 ✓), and ⟨A², B⟩ acts on the eight points of P¹(𝔽₇) as PSL₂(𝔽₇), of order 168 (MF-77 ✓): the automorphism group of the Klein quartic, the genus-3 surface that attains Hurwitz's bound 84(g − 1) = 168 and is tiled by (2, 3, 7) triangles [4, 7]. The 42 of Theorem 9.1 and the 168 of the Klein quartic come from the same triangle.
 - **Seventeen primes.** A sealed prediction (PR-001) was confirmed: the law and the shear generate every matrix of determinant ±1 modulo each of 17 further primes (MF-104).
 - **What selects the law.** Under four stated principles (an integer law invertible over ℤ, least hyperbolic growth, an inert base prime, a distinct antipode at half period for every nonzero state), the law x² − x − 1 and the prime 3 are selected (MF-49). The census 3 × 24 + 8 + 1 holds for T(a, b) = (b, a + kb) modulo 9 exactly for k = 1, 2, 7, 8 (MF-44). [[0, 1], [1, 7]] shares A's whole 3-adic fingerprint and is separated only by its trace and by the prime 7 (MF-57, MF-66, MF-72): the census alone does not determine the law.
@@ -576,6 +595,7 @@ Every theorem above has a recompute line in the open repository [5], github.com/
 | Theorem 5.4, depths 3 to 5 | `records/cobuilder/xobs02_search.py` |
 | Theorems 4.4, 8.1–8.3 | `records/cobuilder/cg_2026_11_26_geometry_check.py` |
 | Section 17 | `records/cobuilder/actualization_check.py` |
+| Theorem 5.5, Proposition 7.3, CSG-01, CTA-02 to CTA-04, CPG-01/02 | `records/cobuilder/cg_batch_2026_11_26_check.py` (27 checks); ChatGPT's libraries `osl_*.py` on proposal/instruments-of-being (15 selftests) |
 | Section 23 (OmegaSL) | `records/osl/tier3_ext.py --selftest` and `--examples` |
 | Part III (Sections 19 to 22) | `records/cobuilder/paper_part3_check.py` (needs NumPy) |
 | Part II statements marked ✓ | `records/cobuilder/paper_part2_check.py` |
