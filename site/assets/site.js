@@ -140,13 +140,24 @@
   }).catch(function () {});
 })();
 
-/* Ask Omega42 (home page): hand the question to the Strike app in the URL fragment, which browsers never send to a server. */
+/* Living Frontier: the question of the day fills the ask box on this page. */
+(function () {
+  document.querySelectorAll('[data-ask]').forEach(function (a) {
+    a.addEventListener('click', function (e) { var box = document.getElementById('ask-q'); if (!box) return; e.preventDefault();
+      box.value = a.getAttribute('data-ask'); box.scrollIntoView({behavior: 'smooth', block: 'center'}); box.focus(); });
+  });
+})();
+
+/* Ask Omega42 (home page): hand the question to the Strike app in this tab's session storage, so it never appears in a URL;
+   if storage is unavailable, in the URL fragment, which browsers never send to a server. The form has no action and no field names. */
 (function () {
   var f = document.getElementById('ask-form'); if (!f) return;
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     var q = document.getElementById('ask-q').value.trim(); if (!q) { document.getElementById('ask-q').focus(); return; }
-    location.href = 'strike.html#' + new URLSearchParams({q: q, mode: document.getElementById('ask-mode').value, present: document.getElementById('ask-present').value}).toString();
+    var data = {q: q, mode: document.getElementById('ask-mode').value, present: document.getElementById('ask-present').value};
+    try { sessionStorage.setItem('o42-ask', JSON.stringify(data)); location.href = 'strike.html#from=home'; }
+    catch (err) { location.href = 'strike.html#' + new URLSearchParams(data).toString(); }
   });
 })();
 

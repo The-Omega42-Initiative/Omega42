@@ -98,6 +98,8 @@
   form.addEventListener('input', prompt); form.addEventListener('change', prompt); prompt();
   // arriving from the home page: the question travels in the URL fragment, which is never sent to any server
   var h = new URLSearchParams(location.hash.slice(1));
+  try { var held = JSON.parse(sessionStorage.getItem('o42-ask') || 'null'); sessionStorage.removeItem('o42-ask');
+        if (held && held.q) h = new URLSearchParams(held); } catch (err) {}
   if (h.get('q')) {
     $('#strike-q').value = h.get('q');
     var r = document.querySelector('input[name=mode][value="' + (h.get('mode') || 'auto') + '"]'); if (r) r.checked = true;

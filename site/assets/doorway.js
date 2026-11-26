@@ -19,7 +19,7 @@
   function tone(st) {
     if (!sound) return;
     try {
-      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      if (!ctx) return;
       var o = ctx.createOscillator(), g = ctx.createGain(), t = ctx.currentTime;
       o.frequency.value = 220 * Math.pow(2, st[0] / 9); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.025, t + .04); g.gain.linearRampToValueAtTime(0, t + .6);
       o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + .65);
@@ -36,38 +36,59 @@
     if (k === 12) root.classList.add('antipode');
     tone(st);
   }
+  // Each phase k (0..23) owns the second [6 + k, 7 + k): the light travels from the previous state to state k in its first
+  // 0.45 s and the number lights at the moment of arrival. After phase 23 the light closes the loop back to phase 0.
+  var MOVE = .45, raf = 0;
+  function reset() {
+    clearTrail(); lastPhase = -1; root.classList.remove('antipode'); walker.style.opacity = 0;
+    Object.keys(nodes).forEach(function (n) { nodes[n].classList.remove('lit'); });
+    phaseEl.textContent = 'phase 0'; stateEl.textContent = 'state (2, 5)';
+  }
+  function place(p) { walker.setAttribute('cx', p[0]); walker.setAttribute('cy', p[1]); }
+  function ease(f) { return f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2; }
   function frame(now) {
-    if (!paused) {
-      var t = ((now - t0 - held) / 1000) % 30;
-      if (t < 3) { stage('Genesis'); root.classList.remove('antipode'); if (lastPhase !== -1) { clearTrail(); lastPhase = -1; } walker.style.opacity = 0; }
-      else if (t < 6) { stage('Formation'); walker.style.opacity = 0; }
-      else {
-        stage(t < 18 ? 'Generation' : 'Reflection');
-        var x = t - 6, k = Math.min(23, Math.floor(x)), f = Math.min(1, (x - k) / .45);
-        f = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
-        var a = pt(digit(seq[k])), b = pt(digit(seq[(k + 1) % 24]));
-        walker.style.opacity = 1;
-        walker.setAttribute('cx', a[0] + (b[0] - a[0]) * f); walker.setAttribute('cy', a[1] + (b[1] - a[1]) * f);
-        if (k !== lastPhase) { if (k < lastPhase) clearTrail(); for (var j = lastPhase + 1; j <= k; j++) arrive(j); lastPhase = k; }
+    raf = 0; if (paused) return;
+    var t = ((now - t0 - held) / 1000) % 30;
+    if (t < 3) { if (root.getAttribute('data-stage') !== 'Genesis') reset(); stage('Genesis'); }
+    else if (t < 6) { stage('Formation'); walker.style.opacity = 0; }
+    else {
+      stage(t < 18 ? 'Generation' : 'Reflection'); walker.style.opacity = 1;
+      var x = t - 6, k = Math.min(23, Math.floor(x)), f = Math.min(1, (x - k) / MOVE);
+      var to = pt(digit(seq[k])), from = k ? pt(digit(seq[k - 1])) : to;
+      if (k === 23 && x - k > .5) {          // closing the loop: 23 -> 0, drawn before the renewal
+        var g = Math.min(1, (x - k - .5) / MOVE), z = pt(digit(seq[0]));
+        place([to[0] + (z[0] - to[0]) * ease(g), to[1] + (z[1] - to[1]) * ease(g)]);
+        if (g >= 1 && lastPhase === 23) { seg(to, z, true); Object.keys(nodes).forEach(function (n) { nodes[n].classList.remove('lit'); });
+          nodes[digit(seq[0])].classList.add('lit'); phaseEl.textContent = 'phase 24 = 0'; stateEl.textContent = 'state (2, 5) · the cycle closes'; lastPhase = 24; }
+      } else {
+        var e = ease(f); place([from[0] + (to[0] - from[0]) * e, from[1] + (to[1] - from[1]) * e]);
+        if (lastPhase < 24) {
+          var upto = f >= 1 ? k : k - 1;     // a phase counts as reached only when the light has arrived
+          if (upto < lastPhase) { clearTrail(); lastPhase = -1; }
+          for (var j = lastPhase + 1; j <= upto; j++) arrive(j);
+          if (upto > lastPhase) lastPhase = upto;
+        }
       }
     }
-    requestAnimationFrame(frame);
+    raf = requestAnimationFrame(frame);
   }
   var pausedAt = 0;
   pauseB.addEventListener('click', function () {
     paused = !paused;
-    if (paused) pausedAt = performance.now(); else held += performance.now() - pausedAt;
+    if (paused) { pausedAt = performance.now(); if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+    else { held += performance.now() - pausedAt; raf = requestAnimationFrame(frame); }
     root.classList.toggle('paused', paused); pauseB.setAttribute('aria-pressed', paused); pauseB.textContent = paused ? '▶ play' : '❚❚ pause';
   });
   soundB.addEventListener('click', function () {
     sound = !sound; soundB.setAttribute('aria-pressed', sound); soundB.textContent = sound ? '♪ tones on' : '♪ tones off';
-    if (!sound && ctx) { ctx.close(); ctx = null; }
+    if (sound) { try { ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); if (ctx.resume) ctx.resume(); } catch (e) { sound = false; } }
+    else if (ctx) { ctx.close(); ctx = null; }
   });
-  document.addEventListener('visibilitychange', function () { if (document.hidden && ctx) { ctx.close(); ctx = null; } });
+  document.addEventListener('visibilitychange', function () { if (document.hidden && ctx) { ctx.close(); ctx = null; sound = false; soundB.setAttribute('aria-pressed', false); soundB.textContent = '♪ tones off'; } });
   if (reduce) {   // a still, complete figure: the whole cycle drawn, no moving light
     root.setAttribute('data-stage', 'Still'); actEl.textContent = 'the whole canonical cycle';
-    for (var k = 1; k < 24; k++) seg(pt(digit(seq[k - 1])), pt(digit(seq[k])), k > 12);
-    walker.style.opacity = 0; pauseB.hidden = true; return;
+    for (var k = 1; k <= 24; k++) seg(pt(digit(seq[k - 1])), pt(digit(seq[k % 24])), k > 12);
+    walker.style.opacity = 0; pauseB.hidden = true; soundB.hidden = true; return;
   }
-  requestAnimationFrame(frame);
+  raf = requestAnimationFrame(frame);
 })();

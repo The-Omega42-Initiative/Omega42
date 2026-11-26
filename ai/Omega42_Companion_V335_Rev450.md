@@ -5483,37 +5483,38 @@ X.4.34 site/pages/explore.html — a page of the website (explore.html).
 X.4.35 site/pages/faq.html — a page of the website (faq.html).
 X.4.36 site/pages/for-ai.html — a page of the website (for-ai.html).
 X.4.37 site/pages/forum.html — a page of the website (forum.html).
-X.4.38 site/pages/governance.html — a page of the website (governance.html).
-X.4.39 site/pages/history.html — a page of the website (history.html).
-X.4.40 site/pages/imagination.html — a page of the website (imagination.html).
-X.4.41 site/pages/index.html — a page of the website (index.html).
-X.4.42 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.43 site/pages/intelligence.html — a page of the website (intelligence.html).
-X.4.44 site/pages/lexicon.html — a page of the website (lexicon.html).
-X.4.45 site/pages/library.html — a page of the website (library.html).
-X.4.46 site/pages/mathematics.html — a page of the website (mathematics.html).
-X.4.47 site/pages/observatory.html — a page of the website (observatory.html).
-X.4.48 site/pages/philosophy.html — a page of the website (philosophy.html).
-X.4.49 site/pages/playground.html — a page of the website (playground.html).
-X.4.50 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.51 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.52 site/pages/questions.html — a page of the website (questions.html).
-X.4.53 site/pages/record.html — a page of the website (record.html).
-X.4.54 site/pages/research.html — a page of the website (research.html).
-X.4.55 site/pages/seven-veils.html — a page of the website (seven-veils.html).
-X.4.56 site/pages/solve.html — a page of the website (solve.html).
-X.4.57 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.58 site/pages/strike.html — a page of the website (strike.html).
-X.4.59 site/pages/submit.html — a page of the website (submit.html).
-X.4.60 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.61 site/pages/units.html — a page of the website (units.html).
-X.4.62 site/pages/vision.html — a page of the website (vision.html).
-X.4.63 site/pages/worlds.html — a page of the website (worlds.html).
-X.4.64 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.65 site/test/domains.json — the data of site/test.
-X.4.66 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.67 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.68 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.38 site/pages/geometria.html — a page of the website (geometria.html).
+X.4.39 site/pages/governance.html — a page of the website (governance.html).
+X.4.40 site/pages/history.html — a page of the website (history.html).
+X.4.41 site/pages/imagination.html — a page of the website (imagination.html).
+X.4.42 site/pages/index.html — a page of the website (index.html).
+X.4.43 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.44 site/pages/intelligence.html — a page of the website (intelligence.html).
+X.4.45 site/pages/lexicon.html — a page of the website (lexicon.html).
+X.4.46 site/pages/library.html — a page of the website (library.html).
+X.4.47 site/pages/mathematics.html — a page of the website (mathematics.html).
+X.4.48 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.49 site/pages/philosophy.html — a page of the website (philosophy.html).
+X.4.50 site/pages/playground.html — a page of the website (playground.html).
+X.4.51 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.52 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.53 site/pages/questions.html — a page of the website (questions.html).
+X.4.54 site/pages/record.html — a page of the website (record.html).
+X.4.55 site/pages/research.html — a page of the website (research.html).
+X.4.56 site/pages/seven-veils.html — a page of the website (seven-veils.html).
+X.4.57 site/pages/solve.html — a page of the website (solve.html).
+X.4.58 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.59 site/pages/strike.html — a page of the website (strike.html).
+X.4.60 site/pages/submit.html — a page of the website (submit.html).
+X.4.61 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.62 site/pages/units.html — a page of the website (units.html).
+X.4.63 site/pages/vision.html — a page of the website (vision.html).
+X.4.64 site/pages/worlds.html — a page of the website (worlds.html).
+X.4.65 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.66 site/test/domains.json — the data of site/test.
+X.4.67 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.68 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.69 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
