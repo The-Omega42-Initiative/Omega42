@@ -7,9 +7,9 @@
    "sha256": "8bffa3d97aa8903beed75c067eda91b10c474466aeb99a77d4c9d04d253bec0c"
   },
   "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2037651,
-   "tokens_est": 509413,
-   "sha256": "ebfa649ee9d8987b3db0d823cb5d9b5edae2540bc516940a61f5c1fe4bcb0e3c"
+   "chars": 2037821,
+   "tokens_est": 509456,
+   "sha256": "36bcb72f70848b1b3784167a9effd712ed1cf89248758a8a1a7865a085da2208"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 476256,
@@ -5388,9 +5388,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 12953,
-   "tokens_est": 3238,
-   "sha256": "170571a7dc9467c56242cd011d8da09e063e280dbe7b4f05a06238da60cf1631"
+   "chars": 13123,
+   "tokens_est": 3281,
+   "sha256": "381503f4305cd76a72168cf5a4046b427de22cfd267f040948aaf367ea3226af"
   },
   {
    "doc": "Companion",

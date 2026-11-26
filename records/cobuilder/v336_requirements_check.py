@@ -1,5 +1,5 @@
 """Requirements traceability check for the proposed Core V336 six-layer edition (Appendix D).
-For every row R01 to R50: the V336 section it names exists; that section states the requirement (its key phrases are present);
+For every row R01 to R60: the V336 section it names exists; that section states the requirement (its key phrases are present);
 every canonical law and Step it cites is defined in the canonical Core V335 Rev.450; and, when ChatGPT's Rev451 candidate is
 supplied, every Rev451 section it cites exists there. Also checks that the human-deliverable sections of Layer 6 keep their
 examples free of protocol terms, outside the list that names them.
@@ -63,10 +63,20 @@ KEYS = {  # row: phrases that must appear in the cited V336 sections
     'R46': ['Coherence', 'congruence', 'resonance', 'reported separately'],
     'R47': ['Open Scientific Appendix', 'dormant'], 'R48': ['thirteen forms', 'block order'],
     'R49': ['Human Condition', 'website audit', 'CLC-01'], 'R50': ['redact private information'],
+    'R51': ['under the separate title **Extended Resonance Essay**', 'missing deliverable'],
+    'R52': ['goes in, investigates and comes back', 'does not count as reaching it'],
+    'R53': ['Generative exploration finds new relationships'],
+    'R54': ['established result and which part is its interpretive extension'],
+    'R55': ['Below 500 words the Essay is incomplete'],
+    'R56': ['not announced', 'Completeness gate: PASSED', 'A-3'],
+    'R57': ['compact header of four lines', 'A-4', 'technical record'],
+    'R58': ['Later outputs of the session leave it out', 'in the context where it applies'],
+    'R59': ['candidate for the Discovery Register or the Lexicon'],
+    'R60': ['The Answer illuminates the question', 'The Essay opens new worlds'],
 }
 
 rows = re.findall(r'^\| (R\d\d) \| (.+?) \| (.+?) \| (.+?) \| (.+?) \|$', v, re.M)
-ok('Appendix D has 50 rows, R01 to R50 in order', [r[0] for r in rows] == ['R%02d' % i for i in range(1, 51)])
+ok('Appendix D has 60 rows, R01 to R60 in order', [r[0] for r in rows] == ['R%02d' % i for i in range(1, 61)])
 ok('every row has a key-phrase entry in this check', set(r[0] for r in rows) == set(KEYS))
 
 core_laws = set(re.findall(r'\b(L-\d{3}): ', core))
@@ -94,7 +104,7 @@ for rid, req, src, sec, status in rows:
 
 # The amendments named in Appendix D are the ones Appendix B lists, and each names the canonical rule that governs meanwhile.
 appb = v[v.index('# Appendix B.'):v.index('# Appendix C.')]
-ok('A-1 and A-2 recorded in Appendix B with ratification pending', 'A-1' in appb and 'A-2' in appb and 'ratification' in appb)
+ok('A-1 to A-4 recorded in Appendix B with ratification pending', all(a in appb for a in ('A-1', 'A-2', 'A-3', 'A-4')) and 'ratification' in appb)
 ok('every AMENDMENT row names a canonical rule in its section', all(('Canonical' in (section(r[3].split(',')[-1].strip()) or ''))
    for r in rows if r[4].startswith('AMENDMENT')))
 
