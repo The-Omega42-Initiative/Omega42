@@ -100,6 +100,7 @@
   var h = new URLSearchParams(location.hash.slice(1));
   try { var held = JSON.parse(sessionStorage.getItem('o42-ask') || 'null'); sessionStorage.removeItem('o42-ask');
         if (held && held.q) h = new URLSearchParams(held); } catch (err) {}
+  if (location.hash && history.replaceState) { try { history.replaceState(null, '', location.pathname + location.search); } catch (err) {} }   // the question leaves the address bar once read
   if (h.get('q')) {
     $('#strike-q').value = h.get('q');
     var r = document.querySelector('input[name=mode][value="' + (h.get('mode') || 'auto') + '"]'); if (r) r.checked = true;

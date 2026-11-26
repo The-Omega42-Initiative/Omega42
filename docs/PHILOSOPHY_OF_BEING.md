@@ -54,7 +54,7 @@ Unity and individuality are usually set against each other. The tower dissolves 
 
 > The anchor · the law is multiplication by the golden ratio, and the norm Q(a, b) = a² + ab − b² flips its sign at every step and returns on the next: Q(Nx) = −Q(x).
 
-Something survives every transformation, though it changes its face. The quantity alternates, positive and negative, and yet its magnitude is never lost. Here is a mathematical image of character: what we are can endure through what we undergo, even when each moment shows its opposite side. Halfway round every loop each state meets its own negative, twelve steps away. Opposites are not strangers. They share a path.
+Something survives every transformation, though it changes its face. The quantity alternates, positive and negative, and yet its square never changes. Here is a mathematical image of character: what we are can endure through what we undergo, even when each moment shows its opposite side. Twelve steps on, every state meets its own negative: halfway round each 24-step loop, and on the 8-step loop only four steps away. Zero alone is its own negative. Opposites are not strangers. They share a path.
 
 ## VIII Perspective and the limited observer
 
@@ -78,7 +78,7 @@ Limitation, read this way, is grace. A structure that could decide everything wo
 
 ## XI Domain Zero: the nothing that holds structure
 
-> The anchor · the law is reversible, so no state ever falls into zero. Yet one level deeper, the nine states that read as zero hold a fixed point and an eight-cycle.
+> The anchor · the law is reversible, so no nonzero state ever falls into zero. Yet one level deeper, the nine states that read as zero hold a fixed point and an eight-cycle.
 
 Many traditions speak of a ground before form: the void, the source, the silence. Omega42's Domain Zero honors that intuition and sharpens it. At one resolution, nothing; at the next, a still point and a turning wheel of eight. What looks like absence is unresolved presence. Whether existence can return to its ground by some operation beyond the native law is an open question in the program, and one of its most beautiful.
 

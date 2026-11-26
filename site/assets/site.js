@@ -203,3 +203,25 @@
     b.setAttribute('aria-label', p ? 'Play the emblem animation' : 'Pause the emblem animation');
   });
 })();
+// Today's wonder: one verified fact, question or reflection, chosen by the visitor's local date
+(function () {
+  var t = document.getElementById('wonder-text'), l = document.getElementById('wonder-link'); if (!t || !l) return;
+  var W = [
+    ['Twelve steps on, every state of the eighty-one meets its own negative. Zero alone is its own negative.', 'paper.html'],
+    ['Eighty-one states, five loops: three of 24, one of 8, and a single still point.', 'paper.html'],
+    ['The world never ends: at depth k there are 9^k states and (3^k + 1)/2 loops, and every loop lifts to three loops three times as long.', 'paper.html'],
+    ['You can hear the shape of Omega42: the spectrum alone tells you exactly which loops the world is made of.', 'geometria.html'],
+    ['Three readings of a seven-symbol view can tell all 81 states apart. Two readings never can.', 'paper.html'],
+    ['Open question: can six readers, each seeing a mod 7, tell apart all 59,049 states at depth 5? Seven can.', 'research.html'],
+    ['Square the Omega42 law and you get Arnold’s cat map, the classic picture of chaos. The 81 states are its ninth-points.', 'geometria.html'],
+    ['After 24 steps, exactly 103,680 points of the golden torus come home. The 81 states are 1 in every 1,280 of them.', 'geometria.html'],
+    ['The quantity a² + ab − b² flips its sign at every step, and yet its square never changes.', 'philosophy.html'],
+    ['Of all hyperbolic triangles with angles π/p, π/q, π/r, the smallest has area π/42.', 'paper.html'],
+    ['Two things can sound the same and live in different worlds: harmonic resonance 1, orbit resonance 0.', 'paper.html'],
+    ['A memory that only relabels records nothing. Remembering a, the first coordinate, is such a memory.', 'paper.html'],
+    ['Reflection: if a limited observer can see the whole by joining others, what does seeing alone leave out?', 'philosophy.html'],
+    ['In the canonical loop the digits 3, 6 and 9 arrive exactly every fourth step.', 'symbols.html']
+  ];
+  var d = new Date(), n = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5), w = W[n % W.length];
+  t.textContent = w[0]; l.href = w[1];
+})();

@@ -15,8 +15,8 @@ import congruence as cg
 
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
-NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('vision', 'The founding vision'), ('aperture', 'The Human Aperture')]),
-       ('Observatory', [('observatory', 'The Universal Observatory'), ('mathematics', 'The principal mathematics'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
+NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-journey', 'The Philosophy of Being: a journey'), ('vision', 'The founding vision'), ('aperture', 'The Human Aperture')]),
+       ('Observatory', [('observatory', 'The Universal Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
        ('Instruments', [('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
        ('Explore', [('questions', 'World of Questions'), ('strike', 'Ask a question'), ('solve', 'SOLVE: bring a problem'), ('explore', 'How Omega42 works'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('speculate', 'Speculative Foundations')]),
        ('Discoveries', [('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
@@ -98,6 +98,15 @@ def build(out, repo):
         rows.append('<tr><td>%s</td><td><a href="protocol/%s">.docx</a> <span class="note mono">%d KB</span></td><td><a href="protocol/%s">.txt</a> '
                     '<button class="btn ghost" type="button" data-copy-url="protocol/%s">Copy all</button></td><td class="num" title="%s">%s…</td></tr>'
                     % (label, f, os.path.getsize(src) // 1024, txt, txt, h, h[:16]))
+    lite = {}   # the lighter editions (ai/) and the mathematical paper (docs/), served directly beside the .docx files
+    for key, rel, label in (('PACK', ('ai', 'Omega42_Navigator_Pack.md'), 'Navigator Pack'), ('COMPACT', ('ai', 'Omega42_Companion_Compact.md'), 'Compact Companion'),
+                            ('PAPER', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.md'), 'Mathematical paper (Markdown)'), ('PAPERPDF', ('docs', 'OMEGA42_MATHEMATICAL_PAPER.pdf'), 'Mathematical paper (PDF)')):
+        src = os.path.join(ROOT, *rel)
+        if not os.path.exists(src): continue
+        shutil.copy(src, os.path.join(out, 'protocol', rel[-1])); h = sha_file(src)
+        lite[key] = dict(path='protocol/' + rel[-1], kb=os.path.getsize(src) // 1024, sha=h)
+        rows.append('<tr><td>%s</td><td><a href="protocol/%s" download>%s</a> <span class="note mono">%d KB</span></td><td></td><td class="num" title="%s">%s…</td></tr>'
+                    % (label, rel[-1], rel[-1].rsplit('.', 1)[1], os.path.getsize(src) // 1024, h, h[:16]))
     script_sha = re.search(r'SCRIPT SHA-256: ([0-9a-f]{64})', os.popen('%s %s --version' % (sys.executable, os.path.join(ROOT, 'scripts', 'canonical_reference.py'))).read())
     script_sha = script_sha.group(1) if script_sha else ''
     protocol = dict(version=version, files=files, reference_script=dict(path='py/canonical_reference.py', sha256=script_sha),
@@ -151,6 +160,19 @@ def build(out, repo):
     json.dump(freg, open(os.path.join(out, 'api', 'frontier.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)   # the Daily Frontier register
     vision = md_html(open(os.path.join(ROOT, 'docs', 'VISION.md'), encoding='utf-8').read())
     subs = dict(fsubs, **questions_html(json.load(open(os.path.join(ROOT, 'records', 'questions', 'register.json'), encoding='utf-8'))))
+    regp = os.path.join(ROOT, 'records', 'math', 'results.json')   # the complete register, Part III of the paper's website edition
+    if os.path.exists(regp):
+        rr = json.load(open(regp, encoding='utf-8'))['results']; e = lambda x: html.escape(str(x or '—'))
+        subs['{{REGISTER_COUNT}}'] = str(len(rr))
+        subs['{{REGISTER_FULL}}'] = ''.join(
+            '<article class="mf" id="%s"><h3><a href="#%s">%s</a> <span class="cbs s-%s">%s</span></h3><p class="mf-st">%s</p><dl>'
+            '<dt>Derivation</dt><dd>%s</dd><dt>Domain</dt><dd>%s</dd><dt>Depends on</dt><dd>%s</dd><dt>Recompute</dt><dd><code>%s</code></dd>'
+            '<dt>Does not follow</dt><dd>%s</dd></dl></article>' % (x['id'].lower(), x['id'].lower(), e(x['id']), 'agreed' if x['status'] == 'EXACT' else 'proposed', e(x['status']),
+            e(x['statement']), e(x.get('derivation')), e(x.get('domain')), e(x.get('depends')), e(x.get('tool')), e(x.get('does_not_follow'))) for x in rr)
+    paper = os.path.join(ROOT, 'docs', 'OMEGA42_MATHEMATICAL_PAPER.md')
+    subs.update({'{{PAPER}}': md_html(open(paper, encoding='utf-8').read().split('\n', 1)[1]) if os.path.exists(paper) else ''})
+    for key, v in lite.items():
+        subs.update({'{{%s_PATH}}' % key: v['path'], '{{%s_KB}}' % key: str(v['kb']), '{{%s_SHA}}' % key: v['sha']})
     subs.update({'{{VISION}}': vision,
             '{{REPO}}': repo, '{{VERSION}}': version, '{{BASE}}': '', '{{PROTOCOL_ROWS}}': '\n'.join(rows),
             '{{SCRIPT_SHA_SHORT}}': script_sha[:16],
@@ -214,7 +236,21 @@ def build(out, repo):
         subs['{{COMPANION_TOC}}'] = ''.join('<a class="ctoc-row" href="companion-%s.html"><span>%s</span><span class="note">%s%s</span></a>' % (
             p, html.escape(t), ' · '.join(html.escape(x) for x in tg[:1]), (' · %d sections' % n) if n else '') for p, t, tg, n in toc)
         subs['{{COMPANION_COUNT}}'] = str(len(toc))
+        themes = [('Consciousness and mind', r'conscious|mind|aware|percept|observer|attention|self'), ('Existence and being', r'exist|being|ontolog|nothing|reality|universe|cosmos'),
+                  ('Hidden mathematics', r'mathemat|theorem|orbit|spectr|algebra|geometr|number|tower|cycle|proof|lucas|fibonacci'),
+                  ('Time, change and memory', r'time|memory|change|history|recurren|evolution'), ('Language, symbol and meaning', r'language|symbol|meaning|word|lexic|semant|narrat'),
+                  ('Ethics, society and governance', r'ethic|moral|govern|society|law|justice|vot|economic|constitution'),
+                  ('Science and the physical world', r'physic|quantum|biolog|chemi|scien|energy|life'), ('AI and the Navigator', r'\bai\b|artificial|navigat|machine|model|intelligen'),
+                  ('Art, music and imagination', r'\barts?\b|music|creativ|imagin|aesthet|beauty|harmon')]
+        atlas = []
+        for name, rx in themes:
+            hits = [(p_, t) for p_, t, tg, n in toc if re.search(rx, t, re.I)]
+            if hits:
+                atlas.append('<details class="atlas-theme"><summary><b>%s</b> <span class="note">%d parts</span></summary><div class="atlas-links">%s</div></details>' % (
+                    name, len(hits), ''.join('<a href="companion-%s.html">%s</a>' % (p_, html.escape(t[:90])) for p_, t in hits)))
+        subs['{{COMPANION_ATLAS}}'] = ''.join(atlas)
         json.dump(index, open(os.path.join(out, 'api', 'companion-search.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    subs.setdefault('{{COMPANION_ATLAS}}', '')
     # the Library collection: archive documents as HISTORICAL editions (records/library/register.json, library/)
     lpath = os.path.join(ROOT, 'records', 'library', 'register.json')
     if os.path.exists(lpath):
@@ -297,7 +333,7 @@ def md_html(text):
         if line.lstrip().startswith('|'): (para or items) and flush(); rows.append(line); continue
         if rows: flush()
         m = re.match(r'(#{1,6}) (.*)', line)
-        if m: flush(); lv = min(len(m.group(1)) + 1, 6); out.append('<h%d>%s</h%d>' % (lv, inline(m.group(2)), lv)); continue
+        if m: flush(); lv = min(len(m.group(1)) + 1, 6); out.append('<h%d id="%s">%s</h%d>' % (lv, re.sub(r'[^a-z0-9]+', '-', m.group(2).lower()).strip('-')[:60], inline(m.group(2)), lv)); continue
         if re.match(r'\s*(- |\d+\. |\* )', line): (para and flush()); items.append(re.sub(r'^\s*(- |\d+\. |\* )', '', line)); continue
         if line.strip() in ('---', '***'): flush(); out.append('<hr>'); continue
         if not line.strip(): flush(); continue

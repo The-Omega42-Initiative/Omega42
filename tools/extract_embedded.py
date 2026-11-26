@@ -43,7 +43,8 @@ OUTSIDE = {'docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx': 'the Core 
            'ai/Omega42_Navigator_Pack.md': 'the Navigator Pack rendered from the Core by tools/ai_edition.py',
            'ai/manifest.json': 'the section manifest of the AI reading editions, rendered by tools/ai_edition.py',
            'ai/Omega42_Existential_Framework.md': 'the Existential Framework rendered from Companion Part 145 by tools/ai_edition.py',
-           'llms.txt': 'the index of the AI reading editions, rendered by tools/ai_edition.py'}
+           'llms.txt': 'the index of the AI reading editions, rendered by tools/ai_edition.py',
+           'docs/OMEGA42_MATHEMATICAL_PAPER.pdf': 'the mathematical paper typeset from docs/OMEGA42_MATHEMATICAL_PAPER.md, which is embedded'}
 EXEMPT = {'tools/__init__.py'}
 ARCHIVED = 'archive/2025-10/'   # the October 2025 edition, kept unchanged and not embedded (D-15; archive/2025-10/README.md)
 

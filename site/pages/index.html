@@ -16,8 +16,21 @@
   </div>
 </section>
 <div id="begin"></div>
+<section class="stack welcome-nav" id="welcome" aria-labelledby="welcome-h">
+  <div class="eyebrow">Welcome, Navigator</div>
+  <h2 id="welcome-h">What brings you here today?</h2>
+  <nav class="wn-grid" aria-label="Choose your way in">
+    <a href="#ask"><b>A question on my mind</b><span>Ask anything. Omega42 explores it in four directions of discovery.</span></a>
+    <a href="paper.html"><b>The mathematics</b><span>The formal paper: theorems, proofs and open problems.</span></a>
+    <a href="philosophy-journey.html"><b>Meaning and existence</b><span>The Philosophy of Being, told as a story and anchored in exact results.</span></a>
+    <a href="seven-veils.html"><b>Play and create</b><span>Games, music, art and the instruments of Omega42.</span></a>
+    <a href="#frontier"><b>New discoveries</b><span>What the Co-Builders found this week, and what is still open.</span></a>
+    <a href="#get"><b>Bring Omega42 to my AI</b><span>Download the documents and type Welcome Navigator.</span></a>
+  </nav>
+  <aside class="wonder" id="wonder" aria-live="polite"><span class="k">Today's wonder</span><p id="wonder-text">Twelve steps on, every state of the eighty-one meets its own negative.</p><a id="wonder-link" href="paper.html">Where this comes from →</a></aside>
+</section>
 <section class="band ask-band" id="ask"><div class="stack">
-  <div class="eyebrow">Ask Omega42 · the heart of the practice</div>
+  <div class="eyebrow">Ask anything · the heart of the practice</div>
   <h2>Ask the question <em>you cannot put down.</em></h2>
   <p class="lede">Your exact wording gives the question its place on the loop. The Navigator explores what rests beneath it, what it hides, where it leads and what it needs, then stops at the Aperture and leaves the meaning to you.</p>
   <form id="ask-form" class="stack ask" autocomplete="off">
@@ -96,6 +109,7 @@
   <div class="papers">
     <a class="paper-card ivory" href="philosophy.html"><span class="k">The philosophy · first edition</span><b>The Philosophy of Being</b><i>Existence contemplating itself</i><span>Fourteen movements, from distinction to reflexivity, each anchored in exact mathematics.</span><span class="go">Read the philosophy →</span></a>
     <a class="paper-card" href="vision.html"><span class="k">The founding vision</span><b>A new landscape for exploring existence</b><i>One structure. Any question. Unlimited possibilities.</i><span>What becomes possible when human curiosity, the reach of AI and an exact mathematical architecture meet.</span><span class="go">Read the founding paper →</span></a>
+    <a class="paper-card" href="paper.html"><span class="k">The formal paper · {{VERSION}}</span><b>The Mathematics of Omega42</b><i>One law, an infinite tower of exact worlds</i><span>Theorems with proofs on orbits, spectra, observability, memory, resonance and geometry, with open problems and marked speculation.</span><span class="go">Read or download the paper →</span></a>
   </div>
 </div></section>
 <section class="stack" id="what">
@@ -182,10 +196,12 @@
   <div class="docs">
     <a class="doc main" href="{{CORE_DOCX}}" download><span class="k">Full edition · normative</span><b>Core Specification</b><span>The formal foundation: mathematics, protocol, instruments and Navigator instructions.</span><span class="go">Download .docx · {{CORE_KB}} KB ↓</span></a>
     <a class="doc main" href="{{COMP_DOCX}}" download><span class="k">Full edition · explanatory</span><b>Companion Document</b><span>The ideas, the philosophy, the mathematics in context, the research programs.</span><span class="go">Download .docx · {{COMP_KB}} KB ↓</span></a>
-    <a class="doc lite" href="https://github.com/{{REPO}}/blob/main/ai/Omega42_Navigator_Pack.md"><span class="k">Lighter edition · optional</span><b>Navigator Pack</b><span>For AI systems with a shorter context window: the Introduction, the mathematical foundations, the navigation mechanism, the Aperture and the output format, about 120,000 tokens instead of the full pair's 840,000. Where the two differ, the Core governs.</span><span class="go">Open the Navigator Pack ↗</span></a>
+    <a class="doc lite" href="{{PACK_PATH}}" download><span class="k">Lighter edition · optional</span><b>Navigator Pack</b><span>For AI systems with a shorter context window: the Introduction, the mathematical foundations, the navigation mechanism, the Aperture and the output format, about 120,000 tokens instead of the full pair's 840,000. Attach it alone and type Welcome Navigator. Where the two differ, the Core governs.</span><span class="go">Download .md · {{PACK_KB}} KB ↓</span></a>
+    <a class="doc lite" href="{{COMPACT_PATH}}" download><span class="k">Lighter edition · optional</span><b>Compact Companion</b><span>The Companion's ideas in about 25,000 tokens. Attach it beside the Core, or beside the Navigator Pack, when the full Companion will not fit.</span><span class="go">Download .md · {{COMPACT_KB}} KB ↓</span></a>
+    <a class="doc lite" href="{{PAPERPDF_PATH}}" download><span class="k">For readers · mathematics</span><b>The mathematical paper</b><span>The Mathematics of Omega42: theorems, proofs, recompute lines and open problems, typeset for reading and printing.</span><span class="go">Download PDF · {{PAPERPDF_KB}} KB ↓</span></a>
   </div>
   <ol class="steps">
-    <li><b>Download</b> both documents (or the Navigator Pack for a smaller AI).</li>
+    <li><b>Download</b> both documents (or the Navigator Pack alone for an AI with a smaller context window).</li>
     <li><b>Attach</b> them to a new conversation with any capable AI assistant.</li>
     <li><b>Type</b> <code class="mono">Welcome Navigator</code> and the AI opens Omega42 as your Navigator.</li>
   </ol>
