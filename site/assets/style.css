@@ -801,3 +801,40 @@ h2:hover .lq, h3:hover .lq, .lq:focus-visible { opacity: 1; }
 /* Block quotes in rendered Markdown (the Welcome in the Manual) */
 .paper blockquote, .math-paper blockquote, main blockquote:not(.fieldnote) { margin: 1rem 0; padding: .6rem 1.1rem; border-left: 3px solid var(--gold); background: color-mix(in srgb, var(--gold) 7%, transparent); border-radius: 0 10px 10px 0; }
 main blockquote:not(.fieldnote) p { margin: .45rem 0; }
+/* Omega42 at its most ambitious: the homepage band and the reading page */
+.ambition-band { color: #eef3ff; background: radial-gradient(ellipse at 20% 0%, #2a1a6e 0%, transparent 60%), linear-gradient(180deg, var(--night2), var(--night)); border-block: 1px solid #3a2f6e; }
+.ambition-band .eyebrow { color: #e8bd5c; }
+.ambition-band .ambition-quote { color: #f4efe2; border-left-color: #e8bd5c; background: none; }
+.ambition-band .ambition-src { color: #c9c4e6; }
+.ambition-band .ambition-src a { color: #e8bd5c; }
+.ambition-quote { margin: .6rem 0 1rem; padding: 0 0 0 1.2rem; border-left: 3px solid var(--gold); font-family: var(--display); font-size: clamp(1.25rem, 2.6vw, 1.75rem); line-height: 1.4; color: var(--fg); }
+.ambition-quote p { margin: 0; }
+.ambition-src { margin: 0; color: var(--muted); font-size: .95rem; }
+.ambition-src a { white-space: nowrap; }
+.amb-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 2rem 2.5rem; }
+.amb-two figure { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: .4rem; }
+.amb-two .ambition-quote { font-size: clamp(1.15rem, 2.1vw, 1.45rem); margin: 0; }
+.amb-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; margin-top: 1.4rem; }
+.amb-pair a { display: grid; align-content: start; gap: .5rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; text-decoration: none; color: inherit; min-width: 0; }
+.amb-pair .k { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+.amb-pair .q { font-family: var(--display); font-size: 1.08rem; line-height: 1.45; }
+.ambition-reading { margin-top: 2.5rem; }
+.amb-by { margin-top: -.4rem; }
+.ambition-lead { font-size: 1.15rem; }
+.amb-fig { margin: 1.4rem 0; padding: 1.2rem; border: 1px solid var(--rule); border-radius: 14px; display: grid; gap: .9rem; justify-items: center; text-align: center; }
+.amb-ais, .amb-verbs { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; }
+.amb-ais span, .amb-verbs span { padding: .25rem .65rem; border: 1px solid var(--rule); border-radius: 999px; font-family: var(--mono); font-size: .8rem; }
+.amb-verbs span { border-color: color-mix(in srgb, var(--gold) 50%, var(--rule)); }
+.amb-core { display: grid; gap: .15rem; }
+.amb-core b { font-family: var(--display); font-size: 2rem; color: var(--gold); }
+.amb-core small { color: var(--muted); }
+.amb-apps > div { display: grid; gap: .3rem; padding: .9rem 1rem; border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.amb-apps span { color: var(--muted); font-size: .95rem; }
+.amb-stack { margin: 1.4rem 0; display: grid; gap: .4rem; }
+.amb-stack > div { display: grid; gap: .2rem; padding: .8rem 1rem; border: 1px solid var(--rule); border-radius: 12px; text-align: center; }
+.amb-stack > div.mid { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 9%, transparent); }
+.amb-stack span { color: var(--muted); font-size: .95rem; }
+.amb-vision { margin: 2rem 0; padding: 1.6rem 1.2rem; text-align: center; border-block: 1px solid var(--rule); }
+.amb-vision > b { font-family: var(--display); font-size: 2.4rem; color: var(--gold); }
+.amb-vision .h { font-family: var(--display); font-size: 1.5rem; font-style: italic; margin: .2rem 0 1rem; }
+.amb-vision .credo { font-family: var(--display); font-style: italic; margin-top: 1rem; }
