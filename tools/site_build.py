@@ -23,7 +23,7 @@ NAV = [('Philosophy', [('philosophy', 'The Philosophy of Being'), ('philosophy-j
        ('Protocol', [('protocol', 'Core and Companion'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas'), ('governance', 'Governance')]),
-       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('archive-report', 'Archive salvage report')])]
+       ('Co-Builders', [('cobuilder', 'Co-Builder Exchange'), ('archive-report', 'Archive salvage report'), ('research-development', 'Research and development')])]
 
 
 def nav_html(current):
