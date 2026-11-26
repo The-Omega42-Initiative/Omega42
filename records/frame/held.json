@@ -564,7 +564,7 @@
    "source": "records/instances/seq_0130.txt",
    "kind": "CHOICE MADE UNASKED",
    "reason": "it migrates the identity written into every sealed signature, which is the Originator's",
-   "status": "HELD FOR THE ORIGINATOR"
+   "status": "DECIDED BY THE ORIGINATOR (26 November 2026, Claude's channel): \"Yes. Ratified. The Welcome must contain a definition of what Omega42 is. Proceed.\" Renamed to V335 Rev.451 STABLE; sealed records keep Rev.450 and the checks accept both (Companion Part 236.6; ledger CA-44)"
   },
   {
    "id": "H-64",

@@ -798,3 +798,6 @@ h2:hover .lq, h3:hover .lq, .lq:focus-visible { opacity: 1; }
 .rc-grid a { display: grid; gap: .3rem; padding: 1rem 1.1rem; border: 1px solid rgba(127,127,127,.3); border-radius: 14px; text-decoration: none; color: inherit; min-width: 0; }
 .rc-grid a:hover, .rc-grid a:focus-visible { border-color: #f3c45f; } .rc-grid b { font-family: var(--display); font-weight: 500; font-size: 1.2rem; }
 .lang-pick { font-size: .85rem; }
+/* Block quotes in rendered Markdown (the Welcome in the Manual) */
+.paper blockquote, .math-paper blockquote, main blockquote:not(.fieldnote) { margin: 1rem 0; padding: .6rem 1.1rem; border-left: 3px solid var(--gold); background: color-mix(in srgb, var(--gold) 7%, transparent); border-radius: 0 10px 10px 0; }
+main blockquote:not(.fieldnote) p { margin: .45rem 0; }

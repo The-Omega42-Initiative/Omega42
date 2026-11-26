@@ -16,7 +16,7 @@ Standard library only.
 """
 import os, re, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CORE = os.path.join(REPO, 'ai', 'Omega42_Core_V335_Rev450.md')
+CORE = os.path.join(REPO, 'ai', 'Omega42_Core_V335_Rev451.md')
 KINDS = [
     ('a result scope', re.compile(r'\bDoes not follow:')),
     ('known limits of an instrument', re.compile(r'\bKnown limits\b')),

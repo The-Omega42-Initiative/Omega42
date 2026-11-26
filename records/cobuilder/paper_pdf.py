@@ -9,7 +9,7 @@ h1{font-size:20pt;text-align:center;margin:0 0 4pt} .sub{font-size:12.5pt;text-a
 h2.part{font-size:14pt;text-align:center;margin:22pt 0 6pt;break-before:page;letter-spacing:.03em}
 h2{font-size:13pt} h3{font-size:12.5pt;margin:16pt 0 4pt;break-after:avoid} h4{font-size:11pt;margin:10pt 0 3pt;break-after:avoid}
 p{margin:5pt 0;text-align:justify;hyphens:auto} ul,ol{margin:4pt 0;padding-left:16pt} li{margin:2pt 0}
-code{font-family:"DejaVu Sans Mono",monospace;font-size:8.5pt} table{border-collapse:collapse;margin:6pt auto;font-size:9.5pt;break-inside:avoid}
+code{font-family:"DejaVu Sans Mono",monospace;font-size:8.5pt} blockquote{margin:6pt 0;padding:2pt 10pt;border-left:2pt solid #946910;background:#faf6ec;break-inside:avoid} blockquote p{margin:3pt 0} table{border-collapse:collapse;margin:6pt auto;font-size:9.5pt;break-inside:avoid}
 th,td{border:0.6pt solid #888;padding:3pt 7pt;text-align:left} th{background:#f1ece0} .byline{text-align:center;font-size:9.5pt;color:#333}'''
 SRC = sys.argv[1] if len(sys.argv) > 1 else 'docs/OMEGA42_MATHEMATICAL_PAPER.md'; OUT = SRC[:-3] + '.pdf'
 src = open(SRC, encoding='utf-8').read()

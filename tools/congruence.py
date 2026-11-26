@@ -102,7 +102,7 @@ def n1_of(text):
     return cr.navigate(text)['n1']
 
 
-SPEC = 'V335 Rev.450 STABLE'
+SPEC = 'V335 Rev.451 STABLE'
 
 
 def load_register(path=REGISTER):

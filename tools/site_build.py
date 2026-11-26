@@ -251,7 +251,7 @@ def build(out, repo):
         subs['{{ARCHIVE_REPORT}}'] = md_html(open(os.path.join(cbd, 'ARCHIVE_SALVAGE_REPORT.md'), encoding='utf-8').read())
     pages = []
     # the Companion Explorer: one page per Part, a contents page and a search index, from the Companion's Markdown (one source)
-    cpath = os.path.join(ROOT, 'ai', 'Omega42_Companion_V335_Rev450.md')
+    cpath = os.path.join(ROOT, 'ai', 'Omega42_Companion_V335_Rev451.md')
     if os.path.exists(cpath):
         parts = companion_sections(cpath); index = []
         def render(title, desc, body, navkey, fname):
@@ -354,16 +354,22 @@ def build(out, repo):
 
 
 def md_html(text):
-    """A small Markdown subset (headings, paragraphs, lists, bold, italic, inline code, tables, fenced code) for the public paper
+    """A small Markdown subset (headings, paragraphs, lists, block quotes, bold, italic, inline code, tables, fenced code) for the public paper
     (docs/VISION.md) and the Library editions (library/)."""
     def inline(t):
         t = html.escape(t, quote=False)
         t = re.sub(r'`([^`]+)`', r'<code>\1</code>', t)
         t = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', t)
         return re.sub(r'(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])', r'<i>\1</i>', t)
-    out, para, items, rows, code = [], [], [], [], None
+    out, para, items, rows, code, quote = [], [], [], [], None, []
     def flush():
         if para: out.append('<p>%s</p>' % inline(' '.join(para))); para.clear()
+        if quote:
+            ps_, cur = [], []
+            for q in quote + ['']:
+                if q.strip(): cur.append(q.strip())
+                elif cur: ps_.append(' '.join(cur)); cur = []
+            out.append('<blockquote>%s</blockquote>' % ''.join('<p>%s</p>' % inline(x) for x in ps_)); quote.clear()
         if items:
             def lst(group):
                 tag = 'ol' if group[0][1] else 'ul'
@@ -394,6 +400,8 @@ def md_html(text):
         m = re.match(r'(\s*)(- |\d+\. |\* )', line)
         if m: (para and flush()); items.append((len(m.group(1)) >= 2, m.group(2)[0].isdigit(), line[m.end():])); continue
         if items and line.startswith('  ') and line.strip(): items[-1] = items[-1][:2] + (items[-1][2] + ' ' + line.strip(),); continue
+        if line.startswith('>'): (para or items) and flush(); quote.append(line[1:].lstrip() if line[1:2] == ' ' or len(line) == 1 else line[1:]); continue
+        if quote: flush()
         if line.strip() in ('---', '***'): flush(); out.append('<hr>'); continue
         if not line.strip(): flush(); continue
         para.append(line.strip())

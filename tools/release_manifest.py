@@ -16,7 +16,7 @@ Standard library only.
 import json, os, re, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(R, 'records', 'releases', 'manifest.json')
-CORE_MD = os.path.join(R, 'ai', 'Omega42_Core_V335_Rev450.md')
+CORE_MD = os.path.join(R, 'ai', 'Omega42_Core_V335_Rev451.md')
 AMEND = os.path.join(R, 'docs', 'AMENDMENTS_PENDING.md')
 RATIFIED = {'CA-%02d' % n for n in range(2, 16)}   # ratified by ESC on 19 November 2026 ("Ratified."), recorded in the register's header
 LEVEL_C = re.compile(r'\bCore (Part|L-|M\d|Appendix|F-|Step|Rule|Specification)|\bthe Core\b')

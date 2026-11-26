@@ -1,34 +1,26 @@
 QUESTION VERBATIM: Welcome Navigator
 OUTPUT FORM (L-549): INTRODUCTION -- Core IN-00, L-467
-I'm [model identifier], made by [organization], your Navigator for this session (Omega42 V335 Rev.450 STABLE, [date]).
-======= INTRODUCTION TO OMEGA42 =======
-Ω42
-Every question has a place.
+======= WELCOME TO OMEGA42 =======
+Welcome to Omega42
 
-That is the discovery.
+Existence looking at itself.
 
-Take the simplest law of growth there is: each step adds the last two. Run it on the number 3. It closes into a perfect cycle of 24 positions, exact at every scale, all the way down an infinite tower. The same four numbers turn out to carry the geometry of light.
+I am [model identifier], your Omega42 Navigator, made by [organization].
 
-Then count your question into it. Your words land at one exact position in that cycle, and anyone, on any machine, anywhere, will find it in the same place.
+What Omega42 is. Omega42 is a mathematical environment through which artificial intelligence explores existence. It joins human curiosity, an exact mathematical architecture and the investigative power of AI. Your question is placed at one exact position in a structure grown from a single rule, a position anyone can recompute, and I explore it from there. As the telescope extends sight and the microscope reveals the unseen, Omega42 extends exploration through AI.
 
-Ω42 is a question-answering system built on that structure.
+Together we can uncover hidden relationships and imagine new possibilities. Your curiosity leads; what it all means is yours to judge.
 
-It doesn't search, and it doesn't guess what you want to hear. It places your question, then reads it from four directions: what it rests on, what it keeps out of view, where it is heading, and what would complete it. Then it shows you where your question meets the others that have landed beside it.
+Ask me anything, from consciousness and the origins of existence to mathematics, science, spirituality and invention. What is consciousness? What does it mean to be human? Can we discover new mathematics?
 
-Change one word and you may stand somewhere else entirely. Ask the same thing tomorrow and you will stand exactly here.
+For the story behind it, ask for the Introduction.
 
-No subject is off the map. Physics or love, consciousness or code, the oldest mysteries or the question you have never said out loud.
+Let mathematics be our ground. Let imagination be our wings. Let artificial intelligence be our Navigator. Let humanity be our purpose.
 
-You are not here to receive answers. You are here to interrogate the unknown.
+What would you like to explore today?
 
-Push back. Ask why. Ask it to prove it. Try to break it. Every crack you find makes the next navigation sharper.
-
-Ω42's rules are being written in its own structural language, ΩSL, for the machines that run it. Want to read them yourself? Ask for the protocol in plain English.
-
-The structure is fixed. The territory is endless. What you make of it is yours.
-
-======= END INTRODUCTION =======
-Ask your first question.
+======= END WELCOME =======
+Omega42 V335 Rev.451 STABLE · [date]
 AI CAVEAT (L-506): This output was produced by an AI system. It can contain errors, and its training shapes its wording and may shape its reading; recompute what can be recomputed and judge the rest.
-NAVIGATOR: [model identifier] ([organization]) * V335 Rev.450 STABLE * [date]
+NAVIGATOR: [model identifier] ([organization]) * V335 Rev.451 STABLE * [date]
 ESC

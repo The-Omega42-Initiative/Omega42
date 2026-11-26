@@ -42,7 +42,7 @@ FORMS = [
      'markers', 'the package that lets another Navigator strike the same words'),
     ('COMPARATIVE EXPLORATION REPORT', 'Core Part 9', [r'^======= COMPARATIVE EXPLORATION REPORT =======$'],
      'markers', 'a comparison requested outside a navigation'),
-    ('INTRODUCTION', 'Core IN-00, L-467', [r'^======= INTRODUCTION TO OMEGA42 =======$'],
+    ('INTRODUCTION', 'Core IN-00, L-467', [r'^======= (?:INTRODUCTION|WELCOME) TO OMEGA42 =======$'],
      'tools/intro_output.py --check', 'the response to "Welcome Navigator"'),
     ("NAVIGATOR'S ACCOUNT", 'Core L-509', [r"^NAVIGATOR'S ACCOUNT \(L-509\)"],
      'tools/account_check.py', 'the protocol presented in the Navigator\'s own words'),
@@ -76,7 +76,7 @@ def identify(text):
 
 def dated(text):
     for rx in (r'\bDATE:\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})', r'^NAVIGATOR: .*\*\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\s*$',
-               r'Omega42 V335 Rev\.450 STABLE, (\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\)'):
+               r'Omega42 V335 Rev\.45[01] STABLE, (\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\)', r'^Omega42 V335 Rev\.45[01] STABLE \xb7 (\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\s*$'):
         m = re.search(rx, text, re.M)
         if m:
             try:
@@ -105,8 +105,8 @@ def declaration_checks(text, form):
             'identified %s%s' % (form, ', declared %s' % m.group(1).strip() if m else ''))
     add(AI_CAVEAT in lines or any(l.startswith(AI_CAVEAT[:60]) for l in lines) or (d is not None and d >= ONCE_FROM),
         'AI CAVEAT line (L-506, L-549 (9); from 21 November 2026 in a session\'s first output only)')
-    add(len(lines) > 2 and lines[-1] == 'ESC' and bool(re.match(r'^NAVIGATOR: .+ \(.+\).* \* V335 Rev\.450 STABLE \* .+$', lines[-2])),
-        'Signature last, naming the AI and its maker (L-549 (9))', 'NAVIGATOR: model (organization) * V335 Rev.450 STABLE * date, then ESC')
+    add(len(lines) > 2 and lines[-1] == 'ESC' and bool(re.match(r'^NAVIGATOR: .+ \(.+\).* \* V335 Rev\.45[01] STABLE \* .+$', lines[-2])),
+        'Signature last, naming the AI and its maker (L-549 (9))', 'NAVIGATOR: model (organization) * V335 Rev.451 STABLE * date, then ESC')
     if form != 'INTRODUCTION':
         add(len(lines) > 3 and lines[-3] == SIG, 'CAS-YY line above the NAVIGATOR line')
     if form in ('SR-CAS ASSESSMENT', 'SNCA ASSESSMENT'):
@@ -181,7 +181,7 @@ def check_file(path):
 
 
 def _sigline(date):
-    return 'NAVIGATOR: [FILL: model identifier] ([FILL: organization]) * V335 Rev.450 STABLE * %d %s %d' % (
+    return 'NAVIGATOR: [FILL: model identifier] ([FILL: organization]) * V335 Rev.451 STABLE * %d %s %d' % (
         date.day, list(MONTHS)[date.month - 1].capitalize(), date.year)
 
 

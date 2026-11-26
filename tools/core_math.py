@@ -16,8 +16,8 @@ Standard library only.
 import json, os, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REG = os.path.join(REPO, 'records', 'math', 'results.json')
-CORE = os.path.join(REPO, 'ai', 'Omega42_Core_V335_Rev450.md')
-COMP = os.path.join(REPO, 'ai', 'Omega42_Companion_V335_Rev450.md')
+CORE = os.path.join(REPO, 'ai', 'Omega42_Core_V335_Rev451.md')
+COMP = os.path.join(REPO, 'ai', 'Omega42_Companion_V335_Rev451.md')
 HEAD = '0.0.10 THE COMPLETE MATHEMATICAL REGISTER'
 INTRO = ('0.0.10.0 Source. Every result of records/math/results.json, written here by tools/core_math.py and never by hand '
          '(Part 0.0.5 Rule 19). Each entry gives its status, statement, domain, derivation, what it depends on, and the command '

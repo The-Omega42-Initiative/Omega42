@@ -23,7 +23,7 @@ Instead, each document family is read against the current record. What carries f
 
 | Class | What it holds | Count | Treatment |
 |---|---|---|---|
-| A. Current | The Core and Companion V335 Rev.450 and the records | (the repository) | Authoritative. Public. |
+| A. Current | The Core and Companion V335 Rev.451 and the records | (the repository) | Authoritative. Public. |
 | B. Formal builds | Earlier protocol builds, editions and Companion documents (V333 to V336) | about 1,295 | Historical. Read against the record in the concordance. A build is published only on ESC's decision, marked HISTORICAL with a pointer to the current release, and after a check for names and private material. |
 | C. Explanatory and research | Explanatory documents, foundations, geometry, Construct, physics, consciousness, mathematics | about 735 | Historical. The material that carries forward is already absorbed, or is taken in through the concordance. Selected items may become APE submissions, frozen as received, with a Navigator's notes. |
 | D. Navigations and syntheses | Earlier navigations, syntheses, assessments | about 86 | Taken in through the submission forms when the Originator chooses, to join the navigation archive. Otherwise private. |

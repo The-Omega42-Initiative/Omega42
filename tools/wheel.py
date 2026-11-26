@@ -75,7 +75,7 @@ def longitudes_report(pairs):
 def svg(text, path):
     a = anchor(text); R0, cx = 160, 200
     pt = lambda k, r=R0: (cx + r * math.sin(2 * math.pi * k / 24), cx - r * math.cos(2 * math.pi * k / 24))
-    SPEC = ('Coordinate specification (M330, Core Part 3.56). System: the canonical 24-cycle of Omega42, V335 Rev.450 STABLE. '
+    SPEC = ('Coordinate specification (M330, Core Part 3.56). System: the canonical 24-cycle of Omega42, V335 Rev.451 STABLE. '
             'Nodes: P0 to P23, the positions of the canonical orbit, the orbit of (2, 5) under T(a, b) = (b, a + b) mod 9. '
             'Values: the number beside each node is its orbit value, 2 5 7 3 1 4 5 9 5 5 1 6 7 4 2 6 8 5 4 9 4 4 8 3. '
             'Ordering: clockwise from the top, P0 at 0 degrees. Geometry: 15 degrees a step, a display of the cycle; angle carries the step count and nothing more. '

@@ -40,8 +40,8 @@ Standard library only.
 import json, os, re, sys, zipfile, html
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, 'tools'))
-CORE = os.path.join(REPO, 'docs', 'Omega42_Core_Specification_V335_Rev450_STABLE.docx')
-COMP = os.path.join(REPO, 'docs', 'Omega42_Companion_Document_V335_Rev450_STABLE.docx')
+CORE = os.path.join(REPO, 'docs', 'Omega42_Core_Specification_V335_Rev451_STABLE.docx')
+COMP = os.path.join(REPO, 'docs', 'Omega42_Companion_Document_V335_Rev451_STABLE.docx')
 OBLIGE = re.compile(r"\bscheduled next work\b|\bresearch-ready\b|\bpending (scientific |empirical )?(validation|confirmation)\b|"
                     r"\buntil (it is |they are |the premise is )?(validated|confirmed|tested|falsified)\b|"
                     r"\b(must|needs? to|has to|have to) be (scientifically |empirically )?(validated|confirmed|tested|falsified) (before|to)\b|"

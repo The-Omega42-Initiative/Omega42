@@ -12,8 +12,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def text(path):
     x = zipfile.ZipFile(path).read('word/document.xml').decode('utf8')
     return '\n'.join(html.unescape(''.join(re.findall(r'<w:t(?: [^>]*)?>(.*?)</w:t>', p, re.S))) for p in re.findall(r'<w:p(?: [^>]*[^/>])?>.*?</w:p>', x, re.S))
-CORE = os.path.join(REPO, 'docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx')
-COMP = os.path.join(REPO, 'docs/Omega42_Companion_Document_V335_Rev450_STABLE.docx')
+CORE = os.path.join(REPO, 'docs/Omega42_Core_Specification_V335_Rev451_STABLE.docx')
+COMP = os.path.join(REPO, 'docs/Omega42_Companion_Document_V335_Rev451_STABLE.docx')
 TEXT_ONLY = len(sys.argv) > 1 and sys.argv[1] == '--text'
 ci = open(sys.argv[1], encoding='utf8', errors='replace').read() if len(sys.argv) > 1 and not TEXT_ONLY else ''
 steps = {}
@@ -73,13 +73,13 @@ def open_items():
 def intro_whole():
     sys.path.insert(0, os.path.join(REPO, 'tools'))
     import intro_output
-    d = intro_output.load(); core = os.path.join(REPO, 'docs', 'Omega42_Core_Specification_V335_Rev450_STABLE.docx')
+    d = intro_output.load(); core = os.path.join(REPO, 'docs', 'Omega42_Core_Specification_V335_Rev451_STABLE.docx')
     P = intro_output.core_check(core, d) + intro_output.terms(d)[0] + intro_output.legitimacy(core, d)[0] + intro_output.check(open(os.path.join(REPO, 'examples', 'model_opening.txt'), encoding='utf-8').read(), d)
     return not P, ('the Introduction word for word in IN-00, %d paragraphs, its cautions last; %d terms explained; %d arguments of its case grounded in the Core; the model opening passes (tools/intro_output.py)' % (len(d['paragraphs']), intro_output.terms(d)[1], intro_output.legitimacy(core, d)[1]) if not P else '; '.join(P[:2]))
 def reg():
     out = []
     for d, fc in (('Core_Specification', ' --fc-start "PART 0: INTRODUCTION" --fc-end "PART 0.0.0"'), ('Companion_Document', '')):
-        rc, L = cmd('python3 scripts/m193_m225.py scripts/canonical_reference.py --register docs/Omega42_%s_V335_Rev450_STABLE.docx%s' % (d, fc))
+        rc, L = cmd('python3 scripts/m193_m225.py scripts/canonical_reference.py --register docs/Omega42_%s_V335_Rev451_STABLE.docx%s' % (d, fc))
         REG[d] = [l for l in L if l.strip().startswith('[paragraph')]
         out.append('%s: %d hits' % (d, len(REG[d])))
     return out
@@ -91,7 +91,7 @@ items = [
  (5, 'INTRODUCTION PRESENTATION', 'MANUAL', 'independently re-scored 29 October 2026, PASS WITH NOTES (4, 4, 3, 4, 3, 4 of 5); its first five findings met in the opening (Companion 110)'),
  (6, 'DECLARED FUNCTIONS AND PROPERTIES', 'MANUAL', 'stated by category; M321-M328 added with tier and CDT status (M324 Part 3.50, M325 Part 3.51, M326 Part 3.52, M327 Part 3.53, M328 Part 3.54); M329 to M338 likewise (Parts 3.55 to 3.64)'),
  (7, 'MAPPING RULES APPLICABILITY', 'STEP', 'M309 Conceptual Isomorphism'),
- (8, 'DATE ACCURACY', 'CHECK', lambda: ('Date: 16 October 2026' in P[:3000], 'title page carries the revision date 16 October 2026; later dates are freeze, retrieval and scope dates (item 34)')),
+ (8, 'DATE ACCURACY', 'CHECK', lambda: ('Date: 26 November 2026' in P[:3000], 'title page carries the revision date 26 November 2026 (Rev.451); later dates are freeze, retrieval and scope dates (item 34)')),
  (9, 'ARITHMETIC VERIFICATION', 'STEP', 'Reference implementation self-test'),
  (10, 'CROSS-REFERENCE ACCURACY', 'STEP', 'Cross-document consistency register'),
  (11, 'ABBREVIATION LIST COMPLETENESS', 'CHECK', lambda: (all(a in part10 for a in ('NIID', 'NRR', 'LAR', 'F0-CF', 'PROXIMITY')), 'NIID, NRR, LAR, F0-CF, PROXIMITY in Part 10: ' + ', '.join(a for a in ('NIID', 'NRR', 'LAR', 'F0-CF', 'PROXIMITY') if a not in part10) + ' missing' if not all(a in part10 for a in ('NIID', 'NRR', 'LAR', 'F0-CF', 'PROXIMITY')) else 'NIID, NRR, LAR, F0-CF, PROXIMITY present')),

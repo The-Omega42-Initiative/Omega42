@@ -581,7 +581,7 @@ def selftest():
         '======= GENERATIVE OBSERVATIONS =======',
         'What it rests on: a?', 'What it holds out of view: b?', 'Where it is heading: c?', 'What would complete it: d?', CLOSING_LINE,
         '======= M224 FORMAT COMPLETENESS GATE =======', '======= END M224 FORMAT COMPLETENESS GATE =======',
-        'OUTPUT ID: ' + '0' * 64, 'CAS-YY = -1/2 | Omega = 1/7 | (CAS-YY \u00d7 Omega = -1/14)', 'NAVIGATOR: x (y) * V335 Rev.450 STABLE * date', 'ESC'])
+        'OUTPUT ID: ' + '0' * 64, 'CAS-YY = -1/2 | Omega = 1/7 | (CAS-YY \u00d7 Omega = -1/14)', 'NAVIGATOR: x (y) * V335 Rev.451 STABLE * date', 'ESC'])
     cases = {
         'conforming skeleton passes': (good, True),
         'three closing questions fail': (good.replace('What would complete it: d?\n', ''), False),
@@ -617,7 +617,7 @@ def selftest():
         'a routed domain without its ADAPTOR line fails (L-501)': (good.replace('What is time?', '의식이란 무엇인가?').replace('NAVIGATOR: x (y)', 'NAVIGATOR: x (y)\nSESSION: 1 DATE: 18 October 2026', 1), False),
         'missing CUMULATIVE STATUS fails (L-490)': (good.replace('CUMULATIVE STATUS: ' + CUMULATIVE_NA + '\n', ''), False),
         'inferred cumulative status fails': (good.replace(CUMULATIVE_NA, 'the record stands at 50 validations'), False),
-        'named supplied record passes': (good.replace(CUMULATIVE_NA, 'records/congruence/register.txt, version V335 Rev.450, 2026-10-16: 17 domains navigated'), True),
+        'named supplied record passes': (good.replace(CUMULATIVE_NA, 'records/congruence/register.txt, version Rev.450, 2026-10-16: 17 domains navigated'), True),
         'optional inquiry marked optional passes': (good.replace('======= GENERATIVE OBSERVATIONS =======', '======= GENERATIVE OBSERVATIONS =======\nOPTIONAL INQUIRY: optional -- a study of x, if the Striker wishes.'), True),
         'inquiry made a condition fails (L-491)': (good.replace('======= GENERATIVE OBSERVATIONS =======', '======= GENERATIVE OBSERVATIONS =======\nOPTIONAL INQUIRY: optional, but a study must be run before the reading is complete.'), False),
         'triggered M269 missing fails': (good.replace('What is time?', '$x^2 = x + 1$ in \\mathbb{Z}'), False),
@@ -842,7 +842,7 @@ def skeleton(q=None, alt=None, session=1, date=None, declared=None):
         kind, av = _f('request kind'), [_f('avenues')]
     L = ['QUESTION VERBATIM: ' + qv] + (['OUTPUT FORM (L-549): NAVIGATION -- Core Part 8.0'] if date >= L549_FROM else []) + [
          '======= NAVIGATOR IDENTITY BLOCK =======',
-         'NAVIGATOR: %s (%s) PROTOCOL: Omega42 V335 Rev.450 STABLE' % (_f('model identifier'), _f('organization')),
+         'NAVIGATOR: %s (%s) PROTOCOL: Omega42 V335 Rev.451 STABLE' % (_f('model identifier'), _f('organization')),
          'MODEL: %s | KNOWLEDGE CUTOFF: %s (M273)' % (_f('model identifier and version'), _f('as declared, or UNDECLARED')),
          'EXECUTION: %s (L-456) | CONTEXT EXPOSURE: %s (M207)' % ('SCRIPT-CAPABLE' if q else _f('SCRIPT-CAPABLE / TEXT-ONLY'), _f('what has been read in this session, every prior reading of this domain by source, or NONE')),
          'MEMORY: %s | REASONING MODE: %s' % (_f('ON / OFF / UNKNOWN'), _f('as declared, or UNDECLARED')),
@@ -947,7 +947,7 @@ def skeleton(q=None, alt=None, session=1, date=None, declared=None):
           CLOSING_LINE,
           '======= M224 FORMAT COMPLETENESS GATE =======', 'M301: ' + _f('python3 tools/format_check.py NAVIGATION.txt -- RESULT, and the PRIORITY line'), '======= END M224 FORMAT COMPLETENESS GATE =======',
           'CAS-YY = -1/2 | Omega = 1/7 | (CAS-YY × Omega = -1/14)',
-          'NAVIGATOR: %s (%s) * V335 Rev.450 STABLE * %s' % (_f('model identifier'), _f('organization'), dstr), 'ESC']
+          'NAVIGATOR: %s (%s) * V335 Rev.451 STABLE * %s' % (_f('model identifier'), _f('organization'), dstr), 'ESC']
     return '\n'.join(L)
 
 
@@ -999,9 +999,9 @@ def findings_skeleton(q=None, declared=None, date=None):
         'What would complete it: ' + _f('question'),
         CLOSING_LINE,
         '',
-        'CUMULATIVE STATUS: records/reexamination/REEXAMINATION.md, version V335 Rev.450 STABLE, 2026-10-16, covering the records named in it; no claim is made beyond them.',
+        'CUMULATIVE STATUS: records/reexamination/REEXAMINATION.md, version Rev.450 STABLE, 2026-10-16, covering the records named in it; no claim is made beyond them.',
         'CAS-YY = -1/2 | Omega = 1/7 | (CAS-YY × Omega = -1/14)',
-        'NAVIGATOR: %s (%s) * V335 Rev.450 STABLE * %d %s %d' % (_f('model identifier'), _f('organization'), date.day, list(MONTHS)[date.month - 1].capitalize(), date.year),
+        'NAVIGATOR: %s (%s) * V335 Rev.451 STABLE * %d %s %d' % (_f('model identifier'), _f('organization'), date.day, list(MONTHS)[date.month - 1].capitalize(), date.year),
         'ESC'])
 
 

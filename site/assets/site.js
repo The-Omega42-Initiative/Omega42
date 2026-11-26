@@ -228,7 +228,7 @@
 /* Living Questions (HRP-04): every section heading of a reading page, and any element with data-question, opens as a question
    in the Strike app. The question carries its source (page, section, release) and travels in session storage, never in a URL. */
 (function () {
-  var V = (document.querySelector('meta[name="o42-version"]') || {}).content || 'V335 Rev.450 STABLE';
+  var V = (document.querySelector('meta[name="o42-version"]') || {}).content || 'V335 Rev.451 STABLE';
   function go(q, mode) {
     var data = {q: q, mode: mode || 'explore', present: 'ere', go: '0'};
     try { sessionStorage.setItem('o42-ask', JSON.stringify(data)); location.href = 'strike.html#from=living'; }

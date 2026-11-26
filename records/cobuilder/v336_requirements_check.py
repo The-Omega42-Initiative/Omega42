@@ -1,6 +1,6 @@
 """Requirements traceability check for the proposed Core V336 six-layer edition (Appendix D).
-For every row R01 to R60: the V336 section it names exists; that section states the requirement (its key phrases are present);
-every canonical law and Step it cites is defined in the canonical Core V335 Rev.450; and, when ChatGPT's Rev451 candidate is
+For every row R01 to R61: the V336 section it names exists; that section states the requirement (its key phrases are present);
+every canonical law and Step it cites is defined in the canonical Core V335 Rev.451; and, when ChatGPT's Rev451 candidate is
 supplied, every Rev451 section it cites exists there; and that the ratified amendments A-1 to A-4 are marked as such and
 recorded in the ledger (CA-43). Also checks that the human-deliverable sections of Layer 6 keep their
 examples free of protocol terms, outside the list that names them.
@@ -9,7 +9,7 @@ import re
 import sys
 
 V336 = 'docs/proposed/OMEGA42_CORE_V336_SIX_LAYER_PROPOSED.md'
-CORE = 'ai/Omega42_Core_V335_Rev450.md'
+CORE = 'ai/Omega42_Core_V335_Rev451.md'
 R = []
 def ok(n, c): R.append(bool(c)); print(('PASS ' if c else 'FAIL ') + n)
 
@@ -74,10 +74,11 @@ KEYS = {  # row: phrases that must appear in the cited V336 sections
     'R58': ['Later outputs of the session leave it out', 'in the context where it applies'],
     'R59': ['candidate for the Discovery Register or the Lexicon'],
     'R60': ['The Answer illuminates the question', 'The Essay opens new worlds'],
+    'R61': ['word for word', 'the definition of Omega42', 'a mathematical environment through which artificial intelligence explores existence'],
 }
 
 rows = re.findall(r'^\| (R\d\d) \| (.+?) \| (.+?) \| (.+?) \| (.+?) \|$', v, re.M)
-ok('Appendix D has 60 rows, R01 to R60 in order', [r[0] for r in rows] == ['R%02d' % i for i in range(1, 61)])
+ok('Appendix D has 61 rows, R01 to R61 in order', [r[0] for r in rows] == ['R%02d' % i for i in range(1, 62)])
 ok('every row has a key-phrase entry in this check', set(r[0] for r in rows) == set(KEYS))
 
 core_laws = set(re.findall(r'\b(L-\d{3}): ', core))
@@ -120,6 +121,12 @@ ledger = open('docs/AMENDMENTS_PENDING.md', encoding='utf-8').read()
 ok('every AMENDMENT row of Appendix D is marked RATIFIED', all('RATIFIED' in r[4] for r in rows if r[4].startswith('AMENDMENT')))
 ok('the ledger records A-1 to A-4 as CA-43, ratified by ESC', re.search(r'^## CA-43: .*RATIFIED by ESC', ledger, re.M) is not None
    and all(a in ledger[ledger.index('## CA-43'):] for a in ('A-1', 'A-2', 'A-3', 'A-4')))
+
+# Rev.451: the canonical Core carries the Welcome word for word, and V336 quotes the same definition.
+import json
+w = json.load(open('records/introduction/introduction.json', encoding='utf-8'))['welcome']
+ok('the canonical Core carries IN-WELCOME with the definition of Omega42', 'IN-WELCOME: The Welcome.' in core and w['definition'] in core)
+ok('V336 quotes the definition the canonical Welcome carries', w['definition'][len('What Omega42 is. '):] in v)
 
 print(f'{sum(R)} of {len(R)} checks PASS')
 sys.exit(0 if all(R) else 1)

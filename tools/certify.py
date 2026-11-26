@@ -53,7 +53,7 @@ def check(text):
     if not lines or not lines[0].startswith('QUESTION VERBATIM: '): P.append('QUESTION VERBATIM is not the first line (L-499, L-549 (9))')
     if len(lines) < 2 or not lines[1].startswith('OUTPUT FORM (L-549): CERTIFICATE -- '): P.append('the OUTPUT FORM line does not name CERTIFICATE (L-549 (2))')
     if AI not in lines and not _once(text): P.append('no AI CAVEAT line (L-506)')
-    if len(lines) < 4 or lines[-1] != 'ESC' or lines[-3] != SIG or not re.match(r'^NAVIGATOR: .+ \(.+\).* \* V335 Rev\.450 STABLE \* .+$', lines[-2]):
+    if len(lines) < 4 or lines[-1] != 'ESC' or lines[-3] != SIG or not re.match(r'^NAVIGATOR: .+ \(.+\).* \* V335 Rev\.45[01] STABLE \* .+$', lines[-2]):
         P.append('the signature is not last (L-549 (9))')
     f = fields(text)
     if f is None:
@@ -98,7 +98,7 @@ def skeleton(q='[FILL: the message answered, exactly as given]'):
                       'CWD: ' + x('the folder it runs in, or .'), 'RESULT: ' + x('what the procedure shows'), 'RESULT SHA-256: ' + x('SHA-256 of the procedure\'s output'),
                       'GRADE: ' + x('the grade of the measure, or N/A'), 'SCOPE: ' + x('the domain and conditions the result states'),
                       'STATUS: ' + x(' / '.join(STATUSES)), 'STATEMENT: Ω42 certifies that ' + x('the finding, in one sentence'), END, '',
-                      SIG, 'NAVIGATOR: [FILL: model] ([FILL: organization]) * V335 Rev.450 STABLE * [FILL: date]', 'ESC'])
+                      SIG, 'NAVIGATOR: [FILL: model] ([FILL: organization]) * V335 Rev.451 STABLE * [FILL: date]', 'ESC'])
 
 
 def selftest():

@@ -24,8 +24,8 @@ Standard library only. It reports; it never edits a document (Core Rule 10).
 """
 import html, os, re, sys, zipfile
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CORE = os.path.join(REPO, 'docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx')
-COMP = os.path.join(REPO, 'docs/Omega42_Companion_Document_V335_Rev450_STABLE.docx')
+CORE = os.path.join(REPO, 'docs/Omega42_Core_Specification_V335_Rev451_STABLE.docx')
+COMP = os.path.join(REPO, 'docs/Omega42_Companion_Document_V335_Rev451_STABLE.docx')
 
 def paras(path):
     x = zipfile.ZipFile(path).read('word/document.xml').decode('utf8')

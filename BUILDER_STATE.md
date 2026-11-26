@@ -6,7 +6,7 @@ Written at the close of every build so that any AI assigned as Builder can conti
 | --- | --- |
 | Head of the chain | records/instances/seq_0185.txt |
 | Its OUTPUT ID | 340fd40652a391421a1398fb85e936db8b9e15d5e1f04a07ab2e6df62bdfc957 |
-| Release | V335 Rev.450 STABLE |
+| Release | V335 Rev.451 STABLE |
 | Builder | claude-opus-5-5 (Anthropic; serving model may differ) |
 | Date | 12 November 2026 |
 

@@ -82,7 +82,7 @@
   }
   function hex(buf) { return Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join(''); }
   function execute() {
-    var prog = $('wb-prog').value, res = run(prog), body = 'Ω42 OMEGASL CERTIFICATE · V335 Rev.450 STABLE · Workbench\n--- PROGRAM ---\n' + prog.trim() + '\n--- RESULT ---\n' + res;
+    var prog = $('wb-prog').value, res = run(prog), body = 'Ω42 OMEGASL CERTIFICATE · V335 Rev.451 STABLE · Workbench\n--- PROGRAM ---\n' + prog.trim() + '\n--- RESULT ---\n' + res;
     $('wb-out').textContent = body;
     if (window.crypto && crypto.subtle) crypto.subtle.digest('SHA-256', new TextEncoder().encode(body)).then(function (d) { $('wb-out').textContent = body + '\n--- SHA-256 ---\n' + hex(d); });
   }

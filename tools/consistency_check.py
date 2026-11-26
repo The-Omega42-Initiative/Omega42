@@ -11,7 +11,8 @@ Usage:
 Checks:
   VERSION      every 'V335 Rev.NNN' identifier names the current revision (the Core title's), except the frozen
                script label Rev.449 in embedded code, the script-label statement and records dated before the revision,
-               and an earlier revision named inside an embedded frozen record (a submission keeps its own text)
+               and an earlier revision named inside an embedded frozen record (a submission keeps its own text) or in the
+               title an appendix listing gives such a record; and the frozen key-separation label of tools/opal.py
   XREF-LAW     every L-number cited is defined (as 'L-NNN:') exactly once
   XREF-PART    every 'Part N.N' / 'Companion N.N' / 'Core Part N.N' resolves to a section heading
   STATUS       instruments recorded as NOT RUN are nowhere described as run or validated
@@ -110,6 +111,10 @@ def main():
                     continue
                 if code and not re.match(r'# ===== (?:tools|scripts)/', t) and int(r) < int(cur):
                     continue    # a frozen record embedded verbatim keeps the revision it was made under (Companion Appendix X)
+                if r == '450' and code and t.startswith('# ===== tools/opal.py'):
+                    continue    # the key-separation label of opal.py is frozen with the keys derived from it (Companion 236.6)
+                if int(r) < int(cur) and re.match(r'^[A-Z]\.\d+(?:\.\d+)* (?:submissions|records)/\S+ — ', t):
+                    continue    # an appendix listing gives a dated record's own title, with the revision it was made under
                 conflict('VERSION', doc, i, 'names Rev.%s (current Rev.%s)' % (r, cur))
     # section index
     heads = {}

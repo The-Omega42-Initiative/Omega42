@@ -32,14 +32,14 @@ LEGACY = {'m193_m225.py': 'scripts/m193_m225.py', 'canonical_reference_av.py': '
 # that cannot be inside them (Core Appendix R.4): the two documents themselves, the two lists of their hashes (a document
 # cannot carry its own hash), the sealed keys of the open blind tests, held outside so that the tests stay blind, and the
 # AI reading editions, which are renderings of the documents (tools/ai_edition.py).
-OUTSIDE = {'docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx': 'the Core Specification itself',
-           'docs/Omega42_Companion_Document_V335_Rev450_STABLE.docx': 'the Companion Document itself',
+OUTSIDE = {'docs/Omega42_Core_Specification_V335_Rev451_STABLE.docx': 'the Core Specification itself',
+           'docs/Omega42_Companion_Document_V335_Rev451_STABLE.docx': 'the Companion Document itself',
            'SHA256SUMS': 'the hash of every file, the two documents included',
            'records/release_documents_SHA256.txt': 'the hash of the two documents',
            'records/blind_test_02/key.txt': 'the sealed key of blind test 02, lost (records/blind_test_02/KEY_LOST.txt); its hash is embedded (records/blind_test_02/SEALED_SHA256.txt)',
            'records/m267_pilot_01/key.txt': 'the sealed key of the M267 pilot, lost (records/m267_pilot_01/KEY_LOST.txt); its hash is embedded (records/m267_pilot_01/SEALED_SHA256.txt)',
-           'ai/Omega42_Core_V335_Rev450.md': 'the Core rendered for AI readers by tools/ai_edition.py; a document cannot contain its own rendering',
-           'ai/Omega42_Companion_V335_Rev450.md': 'the Companion rendered for AI readers by tools/ai_edition.py',
+           'ai/Omega42_Core_V335_Rev451.md': 'the Core rendered for AI readers by tools/ai_edition.py; a document cannot contain its own rendering',
+           'ai/Omega42_Companion_V335_Rev451.md': 'the Companion rendered for AI readers by tools/ai_edition.py',
            'ai/Omega42_Navigator_Pack.md': 'the Navigator Pack rendered from the Core by tools/ai_edition.py',
            'ai/manifest.json': 'the section manifest of the AI reading editions, rendered by tools/ai_edition.py',
            'ai/Omega42_Existential_Framework.md': 'the Existential Framework rendered from Companion Part 145 by tools/ai_edition.py',

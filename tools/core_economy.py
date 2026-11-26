@@ -23,7 +23,7 @@ Standard library only.
 """
 import hashlib, json, os, re, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CORE = os.path.join(REPO, 'ai', 'Omega42_Core_V335_Rev450.md')
+CORE = os.path.join(REPO, 'ai', 'Omega42_Core_V335_Rev451.md')
 BASE = os.path.join(REPO, 'records', 'core', 'economy.json')
 KINDS = [(re.compile(r'^0\.0\.10\.\d+ MF-\d+ '), 'register', None), (re.compile(r'^(Rule \d+ — |L-\d+[A-Z]?: |M\d{3}[a-z]?\b)'), 'law, rule or instrument', 220),
          (re.compile(r'^S\.\d+ '), 'appendix S entry', 260), (re.compile(r'^\d+(\.\d+)+ [A-Z]'), 'numbered section', 220), (re.compile(r'^\d+\. [A-Z]'), 'checklist item', 80), (re.compile(r'^(R|X)\.(\d+|n)(\.\d+)* '), 'appendix listing', 80), (re.compile(r'^(#+ |PART |APPENDIX )'), 'heading', 40)]

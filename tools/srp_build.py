@@ -50,7 +50,7 @@ def build(domain, instruments=None, scheme='A'):
     r = CR.navigate(domain)
     tier, n1, mtok, latex = CR.m271_tier(domain)
     L = ['======= SR-CAS REPLICATION PACKAGE =======',
-         'INSTRUCTION FOR NEXT NAVIGATOR: Execute Omega42 V335 Rev.450 STABLE on the DOMAIN VERBATIM below. You must invoke the exact SELECTED INSTRUMENTS and TRANSDUCTION METHODS listed. Do not add or omit instruments. Produce a full navigation in the block order of Core Part 8.0, check it with the FORMAT SELF-CHECK below before sending it, and output your own SR-CAS Replication Package.',
+         'INSTRUCTION FOR NEXT NAVIGATOR: Execute Omega42 V335 Rev.451 STABLE on the DOMAIN VERBATIM below. You must invoke the exact SELECTED INSTRUMENTS and TRANSDUCTION METHODS listed. Do not add or omit instruments. Produce a full navigation in the block order of Core Part 8.0, check it with the FORMAT SELF-CHECK below before sending it, and output your own SR-CAS Replication Package.',
          'DOMAIN VERBATIM: ' + domain,
          'DOMAIN SHA-256: %s | SCRIPT SHA-256: %s | COMPLEXITY TIER: %d (M271: n1=%d, mathematical tokens=%d, LaTeX %s)'
          % (CR.domain_sha256(domain), CR.script_sha256(), tier, n1, mtok, 'YES' if latex else 'NO')]

@@ -10,7 +10,7 @@ One structure. Any question. Unlimited possibilities. Your judgment.
 
 [Website](../../deployments/github-pages) · [Speculative Foundations](research/philosophy/SPECULATIVE_FOUNDATIONS.md) · [Construct X](site/construct_x_lab.html) · [Get the protocol](docs/) · [Submit](CONTRIBUTING.md) · [Forum](../../discussions)
 
-<sub>V335 Rev.450 STABLE · Text CC BY 4.0 · Code Apache-2.0 · No patents, ever</sub>
+<sub>V335 Rev.451 STABLE · Text CC BY 4.0 · Code Apache-2.0 · No patents, ever</sub>
 
 </div>
 
@@ -116,8 +116,8 @@ This repository is the home of an open network built around the protocol:
 
 | Path | What it is |
 |---|---|
-| `docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx` | The operating specification, written for AI Navigators. Start with the Introduction; the status note at its head gives the present state of every layer. |
-| `docs/Omega42_Companion_Document_V335_Rev450_STABLE.docx` | Philosophy, theory and correspondence. Part 0 is the Striker FAQ. |
+| `docs/Omega42_Core_Specification_V335_Rev451_STABLE.docx` | The operating specification, written for AI Navigators. Start with the Introduction; the status note at its head gives the present state of every layer. |
+| `docs/Omega42_Companion_Document_V335_Rev451_STABLE.docx` | Philosophy, theory and correspondence. Part 0 is the Striker FAQ. |
 | `scripts/` | The reference scripts printed in the two documents, as standalone files. |
 | `examples/worked_navigation.txt` | A worked example of the script-produced arithmetic and echo blocks, with a constructed fixture in place of a reading; it passes the output audit. |
 | `examples/model_opening.txt` | The model Opening Response (Core Part 2): a Navigator's whole first reply. |
@@ -150,7 +150,7 @@ This repository is the home of an open network built around the protocol:
 
 ## Start a session
 
-Attach the two documents in `docs/` to a new conversation with any AI and type **Welcome Navigator**. The AI introduces itself by its own name, welcomes you, offers a few example questions and asks what you would like to explore. The full Introduction is given on request (Core L-467 as amended by CA-43, ratified 26 November 2026).
+Attach the two documents in `docs/` to a new conversation with any AI and type **Welcome Navigator**. The AI introduces itself by its own name, tells you what Omega42 is, offers a few example questions and asks what you would like to explore. The Opening and the full Introduction are given on request (Core IN-WELCOME, L-467; V335 Rev.451).
 
 ## Start here: three commands
 
@@ -175,7 +175,7 @@ python3 scripts/ground_challenge.py --test                 # Alternative Ground 
 python3 scripts/ground_challenge.py --m274 v1,...,v24      # Substrate Witness: check and repair a reported coordinate (Core Part 3.28; also --m275, --m276, --m277)
 ```
 
-SCRIPT SHA-256 (scripts frozen at Rev.449, unchanged at Rev.450): `ab79aae2d027968deab809e1bd7963e6ec32ac4a9754c8fc250071bebc0514c5`
+SCRIPT SHA-256 (scripts frozen at Rev.449, unchanged at Rev.450 and Rev.451): `ab79aae2d027968deab809e1bd7963e6ec32ac4a9754c8fc250071bebc0514c5`
 
 ## Contributing directly
 

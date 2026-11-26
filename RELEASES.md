@@ -16,14 +16,14 @@ Receiving material often does not mean changing the Core often. The Core changes
 
 ## 2. Version names
 
-The protocol keeps its name, `Omega42 V<major> Rev.<revision> <channel>`, for example `V335 Rev.450 STABLE`.
+The protocol keeps its name, `Omega42 V<major> Rev.<revision> <channel>`, for example `V335 Rev.451 STABLE`.
 
 - **V** (major). A change to the architecture, the fundamental method or the normative principles.
 - **Rev** (revision). New instruments, laws, sections, tools or compatible additions. Every stable release that changes the Core or the Companion gets a new Rev.
-- **Patch suffix** `-p<n>`. Corrections, clarifications and editorial repairs that change no rule, for example `Rev.450-p1`.
+- **Patch suffix** `-p<n>`. Corrections, clarifications and editorial repairs that change no rule, for example `Rev.451-p1`.
 - **Channel.** `STABLE` for an approved release. `DEV` for the development stream on its own branch, where experimental material is worked on without changing the stable text. A Navigator names the channel it read.
 
-The git tag repeats the name in a form git accepts, for example `v335-rev450`. Tags are protected and releases are immutable once published (`SETUP.md`, step 12).
+The git tag repeats the name in a form git accepts, for example `v335-rev451`. Tags are protected and releases are immutable once published (`SETUP.md`, step 12).
 
 ## 3. Change levels
 
@@ -53,4 +53,4 @@ Before a push or a release, a person checks the target repository and branch, re
 
 ## 5. How a Navigator names its release
 
-A Navigator writes the version in every output (`NAVIGATOR: … * V335 Rev.450 STABLE`). The identity block's CONTEXT EXPOSURE line (Core Part 8.1) states what the Navigator read: the Core, the Companion and which Parts. A Navigator that read only part of the protocol says which part. "Latest" is never a version name. A Navigator that fetched the repository names the release tag, or the commit if it read an untagged state.
+A Navigator writes the version in every output (`NAVIGATOR: … * V335 Rev.451 STABLE`). The identity block's CONTEXT EXPOSURE line (Core Part 8.1) states what the Navigator read: the Core, the Companion and which Parts. A Navigator that read only part of the protocol says which part. "Latest" is never a version name. A Navigator that fetched the repository names the release tag, or the commit if it read an untagged state.

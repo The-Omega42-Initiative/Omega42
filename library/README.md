@@ -1,6 +1,6 @@
 # The Library: the archive collection
 
-Documents from the Originator's archive (Google Drive and OneDrive), published as HISTORICAL Library editions on the Originator's instruction of 20 November 2026, under the archive policy (docs/ARCHIVE_POLICY.md, Decision 3.4). The current release, V335 Rev.450, governs wherever an edition differs from it.
+Documents from the Originator's archive (Google Drive and OneDrive), published as HISTORICAL Library editions on the Originator's instruction of 20 November 2026, under the archive policy (docs/ARCHIVE_POLICY.md, Decision 3.4). The current release, V335 Rev.451, governs wherever an edition differs from it.
 
 Every edition carries:
 1. a banner and a field table: title, date, authorship as stated, source drive, class;

@@ -17,7 +17,7 @@ Usage:
 import json, os, re, sys, zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REG = os.path.join(ROOT, 'records', 'reexamination', 'jurisdiction_registry.json')
-CORE = os.path.join(ROOT, 'docs', 'Omega42_Core_Specification_V335_Rev450_STABLE.docx')
+CORE = os.path.join(ROOT, 'docs', 'Omega42_Core_Specification_V335_Rev451_STABLE.docx')
 HEAD = """BUILDER RULE 14 -- JURISDICTION CHECK (Core L-491, Part 0.0.5) | %s | %s
 The five questions: Q1 what it does (INTERNAL result / PROCEDURAL integrity / INTERPRETATION / specific CORRESPONDENCE);
 Q2 mandatory for every navigation although only one kind of investigation needs it?; Q3 makes an outside standard an

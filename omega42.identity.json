@@ -1,7 +1,7 @@
 {
  "framework": "Omega42",
  "designation": "Omega42 Mathematical and Computational Architecture",
- "specification_version": "V335 Rev.450 STABLE",
+ "specification_version": "V335 Rev.451 STABLE",
  "identity_profile": "omega42-core",
  "identity_statement": "Omega42 is an open mathematical and computational architecture: a common foundation for representing, navigating, analyzing, verifying and connecting structured information, and a protocol by which different AI systems and people address a question to one structure and report what they find in one checkable, sealed format.",
  "motto": "Represent. Navigate. Connect. Verify.",

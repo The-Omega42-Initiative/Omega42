@@ -6,8 +6,8 @@ text, and the pair is large: its prose and its embedded files together run to se
 context window, so a Navigator given the .docx is given more than it can read and reads what its loader keeps. This tool
 renders, from the .docx and never by hand, the editions an AI reads best:
 
-    ai/Omega42_Core_V335_Rev450.md        the Core's prose in Markdown, headings as headings, every paragraph, no embedded files
-    ai/Omega42_Companion_V335_Rev450.md   the Companion's prose, likewise
+    ai/Omega42_Core_V335_Rev451.md        the Core's prose in Markdown, headings as headings, every paragraph, no embedded files
+    ai/Omega42_Companion_V335_Rev451.md   the Companion's prose, likewise
     ai/Omega42_Navigator_Pack.md          what a navigation needs, within a context window: The Introduction, the foundational
                                           register, the arithmetic, the mechanism, the Aperture and the output format whole,
                                           with a one-line index of every law, instrument and MATH entry pointing to the full text
@@ -27,10 +27,10 @@ outside them (Core Appendix R.4). Standard library only.
 """
 import hashlib, html, json, os, re, sys, zipfile
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = {'Core': os.path.join(REPO, 'docs', 'Omega42_Core_Specification_V335_Rev450_STABLE.docx'),
-        'Companion': os.path.join(REPO, 'docs', 'Omega42_Companion_Document_V335_Rev450_STABLE.docx')}
+DOCS = {'Core': os.path.join(REPO, 'docs', 'Omega42_Core_Specification_V335_Rev451_STABLE.docx'),
+        'Companion': os.path.join(REPO, 'docs', 'Omega42_Companion_Document_V335_Rev451_STABLE.docx')}
 OUT = os.path.join(REPO, 'ai')
-NAMES = {'Core': 'Omega42_Core_V335_Rev450.md', 'Companion': 'Omega42_Companion_V335_Rev450.md'}
+NAMES = {'Core': 'Omega42_Core_V335_Rev451.md', 'Companion': 'Omega42_Companion_V335_Rev451.md'}
 PACK = 'Omega42_Navigator_Pack.md'
 OEF = 'Omega42_Existential_Framework.md'
 BUDGET = 120000          # estimated tokens: the pack fits a context of 128,000 tokens with room to answer, and any larger one
@@ -108,11 +108,11 @@ def pack(md_core):
     for i, b in enumerate(blocks):
         if b.startswith('# PART 0: INTRODUCTION') and ('\n' + INTRO_CUT) in b:
             blocks[i] = b[:b.index('\n' + INTRO_CUT)] + ('\n\nThe rest of The Introduction, from IN-00.4 to IN-23, is in the full Core edition, '
-                                                           'ai/Omega42_Core_V335_Rev450.md; it orients a reader and no step of a navigation depends on it.\n')
-    head = ('# Ω42 Navigator Pack — V335 Rev.450 STABLE\n\nRendered from the Core Specification by tools/ai_edition.py; the documents are the release of record (Core L-493), '
+                                                           'ai/Omega42_Core_V335_Rev451.md; it orients a reader and no step of a navigation depends on it.\n')
+    head = ('# Ω42 Navigator Pack — V335 Rev.451 STABLE\n\nRendered from the Core Specification by tools/ai_edition.py; the documents are the release of record (Core L-493), '
             'and this pack is what a navigation needs within one context window: The Introduction, the Foundational Register, the arithmetic, the navigation mechanism, '
             'the 1/7 Aperture and the output format, in full, with the complete mathematics of Core Part 0.0.8, its register (0.0.10) with the opening of every result and its recompute line, and The Introduction to IN-00.4, with a one-line index of every law, instrument and MATH entry. For the full text of an indexed entry read '
-            'ai/Omega42_Core_V335_Rev450.md; for the record, ai/Omega42_Companion_V335_Rev450.md; to run a tool, the .docx pair or the repository.\n')
+            'ai/Omega42_Core_V335_Rev451.md; for the record, ai/Omega42_Companion_V335_Rev451.md; to run a tool, the .docx pair or the repository.\n')
     blocks = [compact_register(b) for b in blocks]
     idx = '\n## Index of laws, instruments and MATH entries (first sentence; the full text in the Core)\n\n' + '\n'.join(index_lines(md_core)) + '\n'
     return head + '\n' + '\n\n'.join(blocks) + '\n' + idx
@@ -125,7 +125,7 @@ def build(write=True):
     files[PACK] = pack(md['Core'])
     c = md['Companion']; i4, i5, i6, i7 = (c.find('### PART %d:' % k) for k in (144, 145, 146, 147))
     if min(i4, i5, i6, i7) >= 0:
-        files[OEF] = ('# The Omega42 Existential Framework (OEF)\n\nRendered from the Companion Document by tools/ai_edition.py; V335 Rev.450 STABLE. The framework itself is Part 145; '
+        files[OEF] = ('# The Omega42 Existential Framework (OEF)\n\nRendered from the Companion Document by tools/ai_edition.py; V335 Rev.451 STABLE. The framework itself is Part 145; '
                       'the exploration of its two founding propositions, Part 144, and the framework as the mold of the protocol, with its roadmap, Part 146, follow it. The Companion is the text of record, '
                       'and the exact facts named here are recomputed by python3 tools/oef.py --congruence.\n\n' + c[i5:i6].strip() + '\n\n' + c[i4:i5].strip() + '\n\n' + c[i6:i7].strip() + '\n')
     man = {'_about': 'The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.',
@@ -139,7 +139,7 @@ def build(write=True):
             '- [Companion Document, prose](ai/%s): about %d thousand tokens\n'
             '- [The Omega42 Existential Framework](ai/%s): the philosophical framework, Companion Part 145\n'
             '- [Section manifest](ai/manifest.json): every section with its size and hash\n\n'
-            '## The release of record\n\n- [Core Specification (.docx)](docs/Omega42_Core_Specification_V335_Rev450_STABLE.docx)\n- [Companion Document (.docx)](docs/Omega42_Companion_Document_V335_Rev450_STABLE.docx)\n'
+            '## The release of record\n\n- [Core Specification (.docx)](docs/Omega42_Core_Specification_V335_Rev451_STABLE.docx)\n- [Companion Document (.docx)](docs/Omega42_Companion_Document_V335_Rev451_STABLE.docx)\n'
             % (PACK, tok(files[PACK]) // 1000, NAMES['Core'], tok(files[NAMES['Core']]) // 1000, NAMES['Companion'], tok(files[NAMES['Companion']]) // 1000, OEF))
     if write:
         os.makedirs(OUT, exist_ok=True)

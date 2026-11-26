@@ -1,5 +1,5 @@
 CONGRUENCE REGISTER (Core M310, L-489): 19 domains, struck with canonical_reference.py
-RECORD INTEGRITY (L-490): SOURCE records/congruence/domains.txt | SPECIFICATION V335 Rev.450 STABLE | COUNTS distinct domains struck, each tagged with the record it comes from | CRITERIA anchor and state by canonical_reference.py, base rates over the 729 residue triples | a count of domains, not a count of validations of Omega42
+RECORD INTEGRITY (L-490): SOURCE records/congruence/domains.txt | SPECIFICATION V335 Rev.451 STABLE | COUNTS distinct domains struck, each tagged with the record it comes from | CRITERIA anchor and state by canonical_reference.py, base rates over the 729 residue triples | a count of domains, not a count of validations of Omega42
   CORPUS-1  | ANCHOR P6  Seed/Causal  | state (6, 0) Wheel
   CORPUS-2  | ANCHOR P2  Generator    | state (6, 2) Voice A
   SRP-H     | ANCHOR P1  Fixpoint     | state (1, 7) Voice B

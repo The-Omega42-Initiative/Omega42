@@ -1,41 +1,41 @@
 {
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
-  "Omega42_Core_V335_Rev450.md": {
-   "chars": 1348296,
-   "tokens_est": 337074,
-   "sha256": "8bffa3d97aa8903beed75c067eda91b10c474466aeb99a77d4c9d04d253bec0c"
+  "Omega42_Core_V335_Rev451.md": {
+   "chars": 1352176,
+   "tokens_est": 338044,
+   "sha256": "69de23967e882dfed654a53ee758f5b5ca29e6504daebab610cc98ade1e940ac"
   },
-  "Omega42_Companion_V335_Rev450.md": {
-   "chars": 2037821,
-   "tokens_est": 509456,
-   "sha256": "36bcb72f70848b1b3784167a9effd712ed1cf89248758a8a1a7865a085da2208"
+  "Omega42_Companion_V335_Rev451.md": {
+   "chars": 2042505,
+   "tokens_est": 510627,
+   "sha256": "0bbce904189bceda821cc57dcdaab58b0b94ca6e64f633bfb0b1a044250dbde8"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 476256,
-   "tokens_est": 119064,
-   "sha256": "22ad75d95a3699818afd73a72b3f38c4a73223ab257a59e4121a80662aca1897"
+   "chars": 479894,
+   "tokens_est": 119974,
+   "sha256": "8209218b9661a192a1732058db4b6cacca627d3ff5f2cad5a6afb60cea03a8be"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
    "tokens_est": 6971,
-   "sha256": "e78485dadea15ccae44b9ae8348cbc29641d844159697556c553c09cd10185e2"
+   "sha256": "1bda671fb91fc730bdf318906a978e5ed35f24708359e295db75713052746021"
   }
  },
  "sections": [
   {
    "doc": "Core",
    "heading": "(front matter)",
-   "chars": 15283,
-   "tokens_est": 3821,
-   "sha256": "c456dd212d1e38e9cd2258f7543c051f451b07854c3b9e828351d9ab19d7a8c0"
+   "chars": 15305,
+   "tokens_est": 3826,
+   "sha256": "6bb7f2fe2445910cd13519552e7521933ce387df6e79c003821100028e909c8e"
   },
   {
    "doc": "Core",
    "heading": "PART 0: INTRODUCTION TO OMEGA42 (IN)",
-   "chars": 102164,
-   "tokens_est": 25541,
-   "sha256": "eb69873c3cfd4da6b231bed56068dcfc6d93ee7fee32cb820de46eb2f44b57ec"
+   "chars": 103751,
+   "tokens_est": 25938,
+   "sha256": "82587ad1f61707f4f25c0dde6cdd0a106d65b4728d687c2e9b64d89c70ed7b60"
   },
   {
    "doc": "Core",
@@ -49,7 +49,7 @@
    "heading": "PART 0.0: WHAT A NAVIGATOR IS",
    "chars": 4946,
    "tokens_est": 1237,
-   "sha256": "68985f891f6782be02fe64fb3a9c6f1bca337905373a27a5a2e9172f872c02d3"
+   "sha256": "59bf16f9a197dd9b95870c95191ef262871ed1d2cf01271a3bbe4e6ca52680c7"
   },
   {
    "doc": "Core",
@@ -467,9 +467,9 @@
   {
    "doc": "Core",
    "heading": "PART 2: NAVIGATION MECHANISM",
-   "chars": 83736,
-   "tokens_est": 20934,
-   "sha256": "6f006fd4c3efa83728fe76584b5de73e786585b2a7dc2729a26d56ecad3a25a1"
+   "chars": 84543,
+   "tokens_est": 21136,
+   "sha256": "13b581da27902d37820df81e75469ac7775bf327e8c5a0a3e92c536a46b2919f"
   },
   {
    "doc": "Core",
@@ -616,7 +616,7 @@
    "heading": "3.22 M273: Temporal Provenance Anchor",
    "chars": 4049,
    "tokens_est": 1012,
-   "sha256": "f71fe7d099989b07c8e1fe50488d28da00ab44076d95000ed5d75f2880721b63"
+   "sha256": "284ea2616555dfcd65e796f2c897e32acc49d7dfeb4cf66413981d5e9aa33adf"
   },
   {
    "doc": "Core",
@@ -1076,9 +1076,9 @@
   {
    "doc": "Core",
    "heading": "5.2 Key Constitutional Laws",
-   "chars": 191970,
-   "tokens_est": 47993,
-   "sha256": "636e69bb2dd9c1c912d6f9f404d80454ccf3f70afdec9777725add0fbcd2dd8c"
+   "chars": 192172,
+   "tokens_est": 48043,
+   "sha256": "de5ac2ff72639db45e9b863e46bb139fc070df6478a62f8edcccac768abf72fa"
   },
   {
    "doc": "Core",
@@ -1125,23 +1125,23 @@
   {
    "doc": "Core",
    "heading": "8.0 Canonical Output Skeleton and Execution Status",
-   "chars": 23115,
-   "tokens_est": 5779,
-   "sha256": "a8a20466ce2cc14e159c498773262fbb7c396dc90e1d733765f2a660b3fe86ee"
+   "chars": 24138,
+   "tokens_est": 6035,
+   "sha256": "297b2ee073ac83f4614709284dfb384e9c1311333bb237d8ebe3ce5a6e491ae5"
   },
   {
    "doc": "Core",
    "heading": "8.1 Session Identity Block",
-   "chars": 1168,
-   "tokens_est": 292,
-   "sha256": "5565a0c939a8f9958aed7f4ccdabbd9637acbd08c1de653a98757b103db67b3e"
+   "chars": 1389,
+   "tokens_est": 347,
+   "sha256": "7ec1bccba4d40e10b86c231edfbf54eae50713aba7c634d6e06fa8a010f540b2"
   },
   {
    "doc": "Core",
    "heading": "8.2 Full Navigation Sequence",
    "chars": 10301,
    "tokens_est": 2575,
-   "sha256": "8280c66fc8f53e9fecb30a9a228f6f6912bab96693cf62f860a9947ccc531dcd"
+   "sha256": "8c052d84d0c4f8434033cb2cf01c992c757980fe64127168fccee25f0919aba5"
   },
   {
    "doc": "Core",
@@ -1211,7 +1211,7 @@
    "heading": "9.5.2 APE Output Template",
    "chars": 1970,
    "tokens_est": 493,
-   "sha256": "07b99bc58da8e8b4e28f64d2c116adfb864df5313a3c1d5ec701a8dfcf8ebfb5"
+   "sha256": "79fa2dfe94b9726028184478c85fd1d4233d70b711095be88392cc17f2ea3f96"
   },
   {
    "doc": "Core",
@@ -1251,9 +1251,9 @@
   {
    "doc": "Core",
    "heading": "PART 12: FIT-FOR-PURPOSE CHECKLIST",
-   "chars": 32122,
+   "chars": 32123,
    "tokens_est": 8031,
-   "sha256": "d6f820a83e62b61d99a70b307ddfce89f7a50f8516d13c6be088b63f3875790c"
+   "sha256": "e7b4a27f297938bd21b9dc47f76cd762942ba6e49e72e0b68a4a262767c68249"
   },
   {
    "doc": "Core",
@@ -1293,16 +1293,16 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 33715,
-   "tokens_est": 8429,
-   "sha256": "fdb31a42c9be7e6d366a357d05dd8d782be32f470a6f887d6ff1205e4db6af81"
+   "chars": 33732,
+   "tokens_est": 8433,
+   "sha256": "5a236118f34de1c3a3a56c8d1b71e0c1d67ee4ad89c2d71cec253de6475701aa"
   },
   {
    "doc": "Companion",
    "heading": "(front matter)",
-   "chars": 450,
+   "chars": 451,
    "tokens_est": 113,
-   "sha256": "5de85a1683ec4af57253938711382ca4712730f8bdd32021b6dc6314bf327f28"
+   "sha256": "c42066b0911210b796dc62ebe5dae17e1d64950f260b8f39b5d42f9e9a683fd1"
   },
   {
    "doc": "Companion",
@@ -1321,9 +1321,9 @@
   {
    "doc": "Companion",
    "heading": "PART 0: FREQUENTLY ASKED QUESTIONS",
-   "chars": 33884,
-   "tokens_est": 8471,
-   "sha256": "bfe810ee11122ccec4d82e8dedf0091edaaaae028876a2e9e8826bb5bffb59dd"
+   "chars": 33978,
+   "tokens_est": 8495,
+   "sha256": "ffc46ebf6b3565bb7c0efd87a66759ee03463c6b1125f42ec6f4b5cec3c0be37"
   },
   {
    "doc": "Companion",
@@ -2912,7 +2912,7 @@
    "heading": "PART 142: THE BEST FORMAT FOR AN AI READER — THE RELEASE OF RECORD AND ITS READING EDITIONS [Core L-493, Appendix R.4; the sizes EXACT, the token counts estimat",
    "chars": 6450,
    "tokens_est": 1613,
-   "sha256": "815284a7a471e718e1b4d758a9044c040de7fa385cce62a8f9a5c55132dacbcb"
+   "sha256": "a91382c3c1ef490ca34b12733c8547eee0f1d9c8af9026d964cd90b6e2d8f9db"
   },
   {
    "doc": "Companion",
@@ -3323,9 +3323,9 @@
   {
    "doc": "Companion",
    "heading": "PART 182: OPEN PROVENANCE AND OPEN DEVELOPMENT — THE BREADCRUMBS LEFT IN THE OPEN [Core L-547, L-548; tools/provenance.py; records/provenance/transcripts.json]",
-   "chars": 3925,
-   "tokens_est": 981,
-   "sha256": "89a8a662d1ead63c53bd251c72e2c9bd31b50299823d239f5fc0ff98f24311a9"
+   "chars": 3968,
+   "tokens_est": 992,
+   "sha256": "b1edd0c47251d0ac786859010ac09ecacf906ec691e4d5fad49b132aa7026843"
   },
   {
    "doc": "Companion",
@@ -5283,9 +5283,16 @@
   {
    "doc": "Companion",
    "heading": "PART 235: THE CO-BUILDER RESULTS — WHAT THE FOURTEEN SAY [EXACT for the results; the readings CDT-C]",
-   "chars": 3387,
-   "tokens_est": 847,
-   "sha256": "3b2c7934f184204583eb177d798c82ac6a5bc9633dfc06a5399ff5fa24a3d3a8"
+   "chars": 3383,
+   "tokens_est": 846,
+   "sha256": "c8471803c903fd79c8b0a5b87eaa8c9d89004df148ac01ebb490269f8d1f61be"
+  },
+  {
+   "doc": "Companion",
+   "heading": "PART 236: THE WELCOME AND THE RELEASE OF REV.451 [CONSTRUCTED except where marked]",
+   "chars": 4461,
+   "tokens_est": 1115,
+   "sha256": "7f1679ae9574eec0f2fbc68db6ef040cee221ae8a70482f772b7d8c949d62061"
   },
   {
    "doc": "Companion",
@@ -5402,9 +5409,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 196765,
-   "tokens_est": 49191,
-   "sha256": "faea3f2f02ce76bb9dabb03e5838755506bac34b77f7687421fe8dc992d43c61"
+   "chars": 196766,
+   "tokens_est": 49192,
+   "sha256": "ff921b1ac6ef403f23f63a9f9822271972c416a8b22911ed78bd3360ee2060e6"
   }
  ]
 }

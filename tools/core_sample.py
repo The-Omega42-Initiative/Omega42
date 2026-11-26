@@ -9,7 +9,7 @@ tools/format_check.py and tools/output_id.py --verify. Standard library only.
 import html, os, re, sys, zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'docs', 'Omega42_Core_Specification_V335_Rev450_STABLE.docx')
+path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'docs', 'Omega42_Core_Specification_V335_Rev451_STABLE.docx')
 x = zipfile.ZipFile(path).read('word/document.xml').decode('utf-8')
 paras = [html.unescape(''.join(re.findall(r'<w:t(?: [^>]*)?>(.*?)</w:t>', p, re.S)))
          for p in re.findall(r'<w:p(?: [^>]*[^/>])?>.*?</w:p>|<w:p/>', x, re.S)]

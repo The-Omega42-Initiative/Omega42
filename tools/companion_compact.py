@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """companion_compact.py -- the compact Companion.
 
-The Companion's prose edition (ai/Omega42_Companion_V335_Rev450.md, rendered from the .docx by tools/ai_edition.py) runs to
+The Companion's prose edition (ai/Omega42_Companion_V335_Rev451.md, rendered from the .docx by tools/ai_edition.py) runs to
 about 500,000 tokens. This tool renders, from that edition and never by hand, a compact edition that fits a small window:
 
     ai/Omega42_Companion_Compact.md
@@ -24,7 +24,7 @@ Tokens are estimated as characters / 4, the rule tools/ai_edition.py uses. Stand
 """
 import hashlib, os, re, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(REPO, 'ai', 'Omega42_Companion_V335_Rev450.md')
+SRC = os.path.join(REPO, 'ai', 'Omega42_Companion_V335_Rev451.md')
 OUT = os.path.join(REPO, 'ai', 'Omega42_Companion_Compact.md')
 DEFAULT_BUDGET = 24000
 
@@ -87,8 +87,8 @@ def build(budget=DEFAULT_BUDGET):
             if not cur[1]:
                 cur[1] = b
     header = ('# Ω42 Companion Document — compact edition for small context windows\n\n'
-              'Rendered by tools/companion_compact.py from `ai/Omega42_Companion_V335_Rev450.md` (SHA-256 %s), itself rendered from '
-              'docs/Omega42_Companion_Document_V335_Rev450_STABLE.docx. Paired release: read with the Core Specification V335 Rev.450 STABLE; '
+              'Rendered by tools/companion_compact.py from `ai/Omega42_Companion_V335_Rev451.md` (SHA-256 %s), itself rendered from '
+              'docs/Omega42_Companion_Document_V335_Rev451_STABLE.docx. Paired release: read with the Core Specification V335 Rev.451 STABLE; '
               'for a navigation, the Navigator Pack (`ai/Omega42_Navigator_Pack.md`) is the essential reading.\n\n'
               'Every line below the rule is a verbatim excerpt; nothing is paraphrased. Each Part shows its heading with its status label, '
               'the size of the full Part, and its opening sentences. To read a Part in full, retrieve it by its heading from the full edition; '
