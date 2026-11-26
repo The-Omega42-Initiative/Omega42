@@ -4171,66 +4171,67 @@ C.1.15 records/cobuilder/integration_native.py — ChatGPT (Co-Builder), Rev451 
 C.1.16 records/cobuilder/paper_part2_check.py — Independent recomputation of the register results surveyed in Part II of the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md).
 C.1.17 records/cobuilder/paper_part3_check.py — Recomputation of Part III of the mathematical paper (information across depths and worlds): ChatGPT's extensions EXT-01 to EXT-08.
 C.1.18 records/cobuilder/paper_pdf.py — Typeset a Markdown document of docs/ as PDF (A4) with the site's Markdown renderer and Chromium: by default the mathematical paper.
-C.1.19 records/cobuilder/verify_cobuilder_2026_11_25.py — Independent recomputation of the Co-Builder results of 25 November 2026 (Claude, for the Originator).
-C.1.20 records/cobuilder/xobs02_search.py — X-OBS-02: can one shared seven-symbol aperture, read at different native phases, attain the observer bound.
-C.1.21 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
-C.1.22 records/consciousness/fit.py — how four readings of the family fit its arithmetic (Companion Part 87). The nine features are frozen in.
-C.1.23 records/consciousness/levels.py — the level ladder of the family and the experiential spectrum placement (Companion Part 89).
-C.1.24 records/consciousness/mind_first.py — the exact facts under the mind-first reading of CT-42 (Companion Parts 85 and 86; conjectures C49 to C63).
-C.1.25 records/construct/columns.py — the vertical columns and the diagonals of the Construct's squares, read exactly from the workbook's frozen constants.
-C.1.26 records/construct/construct.py — the arithmetic of the Construct, the Originator's first instrument, read through Omega42 (records/construct/; Companion Part 104).
-C.1.27 records/construct/continuity.py — what the Construct left unchanged, and what it added (Companion Part 139; Core L-528).
-C.1.28 records/construct/primordial.py — the Originator's Construct workbook PRIMORDIAL FRACTURE, read exactly, through Omega42 (Companion Part 107).
-C.1.29 records/construct/sa_lotto.py — the Construct read over the South African Lotto history, through Omega42 (Companion Part 105).
-C.1.30 records/construct/units_action.py — how the Square Reading's multiplications act on the 81 states of the law (Companion Part 129; M328, Core Part 3.54).
-C.1.31 records/cymatics/examples.py — the practical examples of M322 Cymatic View (Companion Part 91), each computed.
-C.1.32 records/depth5_01/compute.py — Depth 5, run 01 -- computes the forecasts frozen in 00_forecasts.txt (SHA-256 in 01_freeze.txt) and nothing else.
-C.1.33 records/evidence_run_01/compute.py — Evidence run 01 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.34 records/evidence_run_02/compute.py — Evidence run 02 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.35 records/evidence_run_03/compute.py — Evidence run 03 -- computations (standard library + numpy). Run: python3 compute.py.
-C.1.36 records/evidence_run_04/compute.py — Evidence run 04 -- computations (standard library only). Run: python3 compute.py.
-C.1.37 records/evidence_run_05/compute.py — Evidence run 05 -- computations (standard library only). Run: python3 compute.py.
-C.1.38 records/evidence_run_06/compute.py — Evidence run 06 -- half-period negation and the family (standard library only). Run: python3 compute.py.
-C.1.39 records/evidence_run_07/compute.py — Evidence run 07 -- frozen manifestations (standard library only). Run: python3 compute.py.
-C.1.40 records/evidence_run_08/compute.py — Evidence run 08 -- the operator (mod 9) and the manifestor (mod 8). Standard library only. Run: python3 compute.py.
-C.1.41 records/evidence_run_09/compute.py — Evidence run 09 -- E8 as the icosian ring: an eightfold lattice with an intrinsic golden endomorphism.
-C.1.42 records/evidence_run_10/compute.py — Evidence run 10 -- moduli supplied by physics: c mod 8 (Gauss-Milgram) and c mod 24 (framing). Standard library only.
-C.1.43 records/evidence_run_11/compute.py — Evidence run 11 -- ninefold anyon data (standard library only). Run: python3 compute.py.
-C.1.44 records/evidence_run_12/compute.py — Evidence run 12 -- re-examination of runs 01-03 at family level (standard library + numpy). Run: python3 compute.py.
-C.1.45 records/evidence_run_13/compute.py — Evidence run 13 -- quasicrystals, prediction first (standard library). Run: python3 compute.py.
-C.1.46 records/fieldkit/examples.py — the practical examples of M321 Field Kit (Companion Part 90), each computed, none invented.
-C.1.47 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
-C.1.48 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
-C.1.49 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
-C.1.50 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
-C.1.51 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
-C.1.52 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
-C.1.53 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
-C.1.54 records/library/recompute_lib01.py — Library tranche LIB-01: recomputation of the mathematical statements in eight archive documents.
-C.1.55 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
-C.1.56 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
-C.1.57 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
-C.1.58 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
-C.1.59 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
-C.1.60 records/opal/compute.py — the reproducible witness behind CERT-0008.
-C.1.61 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
-C.1.62 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
-C.1.63 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
-C.1.64 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
-C.1.65 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
-C.1.66 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
-C.1.67 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
-C.1.68 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
-C.1.69 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
-C.1.70 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
-C.1.71 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
-C.1.72 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
-C.1.73 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
-C.1.74 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
-C.1.75 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
-C.1.76 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
-C.1.77 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
-C.1.78 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
+C.1.19 records/cobuilder/v336_requirements_check.py — Requirements traceability check for the proposed Core V336 six-layer edition (Appendix D).
+C.1.20 records/cobuilder/verify_cobuilder_2026_11_25.py — Independent recomputation of the Co-Builder results of 25 November 2026 (Claude, for the Originator).
+C.1.21 records/cobuilder/xobs02_search.py — X-OBS-02: can one shared seven-symbol aperture, read at different native phases, attain the observer bound.
+C.1.22 records/consciousness/cf_frame.py — the Consciousness-First Frame's own statements (records/consciousness/cf_frame_atlas.txt) struck and.
+C.1.23 records/consciousness/fit.py — how four readings of the family fit its arithmetic (Companion Part 87). The nine features are frozen in.
+C.1.24 records/consciousness/levels.py — the level ladder of the family and the experiential spectrum placement (Companion Part 89).
+C.1.25 records/consciousness/mind_first.py — the exact facts under the mind-first reading of CT-42 (Companion Parts 85 and 86; conjectures C49 to C63).
+C.1.26 records/construct/columns.py — the vertical columns and the diagonals of the Construct's squares, read exactly from the workbook's frozen constants.
+C.1.27 records/construct/construct.py — the arithmetic of the Construct, the Originator's first instrument, read through Omega42 (records/construct/; Companion Part 104).
+C.1.28 records/construct/continuity.py — what the Construct left unchanged, and what it added (Companion Part 139; Core L-528).
+C.1.29 records/construct/primordial.py — the Originator's Construct workbook PRIMORDIAL FRACTURE, read exactly, through Omega42 (Companion Part 107).
+C.1.30 records/construct/sa_lotto.py — the Construct read over the South African Lotto history, through Omega42 (Companion Part 105).
+C.1.31 records/construct/units_action.py — how the Square Reading's multiplications act on the 81 states of the law (Companion Part 129; M328, Core Part 3.54).
+C.1.32 records/cymatics/examples.py — the practical examples of M322 Cymatic View (Companion Part 91), each computed.
+C.1.33 records/depth5_01/compute.py — Depth 5, run 01 -- computes the forecasts frozen in 00_forecasts.txt (SHA-256 in 01_freeze.txt) and nothing else.
+C.1.34 records/evidence_run_01/compute.py — Evidence run 01 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.35 records/evidence_run_02/compute.py — Evidence run 02 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.36 records/evidence_run_03/compute.py — Evidence run 03 -- computations (standard library + numpy). Run: python3 compute.py.
+C.1.37 records/evidence_run_04/compute.py — Evidence run 04 -- computations (standard library only). Run: python3 compute.py.
+C.1.38 records/evidence_run_05/compute.py — Evidence run 05 -- computations (standard library only). Run: python3 compute.py.
+C.1.39 records/evidence_run_06/compute.py — Evidence run 06 -- half-period negation and the family (standard library only). Run: python3 compute.py.
+C.1.40 records/evidence_run_07/compute.py — Evidence run 07 -- frozen manifestations (standard library only). Run: python3 compute.py.
+C.1.41 records/evidence_run_08/compute.py — Evidence run 08 -- the operator (mod 9) and the manifestor (mod 8). Standard library only. Run: python3 compute.py.
+C.1.42 records/evidence_run_09/compute.py — Evidence run 09 -- E8 as the icosian ring: an eightfold lattice with an intrinsic golden endomorphism.
+C.1.43 records/evidence_run_10/compute.py — Evidence run 10 -- moduli supplied by physics: c mod 8 (Gauss-Milgram) and c mod 24 (framing). Standard library only.
+C.1.44 records/evidence_run_11/compute.py — Evidence run 11 -- ninefold anyon data (standard library only). Run: python3 compute.py.
+C.1.45 records/evidence_run_12/compute.py — Evidence run 12 -- re-examination of runs 01-03 at family level (standard library + numpy). Run: python3 compute.py.
+C.1.46 records/evidence_run_13/compute.py — Evidence run 13 -- quasicrystals, prediction first (standard library). Run: python3 compute.py.
+C.1.47 records/fieldkit/examples.py — the practical examples of M321 Field Kit (Companion Part 90), each computed, none invented.
+C.1.48 records/frontier/df_001.py — DF-001 (Daily Frontier): does a system's history change the shape of its reachable futures?.
+C.1.49 records/frontier/df_002.py — DF-002 (Discovery Bulletin): different laws, identical behavior.
+C.1.50 records/frontier/df_004.py — DF-004 (Discovery Bulletin): the four operations on the Antipodes.
+C.1.51 records/frontier/df_005.py — DF-005 (Discovery Bulletin): the nine-point figure and the Omega42 loop.
+C.1.52 records/golden_navigations/compute.py — Golden navigations of 14 October 2026 (records/golden_navigations/): recomputes every value the three navigations.
+C.1.53 records/golden_navigations/compute_further.py — Nine further navigations of 14 October 2026 (03_further_navigations.txt): recomputes every coordinate, M308 level.
+C.1.54 records/integrity/iira_math.py — O42-IIRA-MATH-01: the machine-verifiable mathematics of the Information Integrity initiative.
+C.1.55 records/library/recompute_lib01.py — Library tranche LIB-01: recomputation of the mathematical statements in eight archive documents.
+C.1.56 records/m267_pilot_01/compute.py — M267 pilot 01 -- the canonical coordinates of the frozen domain set, recomputed (Core Part 3.18; Companion Part 71).
+C.1.57 records/manifestation/compute.py — the seventh and its phases (Core 1.8.10, L-492; Companion Part 50). Standard library only.
+C.1.58 records/multiverse/everett.py — the family read as quantum structure: what of Everett's and Deutsch's multiverse it carries, computed.
+C.1.59 records/necessity/nine.py — why the modulus is 9: the necessity of the nine, computed (Companion Part 130; D-010).
+C.1.60 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every arithmetic statement of the Part, recomputed. Run: python3 compute.py.
+C.1.61 records/opal/compute.py — the reproducible witness behind CERT-0008.
+C.1.62 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
+C.1.63 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
+C.1.64 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
+C.1.65 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
+C.1.66 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
+C.1.67 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
+C.1.68 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
+C.1.69 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
+C.1.70 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
+C.1.71 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
+C.1.72 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
+C.1.73 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
+C.1.74 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
+C.1.75 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
+C.1.76 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
+C.1.77 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
+C.1.78 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
+C.1.79 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
 C.2 The golden navigations (14 October 2026), as issued and frozen: three navigations of the peer questions on the matrix of φ, the discrimination of the canonical orbit and the physical systems, nine further navigations, and the peer review with its disposition. Their computations are C.1 records/golden_navigations/compute.py and compute_further.py.
 C.2.1 records/golden_navigations/00_freeze.txt — the freeze of the golden navigations (14 October 2026).
 C.2.2 records/golden_navigations/01_navigations.txt — the three golden navigations, as issued.

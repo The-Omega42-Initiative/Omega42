@@ -364,7 +364,17 @@ def md_html(text):
     out, para, items, rows, code = [], [], [], [], None
     def flush():
         if para: out.append('<p>%s</p>' % inline(' '.join(para))); para.clear()
-        if items: out.append('<ul>%s</ul>' % ''.join('<li>%s</li>' % inline(i) for i in items)); items.clear()
+        if items:
+            def lst(group):
+                tag = 'ol' if group[0][1] else 'ul'
+                return '<%s>%s</%s>' % (tag, ''.join(group_html(g) for g in group), tag)
+            def group_html(g):
+                return '<li>%s%s</li>' % (inline(g[2]), lst(g[3]) if g[3] else '')
+            top = []
+            for nested, ordered, txt in items:
+                if nested and top: top[-1][3].append((True, ordered, txt, []))
+                else: top.append((False, ordered, txt, []))
+            out.append(lst(top)); items.clear()
         if rows:
             cells = [[c.strip() for c in r.strip().strip('|').split('|')] for r in rows if not re.match(r'^\|[\s:|-]+\|?$', r.strip())]
             head, body = cells[0], cells[1:]
@@ -381,7 +391,9 @@ def md_html(text):
         if rows: flush()
         m = re.match(r'(#{1,6}) (.*)', line)
         if m: flush(); lv = min(len(m.group(1)) + 1, 6); out.append('<h%d id="%s">%s</h%d>' % (lv, re.sub(r'[^a-z0-9]+', '-', m.group(2).lower()).strip('-')[:60], inline(m.group(2)), lv)); continue
-        if re.match(r'\s*(- |\d+\. |\* )', line): (para and flush()); items.append(re.sub(r'^\s*(- |\d+\. |\* )', '', line)); continue
+        m = re.match(r'(\s*)(- |\d+\. |\* )', line)
+        if m: (para and flush()); items.append((len(m.group(1)) >= 2, m.group(2)[0].isdigit(), line[m.end():])); continue
+        if items and line.startswith('  ') and line.strip(): items[-1] = items[-1][:2] + (items[-1][2] + ' ' + line.strip(),); continue
         if line.strip() in ('---', '***'): flush(); out.append('<hr>'); continue
         if not line.strip(): flush(); continue
         para.append(line.strip())
