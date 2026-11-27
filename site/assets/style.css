@@ -872,3 +872,10 @@ main blockquote:not(.fieldnote) p { margin: .45rem 0; }
 .dw-worlds {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.8rem;}
 .dw-worlds a {display:grid;gap:.35rem;border:1px solid var(--rule);border-radius:12px;padding:1rem;text-decoration:none;color:inherit;min-width:0;}
 .dw-worlds a:hover,.dw-worlds a:focus-visible {border-color:var(--gold);}
+
+/* R35: intrinsic sizing must remain bounded at every viewport, not just phones. */
+.chip {white-space:normal;overflow-wrap:anywhere;max-width:100%;min-width:0;box-sizing:border-box;}
+main, .companion, .csec, .companion .row, .companion .row > * {min-width:0;max-width:100%;overflow-wrap:anywhere;}
+.csec {grid-template-columns:minmax(0,1fr);}
+.companion pre {max-width:100%;overflow-x:auto;}
+.companion table {display:block;max-width:100%;overflow-x:auto;}
