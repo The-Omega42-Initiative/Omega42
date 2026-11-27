@@ -1,0 +1,13 @@
+<!-- {"title":"Mathematical Adaptor Laboratory","desc":"Executable finite geometry and coding demonstrations","nav":"mathematics"} -->
+<section><h1>Mathematical Adaptor Laboratory</h1><p>Explore exact mathematical interfaces. These demonstrations use standard finite geometry and Reed–Solomon encoding with Omega42 state identifiers.</p><h2>27-treatment experimental design</h2><label>Parallel round <select id="round"></select></label><pre id="schedule"></pre><h2>Information transmission</h2><label>Native state identifier (0–80) <input id="state" type="number" min="0" max="80" value="0"></label><pre id="word"></pre><p>Seven evaluations over F7; minimum distance five. Up to two symbol errors can be corrected by nearest-codeword decoding. This demonstration encodes only.</p><button id="check">Run exhaustive certificate</button><pre id="result" aria-live="polite"></pre></section>
+<script>
+(()=>{const el=id=>document.getElementById(id),vec=i=>[Math.floor(i/9),Math.floor(i/3)%3,i%3],dirs=Array.from({length:26},(_,i)=>vec(i+1)).filter(v=>v.find(x=>x)!==0&&v.find(x=>x)===1);
+function groups(v){const seen=new Set(),out=[];for(let p=0;p<27;p++){if(seen.has(p))continue;const a=vec(p),g=[0,1,2].map(t=>a.reduce((s,x,j)=>3*s+(x+t*v[j])%3,0));g.forEach(x=>seen.add(x));out.push(g)}return out}
+function word(i){return Array.from({length:7},(_,x)=>(i%7+Math.floor(i/7)%7*x+Math.floor(i/49)*x*x)%7)}
+dirs.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent='Round '+(i+1)+' ('+v.join(',')+')';el('round').append(o)});
+function show(){el('schedule').textContent=groups(dirs[Number(el('round').value)]).map((g,i)=>'Group '+(i+1)+': '+g.map(x=>x+1).join(', ')).join('\n')}
+function encode(){const i=el('state').valueAsNumber;el('word').textContent=Number.isInteger(i)&&i>=0&&i<81?word(i).join(' '):'Enter an integer from 0 to 80'}
+el('round').addEventListener('change',show);el('state').addEventListener('input',encode);show();encode();
+el('check').addEventListener('click',()=>{const pairs=new Set();let count=0,ok=dirs.length===13;for(const d of dirs){const gs=groups(d);ok=ok&&gs.length===9&&new Set(gs.flat()).size===27;for(const g of gs){count++;for(let i=0;i<3;i++)for(let j=i+1;j<3;j++){const k=[g[i],g[j]].sort((a,b)=>a-b).join(',');if(pairs.has(k))ok=false;pairs.add(k)}}}ok=ok&&count===117&&pairs.size===351;const w=Array.from({length:81},(_,i)=>word(i)),ds=[];for(let n=3;n<=7;n++){let m=n;for(let i=0;i<81;i++)for(let j=0;j<i;j++)m=Math.min(m,w[i].slice(0,n).filter((x,k)=>x!==w[j][k]).length);ds.push(m)}ok=ok&&ds.every((x,i)=>x===i+1);el('result').textContent=(ok?'PASS':'FAIL')+'\nRounds: '+dirs.length+'\nGroups: '+count+'\nPairs: '+pairs.size+'\nMinimum distances: '+ds.join(', ')});
+})();
+</script>
