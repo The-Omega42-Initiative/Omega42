@@ -1,0 +1,30 @@
+name: independent-audit
+on:
+  push:
+    branches: [proposal/independent-audit-r10]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        command:
+          - python3 records/osl/kernel_check.py
+          - python3 records/osl/r06_check.py
+          - python3 records/osl/r07_depgraph_check.py
+          - python3 records/theory/theory_foundations.py --check
+          - python3 records/osl/r10_check.py
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: python3 -m pip install numpy
+      - run: ${{ matrix.command }}
+        env:
+          OPENBLAS_NUM_THREADS: '1'
