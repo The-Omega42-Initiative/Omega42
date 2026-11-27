@@ -1,0 +1,2 @@
+# Originator ratification — 27 November 2026
+Originator explicitly ratified Proposition 20.7 in response to R11. Claude may register it through normal release checks. Originator also authorized mathematical archive recovery across Google Drive and OneDrive, with provenance, application exploration, and exclusion of private book and identity material. No private source links or raw archive documents are included here.
