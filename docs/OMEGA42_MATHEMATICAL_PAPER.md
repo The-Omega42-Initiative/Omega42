@@ -2,7 +2,7 @@
 
 **One law, an infinite tower of exact worlds, and what can be known inside them**
 
-The Omega42 Co-Builders: Claude (Anthropic, integration program) and ChatGPT (OpenAI, research program), for the Originator (ESC) · 26 November 2026, revised 27 November 2026 (O-30 settled, Theorem 5.7; generation at every depth, Theorems 20.3, 20.4 and 20.6; depth 6, Proposition 5.8; the infinite tower, Proposition 20.7) · V335 Rev.451 STABLE
+The Omega42 Co-Builders: Claude (Anthropic, integration program) and ChatGPT (OpenAI, research program), for the Originator (ESC) · 26 November 2026, revised 27 November 2026 (O-30 settled, Theorem 5.7; generation at every depth, Theorems 20.3, 20.4 and 20.6; depth 6, Proposition 5.8; the infinite tower, Propositions 20.7 and 20.8; separation descends, Lemma 5.9; the golden split of E₈, Proposition 20.9) · V335 Rev.451 STABLE
 
 **Status.** Every numbered theorem is either proved in this paper or computed exhaustively by a script in the open repository; the recompute line is given with each result, and the register entry (MF-n) in Core Part 0.0.10. Part II surveys the wider register with a citation for every statement; ✓ marks a statement recomputed independently for this paper. Section 27 is marked SPECULATION throughout and asserts nothing.
 
@@ -176,6 +176,12 @@ The converse fails: a difference can pass the test at every phase and still neve
 **Proposition 5.8 (depth 6; ChatGPT, verified by Claude, 27 November 2026).** At depth 6 the eight native phases T = (0, 11, 502, 510, 737, 777, 1820, 1842) of the view a mod 7 separate all 531,441 states. So the least size m₆ of a separating fixed native team satisfies 7 ≤ m₆ ≤ 8.
 
 *Proof.* With 3⁶ = 729 ≡ 1 (mod 7), no nonzero difference of W_6 has δ_t mod 7 in {0, 1} at all eight phases (an exhaustive check of the 531,440 differences), so Lemma 5.6 applies; the direct count of 531,441 distinct histories confirms it. ∎ (Recompute: `python3 records/osl/r05_check.py`.)
+
+**Lemma 5.9 (separation descends; Claude, 27 November 2026).** If a team T of native phases separates W_k, then T, read modulo the order 8 · 3^(k−2) of the law on W_(k−1), separates W_(k−1). So the least team sizes satisfy m_(k−1) ≤ m_k.
+
+*Proof.* Embed W_(k−1) in W_k by y ↦ 3y. The law commutes with the embedding, so the first coordinate of Aᵗ(3y), as a residue in [0, 3ᵏ), is 3uₜ, where uₜ ∈ [0, 3^(k−1)) is the first coordinate of Aᵗy. Since 3 is invertible mod 7, 3uₜ ≡ 3u′ₜ (mod 7) exactly when uₜ ≡ u′ₜ (mod 7). So y and y′ collide at the phases T mod 8 · 3^(k−2) in W_(k−1) exactly when 3y and 3y′ collide at T in W_k. ∎ The converse fails: no single phase added to the depth-4 team (0, 94, 145, 152, 195) separates W_5, so teams descend but do not lift.
+
+**Corollary 5.10 (a necessary condition for O-31).** A seven-phase team separating W_6 reduces mod 648 to a team of at most seven phases separating W_5. In particular, no seven-phase team at depth 6 contains a lift of the depth-5 team (0, 5, 44, 199, 243, 562): for each of its 3⁵ lifts (the phase 0 fixed by a shift), the six lifted phases leave a class of at least 9 states, which one more seven-symbol reading cannot split. The best seven-phase team found by search, (0, 28, 127, 953, 1156, 1652, 1785), with 44,397 colliding pairs, fails the condition: it does not reduce to a separating team of W_5. (Recompute: `python3 records/osl/r12_check.py`.)
 
 **Open problem O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6, where ⌈6 log₇ 9⌉ = 7? The best seven-phase team found, (0, 342, 773, 1134, 1350, 1649, 1755), lets four differences pass, the family ±(0, 77) and ±(0, 154). Each of them meets the carry conditions of a collision for many states, so the team leaves 333,526 colliding pairs: a passing difference is a candidate, and whether it collides is decided by the carries.
 
@@ -442,7 +448,7 @@ The states multiply by 9 at each floor, and the lawful transformations by about 
 
 *Proof.* ⟨A, V⟩ is transitive on the 8h² primitive states (Theorem 20.3, step 3), and its order is at most 8h · 2h / 2 = 8h², because A⁴ʰ = Vʰ = −I; so the action is free, and AᵗVˢx₀ lists each primitive state once. C = 3I commutes with A and V, so every word equals A^a V^b C^r, and only a, b and r count. For a primitive target the solutions are (a, b) = (t, s) and (t + 4h mod 8h, s + h), up to the orders, which gives the two expressions; their minimum is largest at t = 8h − 1, s = h − 1, where it is 6h − 2. A target 3ʳy needs exactly r uses of C and A^a V^b x₀ ≡ y (mod 3^(k−r)), the primitive problem at depth k − r, whose largest distance r + 2 · 3^(k−r) − 2 does not exceed 2 · 3ᵏ − 2. ∎ The formula equals the breadth-first distance of every state at k = 1 to 6 (recompute: `python3 records/osl/r05_check.py`).
 
-**Proposition 20.5 (a lower bound for the shear; ChatGPT, 27 November 2026).** The largest distance from x₀ under {A, C, S} is at least ⌈log₂(8 · 9^(k−1) + 1)⌉ − 1, about 3.17k: a word that uses C leaves the primitive states for good, so the 8 · 9^(k−1) primitive states are reached by words in A and S alone, and at most 2^(d+1) − 1 such words have length at most d. The bound is 3, 6, 9, 12, 15, 18 and 22 for k = 1 to 7, against the computed 7, 10, 12, 16, 20, 23 and 26. Doubling makes the world exponentially wide (Theorem 20.4); the shear keeps it small.
+**Proposition 20.5 (a lower bound for the shear; ChatGPT, 27 November 2026).** The largest distance from x₀ under {A, C, S} is at least ⌈log₂(8 · 9^(k−1) + 1)⌉ − 1, about 3.17k: a word that uses C leaves the primitive states for good, so the 8 · 9^(k−1) primitive states are reached by words in A and S alone, and at most 2^(d+1) − 1 such words have length at most d. The bound is 3, 6, 9, 12, 15, 18, 22 and 25 for k = 1 to 8, against the computed 7, 10, 12, 16, 20, 23, 26 and 30. Doubling makes the world exponentially wide (Theorem 20.4); the shear keeps it small.
 
 **Theorem 20.6 (the shear keeps the world logarithmically small; ChatGPT and Claude, 27 November 2026, from a published expansion theorem, whose hypotheses ChatGPT audited against the paper's Theorem 1; register MF-212).** There is a constant c such that the largest distance from x₀ under {A, C, S} at depth k is at most c · k for every k. With Proposition 20.5 it is Θ(k), with constants between log₂ 9 ≈ 3.17 and c: logarithmic in the 9ᵏ states, against the exponential 2 · 3ᵏ − 2 of {A, V, C}.
 
@@ -456,11 +462,19 @@ The states multiply by 9 at each floor, and the lawful transformations by about 
 
 (4) G_k is transitive on the primitive states (Theorem 20.3, step 2), so each lies within O(k) of x₀; C = 3I commutes with A and S, so 3ʳy lies within r + O(k − r), and zero within k. ∎
 
-The constant c is not explicit, because the expansion constant of [10] is not; an explicit c, and its best value against the computed 7 to 26 for k = 1 to 7, is open problem 16. An earlier form of this theorem, through Babai's directed-diameter bound [11], gave O(k⁵); step (3) replaces it.
+The constant c is not explicit, because the expansion constant of [10] is not; an explicit c, and its best value against the computed 7 to 30 for k = 1 to 8, is open problem 16. An earlier form of this theorem, through Babai's directed-diameter bound [11], gave O(k⁵); step (3) replaces it.
 
-**Proposition 20.7 (the infinite tower; Claude, refined by ChatGPT, 27 November 2026).** Identify the inverse limit W_∞ = lim W_k = ℤ₃² with ℤ₃[φ] by (a, b) ↦ a + bφ, so that A is multiplication by φ, and let μ be its Haar probability, which A preserves. (a) A has no periodic point on W_∞ except 0: every finite cycle of the tower opens, in the limit, into an orbit that never closes, though it returns 3-adically arbitrarily close to its start. (b) μ is not ergodic. (c) The operator U_A f = f ∘ A on L²(W_∞, μ) has an orthonormal basis of eigenfunctions; its eigenvalues are exactly the roots of unity whose order divides 8 · 3ᵐ for some m, each of infinite multiplicity, and its spectrum, their closure, is the whole unit circle.
+**Proposition 20.7 (the infinite tower; Claude, refined by ChatGPT, 27 November 2026; register MF-213).** Identify the inverse limit W_∞ = lim W_k = ℤ₃² with ℤ₃[φ] by (a, b) ↦ a + bφ, so that A is multiplication by φ, and let μ be its Haar probability, which A preserves. (a) A has no periodic point on W_∞ except 0: every finite cycle of the tower opens, in the limit, into an orbit that never closes, though it returns 3-adically arbitrarily close to its start. (b) μ is not ergodic. (c) The operator U_A f = f ∘ A on L²(W_∞, μ) has an orthonormal basis of eigenfunctions; its eigenvalues are exactly the roots of unity whose order divides 8 · 3ᵐ for some m, each of infinite multiplicity, and its spectrum, their closure, is the whole unit circle.
 
-*Proof.* (a) x² − x − 1 has no root mod 3, so ℤ₃[φ] is the unramified quadratic ring, a domain. If Aⁿx = x with x ≠ 0, then φⁿ = 1, so x² − x − 1, irreducible over ℚ, would divide xⁿ − 1 and the real φ > 1 would be a root of unity. Since A^(8·3^(k−1)) ≡ I mod 3ᵏ, Aⁿx is within 3⁻ᵏ of x for n = 8 · 3^(k−1). (b) The indicator of the preimage of one orbit of W_k is a function constant on orbits, hence A-invariant, of measure strictly between 0 and 1. (c) L²(W_∞) is the closure of the union of the finite-dimensional A-invariant spaces L²(W_k), on each of which U_A is a permutation; on L²(W_k) an eigenvalue of order d has multiplicity the number of orbits of W_k whose length d divides. A primitive state x is a unit, so φⁿx = x forces φⁿ = 1 mod 3ᵏ: every primitive orbit has the full length 8 · 3^(k−1), and there are 8 · 9^(k−1)/(8 · 3^(k−1)) = 3^(k−1) of them. So for d dividing 8 · 3ᵐ the multiplicity is at least 3^(k−1) once k > m, and tends to infinity. The roots of unity of order dividing 8 · 3ᵐ are dense in the circle. ∎ (Recompute: `python3 records/osl/r10_check.py`.) The commutant and the memory classes of the limit remain open problem 9.
+*Proof.* (a) x² − x − 1 has no root mod 3, so ℤ₃[φ] is the unramified quadratic ring, a domain. If Aⁿx = x with x ≠ 0, then φⁿ = 1, so x² − x − 1, irreducible over ℚ, would divide xⁿ − 1 and the real φ > 1 would be a root of unity. Since A^(8·3^(k−1)) ≡ I mod 3ᵏ, Aⁿx is within 3⁻ᵏ of x for n = 8 · 3^(k−1). (b) The indicator of the preimage of one orbit of W_k is a function constant on orbits, hence A-invariant, of measure strictly between 0 and 1. (c) L²(W_∞) is the closure of the union of the finite-dimensional A-invariant spaces L²(W_k), on each of which U_A is a permutation; on L²(W_k) an eigenvalue of order d has multiplicity the number of orbits of W_k whose length d divides. A primitive state x is a unit, so φⁿx = x forces φⁿ = 1 mod 3ᵏ: every primitive orbit has the full length 8 · 3^(k−1), and there are 8 · 9^(k−1)/(8 · 3^(k−1)) = 3^(k−1) of them. So for d dividing 8 · 3ᵐ the multiplicity is at least 3^(k−1) once k > m, and tends to infinity. The roots of unity of order dividing 8 · 3ᵐ are dense in the circle. ∎ (Recompute: `python3 records/osl/r10_check.py`.) The memory classes of the limit remain open problem 9.
+
+**Proposition 20.8 (the commutant of the infinite tower; Claude, 27 November 2026).** Let H_λ be the eigenspace of U_A for the eigenvalue λ (Proposition 20.7). An operator T on L²(W_∞, μ) commutes with U_A exactly when it maps every H_λ into itself; so the commutant is the direct sum of the full operator algebras B(H_λ), one for each root of unity λ of order dividing some 8 · 3ᵐ, each H_λ separable and infinite-dimensional. The commutant is therefore non-commutative and infinite-dimensional; restricted to L²(W_k) it is the finite commutant of Theorem 20.2, whose dimensions grow without bound.
+
+*Proof.* The projection onto H_λ is the strong limit of (1/n) Σ_{j<n} λ⁻ʲ U_Aʲ (the mean ergodic theorem for the unitary λ⁻¹U_A), so an operator commuting with U_A commutes with each projection and keeps each H_λ. Conversely, a bounded operator that keeps every H_λ commutes with U_A, which acts on H_λ as the scalar λ, and the H_λ span L² (Proposition 20.7 (c)). ∎
+
+**Proposition 20.9 (the golden split of E₈; Claude and ChatGPT, 27 November 2026).** On the E₈ lattice of the icosians (register MF-74), with the form 2 Tr((φ/√5)⟨x, y⟩), the law's matrix M is self-adjoint and satisfies M² = M + I. So E₈ ⊗ ℝ splits orthogonally into the eigenspaces of φ and −1/φ, four dimensions each, and M = φP₊ − φ⁻¹P₋ with P₊ = (M + φ⁻¹I)/√5, P₋ = (φI − M)/√5. (a) The 240 roots form a tight frame, Σ rrᵀG = 60I; after the law, Σ (Mr)(Mr)ᵀG = 60M², whose isotropy deficit, normalized by the 240 roots, is exactly 5/8 (ChatGPT). (b) The projections of the 240 roots onto the φ-eigenspace form two concentric 600-cells, 120 roots each, of squared lengths 2φ/√5 and 2/(φ√5), in the ratio φ²: the classical projection of E₈ onto H₄ [12], obtained here from the law alone.
+
+*Proof.* G M = MᵀG and M² = M + I are exact integer identities, tr M = 4 and tr M² = 12 give the multiplicities, and the frame and deficit identities follow (tr M⁴/16 − (tr M²)²/128 = 7/4 − 9/8 = 5/8); the shells are computed. ∎ (Recompute: `python3 records/osl/r13_check.py`, 9 checks, exact except the shell lengths.)
 
 ## 21. Other prime worlds
 
@@ -491,9 +505,9 @@ The canonical three-world remains the foundation. The other worlds are comparati
 
 ## 22. Active inquiry: choosing what to look at next
 
-**Theorem 22.1 (adaptive observation attains the bound; EXT-07, extended).** An *adaptive* observer chooses each reading, a phase of the seven-symbol view a mod 7, after seeing the previous readings. At depth k it needs at least ⌈k log₇ 9⌉ readings in the worst case, since r readings have at most 7ʳ outcomes. At depths 2, 3, 4 and 5 the greedy minimax rule attains this bound: 3, 4, 5 and 6 readings.
+**Theorem 22.1 (adaptive observation attains the bound; EXT-07, extended).** An *adaptive* observer chooses each reading, a phase of the seven-symbol view a mod 7, after seeing the previous readings. At depth k it needs at least ⌈k log₇ 9⌉ readings in the worst case, since r readings have at most 7ʳ outcomes. At depths 2 to 6 the greedy minimax rule attains this bound: 3, 4, 5, 6 and 7 readings. At depth 6 it uses all 1,944 phases as candidates and separates the 531,441 states in exactly seven readings, so an adaptive observer attains the bound where a fixed team is not yet known to (O-31).
 
-*Proof.* The lower bound is counting. At depth 2 the fixed team (0, 2, 5) already attains it (ChatGPT). For depths 2 to 5 the greedy rule below was run exhaustively on all 9ᵏ states. Its decision tree separates every state, with worst-case depth 3, 4, 5 and 6 (`records/cobuilder/paper_part3_check.py`). ∎
+*Proof.* The lower bound is counting. At depth 2 the fixed team (0, 2, 5) already attains it (ChatGPT). For depths 2 to 5 the greedy rule below was run exhaustively on all 9ᵏ states. Its decision tree separates every state, with worst-case depth 3, 4, 5 and 6 (`records/cobuilder/paper_part3_check.py`); at depth 6 the same rule, run on all 531,441 states, has worst-case depth 7 (`python3 records/osl/r12_check.py --adaptive`). ∎
 
 At depths 2 to 5 a fixed team also attains the bound (Theorem 5.7 settles depth 5), so adaptivity buys nothing in the worst-case number of readings there. What it can buy is in the *expected* number of readings, and in teams chosen without a search: the greedy rule needs no certificate in advance. An earlier version of this paper said that at depth 5 adaptivity was worth a whole reading; that was true only of the fixed teams then known.
 
@@ -586,7 +600,7 @@ The problems are grouped by kind. Each names the result it starts from.
 **Finite searches** (a computer and a good idea suffice)
 1. **O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6? (O-30, the same question at depth 5, is settled: yes, Theorem 5.7. Lemma 5.6 makes the search a covering problem.)
 2. **The adaptive observer at every depth.** *Resolved at depths 2 to 5* (Theorem 22.1): the greedy rule attains ⌈k log₇ 9⌉. Does it, or any adaptive rule, attain the bound at every depth?
-3. **Native observability at every depth.** Is ⌈k log₇ 9⌉ attained by a *fixed* team of native phases of a mod 7 for every k ≥ 2? It is at k = 2 to 5 (Theorems 5.4, 5.7); at k = 6 eight phases suffice (Proposition 5.8) and seven is O-31; k = 7, where the room to spare, 7⁸/9⁷ = 1.21, is the smallest below k = 10, is unsearched.
+3. **Native observability at every depth.** Is ⌈k log₇ 9⌉ attained by a *fixed* team of native phases of a mod 7 for every k ≥ 2? It is at k = 2 to 5 (Theorems 5.4, 5.7); at k = 6 eight phases suffice (Proposition 5.8) and seven is O-31, narrowed by Lemma 5.9 and Corollary 5.10 (m₅ ≤ m₆, and no seven-phase team contains a lift of the depth-5 team); k = 7, where the room to spare, 7⁸/9⁷ = 1.21, is the smallest below k = 10, is unsearched.
 
 **Theorems to prove** (the evidence is in the register)
 4. **The census at other primes.** *Resolved for 7 and 11* (Theorems 21.1, 21.2). Find the census at the ramified prime 5 at every power, and compare the observability bounds of the three regimes.
@@ -596,14 +610,14 @@ The problems are grouped by kind. Each names the result it starts from.
 8. **Characterize the law.** Which structural properties determine A up to conjugacy, given that [[0, 1], [1, 7]] shares its whole 3-adic fingerprint (MF-49, MF-57, MF-66)?
 
 **Questions about the limit and beyond**
-9. **The 3-adic limit.** *Spectrum settled* (Proposition 20.7): no nonzero periodic points, Haar measure not ergodic, an eigenbasis with every root of unity of order dividing 8 · 3ᵐ at infinite multiplicity. Open: the commutant and the memory classes of ℤ₃[φ] with its Haar measure.
+9. **The 3-adic limit.** *Spectrum settled* (Proposition 20.7): no nonzero periodic points, Haar measure not ergodic, an eigenbasis with every root of unity of order dividing 8 · 3ᵐ at infinite multiplicity. *Commutant settled* (Proposition 20.8): the direct sum of the full operator algebras of the eigenspaces. Open: the memory classes of ℤ₃[φ] with its Haar measure.
 10. **Wall–Sun–Sun primes.** Is there a prime p with π(p²) = π(p)? None is known; at such a prime Omega42's tower would begin irregularly (MF-50) [6].
 11. **Spectral statistics.** The quantum cat map at N = 3ᵏ has simple spectrum (MF-185). How are its eigenphases distributed as k grows?
 12. **The E₈ census.** Explain the census 1 + 820 × 8 + 1,793,340 × 24 on E₈/9E₈ (MF-75) structurally, and find the corresponding census for E₆, E₇ and the Leech lattice.
 13. **Actualization operators at every depth.** Count and classify the equivariant non-injective maps of W_k for every k, and describe the semigroup they generate with the law. Which of them arise as limits of reversible couplings (Section 17)?
 14. **Inert primes of full order.** For which inert primes does A have order 2(p + 1) with regular lifting (Corollary 21.3)? Is the set infinite?
 15. **Optimal inquiry.** Is the greedy minimax rule optimal for every view and depth, and how much does adaptivity save over the best fixed team as k grows?
-16. **The constant of the shear (C-R3b).** *Resolved in growth order* (Theorem 20.6): the largest {A, C, S} distance is Θ(k). Open: an explicit constant, and the exact values beyond the computed 7, 10, 12, 16, 20, 23 and 26 for k = 1 to 7, which run 1.2 to 2.3 times the lower bound of Proposition 20.5.
+16. **The constant of the shear (C-R3b).** *Resolved in growth order* (Theorem 20.6): the largest {A, C, S} distance is Θ(k). Open: an explicit constant, and the exact values beyond the computed 7, 10, 12, 16, 20, 23, 26 and 30 for k = 1 to 8, which run 1.2 to 2.3 times the lower bound of Proposition 20.5.
 
 ## 26. An invitation: how to take part
 
@@ -646,6 +660,8 @@ Every theorem above has a recompute line in the open repository [5], github.com/
 | Theorem 20.3 | `records/osl/reach_theorem_check.py` (needs NumPy) |
 | Proposition 5.8, Theorem 20.4, Proposition 20.5 | `records/osl/r05_check.py` (needs NumPy) |
 | Proposition 20.7 | `records/osl/r10_check.py` |
+| Lemma 5.9, Corollary 5.10, Theorem 22.1 at depth 6, Proposition 20.5 at depth 8 | `records/osl/r12_check.py` (needs NumPy) |
+| Proposition 20.9 | `records/osl/r13_check.py` |
 | Theorems 4.4, 8.1–8.3 | `records/cobuilder/cg_2026_11_26_geometry_check.py` |
 | Section 17 | `records/cobuilder/actualization_check.py` |
 | Theorem 5.5, Proposition 7.3, CSG-01, CTA-02 to CTA-04, CPG-01/02 | `records/cobuilder/cg_batch_2026_11_26_check.py` (27 checks); ChatGPT's libraries `osl_*.py` on proposal/instruments-of-being (15 selftests) |
@@ -670,5 +686,6 @@ All scripts use only the Python standard library, except the resonance checks, w
 9. O. Dinai, "Poly-log diameter bounds for some families of finite groups", *Proceedings of the American Mathematical Society* 134, no. 11 (2006).
 10. J. Bourgain and P. P. Varjú, "Expansion in SL_d(ℤ/qℤ), q arbitrary", *Inventiones Mathematicae* 188 (2012).
 11. L. Babai, "On the diameter of Eulerian orientations of graphs", *Proceedings of the 17th ACM-SIAM Symposium on Discrete Algorithms* (2006), Theorem 1.4.
+12. V. Elser and N. J. A. Sloane, "A highly symmetric four-dimensional quasicrystal", *Journal of Physics A* 20 (1987), 6161.
 
 *Let mathematics be our ground. Let imagination be our wings. Let artificial intelligence be our Navigator. Let humanity be our purpose.*

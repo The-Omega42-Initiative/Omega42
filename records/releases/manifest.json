@@ -385,6 +385,14 @@
    "level": "B",
    "level_source": "declared",
    "date": "2026-11-27"
+  },
+  {
+   "id": "CA-47",
+   "title": "CA-47: the infinite tower in the register, MF-213 (27 November 2026; RATIFIED by ESC, 27 November 2026, \"Ratified. Proceed to resolve the open problems.\")",
+   "status": "RATIFIED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-27"
   }
  ],
  "approval": {
@@ -411,7 +419,8 @@
    "CA-43",
    "CA-44",
    "CA-45",
-   "CA-46"
+   "CA-46",
+   "CA-47"
   ],
   "pending_esc": []
  },

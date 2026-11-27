@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """tower_math.py -- observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;
-register entries MF-207 to MF-212, ratified by ESC on 27 November 2026).
+register entries MF-207 to MF-213, ratified by ESC on 27 November 2026).
 
     python3 tools/tower_math.py --selftest
 
@@ -9,6 +9,7 @@ Lines of the selftest, each named by a register entry:
   observe-depth6:   Prop. 5.8     eight native phases separate all 531,441 states of W_6, so 7 <= m_6 <= 8
   generating-sets:  Theorem 20.3  exactly {A,C,S}, {A,V,C}, {A,V,C,S} of the 15 operation sets reach every state (k = 2..4; k = 1 adds {A,C})
   avc-distance:     Theorem 20.4  the closed {A,V,C} distance equals the breadth-first distance at every state (k = 1..4)
+  infinite-tower:   Prop. 20.7    the limit Z_3[phi]: a domain, no root of unity, full-length primitive orbits at every finite depth
   acs-linear:       Theorem 20.6  its finite ingredients: transitivity of <A, S> on primitive states, the positive-boundary identity
   acs-lower:        Prop. 20.5    the bound ceil(log2(8*9^(k-1)+1)) - 1 sits below the BFS ACS distances 7, 10, 12, 16 (k = 1..4), and
                                   the ingredients of Theorem 20.6: index 2, the Schreier generators of Lambda in SL2(Z), two fixed lines
@@ -118,6 +119,21 @@ def selftest():
         for s_ in (gA, gS):
             ok &= len({mm(x, s_) for x in X} - X) == len({mm(x, inv[s_]) for x in X} - X)
     line('acs-linear: <A, S> transitive on primitive states (k = 1..4); |Xs^-1 - X| = |Xs - X| in <A, S> mod 9', ok)
+    # Proposition 20.7: Z_3[phi] is a domain (x^2 - x - 1 has no root mod 3), phi is no root of unity (F_n = 0 and
+    # F_(n-1) = 1 never hold for n >= 1), and every primitive orbit at depth k has length 8*3^(k-1), 3^(k-1) of them
+    Fb = [0, 1]
+    for _ in range(600): Fb.append(Fb[-1] + Fb[-2])
+    ok = all((x * x - x - 1) % 3 for x in range(3)) and not any(Fb[n] == 0 and Fb[n - 1] == 1 for n in range(1, 600))
+    for k in range(1, 5):
+        q = 3 ** k; seen = set(); lens = []
+        for a0 in range(q):
+            for b0 in range(q):
+                if (a0 % 3 == 0 and b0 % 3 == 0) or (a0, b0) in seen: continue
+                x = (a0, b0); L = 0
+                while x not in seen: seen.add(x); L += 1; x = (x[1], (x[0] + x[1]) % q)
+                lens.append(L)
+        ok &= set(lens) == {8 * 3 ** (k - 1)} and len(lens) == 3 ** (k - 1)
+    line('infinite-tower: Z_3[phi] a domain, phi no root of unity; 3^(k-1) primitive orbits of length 8*3^(k-1), k = 1..4', ok)
     print('TOWER MATHEMATICS SELFTEST: %s' % ('PASS' if all(R) else 'FAIL'))
     return all(R)
 

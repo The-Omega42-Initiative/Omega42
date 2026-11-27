@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1355253,
-   "tokens_est": 338814,
-   "sha256": "de07890cd6b56338d330b9b54bbc4f8af889dc685c230b60b32e9193495b8779"
+   "chars": 1355856,
+   "tokens_est": 338964,
+   "sha256": "b19aee8e3279941d4be3681d0b22d055780574eb6b2c8ff18e141f06651bf41e"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2044743,
-   "tokens_est": 511186,
-   "sha256": "0ca8dc2d80ab0529b6f3d376395473e0f52863b45f68a62804c0562cc48e7b08"
+   "chars": 2045114,
+   "tokens_est": 511279,
+   "sha256": "4e07f8d1ab7744ffd26cd164f780d22e39d2eeb33dc183e9840f2e12e9b1fabf"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 479467,
-   "tokens_est": 119867,
-   "sha256": "a0cedae27d1be069f151b7defe2f348f0e9d5b2e5438af8b183cb351492bf65c"
+   "chars": 479689,
+   "tokens_est": 119923,
+   "sha256": "dd0df046f1ab2efee881b21739201e718b3c5908145a94047b93f723aeb17fe6"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -110,9 +110,9 @@
   {
    "doc": "Core",
    "heading": "0.0.10 THE COMPLETE MATHEMATICAL REGISTER",
-   "chars": 108910,
-   "tokens_est": 27228,
-   "sha256": "feee35a8fc3745c2ea8cb2f02424ea4cd84a3911bac44b3f37a548bbbda2635f"
+   "chars": 109513,
+   "tokens_est": 27378,
+   "sha256": "0c97adbbd6732a36091ffaa8b007f411b2a3184625788bd6dd55a8380f48e1a3"
   },
   {
    "doc": "Core",
@@ -5023,6 +5023,13 @@
   },
   {
    "doc": "Companion",
+   "heading": "216.1.213 MF-213 (Core Part 0.0.10.213). Does not follow: the commutant or the memory classes of the limit.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
    "heading": "216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.",
    "chars": 0,
    "tokens_est": 0,
@@ -5430,9 +5437,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 13645,
-   "tokens_est": 3411,
-   "sha256": "fe55e3148568c78f6ec2ef84686aa99e774dcf8370388ab1b8843bfc0e952ad9"
+   "chars": 13903,
+   "tokens_est": 3476,
+   "sha256": "25e03ee06cf20bf8b31127fdacef2574545009bf2125752005e49f82abd2f5d3"
   },
   {
    "doc": "Companion",

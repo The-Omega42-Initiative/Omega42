@@ -2332,6 +2332,17 @@
    "depends": "MF-42, MF-209, MF-211",
    "does_not_follow": "an explicit constant c, or the exact distances beyond those computed, 7 to 26 for k = 1 to 7",
    "status": "EXACT"
+  },
+  {
+   "id": "MF-213",
+   "statement": "on the limit Z_3[phi] the law has no periodic point but 0, Haar measure is not ergodic, and every root of unity of order dividing 8*3^m is an eigenvalue of infinite multiplicity (paper Proposition 20.7)",
+   "domain": "the inverse limit Z_3^2 = Z_3[phi] with Haar measure",
+   "derivation": "x^2 - x - 1 is irreducible mod 3 and phi is no root of unity; orbit-constant indicators are invariant; 3^(k-1) primitive orbits of full length at depth k; Claude, refined by ChatGPT",
+   "tool": "tools/tower_math.py",
+   "check": "infinite-tower:",
+   "depends": "MF-31, MF-35",
+   "does_not_follow": "the commutant or the memory classes of the limit",
+   "status": "EXACT"
   }
  ]
 }

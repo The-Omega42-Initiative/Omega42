@@ -493,6 +493,7 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.210 MF-210 [EXACT]. the {A, V, C} distance of A^t V^s (2, 5) is t + s for t < 4h, h = 3^(k-1), else t + s - 3h, and its largest value is 2*3^k - 2 (paper Theorem 20.4). Recompute: tools/tower_math.py "avc-distance:"
 0.0.10.211 MF-211 [EXACT]. the largest distance from (2, 5) under {A, C, S} at depth k is at least ceil(log2(8*9^(k-1) + 1)) - 1, about 3.17k (paper Proposition 20.5). Recompute: tools/tower_math.py "acs-lower:"
 0.0.10.212 MF-212 [EXACT]. the largest distance from (2, 5) under {A, C, S} at depth k is Theta(k), at most c*k (paper Theorem 20.6). Recompute: tools/tower_math.py "acs-linear:"
+0.0.10.213 MF-213 [EXACT]. on the limit Z_3[phi] the law has no periodic point but 0, Haar measure is not ergodic, and every root of unity of order dividing 8*3^m is an ... Recompute: tools/tower_math.py "infinite-tower:"
 ---
 
 
