@@ -1,0 +1,10 @@
+{
+ "_about": "Proposition-level status uses (paper Section 23; R-07). An EXACT result may rest on an entry of weaker status only through a part of that entry that is itself exact; each such edge is declared here with the part used. tools/register_graph.py --check fails on any undeclared edge.",
+ "edges": [
+  {"from": "MF-07", "to": "MF-17", "uses": "the algebra of X -> A X A^T over the integers mod 3^k, not the space reading AP-SPACE"},
+  {"from": "MF-07", "to": "MF-20", "uses": "the identity L_A(s s^T) = (As)(As)^T, not the space reading AP-SPACE"},
+  {"from": "MF-15", "to": "MF-16", "uses": "the matrix L_A and its eigenvalues, not the space reading AP-SPACE"},
+  {"from": "MF-15", "to": "MF-30", "uses": "the eigenvalue phi^2 of L_A (rapidity 2 ln phi as a number), not the space reading AP-SPACE"},
+  {"from": "MF-15", "to": "MF-60", "uses": "the matrices L_A^n and their entries, not the space reading AP-SPACE"}
+ ]
+}

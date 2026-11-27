@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+"""tower_math.py -- observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;
+register entries MF-207 to MF-211, ratified by ESC on 27 November 2026).
+
+    python3 tools/tower_math.py --selftest
+
+Lines of the selftest, each named by a register entry:
+  observe-depth5:   Theorem 5.7   six native phases of a mod 7 separate all 59,049 states of W_5
+  observe-depth6:   Prop. 5.8     eight native phases separate all 531,441 states of W_6, so 7 <= m_6 <= 8
+  generating-sets:  Theorem 20.3  exactly {A,C,S}, {A,V,C}, {A,V,C,S} of the 15 operation sets reach every state (k = 2..4; k = 1 adds {A,C})
+  avc-distance:     Theorem 20.4  the closed {A,V,C} distance equals the breadth-first distance at every state (k = 1..4)
+  acs-lower:        Prop. 20.5    the bound ceil(log2(8*9^(k-1)+1)) - 1 sits below the BFS ACS distances 7, 10, 12, 16 (k = 1..4), and
+                                  the ingredients of Theorem 20.6: index 2, the Schreier generators of Lambda in SL2(Z), two fixed lines
+Standard library only; a few seconds.
+"""
+import sys
+from itertools import combinations
+
+OPS = {'A': lambda a, b, q: (b, (a + b) % q), 'V': lambda a, b, q: (2 * a % q, 2 * b % q),
+       'C': lambda a, b, q: (3 * a % q, 3 * b % q), 'S': lambda a, b, q: (a, (3 * a + b) % q)}
+
+def bfs(k, ops):
+    q = 3 ** k; dist = {(2 % q, 5 % q): 0}; front = [(2 % q, 5 % q)]; d = 0
+    while front:
+        d += 1; nxt = []
+        for a, b in front:
+            for o in ops:
+                y = OPS[o](a, b, q)
+                if y not in dist: dist[y] = d; nxt.append(y)
+        front = nxt
+    return dist
+
+def fib_rows(k, n):
+    q = 3 ** k; p, r = [], []; m = [[1, 0], [0, 1]]
+    for _ in range(n):
+        p.append(m[0][0]); r.append(m[0][1])
+        m = [[m[0][1], (m[0][0] + m[0][1]) % q], [m[1][1], (m[1][0] + m[1][1]) % q]]
+    return p, r
+
+def separates(k, T):
+    q = 3 ** k; p, r = fib_rows(k, max(T) + 1); seen = set()
+    coeff = [(p[t], r[t]) for t in T]
+    for a in range(q):
+        for b in range(q):
+            seen.add(tuple(((pa * a + rb * b) % q) % 7 for pa, rb in coeff))
+    return len(seen) == q * q
+
+def avc_formula(k):
+    q = 3 ** k; out = {}
+    for rr in range(k):
+        kk = k - rr; qq = 3 ** kk; h = 3 ** (kk - 1)
+        x = (2 % qq, 5 % qq); At = []
+        for t in range(8 * h):
+            At.append(x); x = (x[1], (x[0] + x[1]) % qq)
+        for s in range(h):
+            sc = pow(2, s, qq)
+            for t, (a, b) in enumerate(At):
+                d = (t + s if t < 4 * h else t + s - 3 * h) + rr
+                out[((a * sc % qq) * 3 ** rr % q, (b * sc % qq) * 3 ** rr % q)] = d
+    out[(0, 0)] = k
+    return out
+
+def mul(X, Y): return [[X[0][0]*Y[0][0]+X[0][1]*Y[1][0], X[0][0]*Y[0][1]+X[0][1]*Y[1][1]], [X[1][0]*Y[0][0]+X[1][1]*Y[1][0], X[1][0]*Y[0][1]+X[1][1]*Y[1][1]]]
+def det(X): return X[0][0]*X[1][1]-X[0][1]*X[1][0]
+
+def lb(k):
+    d = 0
+    while 2 ** (d + 1) - 1 < 8 * 9 ** (k - 1): d += 1
+    return d
+
+def selftest():
+    R = []
+    def line(name, ok): R.append(ok); print('%-78s %s' % (name, 'PASS' if ok else 'FAIL'))
+    line('observe-depth5: (0, 5, 44, 199, 243, 562) separates the 59,049 states of W_5', separates(5, [0, 5, 44, 199, 243, 562]))
+    line('observe-depth6: (0, 11, 502, 510, 737, 777, 1820, 1842) separates the 531,441 states of W_6',
+         separates(6, [0, 11, 502, 510, 737, 777, 1820, 1842]) and 7 ** 6 < 9 ** 6)
+    want = {frozenset('ACS'), frozenset('AVC'), frozenset('AVCS')}
+    ok = True
+    for k in range(1, 5):
+        full = {frozenset(c) for n in range(1, 5) for c in combinations('AVCS', n) if len(bfs(k, c)) == 9 ** k}
+        ok &= full == (want | {frozenset('AC')} if k == 1 else want)
+    line('generating-sets: exactly ACS, AVC, AVCS reach W_k for k = 2..4, and AC too at k = 1', ok)
+    ok = True
+    for k in range(1, 5):
+        D = bfs(k, 'AVC'); F = avc_formula(k)
+        ok &= len(F) == 9 ** k and D == F and max(F.values()) == 2 * 3 ** k - 2
+    line('avc-distance: the closed formula is the BFS distance at every state, k = 1..4; max 2*3^k - 2', ok)
+    A = [[0, 1], [1, 1]]; Ai = [[-1, 1], [1, 0]]; S = [[1, 0], [3, 1]]; A2 = mul(A, A)
+    gens = [S, A2, mul(mul(A, S), Ai)]
+    conj = mul(mul(A2, S), mul(Ai, Ai))           # A^2 S A^-2
+    fixed = lambda M: [(x, y) for x, y in [(0, 1), (1, 0), (1, 1), (1, -1), (1, 2), (2, 1)] if [M[0][0]*x+M[0][1]*y, M[1][0]*x+M[1][1]*y] == [x, y]]
+    diam = [max(bfs(k, 'ACS').values()) for k in range(1, 5)]
+    ok = (det(A) == -1 and mul(A, Ai) == [[1, 0], [0, 1]] and all(det(g) == 1 for g in gens)
+          and fixed(S) == [(0, 1)] and fixed(conj) != fixed(S) and diam == [7, 10, 12, 16] and all(d >= lb(k) for k, d in zip(range(1, 5), diam)) and [lb(k) for k in range(1, 8)] == [3, 6, 9, 12, 15, 18, 22])
+    line('acs-lower: bound 3, 6, 9, 12 below the ACS distances 7, 10, 12, 16; index 2, Lambda in SL2(Z), two fixed lines', ok)
+    print('TOWER MATHEMATICS SELFTEST: %s' % ('PASS' if all(R) else 'FAIL'))
+    return all(R)
+
+if __name__ == '__main__':
+    if sys.argv[1:] == ['--selftest']: sys.exit(0 if selftest() else 1)
+    print(__doc__); sys.exit(2)

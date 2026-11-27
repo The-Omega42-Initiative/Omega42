@@ -3212,6 +3212,15 @@ The review asked also for four things the record already did in part and now doe
 ### 216.1.205 MF-205 (Core Part 0.0.10.205). Does not follow: which reading a given instrument uses: OmegaSL types amplitude and energy multipliers.
 216.1.206 MF-206 (Core Part 0.0.10.206). Does not follow: a minimality among hyperbolic triangles with arbitrary angles, whose areas take every positive value below pi.
 
+### 216.1.207 MF-207 (Core Part 0.0.10.207). Does not follow: that a fixed native team attains the bound at every depth, which is open from depth 6 (O-31).
+
+### 216.1.208 MF-208 (Core Part 0.0.10.208). Does not follow: whether seven readings suffice (O-31); the best seven-phase team found leaves 44,397 colliding pairs.
+
+### 216.1.209 MF-209 (Core Part 0.0.10.209). Does not follow: anything about which operations are natural, or about reach from seeds other than primitive ones.
+
+### 216.1.210 MF-210 (Core Part 0.0.10.210). Does not follow: the distance under any other operation set.
+216.1.211 MF-211 (Core Part 0.0.10.211). Does not follow: an upper bound; that the distance is Theta(k) is paper Theorem 20.6, which enters the register after the Co-Builders' audit of the cited expansion theorem.
+
 ### 216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.
 
 ### 216.2.1 Omega42 is pre-semantic structural mapping. Three positive clarifications distinguish it from neighboring frameworks.
@@ -5293,187 +5302,188 @@ X.3.453 records/m267_pilot_01/rater_sheet.txt — the M267 pilot: the sheet a bl
 X.3.454 records/manifestation/compute_output.txt — the output of records/manifestation, reproduced by the embedded computation.
 X.3.455 records/mapping/giza_earth.json — the data of records/mapping.
 X.3.456 records/math/results.json — the data of records/math.
-X.3.457 records/multiverse/everett_output.txt — the output of records/multiverse, reproduced by the embedded computation.
-X.3.458 records/navcert/README.txt — records/navcert/ -- the Navigator's self-assessment (M370; Companion Part 201).
-X.3.459 records/navcert/navigator_self_assessment.json — the data of records/navcert.
-X.3.460 records/navigator_accounts/ACCOUNT-0001.md — QUESTION VERBATIM: "[the Navigator's Account of Omega42, written at the Originator's request]".
-X.3.461 records/navigator_accounts/register.json — the data of records/navigator_accounts.
-X.3.462 records/necessity/nine_output.txt — the output of records/necessity, reproduced by the embedded computation.
-X.3.463 records/nine_zero/compute_output.txt — the output of records/nine_zero, reproduced by the embedded computation.
-X.3.464 records/oef/cbr_example.txt — CONSTRAINT BOUNDARY REGISTER (M336; L-536).
-X.3.465 records/oef/congruence.json — the data of records/oef.
-X.3.466 records/oef/consensus_example.txt — PERSPECTIVE AND CONSENSUS REGISTER (M338; L-537).
-X.3.467 records/oef/consequences.json — the data of records/oef.
-X.3.468 records/oef/instrument_map.json — the data of records/oef.
-X.3.469 records/oef/law_review.json — the data of records/oef.
-X.3.470 records/oef/nested_example.txt — NESTED MANIFESTATION RECORD (M337; L-537).
-X.3.471 records/oef/transduction_example.txt — TRANSDUCTION RECORD (M334; L-536).
-X.3.472 records/opal/compute_output.txt — the output of records/opal, reproduced by the embedded computation.
-X.3.473 records/open/register.json — the data of records/open.
-X.3.474 records/open/register.txt — THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 30 items, each closed only when its condition is met by those named.
-X.3.475 records/osl/frames/L-467.osl — Core L-467, The Welcome Law, as an OmegaSL rule frame (pilot of Protocol v2.0). The English text of the Core is authoritative.
-X.3.476 records/osl/frames/L-506.osl — Core L-506, The AI Caveat Law (its placement clause), as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.477 records/osl/frames/L-542.osl — Core L-542, The Closing Proposal Law, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.478 records/osl/frames/L-549-9.osl — Core L-549 (9), One frame for every output, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.479 records/osl/frames/L-560.osl — Core L-560, The Primary Directive, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
-X.3.480 records/osl/manifest.json — the data of records/osl.
-X.3.481 records/parallel/example_schedule.txt — wave  1 (6 in parallel): B:freeze, BT:seal, MATH-GATE, o1:measure-freeze, pA:freeze, pB:freeze.
-X.3.482 records/parallel/isolation_result.txt — ISOLATION TEST -- every CI step of omega42-ci.yml (47 steps), 10 October 2026.
-X.3.483 records/phase/example.txt — M331 PHASE-SPACE READING (Core Part 3.57) | r = (3, 9, 5), anchor P3; state v = (3, 0), on Wheel (orbit of 8).
-X.3.484 records/phonetic/cmudict_check.txt — M332 THE SYLLABLE RULE AGAINST THE CMU PRONOUNCING DICTIONARY | cmudict.dict | 126052 headwords.
-X.3.485 records/phonetic/example.txt — M332 THE LAW OF THE PHONETIC VOTE | anchor = the majority of (r1, r2, r3), r1 when all differ (Core Part 1.4).
-X.3.486 records/phonetic/rule_check.txt — M332 THE SYLLABLE RULE AGAINST 87 WORDS WITH DICTIONARY COUNTS | agreement 57 of 87 = 0.655.
-X.3.487 records/phonetic/syllable_list.txt — Words with their syllable counts as standard dictionary syllabification gives them, entered by the Navigator on.
-X.3.488 records/physics/mappings.json — the data of records/physics.
-X.3.489 records/physics/relations.json — the data of records/physics.
-X.3.490 records/physics/relations_classified.json — the data of records/physics.
-X.3.491 records/pilot_01/00_freeze.txt — Omega42 PHYSICAL PILOT 01 -- METHOD CALIBRATION OF THE SPECTRAL SCREEN C11 (Core 3.32; Companion 43.8, stage 1).
-X.3.492 records/pilot_01/01_timestamp.txt — the freeze time of records/pilot_01.
-X.3.493 records/pilot_01/02_freeze_sha256.txt — a hash of records/pilot_01, stated before the result.
-X.3.494 records/pilot_01/03_ledger.txt — PILOT 01 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.495 records/pilot_01/compute_output.txt — the output of records/pilot_01, reproduced by the embedded computation.
-X.3.496 records/pilot_02/00_freeze.txt — Omega42 PHYSICAL PILOT 02 -- THE REVISED SPECTRAL SCREEN C11', WITH HELD-OUT NULL SYSTEMS.
-X.3.497 records/pilot_02/01_timestamp.txt — the freeze time of records/pilot_02.
-X.3.498 records/pilot_02/02_freeze_sha256.txt — a hash of records/pilot_02, stated before the result.
-X.3.499 records/pilot_02/03_ledger.txt — PILOT 02 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.500 records/pilot_02/compute_output.txt — the output of records/pilot_02, reproduced by the embedded computation.
-X.3.501 records/pilot_03/00_freeze.txt — Omega42 PHYSICAL PILOT 03 -- THE GOLDEN SCREEN, AND THE S4 TEST ON THE LEDGER'S NEAREST CANDIDATE.
-X.3.502 records/pilot_03/01_timestamp.txt — the freeze time of records/pilot_03.
-X.3.503 records/pilot_03/02_freeze_sha256.txt — a hash of records/pilot_03, stated before the result.
-X.3.504 records/pilot_03/03_ledger.txt — PILOT 03 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.505 records/pilot_03/compute_output.txt — the output of records/pilot_03, reproduced by the embedded computation.
-X.3.506 records/pilot_04/00_freeze.txt — Omega42 PHYSICAL PILOT 04 -- S5 FOR THE ANYON CANDIDATE: NULL THEORIES ON THE SAME LABEL GROUP.
-X.3.507 records/pilot_04/01_timestamp.txt — the freeze time of records/pilot_04.
-X.3.508 records/pilot_04/02_freeze_sha256.txt — a hash of records/pilot_04, stated before the result.
-X.3.509 records/pilot_04/03_ledger.txt — PILOT 04 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
-X.3.510 records/pilot_04/compute_output.txt — the output of records/pilot_04, reproduced by the embedded computation.
-X.3.511 records/positive_geometry/compute_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
-X.3.512 records/positive_geometry/independent_check_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
-X.3.513 records/prior_art/README.md — Prior Art Ledger.
-X.3.514 records/prior_art/build_dates.json — the data of records/prior_art.
-X.3.515 records/prior_art/innovation_commons.json — the data of records/prior_art.
-X.3.516 records/prior_art/ledger.jsonl — the file records/prior_art/ledger.jsonl.
-X.3.517 records/provenance/attribution_2026-11-20.md — Attribution of relayed AI contributions, 20 November 2026.
-X.3.518 records/provenance/ledger.json — the Provenance and Contamination Ledger: each recorded provision with its origin and the Originator's degree (Core BF-10; Companion 24.7, Core Part 69).
-X.3.519 records/provenance/ledger.txt — the Provenance and Contamination Ledger as printed by tools/utility.py --provenance.
-X.3.520 records/provenance/transcripts.json — the data of records/provenance.
-X.3.521 records/pvir/register.json — the data of records/pvir.
-X.3.522 records/questions/register.json — the data of records/questions.
-X.3.523 records/relationships/register.json — the data of records/relationships.
-X.3.524 records/release_record_Rev450.txt — RELEASE RECORD -- Omega42 V335 Rev.450 STABLE | 9 October 2026.
-X.3.525 records/releases/manifest.json — the data of records/releases.
-X.3.526 records/resonance/cube_group_panel.txt — CUBE-GROUP PANEL -- FROZEN CLASS AND FEATURES (avenue 11; seq_0033 recommendation 3; FROZEN 23 October 2026, SEQ 36, before any score).
-X.3.527 records/resonance/cube_group_panel_output.txt — the output of records/resonance, reproduced by the embedded computation.
-X.3.528 records/restored_instruments/echo_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
-X.3.529 records/restored_instruments/human_condition_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
-X.3.530 records/restored_math/compute_output.txt — the output of records/restored_math, reproduced by the embedded computation.
-X.3.531 records/sessions/companion_parts_73_99_as_kept.txt — COMPANION PARTS 73 TO 99 AS KEPT IN SESSION FORM, BEFORE THEIR PRESENT-STATE REWRITE (23 October 2026).
-X.3.532 records/spectra/gaps_V1.5.json — the data of records/spectra.
-X.3.533 records/spectral_rivals/compute_output.txt — the output of records/spectral_rivals, reproduced by the embedded computation.
-X.3.534 records/spectral_rivals/ground_9.txt — GROUND mod 9 | period 24 | cycle census [(1, 1), (8, 1), (24, 3)].
-X.3.535 records/spectral_selection/compute_output.txt — the output of records/spectral_selection, reproduced by the embedded computation.
-X.3.536 records/srcas/adinkra_f215_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
-X.3.537 records/srcas/assessment_f176_f178_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.538 records/srcas/astrology_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 illuminate Astrology and Numerology ...?" -- 31 October 2026.
-X.3.539 records/srcas/benchmark_2026-11-07.txt — QUESTION VERBATIM: "Could it be that Omega42 can potentially be used as a universal benchmark against which literally everything can be measured? If so, what wo".
-X.3.540 records/srcas/calibration_2026-11-11.txt — QUESTION VERBATIM: "Proceed to start calibrating. Also list the objects which can successfully be mapped and calibrated by Omega42. Explore.".
-X.3.541 records/srcas/census_f220_2026-11-13.txt — QUESTION VERBATIM: "Proceed to explore and gauge the legitimacy of the premise.".
-X.3.542 records/srcas/certification_2026-11-07.txt — QUESTION VERBATIM: "'Qwen's: bold, but it grades, 'certifies' resonance and forecasts 'inevitable trajectories'. The record forbids grading and certifying, and ".
-X.3.543 records/srcas/cmf_f195_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following paper. Say how it can enhance the operation of Omega42. Give practical examples.".
-X.3.544 records/srcas/cognition_f210_2026-11-12.txt — QUESTION VERBATIM: "Yes. Please proceed.".
-X.3.545 records/srcas/construct_reviews_2026-11-19.txt — QUESTION VERBATIM: "Update the GitHub repositories and push new content. Continue the webpage to show all functionalities (submission of new content by users, e".
-X.3.546 records/srcas/coordinate_connection_2026-11-07.txt — QUESTION VERBATIM: "Considering that Omega42 is offering a means to the quantization of spacetime, it may open the door to macroscopic teleportation opportuniti".
-X.3.547 records/srcas/einstein_f193_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend.".
-X.3.548 records/srcas/encryption_2026-11-07.txt — QUESTION VERBATIM: "Explore the potential encryption capabilities Omega42 might have and examine the advantages it may offer in different fields. Give practical".
-X.3.549 records/srcas/encryption_system_2026-11-11.txt — QUESTION VERBATIM: "Can you develop a special Omega42 encryption system? Show some examples.".
-X.3.550 records/srcas/exceptional_f211_2026-11-12.txt — QUESTION VERBATIM: "@ced335ab Please assess, refine and extend the following. Extend the mathematical reach of Omega42.".
-X.3.551 records/srcas/ffp_2026-10-31.txt — SR-CAS AND SNCA -- "All relevant information should be contained inside the two documents (Omega42 and Companion). ..." -- 31 October 2026.
-X.3.552 records/srcas/fields_f216_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
-X.3.553 records/srcas/five_accounts_2026-11-11.txt — QUESTION VERBATIM: "Yes. Proceed to build the Author Seal prototype.".
-X.3.554 records/srcas/fortytwo_2026-11-07.txt — QUESTION VERBATIM: "Could it be that the number 42 in the Hitchhiker's Guide to the Galaxy is the question and the number 24 (in Omega 42) is the answer (the or".
-X.3.555 records/srcas/fortytwo_f196_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.556 records/srcas/free_energy_2026-11-07.txt — QUESTION VERBATIM: "Omega42 also hint at the possibility of free energy extraction without violating the Law of Energy Conservation. Does Omega42 provide an ave".
-X.3.557 records/srcas/general_anesthesia_2026-10-21.txt — SR-CAS AND SNCA -- "The Mechanism of General Anesthesia: ..." -- 21 October 2026.
-X.3.558 records/srcas/geometry_f212_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
-X.3.559 records/srcas/human_being_2026-11-07.txt — QUESTION VERBATIM: "What is a Human Being?".
-X.3.560 records/srcas/instrument_suite_2026-11-11.txt — QUESTION VERBATIM: "Apply all the suggested improvements to Omega42 and give examples for usage. This mathematical breakthrough had changed its status among app".
-X.3.561 records/srcas/introduction_f189_2026-11-11.txt — QUESTION VERBATIM: "Yes, file it with its SNCA review and put this piece into the record as the public-facing introduction.".
-X.3.562 records/srcas/lexicon_f204_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following. Consult previous efforts at establishing an Omega42 Lexicon (Google Drive) and supplement it".
-X.3.563 records/srcas/manuscripts_2026-11-11.txt — QUESTION VERBATIM: "Verify the math. Resolve all outstanding issues. Optimize for navigational efficiency and synthesis formation.".
-X.3.564 records/srcas/multiverse_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 map to the ideas of Hugh Everett and David Deutsch on the multiverse? ..." -- 31 October 2026.
-X.3.565 records/srcas/navigator_certification_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
-X.3.566 records/srcas/osl_f205_2026-11-12.txt — QUESTION VERBATIM: "Yes. The protocol can be written in the Omega42 Structural Language provided the AI will be able to read and understand it. The introduction".
-X.3.567 records/srcas/outstanding_2026-10-31.txt — SR-CAS AND SNCA -- "Most Strikers are not able to identify a breakthrough therefore the AI Navigator must propose a breakthrough candidate if one arises. ..." -.
-X.3.568 records/srcas/philosophy_2026-10-31.txt — SR-CAS AND SNCA -- "Restore the philosophical content to the FC. It may help to stimulate philosophical discussion. ..." -- 31 October 2026.
-X.3.569 records/srcas/phonetics_2026-10-31.txt — SR-CAS AND SNCA -- "How does the phonetics of language determine the Phenomenological experience of the Observer? ..." -- 31 October 2026.
-X.3.570 records/srcas/protocol_f198_2026-11-12.txt — QUESTION VERBATIM: "Yes. Proceed to apply all positive and useful recommendations. The protocol Navigator should never decline to explore a concept based on its".
-X.3.571 records/srcas/purpose_of_life_2026-10-19.txt — SR-CAS AND SNCA -- "What is the purpose of life?" -- 19 October 2026.
-X.3.572 records/srcas/quantum_f222_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
-X.3.573 records/srcas/quantum_f223_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
-X.3.574 records/srcas/relativity_f217_2026-11-13.txt — QUESTION VERBATIM: "Please assess, refine and extend. Complete all computations and build bridges towards Physics.".
-X.3.575 records/srcas/reproduction_f219_2026-11-13.txt — QUESTION VERBATIM: "Assess, refine, extend, investigate, compute, explore and verify.".
-X.3.576 records/srcas/review_f213_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
-X.3.577 records/srcas/review_f214_2026-11-12.txt — QUESTION VERBATIM: "@3bed6519 Approved. Proceed.".
-X.3.578 records/srcas/reviews_2026-10-30.txt — SNCA IN REVIEW FORM -- received reviews of 30 October 2026 (Core Part 6.2).
-X.3.579 records/srcas/reviews_2026-10-31.txt — SNCA IN REVIEW FORM -- received accounts of 31 October 2026 (Core Part 6.2).
-X.3.580 records/srcas/reviews_2026-11-04.txt — SNCA IN REVIEW FORM -- received accounts of 1 to 4 November 2026 (Core Part 6.2).
-X.3.581 records/srcas/reviews_2026-11-06.txt — SNCA IN REVIEW FORM -- received accounts of 6 November 2026 (Core Part 6.2).
-X.3.582 records/srcas/sorites_2026-10-30.txt — SR-CAS AND SNCA -- "The Sorites Paradox and the Problem of Vagueness: ..." -- 30 October 2026.
-X.3.583 records/srcas/spacetime_mapping_2026-11-11.txt — QUESTION VERBATIM: "'Recognition as an authority has to be granted by others; no body can declare it for itself.'? Correct. But Omega42 only makes it known that".
-X.3.584 records/srcas/spacetime_metric_2026-11-07.txt — QUESTION VERBATIM: "Proceed to complete the computational work for the derivation.".
-X.3.585 records/srcas/speculation_2026-11-20.txt — QUESTION VERBATIM: "Omega42 is a thought experiment and a thought experiment is all about speculation. Therefore, SPECULATION is pivotal to the development of O".
-X.3.586 records/srcas/standard_model_cosmology_2026-11-07.txt — QUESTION VERBATIM: "Do the same for the Standard Model of Cosmology.".
-X.3.587 records/srcas/standard_model_physics_2026-11-07.txt — QUESTION VERBATIM: "Examine the Standard Model of Physics and identify areas where Omega42 detect and hint at new information. Attempt to discover new concepts.".
-X.3.588 records/srcas/strategy_2026-11-19.txt — QUESTION VERBATIM: "Based on the Synthesis, an AI Navigator should be able to autonomously research all related aspects of the issue and include it into the gen".
-X.3.589 records/srcas/three_accounts_2026-11-11.txt — QUESTION VERBATIM: "Examine all submitted documents and identify content you may have missed. Apply its recommendations to Omega42.".
-X.3.590 records/srcas/three_accounts_b_2026-11-11.txt — QUESTION VERBATIM: "What would be a few good tests to verify Omega42 new-found abilities (that can show immediate competence)? List a few examples and show the ".
-X.3.591 records/srcas/truth_2026-10-31.txt — SR-CAS AND SNCA -- "Coherence, resonance and congruence in Omega42 is essentially its own definition of truth within the frame. ..." -- 31 October 2026.
-X.3.592 records/srcas/waves_f218_2026-11-13.txt — QUESTION VERBATIM: "Explore and compute. Build the bridges and strengthen Omega42 connections to Physics.".
-X.3.593 records/srcas/waves_f221_2026-11-13.txt — QUESTION VERBATIM: "Resolve all outstanding issues and build a rule that prevents the protocol builder from clogging up the Core Specification with meta-comment".
-X.3.594 records/srp/collatz_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
-X.3.595 records/srp/hydrogen_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
-X.3.596 records/standing/argument_example.txt — An argument for M333 --argument (Core Part 3.59; Companion Part 138.4). P lines are premises, C lines conclusions;.
-X.3.597 records/standing/argument_map.txt — M333 DEPENDENCY MAP (D-015) | records/standing/argument_example.txt | a route holds when each of its members holds; the inference along a route is the reader's .
-X.3.598 records/standing/examples.txt — M333 STANDING RECORD (Core Part 3.59) | "The Ω42 base recurrence returns every state to itself after 24 steps.".
-X.3.599 records/standing_waves/compute_output.txt — the output of records/standing_waves, reproduced by the embedded computation.
-X.3.600 records/stp/registry.json — the data of records/stp.
-X.3.601 records/suite/attend.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.602 records/suite/attend.txt — M356 Ω42-ATTEND attend.csv -- two Ω42 blocks per interval, (D, V) and (O, R), never one forced pair.
-X.3.603 records/suite/cal_noisy.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.604 records/suite/cal_noisy.txt — M354 Ω42-CAL (trial level) cal_noisy.csv | 200 trials.
-X.3.605 records/suite/cal_quiet.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.606 records/suite/cal_quiet.txt — M354 Ω42-CAL (trial level) cal_quiet.csv | 200 trials.
-X.3.607 records/suite/commutator.txt — M352 DYNAMICS LAB (MODE A): [A, B] = A B A^-1 B^-1 mod 3^2 = (7, 3, 3, 4); not the identity: A and B do not commute; = I mod 3: True (it lies in the congruence .
-X.3.608 records/suite/context.txt — M358 Ω42-CONTEXT cal_quiet.csv -> cal_noisy.csv.
-X.3.609 records/suite/inspect.txt — M353 INVARIANT AND REACHABILITY INSPECTOR (MODE A) state (1, 0) mod 3^2.
-X.3.610 records/suite/lab.txt — M352 DYNAMICS LAB (MODE A, no empirical statement) mod 3^2; letters applied left to right (AB = A first, the matrix BA).
-X.3.611 records/suite/memory.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.612 records/suite/memory.txt — M357 Ω42-MEMORY memory.csv | recognition 0.767 | hits 0.887 | false memories 0.371 | d' 1.541 | ECE 0.045 | resolution 0.783 | errors recognized 0.500.
-X.3.613 records/suite/nav_sentinel.txt — M360 INVARIANT SENTINEL nav_states.csv | 3 states mod 3^1 | declared group <A>.
-X.3.614 records/suite/nav_states.csv — NAV-01, NAV-02, NAV-03 encodings (records/calibration/nav_run_0*.txt), the only real series in the record.
-X.3.615 records/suite/nav_verify.txt — M361 MODEL VERIFIER nav_states.csv | 2 one-step predictions mod 3^1 (MODE B: the series is the held-out data).
-X.3.616 records/suite/percept.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
-X.3.617 records/suite/percept.txt — M355 Ω42-PERCEPT percept.csv | 200 trials | threshold theta 0.519 | slope beta 8.89 (gamma 0.5, lapse 0.02).
-X.3.618 records/suite/protocol.txt — M359 PROTOCOL BUILDER protocol_pilot.json: PASS.
-X.3.619 records/suite/protocol_pilot.json — the data of records/suite.
-X.3.620 records/suite/recover.txt — CALIBRATING THE INSTRUMENTS (seed 7, 4000 synthetic trials each).
-X.3.621 records/tolerance/sorites_1e6.txt — M329 TOLERANCE CHAIN CHECK (Core Part 3.55) | chain 1,000,000 -> 1 by unit steps.
-X.3.622 records/tower/arithmetic_output.txt — the output of records/tower, reproduced by the embedded computation.
-X.3.623 records/tower/nested_output.txt — the output of records/tower, reproduced by the embedded computation.
-X.3.624 records/tower/tc1_rule.txt — TOWER COORDINATE TC-1 -- the rule, frozen before its first use (Core L-523 (4); Companion 100.6, conditions C1 to C3).
-X.3.625 records/units/units.json — the data of records/units.
-X.3.626 records/vault/README.txt — records/vault/ -- the example of Ω42-Envelope v1 (Core Part 3.77, M364; Companion Part 199).
-X.3.627 records/vault/research_note.txt — Ω42 Research Note.
-X.3.628 records/vault/research_note.txt.o42 — "header": {.
-X.3.629 records/waves/models.json — the data of records/waves.
-X.3.630 records/waves/six_cycle.json — the data of records/waves.
-X.3.631 records/wheel/astrology_question.svg — the file records/wheel/astrology_question.svg.
-X.3.632 records/wheel/example.txt — M330 ASPECT WHEEL (Core Part 3.56) | anchor P6 Seed/Causal, value 5, at 90 degrees.
-X.3.633 records/zero_selection/compute_output.txt — the output of records/zero_selection, reproduced by the embedded computation.
-X.3.634 records/zero_tools/control_negative.txt — Comment.
-X.3.635 records/zero_tools/control_positive.txt — ======= NAVIGATOR IDENTITY BLOCK =======.
-X.3.636 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE CHECK AND FB-8 APERTURE-STATE CONFLATION (tools/zero_tools.py --audit).
-X.3.637 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
+X.3.457 records/math/status_uses.json — the data of records/math.
+X.3.458 records/multiverse/everett_output.txt — the output of records/multiverse, reproduced by the embedded computation.
+X.3.459 records/navcert/README.txt — records/navcert/ -- the Navigator's self-assessment (M370; Companion Part 201).
+X.3.460 records/navcert/navigator_self_assessment.json — the data of records/navcert.
+X.3.461 records/navigator_accounts/ACCOUNT-0001.md — QUESTION VERBATIM: "[the Navigator's Account of Omega42, written at the Originator's request]".
+X.3.462 records/navigator_accounts/register.json — the data of records/navigator_accounts.
+X.3.463 records/necessity/nine_output.txt — the output of records/necessity, reproduced by the embedded computation.
+X.3.464 records/nine_zero/compute_output.txt — the output of records/nine_zero, reproduced by the embedded computation.
+X.3.465 records/oef/cbr_example.txt — CONSTRAINT BOUNDARY REGISTER (M336; L-536).
+X.3.466 records/oef/congruence.json — the data of records/oef.
+X.3.467 records/oef/consensus_example.txt — PERSPECTIVE AND CONSENSUS REGISTER (M338; L-537).
+X.3.468 records/oef/consequences.json — the data of records/oef.
+X.3.469 records/oef/instrument_map.json — the data of records/oef.
+X.3.470 records/oef/law_review.json — the data of records/oef.
+X.3.471 records/oef/nested_example.txt — NESTED MANIFESTATION RECORD (M337; L-537).
+X.3.472 records/oef/transduction_example.txt — TRANSDUCTION RECORD (M334; L-536).
+X.3.473 records/opal/compute_output.txt — the output of records/opal, reproduced by the embedded computation.
+X.3.474 records/open/register.json — the data of records/open.
+X.3.475 records/open/register.txt — THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 30 items, each closed only when its condition is met by those named.
+X.3.476 records/osl/frames/L-467.osl — Core L-467, The Welcome Law, as an OmegaSL rule frame (pilot of Protocol v2.0). The English text of the Core is authoritative.
+X.3.477 records/osl/frames/L-506.osl — Core L-506, The AI Caveat Law (its placement clause), as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.478 records/osl/frames/L-542.osl — Core L-542, The Closing Proposal Law, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.479 records/osl/frames/L-549-9.osl — Core L-549 (9), One frame for every output, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.480 records/osl/frames/L-560.osl — Core L-560, The Primary Directive, as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.
+X.3.481 records/osl/manifest.json — the data of records/osl.
+X.3.482 records/parallel/example_schedule.txt — wave  1 (6 in parallel): B:freeze, BT:seal, MATH-GATE, o1:measure-freeze, pA:freeze, pB:freeze.
+X.3.483 records/parallel/isolation_result.txt — ISOLATION TEST -- every CI step of omega42-ci.yml (47 steps), 10 October 2026.
+X.3.484 records/phase/example.txt — M331 PHASE-SPACE READING (Core Part 3.57) | r = (3, 9, 5), anchor P3; state v = (3, 0), on Wheel (orbit of 8).
+X.3.485 records/phonetic/cmudict_check.txt — M332 THE SYLLABLE RULE AGAINST THE CMU PRONOUNCING DICTIONARY | cmudict.dict | 126052 headwords.
+X.3.486 records/phonetic/example.txt — M332 THE LAW OF THE PHONETIC VOTE | anchor = the majority of (r1, r2, r3), r1 when all differ (Core Part 1.4).
+X.3.487 records/phonetic/rule_check.txt — M332 THE SYLLABLE RULE AGAINST 87 WORDS WITH DICTIONARY COUNTS | agreement 57 of 87 = 0.655.
+X.3.488 records/phonetic/syllable_list.txt — Words with their syllable counts as standard dictionary syllabification gives them, entered by the Navigator on.
+X.3.489 records/physics/mappings.json — the data of records/physics.
+X.3.490 records/physics/relations.json — the data of records/physics.
+X.3.491 records/physics/relations_classified.json — the data of records/physics.
+X.3.492 records/pilot_01/00_freeze.txt — Omega42 PHYSICAL PILOT 01 -- METHOD CALIBRATION OF THE SPECTRAL SCREEN C11 (Core 3.32; Companion 43.8, stage 1).
+X.3.493 records/pilot_01/01_timestamp.txt — the freeze time of records/pilot_01.
+X.3.494 records/pilot_01/02_freeze_sha256.txt — a hash of records/pilot_01, stated before the result.
+X.3.495 records/pilot_01/03_ledger.txt — PILOT 01 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.496 records/pilot_01/compute_output.txt — the output of records/pilot_01, reproduced by the embedded computation.
+X.3.497 records/pilot_02/00_freeze.txt — Omega42 PHYSICAL PILOT 02 -- THE REVISED SPECTRAL SCREEN C11', WITH HELD-OUT NULL SYSTEMS.
+X.3.498 records/pilot_02/01_timestamp.txt — the freeze time of records/pilot_02.
+X.3.499 records/pilot_02/02_freeze_sha256.txt — a hash of records/pilot_02, stated before the result.
+X.3.500 records/pilot_02/03_ledger.txt — PILOT 02 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.501 records/pilot_02/compute_output.txt — the output of records/pilot_02, reproduced by the embedded computation.
+X.3.502 records/pilot_03/00_freeze.txt — Omega42 PHYSICAL PILOT 03 -- THE GOLDEN SCREEN, AND THE S4 TEST ON THE LEDGER'S NEAREST CANDIDATE.
+X.3.503 records/pilot_03/01_timestamp.txt — the freeze time of records/pilot_03.
+X.3.504 records/pilot_03/02_freeze_sha256.txt — a hash of records/pilot_03, stated before the result.
+X.3.505 records/pilot_03/03_ledger.txt — PILOT 03 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.506 records/pilot_03/compute_output.txt — the output of records/pilot_03, reproduced by the embedded computation.
+X.3.507 records/pilot_04/00_freeze.txt — Omega42 PHYSICAL PILOT 04 -- S5 FOR THE ANYON CANDIDATE: NULL THEORIES ON THE SAME LABEL GROUP.
+X.3.508 records/pilot_04/01_timestamp.txt — the freeze time of records/pilot_04.
+X.3.509 records/pilot_04/02_freeze_sha256.txt — a hash of records/pilot_04, stated before the result.
+X.3.510 records/pilot_04/03_ledger.txt — PILOT 04 LEDGER -- result of the frozen test (00_freeze.txt; SHA-256 in 02_freeze_sha256.txt; computed by compute.py).
+X.3.511 records/pilot_04/compute_output.txt — the output of records/pilot_04, reproduced by the embedded computation.
+X.3.512 records/positive_geometry/compute_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
+X.3.513 records/positive_geometry/independent_check_output.txt — the output of records/positive_geometry, reproduced by the embedded computation.
+X.3.514 records/prior_art/README.md — Prior Art Ledger.
+X.3.515 records/prior_art/build_dates.json — the data of records/prior_art.
+X.3.516 records/prior_art/innovation_commons.json — the data of records/prior_art.
+X.3.517 records/prior_art/ledger.jsonl — the file records/prior_art/ledger.jsonl.
+X.3.518 records/provenance/attribution_2026-11-20.md — Attribution of relayed AI contributions, 20 November 2026.
+X.3.519 records/provenance/ledger.json — the Provenance and Contamination Ledger: each recorded provision with its origin and the Originator's degree (Core BF-10; Companion 24.7, Core Part 69).
+X.3.520 records/provenance/ledger.txt — the Provenance and Contamination Ledger as printed by tools/utility.py --provenance.
+X.3.521 records/provenance/transcripts.json — the data of records/provenance.
+X.3.522 records/pvir/register.json — the data of records/pvir.
+X.3.523 records/questions/register.json — the data of records/questions.
+X.3.524 records/relationships/register.json — the data of records/relationships.
+X.3.525 records/release_record_Rev450.txt — RELEASE RECORD -- Omega42 V335 Rev.450 STABLE | 9 October 2026.
+X.3.526 records/releases/manifest.json — the data of records/releases.
+X.3.527 records/resonance/cube_group_panel.txt — CUBE-GROUP PANEL -- FROZEN CLASS AND FEATURES (avenue 11; seq_0033 recommendation 3; FROZEN 23 October 2026, SEQ 36, before any score).
+X.3.528 records/resonance/cube_group_panel_output.txt — the output of records/resonance, reproduced by the embedded computation.
+X.3.529 records/restored_instruments/echo_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
+X.3.530 records/restored_instruments/human_condition_output.txt — the output of records/restored_instruments, reproduced by the embedded computation.
+X.3.531 records/restored_math/compute_output.txt — the output of records/restored_math, reproduced by the embedded computation.
+X.3.532 records/sessions/companion_parts_73_99_as_kept.txt — COMPANION PARTS 73 TO 99 AS KEPT IN SESSION FORM, BEFORE THEIR PRESENT-STATE REWRITE (23 October 2026).
+X.3.533 records/spectra/gaps_V1.5.json — the data of records/spectra.
+X.3.534 records/spectral_rivals/compute_output.txt — the output of records/spectral_rivals, reproduced by the embedded computation.
+X.3.535 records/spectral_rivals/ground_9.txt — GROUND mod 9 | period 24 | cycle census [(1, 1), (8, 1), (24, 3)].
+X.3.536 records/spectral_selection/compute_output.txt — the output of records/spectral_selection, reproduced by the embedded computation.
+X.3.537 records/srcas/adinkra_f215_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
+X.3.538 records/srcas/assessment_f176_f178_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.539 records/srcas/astrology_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 illuminate Astrology and Numerology ...?" -- 31 October 2026.
+X.3.540 records/srcas/benchmark_2026-11-07.txt — QUESTION VERBATIM: "Could it be that Omega42 can potentially be used as a universal benchmark against which literally everything can be measured? If so, what wo".
+X.3.541 records/srcas/calibration_2026-11-11.txt — QUESTION VERBATIM: "Proceed to start calibrating. Also list the objects which can successfully be mapped and calibrated by Omega42. Explore.".
+X.3.542 records/srcas/census_f220_2026-11-13.txt — QUESTION VERBATIM: "Proceed to explore and gauge the legitimacy of the premise.".
+X.3.543 records/srcas/certification_2026-11-07.txt — QUESTION VERBATIM: "'Qwen's: bold, but it grades, 'certifies' resonance and forecasts 'inevitable trajectories'. The record forbids grading and certifying, and ".
+X.3.544 records/srcas/cmf_f195_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following paper. Say how it can enhance the operation of Omega42. Give practical examples.".
+X.3.545 records/srcas/cognition_f210_2026-11-12.txt — QUESTION VERBATIM: "Yes. Please proceed.".
+X.3.546 records/srcas/construct_reviews_2026-11-19.txt — QUESTION VERBATIM: "Update the GitHub repositories and push new content. Continue the webpage to show all functionalities (submission of new content by users, e".
+X.3.547 records/srcas/coordinate_connection_2026-11-07.txt — QUESTION VERBATIM: "Considering that Omega42 is offering a means to the quantization of spacetime, it may open the door to macroscopic teleportation opportuniti".
+X.3.548 records/srcas/einstein_f193_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend.".
+X.3.549 records/srcas/encryption_2026-11-07.txt — QUESTION VERBATIM: "Explore the potential encryption capabilities Omega42 might have and examine the advantages it may offer in different fields. Give practical".
+X.3.550 records/srcas/encryption_system_2026-11-11.txt — QUESTION VERBATIM: "Can you develop a special Omega42 encryption system? Show some examples.".
+X.3.551 records/srcas/exceptional_f211_2026-11-12.txt — QUESTION VERBATIM: "@ced335ab Please assess, refine and extend the following. Extend the mathematical reach of Omega42.".
+X.3.552 records/srcas/ffp_2026-10-31.txt — SR-CAS AND SNCA -- "All relevant information should be contained inside the two documents (Omega42 and Companion). ..." -- 31 October 2026.
+X.3.553 records/srcas/fields_f216_2026-11-12.txt — QUESTION VERBATIM: "Yes. Apply all suggestions and recommendations. State the progress made towards mathematical maturity.".
+X.3.554 records/srcas/five_accounts_2026-11-11.txt — QUESTION VERBATIM: "Yes. Proceed to build the Author Seal prototype.".
+X.3.555 records/srcas/fortytwo_2026-11-07.txt — QUESTION VERBATIM: "Could it be that the number 42 in the Hitchhiker's Guide to the Galaxy is the question and the number 24 (in Omega 42) is the answer (the or".
+X.3.556 records/srcas/fortytwo_f196_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.557 records/srcas/free_energy_2026-11-07.txt — QUESTION VERBATIM: "Omega42 also hint at the possibility of free energy extraction without violating the Law of Energy Conservation. Does Omega42 provide an ave".
+X.3.558 records/srcas/general_anesthesia_2026-10-21.txt — SR-CAS AND SNCA -- "The Mechanism of General Anesthesia: ..." -- 21 October 2026.
+X.3.559 records/srcas/geometry_f212_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
+X.3.560 records/srcas/human_being_2026-11-07.txt — QUESTION VERBATIM: "What is a Human Being?".
+X.3.561 records/srcas/instrument_suite_2026-11-11.txt — QUESTION VERBATIM: "Apply all the suggested improvements to Omega42 and give examples for usage. This mathematical breakthrough had changed its status among app".
+X.3.562 records/srcas/introduction_f189_2026-11-11.txt — QUESTION VERBATIM: "Yes, file it with its SNCA review and put this piece into the record as the public-facing introduction.".
+X.3.563 records/srcas/lexicon_f204_2026-11-12.txt — QUESTION VERBATIM: "Please assess, refine and extend the following. Consult previous efforts at establishing an Omega42 Lexicon (Google Drive) and supplement it".
+X.3.564 records/srcas/manuscripts_2026-11-11.txt — QUESTION VERBATIM: "Verify the math. Resolve all outstanding issues. Optimize for navigational efficiency and synthesis formation.".
+X.3.565 records/srcas/multiverse_2026-10-31.txt — SR-CAS AND SNCA -- "How does Omega42 map to the ideas of Hugh Everett and David Deutsch on the multiverse? ..." -- 31 October 2026.
+X.3.566 records/srcas/navigator_certification_2026-11-11.txt — QUESTION VERBATIM: "Please assess, refine and extend the following.".
+X.3.567 records/srcas/osl_f205_2026-11-12.txt — QUESTION VERBATIM: "Yes. The protocol can be written in the Omega42 Structural Language provided the AI will be able to read and understand it. The introduction".
+X.3.568 records/srcas/outstanding_2026-10-31.txt — SR-CAS AND SNCA -- "Most Strikers are not able to identify a breakthrough therefore the AI Navigator must propose a breakthrough candidate if one arises. ..." -.
+X.3.569 records/srcas/philosophy_2026-10-31.txt — SR-CAS AND SNCA -- "Restore the philosophical content to the FC. It may help to stimulate philosophical discussion. ..." -- 31 October 2026.
+X.3.570 records/srcas/phonetics_2026-10-31.txt — SR-CAS AND SNCA -- "How does the phonetics of language determine the Phenomenological experience of the Observer? ..." -- 31 October 2026.
+X.3.571 records/srcas/protocol_f198_2026-11-12.txt — QUESTION VERBATIM: "Yes. Proceed to apply all positive and useful recommendations. The protocol Navigator should never decline to explore a concept based on its".
+X.3.572 records/srcas/purpose_of_life_2026-10-19.txt — SR-CAS AND SNCA -- "What is the purpose of life?" -- 19 October 2026.
+X.3.573 records/srcas/quantum_f222_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
+X.3.574 records/srcas/quantum_f223_2026-11-13.txt — QUESTION VERBATIM: "Omega42 does not wait on validation. Apply all findings as legitimate discoveries. Others will validate if they so desire. Continue assessin".
+X.3.575 records/srcas/relativity_f217_2026-11-13.txt — QUESTION VERBATIM: "Please assess, refine and extend. Complete all computations and build bridges towards Physics.".
+X.3.576 records/srcas/reproduction_f219_2026-11-13.txt — QUESTION VERBATIM: "Assess, refine, extend, investigate, compute, explore and verify.".
+X.3.577 records/srcas/review_f213_2026-11-12.txt — QUESTION VERBATIM: "Yes. Continue. Please assess, refine and extend. Complete all computations, explore connections and build bridges.".
+X.3.578 records/srcas/review_f214_2026-11-12.txt — QUESTION VERBATIM: "@3bed6519 Approved. Proceed.".
+X.3.579 records/srcas/reviews_2026-10-30.txt — SNCA IN REVIEW FORM -- received reviews of 30 October 2026 (Core Part 6.2).
+X.3.580 records/srcas/reviews_2026-10-31.txt — SNCA IN REVIEW FORM -- received accounts of 31 October 2026 (Core Part 6.2).
+X.3.581 records/srcas/reviews_2026-11-04.txt — SNCA IN REVIEW FORM -- received accounts of 1 to 4 November 2026 (Core Part 6.2).
+X.3.582 records/srcas/reviews_2026-11-06.txt — SNCA IN REVIEW FORM -- received accounts of 6 November 2026 (Core Part 6.2).
+X.3.583 records/srcas/sorites_2026-10-30.txt — SR-CAS AND SNCA -- "The Sorites Paradox and the Problem of Vagueness: ..." -- 30 October 2026.
+X.3.584 records/srcas/spacetime_mapping_2026-11-11.txt — QUESTION VERBATIM: "'Recognition as an authority has to be granted by others; no body can declare it for itself.'? Correct. But Omega42 only makes it known that".
+X.3.585 records/srcas/spacetime_metric_2026-11-07.txt — QUESTION VERBATIM: "Proceed to complete the computational work for the derivation.".
+X.3.586 records/srcas/speculation_2026-11-20.txt — QUESTION VERBATIM: "Omega42 is a thought experiment and a thought experiment is all about speculation. Therefore, SPECULATION is pivotal to the development of O".
+X.3.587 records/srcas/standard_model_cosmology_2026-11-07.txt — QUESTION VERBATIM: "Do the same for the Standard Model of Cosmology.".
+X.3.588 records/srcas/standard_model_physics_2026-11-07.txt — QUESTION VERBATIM: "Examine the Standard Model of Physics and identify areas where Omega42 detect and hint at new information. Attempt to discover new concepts.".
+X.3.589 records/srcas/strategy_2026-11-19.txt — QUESTION VERBATIM: "Based on the Synthesis, an AI Navigator should be able to autonomously research all related aspects of the issue and include it into the gen".
+X.3.590 records/srcas/three_accounts_2026-11-11.txt — QUESTION VERBATIM: "Examine all submitted documents and identify content you may have missed. Apply its recommendations to Omega42.".
+X.3.591 records/srcas/three_accounts_b_2026-11-11.txt — QUESTION VERBATIM: "What would be a few good tests to verify Omega42 new-found abilities (that can show immediate competence)? List a few examples and show the ".
+X.3.592 records/srcas/truth_2026-10-31.txt — SR-CAS AND SNCA -- "Coherence, resonance and congruence in Omega42 is essentially its own definition of truth within the frame. ..." -- 31 October 2026.
+X.3.593 records/srcas/waves_f218_2026-11-13.txt — QUESTION VERBATIM: "Explore and compute. Build the bridges and strengthen Omega42 connections to Physics.".
+X.3.594 records/srcas/waves_f221_2026-11-13.txt — QUESTION VERBATIM: "Resolve all outstanding issues and build a rule that prevents the protocol builder from clogging up the Core Specification with meta-comment".
+X.3.595 records/srp/collatz_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
+X.3.596 records/srp/hydrogen_SRP.txt — ======= SR-CAS REPLICATION PACKAGE =======.
+X.3.597 records/standing/argument_example.txt — An argument for M333 --argument (Core Part 3.59; Companion Part 138.4). P lines are premises, C lines conclusions;.
+X.3.598 records/standing/argument_map.txt — M333 DEPENDENCY MAP (D-015) | records/standing/argument_example.txt | a route holds when each of its members holds; the inference along a route is the reader's .
+X.3.599 records/standing/examples.txt — M333 STANDING RECORD (Core Part 3.59) | "The Ω42 base recurrence returns every state to itself after 24 steps.".
+X.3.600 records/standing_waves/compute_output.txt — the output of records/standing_waves, reproduced by the embedded computation.
+X.3.601 records/stp/registry.json — the data of records/stp.
+X.3.602 records/suite/attend.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.603 records/suite/attend.txt — M356 Ω42-ATTEND attend.csv -- two Ω42 blocks per interval, (D, V) and (O, R), never one forced pair.
+X.3.604 records/suite/cal_noisy.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.605 records/suite/cal_noisy.txt — M354 Ω42-CAL (trial level) cal_noisy.csv | 200 trials.
+X.3.606 records/suite/cal_quiet.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.607 records/suite/cal_quiet.txt — M354 Ω42-CAL (trial level) cal_quiet.csv | 200 trials.
+X.3.608 records/suite/commutator.txt — M352 DYNAMICS LAB (MODE A): [A, B] = A B A^-1 B^-1 mod 3^2 = (7, 3, 3, 4); not the identity: A and B do not commute; = I mod 3: True (it lies in the congruence .
+X.3.609 records/suite/context.txt — M358 Ω42-CONTEXT cal_quiet.csv -> cal_noisy.csv.
+X.3.610 records/suite/inspect.txt — M353 INVARIANT AND REACHABILITY INSPECTOR (MODE A) state (1, 0) mod 3^2.
+X.3.611 records/suite/lab.txt — M352 DYNAMICS LAB (MODE A, no empirical statement) mod 3^2; letters applied left to right (AB = A first, the matrix BA).
+X.3.612 records/suite/memory.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.613 records/suite/memory.txt — M357 Ω42-MEMORY memory.csv | recognition 0.767 | hits 0.887 | false memories 0.371 | d' 1.541 | ECE 0.045 | resolution 0.783 | errors recognized 0.500.
+X.3.614 records/suite/nav_sentinel.txt — M360 INVARIANT SENTINEL nav_states.csv | 3 states mod 3^1 | declared group <A>.
+X.3.615 records/suite/nav_states.csv — NAV-01, NAV-02, NAV-03 encodings (records/calibration/nav_run_0*.txt), the only real series in the record.
+X.3.616 records/suite/nav_verify.txt — M361 MODEL VERIFIER nav_states.csv | 2 one-step predictions mod 3^1 (MODE B: the series is the held-out data).
+X.3.617 records/suite/percept.csv — ILLUSTRATIVE, synthetic (seeded); not an observation of anyone.
+X.3.618 records/suite/percept.txt — M355 Ω42-PERCEPT percept.csv | 200 trials | threshold theta 0.519 | slope beta 8.89 (gamma 0.5, lapse 0.02).
+X.3.619 records/suite/protocol.txt — M359 PROTOCOL BUILDER protocol_pilot.json: PASS.
+X.3.620 records/suite/protocol_pilot.json — the data of records/suite.
+X.3.621 records/suite/recover.txt — CALIBRATING THE INSTRUMENTS (seed 7, 4000 synthetic trials each).
+X.3.622 records/tolerance/sorites_1e6.txt — M329 TOLERANCE CHAIN CHECK (Core Part 3.55) | chain 1,000,000 -> 1 by unit steps.
+X.3.623 records/tower/arithmetic_output.txt — the output of records/tower, reproduced by the embedded computation.
+X.3.624 records/tower/nested_output.txt — the output of records/tower, reproduced by the embedded computation.
+X.3.625 records/tower/tc1_rule.txt — TOWER COORDINATE TC-1 -- the rule, frozen before its first use (Core L-523 (4); Companion 100.6, conditions C1 to C3).
+X.3.626 records/units/units.json — the data of records/units.
+X.3.627 records/vault/README.txt — records/vault/ -- the example of Ω42-Envelope v1 (Core Part 3.77, M364; Companion Part 199).
+X.3.628 records/vault/research_note.txt — Ω42 Research Note.
+X.3.629 records/vault/research_note.txt.o42 — "header": {.
+X.3.630 records/waves/models.json — the data of records/waves.
+X.3.631 records/waves/six_cycle.json — the data of records/waves.
+X.3.632 records/wheel/astrology_question.svg — the file records/wheel/astrology_question.svg.
+X.3.633 records/wheel/example.txt — M330 ASPECT WHEEL (Core Part 3.56) | anchor P6 Seed/Causal, value 5, at 90 degrees.
+X.3.634 records/zero_selection/compute_output.txt — the output of records/zero_selection, reproduced by the embedded computation.
+X.3.635 records/zero_tools/control_negative.txt — Comment.
+X.3.636 records/zero_tools/control_positive.txt — ======= NAVIGATOR IDENTITY BLOCK =======.
+X.3.637 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE CHECK AND FB-8 APERTURE-STATE CONFLATION (tools/zero_tools.py --audit).
+X.3.638 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
 X.4 The website: its configuration, layout, pages, styles, the in-browser Strike app and its tests.
 X.4.1 site/assets/companion.js — website code (companion.js).
 X.4.2 site/assets/doorway.js — website code (doorway.js).

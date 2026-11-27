@@ -7,7 +7,7 @@
   "channel": "STABLE",
   "tag": "v335-rev451"
  },
- "date": "2026-11-26",
+ "date": "2026-11-27",
  "change_log": "docs/AMENDMENTS_PENDING.md",
  "amendments": [
   {
@@ -369,6 +369,14 @@
    "level": "C",
    "level_source": "declared",
    "date": "2026-11-26"
+  },
+  {
+   "id": "CA-45",
+   "title": "CA-45: the mathematics of the tower in the register, MF-207 to MF-211 (27 November 2026; RATIFIED by ESC, 27 November 2026, \"Yes, Ratified. Please proceed.\" and \"Yes.\" to ChatGPT's recommendations)",
+   "status": "RATIFIED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-27"
   }
  ],
  "approval": {
@@ -393,7 +401,8 @@
    "CA-21",
    "CA-42",
    "CA-43",
-   "CA-44"
+   "CA-44",
+   "CA-45"
   ],
   "pending_esc": []
  },

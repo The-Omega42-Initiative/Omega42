@@ -2266,6 +2266,61 @@
    "depends": "MF-67",
    "does_not_follow": "a minimality among hyperbolic triangles with arbitrary angles, whose areas take every positive value below pi",
    "status": "EXACT"
+  },
+  {
+   "id": "MF-207",
+   "statement": "six native phases (0, 5, 44, 199, 243, 562) separate the 59,049 states of W_5 (paper Theorem 5.7)",
+   "domain": "W_5 under the law",
+   "derivation": "no nonzero difference passes the criterion at all six phases (paper Lemma 5.6); Claude, verified by ChatGPT",
+   "tool": "tools/tower_math.py",
+   "check": "observe-depth5:",
+   "depends": "MF-201, MF-202",
+   "does_not_follow": "that a fixed native team attains the bound at every depth, which is open from depth 6 (O-31)",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-208",
+   "statement": "eight native phases (0, 11, 502, 510, 737, 777, 1820, 1842) separate W_6: 7 <= m_6 <= 8 (paper Proposition 5.8)",
+   "domain": "W_6 under the law",
+   "derivation": "the difference criterion and a direct count; ChatGPT, verified by Claude",
+   "tool": "tools/tower_math.py",
+   "check": "observe-depth6:",
+   "depends": "MF-201, MF-207",
+   "does_not_follow": "whether seven readings suffice (O-31); the best seven-phase team found leaves 44,397 colliding pairs",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-209",
+   "statement": "from (2, 5) exactly {A, C, S}, {A, V, C} and {A, V, C, S} reach every state of W_k, k >= 2 (paper Theorem 20.3)",
+   "domain": "W_k, every k",
+   "derivation": "C is needed to leave the primitive states, on which <A, S> and <A, V> are transitive; Claude, verified by ChatGPT",
+   "tool": "tools/tower_math.py",
+   "check": "generating-sets:",
+   "depends": "MF-35, MF-42",
+   "does_not_follow": "anything about which operations are natural, or about reach from seeds other than primitive ones",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-210",
+   "statement": "the {A, V, C} distance of A^t V^s (2, 5) is t + s for t < 4h, h = 3^(k-1), else t + s - 3h, and its largest value is 2*3^k - 2 (paper Theorem 20.4)",
+   "domain": "W_k, every k",
+   "derivation": "<A, V> acts freely and transitively on the primitive states and C commutes with A and V; ChatGPT, verified by Claude",
+   "tool": "tools/tower_math.py",
+   "check": "avc-distance:",
+   "depends": "MF-35, MF-209",
+   "does_not_follow": "the distance under any other operation set",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-211",
+   "statement": "the largest distance from (2, 5) under {A, C, S} at depth k is at least ceil(log2(8*9^(k-1) + 1)) - 1, about 3.17k (paper Proposition 20.5)",
+   "domain": "W_k, every k",
+   "derivation": "a word with C leaves the primitive states, so 8*9^(k-1) states need words in A and S; ChatGPT, verified by Claude",
+   "tool": "tools/tower_math.py",
+   "check": "acs-lower:",
+   "depends": "MF-42, MF-209",
+   "does_not_follow": "an upper bound; that the distance is Theta(k) is paper Theorem 20.6, which enters the register after the Co-Builders' audit of the cited expansion theorem",
+   "status": "EXACT"
   }
  ]
 }

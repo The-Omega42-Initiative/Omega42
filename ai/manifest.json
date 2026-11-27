@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1352176,
-   "tokens_est": 338044,
-   "sha256": "69de23967e882dfed654a53ee758f5b5ca29e6504daebab610cc98ade1e940ac"
+   "chars": 1354457,
+   "tokens_est": 338615,
+   "sha256": "be237c6687c0cb504ba50c58ee9dfd913f55d05bafe828a369e76d6e311c214b"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2043152,
-   "tokens_est": 510788,
-   "sha256": "2df3bf9e45c78aa5b7b8f083abb2bf205e72e23b5b1e7b5f94848454c79173e0"
+   "chars": 2044022,
+   "tokens_est": 511006,
+   "sha256": "5a68e499898b17d8b52d987d38670c9237bd365aa9f86f993aac63dd8fcdffe5"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 479894,
-   "tokens_est": 119974,
-   "sha256": "8209218b9661a192a1732058db4b6cacca627d3ff5f2cad5a6afb60cea03a8be"
+   "chars": 479288,
+   "tokens_est": 119822,
+   "sha256": "bee9f053bfd4e7f98500e2c4e728df744563abbf80e7d118adc00c4b83c97db5"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -110,9 +110,9 @@
   {
    "doc": "Core",
    "heading": "0.0.10 THE COMPLETE MATHEMATICAL REGISTER",
-   "chars": 106397,
-   "tokens_est": 26599,
-   "sha256": "4f86e548e2ecc5cb8e25e18037c5d6b9c47f9af354de4ee9aaeb2d6a99fd57db"
+   "chars": 108433,
+   "tokens_est": 27108,
+   "sha256": "d77b6e9adde8ffafa0d7d3deb7f333e5784fb55eb5f2b0a870f85be7b70555d6"
   },
   {
    "doc": "Core",
@@ -1293,9 +1293,9 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 33732,
-   "tokens_est": 8433,
-   "sha256": "5a236118f34de1c3a3a56c8d1b71e0c1d67ee4ad89c2d71cec253de6475701aa"
+   "chars": 33977,
+   "tokens_est": 8494,
+   "sha256": "ca370b0231a3952f1f2194d20814148ce29caf4ae8ca69b0c007759da799e221"
   },
   {
    "doc": "Companion",
@@ -4988,6 +4988,34 @@
   },
   {
    "doc": "Companion",
+   "heading": "216.1.207 MF-207 (Core Part 0.0.10.207). Does not follow: that a fixed native team attains the bound at every depth, which is open from depth 6 (O-31).",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.208 MF-208 (Core Part 0.0.10.208). Does not follow: whether seven readings suffice (O-31); the best seven-phase team found leaves 44,397 colliding pairs.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.209 MF-209 (Core Part 0.0.10.209). Does not follow: anything about which operations are natural, or about reach from seeds other than primitive ones.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.210 MF-210 (Core Part 0.0.10.210). Does not follow: the distance under any other operation set.",
+   "chars": 214,
+   "tokens_est": 54,
+   "sha256": "3c1a3250864cb3c03e969f49932035470a1c324aa922e59100c9cd8631d705b6"
+  },
+  {
+   "doc": "Companion",
    "heading": "216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.",
    "chars": 0,
    "tokens_est": 0,
@@ -5409,9 +5437,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 197003,
-   "tokens_est": 49251,
-   "sha256": "27111d5e70159a12e3c4c564e6935ddf7c21b501c0dff7fd0e34c24562aeff14"
+   "chars": 197069,
+   "tokens_est": 49267,
+   "sha256": "a7d888815e03b48b1d9bb5dba6a60419b5c5f5c0ab171a859d0a512db0d39dfd"
   }
  ]
 }

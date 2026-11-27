@@ -84,7 +84,7 @@ def index_lines(md_core):
         if k not in seen: seen.add(k); res.append(l)
     return res
 def compact_register(block):
-    """the register entries of Core 0.0.10 in the pack: number, status, the statement to 160 characters and the recompute line; the full
+    """the register entries of Core 0.0.10 in the pack: number, status, the statement to 150 characters and the recompute line; the full
     statement, domain, derivation and dependencies of each are in the full Core edition and in tools/replication_kit.py"""
     out = []
     for l in block.split('\n'):
@@ -92,7 +92,7 @@ def compact_register(block):
         if not m:
             out.append(l); continue
         st = m.group(2)
-        if len(st) > 160: st = st[:160].rsplit(' ', 1)[0] + ' ...'
+        if len(st) > 150: st = st[:150].rsplit(' ', 1)[0] + ' ...'
         out.append('%s%s Recompute: %s "%s"' % (m.group(1), st, m.group(3), m.group(4)))
     return '\n'.join(out)
 def pack(md_core):

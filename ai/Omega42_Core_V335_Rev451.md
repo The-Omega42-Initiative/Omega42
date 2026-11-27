@@ -620,6 +620,11 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.204 MF-204 [EXACT]. the half turn U^12 has eigenspaces of dimension 41 (+1) and 40 (-1); A^12 = -I, so every state is carried to its negative, and (0, 0) is the one state equal to its own negative; Q^2, with Q = a^2 + ab - b^2, is 1, 4 and 7 on the three 24-orbits and 0 on the 8-cycle and the still point, so (period, Q^2) names all five orbits. Domain: the 81 states mod 9 (SR-01). Derivation: dimension count orbit by orbit; Q on one point of each orbit. Depends on: MF-03. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "half-turn:".
 0.0.10.205 MF-205 [EXACT]. a distribution p = (0.1, 0.9) under multipliers (1, 1/3) gives (0.25, 0.75) when they are probability weights and, when they are amplitudes, energy weights (1, 1/9) and (0.5, 0.5), the entropy ln 2; under either reading the entropy rises. Domain: two-outcome distributions under attenuation (CB-006, corrected). Derivation: renormalization of the weighted distribution, exact. Depends on: none. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "multipliers:".
 0.0.10.206 MF-206 [EXACT]. among hyperbolic triangles with angles pi/p, pi/q, pi/r the least area pi(1 - 1/p - 1/q - 1/r) is pi/42, at (2, 3, 7): with p <= q <= r, p >= 3 gives at least pi/12, p = 2 with q >= 4 at least pi/20, and (2, 3, r) gives pi(1/6 - 1/r), least at r = 7. Domain: hyperbolic triangles with angles pi over integers (CB-009). Derivation: the three cases above, with an enumeration of p <= q <= r < 60. Depends on: MF-67. Recompute: python3 tools/cobuilder_math.py --selftest, the line beginning "least-triangle:".
+0.0.10.207 MF-207 [EXACT]. six native phases (0, 5, 44, 199, 243, 562) separate the 59,049 states of W_5 (paper Theorem 5.7). Domain: W_5 under the law. Derivation: no nonzero difference passes the criterion at all six phases (paper Lemma 5.6); Claude, verified by ChatGPT. Depends on: MF-201, MF-202. Recompute: python3 tools/tower_math.py --selftest, the line beginning "observe-depth5:".
+0.0.10.208 MF-208 [EXACT]. eight native phases (0, 11, 502, 510, 737, 777, 1820, 1842) separate W_6: 7 <= m_6 <= 8 (paper Proposition 5.8). Domain: W_6 under the law. Derivation: the difference criterion and a direct count; ChatGPT, verified by Claude. Depends on: MF-201, MF-207. Recompute: python3 tools/tower_math.py --selftest, the line beginning "observe-depth6:".
+0.0.10.209 MF-209 [EXACT]. from (2, 5) exactly {A, C, S}, {A, V, C} and {A, V, C, S} reach every state of W_k, k >= 2 (paper Theorem 20.3). Domain: W_k, every k. Derivation: C is needed to leave the primitive states, on which <A, S> and <A, V> are transitive; Claude, verified by ChatGPT. Depends on: MF-35, MF-42. Recompute: python3 tools/tower_math.py --selftest, the line beginning "generating-sets:".
+0.0.10.210 MF-210 [EXACT]. the {A, V, C} distance of A^t V^s (2, 5) is t + s for t < 4h, h = 3^(k-1), else t + s - 3h, and its largest value is 2*3^k - 2 (paper Theorem 20.4). Domain: W_k, every k. Derivation: <A, V> acts freely and transitively on the primitive states and C commutes with A and V; ChatGPT, verified by Claude. Depends on: MF-35, MF-209. Recompute: python3 tools/tower_math.py --selftest, the line beginning "avc-distance:".
+0.0.10.211 MF-211 [EXACT]. the largest distance from (2, 5) under {A, C, S} at depth k is at least ceil(log2(8*9^(k-1) + 1)) - 1, about 3.17k (paper Proposition 20.5). Domain: W_k, every k. Derivation: a word with C leaves the primitive states, so 8*9^(k-1) states need words in A and S; ChatGPT, verified by Claude. Depends on: MF-42, MF-209. Recompute: python3 tools/tower_math.py --selftest, the line beginning "acs-lower:".
 ---
 
 ## PART 0.5: MATHEMATICAL UNIQUENESS AND EPISTEMIC LEGITIMACY
@@ -3218,38 +3223,40 @@ R.1.103 tools/quasicrystal2d.py — the golden ring in two dimensions: the squar
 R.1.104 tools/question_finder.py — M340 Question Finder (Core Part 3.66, L-552): given an answer, the questions it may answer.
 R.1.105 tools/reexamine.py — checks the re-reading of prior investigations (Core L-490, L-491, Appendix S.5).
 R.1.106 tools/reframing_array.py — M318 Reframing Array and the arithmetic layer of M241 (Core Part 3.44, L-511, L-510; Companion Part 72).
-R.1.107 tools/relation_engine.py — relationship classification.
-R.1.108 tools/relativity.py — the law in special relativity: the boost of A^2, its Fibonacci-Lucas family, the Doppler factor phi^4,.
-R.1.109 tools/release_manifest.py — the release record.
-R.1.110 tools/replication_kit.py — the kit for an independent implementation of the mathematical register (Companion Part 220.12; stage 5 of maturity).
-R.1.111 tools/resgrade.py — M379 Resonance Grader (Core Part 3.86; F195): grades a proposed correspondence between the law and.
-R.1.112 tools/resonance.py — M319 Resonance Profile (Core Part 3.45, L-514; Companion Part 80).
-R.1.113 tools/restored_instruments.py — reference implementations of the instruments of Core Part 3.31, written for the.
-R.1.114 tools/scaffold.py — Scaffold view, the minimized-substrate configuration (Core Part 0.6.10, Part 8.0).
-R.1.115 tools/sce.py — M345 External-Theory Correspondence (Core Part 3.71, L-510, L-553): classify a proposed match between an Ω42.
-R.1.116 tools/sealed_keys.py — the state of every sealed key (Core Appendix R.4; Companion Part 183).
-R.1.117 tools/space_prob.py — the third space direction and the probability rule (Core L-544 (9), (10); Companion Part 173).
-R.1.118 tools/spacetime.py — the Ω42 Spacetime Coordinate Matrix (Core Part 3.80; APE-442, F181).
-R.1.119 tools/spectra.py — the trace map modulo 3^k, the scaling of the Fibonacci spectrum and the convergence of its gap labels.
-R.1.120 tools/spectral.py — M298 Spectral Profile (Core Part 3.32, 1.8.9): the frozen spectral definitions, computed two ways.
-R.1.121 tools/srcas_check.py — M224 for SR-CAS and SNCA output: the format that identifies Omega42 output (Core Part 6.1, 6.2, L-412, L-349).
-R.1.122 tools/srcas_run.py — the automatic trigger of SNCA and SR-CAS, run (Core Part 6.1, 6.2, L-549 (4), L-489).
-R.1.123 tools/srp_build.py — SR-CAS Replication Package builder (Core Part 8.2, L-348, L-415) with the format self-check (M301, Part 8.0).
-R.1.124 tools/standing.py — M333 Standing Record: a statement routed through the instruments that decide its standing within the frame,.
-R.1.125 tools/stp.py — Omega42 Speculation Test Protocol (CA-08): persistent register, pre-registration and test runner.
-R.1.126 tools/structures.py — E6's cubic norm kept by the law, the dashings of the E8 Adinkra, and the Structural Equivalence Tester.
-R.1.127 tools/suite.py — the Ω42 Instrument Suite (Core Part 3.75; APE-434, F173): one mathematical engine and seven instruments.
-R.1.128 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity of the Construct's 26 seeds.
-R.1.129 tools/timestamp_check.py — chronology checks (CA-22).
-R.1.130 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
-R.1.131 tools/transformability.py — TP-01 and ME-02.
-R.1.132 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
-R.1.133 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
-R.1.134 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
-R.1.135 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
-R.1.136 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
-R.1.137 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
-R.1.138 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
+R.1.107 tools/register_graph.py — the mathematical register as a dependency graph (records/math/results.json; R-07).
+R.1.108 tools/relation_engine.py — relationship classification.
+R.1.109 tools/relativity.py — the law in special relativity: the boost of A^2, its Fibonacci-Lucas family, the Doppler factor phi^4,.
+R.1.110 tools/release_manifest.py — the release record.
+R.1.111 tools/replication_kit.py — the kit for an independent implementation of the mathematical register (Companion Part 220.12; stage 5 of maturity).
+R.1.112 tools/resgrade.py — M379 Resonance Grader (Core Part 3.86; F195): grades a proposed correspondence between the law and.
+R.1.113 tools/resonance.py — M319 Resonance Profile (Core Part 3.45, L-514; Companion Part 80).
+R.1.114 tools/restored_instruments.py — reference implementations of the instruments of Core Part 3.31, written for the.
+R.1.115 tools/scaffold.py — Scaffold view, the minimized-substrate configuration (Core Part 0.6.10, Part 8.0).
+R.1.116 tools/sce.py — M345 External-Theory Correspondence (Core Part 3.71, L-510, L-553): classify a proposed match between an Ω42.
+R.1.117 tools/sealed_keys.py — the state of every sealed key (Core Appendix R.4; Companion Part 183).
+R.1.118 tools/space_prob.py — the third space direction and the probability rule (Core L-544 (9), (10); Companion Part 173).
+R.1.119 tools/spacetime.py — the Ω42 Spacetime Coordinate Matrix (Core Part 3.80; APE-442, F181).
+R.1.120 tools/spectra.py — the trace map modulo 3^k, the scaling of the Fibonacci spectrum and the convergence of its gap labels.
+R.1.121 tools/spectral.py — M298 Spectral Profile (Core Part 3.32, 1.8.9): the frozen spectral definitions, computed two ways.
+R.1.122 tools/srcas_check.py — M224 for SR-CAS and SNCA output: the format that identifies Omega42 output (Core Part 6.1, 6.2, L-412, L-349).
+R.1.123 tools/srcas_run.py — the automatic trigger of SNCA and SR-CAS, run (Core Part 6.1, 6.2, L-549 (4), L-489).
+R.1.124 tools/srp_build.py — SR-CAS Replication Package builder (Core Part 8.2, L-348, L-415) with the format self-check (M301, Part 8.0).
+R.1.125 tools/standing.py — M333 Standing Record: a statement routed through the instruments that decide its standing within the frame,.
+R.1.126 tools/stp.py — Omega42 Speculation Test Protocol (CA-08): persistent register, pre-registration and test runner.
+R.1.127 tools/structures.py — E6's cubic norm kept by the law, the dashings of the E8 Adinkra, and the Structural Equivalence Tester.
+R.1.128 tools/suite.py — the Ω42 Instrument Suite (Core Part 3.75; APE-434, F173): one mathematical engine and seven instruments.
+R.1.129 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity of the Construct's 26 seeds.
+R.1.130 tools/timestamp_check.py — chronology checks (CA-22).
+R.1.131 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
+R.1.132 tools/tower_math.py — observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;.
+R.1.133 tools/transformability.py — TP-01 and ME-02.
+R.1.134 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
+R.1.135 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
+R.1.136 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
+R.1.137 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
+R.1.138 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
+R.1.139 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
+R.1.140 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
 R.2 Data the tools read.
 R.2.1 records/congruence/domains.txt — the Congruence Register: every domain in the record, verbatim (read by tools/congruence.py, M310).
 R.2.2 records/srp/collatz_domain.txt — a long domain kept in its own file (SRP-C), read by the Register.
