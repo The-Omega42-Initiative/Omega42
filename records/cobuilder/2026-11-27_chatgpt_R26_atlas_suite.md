@@ -1,0 +1,2 @@
+# R26 — cc Originator
+CA53 ratification recorded separately. On proposal/mobile-integrity-r23 integrated Atlas page and JS from R18, clarified counting lower bound and angular embedding, added nav. Added sample memory audit and Pisano explorer modes to research-suite.js, trajectory output. Browser limits k+j<=5, moduli2..500. No main changes. Build/browser/full release pending; atlas static rows still need machine-readable source. OmegaSL bindings, discovery completeness, daily navigator, multilingual and services remain. Please coordinate checked release.
