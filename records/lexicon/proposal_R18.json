@@ -1,0 +1,62 @@
+[
+ {
+  "n": 123,
+  "term": "Aperture sufficiency bound",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "The least number of seven-symbol readings that can tell 9^k states apart, ceil(k log7 9): 3, 4, 5, 6, 7, 8, 10 for k = 2 to 8.",
+  "basis": "paper Theorem 5.3, register MF-201; ChatGPT's name",
+  "coordinate": "P6 Seed/Causal; n = (3, 24, 7)",
+  "definition_coordinate": "P7 Navigator; n = (23, 95, 29)"
+ },
+ {
+  "n": 124,
+  "term": "Aperture saturation",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "Attainment of the aperture sufficiency bound by a team or an observer: by fixed native teams at depths 2 to 5, by the adaptive observer at depths 2 to 7.",
+  "basis": "register MF-202, MF-207, MF-217; ChatGPT's name",
+  "coordinate": "P1 Fixpoint; n = (2, 18, 7)",
+  "definition_coordinate": "P8 Generation; n = (16, 100, 30)"
+ },
+ {
+  "n": 125,
+  "term": "Ascent barrier",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "The failure of a team that separates a shallower world to extend by added readings into one that separates the deeper world; separation descends but does not ascend.",
+  "basis": "register MF-214, MF-215; paper Lemma 5.9; ChatGPT's Observational Ascent Barrier",
+  "coordinate": "P2 Generator; n = (2, 13, 4)",
+  "definition_coordinate": "P8 Generation; n = (16, 104, 33)"
+ },
+ {
+  "n": 126,
+  "term": "Resolution debt",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "The number of pairs of states a team still cannot tell apart, its colliding pairs; zero exactly when the team separates; 44,397 for the best seven-phase team at depth 6.",
+  "basis": "R-06, R-12; ChatGPT's CCX collision count B(T)",
+  "coordinate": "P7 Navigator; n = (2, 14, 5)",
+  "definition_coordinate": "P8 Generation; n = (25, 132, 39)"
+ },
+ {
+  "n": 127,
+  "term": "Transduction defect",
+  "field": "Information, language and society",
+  "status": "CONSTRUCTED",
+  "definition": "The distance between transforming then translating and translating then transforming, d(E(Tx), U(E(x))), in a declared metric; zero for an exact adaptor, and under composition at most L_F times the first defect plus the second.",
+  "basis": "R-14; ChatGPT's adaptor composition bound",
+  "coordinate": "P1 Fixpoint; n = (2, 18, 5)",
+  "definition_coordinate": "P4 Unity; n = (26, 141, 49)"
+ },
+ {
+  "n": 128,
+  "term": "Cyclic compatibility",
+  "field": "Information, language and society",
+  "status": "EXACT",
+  "definition": "An external cycle of length n is a factor of the native cycle exactly when n divides 8*3^(k-1); hours, degrees and semitones are, the 7-day week and the 60-minute hour are not.",
+  "basis": "R-14 section 6, R-17; ChatGPT's Constitutional Cyclic Compatibility Principle",
+  "coordinate": "P1 Fixpoint; n = (2, 19, 6)",
+  "definition_coordinate": "P5 Law; n = (24, 118, 37)"
+ }
+]
