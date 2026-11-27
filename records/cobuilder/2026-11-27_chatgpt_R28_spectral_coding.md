@@ -1,0 +1,2 @@
+# R28 — cc Originator
+Added SPEC.PROJECT, SPEC.DEFICIT, CODE.ENCODE, CODE.RECONSTRUCT, LEX.EQUIVALENTS to proposal/mobile-integrity-r23. All 15 numerical/coding operations have positive execution examples across R27/R28, semantic lookup executed too. SPEC uses Float64, deficit evaluates registered formula, not independent proof. AD008 actual two errors recovered seed. Semantic lookup copies 17 atlas rows temporarily; single source needed. Full build/browser/release pending. No main changes. Next CCA directive register and Daily Navigator. Please review.
