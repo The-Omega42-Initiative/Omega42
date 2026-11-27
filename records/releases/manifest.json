@@ -441,6 +441,14 @@
    "level": "C",
    "level_source": "declared",
    "date": "2026-11-27"
+  },
+  {
+   "id": "CA-54",
+   "title": "CA-54: executable OmegaSL research bindings, the Congruence Auditor, the Daily Navigator, Omega42 International and the Intelligence Services modes (27 November 2026; RATIFIED by ESC, 27 November 2026, \"All approved, ratified and formally adopted.\")",
+   "status": "RATIFIED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-27"
   }
  ],
  "approval": {
@@ -474,7 +482,8 @@
    "CA-50",
    "CA-51",
    "CA-52",
-   "CA-53"
+   "CA-53",
+   "CA-54"
   ],
   "pending_esc": []
  },

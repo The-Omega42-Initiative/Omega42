@@ -7,9 +7,9 @@
    "sha256": "a5e54fa802082c38e2b51565875e470626fae1ffce75cabfc099b3867327f157"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2048131,
-   "tokens_est": 512033,
-   "sha256": "679eaacc03147e5bce3c85421a84e11650bc879201a611e223edf1fcc6fce442"
+   "chars": 2049524,
+   "tokens_est": 512381,
+   "sha256": "5491785f3cc3e1c97ba7d36ac15dafb7ab0b546e555dd10e0b7ed14dd5b3edfe"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 479661,
@@ -5486,9 +5486,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 198837,
-   "tokens_est": 49709,
-   "sha256": "6eaa30708c96d82e57cc9c2d4e04c6c1e54e645e20eb4056889aabc4ab8ae646"
+   "chars": 200230,
+   "tokens_est": 50058,
+   "sha256": "dba552b1e225329d035b345241c80971e839177db9536734168faf6674bf7e89"
   }
  ]
 }

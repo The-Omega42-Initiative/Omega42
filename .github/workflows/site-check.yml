@@ -20,9 +20,20 @@ jobs:
           node site/test/strike_node.mjs _site > /tmp/pyodide.txt
           python3 site/test/strike_cpython.py > /tmp/cpython.txt
           diff /tmp/cpython.txt /tmp/pyodide.txt
-      - name: Doorway two-cycle browser verification
+      - name: Integrated research and register checks
+        run: |
+          node site/test/osl_integration_check.cjs
+          python3 site/test/website_obligations_check.py
+          python3 site/test/generated_registers_check.py _site
+      - name: Full-site responsive browser audit
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
           python3 -m http.server 8000 --directory _site > /tmp/omega42-http.log 2>&1 &
-          node site/test/doorway_check.mjs http://127.0.0.1:8000
+          node site/test/mobile_integrity.mjs http://127.0.0.1:8000 _site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-integrity-report
+          path: mobile-integrity-report.json
+          if-no-files-found: ignore

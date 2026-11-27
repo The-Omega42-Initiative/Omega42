@@ -859,11 +859,3 @@ main blockquote:not(.fieldnote) p { margin: .45rem 0; }
   main table { display: block; max-width: 100%; overflow-x: auto; }
   main pre { max-width: 100%; overflow-x: auto; }
 }
-
-/* Architect R33: immediate protocol access without crowding the emblem. */
-.dw-downloads { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.6rem; max-width:100%; }
-.dw-downloads .btn { background:#ffd36b; color:#10152f; border:1px solid #ffd36b; white-space:normal; }
-.dw-downloads .btn.ghost { background:transparent; color:#eef3ff; border-color:#9eeeff; }
-.dw-downloads > a:last-child { color:#9eeeff; font-size:.85rem; }
-.doorway[data-stage="Genesis"] .dw-nodes g { animation-duration:2s; }
-.dw-stage { max-width:100%; }

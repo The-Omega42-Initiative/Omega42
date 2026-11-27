@@ -200,15 +200,12 @@ def build(out, repo):
         subs['{{REGISTER_FULL}}'] = re.sub(r'\{\{BUILT_ON_(MF-\d+)\}\}', lambda m: '<p class="note">Built on this: %s</p>' % ', '.join(
             '<a href="innovation.html#%s">%s %s</a>' % (x['id'].lower(), x['id'], html.escape(x['title'])) for x in built_on[m.group(1)]) if m.group(1) in built_on else '', subs['{{REGISTER_FULL}}'])
     paper = os.path.join(ROOT, 'docs', 'OMEGA42_MATHEMATICAL_PAPER.md')
+    discoveries = json.load(open(os.path.join(ROOT, 'records', 'discoveries', 'register.json'), encoding='utf-8'))['discoveries']
+    subs['{{CANON_DISCOVERY_COUNT}}'] = str(len(discoveries))
+    subs['{{CANON_DISCOVERY_BODY}}'] = ''.join('<article class="panel" id="%s"><h3>%s — %s</h3><p>%s</p><dl>%s</dl></article>' % (html.escape(x['id'].lower(), quote=True), html.escape(x['id']), html.escape(x['standing']), html.escape(x['statement']), ''.join('<dt>%s</dt><dd>%s</dd>' % (html.escape(k.title()), html.escape(str(x.get(k, '')))) for k in ('derivation','record','changes','open','reach','candidate'))) for x in discoveries)
     for key, rel in (('DREG', ('records', 'cobuilder', 'RESEARCH_DISCOVERY_REGISTER.md')), ('DVER', ('records', 'cobuilder', 'REGISTER_VERIFICATION.md'))):
         fp = os.path.join(ROOT, *rel)
         subs['{{%s_BODY}}' % key] = (md_html(open(fp, encoding='utf-8').read().split('\n', 1)[1]).replace('href="2026-', 'href="https://github.com/%s/blob/main/records/cobuilder/2026-' % repo)) if os.path.exists(fp) else ''
-    dp = os.path.join(ROOT, 'records', 'discoveries', 'register.json')   # the protocol discoveries D-nnn, generated so they cannot drift (CA-53)
-    if os.path.exists(dp):
-        dd = json.load(open(dp, encoding='utf-8'))['discoveries']; e = lambda x: html.escape(str(x or '—'))
-        subs['{{DISC_COUNT}}'] = str(len(dd))
-        subs['{{DISC_BODY}}'] = ''.join('<article class="panel" id="%s"><h3>%s <span class="chip">%s</span></h3><p>%s</p><dl><dt>Derivation</dt><dd>%s</dd><dt>Changes</dt><dd>%s</dd><dt>Open</dt><dd>%s</dd><dt>Recompute</dt><dd><code>%s</code></dd></dl></article>' % (
-            e(x['id'].lower()), e(x['id']), e(x.get('standing')), e(x.get('statement')), e(x.get('derivation')), e(x.get('changes')), e(x.get('open')), e(x.get('record'))) for x in dd)
     omf = os.path.join(ROOT, 'records', 'osl', 'manifest.json')   # the unified OmegaSL instrument manifest
     if os.path.exists(omf):
         om = json.load(open(omf, encoding='utf-8'))['operations']; e = lambda x: html.escape(str(x))

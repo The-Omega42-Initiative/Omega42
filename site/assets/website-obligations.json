@@ -1,0 +1,99 @@
+{
+ "schema": 1,
+ "scope": "Website construction obligations, R-25 to R-30; VERIFIED entries name their evidence (CA-54)",
+ "items": [
+  {
+   "id": "W01",
+   "directive": "Mobile compatibility",
+   "page": "",
+   "source": "site/test/mobile_integrity.mjs",
+   "status": "VERIFIED",
+   "evidence": "332 to 335 built pages at 390 px: 0 wider than the screen, 0 script errors (Claude, Chromium, 27 November 2026; site/test/mobile_integrity.mjs in site-check)"
+  },
+  {
+   "id": "W02",
+   "directive": "Open research register",
+   "page": "open-register",
+   "source": "site/pages/open-register.html",
+   "status": "VERIFIED",
+   "evidence": "33 of 33 open items, each once (site/test/generated_registers_check.py); tools/site_coherence.py in CI"
+  },
+  {
+   "id": "W03",
+   "directive": "Discovery completeness",
+   "page": "discovery-register",
+   "source": "site/pages/discovery-register.html",
+   "status": "VERIFIED",
+   "evidence": "21 of 21 discoveries generated from records/discoveries/register.json, each once (site/test/generated_registers_check.py)"
+  },
+  {
+   "id": "W04",
+   "directive": "Research bindings",
+   "page": "osl-research",
+   "source": "site/assets/osl-research-bindings.js",
+   "status": "VERIFIED",
+   "evidence": "16 operations; every state and every error pattern of weight at most 2 decodes (64,638), SPEC.DEFICIT equals the register definition exactly for n = 0..12, projections exact (site/test/osl_bindings_verification.cjs, CI)"
+  },
+  {
+   "id": "W05",
+   "directive": "Mathematical atlas",
+   "page": "mathematical-atlas",
+   "source": "site/pages/mathematical-atlas.html",
+   "status": "IMPLEMENTED_UNVERIFIED",
+   "note": "single data source (site/assets/atlas-data.js) shared by the Atlas page and LEX.EQUIVALENTS; correspondences beyond the three checked rows await review"
+  },
+  {
+   "id": "W06",
+   "directive": "Research suite",
+   "page": "research-suite",
+   "source": "site/pages/research-suite.html",
+   "status": "VERIFIED",
+   "evidence": "two independent kernels, 32,485 comparisons, 0 disagreements, six negative controls fail (records/osl/suite/crosscheck.js, CI)"
+  },
+  {
+   "id": "W07",
+   "directive": "Daily Navigator",
+   "page": "daily-navigator",
+   "source": "site/pages/daily-navigator.html",
+   "status": "PARTIAL"
+  },
+  {
+   "id": "W08",
+   "directive": "Multilingual experience",
+   "page": "international",
+   "source": "site/pages/international.html",
+   "status": "PARTIAL"
+  },
+  {
+   "id": "W09",
+   "directive": "Research services",
+   "page": "intelligence",
+   "source": "site/pages/intelligence.html",
+   "status": "PARTIAL"
+  },
+  {
+   "id": "W10",
+   "directive": "Congruence auditor",
+   "page": "website-integrity",
+   "source": "site/pages/website-integrity.html",
+   "status": "VERIFIED",
+   "evidence": "structural checks of this register (site/test/website_obligations_check.py)"
+  },
+  {
+   "id": "W11",
+   "directive": "Mathematical propagation",
+   "page": "mathematics",
+   "source": "site/pages/mathematics.html",
+   "status": "VERIFIED",
+   "evidence": "every register entry, Lexicon term, paper result, discovery and open item on the site; no closed item called open (tools/site_coherence.py, CI)"
+  },
+  {
+   "id": "W12",
+   "directive": "Visitor navigation",
+   "page": "index",
+   "source": "tools/site_build.py",
+   "status": "VERIFIED",
+   "evidence": "every page within 2 links of the Doorway; Research Suite, Open Research Register and Atlas in the navigation (tools/site_coherence.py, CI)"
+  }
+ ]
+}

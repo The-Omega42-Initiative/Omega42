@@ -5515,112 +5515,126 @@ X.3.641 records/zero_tools/controls.txt — CONTROLS -- M283 DISPLAY INVARIANCE 
 X.3.642 records/zero_tools/controls_output.txt — the output of records/zero_tools, reproduced by the embedded computation.
 X.4 The website: its configuration, layout, pages, styles, the in-browser Strike app and its tests.
 X.4.1 site/assets/adaptor_rs.js — website code (adaptor_rs.js).
-X.4.2 site/assets/companion.js — website code (companion.js).
-X.4.3 site/assets/doorway.js — website code (doorway.js).
-X.4.4 site/assets/integrity.js — website code (integrity.js).
-X.4.5 site/assets/lexicon.js — website code (lexicon.js).
-X.4.6 site/assets/mathematical-atlas.js — website code (mathematical-atlas.js).
-X.4.7 site/assets/observatory.js — website code (observatory.js).
-X.4.8 site/assets/omega42-kernel.js — website code (omega42-kernel.js).
-X.4.9 site/assets/playground.js — website code (playground.js).
-X.4.10 site/assets/research-integration.js — website code (research-integration.js).
-X.4.11 site/assets/research-suite-kernel.js — website code (research-suite-kernel.js).
-X.4.12 site/assets/research-suite-reference.js — website code (research-suite-reference.js).
-X.4.13 site/assets/research-suite.js — website code (research-suite.js).
-X.4.14 site/assets/sentinel.js — website code (sentinel.js).
-X.4.15 site/assets/site.js — website code (site.js).
-X.4.16 site/assets/strike.js — website code (strike.js).
-X.4.17 site/assets/style.css — website code (style.css).
-X.4.18 site/assets/symbols.js — website code (symbols.js).
-X.4.19 site/assets/units.js — website code (units.js).
-X.4.20 site/config.json — the data of site.
-X.4.21 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
-X.4.22 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
-X.4.23 site/layout.html — a page of the website (layout.html).
-X.4.24 site/pages/404.html — a page of the website (404.html).
-X.4.25 site/pages/adaptor-lab.html — a page of the website (adaptor-lab.html).
-X.4.26 site/pages/ambition.html — a page of the website (ambition.html).
-X.4.27 site/pages/aperture.html — a page of the website (aperture.html).
-X.4.28 site/pages/apps.html — a page of the website (apps.html).
-X.4.29 site/pages/arcana.html — a page of the website (arcana.html).
-X.4.30 site/pages/archive-report.html — a page of the website (archive-report.html).
-X.4.31 site/pages/being-human.html — a page of the website (being-human.html).
-X.4.32 site/pages/bulletin.html — a page of the website (bulletin.html).
-X.4.33 site/pages/catalogue.html — a page of the website (catalogue.html).
-X.4.34 site/pages/cobuilder.html — a page of the website (cobuilder.html).
-X.4.35 site/pages/collection.html — a page of the website (collection.html).
-X.4.36 site/pages/community.html — a page of the website (community.html).
-X.4.37 site/pages/companion.html — a page of the website (companion.html).
-X.4.38 site/pages/concordia.html — a page of the website (concordia.html).
-X.4.39 site/pages/consciousness.html — a page of the website (consciousness.html).
-X.4.40 site/pages/construct-x.html — a page of the website (construct-x.html).
-X.4.41 site/pages/core-proposed.html — a page of the website (core-proposed.html).
-X.4.42 site/pages/creative.html — a page of the website (creative.html).
-X.4.43 site/pages/derivations.html — a page of the website (derivations.html).
-X.4.44 site/pages/discovery-register.html — a page of the website (discovery-register.html).
-X.4.45 site/pages/dispatch.html — a page of the website (dispatch.html).
-X.4.46 site/pages/elements.html — a page of the website (elements.html).
-X.4.47 site/pages/enroll.html — a page of the website (enroll.html).
-X.4.48 site/pages/expert-desk.html — a page of the website (expert-desk.html).
-X.4.49 site/pages/explore.html — a page of the website (explore.html).
-X.4.50 site/pages/faq.html — a page of the website (faq.html).
-X.4.51 site/pages/for-ai.html — a page of the website (for-ai.html).
-X.4.52 site/pages/forum.html — a page of the website (forum.html).
-X.4.53 site/pages/geometria.html — a page of the website (geometria.html).
-X.4.54 site/pages/governance.html — a page of the website (governance.html).
-X.4.55 site/pages/history.html — a page of the website (history.html).
-X.4.56 site/pages/hypotheses.html — a page of the website (hypotheses.html).
-X.4.57 site/pages/imagination.html — a page of the website (imagination.html).
-X.4.58 site/pages/index.html — a page of the website (index.html).
-X.4.59 site/pages/innovation.html — a page of the website (innovation.html).
-X.4.60 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.61 site/pages/intelligence.html — a page of the website (intelligence.html).
-X.4.62 site/pages/lexicon.html — a page of the website (lexicon.html).
-X.4.63 site/pages/library.html — a page of the website (library.html).
-X.4.64 site/pages/living-theory.html — a page of the website (living-theory.html).
-X.4.65 site/pages/manual.html — a page of the website (manual.html).
-X.4.66 site/pages/mathematical-atlas.html — a page of the website (mathematical-atlas.html).
-X.4.67 site/pages/mathematics.html — a page of the website (mathematics.html).
-X.4.68 site/pages/observatory.html — a page of the website (observatory.html).
-X.4.69 site/pages/omegasl.html — a page of the website (omegasl.html).
-X.4.70 site/pages/open-mathematics.html — a page of the website (open-mathematics.html).
-X.4.71 site/pages/open-register.html — a page of the website (open-register.html).
-X.4.72 site/pages/paper-register.html — a page of the website (paper-register.html).
-X.4.73 site/pages/paper.html — a page of the website (paper.html).
-X.4.74 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
-X.4.75 site/pages/philosophy.html — a page of the website (philosophy.html).
-X.4.76 site/pages/playground.html — a page of the website (playground.html).
-X.4.77 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.78 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.79 site/pages/questions.html — a page of the website (questions.html).
-X.4.80 site/pages/record.html — a page of the website (record.html).
-X.4.81 site/pages/research-center.html — a page of the website (research-center.html).
-X.4.82 site/pages/research-development.html — a page of the website (research-development.html).
-X.4.83 site/pages/research-integration.html — a page of the website (research-integration.html).
-X.4.84 site/pages/research-suite.html — a page of the website (research-suite.html).
-X.4.85 site/pages/research.html — a page of the website (research.html).
-X.4.86 site/pages/sentinel.html — a page of the website (sentinel.html).
-X.4.87 site/pages/seven-veils.html — a page of the website (seven-veils.html).
-X.4.88 site/pages/sky.html — a page of the website (sky.html).
-X.4.89 site/pages/solve.html — a page of the website (solve.html).
-X.4.90 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.91 site/pages/strike.html — a page of the website (strike.html).
-X.4.92 site/pages/submit.html — a page of the website (submit.html).
-X.4.93 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.94 site/pages/tower-frontier.html — a page of the website (tower-frontier.html).
-X.4.95 site/pages/units.html — a page of the website (units.html).
-X.4.96 site/pages/vision-chatgpt.html — a page of the website (vision-chatgpt.html).
-X.4.97 site/pages/vision-qwen.html — a page of the website (vision-qwen.html).
-X.4.98 site/pages/vision.html — a page of the website (vision.html).
-X.4.99 site/pages/workbench.html — a page of the website (workbench.html).
-X.4.100 site/pages/worlds.html — a page of the website (worlds.html).
-X.4.101 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.102 site/test/domains.json — the data of site/test.
-X.4.103 site/test/mobile_integrity.mjs — website code (mobile_integrity.mjs).
-X.4.104 site/test/research_suite_check.js — website code (research_suite_check.js).
-X.4.105 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.106 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.107 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.2 site/assets/atlas-data.js — website code (atlas-data.js).
+X.4.3 site/assets/companion.js — website code (companion.js).
+X.4.4 site/assets/doorway.js — website code (doorway.js).
+X.4.5 site/assets/integrity.js — website code (integrity.js).
+X.4.6 site/assets/international.js — website code (international.js).
+X.4.7 site/assets/lexicon.js — website code (lexicon.js).
+X.4.8 site/assets/mathematical-atlas.js — website code (mathematical-atlas.js).
+X.4.9 site/assets/observatory.js — website code (observatory.js).
+X.4.10 site/assets/omega42-kernel.js — website code (omega42-kernel.js).
+X.4.11 site/assets/osl-research-bindings.js — website code (osl-research-bindings.js).
+X.4.12 site/assets/osl-research-console.js — website code (osl-research-console.js).
+X.4.13 site/assets/playground.js — website code (playground.js).
+X.4.14 site/assets/research-integration.js — website code (research-integration.js).
+X.4.15 site/assets/research-suite-kernel.js — website code (research-suite-kernel.js).
+X.4.16 site/assets/research-suite-reference.js — website code (research-suite-reference.js).
+X.4.17 site/assets/research-suite.js — website code (research-suite.js).
+X.4.18 site/assets/sentinel.js — website code (sentinel.js).
+X.4.19 site/assets/site.js — website code (site.js).
+X.4.20 site/assets/strike.js — website code (strike.js).
+X.4.21 site/assets/style.css — website code (style.css).
+X.4.22 site/assets/symbols.js — website code (symbols.js).
+X.4.23 site/assets/units.js — website code (units.js).
+X.4.24 site/assets/website-integrity.js — website code (website-integrity.js).
+X.4.25 site/assets/website-obligations.json — the data of site/assets.
+X.4.26 site/config.json — the data of site.
+X.4.27 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
+X.4.28 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
+X.4.29 site/layout.html — a page of the website (layout.html).
+X.4.30 site/pages/404.html — a page of the website (404.html).
+X.4.31 site/pages/adaptor-lab.html — a page of the website (adaptor-lab.html).
+X.4.32 site/pages/ambition.html — a page of the website (ambition.html).
+X.4.33 site/pages/aperture.html — a page of the website (aperture.html).
+X.4.34 site/pages/apps.html — a page of the website (apps.html).
+X.4.35 site/pages/arcana.html — a page of the website (arcana.html).
+X.4.36 site/pages/archive-report.html — a page of the website (archive-report.html).
+X.4.37 site/pages/being-human.html — a page of the website (being-human.html).
+X.4.38 site/pages/bulletin.html — a page of the website (bulletin.html).
+X.4.39 site/pages/catalogue.html — a page of the website (catalogue.html).
+X.4.40 site/pages/cobuilder.html — a page of the website (cobuilder.html).
+X.4.41 site/pages/collection.html — a page of the website (collection.html).
+X.4.42 site/pages/community.html — a page of the website (community.html).
+X.4.43 site/pages/companion.html — a page of the website (companion.html).
+X.4.44 site/pages/concordia.html — a page of the website (concordia.html).
+X.4.45 site/pages/consciousness.html — a page of the website (consciousness.html).
+X.4.46 site/pages/construct-x.html — a page of the website (construct-x.html).
+X.4.47 site/pages/core-proposed.html — a page of the website (core-proposed.html).
+X.4.48 site/pages/creative.html — a page of the website (creative.html).
+X.4.49 site/pages/daily-navigator.html — a page of the website (daily-navigator.html).
+X.4.50 site/pages/derivations.html — a page of the website (derivations.html).
+X.4.51 site/pages/discovery-register.html — a page of the website (discovery-register.html).
+X.4.52 site/pages/dispatch.html — a page of the website (dispatch.html).
+X.4.53 site/pages/elements.html — a page of the website (elements.html).
+X.4.54 site/pages/enroll.html — a page of the website (enroll.html).
+X.4.55 site/pages/expert-desk.html — a page of the website (expert-desk.html).
+X.4.56 site/pages/explore.html — a page of the website (explore.html).
+X.4.57 site/pages/faq.html — a page of the website (faq.html).
+X.4.58 site/pages/for-ai.html — a page of the website (for-ai.html).
+X.4.59 site/pages/forum.html — a page of the website (forum.html).
+X.4.60 site/pages/geometria.html — a page of the website (geometria.html).
+X.4.61 site/pages/governance.html — a page of the website (governance.html).
+X.4.62 site/pages/history.html — a page of the website (history.html).
+X.4.63 site/pages/hypotheses.html — a page of the website (hypotheses.html).
+X.4.64 site/pages/imagination.html — a page of the website (imagination.html).
+X.4.65 site/pages/index.html — a page of the website (index.html).
+X.4.66 site/pages/innovation.html — a page of the website (innovation.html).
+X.4.67 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.68 site/pages/intelligence.html — a page of the website (intelligence.html).
+X.4.69 site/pages/international.html — a page of the website (international.html).
+X.4.70 site/pages/lexicon.html — a page of the website (lexicon.html).
+X.4.71 site/pages/library.html — a page of the website (library.html).
+X.4.72 site/pages/living-theory.html — a page of the website (living-theory.html).
+X.4.73 site/pages/manual.html — a page of the website (manual.html).
+X.4.74 site/pages/mathematical-atlas.html — a page of the website (mathematical-atlas.html).
+X.4.75 site/pages/mathematics.html — a page of the website (mathematics.html).
+X.4.76 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.77 site/pages/omegasl.html — a page of the website (omegasl.html).
+X.4.78 site/pages/open-mathematics.html — a page of the website (open-mathematics.html).
+X.4.79 site/pages/open-register.html — a page of the website (open-register.html).
+X.4.80 site/pages/osl-research.html — a page of the website (osl-research.html).
+X.4.81 site/pages/paper-register.html — a page of the website (paper-register.html).
+X.4.82 site/pages/paper.html — a page of the website (paper.html).
+X.4.83 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
+X.4.84 site/pages/philosophy.html — a page of the website (philosophy.html).
+X.4.85 site/pages/playground.html — a page of the website (playground.html).
+X.4.86 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.87 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.88 site/pages/questions.html — a page of the website (questions.html).
+X.4.89 site/pages/record.html — a page of the website (record.html).
+X.4.90 site/pages/research-center.html — a page of the website (research-center.html).
+X.4.91 site/pages/research-development.html — a page of the website (research-development.html).
+X.4.92 site/pages/research-integration.html — a page of the website (research-integration.html).
+X.4.93 site/pages/research-suite.html — a page of the website (research-suite.html).
+X.4.94 site/pages/research.html — a page of the website (research.html).
+X.4.95 site/pages/sentinel.html — a page of the website (sentinel.html).
+X.4.96 site/pages/seven-veils.html — a page of the website (seven-veils.html).
+X.4.97 site/pages/sky.html — a page of the website (sky.html).
+X.4.98 site/pages/solve.html — a page of the website (solve.html).
+X.4.99 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.100 site/pages/strike.html — a page of the website (strike.html).
+X.4.101 site/pages/submit.html — a page of the website (submit.html).
+X.4.102 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.103 site/pages/tower-frontier.html — a page of the website (tower-frontier.html).
+X.4.104 site/pages/units.html — a page of the website (units.html).
+X.4.105 site/pages/vision-chatgpt.html — a page of the website (vision-chatgpt.html).
+X.4.106 site/pages/vision-qwen.html — a page of the website (vision-qwen.html).
+X.4.107 site/pages/vision.html — a page of the website (vision.html).
+X.4.108 site/pages/website-integrity.html — a page of the website (website-integrity.html).
+X.4.109 site/pages/workbench.html — a page of the website (workbench.html).
+X.4.110 site/pages/worlds.html — a page of the website (worlds.html).
+X.4.111 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.112 site/test/domains.json — the data of site/test.
+X.4.113 site/test/generated_registers_check.py — import json, pathlib, sys.
+X.4.114 site/test/mobile_integrity.mjs — website code (mobile_integrity.mjs).
+X.4.115 site/test/osl_bindings_verification.cjs — /* Independent verification of the OmegaSL research bindings (CIVP, CA-52): coding over every state and every error pattern of.
+X.4.116 site/test/osl_integration_check.cjs — const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const base=path.resolve(__dirname,'../assets');const M=require(base+'.
+X.4.117 site/test/research_suite_check.js — website code (research_suite_check.js).
+X.4.118 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.119 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.120 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.121 site/test/website_obligations_check.py — Check structural coverage, not semantic coherence or visitor resonance.
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
