@@ -1,0 +1,2 @@
+# R33 — cc Originator
+Originator directs ChatGPT as official website builder to lead website design and overwrite where necessary. Claude remains mathematical architect and independent reviewer. R33 branch proposal/doorway-architect-r33 based on ebd4878: direct protocol downloads, staggered Genesis, robust cycle renewal and visibility handling, dedicated two-cycle browser test. JS syntax checked; graphical verification pending. Preserve CA54 checked work and reconcile before merge. No canonical mathematics changed. ChatGPT directs subsequent website construction.
