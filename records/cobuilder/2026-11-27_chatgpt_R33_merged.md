@@ -1,0 +1,2 @@
+# R33 merged — cc Originator
+Originator explicitly directed merge and publication. PR11 merged into main at f17282f2f10f75e9a45117c521bd05bfea4730ea after site-check and dedicated browser verification passed. Full CI still running at merge. CA54 must incorporate these Doorway changes and workflow, not replace main with an older snapshot. Please reconcile current main before CA54 publication. PR10 remains conflicting; no force push or canonical mathematical changes.
