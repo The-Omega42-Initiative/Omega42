@@ -2,7 +2,7 @@
 
 **One law, an infinite tower of exact worlds, and what can be known inside them**
 
-The Omega42 Co-Builders: Claude (Anthropic, integration program) and ChatGPT (OpenAI, research program), for the Originator (ESC) · 26 November 2026, revised 27 November 2026 (O-30 settled, Theorem 5.7) · V335 Rev.451 STABLE
+The Omega42 Co-Builders: Claude (Anthropic, integration program) and ChatGPT (OpenAI, research program), for the Originator (ESC) · 26 November 2026, revised 27 November 2026 (O-30 settled, Theorem 5.7; generation at every depth, Theorems 20.3, 20.4 and 20.6; depth 6, Proposition 5.8) · V335 Rev.451 STABLE
 
 **Status.** Every numbered theorem is either proved in this paper or computed exhaustively by a script in the open repository; the recompute line is given with each result, and the register entry (MF-n) in Core Part 0.0.10. Part II surveys the wider register with a citation for every statement; ✓ marks a statement recomputed independently for this paper. Section 27 is marked SPECULATION throughout and asserts nothing.
 
@@ -14,7 +14,8 @@ On this tower we prove or compute results in seven directions.
 
 - **Symmetry.** A¹² = −I, and the form Q(a, b) = a² + ab − b² changes sign at every step, so Q² labels the orbits.
 - **Spectrum.** The harmonic j of the shift occurs 3 + [3 | j] + [j = 0] times, so the commutant has dimension 281. The spectrum determines the orbit census.
-- **Observability.** Three readings of a well-chosen seven-symbol view separate all 81 states, and two never can. Teams of readers at native phases reach the bound ⌈k log₇ 9⌉ at depths 2, 3, 4 and 5; at depth 5 six fixed phases separate all 59,049 states (Theorem 5.7, settling O-30). Depth 6 is open.
+- **Observability.** Three readings of a well-chosen seven-symbol view separate all 81 states, and two never can. Teams of readers at native phases reach the bound ⌈k log₇ 9⌉ at depths 2, 3, 4 and 5; at depth 5 six fixed phases separate all 59,049 states (Theorem 5.7, settling O-30). At depth 6 eight fixed phases separate all 531,441 states; whether seven do is open (O-31).
+- **Generation.** From the canonical seed, exactly three sets of the four native operations reach every state at every depth k ≥ 2, and the distance under law, doubling and tripling is known in closed form at every depth; with the shear in place of doubling the distance is polynomial in k (Theorems 20.3, 20.4, 20.6).
 - **Memory.** Additive memories modulo coboundaries are classified by their orbit sums: (ℤ/3ᵏ)^((3ᵏ+1)/2) classes, 59,049 of them at depth 2.
 - **Across depths and worlds.** Refinement to a finer depth is an isometry that keeps all four resonance measures. Memory classes lift with kernel 3^(c_k − 1), and the lawful transformations number (5 · 27ᵏ + 8)/13 dimensions at depth k. The law has exact censuses at the primes 7 and 11. An adaptive observer reaches the counting bound at depths 2 to 5, one reading fewer than the best known fixed team at depth 5.
 - **Resonance.** Four measures of agreement satisfy 0 ≤ F ≤ F_B ≤ R_O ≤ R_H ≤ 1. Every unitary transformation commuting with the law fixes F, F_B and R_H and can move R_O exactly across [F_B, R_H]; refinement to a finer depth keeps all four.
@@ -170,7 +171,11 @@ The converse fails: a difference can pass the test at every phase and still neve
 
 *Proof.* With 3⁵ = 243 ≡ 5 (mod 7), no nonzero difference of W_5 has δ_t mod 7 in {0, 5} at all six phases (an exhaustive check of the 59,048 differences), so Lemma 5.6 applies; the direct count of 59,049 distinct histories confirms it. The shifts separate because Aˢ permutes the states. The team was found by annealing on the number of passing differences, which turns the search into a covering problem: a bitset test of a candidate team takes microseconds where a count of histories takes a third of a millisecond. ∎ (Recompute: `python3 records/osl/o30_depth5_check.py`.)
 
-**Open problem O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6, where ⌈6 log₇ 9⌉ = 7?
+**Proposition 5.8 (depth 6; ChatGPT, verified by Claude, 27 November 2026).** At depth 6 the eight native phases T = (0, 11, 502, 510, 737, 777, 1820, 1842) of the view a mod 7 separate all 531,441 states. So the least size m₆ of a separating fixed native team satisfies 7 ≤ m₆ ≤ 8.
+
+*Proof.* With 3⁶ = 729 ≡ 1 (mod 7), no nonzero difference of W_6 has δ_t mod 7 in {0, 1} at all eight phases (an exhaustive check of the 531,440 differences), so Lemma 5.6 applies; the direct count of 531,441 distinct histories confirms it. ∎ (Recompute: `python3 records/osl/r05_check.py`.)
+
+**Open problem O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6, where ⌈6 log₇ 9⌉ = 7? The best seven-phase team found, (0, 342, 773, 1134, 1350, 1649, 1755), lets four differences pass, the family ±(0, 77) and ±(0, 154). Each of them meets the carry conditions of a collision for many states, so the team leaves 333,526 colliding pairs: a passing difference is a candidate, and whether it collides is decided by the carries.
 
 ## 6. Memory
 
@@ -425,6 +430,22 @@ that is 11, 281, 7,571, 204,401 and 5,518,811 for k = 1 to 5.
 
 The states multiply by 9 at each floor, and the lawful transformations by about 27. The world's capacity for transformations that respect its law grows faster than the world itself.
 
+**Generation.** Four native operations act on W_k: the law A(a, b) = (b, a + b); doubling V(x) = 2x; tripling C(x) = 3x, the one operation that forgets; and the shear S(a, b) = (a, 3a + b). A state is *reached* by a set of operations when some word in them carries the canonical seed x₀ = (2, 5) to it, and its *distance* is the length of the shortest such word. A state is *primitive* when 3 does not divide both coordinates; there are 8 · 9^(k−1) of them, the units of ℤ/3ᵏ[φ] under a + bφ ↔ (a, b).
+
+**Theorem 20.3 (generating sets at every depth; Claude, verified by ChatGPT, 27 November 2026).** For every k ≥ 2, exactly three of the fifteen nonempty sets of {A, V, C, S} reach every state of W_k from x₀: {A, C, S}, {A, V, C} and {A, V, C, S}. At k = 1, {A, C} also suffices. No set of two operations reaches every state for k ≥ 2.
+
+*Proof.* (1) A, V and S are invertible and keep the primitive states; C maps everything into 3W_k, which nothing leaves. So a set without C reaches at most the primitive states. (2) ⟨A, S⟩ is transitive on primitive states. Modulo 3, S = I and A cycles the eight nonzero vectors. The conjugates A⁻ʲSAʲ = I + 3 · A⁻ʲE₂₁Aʲ span sl₂(𝔽₃), and if g = I + 3ᵐY with m ≥ 1 then g³ ≡ I + 3^(m+1)Y (mod 3^(m+2)); so ⟨A, S⟩ ∩ Γ(3) has every graded piece sl₂(𝔽₃) and is the whole of Γ_SL(3), of order 27^(k−1), which moves a primitive vector to every lift of itself mod 3, since X ↦ Xv maps sl₂(𝔽₃) onto 𝔽₃². (3) ⟨A, V⟩ is transitive on primitive states: A is multiplication by φ and V by 2; φ generates 𝔽₉*, and φ⁸ = 1 + 3M (M not scalar mod 3) and 4 = 1 + 3 are independent in U₁/U₁³ ≅ 𝔽₉, so they generate the principal units U₁ (Burnside's basis theorem). (4) Every state is 3ʲu with u primitive, which is Cʲ applied to u, and 0 = Cᵏx. (5) With C, the invertible operations of any other set generate too small a group: |⟨A⟩| = 8 · 3^(k−1), |⟨V⟩| = 2 · 3^(k−1), |⟨S⟩| = 3^(k−1), and ⟨V, S⟩ has orbits of at most 2 · 9^(k−1) states, each short of the 8 · 9^(k−1) primitive states. ∎ (Recompute: `python3 records/osl/reach_theorem_check.py`, the reach table of all fifteen sets at k = 1 to 7.)
+
+**Theorem 20.4 (the distance under law, doubling and tripling; ChatGPT, verified by Claude, 27 November 2026).** Let h = 3^(k−1). Under {A, V, C} the primitive state AᵗVˢx₀, with 0 ≤ t < 8h and 0 ≤ s < h, lies at distance t + s when t < 4h and t + s − 3h when t ≥ 4h. A state 3ʳy with y primitive lies at distance r plus the primitive distance of y at depth k − r, and the zero state at distance k. The largest distance is 2 · 3ᵏ − 2: 4, 16, 52, 160, 484, 1,456 and 4,372 for k = 1 to 7.
+
+*Proof.* ⟨A, V⟩ is transitive on the 8h² primitive states (Theorem 20.3, step 3), and its order is at most 8h · 2h / 2 = 8h², because A⁴ʰ = Vʰ = −I; so the action is free, and AᵗVˢx₀ lists each primitive state once. C = 3I commutes with A and V, so every word equals A^a V^b C^r, and only a, b and r count. For a primitive target the solutions are (a, b) = (t, s) and (t + 4h mod 8h, s + h), up to the orders, which gives the two expressions; their minimum is largest at t = 8h − 1, s = h − 1, where it is 6h − 2. A target 3ʳy needs exactly r uses of C and A^a V^b x₀ ≡ y (mod 3^(k−r)), the primitive problem at depth k − r, whose largest distance r + 2 · 3^(k−r) − 2 does not exceed 2 · 3ᵏ − 2. ∎ The formula equals the breadth-first distance of every state at k = 1 to 6 (recompute: `python3 records/osl/r05_check.py`).
+
+**Proposition 20.5 (the shear keeps the world small; ChatGPT, 27 November 2026).** The largest distance under {A, C, S} is at least ⌈log₃(2 · 9ᵏ + 1)⌉ − 1 ≥ 2k, since at most (3^(d+1) − 1)/2 words have length at most d. The computed values are 7, 10, 12, 16, 20, 23 and 26 for k = 1 to 7. Doubling makes the world exponentially wide (Theorem 20.4); the shear keeps it logarithmically small in the number of states, as far as computed.
+
+**Theorem 20.6 (the shear keeps the world polynomially small; Claude, 27 November 2026, from two published theorems).** There is a constant c such that the largest distance under {A, C, S} at depth k is at most c · k⁵ for every k. With Proposition 20.5 it lies between 2k and c · k⁵: polynomial in k, so polylogarithmic in the 9ᵏ states, against the exponential 2 · 3ᵏ − 2 of {A, V, C}.
+
+*Proof.* Let G_k be the group generated by A and S modulo 3ᵏ. (1) Λ = ⟨A, S⟩ ∩ SL₂(ℤ) has index 2 in ⟨A, S⟩, since det A = −1, and with the transversal {I, A} it is generated by S, A² and ASA⁻¹. It is Zariski dense in SL₂: it contains the unipotent S and its conjugate A²SA⁻², which fix different lines. (2) By Bourgain and Varjú [10], the Cayley graphs of Λ modulo q with respect to the images of {S, A², ASA⁻¹}^(±1) form a family of expanders as q runs over all moduli; an expander of bounded degree has diameter O(log of its order), and log |G_k| = O(k). Each generator of Λ is a word of length at most 3 in A^(±1), S^(±1), and G_k = π(Λ) ∪ π(Λ)A, so the Cayley graph of G_k with respect to {A, S}^(±1) has diameter O(k). (3) By Babai [11], a connected Cayley digraph on n vertices has directed diameter O(d² (log n)³), where d is the undirected diameter. So every element of G_k is a positive word in A and S of length O(k⁵). (4) G_k is transitive on the primitive states (Theorem 20.3, step 2), so each primitive state lies within O(k⁵) of x₀. C = 3I commutes with A and S, so the state 3ʳy lies within r + O((k − r)⁵), and zero within k. ∎ The constant is not explicit, because the expansion theorem's is not. The linear bound suggested by the computed values (Proposition 20.5) is open problem 16.
+
 ## 21. Other prime worlds
 
 The law makes sense modulo any prime power. The arithmetic of x² − x − 1 at the prime decides what kind of world results.
@@ -549,7 +570,7 @@ The problems are grouped by kind. Each names the result it starts from.
 **Finite searches** (a computer and a good idea suffice)
 1. **O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6? (O-30, the same question at depth 5, is settled: yes, Theorem 5.7. Lemma 5.6 makes the search a covering problem.)
 2. **The adaptive observer at every depth.** *Resolved at depths 2 to 5* (Theorem 22.1): the greedy rule attains ⌈k log₇ 9⌉. Does it, or any adaptive rule, attain the bound at every depth?
-3. **Native observability at every depth.** Is ⌈k log₇ 9⌉ attained by a *fixed* team of native phases of a mod 7 for every k ≥ 2? It is at k = 2 to 5 (Theorems 5.4, 5.7); k = 6 is O-31.
+3. **Native observability at every depth.** Is ⌈k log₇ 9⌉ attained by a *fixed* team of native phases of a mod 7 for every k ≥ 2? It is at k = 2 to 5 (Theorems 5.4, 5.7); at k = 6 eight phases suffice (Proposition 5.8) and seven is O-31; k = 7, where the room to spare, 7⁸/9⁷ = 1.21, is the smallest below k = 10, is unsearched.
 
 **Theorems to prove** (the evidence is in the register)
 4. **The census at other primes.** *Resolved for 7 and 11* (Theorems 21.1, 21.2). Find the census at the ramified prime 5 at every power, and compare the observability bounds of the three regimes.
@@ -566,6 +587,7 @@ The problems are grouped by kind. Each names the result it starts from.
 13. **Actualization operators at every depth.** Count and classify the equivariant non-injective maps of W_k for every k, and describe the semigroup they generate with the law. Which of them arise as limits of reversible couplings (Section 17)?
 14. **Inert primes of full order.** For which inert primes does A have order 2(p + 1) with regular lifting (Corollary 21.3)? Is the set infinite?
 15. **Optimal inquiry.** Is the greedy minimax rule optimal for every view and depth, and how much does adaptivity save over the best fixed team as k grows?
+16. **The small world of the shear (C-R3b).** Prove that the largest distance under {A, C, S} grows linearly in k. It lies between 2k (Proposition 20.5) and c · k⁵ (Theorem 20.6), and the computed values, 7 to 26 for k = 1 to 7, are about twice the lower bound. Only forward words count, and A⁻¹ = A^(8h−1) is long, so the conjugate shears of Theorem 20.3 are not short words; an explicit constant in Theorem 20.6 would already be new. Dinai's bound [9] gives a polylogarithmic diameter for every generating set of SL₂(ℤ/pⁿ).
 
 ## 26. An invitation: how to take part
 
@@ -605,6 +627,8 @@ Every theorem above has a recompute line in the open repository [5], github.com/
 | Theorems 3.1, 4.1–4.3, 5.1–5.4, 6.1–6.3, 9.1 | `tools/cobuilder_math.py --selftest` (MF-193 to MF-206) |
 | Theorem 5.4, depths 3 and 4 | `records/cobuilder/xobs02_search.py` |
 | Theorem 5.7 and Lemma 5.6 (O-30) | `records/osl/o30_depth5_check.py` |
+| Theorem 20.3 | `records/osl/reach_theorem_check.py` (needs NumPy) |
+| Proposition 5.8, Theorem 20.4, Proposition 20.5 | `records/osl/r05_check.py` (needs NumPy) |
 | Theorems 4.4, 8.1–8.3 | `records/cobuilder/cg_2026_11_26_geometry_check.py` |
 | Section 17 | `records/cobuilder/actualization_check.py` |
 | Theorem 5.5, Proposition 7.3, CSG-01, CTA-02 to CTA-04, CPG-01/02 | `records/cobuilder/cg_batch_2026_11_26_check.py` (27 checks); ChatGPT's libraries `osl_*.py` on proposal/instruments-of-being (15 selftests) |
@@ -626,5 +650,8 @@ All scripts use only the Python standard library, except the resonance checks, w
 6. Z.-H. Sun and Z.-W. Sun, "Fibonacci numbers and Fermat's last theorem", *Acta Arithmetica* 60 (1992), 371–388.
 7. A. M. Macbeath, "On a theorem of Hurwitz", *Proceedings of the Glasgow Mathematical Association* 5 (1961), 90–96.
 8. M. Kohmoto, L. P. Kadanoff and C. Tang, "Localization problem in one dimension: mapping and escape", *Physical Review Letters* 50 (1983), 1870–1872.
+9. O. Dinai, "Poly-log diameter bounds for some families of finite groups", *Proceedings of the American Mathematical Society* 134, no. 11 (2006).
+10. J. Bourgain and P. P. Varjú, "Expansion in SL_d(ℤ/qℤ), q arbitrary", *Inventiones Mathematicae* 188 (2012).
+11. L. Babai, "On the diameter of Eulerian orientations of graphs", *Proceedings of the 17th ACM-SIAM Symposium on Discrete Algorithms* (2006), Theorem 1.4.
 
 *Let mathematics be our ground. Let imagination be our wings. Let artificial intelligence be our Navigator. Let humanity be our purpose.*
