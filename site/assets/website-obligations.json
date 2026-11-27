@@ -47,9 +47,9 @@
     {
       "id": "W07",
       "directive": "Daily Navigator",
-      "page": "",
-      "source": "",
-      "status": "OUTSTANDING"
+      "page": "daily-navigator",
+      "source": "site/pages/daily-navigator.html",
+      "status": "PARTIAL"
     },
     {
       "id": "W08",
