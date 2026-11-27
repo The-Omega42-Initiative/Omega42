@@ -1,0 +1,162 @@
+[
+ {
+  "n": 107,
+  "term": "Primitive state",
+  "field": "Mathematics and structure",
+  "status": "EXACT",
+  "definition": "A state of the world mod 3^k with a coordinate not divisible by 3; there are 8*9^(k-1), the units of Z/3^k[phi], and the law, doubling and the shear never leave them.",
+  "basis": "register MF-35, MF-209; paper Theorem 20.3, step 1",
+  "coordinate": "P1 Fixpoint; n = (2, 14, 4)",
+  "definition_coordinate": "P7 Navigator; n = (23, 101, 30)"
+ },
+ {
+  "n": 108,
+  "term": "Generating set",
+  "field": "Mathematics and structure",
+  "status": "EXACT",
+  "definition": "A set of native operations whose words carry the seed to every state; at every depth from 2 on exactly three sets do, and each contains tripling.",
+  "basis": "register MF-209; paper Theorem 20.3",
+  "coordinate": "P1 Fixpoint; n = (2, 13, 5)",
+  "definition_coordinate": "P8 Generation; n = (16, 85, 23)"
+ },
+ {
+  "n": 109,
+  "term": "Seed eccentricity",
+  "field": "Mathematics and structure",
+  "status": "EXACT",
+  "definition": "The largest number of operations any state needs from the seed (2, 5): 2*3^k - 2 with doubling, Theta(k) with the shear.",
+  "basis": "register MF-210 to MF-212; paper Theorems 20.4 and 20.6",
+  "coordinate": "P1 Fixpoint; n = (2, 16, 5)",
+  "definition_coordinate": "P8 Generation; n = (16, 75, 23)"
+ },
+ {
+  "n": 110,
+  "term": "Logarithmic navigability",
+  "field": "Mathematics and structure",
+  "status": "EXACT",
+  "definition": "The property of an operation set that reaches all 9^k states within a constant times k steps; the law, tripling and the shear have it, the law, doubling and tripling do not.",
+  "basis": "register MF-212; paper Theorem 20.6 (ChatGPT's Constitutional Navigability, made exact)",
+  "coordinate": "P1 Fixpoint; n = (2, 23, 9)",
+  "definition_coordinate": "P7 Navigator; n = (20, 104, 32)"
+ },
+ {
+  "n": 111,
+  "term": "Separation descent",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "The law that whatever a team of readings tells apart at one depth it tells apart at every shallower depth; so the readings a world needs never decrease with depth.",
+  "basis": "register MF-214; paper Lemma 5.9",
+  "coordinate": "P1 Fixpoint; n = (2, 17, 6)",
+  "definition_coordinate": "P9 Fixpoint; n = (18, 101, 27)"
+ },
+ {
+  "n": 112,
+  "term": "Lift exclusion",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "A certificate that no completion of a given shallower team separates a deeper world; at depth 6 every lift of the depth-5 team leaves a class of at least nine states.",
+  "basis": "register MF-215; paper Corollary 5.10",
+  "coordinate": "P2 Generator; n = (2, 13, 4)",
+  "definition_coordinate": "P5 Law; n = (19, 110, 32)"
+ },
+ {
+  "n": 113,
+  "term": "Adaptive observer",
+  "field": "Mind and knowledge",
+  "status": "EXACT",
+  "definition": "An observer that chooses each reading after seeing the last; with seven-symbol readings it attains the counting minimum at every depth from 2 to 7.",
+  "basis": "register MF-217; paper Theorem 22.1",
+  "coordinate": "P1 Fixpoint; n = (2, 16, 6)",
+  "definition_coordinate": "P2 Generator; n = (13, 81, 23)"
+ },
+ {
+  "n": 114,
+  "term": "Recurrence without closure",
+  "field": "Cosmos and matter",
+  "status": "EXACT; READING",
+  "definition": "In the limit of all depths no nonzero state returns exactly, yet each returns arbitrarily close in the 3-adic sense; read as time that repeats without repeating.",
+  "basis": "register MF-213; paper Proposition 20.7 (ChatGPT's CRWC); the reading is GENERATED-Omega42",
+  "coordinate": "P6 Seed/Causal; n = (3, 24, 7)",
+  "definition_coordinate": "P4 Unity; n = (17, 105, 31)"
+ },
+ {
+  "n": 115,
+  "term": "Separation valuation",
+  "field": "Mathematics and structure",
+  "status": "EXACT",
+  "definition": "The 3-adic depth r at which two states first differ, r = min(v3(x1 - y1), v3(x2 - y2)); two states share exactly 3^r lines of the plane over Z/3^k.",
+  "basis": "register MF-219; paper Proposition 20.10",
+  "coordinate": "P1 Fixpoint; n = (2, 19, 7)",
+  "definition_coordinate": "P9 Fixpoint; n = (27, 89, 33)"
+ },
+ {
+  "n": 116,
+  "term": "Self-scheduling plane",
+  "field": "Information, language and society",
+  "status": "EXACT",
+  "definition": "The plane over Z/3^k, whose 4*3^(k-1) directions the law visits in one cycle; its rounds give hierarchical designs, 81 treatments in 12 rounds at depth 2.",
+  "basis": "register MF-219; paper Proposition 20.10; ChatGPT's hierarchical design",
+  "coordinate": "P6 Seed/Causal; n = (3, 19, 5)",
+  "definition_coordinate": "P7 Navigator; n = (23, 117, 31)"
+ },
+ {
+  "n": 117,
+  "term": "Golden split",
+  "field": "Physics",
+  "status": "EXACT",
+  "definition": "The division of the E8 lattice by the law into two four-dimensional halves, stretched by phi and shrunk by 1/phi; the roots project onto two 600-cells in the ratio phi^2.",
+  "basis": "register MF-218; paper Proposition 20.9",
+  "coordinate": "P1 Fixpoint; n = (2, 11, 3)",
+  "definition_coordinate": "P6 Seed/Causal; n = (21, 106, 33)"
+ },
+ {
+  "n": 118,
+  "term": "Isotropy deficit",
+  "field": "Mathematics and structure",
+  "status": "EXACT",
+  "definition": "The distance of a frame operator from a multiple of the identity; the law takes the isotropic E8 root frame to deficit exactly 5/8.",
+  "basis": "register MF-218; ChatGPT's derivation; standard: distance from a tight frame",
+  "coordinate": "P3 Desire; n = (2, 15, 6)",
+  "definition_coordinate": "P3 Desire; n = (15, 89, 29)"
+ },
+ {
+  "n": 119,
+  "term": "Intertwining adaptor",
+  "field": "Information, language and society",
+  "status": "CONSTRUCTED",
+  "definition": "A map E from another field's structure into an Omega42 world with E(Tx) = U(E(x)), declared with its class, A1 conjugacy to A5 reading, and its certificate.",
+  "basis": "R-14; ChatGPT's Constitutional Mathematical Interoperability (CMI)",
+  "coordinate": "P1 Fixpoint; n = (2, 19, 7)",
+  "definition_coordinate": "P5 Law; n = (19, 83, 32)"
+ },
+ {
+  "n": 120,
+  "term": "Native observation code",
+  "field": "Information, language and society",
+  "status": "EXACT",
+  "definition": "The state's own native readings sent with Reed-Solomon parity over F7: seven symbols, distance 5, two errors corrected, the readings recovered first.",
+  "basis": "adaptor AD-008, R-15; certificate over 64,638 corrupted words, reproduced by ChatGPT",
+  "coordinate": "P6 Seed/Causal; n = (3, 21, 7)",
+  "definition_coordinate": "P9 Fixpoint; n = (18, 105, 32)"
+ },
+ {
+  "n": 121,
+  "term": "Elementary depth",
+  "field": "Mathematics and structure",
+  "status": "CONSTRUCTED",
+  "definition": "Depth counted by powers of 3, the world mod 3^k; the canonical world is elementary depth 2.",
+  "basis": "the paper's convention, paper Section 3",
+  "coordinate": "P1 Fixpoint; n = (2, 15, 5)",
+  "definition_coordinate": "P6 Seed/Causal; n = (12, 66, 19)"
+ },
+ {
+  "n": 122,
+  "term": "Canonical depth",
+  "field": "Mathematics and structure",
+  "status": "CONSTRUCTED",
+  "definition": "Depth counted by powers of 9, the world mod 9^d, the Core's convention; canonical depth d is elementary depth 2d.",
+  "basis": "Core MATH-33, MATH-38; paper Section 3",
+  "coordinate": "P7 Navigator; n = (2, 14, 5)",
+  "definition_coordinate": "P8 Generation; n = (16, 80, 25)"
+ }
+]
