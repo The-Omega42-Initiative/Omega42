@@ -532,6 +532,8 @@ jobs:
           python3 records/library/recompute_lib01.py > /dev/null
           python3 site/test/units_check.py
           python3 site/test/strike_cpython.py > /dev/null
+          node site/test/research_suite_check.js
+          node records/osl/suite/crosscheck.js site/assets
           python3 - <<'PY'
           import glob, hashlib, json, sys
           bad = 0
