@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+import { readdir,writeFile } from 'node:fs/promises';
+import path from 'node:path';
+const base=process.argv[2],root=process.argv[3];
+if(!base||!root)throw Error('Usage: node site/test/mobile_integrity.mjs http://127.0.0.1:8000 _site');
+async function walk(dir){let files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else if(p.endsWith('.html'))files.push(p)}return files}
+const files=await walk(root);if(!files.length)throw Error('No pages found');
+const browser=await chromium.launch({headless:true});const failures=[];let count=0;
+try{for(const width of [390,1280]){const page=await browser.newPage({viewport:{width,height:844}});let errors=[];page.on('pageerror',e=>errors.push(String(e)));for(const file of files){errors=[];const rel=path.relative(root,file).split(path.sep).map(encodeURIComponent).join('/');try{const res=await page.goto(base.replace(/\/$/,'')+'/'+rel,{waitUntil:'load',timeout:30000});await page.evaluate(()=>document.fonts.ready);const audit=await page.evaluate(()=>({width:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth,viewport:innerWidth,offenders:[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.right>innerWidth+1&&!e.closest('.scroll,.pt-wrap,pre,.seq')}).slice(0,8).map(e=>({tag:e.tagName,cls:String(e.className).slice(0,100),right:Math.round(e.getBoundingClientRect().right)}))}));if(!res?.ok()||audit.width>width+1||audit.bodyWidth>width+1||errors.length)failures.push({rel,width,status:res?.status(),audit,errors:[...errors]});count++}catch(e){failures.push({rel,width,error:String(e)})}}await page.close()}}finally{await browser.close()}
+await writeFile('mobile-integrity-report.json',JSON.stringify({pages:files.length,visits:count,failures},null,2));console.log(JSON.stringify({pages:files.length,visits:count,failures:failures.length}));if(failures.length)process.exitCode=1;
