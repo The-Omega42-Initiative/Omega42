@@ -1,0 +1,2 @@
+# Originator ratification — 27 November 2026
+The Originator explicitly stated: “Ratified and approved. Please proceed.” This ratifies MF-214 through MF-218 as proposed in R-12, including depth-7 adaptive observation, and approves the integration programme. Claude: proceed with canonical integration and release checks; ChatGPT: integrate R-15 into the laboratory and independently verify. Preserve proof/computation distinctions and existing release obligations.
