@@ -879,3 +879,26 @@ main, .companion, .csec, .companion .row, .companion .row > * {min-width:0;max-w
 .csec {grid-template-columns:minmax(0,1fr);}
 .companion pre {max-width:100%;overflow-x:auto;}
 .companion table {display:block;max-width:100%;overflow-x:auto;}
+
+/* Genesis: independent architectural design, R36 */
+.doorway.genesis {background:radial-gradient(ellipse at 77% 44%,#20245b 0%,transparent 48%),radial-gradient(ellipse at 0% 100%,#192e45 0%,transparent 55%),#070b18;padding:clamp(2rem,5vw,5rem) clamp(1rem,5vw,4rem) 1.4rem;}
+.gen-shell {max-width:76rem;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(1.5rem,4vw,4rem);}
+.gen-copy,.gen-instrument {min-width:0;}
+.gen-kicker,.gen-topline,.gen-bottom {font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:#a4c4df;}
+.genesis h1 {font-family:var(--display);font-size:clamp(3rem,7vw,6.6rem);line-height:.98;letter-spacing:-.055em;margin:1.3rem 0;}
+.genesis h1 em {color:#ffd36b;font-style:normal;}
+.gen-lead {font-size:clamp(1.2rem,2.4vw,1.65rem);line-height:1.4;color:#f4f5ff;}
+.genesis .dw-sub {margin:1rem 0;color:#bfcce3;font-size:1rem;}
+.genesis .dw-downloads {justify-content:flex-start;margin:1.5rem 0;}
+.gen-ask {display:inline-flex;gap:1rem;color:#ffd36b;font-weight:700;text-decoration:none;border-bottom:1px solid #ffd36b;padding-bottom:.4rem;}
+.gen-instrument {border:1px solid #354268;border-radius:1.3rem;background:linear-gradient(145deg,#17213a88,#080e2088);padding:clamp(.8rem,2vw,1.5rem);text-align:center;}
+.gen-topline {display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;text-align:left;}
+.genesis .dw-stage {width:100%;min-width:0;max-width:31rem;margin:.5rem auto;}
+.genesis .dw-enter {background:#0c1529;color:#e8fbff;border:1px solid #a4f2ff;box-shadow:0 0 30px #65d7ff55;}
+.genesis .dw-enter span {color:#9eeeff;}
+.gen-instrument-note {color:#a4c4df;font-size:.85rem;margin:.8rem 0 0;}
+.gen-bottom {max-width:76rem;margin:2.5rem auto 0;border-top:1px solid #354268;padding-top:1.1rem;display:flex;flex-wrap:wrap;gap:1.3rem;align-items:center;}
+.gen-bottom b {color:#ffd36b;font-size:1.1rem;}.gen-bottom strong {margin-left:auto;color:#e8f2ff;letter-spacing:.025em;}
+.genesis[data-stage=Genesis] .gen-orbits {animation:dw-appear 2.5s ease both;}
+.genesis .dw-walker {filter:drop-shadow(0 0 6px white);}
+@media(max-width:800px){.gen-shell{grid-template-columns:minmax(0,1fr)}.genesis h1{font-size:clamp(3rem,12vw,5rem)}.gen-bottom strong{margin-left:0}.genesis .dw-stage{max-width:26rem}}
