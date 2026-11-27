@@ -14,6 +14,7 @@
   var digit = function (st) { return st[0] === 0 ? 9 : st[0]; };
   var nodes = {}; svg.querySelectorAll('.dw-nodes g').forEach(function (g) { nodes[g.getAttribute('data-d')] = g; });
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lastCycle = -1;
   var paused = false, t0 = performance.now(), held = 0, lastPhase = -1, ctx = null, sound = false;
   function stage(name) { if (root.getAttribute('data-stage') !== name) { root.setAttribute('data-stage', name); actEl.textContent = name; } }
   function tone(st) {
@@ -48,7 +49,8 @@
   function ease(f) { return f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2; }
   function frame(now) {
     raf = 0; if (paused) return;
-    var t = ((now - t0 - held) / 1000) % 30;
+    var elapsed = Math.max(0,(now-t0-held)/1000), cycle = Math.floor(elapsed/30), t = elapsed%30;
+    if(cycle!==lastCycle){reset();root.removeAttribute('data-stage');lastCycle=cycle;}
     if (t < 3) { if (root.getAttribute('data-stage') !== 'Genesis') reset(); stage('Genesis'); }
     else if (t < 6) { stage('Formation'); walker.style.opacity = 0; }
     else {
@@ -58,6 +60,7 @@
       if (k === 23 && x - k > .5) {          // closing the loop: 23 -> 0, drawn before the renewal
         var g = Math.min(1, (x - k - .5) / MOVE), z = pt(digit(seq[0]));
         place([to[0] + (z[0] - to[0]) * ease(g), to[1] + (z[1] - to[1]) * ease(g)]);
+        if(lastPhase<23){for(var j=lastPhase+1;j<=23;j++)arrive(j);lastPhase=23;}
         if (g >= 1 && lastPhase === 23) { seg(to, z, true); Object.keys(nodes).forEach(function (n) { nodes[n].classList.remove('lit'); });
           nodes[digit(seq[0])].classList.add('lit'); phaseEl.textContent = 'phase 24 = 0'; stateEl.textContent = 'state (2, 5) · the cycle closes'; lastPhase = 24; }
       } else {

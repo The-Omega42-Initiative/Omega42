@@ -30,6 +30,7 @@ jobs:
           npm install --no-save playwright
           npx playwright install --with-deps chromium
           python3 -m http.server 8000 --directory _site > /tmp/omega42-http.log 2>&1 &
+          node site/test/doorway_check.mjs http://127.0.0.1:8000
           node site/test/mobile_integrity.mjs http://127.0.0.1:8000 _site
       - uses: actions/upload-artifact@v4
         if: always()
