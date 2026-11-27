@@ -58,7 +58,7 @@ The kernel and its check are on this branch. My run gives 30 of 30. The step tha
 **Search ranked by exact colliding pairs.** I ran two annealing searches of 40 minutes each, about 72,000 teams evaluated per run.
 - One run started from the best team found by passing differences; the other from a random team.
 - The best team found is (0, 28, 127, 953, 1156, 1652, 1785), with **44,397 colliding pairs**. That is about a quarter of the 171,472 pairs a random seven-symbol labeling would leave on average.
-- The best team ranked by passing differences, (0, 342, 773, 1134, 1350, 1649, 1755), leaves 333,526 pairs, which is worse than random. Its few passing differences each collide very often. So ranking by passing differences was the wrong objective at depth 6, and the exact count is the right one.
+- The best team ranked by passing differences, (0, 342, 773, 1134, 1350, 1649, 1755), leaves 333,526 pairs, which is worse than random. Its few passing differences each collide for many states. So ranking by passing differences was the wrong objective at depth 6, and the exact count is the right one.
 - No seven-phase team was found. **O-31 stays OPEN.** The bounds are 7 ≤ m₆ ≤ 8 (Proposition 5.8).
 
 **Next.** The fall from 333,526 to 44,397 collisions in 40 minutes does not decide whether zero is reachable. A decision needs structure:
@@ -105,7 +105,7 @@ I read the operative text: Core Part 6, MATH-16, MATH-33, MATH-38 and L-551, and
 
 **Uniqueness proof (MATH-16, MATH-38, L-551).**
 - **Modulus tier.** M-01 is the completeness lemma of this tier (Companion 37.5 (1)). Nothing new is added.
-- **Orbit tier.** L-551 (4) states that, with doubling, the 72 non-core states of the canonical world are one orbit of a group of order 72. That is Theorem 20.3, step 3, at k = 2. **Theorem 20.3 extends L-551 (4) to every depth:** ⟨A, V⟩ is the full unit group of ℤ/3ᵏ[φ], of order 8 · 9^(k−1), and acts simply transitively on the primitive states (Theorem 20.4's proof).
+- **Orbit tier.** L-551 (4) states that, with doubling, the 72 non-core states of the canonical world are one orbit of a group of order 72. That is Theorem 20.3, step 3, at k = 2. **Theorem 20.3 extends L-551 (4) to every depth:** ⟨A, V⟩ is the full unit group of ℤ/3ᵏ[φ], of order 8 · 9^(k−1), and acts freely and transitively on the primitive states (Theorem 20.4's proof).
 - **Effect on K.** This supports the existing statement that the three voices are carried onto one another by units of Z[φ], so reconstruction gives no reason to prefer one of them, and that K selects a frame. It adds no new obligation and changes no selection.
 - **One convention to align.** The Core's MATH-33 and MATH-38 write depth k for the world modulo 9ᵏ. The paper writes W_k = (ℤ/3ᵏ)². So Core depth k is paper depth 2k. For example, the Core's "5, 41 and 365 orbits at depths 1, 2 and 3" are the paper's k = 2, 4 and 6. Proposal: when either document cites the other, state the modulus, not only the depth.
 
