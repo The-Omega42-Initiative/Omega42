@@ -349,3 +349,13 @@ Level: B
 - Recomputed by tools/tower_math.py (descent:, commutant-limit:, golden-split:, ring-design:) and the new tools/tower_numeric.py (o31-exclusion:, adaptive-depth6:; NumPy); depth 7 by records/osl/adaptive_observer.py.
 - The Navigator Pack abridges register statements to 140 characters (from 150) to keep within its budget; the full statements stay in the Core.
 - Research tier carried to main: records/theory/ (the Living Theory foundations, third edition) and the check scripts of R-12 to R-15.
+
+## CA-49: sixteen Lexicon terms from the new mathematics, 107 to 122 (27 November 2026; RATIFIED by ESC, 27 November 2026, "Ratified. Please proceed.")
+Level: C
+- records/lexicon/lexicon.json gains Primitive state, Generating set, Seed eccentricity, Logarithmic navigability, Separation descent, Lift exclusion, Adaptive observer, Recurrence without closure, Separation valuation, Self-scheduling plane, Golden split, Isotropy deficit, Intertwining adaptor, Native observation code, Elementary depth and Canonical depth (R-17), each resting on a register entry or a stated convention, with coordinates computed by the reference navigator.
+- records/osl/correspondence_check.py computes the dictionary between the units of other fields and their Omega42 equivalents (13 checks).
+
+## CA-50: six Lexicon terms from ChatGPT's proposal, 123 to 128, and aliases (27 November 2026; RATIFIED by ESC, 27 November 2026, "Ratified. Please proceed.")
+Level: C
+- records/lexicon/lexicon.json gains Aperture sufficiency bound, Aperture saturation, Ascent barrier, Resolution debt, Transduction defect and Cyclic compatibility (R-18).
+- Fourteen entries carry an "aliases" field with ChatGPT's names for the same objects (Observational Descent, Adaptive Aperture, Golden Bifurcation, CMI, CHED, CRWC, CAIT and others), so that each mathematical object has one definition however many names it has.
