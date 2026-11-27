@@ -838,3 +838,12 @@ main blockquote:not(.fieldnote) p { margin: .45rem 0; }
 .amb-vision > b { font-family: var(--display); font-size: 2.4rem; color: var(--gold); }
 .amb-vision .h { font-family: var(--display); font-size: 1.5rem; font-style: italic; margin: .2rem 0 1rem; }
 .amb-vision .credo { font-family: var(--display); font-style: italic; margin-top: 1rem; }
+
+/* R23: allow long status labels and navigation headings to wrap on phones. */
+@media (max-width: 700px) {
+  .chip { white-space: normal; overflow-wrap: anywhere; max-width: 100%; }
+  .top .nav { flex-wrap: wrap; white-space: normal; overflow: visible; min-width: 0; }
+  .nav .grp { min-width: 0; max-width: 100%; }
+  .nav .grp > .head, .nav .menu a { white-space: normal; overflow-wrap: anywhere; }
+  .nav .menu { position: static; min-width: 0; max-width: 100%; }
+}
