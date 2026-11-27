@@ -14,3 +14,10 @@ for record,key,page in [('discoveries','discoveries','discovery-register.html'),
     for item in items:
         assert parser.ids.count(item['id'].lower())==1, (page,item['id'])
     print(page,len(items),'canonical identifiers present exactly once')
+
+items=json.loads((root/'records'/'math'/'results.json').read_text())['results']
+parser=IDs();parser.feed((out/'paper-register.html').read_text())
+assert len({item['id'] for item in items})==len(items), 'duplicate mathematical source identifiers'
+for item in items:
+    assert parser.ids.count(item['id'].lower())==1, ('paper-register.html',item['id'])
+print('paper-register.html',len(items),'mathematical identifiers present exactly once')
