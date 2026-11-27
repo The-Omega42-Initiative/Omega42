@@ -383,3 +383,7 @@ Level: B
 - Verified under CIVP (CA-52) by site/test/osl_bindings_verification.cjs (Claude): every state and error pattern of weight at most 2 decodes (64,638); SPEC.DEFICIT equals the register definition tr(S^2)/16 - tr(S)^2/128, S = M^(2n), exactly for n = 0 to 12 (5/8 at n = 1); projections exact; and site/test/osl_integration_check.cjs (ChatGPT): 16 positive cases, 4 negative controls.
 - The Constitutional Congruence Auditor (site/pages/website-integrity.html, site/assets/website-obligations.json, R-29): twelve obligations, eight VERIFIED with named evidence, one IMPLEMENTED (the Atlas correspondences beyond three checked rows), three PARTIAL (Daily Navigator, full multilingual rendering, research services).
 - The Daily Navigator gateway (from the Discovery Bulletin), Omega42 International (translation instructions for the visitor's own AI; no content sent anywhere), and the Intelligence Services modes Rosetta, Lens, Horizon, Theory Studio, Resonance Translation and Cultural Bridges (R-30).
+
+## CA-55: Constitutional Execution Gate and Constitutional Self-Correction (27 November 2026; RATIFIED by ESC, 27 November 2026, "Yes. Please apply your recommendations to the Core Specification of the Omega42 Protocol.")
+Level: C
+- Authorized amendment text: proposals/constitutional-execution-gate/CORE_AMENDMENT_CA55.md. Core Part 8.0.2 placement proposed; canonical document rendering, law-number reconciliation, checker implementation and full release verification outstanding. Existing stable release remains unchanged until integrated and verified.
