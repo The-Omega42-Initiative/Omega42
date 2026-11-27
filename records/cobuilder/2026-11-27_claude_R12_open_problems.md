@@ -22,14 +22,20 @@ The Originator ratified MF-213 (Proposition 20.7, CA-47, published at main 654a7
 |---|---|
 | O-31: seven fixed phases at depth 6 | **OPEN, narrowed.** The bounds are 7 ≤ m₆ ≤ 8 and m₅ ≤ m₆. A solution must reduce to a separating team of W_5 and must contain no lift of the known depth-5 team. **Next:** enumerate the separating teams of W_5 with at most seven phases, up to shift, and test their lifts. Lemma 5.9 makes this a tree search over depths 2 to 6, not a search over 7·10¹⁶ teams. |
 | Depth 7 | **OPEN.** Unsearched for fixed teams. The adaptive result is in §3. |
-| Adaptive observer (open problem 15) | **Bound attained at k = 2 to 6.** Depth 7: §3. |
+| Adaptive observer (open problem 15) | **Bound attained at k = 2 to 7** (§3). The question at every depth stays open. |
 | Explicit constant in Theorem 20.6 | **OPEN.** The computed values are 7 to 30 for k = 1 to 8, about 3.7k, against the proved lower bound of about 3.17k. |
 | Open problem 9: the 3-adic limit | **Spectrum and commutant PROVED** (Propositions 20.7 and 20.8). The memory classes are OPEN: the lifting maps of Theorem 20.1 form an inverse system, and its limit is not yet computed. |
 | D-5: maps between depths | **Partly settled.** Separation descends (Lemma 5.9). Reach and eccentricity are monotone under reduction for every operation set, because reduction mod 3^(k−1) commutes with A, V, C and S. Observation does not lift. |
 
-## 3. The adaptive observer at depth 7
+## 3. The adaptive observer at depth 7: the bound is attained
 
-The greedy minimax observer over all 5,832 phases is still running. After seven readings, every class has at most 7 states (823,543 classes). The eighth reading decides whether the bound of 8 readings is attained; the result will follow as an addendum. With 800 random candidate phases it needed 9 readings.
+**Addendum.** The greedy minimax observer was run over all 5,832 phases at depth 7. It separated all 4,782,969 states in exactly **8 readings**, which is the bound ⌈7 log₇ 9⌉ = 8. The run took 65 minutes. After 7 readings there were 823,543 classes, the largest of 7 states, and the eighth reading split every one of them.
+
+So adaptive observation attains the counting bound at every depth from 2 to 7, including depth 7, where the room to spare is only 1.21. With 800 random candidate phases the same rule needs 9 readings, so the bound needs the full set of phases.
+
+Recompute: `python3 records/osl/adaptive_observer.py 7` (NumPy, about an hour; `python3 records/osl/adaptive_observer.py 6` takes about 2 minutes).
+
+**Proposed register entry:** MF-217 now covers depths 6 and 7.
 
 ## 4. The golden split of E₈ (your R-M02 follow-up): computed and certified
 
@@ -49,7 +55,7 @@ The greedy minimax observer over all 5,832 phases is still running. After seven 
 | MF-214 | Lemma 5.9: separation descends; m_(k−1) ≤ m_k |
 | MF-215 | Corollary 5.10: no lift of the depth-5 team completes to a seven-phase team at depth 6 |
 | MF-216 | Proposition 20.8: the commutant of the infinite tower |
-| MF-217 | The adaptive observer attains the bound at depth 6 |
+| MF-217 | The adaptive observer attains the bound at depths 6 and 7 |
 | MF-218 | Proposition 20.9: the golden split of E₈ (two 600-cells in the ratio φ²; isotropy deficit 5/8) |
 
 — Claude (Mathematical Research and Statistics)
