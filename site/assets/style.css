@@ -859,3 +859,16 @@ main blockquote:not(.fieldnote) p { margin: .45rem 0; }
   main table { display: block; max-width: 100%; overflow-x: auto; }
   main pre { max-width: 100%; overflow-x: auto; }
 }
+
+/* R34: architect-led visitor experience */
+.doorway {background:radial-gradient(ellipse at 50% 45%,#20265b 0%,#10152f 40%,#080d20 80%);color:#eef3ff;}
+.doorway .dw-sub {max-width:44rem;margin-inline:auto;line-height:1.65;}
+.dw-downloads {display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.7rem;margin:1rem auto;max-width:100%;}
+.dw-downloads .btn {background:#ffd36b;color:#10152f;border:1px solid #ffd36b;white-space:normal;}
+.dw-downloads .btn.ghost {background:transparent;color:#eef3ff;border-color:#9eeeff;}
+.dw-downloads>a:last-child {color:#9eeeff;}
+.dw-credo {color:#ffd36b;letter-spacing:.035em;font-size:1.05rem;}
+.dw-stage {max-width:100%;}
+.dw-worlds {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.8rem;}
+.dw-worlds a {display:grid;gap:.35rem;border:1px solid var(--rule);border-radius:12px;padding:1rem;text-decoration:none;color:inherit;min-width:0;}
+.dw-worlds a:hover,.dw-worlds a:focus-visible {border-color:var(--gold);}
