@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1355856,
-   "tokens_est": 338964,
-   "sha256": "b19aee8e3279941d4be3681d0b22d055780574eb6b2c8ff18e141f06651bf41e"
+   "chars": 1358598,
+   "tokens_est": 339650,
+   "sha256": "2be0c297e2b9ffa724576617a1f4675b69adb63beb6a7951f8d264773b9dbf53"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2045114,
-   "tokens_est": 511279,
-   "sha256": "4e07f8d1ab7744ffd26cd164f780d22e39d2eeb33dc183e9840f2e12e9b1fabf"
+   "chars": 2046690,
+   "tokens_est": 511673,
+   "sha256": "2cb6859a813c03c75890fb7b07873e64347f8dde97ea6955e35272e9dff6c747"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 479689,
-   "tokens_est": 119923,
-   "sha256": "dd0df046f1ab2efee881b21739201e718b3c5908145a94047b93f723aeb17fe6"
+   "chars": 479226,
+   "tokens_est": 119807,
+   "sha256": "b06f737c3f42104f520d7492ffcf8e33659045c492fc69284a1273d7b1577643"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -110,9 +110,9 @@
   {
    "doc": "Core",
    "heading": "0.0.10 THE COMPLETE MATHEMATICAL REGISTER",
-   "chars": 109513,
-   "tokens_est": 27378,
-   "sha256": "0c97adbbd6732a36091ffaa8b007f411b2a3184625788bd6dd55a8380f48e1a3"
+   "chars": 112114,
+   "tokens_est": 28029,
+   "sha256": "327a3faa3d6334306bd3838b583275fbaf86fa144c84b4975b27f23a3957bb97"
   },
   {
    "doc": "Core",
@@ -1293,9 +1293,9 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 33977,
-   "tokens_est": 8494,
-   "sha256": "ca370b0231a3952f1f2194d20814148ce29caf4ae8ca69b0c007759da799e221"
+   "chars": 34118,
+   "tokens_est": 8530,
+   "sha256": "7cbc828f592c768d8f3dc103bdec665ec03cf28e730af3dd4b20e01bb99e973e"
   },
   {
    "doc": "Companion",
@@ -5030,6 +5030,48 @@
   },
   {
    "doc": "Companion",
+   "heading": "216.1.214 MF-214 (Core Part 0.0.10.214). Does not follow: that teams lift: no phase added to the depth-4 team separates W_5.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.215 MF-215 (Core Part 0.0.10.215). Does not follow: whether seven phases suffice at depth 6 (O-31).",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.216 MF-216 (Core Part 0.0.10.216). Does not follow: the memory classes of the limit.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.217 MF-217 (Core Part 0.0.10.217). Does not follow: the bound at every depth, or that a fixed team attains it.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.218 MF-218 (Core Part 0.0.10.218). Does not follow: any physical performance of a two-channel filter.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.219 MF-219 (Core Part 0.0.10.219). Does not follow: a balanced design: pairs meet 3^r times, not once.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
    "heading": "216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.",
    "chars": 0,
    "tokens_est": 0,
@@ -5437,9 +5479,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 13903,
-   "tokens_est": 3476,
-   "sha256": "25e03ee06cf20bf8b31127fdacef2574545009bf2125752005e49f82abd2f5d3"
+   "chars": 14312,
+   "tokens_est": 3578,
+   "sha256": "85fa9d416769e5dff765097c263c7c094395dc516a14a492d104d0b5b90da858"
   },
   {
    "doc": "Companion",
@@ -5451,9 +5493,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 197521,
-   "tokens_est": 49380,
-   "sha256": "3e3e47e929af652cd9192cc3da2a0d2b2e76ba0338afc079cf2558ac2647efc6"
+   "chars": 198002,
+   "tokens_est": 49501,
+   "sha256": "041b4c303410f54ea76edafb76ba18d40cd1f6f0daa55632da90800a2a31b184"
   }
  ]
 }

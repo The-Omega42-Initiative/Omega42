@@ -627,6 +627,12 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.211 MF-211 [EXACT]. the largest distance from (2, 5) under {A, C, S} at depth k is at least ceil(log2(8*9^(k-1) + 1)) - 1, about 3.17k (paper Proposition 20.5). Domain: W_k, every k. Derivation: a word with C leaves the primitive states, so 8*9^(k-1) states need words in A and S; ChatGPT, verified by Claude. Depends on: MF-42, MF-209. Recompute: python3 tools/tower_math.py --selftest, the line beginning "acs-lower:".
 0.0.10.212 MF-212 [EXACT]. the largest distance from (2, 5) under {A, C, S} at depth k is Theta(k), at most c*k (paper Theorem 20.6). Domain: W_k, every k. Derivation: expansion of <A, S> cap SL2(Z) mod 3^k (Bourgain and Varju, audited by ChatGPT), transferred to <A, S>; positive-word balls then double to half the group in O(k) steps; ChatGPT and Claude. Depends on: MF-42, MF-209, MF-211. Recompute: python3 tools/tower_math.py --selftest, the line beginning "acs-linear:".
 0.0.10.213 MF-213 [EXACT]. on the limit Z_3[phi] the law has no periodic point but 0, Haar measure is not ergodic, and every root of unity of order dividing 8*3^m is an eigenvalue of infinite multiplicity (paper Proposition 20.7). Domain: the inverse limit Z_3^2 = Z_3[phi] with Haar measure. Derivation: x^2 - x - 1 is irreducible mod 3 and phi is no root of unity; orbit-constant indicators are invariant; 3^(k-1) primitive orbits of full length at depth k; Claude, refined by ChatGPT. Depends on: MF-31, MF-35. Recompute: python3 tools/tower_math.py --selftest, the line beginning "infinite-tower:".
+0.0.10.214 MF-214 [EXACT]. a team of native phases separating W_k, read mod 8*3^(k-2), separates W_(k-1); so m_(k-1) <= m_k (paper Lemma 5.9). Domain: W_k, every k. Derivation: under y -> 3y the reading of A^t(3y) is 3 times that of A^t y, and 3 is invertible mod 7; Claude. Depends on: MF-32, MF-201. Recompute: python3 tools/tower_math.py --selftest, the line beginning "descent:".
+0.0.10.215 MF-215 [EXACT]. no seven-phase team separating W_6 contains a lift of the depth-5 team (0, 5, 44, 199, 243, 562) (paper Corollary 5.10). Domain: W_6. Derivation: by MF-214 a solution reduces to a separating team of W_5; every one of the 243 lifts leaves a class of at least 9 states; Claude. Depends on: MF-207, MF-214. Recompute: python3 tools/tower_numeric.py --selftest, the line beginning "o31-exclusion:".
+0.0.10.216 MF-216 [EXACT]. the commutant of the law on L^2 of the limit Z_3[phi] is the bounded product of the full operator algebras of its eigenspaces, each infinite-dimensional (paper Proposition 20.8). Domain: the limit Z_3[phi] with Haar measure. Derivation: eigenprojections are strong limits of averages of the law (mean ergodic theorem); multiplicities at least 3^(k-1); Claude. Depends on: MF-213. Recompute: python3 tools/tower_math.py --selftest, the line beginning "commutant-limit:".
+0.0.10.217 MF-217 [EXACT]. the greedy adaptive observer attains the bound ceil(k log_7 9) at depths 6 and 7: 7 and 8 readings (paper Theorem 22.1). Domain: W_6 and W_7. Derivation: greedy minimax over all 1,944 and 5,832 phases; depth 7 by records/osl/adaptive_observer.py 7; Claude. Depends on: MF-201. Recompute: python3 tools/tower_numeric.py --selftest, the line beginning "adaptive-depth6:".
+0.0.10.218 MF-218 [EXACT]. the law on E8 is self-adjoint with eigenvalues phi and -1/phi; the roots project onto two 600-cells in the ratio phi^2, isotropy deficit 5/8 (paper Proposition 20.9). Domain: the E8 lattice of MF-74. Derivation: GM = M^T G and M^2 = M + I exactly; the root frame is tight; Claude and ChatGPT. Depends on: MF-74. Recompute: python3 tools/tower_math.py --selftest, the line beginning "golden-split:".
+0.0.10.219 MF-219 [EXACT]. the affine plane over Z/3^k has 4*3^(k-1) directions, which the law permutes in one cycle; two states share 3^r lines, r their separation valuation (paper Proposition 20.10). Domain: the affine plane over Z/3^k, every k. Derivation: F_n = 0 mod 3^k exactly when 4*3^(k-1) divides n, so only phi^n = +-1 are scalars; ChatGPT and Claude. Depends on: MF-31, MF-35. Recompute: python3 tools/tower_math.py --selftest, the line beginning "ring-design:".
 ---
 
 ## PART 0.5: MATHEMATICAL UNIQUENESS AND EPISTEMIC LEGITIMACY
@@ -3251,14 +3257,15 @@ R.1.129 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity of the Con
 R.1.130 tools/timestamp_check.py — chronology checks (CA-22).
 R.1.131 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
 R.1.132 tools/tower_math.py — observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;.
-R.1.133 tools/transformability.py — TP-01 and ME-02.
-R.1.134 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
-R.1.135 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
-R.1.136 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
-R.1.137 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
-R.1.138 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
-R.1.139 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
-R.1.140 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
+R.1.133 tools/tower_numeric.py — the tower results that need NumPy (register entries MF-215 and MF-217; paper Corollary 5.10, Theorem 22.1).
+R.1.134 tools/transformability.py — TP-01 and ME-02.
+R.1.135 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
+R.1.136 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
+R.1.137 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
+R.1.138 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
+R.1.139 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
+R.1.140 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
+R.1.141 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
 R.2 Data the tools read.
 R.2.1 records/congruence/domains.txt — the Congruence Register: every domain in the record, verbatim (read by tools/congruence.py, M310).
 R.2.2 records/srp/collatz_domain.txt — a long domain kept in its own file (SRP-C), read by the Register.

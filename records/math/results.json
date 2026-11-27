@@ -2343,6 +2343,72 @@
    "depends": "MF-31, MF-35",
    "does_not_follow": "the commutant or the memory classes of the limit",
    "status": "EXACT"
+  },
+  {
+   "id": "MF-214",
+   "statement": "a team of native phases separating W_k, read mod 8*3^(k-2), separates W_(k-1); so m_(k-1) <= m_k (paper Lemma 5.9)",
+   "domain": "W_k, every k",
+   "derivation": "under y -> 3y the reading of A^t(3y) is 3 times that of A^t y, and 3 is invertible mod 7; Claude",
+   "tool": "tools/tower_math.py",
+   "check": "descent:",
+   "depends": "MF-32, MF-201",
+   "does_not_follow": "that teams lift: no phase added to the depth-4 team separates W_5",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-215",
+   "statement": "no seven-phase team separating W_6 contains a lift of the depth-5 team (0, 5, 44, 199, 243, 562) (paper Corollary 5.10)",
+   "domain": "W_6",
+   "derivation": "by MF-214 a solution reduces to a separating team of W_5; every one of the 243 lifts leaves a class of at least 9 states; Claude",
+   "tool": "tools/tower_numeric.py",
+   "check": "o31-exclusion:",
+   "depends": "MF-207, MF-214",
+   "does_not_follow": "whether seven phases suffice at depth 6 (O-31)",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-216",
+   "statement": "the commutant of the law on L^2 of the limit Z_3[phi] is the bounded product of the full operator algebras of its eigenspaces, each infinite-dimensional (paper Proposition 20.8)",
+   "domain": "the limit Z_3[phi] with Haar measure",
+   "derivation": "eigenprojections are strong limits of averages of the law (mean ergodic theorem); multiplicities at least 3^(k-1); Claude",
+   "tool": "tools/tower_math.py",
+   "check": "commutant-limit:",
+   "depends": "MF-213",
+   "does_not_follow": "the memory classes of the limit",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-217",
+   "statement": "the greedy adaptive observer attains the bound ceil(k log_7 9) at depths 6 and 7: 7 and 8 readings (paper Theorem 22.1)",
+   "domain": "W_6 and W_7",
+   "derivation": "greedy minimax over all 1,944 and 5,832 phases; depth 7 by records/osl/adaptive_observer.py 7; Claude",
+   "tool": "tools/tower_numeric.py",
+   "check": "adaptive-depth6:",
+   "depends": "MF-201",
+   "does_not_follow": "the bound at every depth, or that a fixed team attains it",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-218",
+   "statement": "the law on E8 is self-adjoint with eigenvalues phi and -1/phi; the roots project onto two 600-cells in the ratio phi^2, isotropy deficit 5/8 (paper Proposition 20.9)",
+   "domain": "the E8 lattice of MF-74",
+   "derivation": "GM = M^T G and M^2 = M + I exactly; the root frame is tight; Claude and ChatGPT",
+   "tool": "tools/tower_math.py",
+   "check": "golden-split:",
+   "depends": "MF-74",
+   "does_not_follow": "any physical performance of a two-channel filter",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-219",
+   "statement": "the affine plane over Z/3^k has 4*3^(k-1) directions, which the law permutes in one cycle; two states share 3^r lines, r their separation valuation (paper Proposition 20.10)",
+   "domain": "the affine plane over Z/3^k, every k",
+   "derivation": "F_n = 0 mod 3^k exactly when 4*3^(k-1) divides n, so only phi^n = +-1 are scalars; ChatGPT and Claude",
+   "tool": "tools/tower_math.py",
+   "check": "ring-design:",
+   "depends": "MF-31, MF-35",
+   "does_not_follow": "a balanced design: pairs meet 3^r times, not once",
+   "status": "EXACT"
   }
  ]
 }

@@ -21,6 +21,11 @@
   D-014  NOT PROPOSED B1 Y B2 n B3 Y  FRAME-WIDE A statement and its negation by not, no or nor share n, r, the anchor ... -- reach FRAME-WIDE
   D-015  NOT PROPOSED B1 n B2 n B3 Y  LOCAL      An argument can be checked as a graph: each premise and conclusion str... -- standing PROCEDURE; reach LOCAL
   D-016  PROPOSED     B1 Y B2 Y B3 Y  BRIDGE     The family is the anyon theory SU(9)_1 x SU(9)_1: its golden form q(a,...
+  D-017  NOT PROPOSED B1 Y B2 n B3 Y  FRAME-WIDE Generation at every depth: from the seed (2, 5), exactly three sets of... -- reach FRAME-WIDE
+  D-018  PROPOSED     B1 Y B2 Y B3 Y  BRIDGE     The golden split of E8: on the E8 lattice of the icosians the law is a...
+  D-019  NOT PROPOSED B1 Y B2 n B3 Y  FRAME-WIDE The infinite tower: in the limit Z_3[phi] of all depths no nonzero sta... -- reach FRAME-WIDE
+  D-020  PROPOSED     B1 Y B2 Y B3 Y  BRIDGE     The plane over Z/3^k schedules itself: the law permutes the 4*3^(k-1) ...
+  D-021  NOT PROPOSED B1 Y B2 n B3 Y  FRAME-WIDE Observation across the tower: separation descends, so a team that tell... -- reach FRAME-WIDE
 
-  5 of 16 entries proposed as "breakthrough" candidates
+  7 of 21 entries proposed as "breakthrough" candidates
   1 judged a breakthrough by the Striker: D-016

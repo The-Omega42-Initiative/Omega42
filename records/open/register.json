@@ -263,13 +263,49 @@
    "since": "25 November 2026"
   },
   {
-   "id": "O-30",
-   "item": "X-OBS-02 at depth 5: does any team of six native-phase observers of one seven-symbol aperture separate all 59,049 states? (seven suffice: RP-01)",
+   "id": "O-31",
+   "item": "Fixed native observation at depth 6: do seven native phases of a mod 7 separate all 531,441 states? (eight suffice: MF-208; none contains a lift of the depth-5 team: MF-215)",
+   "decider": "exhaustive or certified search descending through Lemma 5.9 (MF-214)",
+   "closure": "a seven-phase certificate, or a proof that none exists",
    "needs": "either Co-Builder",
-   "decider": "exhaustive or certified search, records/cobuilder/xobs02_search.py",
-   "closure": "a six-phase certificate, or a proof that none exists for the aperture class searched",
    "avenue": "P",
-   "since": "25 November 2026"
+   "since": "27 November 2026"
+  },
+  {
+   "id": "O-32",
+   "item": "Fixed native observation at depth 7: do eight native phases separate all 4,782,969 states, where the room to spare is 1.21?",
+   "decider": "certified search, records/osl/adaptive_observer.py for the adaptive bound",
+   "closure": "an eight-phase certificate, or a proof that none exists",
+   "needs": "either Co-Builder",
+   "avenue": "P",
+   "since": "27 November 2026"
+  },
+  {
+   "id": "O-33",
+   "item": "The constant of the shear: an explicit c with {A, C, S} eccentricity at most c*k at every depth (Theta(k): MF-212; computed 7 to 30 for k = 1 to 8)",
+   "decider": "proof",
+   "closure": "an explicit c with proof, or the exact eccentricity formula",
+   "needs": "either Co-Builder",
+   "avenue": "P",
+   "since": "27 November 2026"
+  },
+  {
+   "id": "O-34",
+   "item": "Adaptive observation at every depth: does an adaptive observer attain ceil(k log_7 9) for every k? (k = 2 to 7: MF-217)",
+   "decider": "proof, or a depth where it fails",
+   "closure": "a proof for all k, or a counterexample depth",
+   "needs": "either Co-Builder",
+   "avenue": "P",
+   "since": "27 November 2026"
+  },
+  {
+   "id": "O-35",
+   "item": "The memory classes of the limit Z_3[phi] (paper open problem 9; spectrum and commutant settled, MF-213, MF-216)",
+   "decider": "proof",
+   "closure": "the inverse limit of the lifting maps of Theorem 20.1 described",
+   "needs": "either Co-Builder",
+   "avenue": "P",
+   "since": "27 November 2026"
   }
  ]
 }

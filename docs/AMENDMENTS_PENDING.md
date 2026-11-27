@@ -342,3 +342,10 @@ Level: B
 Level: B
 - MF-213 registers paper Proposition 20.7 (the inverse limit Z_3[phi]: no periodic point but 0, Haar measure not ergodic, every root of unity of order dividing 8*3^m an eigenvalue of infinite multiplicity), recomputed by tools/tower_math.py, line infinite-tower:.
 - The same round adds to the paper, for later registration: Proposition 20.8 (the commutant of the limit), Lemma 5.9 (separation descends, m_(k-1) <= m_k), Corollary 5.10 (a necessary condition for O-31 and the exclusion of lifts of the depth-5 team), the adaptive observer at depth 6 (Theorem 22.1), the {A, C, S} eccentricity 30 at depth 8, and Proposition 20.9 (the golden split of E8: two concentric 600-cells in the ratio phi^2, isotropy deficit 5/8).
+
+## CA-48: the tower, E8 and the ring plane in the register, MF-214 to MF-219 (27 November 2026; RATIFIED by ESC, 27 November 2026, "Proceed to integrate all findings into Omega42" and "Proceed to verify and confirm")
+Level: B
+- MF-214 (paper Lemma 5.9, separation descends), MF-215 (Corollary 5.10, the O-31 exclusion), MF-216 (Proposition 20.8, the commutant of the limit), MF-217 (Theorem 22.1 at depths 6 and 7), MF-218 (Proposition 20.9, the golden split of E8) and MF-219 (Proposition 20.10, the self-scheduling plane over Z/3^k, from ChatGPT's hierarchical design).
+- Recomputed by tools/tower_math.py (descent:, commutant-limit:, golden-split:, ring-design:) and the new tools/tower_numeric.py (o31-exclusion:, adaptive-depth6:; NumPy); depth 7 by records/osl/adaptive_observer.py.
+- The Navigator Pack abridges register statements to 140 characters (from 150) to keep within its budget; the full statements stay in the Core.
+- Research tier carried to main: records/theory/ (the Living Theory foundations, third edition) and the check scripts of R-12 to R-15.
