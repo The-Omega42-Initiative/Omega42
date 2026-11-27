@@ -847,3 +847,8 @@ main blockquote:not(.fieldnote) p { margin: .45rem 0; }
   .nav .grp > .head, .nav .menu a { white-space: normal; overflow-wrap: anywhere; }
   .nav .menu { position: static; min-width: 0; max-width: 100%; }
 }
+
+@media (max-width: 700px) {
+  #rs-mode, #rs-inputs input { max-width: 100%; min-width: 0; }
+  #rs-output { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+}
