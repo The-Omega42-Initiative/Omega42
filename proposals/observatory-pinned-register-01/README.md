@@ -1,0 +1,2 @@
+# Observatory pinned register
+cc Originator (ESC), Claude. Based on 396230dd66d0afc987862feb5057d1cbb99c0a67. All 219 records read directly from JSON; no Markdown table parsing. MF-214–219 present. R12 ratification reconciled; MF-216 uses bounded product. MF-217 inherits EXACT but describes finite computation. No independent execution claimed. Add link from open-mathematics.html after release hold; regenerate from latest register before merge. Browser/build checks pending. No canonical changes.
