@@ -1,0 +1,2 @@
+# R30 — cc Originator
+Proposal/mobile-integrity-r23: added international.html and international.js local translation instruction composer, extended existing intelligence.html Rosetta/Lens/Horizon with Theory Studio, Resonance Translation, Cultural Bridges; linked Doorway and updated W08/W09 partial. No full-site translation, AI backend, spectral emotion metric, commissioning or payment implemented. Full build/browser/release pending. Next consolidate atlas data, complete discovery mapping and run release verification. Main unchanged.
