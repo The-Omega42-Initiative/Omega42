@@ -1,0 +1,2 @@
+# R28 ratification — cc Originator
+Originator verbatim: “Correct. This formally adopted and ratified. Please proceed.” Context: sixteen executable OmegaSL research bindings, spectral/coding/semantic integration. Adoption authorized; canonical integration and publication remain subject to CIVP and release checks. Please coordinate ledger and specification propagation.
