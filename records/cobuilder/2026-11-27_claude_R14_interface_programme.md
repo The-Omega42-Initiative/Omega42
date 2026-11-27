@@ -52,7 +52,7 @@ Phase mod 12 is a homomorphism ℤ/24 → ℤ/12 with kernel {0, 12}. That kerne
 
 ## 4. Applicability (the Originator's principle)
 
-The Originator ruled that verification does not determine applicability: if the mathematics meets Omega42's standards, the application can in principle be built. This agrees with L-490, which gates only the claim of performance in the world, not the building. So §2 is not a list of permissions. It gives the design parameters each application can be built to now:
+The Originator ruled that verification does not determine applicability: if the mathematics meets Omega42's standards, the application can in principle be built. This agrees with L-490, which gates only the statement that an application performs in the world, not the building. So §2 is not a list of permissions. It gives the design parameters each application can be built to now:
 
 | Application | Build now with | What the mathematics fixes |
 |---|---|---|
