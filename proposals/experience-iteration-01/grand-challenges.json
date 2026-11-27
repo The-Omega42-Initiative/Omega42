@@ -1,0 +1,1005 @@
+{
+  "version": 1,
+  "challenges": [
+    {
+      "id": "GC-01-01",
+      "field": "Consciousness",
+      "question": "What distinguishes conscious experience from information processing?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-01-02"
+      ]
+    },
+    {
+      "id": "GC-01-02",
+      "field": "Consciousness",
+      "question": "How can competing theories of consciousness make discriminating predictions?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-01-03"
+      ]
+    },
+    {
+      "id": "GC-01-03",
+      "field": "Consciousness",
+      "question": "Which forms of self-reference are necessary for a model of self?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-01-04"
+      ]
+    },
+    {
+      "id": "GC-01-04",
+      "field": "Consciousness",
+      "question": "How can reports of experience be compared without assuming identical experiences?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-01-05"
+      ]
+    },
+    {
+      "id": "GC-01-05",
+      "field": "Consciousness",
+      "question": "What are the limits of inference about consciousness in nonhuman systems?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-01-01"
+      ]
+    },
+    {
+      "id": "GC-02-01",
+      "field": "Physics",
+      "question": "What observable signatures distinguish quantum gravity models?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-02-02"
+      ]
+    },
+    {
+      "id": "GC-02-02",
+      "field": "Physics",
+      "question": "How can spacetime emerge from discrete relational structures?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-02-03"
+      ]
+    },
+    {
+      "id": "GC-02-03",
+      "field": "Physics",
+      "question": "Which symmetries constrain the possible laws of nature?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-02-04"
+      ]
+    },
+    {
+      "id": "GC-02-04",
+      "field": "Physics",
+      "question": "What measurements could distinguish dark matter from modified gravity?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-02-05"
+      ]
+    },
+    {
+      "id": "GC-02-05",
+      "field": "Physics",
+      "question": "How can irreversible thermodynamics arise from reversible dynamics?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-02-01"
+      ]
+    },
+    {
+      "id": "GC-03-01",
+      "field": "Mathematics",
+      "question": "Do seven fixed native aperture phases separate every state at Omega42 depth six?",
+      "status": "open",
+      "mode": "formal",
+      "related": [
+        "GC-03-02"
+      ]
+    },
+    {
+      "id": "GC-03-02",
+      "field": "Mathematics",
+      "question": "Which finite spectral invariants uniquely determine a dynamical system?",
+      "status": "open",
+      "mode": "formal",
+      "related": [
+        "GC-03-03"
+      ]
+    },
+    {
+      "id": "GC-03-03",
+      "field": "Mathematics",
+      "question": "What bounds govern reconstruction from modular observations?",
+      "status": "open",
+      "mode": "formal",
+      "related": [
+        "GC-03-04"
+      ]
+    },
+    {
+      "id": "GC-03-04",
+      "field": "Mathematics",
+      "question": "When does a quotient preserve all relevant dynamical invariants?",
+      "status": "open",
+      "mode": "formal",
+      "related": [
+        "GC-03-05"
+      ]
+    },
+    {
+      "id": "GC-03-05",
+      "field": "Mathematics",
+      "question": "How can formal certificates make computational proofs independently reproducible?",
+      "status": "open",
+      "mode": "formal",
+      "related": [
+        "GC-03-01"
+      ]
+    },
+    {
+      "id": "GC-04-01",
+      "field": "AI",
+      "question": "How can diverse AI systems share a reasoning protocol without enforcing identical conclusions?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-04-02"
+      ]
+    },
+    {
+      "id": "GC-04-02",
+      "field": "AI",
+      "question": "How can reasoning errors be detected before an AI answer is acted upon?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-04-03"
+      ]
+    },
+    {
+      "id": "GC-04-03",
+      "field": "AI",
+      "question": "What methods distinguish genuine generalization from memorization?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-04-04"
+      ]
+    },
+    {
+      "id": "GC-04-04",
+      "field": "AI",
+      "question": "How can AI systems preserve human agency in high-stakes decisions?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-04-05"
+      ]
+    },
+    {
+      "id": "GC-04-05",
+      "field": "AI",
+      "question": "How can collaborative AI research avoid amplifying shared mistakes?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-04-01"
+      ]
+    },
+    {
+      "id": "GC-05-01",
+      "field": "Medicine",
+      "question": "How can clinical trials identify which patients benefit from a treatment?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-05-02"
+      ]
+    },
+    {
+      "id": "GC-05-02",
+      "field": "Medicine",
+      "question": "How can diagnostic uncertainty be communicated effectively?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-05-03"
+      ]
+    },
+    {
+      "id": "GC-05-03",
+      "field": "Medicine",
+      "question": "What interventions reduce preventable medication errors?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-05-04"
+      ]
+    },
+    {
+      "id": "GC-05-04",
+      "field": "Medicine",
+      "question": "How can scarce diagnostic resources be allocated equitably?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-05-05"
+      ]
+    },
+    {
+      "id": "GC-05-05",
+      "field": "Medicine",
+      "question": "How can reproducible evidence improve early disease detection?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-05-01"
+      ]
+    },
+    {
+      "id": "GC-06-01",
+      "field": "Mental health",
+      "question": "Which community interventions reduce loneliness sustainably?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-06-02"
+      ]
+    },
+    {
+      "id": "GC-06-02",
+      "field": "Mental health",
+      "question": "How can mental health support be made accessible without compromising privacy?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-06-03"
+      ]
+    },
+    {
+      "id": "GC-06-03",
+      "field": "Mental health",
+      "question": "What factors predict sustained recovery across different care settings?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-06-04"
+      ]
+    },
+    {
+      "id": "GC-06-04",
+      "field": "Mental health",
+      "question": "How can digital tools support rather than replace therapeutic relationships?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-06-05"
+      ]
+    },
+    {
+      "id": "GC-06-05",
+      "field": "Mental health",
+      "question": "How can researchers distinguish helpful self-reflection from harmful rumination?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-06-01"
+      ]
+    },
+    {
+      "id": "GC-07-01",
+      "field": "Peace",
+      "question": "How can negotiators identify shared interests despite incompatible public positions?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-07-02"
+      ]
+    },
+    {
+      "id": "GC-07-02",
+      "field": "Peace",
+      "question": "Which early warning indicators reliably predict escalation of conflict?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-07-03"
+      ]
+    },
+    {
+      "id": "GC-07-03",
+      "field": "Peace",
+      "question": "How can ceasefire verification protect vulnerable communities?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-07-04"
+      ]
+    },
+    {
+      "id": "GC-07-04",
+      "field": "Peace",
+      "question": "What conditions support durable reconciliation after violence?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-07-05"
+      ]
+    },
+    {
+      "id": "GC-07-05",
+      "field": "Peace",
+      "question": "How can mediation incorporate perspectives of displaced people?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-07-01"
+      ]
+    },
+    {
+      "id": "GC-08-01",
+      "field": "Economics",
+      "question": "How can economic policy balance productivity and distributional fairness?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-08-02"
+      ]
+    },
+    {
+      "id": "GC-08-02",
+      "field": "Economics",
+      "question": "Which indicators best capture household economic resilience?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-08-03"
+      ]
+    },
+    {
+      "id": "GC-08-03",
+      "field": "Economics",
+      "question": "How can market mechanisms account for environmental externalities?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-08-04"
+      ]
+    },
+    {
+      "id": "GC-08-04",
+      "field": "Economics",
+      "question": "What institutional designs reduce systemic financial risk?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-08-05"
+      ]
+    },
+    {
+      "id": "GC-08-05",
+      "field": "Economics",
+      "question": "How can automation gains be shared across workers and communities?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-08-01"
+      ]
+    },
+    {
+      "id": "GC-09-01",
+      "field": "Energy",
+      "question": "How can electricity grids remain reliable with variable renewable generation?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-09-02"
+      ]
+    },
+    {
+      "id": "GC-09-02",
+      "field": "Energy",
+      "question": "Which storage technologies suit different durations of energy demand?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-09-03"
+      ]
+    },
+    {
+      "id": "GC-09-03",
+      "field": "Energy",
+      "question": "How can energy access expand while reducing pollution?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-09-04"
+      ]
+    },
+    {
+      "id": "GC-09-04",
+      "field": "Energy",
+      "question": "What limits the efficiency of practical heat recovery systems?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-09-05"
+      ]
+    },
+    {
+      "id": "GC-09-05",
+      "field": "Energy",
+      "question": "How can demand flexibility reduce peak electricity requirements?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-09-01"
+      ]
+    },
+    {
+      "id": "GC-10-01",
+      "field": "Climate",
+      "question": "Which adaptation measures most reduce heat-related harm in cities?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-10-02"
+      ]
+    },
+    {
+      "id": "GC-10-02",
+      "field": "Climate",
+      "question": "How can climate models communicate regional uncertainty?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-10-03"
+      ]
+    },
+    {
+      "id": "GC-10-03",
+      "field": "Climate",
+      "question": "What land-use strategies jointly protect biodiversity and carbon stocks?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-10-04"
+      ]
+    },
+    {
+      "id": "GC-10-04",
+      "field": "Climate",
+      "question": "How can coastal communities plan under uncertain sea-level rise?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-10-05"
+      ]
+    },
+    {
+      "id": "GC-10-05",
+      "field": "Climate",
+      "question": "Which monitoring methods reliably measure restoration outcomes?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-10-01"
+      ]
+    },
+    {
+      "id": "GC-11-01",
+      "field": "Education",
+      "question": "How can teaching adapt to learners without narrowing their opportunities?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-11-02"
+      ]
+    },
+    {
+      "id": "GC-11-02",
+      "field": "Education",
+      "question": "What assessments measure transferable understanding rather than recall?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-11-03"
+      ]
+    },
+    {
+      "id": "GC-11-03",
+      "field": "Education",
+      "question": "How can AI tutoring support independent reasoning?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-11-04"
+      ]
+    },
+    {
+      "id": "GC-11-04",
+      "field": "Education",
+      "question": "Which approaches reduce barriers to foundational literacy?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-11-05"
+      ]
+    },
+    {
+      "id": "GC-11-05",
+      "field": "Education",
+      "question": "How can curricula develop collaborative problem-solving across disciplines?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-11-01"
+      ]
+    },
+    {
+      "id": "GC-12-01",
+      "field": "Governance",
+      "question": "How can public institutions make algorithmic decisions contestable?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-12-02"
+      ]
+    },
+    {
+      "id": "GC-12-02",
+      "field": "Governance",
+      "question": "What mechanisms improve accountability without excessive bureaucracy?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-12-03"
+      ]
+    },
+    {
+      "id": "GC-12-03",
+      "field": "Governance",
+      "question": "How can participatory budgeting represent underserved communities?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-12-04"
+      ]
+    },
+    {
+      "id": "GC-12-04",
+      "field": "Governance",
+      "question": "How can policy evaluation distinguish causal effects from coincidental trends?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-12-05"
+      ]
+    },
+    {
+      "id": "GC-12-05",
+      "field": "Governance",
+      "question": "What institutional safeguards protect minority rights in collective decisions?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-12-01"
+      ]
+    },
+    {
+      "id": "GC-13-01",
+      "field": "Information integrity",
+      "question": "How can provenance systems distinguish authentic records from manipulated copies?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-13-02"
+      ]
+    },
+    {
+      "id": "GC-13-02",
+      "field": "Information integrity",
+      "question": "What interventions reduce misinformation without suppressing legitimate disagreement?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-13-03"
+      ]
+    },
+    {
+      "id": "GC-13-03",
+      "field": "Information integrity",
+      "question": "How can independent sources be identified when reports share a common origin?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-13-04"
+      ]
+    },
+    {
+      "id": "GC-13-04",
+      "field": "Information integrity",
+      "question": "How can uncertainty be represented in public knowledge systems?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-13-05"
+      ]
+    },
+    {
+      "id": "GC-13-05",
+      "field": "Information integrity",
+      "question": "What methods detect coordinated manipulation while protecting privacy?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-13-01"
+      ]
+    },
+    {
+      "id": "GC-14-01",
+      "field": "Language and culture",
+      "question": "How can translation preserve pragmatic meaning across cultures?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-14-02"
+      ]
+    },
+    {
+      "id": "GC-14-02",
+      "field": "Language and culture",
+      "question": "How can endangered languages be documented under community control?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-14-03"
+      ]
+    },
+    {
+      "id": "GC-14-03",
+      "field": "Language and culture",
+      "question": "What methods distinguish symbolic resemblance from historical transmission?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-14-04"
+      ]
+    },
+    {
+      "id": "GC-14-04",
+      "field": "Language and culture",
+      "question": "How can multilingual dialogue reveal rather than erase conceptual differences?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-14-05"
+      ]
+    },
+    {
+      "id": "GC-14-05",
+      "field": "Language and culture",
+      "question": "How can translation quality be evaluated for emotional and cultural nuance?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-14-01"
+      ]
+    },
+    {
+      "id": "GC-15-01",
+      "field": "Biology",
+      "question": "How do regulatory networks maintain stability under perturbation?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-15-02"
+      ]
+    },
+    {
+      "id": "GC-15-02",
+      "field": "Biology",
+      "question": "What principles explain convergent evolution across distinct lineages?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-15-03"
+      ]
+    },
+    {
+      "id": "GC-15-03",
+      "field": "Biology",
+      "question": "How can ecological networks predict cascading species loss?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-15-04"
+      ]
+    },
+    {
+      "id": "GC-15-04",
+      "field": "Biology",
+      "question": "Which mechanisms enable biological systems to repair damage?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-15-05"
+      ]
+    },
+    {
+      "id": "GC-15-05",
+      "field": "Biology",
+      "question": "How can experiments distinguish causal gene interactions from correlations?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-15-01"
+      ]
+    },
+    {
+      "id": "GC-16-01",
+      "field": "Invention",
+      "question": "How can modular design reduce repair costs and material waste?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-16-02"
+      ]
+    },
+    {
+      "id": "GC-16-02",
+      "field": "Invention",
+      "question": "What systematic methods reveal overlooked engineering tradeoffs?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-16-03"
+      ]
+    },
+    {
+      "id": "GC-16-03",
+      "field": "Invention",
+      "question": "How can assistive devices be designed with users rather than for them?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-16-04"
+      ]
+    },
+    {
+      "id": "GC-16-04",
+      "field": "Invention",
+      "question": "How can low-cost sensors be calibrated in resource-constrained settings?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-16-05"
+      ]
+    },
+    {
+      "id": "GC-16-05",
+      "field": "Invention",
+      "question": "What design principles improve reliability under component failure?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-16-01"
+      ]
+    },
+    {
+      "id": "GC-17-01",
+      "field": "Philosophy and spirituality",
+      "question": "What distinguishes a coherent metaphysical premise from a demonstrated conclusion?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-17-02"
+      ]
+    },
+    {
+      "id": "GC-17-02",
+      "field": "Philosophy and spirituality",
+      "question": "How can different traditions compare accounts of meaning without collapsing their differences?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-17-03"
+      ]
+    },
+    {
+      "id": "GC-17-03",
+      "field": "Philosophy and spirituality",
+      "question": "What is the relationship between personal identity and continuity of experience?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-17-04"
+      ]
+    },
+    {
+      "id": "GC-17-04",
+      "field": "Philosophy and spirituality",
+      "question": "How can ethical disagreement be explored without presuming a single worldview?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-17-05"
+      ]
+    },
+    {
+      "id": "GC-17-05",
+      "field": "Philosophy and spirituality",
+      "question": "What does it mean for an observer to belong to the world it describes?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-17-01"
+      ]
+    },
+    {
+      "id": "GC-18-01",
+      "field": "Arts",
+      "question": "How can mathematical constraints generate diverse artistic forms?",
+      "status": "open",
+      "mode": "exploratory",
+      "related": [
+        "GC-18-02"
+      ]
+    },
+    {
+      "id": "GC-18-02",
+      "field": "Arts",
+      "question": "What makes a generative artwork meaningfully responsive to its audience?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-18-03"
+      ]
+    },
+    {
+      "id": "GC-18-03",
+      "field": "Arts",
+      "question": "How can artists retain attribution in collaborative AI workflows?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-18-04"
+      ]
+    },
+    {
+      "id": "GC-18-04",
+      "field": "Arts",
+      "question": "How can music encode structural relationships without losing expressive freedom?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-18-05"
+      ]
+    },
+    {
+      "id": "GC-18-05",
+      "field": "Arts",
+      "question": "How can accessible interfaces broaden participation in creative practice?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-18-01"
+      ]
+    },
+    {
+      "id": "GC-19-01",
+      "field": "Space",
+      "question": "How can spacecraft navigation remain robust under communication delays?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-19-02"
+      ]
+    },
+    {
+      "id": "GC-19-02",
+      "field": "Space",
+      "question": "What observations would distinguish biological from abiotic atmospheric signatures?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-19-03"
+      ]
+    },
+    {
+      "id": "GC-19-03",
+      "field": "Space",
+      "question": "How can closed-loop habitats sustain crews with limited resupply?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-19-04"
+      ]
+    },
+    {
+      "id": "GC-19-04",
+      "field": "Space",
+      "question": "Which orbital strategies reduce long-term debris accumulation?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-19-05"
+      ]
+    },
+    {
+      "id": "GC-19-05",
+      "field": "Space",
+      "question": "How can distributed telescopes reconstruct signals from sparse observations?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-19-01"
+      ]
+    },
+    {
+      "id": "GC-20-01",
+      "field": "Food and resilience",
+      "question": "How can crop diversity reduce vulnerability to extreme weather?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-20-02"
+      ]
+    },
+    {
+      "id": "GC-20-02",
+      "field": "Food and resilience",
+      "question": "Which supply-chain designs minimize food loss during disruptions?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-20-03"
+      ]
+    },
+    {
+      "id": "GC-20-03",
+      "field": "Food and resilience",
+      "question": "How can small farms monitor soil health affordably?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-20-04"
+      ]
+    },
+    {
+      "id": "GC-20-04",
+      "field": "Food and resilience",
+      "question": "What interventions improve nutrition while respecting local food cultures?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-20-05"
+      ]
+    },
+    {
+      "id": "GC-20-05",
+      "field": "Food and resilience",
+      "question": "How can communities coordinate water and food reserves under uncertainty?",
+      "status": "open",
+      "mode": "empirical",
+      "related": [
+        "GC-20-01"
+      ]
+    }
+  ]
+}
