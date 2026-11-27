@@ -16,10 +16,10 @@ import congruence as cg
 SITE = os.path.join(ROOT, 'site')
 # Six destinations, each a group with its own pages (the first page of a group is where its heading leads).
 NAV = [('Philosophy', [('ambition', 'Omega42 at its most ambitious: two readings'), ('philosophy', 'The Philosophy of Being'), ('philosophy-journey', 'The Philosophy of Being: a journey'), ('being-human', 'The Art of Being Human'), ('consciousness', 'The consciousness programme'), ('vision', 'The founding vision'), ('aperture', 'The Human Aperture')]),
-       ('Observatory', [('observatory', 'The Universal Observatory'), ('research-integration', 'Research laboratory (Rev451)'), ('sky', 'The Celestial Observatory'), ('elements', 'The Elemental Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
-       ('Instruments', [('workbench', 'OmegaSL Workbench'), ('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
-       ('Explore', [('questions', 'World of Questions'), ('strike', 'Ask a question'), ('solve', 'SOLVE: bring a problem'), ('explore', 'How Omega42 works'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('units', 'Measurement converter'), ('lexicon', 'Lexicon and Glossary'), ('speculate', 'Speculative Foundations')]),
-       ('Discoveries', [('research-center', 'The Research Center'), ('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
+       ('Observatory', [('observatory', 'The Universal Observatory'), ('open-mathematics', 'Open Mathematical Observatory'), ('research-integration', 'Research laboratory (Rev451)'), ('sky', 'The Celestial Observatory'), ('elements', 'The Elemental Observatory'), ('mathematics', 'The principal mathematics'), ('paper', 'The mathematical paper'), ('derivations', 'Derivations'), ('symbols', 'The symbols of Omega42'), ('playground', 'Mathematical playground'), ('construct-x', 'Construct X laboratory')]),
+       ('Instruments', [('research-suite', 'Research Suite'), ('adaptor-lab', 'Adaptor Laboratory'), ('workbench', 'OmegaSL Workbench'), ('seven-veils', 'The Seven Veils (game)'), ('arcana', 'Arcana: the Oracle of Possibilities'), ('creative', 'Harmonia and Atelier'), ('imagination', 'Scriptorium and Synesthesia'), ('worlds', 'Worlds and Affinity'), ('concordia', 'Concordia: common ground'), ('intelligence', 'Intelligence Services'), ('geometria', 'GEOMETRIA: the Golden Torus')]),
+       ('Explore', [('questions', 'World of Questions'), ('strike', 'Ask a question'), ('solve', 'SOLVE: bring a problem'), ('explore', 'How Omega42 works'), ('integrity', 'Information Integrity'), ('companion', 'Companion Explorer'), ('units', 'Measurement converter'), ('mathematical-atlas', 'Universal Mathematical Atlas'), ('lexicon', 'Lexicon and Glossary'), ('speculate', 'Speculative Foundations')]),
+       ('Discoveries', [('research-center', 'The Research Center'), ('open-register', 'Open Research Register'), ('bulletin', 'The Discovery Bulletin'), ('dispatch', 'Dispatch: the monthly newsletter'), ('expert-desk', 'Expert Exploration Desk'), ('research', 'Research frontiers'), ('enroll', 'Enroll your AI (pilot)')]),
        ('Protocol', [('protocol', 'Core and Companion'), ('core-proposed', 'Core V336, six-layer edition (proposed)'), ('manual', 'The Navigator Instruction Manual'), ('omegasl', 'OmegaSL: the Structural Language'), ('for-ai', 'For AI systems'), ('faq', 'Frequently asked questions'), ('apps', 'Free and commercial editions')]),
        ('Library', [('library', 'Discoveries and explorations'), ('collection', 'The archive collection'), ('catalogue', 'Catalogue'), ('innovation', 'The Innovation Commons'), ('prior-art', 'Prior art and inventions'), ('history', 'History of releases'), ('record', 'The record')]),
        ('Community', [('community', 'Join the community'), ('forum', 'Forum'), ('submit', 'Bring your ideas'), ('governance', 'Governance')]),
@@ -170,6 +170,9 @@ def build(out, repo):
     json.dump(freg, open(os.path.join(out, 'api', 'frontier.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)   # the Daily Frontier register
     vision = md_html(open(os.path.join(ROOT, 'docs', 'VISION.md'), encoding='utf-8').read())
     subs = dict(fsubs, **questions_html(json.load(open(os.path.join(ROOT, 'records', 'questions', 'register.json'), encoding='utf-8'))))
+    open_items = json.load(open(os.path.join(ROOT, 'records', 'open', 'register.json'), encoding='utf-8'))['items']
+    subs['{{OPEN_COUNT}}'] = str(len(open_items))
+    subs['{{OPEN_BODY}}'] = ''.join('<article class="panel" id="%s"><h2>%s</h2><p>%s</p><dl>%s</dl></article>' % (html.escape(x['id'].lower(), quote=True), html.escape(x['id']), html.escape(x['item']), ''.join('<dt>%s</dt><dd>%s</dd>' % (html.escape(k.title()), html.escape(str(x.get(k, '')))) for k in ('needs','decider','closure','avenue','since'))) for x in open_items)
     regp = os.path.join(ROOT, 'records', 'math', 'results.json')   # the complete register, Part III of the paper's website edition
     if os.path.exists(regp):
         rr = json.load(open(regp, encoding='utf-8'))['results']; e = lambda x: html.escape(str(x or '—'))
@@ -200,6 +203,12 @@ def build(out, repo):
     for key, rel in (('DREG', ('records', 'cobuilder', 'RESEARCH_DISCOVERY_REGISTER.md')), ('DVER', ('records', 'cobuilder', 'REGISTER_VERIFICATION.md'))):
         fp = os.path.join(ROOT, *rel)
         subs['{{%s_BODY}}' % key] = (md_html(open(fp, encoding='utf-8').read().split('\n', 1)[1]).replace('href="2026-', 'href="https://github.com/%s/blob/main/records/cobuilder/2026-' % repo)) if os.path.exists(fp) else ''
+    dp = os.path.join(ROOT, 'records', 'discoveries', 'register.json')   # the protocol discoveries D-nnn, generated so they cannot drift (CA-53)
+    if os.path.exists(dp):
+        dd = json.load(open(dp, encoding='utf-8'))['discoveries']; e = lambda x: html.escape(str(x or '—'))
+        subs['{{DISC_COUNT}}'] = str(len(dd))
+        subs['{{DISC_BODY}}'] = ''.join('<article class="panel" id="%s"><h3>%s <span class="chip">%s</span></h3><p>%s</p><dl><dt>Derivation</dt><dd>%s</dd><dt>Changes</dt><dd>%s</dd><dt>Open</dt><dd>%s</dd><dt>Recompute</dt><dd><code>%s</code></dd></dl></article>' % (
+            e(x['id'].lower()), e(x['id']), e(x.get('standing')), e(x.get('statement')), e(x.get('derivation')), e(x.get('changes')), e(x.get('open')), e(x.get('record'))) for x in dd)
     omf = os.path.join(ROOT, 'records', 'osl', 'manifest.json')   # the unified OmegaSL instrument manifest
     if os.path.exists(omf):
         om = json.load(open(omf, encoding='utf-8'))['operations']; e = lambda x: html.escape(str(x))

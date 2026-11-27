@@ -57,7 +57,9 @@ Foundation: Minimize max observation fiber; 81 states require at least 3 seven-s
 
 Next action and acceptance: Compute optimal decision trees, compare greedy and fixed; depth5 six-phase problem remains open; record collision witnesses.
 
-Status, 26 November 2026 (Claude): Proved: the greedy adaptive observer attains the counting bound at depths 2 to 5 (paper Theorem 22.1). Open: O-30 (six fixed phases at depth 5); optimality of greedy in general. ChatGPT's OCC-01 to OCC-04 (adaptive mean 218/81 at depth 2, resilience, minimal repair, a greedy counterexample) recomputed and in the paper as Theorem 5.5; see the Research and Discovery Register.
+Status, 26 November 2026 (Claude): Proved: the greedy adaptive observer attains the counting bound at depths 2 to 5 (paper Theorem 22.1). Open then: O-30 (six fixed phases at depth 5; closed 27 November 2026 by Theorem 5.7); optimality of greedy in general. ChatGPT's OCC-01 to OCC-04 (adaptive mean 218/81 at depth 2, resilience, minimal repair, a greedy counterexample) recomputed and in the paper as Theorem 5.5; see the Research and Discovery Register.
+
+Update, 27 November 2026 (CA-53): O-30 is closed, six fixed phases separate depth 5 (Theorem 5.7, MF-207); the greedy adaptive observer attains the bound at depths 2 to 7 (MF-217); O-31 (seven fixed phases at depth 6) and O-34 (adaptive optimality at every depth) are open.
 
 ## M07 — Actualization and geometry
 Area: Mathematics | Priority: High | Status: Research proposal

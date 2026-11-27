@@ -2,14 +2,14 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1359607,
-   "tokens_est": 339902,
-   "sha256": "687e3709d0fa5a8aee0366bc8588867c7661990511a76d4520ce05b773d00735"
+   "chars": 1359734,
+   "tokens_est": 339934,
+   "sha256": "a5e54fa802082c38e2b51565875e470626fae1ffce75cabfc099b3867327f157"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2047721,
-   "tokens_est": 511931,
-   "sha256": "5af597982a5e254ceb0c54c84d163c75212d74f7be5a1bd384679a7c52dbc89f"
+   "chars": 2048131,
+   "tokens_est": 512033,
+   "sha256": "679eaacc03147e5bce3c85421a84e11650bc879201a611e223edf1fcc6fce442"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 479661,
@@ -1293,9 +1293,9 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 34144,
-   "tokens_est": 8536,
-   "sha256": "ddd762d169104c01a2f06faf736d3e7847e4b8b91cf84897e247120e82356067"
+   "chars": 34271,
+   "tokens_est": 8568,
+   "sha256": "4770d3b21a933c63ff2af5d6f1d2af9c6701b38d864e2b839a3a71ea2c5b321c"
   },
   {
    "doc": "Companion",
@@ -4954,23 +4954,9 @@
   {
    "doc": "Companion",
    "heading": "216.1.200 MF-200 (Core Part 0.0.10.200). Does not follow: that the partition into residues mod 7 is the best: 270 partitions do better.",
-   "chars": 0,
-   "tokens_est": 0,
-   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  {
-   "doc": "Companion",
-   "heading": "216.1.201 MF-201 (Core Part 0.0.10.201). Does not follow: that native-phase observers of one aperture attain it at every depth (MF-202; open at depth 5, O-30).",
-   "chars": 0,
-   "tokens_est": 0,
-   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  {
-   "doc": "Companion",
-   "heading": "216.1.202 MF-202 (Core Part 0.0.10.202). Does not follow: that six observers suffice at depth 5; that is open (O-30).",
-   "chars": 0,
-   "tokens_est": 0,
-   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   "chars": 353,
+   "tokens_est": 88,
+   "sha256": "15bfd0a95949dfe7e0b8d7a61d3ee48ae9416f964264a2387f3c7b96dbc3dce3"
   },
   {
    "doc": "Companion",
@@ -4989,16 +4975,9 @@
   {
    "doc": "Companion",
    "heading": "216.1.207 MF-207 (Core Part 0.0.10.207). Does not follow: that a fixed native team attains the bound at every depth, which is open from depth 6 (O-31).",
-   "chars": 0,
-   "tokens_est": 0,
-   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  {
-   "doc": "Companion",
-   "heading": "216.1.208 MF-208 (Core Part 0.0.10.208). Does not follow: whether seven readings suffice (O-31); the best seven-phase team found leaves 44,397 colliding pairs.",
-   "chars": 0,
-   "tokens_est": 0,
-   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   "chars": 169,
+   "tokens_est": 42,
+   "sha256": "85105a0ea8a989629e7225a1aca9d932b43197265b5539c107151696ac950489"
   },
   {
    "doc": "Companion",
@@ -5381,9 +5360,9 @@
   {
    "doc": "Companion",
    "heading": "PART 235: THE CO-BUILDER RESULTS — WHAT THE FOURTEEN SAY [EXACT for the results; the readings CDT-C]",
-   "chars": 3383,
-   "tokens_est": 846,
-   "sha256": "c8471803c903fd79c8b0a5b87eaa8c9d89004df148ac01ebb490269f8d1f61be"
+   "chars": 3386,
+   "tokens_est": 847,
+   "sha256": "7083918fc8ffaf973222fe35f42d9307187f0993f72c9ba831894b4d499e116f"
   },
   {
    "doc": "Companion",
@@ -5507,9 +5486,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 198499,
-   "tokens_est": 49625,
-   "sha256": "c427f40cdfa7a89f000664ebb61750e6a590370b160a40a65315058ddf72beaa"
+   "chars": 198837,
+   "tokens_est": 49709,
+   "sha256": "6eaa30708c96d82e57cc9c2d4e04c6c1e54e645e20eb4056889aabc4ab8ae646"
   }
  ]
 }

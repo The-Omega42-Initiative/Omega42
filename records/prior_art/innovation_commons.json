@@ -38,7 +38,7 @@
    "implementation": "records/cobuilder/xobs02_search.py",
    "status": "IMPLEMENTED",
    "by": "ChatGPT and Claude",
-   "note": "Optimal at depths 2 to 4; seven readers at depth 5; six open (O-30)."
+   "note": "Fixed native teams attain the bound at depths 2 to 5 (six readers at depth 5, MF-207, closing O-30); the adaptive observer at depths 2 to 7 (MF-217); seven fixed readers at depth 6 open (O-31)."
   },
   {
    "id": "INV-004",

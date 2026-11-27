@@ -2209,7 +2209,7 @@
    "tool": "tools/cobuilder_math.py",
    "check": "observer-bound:",
    "depends": "MF-193",
-   "does_not_follow": "that native-phase observers of one aperture attain it at every depth (MF-202; open at depth 5, O-30)",
+   "does_not_follow": "that native-phase observers of one aperture attain it at every depth (attained at depths 2 to 5, MF-207; open at depth 6, O-31)",
    "status": "EXACT"
   },
   {
@@ -2220,7 +2220,7 @@
    "tool": "tools/cobuilder_math.py",
    "check": "native-phases:",
    "depends": "MF-199, MF-201",
-   "does_not_follow": "that six observers suffice at depth 5; that is open (O-30)",
+   "does_not_follow": "that seven observers suffice at depth 6 (O-31) or eight at depth 7 (O-32); six suffice at depth 5 (MF-207)",
    "status": "EXACT"
   },
   {
@@ -2286,7 +2286,7 @@
    "tool": "tools/tower_math.py",
    "check": "observe-depth6:",
    "depends": "MF-201, MF-207",
-   "does_not_follow": "whether seven readings suffice (O-31); the best seven-phase team found leaves 44,397 colliding pairs",
+   "does_not_follow": "whether seven readings suffice (O-31); the best seven-phase team found leaves 36,265 colliding pairs (MF-221)",
    "status": "EXACT"
   },
   {

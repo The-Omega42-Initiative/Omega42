@@ -365,3 +365,14 @@ Level: B
 - MF-220 registers paper Proposition 20.11: the direct limit of the finite memory classes under the lifting maps of Theorem 20.1 is the Pruefer group Z(3^inf), carried by the still point. Its scope is that direct system, not every continuous or measurable cocycle on Z_3[phi] (ChatGPT's qualification). Recomputed by tools/tower_math.py, line memory-limit:, and records/osl/o35_check.py (465 checks). O-35 is closed; the open register's "inverse limit" wording is retired with it.
 - MF-221 registers paper Proposition 5.11, ChatGPT's seven-plus-one observer at depth 6, recomputed by tools/tower_numeric.py, line seven-plus-one:. O-31 stays open with 36,265 colliding pairs.
 - Lexicon entry 129, Selective aperture completion (OmegaSL operation OBS.COMPLETE proposed). ChatGPT's refinements: entry 123 is stated as a lower bound, entry 126 carries 36,265, entry 128 separates cyclic factors from embedding targets (the 360-degree circle is an embedding target).
+
+## CA-52: the Constitutional Instrument Verification Protocol, CIVP (27 November 2026; RATIFIED by ESC, 27 November 2026, "Ratified. Please declare the website ready for construction and publication.")
+Level: B
+- An instrument is accepted only with a positive control that passes, a negative control that fails, a test that does not assume its conclusion, agreement with an independent implementation, boundary cases, reproducible inputs and code, a declared scope, and a re-check of dependent instruments after any correction (ChatGPT's formulation, R-21 response; Claude's negative-control proposal, R-21).
+- First application: records/osl/suite/crosscheck.js (two independent kernels of the Research Suite, six negative controls, a stepped closure test), run in CI.
+
+## CA-53: the website mapped to the record, and the stale fields corrected (27 November 2026; RATIFIED by ESC, 27 November 2026, "Ratified. Please proceed with refinements and completion recommendations.")
+Level: C
+- Register does_not_follow fields brought up to date: MF-201 and MF-202 (O-30 closed by MF-207) and MF-208 (best seven-phase team 36,265 pairs, MF-221; R-23 named this entry MF-215 in error). Paper: reference 5 cites Rev.451; Corollary 5.10's note gives the 36,265 record. Companion Part 235 and the Innovation Commons note INV-003 state O-30 closed.
+- The website (R-23, ChatGPT's R-25 and R-26 on proposal/mobile-integrity-r23): O-30 corrected on the Doorway, FAQ and three pages; the Research Suite, Adaptor Laboratory, Open Mathematical Observatory, Open Research Register and Universal Mathematical Atlas in the navigation; the open register and the 21 discoveries generated from the record; phone wrapping rules.
+- tools/site_coherence.py measures the built site against the record, congruence, coherence and resonance side by side (L-514), and fails a release on any loss or contradiction; it runs in CI.

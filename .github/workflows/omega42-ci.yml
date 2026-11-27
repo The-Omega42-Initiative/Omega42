@@ -534,6 +534,8 @@ jobs:
           python3 site/test/strike_cpython.py > /dev/null
           node site/test/research_suite_check.js
           node records/osl/suite/crosscheck.js site/assets
+          python3 tools/site_build.py --out /tmp/o42_site_check --repo The-Omega42-Initiative/Omega42 > /dev/null
+          python3 tools/site_coherence.py --check /tmp/o42_site_check
           python3 - <<'PY'
           import glob, hashlib, json, sys
           bad = 0

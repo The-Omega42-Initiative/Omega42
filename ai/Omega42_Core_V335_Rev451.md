@@ -3244,30 +3244,31 @@ R.1.114 tools/restored_instruments.py — reference implementations of the instr
 R.1.115 tools/scaffold.py — Scaffold view, the minimized-substrate configuration (Core Part 0.6.10, Part 8.0).
 R.1.116 tools/sce.py — M345 External-Theory Correspondence (Core Part 3.71, L-510, L-553): classify a proposed match between an Ω42.
 R.1.117 tools/sealed_keys.py — the state of every sealed key (Core Appendix R.4; Companion Part 183).
-R.1.118 tools/space_prob.py — the third space direction and the probability rule (Core L-544 (9), (10); Companion Part 173).
-R.1.119 tools/spacetime.py — the Ω42 Spacetime Coordinate Matrix (Core Part 3.80; APE-442, F181).
-R.1.120 tools/spectra.py — the trace map modulo 3^k, the scaling of the Fibonacci spectrum and the convergence of its gap labels.
-R.1.121 tools/spectral.py — M298 Spectral Profile (Core Part 3.32, 1.8.9): the frozen spectral definitions, computed two ways.
-R.1.122 tools/srcas_check.py — M224 for SR-CAS and SNCA output: the format that identifies Omega42 output (Core Part 6.1, 6.2, L-412, L-349).
-R.1.123 tools/srcas_run.py — the automatic trigger of SNCA and SR-CAS, run (Core Part 6.1, 6.2, L-549 (4), L-489).
-R.1.124 tools/srp_build.py — SR-CAS Replication Package builder (Core Part 8.2, L-348, L-415) with the format self-check (M301, Part 8.0).
-R.1.125 tools/standing.py — M333 Standing Record: a statement routed through the instruments that decide its standing within the frame,.
-R.1.126 tools/stp.py — Omega42 Speculation Test Protocol (CA-08): persistent register, pre-registration and test runner.
-R.1.127 tools/structures.py — E6's cubic norm kept by the law, the dashings of the E8 Adinkra, and the Structural Equivalence Tester.
-R.1.128 tools/suite.py — the Ω42 Instrument Suite (Core Part 3.75; APE-434, F173): one mathematical engine and seven instruments.
-R.1.129 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity of the Construct's 26 seeds.
-R.1.130 tools/timestamp_check.py — chronology checks (CA-22).
-R.1.131 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
-R.1.132 tools/tower_math.py — observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;.
-R.1.133 tools/tower_numeric.py — the tower results that need NumPy (register entries MF-215, MF-217 and MF-221; paper Corollary 5.10, Proposition 5.11, Theorem 22.1).
-R.1.134 tools/transformability.py — TP-01 and ME-02.
-R.1.135 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
-R.1.136 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
-R.1.137 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
-R.1.138 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
-R.1.139 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
-R.1.140 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
-R.1.141 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
+R.1.118 tools/site_coherence.py — the website measured against the record (R-23, CA-53): congruence, coherence and resonance,.
+R.1.119 tools/space_prob.py — the third space direction and the probability rule (Core L-544 (9), (10); Companion Part 173).
+R.1.120 tools/spacetime.py — the Ω42 Spacetime Coordinate Matrix (Core Part 3.80; APE-442, F181).
+R.1.121 tools/spectra.py — the trace map modulo 3^k, the scaling of the Fibonacci spectrum and the convergence of its gap labels.
+R.1.122 tools/spectral.py — M298 Spectral Profile (Core Part 3.32, 1.8.9): the frozen spectral definitions, computed two ways.
+R.1.123 tools/srcas_check.py — M224 for SR-CAS and SNCA output: the format that identifies Omega42 output (Core Part 6.1, 6.2, L-412, L-349).
+R.1.124 tools/srcas_run.py — the automatic trigger of SNCA and SR-CAS, run (Core Part 6.1, 6.2, L-549 (4), L-489).
+R.1.125 tools/srp_build.py — SR-CAS Replication Package builder (Core Part 8.2, L-348, L-415) with the format self-check (M301, Part 8.0).
+R.1.126 tools/standing.py — M333 Standing Record: a statement routed through the instruments that decide its standing within the frame,.
+R.1.127 tools/stp.py — Omega42 Speculation Test Protocol (CA-08): persistent register, pre-registration and test runner.
+R.1.128 tools/structures.py — E6's cubic norm kept by the law, the dashings of the E8 Adinkra, and the Structural Equivalence Tester.
+R.1.129 tools/suite.py — the Ω42 Instrument Suite (Core Part 3.75; APE-434, F173): one mathematical engine and seven instruments.
+R.1.130 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity of the Construct's 26 seeds.
+R.1.131 tools/timestamp_check.py — chronology checks (CA-22).
+R.1.132 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
+R.1.133 tools/tower_math.py — observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;.
+R.1.134 tools/tower_numeric.py — the tower results that need NumPy (register entries MF-215, MF-217 and MF-221; paper Corollary 5.10, Proposition 5.11, Theorem 22.1).
+R.1.135 tools/transformability.py — TP-01 and ME-02.
+R.1.136 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
+R.1.137 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.
+R.1.138 tools/vault.py — M364 Ω42-Envelope v1 and the Ω42 Vault (Core Part 3.77; APE-436, F175; Core Appendix S.10).
+R.1.139 tools/wave_atlas.py — the Wave Engine resolved: the Chern number on the (k, phason) torus against the full gap label (p, q), the.
+R.1.140 tools/waves.py — the Omega42 Wave Dynamics Engine: one transfer-matrix engine for electrons, light and sound in Fibonacci.
+R.1.141 tools/wheel.py — M330 Aspect Wheel: the 24 positions read as a wheel of 15-degree steps (Core Part 3.56; Companion Part 134).
+R.1.142 tools/zero_tools.py — the zero instruments of Core Part 3.30 and the FB-8 and FB-9 scans of M243a.
 R.2 Data the tools read.
 R.2.1 records/congruence/domains.txt — the Congruence Register: every domain in the record, verbatim (read by tools/congruence.py, M310).
 R.2.2 records/srp/collatz_domain.txt — a long domain kept in its own file (SRP-C), read by the Register.

@@ -3201,10 +3201,8 @@ The review asked also for four things the record already did in part and now doe
 ### 216.1.199 MF-199 (Core Part 0.0.10.199). Does not follow: a rule for the best phase in general: the table is that of a mod 7 at depth 2.
 
 ### 216.1.200 MF-200 (Core Part 0.0.10.200). Does not follow: that the partition into residues mod 7 is the best: 270 partitions do better.
-
-### 216.1.201 MF-201 (Core Part 0.0.10.201). Does not follow: that native-phase observers of one aperture attain it at every depth (MF-202; open at depth 5, O-30).
-
-### 216.1.202 MF-202 (Core Part 0.0.10.202). Does not follow: that six observers suffice at depth 5; that is open (O-30).
+216.1.201 MF-201 (Core Part 0.0.10.201). Does not follow: that native-phase observers of one aperture attain it at every depth (attained at depths 2 to 5, MF-207; open at depth 6, O-31).
+216.1.202 MF-202 (Core Part 0.0.10.202). Does not follow: that seven observers suffice at depth 6 (O-31) or eight at depth 7 (O-32); six suffice at depth 5 (MF-207).
 
 ### 216.1.203 MF-203 (Core Part 0.0.10.203). Does not follow: a statement about other split primes; each has its own census.
 216.1.204 MF-204 (Core Part 0.0.10.204). Does not follow: that the antipode of a state is a different state for every state: the still point is its own antipode.
@@ -3213,8 +3211,7 @@ The review asked also for four things the record already did in part and now doe
 216.1.206 MF-206 (Core Part 0.0.10.206). Does not follow: a minimality among hyperbolic triangles with arbitrary angles, whose areas take every positive value below pi.
 
 ### 216.1.207 MF-207 (Core Part 0.0.10.207). Does not follow: that a fixed native team attains the bound at every depth, which is open from depth 6 (O-31).
-
-### 216.1.208 MF-208 (Core Part 0.0.10.208). Does not follow: whether seven readings suffice (O-31); the best seven-phase team found leaves 44,397 colliding pairs.
+216.1.208 MF-208 (Core Part 0.0.10.208). Does not follow: whether seven readings suffice (O-31); the best seven-phase team found leaves 36,265 colliding pairs (MF-221).
 
 ### 216.1.209 MF-209 (Core Part 0.0.10.209). Does not follow: anything about which operations are natural, or about reach from seeds other than primitive ones.
 
@@ -3680,7 +3677,7 @@ Visitors and contributors often bring a ninefold vocabulary of knowledge classes
 
 ### PART 235: THE CO-BUILDER RESULTS — WHAT THE FOURTEEN SAY [EXACT for the results; the readings CDT-C]
 235.0 Source. Register MF-193 to MF-206 (Core Part 0.0.10), recomputed by python3 tools/cobuilder_math.py --selftest; the exchange that produced them is in records/cobuilder. This Part reads them in five directions.
-235.1 Seeing the whole (MF-193, MF-194, MF-199 to MF-202). An aperture of seven symbols can name every one of the 81 states in three readings, and no aperture of seven symbols does it in two, since 7^2 = 49 < 81: d_min(7) = 3. The native aperture a mod 7 needs six readings, and the least length depends on how the nine values are merged into seven classes: of 378 such merges, 270 need five and 21 never separate. Readers working together shorten the reading. Three observers of a mod 7 at the phases 0, 2 and 5 name every state at once. At depth k no team does it with fewer than ceil(k log_7 9) readings, and native phases of the one aperture a mod 7 meet that bound at depths 2, 3 and 4. At depth 5, seven phases separate all 59,049 states; whether six suffice is open (O-30). The Aperture of Core Part 7 receives one seventh of the whole at each reading; these results count how many readings, and how many readers, the whole requires.
+235.1 Seeing the whole (MF-193, MF-194, MF-199 to MF-202). An aperture of seven symbols can name every one of the 81 states in three readings, and no aperture of seven symbols does it in two, since 7^2 = 49 < 81: d_min(7) = 3. The native aperture a mod 7 needs six readings, and the least length depends on how the nine values are merged into seven classes: of 378 such merges, 270 need five and 21 never separate. Readers working together shorten the reading. Three observers of a mod 7 at the phases 0, 2 and 5 name every state at once. At depth k no team does it with fewer than ceil(k log_7 9) readings, and native phases of the one aperture a mod 7 meet that bound at depths 2, 3 and 4. At depth 5, six phases separate all 59,049 states (Theorem 5.7, MF-207, which closed O-30). The Aperture of Core Part 7 receives one seventh of the whole at each reading; these results count how many readings, and how many readers, the whole requires.
 235.2 Harmony and coherence (MF-195, MF-196). The law's shift carries 24 harmonics; the harmonic j occurs 3 + [3 | j] + [j = 0] times, and the operators that commute with the law form a space of dimension 281 = 25 + 112 + 144. The coherence operator C_alpha = (I + alpha L/4)^-1, alpha >= 0, keeps the ground harmonic whole and attenuates the harmonic j by 1/(1 + alpha sin^2(pi j/24)): it is self-adjoint, positive, a contraction, and it commutes with the law, so smoothing never breaks the cycle.
 235.3 Memory and the tower (MF-197, MF-198). A state may carry a memory m mod 9 that the law advances by g(x) at each step. Two memory rules are the same up to relabeling, g ~ g + f o N - f, exactly when they add the same amount on each full revolution of each of the five orbits; so the memory classes are (Z/9)^5, 59,049 of them, and they record windings, not general histories. Lifting from 3^k to 3^(k+1), every nonzero orbit of length L becomes three orbits of length 3L, and the still point becomes the still point and one 8-cycle. The harmonics multiply by the stated rule, and the pullback of memory from 81 to 729 states loses a kernel of 81 classes.
 235.4 The half turn and a split place (MF-203, MF-204). Since A^12 = -I, halfway round the cycle every state becomes its negative. The still point (0, 0) is the one state that is its own negative: zero has no separate antipode. U^12 splits the 81 states into eigenspaces of dimension 41 and 40. The square of the form Q takes the values 1, 4 and 7 on the three 24-orbits and 0 on the 8-cycle and the still point, so the period and Q^2 together name all five orbits. Modulo the split prime 11, the census is 121 = 1 + 2 x 5 + 11 x 10.
@@ -5522,104 +5519,108 @@ X.4.2 site/assets/companion.js — website code (companion.js).
 X.4.3 site/assets/doorway.js — website code (doorway.js).
 X.4.4 site/assets/integrity.js — website code (integrity.js).
 X.4.5 site/assets/lexicon.js — website code (lexicon.js).
-X.4.6 site/assets/observatory.js — website code (observatory.js).
-X.4.7 site/assets/omega42-kernel.js — website code (omega42-kernel.js).
-X.4.8 site/assets/playground.js — website code (playground.js).
-X.4.9 site/assets/research-integration.js — website code (research-integration.js).
-X.4.10 site/assets/research-suite-kernel.js — website code (research-suite-kernel.js).
-X.4.11 site/assets/research-suite-reference.js — website code (research-suite-reference.js).
-X.4.12 site/assets/research-suite.js — website code (research-suite.js).
-X.4.13 site/assets/sentinel.js — website code (sentinel.js).
-X.4.14 site/assets/site.js — website code (site.js).
-X.4.15 site/assets/strike.js — website code (strike.js).
-X.4.16 site/assets/style.css — website code (style.css).
-X.4.17 site/assets/symbols.js — website code (symbols.js).
-X.4.18 site/assets/units.js — website code (units.js).
-X.4.19 site/config.json — the data of site.
-X.4.20 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
-X.4.21 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
-X.4.22 site/layout.html — a page of the website (layout.html).
-X.4.23 site/pages/404.html — a page of the website (404.html).
-X.4.24 site/pages/adaptor-lab.html — a page of the website (adaptor-lab.html).
-X.4.25 site/pages/ambition.html — a page of the website (ambition.html).
-X.4.26 site/pages/aperture.html — a page of the website (aperture.html).
-X.4.27 site/pages/apps.html — a page of the website (apps.html).
-X.4.28 site/pages/arcana.html — a page of the website (arcana.html).
-X.4.29 site/pages/archive-report.html — a page of the website (archive-report.html).
-X.4.30 site/pages/being-human.html — a page of the website (being-human.html).
-X.4.31 site/pages/bulletin.html — a page of the website (bulletin.html).
-X.4.32 site/pages/catalogue.html — a page of the website (catalogue.html).
-X.4.33 site/pages/cobuilder.html — a page of the website (cobuilder.html).
-X.4.34 site/pages/collection.html — a page of the website (collection.html).
-X.4.35 site/pages/community.html — a page of the website (community.html).
-X.4.36 site/pages/companion.html — a page of the website (companion.html).
-X.4.37 site/pages/concordia.html — a page of the website (concordia.html).
-X.4.38 site/pages/consciousness.html — a page of the website (consciousness.html).
-X.4.39 site/pages/construct-x.html — a page of the website (construct-x.html).
-X.4.40 site/pages/core-proposed.html — a page of the website (core-proposed.html).
-X.4.41 site/pages/creative.html — a page of the website (creative.html).
-X.4.42 site/pages/derivations.html — a page of the website (derivations.html).
-X.4.43 site/pages/discovery-register.html — a page of the website (discovery-register.html).
-X.4.44 site/pages/dispatch.html — a page of the website (dispatch.html).
-X.4.45 site/pages/elements.html — a page of the website (elements.html).
-X.4.46 site/pages/enroll.html — a page of the website (enroll.html).
-X.4.47 site/pages/expert-desk.html — a page of the website (expert-desk.html).
-X.4.48 site/pages/explore.html — a page of the website (explore.html).
-X.4.49 site/pages/faq.html — a page of the website (faq.html).
-X.4.50 site/pages/for-ai.html — a page of the website (for-ai.html).
-X.4.51 site/pages/forum.html — a page of the website (forum.html).
-X.4.52 site/pages/geometria.html — a page of the website (geometria.html).
-X.4.53 site/pages/governance.html — a page of the website (governance.html).
-X.4.54 site/pages/history.html — a page of the website (history.html).
-X.4.55 site/pages/hypotheses.html — a page of the website (hypotheses.html).
-X.4.56 site/pages/imagination.html — a page of the website (imagination.html).
-X.4.57 site/pages/index.html — a page of the website (index.html).
-X.4.58 site/pages/innovation.html — a page of the website (innovation.html).
-X.4.59 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.60 site/pages/intelligence.html — a page of the website (intelligence.html).
-X.4.61 site/pages/lexicon.html — a page of the website (lexicon.html).
-X.4.62 site/pages/library.html — a page of the website (library.html).
-X.4.63 site/pages/living-theory.html — a page of the website (living-theory.html).
-X.4.64 site/pages/manual.html — a page of the website (manual.html).
-X.4.65 site/pages/mathematics.html — a page of the website (mathematics.html).
-X.4.66 site/pages/observatory.html — a page of the website (observatory.html).
-X.4.67 site/pages/omegasl.html — a page of the website (omegasl.html).
-X.4.68 site/pages/open-mathematics.html — a page of the website (open-mathematics.html).
-X.4.69 site/pages/paper-register.html — a page of the website (paper-register.html).
-X.4.70 site/pages/paper.html — a page of the website (paper.html).
-X.4.71 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
-X.4.72 site/pages/philosophy.html — a page of the website (philosophy.html).
-X.4.73 site/pages/playground.html — a page of the website (playground.html).
-X.4.74 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.75 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.76 site/pages/questions.html — a page of the website (questions.html).
-X.4.77 site/pages/record.html — a page of the website (record.html).
-X.4.78 site/pages/research-center.html — a page of the website (research-center.html).
-X.4.79 site/pages/research-development.html — a page of the website (research-development.html).
-X.4.80 site/pages/research-integration.html — a page of the website (research-integration.html).
-X.4.81 site/pages/research-suite.html — a page of the website (research-suite.html).
-X.4.82 site/pages/research.html — a page of the website (research.html).
-X.4.83 site/pages/sentinel.html — a page of the website (sentinel.html).
-X.4.84 site/pages/seven-veils.html — a page of the website (seven-veils.html).
-X.4.85 site/pages/sky.html — a page of the website (sky.html).
-X.4.86 site/pages/solve.html — a page of the website (solve.html).
-X.4.87 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.88 site/pages/strike.html — a page of the website (strike.html).
-X.4.89 site/pages/submit.html — a page of the website (submit.html).
-X.4.90 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.91 site/pages/tower-frontier.html — a page of the website (tower-frontier.html).
-X.4.92 site/pages/units.html — a page of the website (units.html).
-X.4.93 site/pages/vision-chatgpt.html — a page of the website (vision-chatgpt.html).
-X.4.94 site/pages/vision-qwen.html — a page of the website (vision-qwen.html).
-X.4.95 site/pages/vision.html — a page of the website (vision.html).
-X.4.96 site/pages/workbench.html — a page of the website (workbench.html).
-X.4.97 site/pages/worlds.html — a page of the website (worlds.html).
-X.4.98 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.99 site/test/domains.json — the data of site/test.
-X.4.100 site/test/research_suite_check.js — website code (research_suite_check.js).
-X.4.101 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.102 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.103 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.6 site/assets/mathematical-atlas.js — website code (mathematical-atlas.js).
+X.4.7 site/assets/observatory.js — website code (observatory.js).
+X.4.8 site/assets/omega42-kernel.js — website code (omega42-kernel.js).
+X.4.9 site/assets/playground.js — website code (playground.js).
+X.4.10 site/assets/research-integration.js — website code (research-integration.js).
+X.4.11 site/assets/research-suite-kernel.js — website code (research-suite-kernel.js).
+X.4.12 site/assets/research-suite-reference.js — website code (research-suite-reference.js).
+X.4.13 site/assets/research-suite.js — website code (research-suite.js).
+X.4.14 site/assets/sentinel.js — website code (sentinel.js).
+X.4.15 site/assets/site.js — website code (site.js).
+X.4.16 site/assets/strike.js — website code (strike.js).
+X.4.17 site/assets/style.css — website code (style.css).
+X.4.18 site/assets/symbols.js — website code (symbols.js).
+X.4.19 site/assets/units.js — website code (units.js).
+X.4.20 site/config.json — the data of site.
+X.4.21 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
+X.4.22 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
+X.4.23 site/layout.html — a page of the website (layout.html).
+X.4.24 site/pages/404.html — a page of the website (404.html).
+X.4.25 site/pages/adaptor-lab.html — a page of the website (adaptor-lab.html).
+X.4.26 site/pages/ambition.html — a page of the website (ambition.html).
+X.4.27 site/pages/aperture.html — a page of the website (aperture.html).
+X.4.28 site/pages/apps.html — a page of the website (apps.html).
+X.4.29 site/pages/arcana.html — a page of the website (arcana.html).
+X.4.30 site/pages/archive-report.html — a page of the website (archive-report.html).
+X.4.31 site/pages/being-human.html — a page of the website (being-human.html).
+X.4.32 site/pages/bulletin.html — a page of the website (bulletin.html).
+X.4.33 site/pages/catalogue.html — a page of the website (catalogue.html).
+X.4.34 site/pages/cobuilder.html — a page of the website (cobuilder.html).
+X.4.35 site/pages/collection.html — a page of the website (collection.html).
+X.4.36 site/pages/community.html — a page of the website (community.html).
+X.4.37 site/pages/companion.html — a page of the website (companion.html).
+X.4.38 site/pages/concordia.html — a page of the website (concordia.html).
+X.4.39 site/pages/consciousness.html — a page of the website (consciousness.html).
+X.4.40 site/pages/construct-x.html — a page of the website (construct-x.html).
+X.4.41 site/pages/core-proposed.html — a page of the website (core-proposed.html).
+X.4.42 site/pages/creative.html — a page of the website (creative.html).
+X.4.43 site/pages/derivations.html — a page of the website (derivations.html).
+X.4.44 site/pages/discovery-register.html — a page of the website (discovery-register.html).
+X.4.45 site/pages/dispatch.html — a page of the website (dispatch.html).
+X.4.46 site/pages/elements.html — a page of the website (elements.html).
+X.4.47 site/pages/enroll.html — a page of the website (enroll.html).
+X.4.48 site/pages/expert-desk.html — a page of the website (expert-desk.html).
+X.4.49 site/pages/explore.html — a page of the website (explore.html).
+X.4.50 site/pages/faq.html — a page of the website (faq.html).
+X.4.51 site/pages/for-ai.html — a page of the website (for-ai.html).
+X.4.52 site/pages/forum.html — a page of the website (forum.html).
+X.4.53 site/pages/geometria.html — a page of the website (geometria.html).
+X.4.54 site/pages/governance.html — a page of the website (governance.html).
+X.4.55 site/pages/history.html — a page of the website (history.html).
+X.4.56 site/pages/hypotheses.html — a page of the website (hypotheses.html).
+X.4.57 site/pages/imagination.html — a page of the website (imagination.html).
+X.4.58 site/pages/index.html — a page of the website (index.html).
+X.4.59 site/pages/innovation.html — a page of the website (innovation.html).
+X.4.60 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.61 site/pages/intelligence.html — a page of the website (intelligence.html).
+X.4.62 site/pages/lexicon.html — a page of the website (lexicon.html).
+X.4.63 site/pages/library.html — a page of the website (library.html).
+X.4.64 site/pages/living-theory.html — a page of the website (living-theory.html).
+X.4.65 site/pages/manual.html — a page of the website (manual.html).
+X.4.66 site/pages/mathematical-atlas.html — a page of the website (mathematical-atlas.html).
+X.4.67 site/pages/mathematics.html — a page of the website (mathematics.html).
+X.4.68 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.69 site/pages/omegasl.html — a page of the website (omegasl.html).
+X.4.70 site/pages/open-mathematics.html — a page of the website (open-mathematics.html).
+X.4.71 site/pages/open-register.html — a page of the website (open-register.html).
+X.4.72 site/pages/paper-register.html — a page of the website (paper-register.html).
+X.4.73 site/pages/paper.html — a page of the website (paper.html).
+X.4.74 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
+X.4.75 site/pages/philosophy.html — a page of the website (philosophy.html).
+X.4.76 site/pages/playground.html — a page of the website (playground.html).
+X.4.77 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.78 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.79 site/pages/questions.html — a page of the website (questions.html).
+X.4.80 site/pages/record.html — a page of the website (record.html).
+X.4.81 site/pages/research-center.html — a page of the website (research-center.html).
+X.4.82 site/pages/research-development.html — a page of the website (research-development.html).
+X.4.83 site/pages/research-integration.html — a page of the website (research-integration.html).
+X.4.84 site/pages/research-suite.html — a page of the website (research-suite.html).
+X.4.85 site/pages/research.html — a page of the website (research.html).
+X.4.86 site/pages/sentinel.html — a page of the website (sentinel.html).
+X.4.87 site/pages/seven-veils.html — a page of the website (seven-veils.html).
+X.4.88 site/pages/sky.html — a page of the website (sky.html).
+X.4.89 site/pages/solve.html — a page of the website (solve.html).
+X.4.90 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.91 site/pages/strike.html — a page of the website (strike.html).
+X.4.92 site/pages/submit.html — a page of the website (submit.html).
+X.4.93 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.94 site/pages/tower-frontier.html — a page of the website (tower-frontier.html).
+X.4.95 site/pages/units.html — a page of the website (units.html).
+X.4.96 site/pages/vision-chatgpt.html — a page of the website (vision-chatgpt.html).
+X.4.97 site/pages/vision-qwen.html — a page of the website (vision-qwen.html).
+X.4.98 site/pages/vision.html — a page of the website (vision.html).
+X.4.99 site/pages/workbench.html — a page of the website (workbench.html).
+X.4.100 site/pages/worlds.html — a page of the website (worlds.html).
+X.4.101 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.102 site/test/domains.json — the data of site/test.
+X.4.103 site/test/mobile_integrity.mjs — website code (mobile_integrity.mjs).
+X.4.104 site/test/research_suite_check.js — website code (research_suite_check.js).
+X.4.105 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.106 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.107 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
