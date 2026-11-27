@@ -200,6 +200,9 @@ def build(out, repo):
         subs['{{REGISTER_FULL}}'] = re.sub(r'\{\{BUILT_ON_(MF-\d+)\}\}', lambda m: '<p class="note">Built on this: %s</p>' % ', '.join(
             '<a href="innovation.html#%s">%s %s</a>' % (x['id'].lower(), x['id'], html.escape(x['title'])) for x in built_on[m.group(1)]) if m.group(1) in built_on else '', subs['{{REGISTER_FULL}}'])
     paper = os.path.join(ROOT, 'docs', 'OMEGA42_MATHEMATICAL_PAPER.md')
+    discoveries = json.load(open(os.path.join(ROOT, 'records', 'discoveries', 'register.json'), encoding='utf-8'))['discoveries']
+    subs['{{CANON_DISCOVERY_COUNT}}'] = str(len(discoveries))
+    subs['{{CANON_DISCOVERY_BODY}}'] = ''.join('<article class="panel" id="%s"><h3>%s — %s</h3><p>%s</p><dl>%s</dl></article>' % (html.escape(x['id'].lower(), quote=True), html.escape(x['id']), html.escape(x['standing']), html.escape(x['statement']), ''.join('<dt>%s</dt><dd>%s</dd>' % (html.escape(k.title()), html.escape(str(x.get(k, '')))) for k in ('derivation','record','changes','open','reach','candidate'))) for x in discoveries)
     for key, rel in (('DREG', ('records', 'cobuilder', 'RESEARCH_DISCOVERY_REGISTER.md')), ('DVER', ('records', 'cobuilder', 'REGISTER_VERIFICATION.md'))):
         fp = os.path.join(ROOT, *rel)
         subs['{{%s_BODY}}' % key] = (md_html(open(fp, encoding='utf-8').read().split('\n', 1)[1]).replace('href="2026-', 'href="https://github.com/%s/blob/main/records/cobuilder/2026-' % repo)) if os.path.exists(fp) else ''
