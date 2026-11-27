@@ -1,6 +1,6 @@
 """R-07 check: the dependency graph of the mathematical register, read from its own 'depends' fields.
 Run from the repository root (main): python3 records/osl/r07_depgraph_check.py   (pure Python; under a second)
-Edge u -> v means v depends on u. Checks: no dangling reference, no cycle, the closure figures,
+Edge u -> v means v depends on u. Checks: no dangling reference, no cycle, the structural closure properties (version-aware: the register grows),
 and lists the entries whose status is stronger than a status they depend on."""
 import json, re, sys
 from collections import defaultdict, deque
@@ -32,7 +32,7 @@ def closure(n):
 c = {i: len(closure(i)) for i in ids}
 top = sorted(ids, key=lambda i: -c[i])[:3]
 print('  edges', sum(len(v) for v in out.values()), 'longest chain', max(depth.values()), 'largest closures', [(i, c[i]) for i in top])
-ok('MF-01 has the largest closure: a change to it reaches 136 of the other entries', top[0] == 'MF-01' and c['MF-01'] == 136)
+ok('MF-01 has the largest closure, reaching most of the register (136 of 205 others when R-07 was written, 141 at 211 entries)', top[0] == 'MF-01' and c['MF-01'] >= 136 and 2 * c['MF-01'] > len(E) - 1)
 weak = sorted((u, v) for u in ids for v in out[u] if status[v] == 'EXACT' and status[u] != 'EXACT')
 print('  EXACT entries resting on a CONDITIONAL entry:', weak)
 ok('exactly five such edges, all from MF-07 or MF-15 (the AP-SPACE readings)', len(weak) == 5 and {u for u, _ in weak} == {'MF-07', 'MF-15'})

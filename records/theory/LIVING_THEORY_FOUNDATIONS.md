@@ -35,6 +35,7 @@ Generated from the register by records/theory/theory_foundations.py. Each territ
 | MF-42 | The law and the shear generate exactly the group of determinant +-1 over <A mod 3>, at every depth. *the Fibonacci-shear group G_k = <A, B> mod 3^k, B = [[1,0],[3,1]], is exactly {det = +-1, reduction in <A mod 3>}, of order 8*3^(3(k-1)), and its orbits are exactly the k + 1 valuation strata* | EXACT | EXACT | `python3 tools/fsg.py --selftest` ("F.9 cubing lifts") |
 | MF-195 | The harmonic multiplicities of the law's shift. *the shift U of the law on functions of the 81 states has the harmonic j = 0 to 23 with multiplicity m_j = 3 + [3 | j] + [j = 0]; the operators commuting with U have dimension sum m_j^2 = 25 + 7 x 16 + 16 x 9 = 281, and t* | EXACT | EXACT | `python3 tools/cobuilder_math.py --selftest` ("harmonics:") |
 | MF-201 | The counting bound for observation at every depth. *an observer team of seven-symbol readings that separates the 9^k states at depth k needs at least r_min(k) = ceil(k log_7 9) readings, 2, 3, 4, 5 and 6 for k = 1 to 5, and freely constructed observers attain it with the * | EXACT | EXACT | `python3 tools/cobuilder_math.py --selftest` ("observer-bound:") |
+| paper Proposition 20.7 | In the limit no nonzero state returns exactly, and every root of unity of order dividing 8*3^m is an eigenvalue of infinite multiplicity | EXACT | EXACT | `python3 records/osl/r10_check.py` |
 
 ## Observation
 
@@ -57,7 +58,8 @@ Generated from the register by records/theory/theory_foundations.py. Each territ
 | MF-35 | Every primitive state generates the whole; the units act freely and transitively. *every primitive state generates the whole family under Z[phi], and the units act on the primitive states transitively and freely* | EXACT | EXACT | `python3 tools/beyond.py --selftest` ("unique expression: each primitive state generates the whole, units transitive and free") |
 | MF-209 | Exactly three sets of the four native operations reach every state, at every depth. *from (2, 5) exactly {A, C, S}, {A, V, C} and {A, V, C, S} reach every state of W_k, k >= 2 (paper Theorem 20.3)* | EXACT | EXACT | `python3 tools/tower_math.py --selftest` ("generating-sets:") |
 | MF-210 | With doubling the farthest state is 2*3^k - 2 steps away: the world is exponentially wide. *the {A, V, C} distance of A^t V^s (2, 5) is t + s for t < 4h, h = 3^(k-1), else t + s - 3h, and its largest value is 2*3^k - 2 (paper Theorem 20.4)* | EXACT | EXACT | `python3 tools/tower_math.py --selftest` ("avc-distance:") |
-| MF-211 | With the shear at least about 3.17k steps are needed; paper Theorem 20.6 (awaiting audit) gives at most c*k. *the largest distance from (2, 5) under {A, C, S} at depth k is at least ceil(log2(8*9^(k-1) + 1)) - 1, about 3.17k (paper Proposition 20.5)* | EXACT | EXACT | `python3 tools/tower_math.py --selftest` ("acs-lower:") |
+| MF-211 | With the shear at least about 3.17k steps are needed. *the largest distance from (2, 5) under {A, C, S} at depth k is at least ceil(log2(8*9^(k-1) + 1)) - 1, about 3.17k (paper Proposition 20.5)* | EXACT | EXACT | `python3 tools/tower_math.py --selftest` ("acs-lower:") |
+| MF-212 | And at most c*k: the world reached through the shear is logarithmically small in its states. *the largest distance from (2, 5) under {A, C, S} at depth k is Theta(k), at most c*k (paper Theorem 20.6)* | EXACT | EXACT | `python3 tools/tower_math.py --selftest` ("acs-linear:") |
 
 ## Space
 
