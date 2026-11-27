@@ -1,9 +1,14 @@
-(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory;else root.Omega42Operations=factory(root.Omega42Suite)})(typeof self!=='undefined'?self:this,function(M){
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory;else root.Omega42Operations=factory(root.Omega42Suite,root.Omega42AD008)})(typeof self!=='undefined'?self:this,function(M,C){
 'use strict';
 const integer=(x,min,max)=>{if(!Number.isSafeInteger(x)||x<min||x>max)throw RangeError('Expected integer '+min+'..'+max);return x};
 const depth=(x,max=4)=>integer(x,1,max);
 const phases=(a,k)=>{if(!Array.isArray(a)||a.length>32)throw Error('Expected at most 32 phases');return a.map(t=>integer(t,0,M.order(k)-1))};
+const vector=(a,b)=>[a,b].map(x=>{if(typeof x!=='number'||!Number.isFinite(x)||Math.abs(x)>1e9)throw Error('Expected bounded real coordinate');return x});
 const ops=Object.freeze({
+'SPEC.PROJECT':{basis:'Golden eigenspaces; two-dimensional analogue',run:(a,b)=>({precision:'FLOAT64',...M.project(vector(a,b))})},
+'SPEC.DEFICIT':{basis:'MF-218; normalized 8D covariance',run:n=>{integer(n,0,12);const phi=(1+Math.sqrt(5))/2;return {precision:'FLOAT64',power:n,deficit:(phi**(2*n)-phi**(-2*n))**2/8}}},
+'CODE.RECONSTRUCT':{basis:'AD-008',run:r=>{if(!Array.isArray(r)||r.length!==7)throw Error('Seven symbols required');r.forEach(x=>integer(x,0,6));const d=C.decode(r);return {candidate:d,guarantee:'Correct original state if actual corruption is at most two symbols',withinDecodingRadius:d!==null}}},
+'CODE.ENCODE':{basis:'AD-008',run:(a,b)=>C.encode(integer(a,0,8),integer(b,0,8))},
 'OBS.PARTITION':{basis:'MF-201/207/208',run:(k,t)=>M.partition(phases(t,depth(k,6)),k)},
 'OBS.DESCEND':{basis:'MF-214',run:(k,t)=>M.descend(phases(t,depth(k,6)),k)},
 'OBS.COMPLETE':{basis:'MF-221',run:(k,t,p)=>M.complete(phases(t,depth(k)),k,phases(p,k))},
@@ -16,7 +21,7 @@ const ops=Object.freeze({
 'ADAPT.DEFECT':{basis:'Lexicon 127',run:(n,m)=>M.defect(integer(n,1,10000),integer(m,1,10000))},
 'ADAPT.COMPOSE':{basis:'Lexicon 127–128',run:(n,m,l)=>M.compose(integer(n,1,10000),integer(m,1,10000),integer(l,1,10000))}
 });
-const arity=[2,2,3,2,2,4,1,4,1,2,3];const names=Object.keys(ops);
+const arity=[2,1,1,2,2,2,3,2,2,4,1,4,1,2,3];const names=Object.keys(ops);
 function execute(command){if(typeof command!=='string'||command.length>4096)throw Error('Command length limit');const match=/^([A-Z]+\.[A-Z]+)\s+(\[.*\])$/s.exec(command.trim());if(!match||!Object.hasOwn(ops,match[1]))throw Error('Unknown operation; use NAME [JSON arguments]');const args=JSON.parse(match[2]);if(!Array.isArray(args)||args.length!==arity[names.indexOf(match[1])])throw Error('Incorrect argument count');const op=ops[match[1]];return {protocol:'OmegaSL research bindings proposal v1',kernel:M.VERSION,operation:match[1],arguments:args,basis:op.basis,status:'EXECUTED',result:op.run(...args)}}
 return {execute,names};
 });
