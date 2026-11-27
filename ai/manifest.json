@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1354776,
-   "tokens_est": 338694,
-   "sha256": "2e2993de7ed49255df5d0814b206813d8c538192dcc0b229442a274546d03e2d"
+   "chars": 1355253,
+   "tokens_est": 338814,
+   "sha256": "de07890cd6b56338d330b9b54bbc4f8af889dc685c230b60b32e9193495b8779"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2044182,
-   "tokens_est": 511046,
-   "sha256": "f6d6ee01de1b8ace170a0a57a43610081904c4ad5092401c165a315ce22ccdf6"
+   "chars": 2044743,
+   "tokens_est": 511186,
+   "sha256": "0ca8dc2d80ab0529b6f3d376395473e0f52863b45f68a62804c0562cc48e7b08"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 479288,
-   "tokens_est": 119822,
-   "sha256": "bee9f053bfd4e7f98500e2c4e728df744563abbf80e7d118adc00c4b83c97db5"
+   "chars": 479467,
+   "tokens_est": 119867,
+   "sha256": "a0cedae27d1be069f151b7defe2f348f0e9d5b2e5438af8b183cb351492bf65c"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -110,9 +110,9 @@
   {
    "doc": "Core",
    "heading": "0.0.10 THE COMPLETE MATHEMATICAL REGISTER",
-   "chars": 108433,
-   "tokens_est": 27108,
-   "sha256": "d77b6e9adde8ffafa0d7d3deb7f333e5784fb55eb5f2b0a870f85be7b70555d6"
+   "chars": 108910,
+   "tokens_est": 27228,
+   "sha256": "feee35a8fc3745c2ea8cb2f02424ea4cd84a3911bac44b3f37a548bbbda2635f"
   },
   {
    "doc": "Core",
@@ -5016,6 +5016,13 @@
   },
   {
    "doc": "Companion",
+   "heading": "216.1.212 MF-212 (Core Part 0.0.10.212). Does not follow: an explicit constant c, or the exact distances beyond those computed, 7 to 26 for k = 1 to 7.",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
    "heading": "216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.",
    "chars": 0,
    "tokens_est": 0,
@@ -5423,9 +5430,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 13533,
-   "tokens_est": 3383,
-   "sha256": "0e2a752adb857d399bf83b14091c0fa2fefcaca9f5a92dcf38a9f7c69a18a45b"
+   "chars": 13645,
+   "tokens_est": 3411,
+   "sha256": "fe55e3148568c78f6ec2ef84686aa99e774dcf8370388ab1b8843bfc0e952ad9"
   },
   {
    "doc": "Companion",
@@ -5437,9 +5444,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 197229,
-   "tokens_est": 49307,
-   "sha256": "7ab90d8abaec9ab704f720f48335d7cfe611049800aa27465fd9abb0156c70a1"
+   "chars": 197521,
+   "tokens_est": 49380,
+   "sha256": "3e3e47e929af652cd9192cc3da2a0d2b2e76ba0338afc079cf2558ac2647efc6"
   }
  ]
 }

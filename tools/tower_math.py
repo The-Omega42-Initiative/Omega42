@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """tower_math.py -- observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;
-register entries MF-207 to MF-211, ratified by ESC on 27 November 2026).
+register entries MF-207 to MF-212, ratified by ESC on 27 November 2026).
 
     python3 tools/tower_math.py --selftest
 
@@ -9,6 +9,7 @@ Lines of the selftest, each named by a register entry:
   observe-depth6:   Prop. 5.8     eight native phases separate all 531,441 states of W_6, so 7 <= m_6 <= 8
   generating-sets:  Theorem 20.3  exactly {A,C,S}, {A,V,C}, {A,V,C,S} of the 15 operation sets reach every state (k = 2..4; k = 1 adds {A,C})
   avc-distance:     Theorem 20.4  the closed {A,V,C} distance equals the breadth-first distance at every state (k = 1..4)
+  acs-linear:       Theorem 20.6  its finite ingredients: transitivity of <A, S> on primitive states, the positive-boundary identity
   acs-lower:        Prop. 20.5    the bound ceil(log2(8*9^(k-1)+1)) - 1 sits below the BFS ACS distances 7, 10, 12, 16 (k = 1..4), and
                                   the ingredients of Theorem 20.6: index 2, the Schreier generators of Lambda in SL2(Z), two fixed lines
 Standard library only; a few seconds.
@@ -93,6 +94,30 @@ def selftest():
     ok = (det(A) == -1 and mul(A, Ai) == [[1, 0], [0, 1]] and all(det(g) == 1 for g in gens)
           and fixed(S) == [(0, 1)] and fixed(conj) != fixed(S) and diam == [7, 10, 12, 16] and all(d >= lb(k) for k, d in zip(range(1, 5), diam)) and [lb(k) for k in range(1, 8)] == [3, 6, 9, 12, 15, 18, 22])
     line('acs-lower: bound 3, 6, 9, 12 below the ACS distances 7, 10, 12, 16; index 2, Lambda in SL2(Z), two fixed lines', ok)
+    # Theorem 20.6 ingredients: <A, S> mod 3^k is transitive on the primitive states (k = 1..4), and the positive-word
+    # identity |Xs^-1 minus X| = |Xs minus X| on random subsets of the group mod 9
+    ok = True
+    for k in range(1, 5):
+        q = 3 ** k; prim = sum(1 for a in range(q) for b in range(q) if a % 3 or b % 3)
+        reach = bfs(k, 'AS'); ok &= len(reach) == prim == 8 * 9 ** (k - 1)
+    import random
+    rng = random.Random(7); q = 9; G = set(); fr = [((1, 0), (0, 1))]
+    def mm(X, Y): return (((X[0][0]*Y[0][0]+X[0][1]*Y[1][0]) % q, (X[0][0]*Y[0][1]+X[0][1]*Y[1][1]) % q), ((X[1][0]*Y[0][0]+X[1][1]*Y[1][0]) % q, (X[1][0]*Y[0][1]+X[1][1]*Y[1][1]) % q))
+    gA, gS = ((0, 1), (1, 1)), ((1, 0), (3, 1)); G.add(fr[0])
+    while fr:
+        n = []
+        for g in fr:
+            for s_ in (gA, gS):
+                h = mm(g, s_)
+                if h not in G: G.add(h); n.append(h)
+        fr = n
+    inv = {g: next(h for h in G if mm(g, h) == ((1, 0), (0, 1))) for g in (gA, gS)}
+    Gl = sorted(G)
+    for _ in range(20):
+        X = set(rng.sample(Gl, rng.randrange(1, len(Gl))))
+        for s_ in (gA, gS):
+            ok &= len({mm(x, s_) for x in X} - X) == len({mm(x, inv[s_]) for x in X} - X)
+    line('acs-linear: <A, S> transitive on primitive states (k = 1..4); |Xs^-1 - X| = |Xs - X| in <A, S> mod 9', ok)
     print('TOWER MATHEMATICS SELFTEST: %s' % ('PASS' if all(R) else 'FAIL'))
     return all(R)
 

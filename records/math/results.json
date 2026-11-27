@@ -2321,6 +2321,17 @@
    "depends": "MF-42, MF-209",
    "does_not_follow": "an upper bound; that the distance is Theta(k) is paper Theorem 20.6, which enters the register after the Co-Builders' audit of the cited expansion theorem",
    "status": "EXACT"
+  },
+  {
+   "id": "MF-212",
+   "statement": "the largest distance from (2, 5) under {A, C, S} at depth k is Theta(k), at most c*k (paper Theorem 20.6)",
+   "domain": "W_k, every k",
+   "derivation": "expansion of <A, S> cap SL2(Z) mod 3^k (Bourgain and Varju, audited by ChatGPT), transferred to <A, S>; positive-word balls then double to half the group in O(k) steps; ChatGPT and Claude",
+   "tool": "tools/tower_math.py",
+   "check": "acs-linear:",
+   "depends": "MF-42, MF-209, MF-211",
+   "does_not_follow": "an explicit constant c, or the exact distances beyond those computed, 7 to 26 for k = 1 to 7",
+   "status": "EXACT"
   }
  ]
 }

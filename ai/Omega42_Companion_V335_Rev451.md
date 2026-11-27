@@ -3221,6 +3221,8 @@ The review asked also for four things the record already did in part and now doe
 ### 216.1.210 MF-210 (Core Part 0.0.10.210). Does not follow: the distance under any other operation set.
 216.1.211 MF-211 (Core Part 0.0.10.211). Does not follow: an upper bound; that the distance is Theta(k) is paper Theorem 20.6, which enters the register after the Co-Builders' audit of the cited expansion theorem.
 
+### 216.1.212 MF-212 (Core Part 0.0.10.212). Does not follow: an explicit constant c, or the exact distances beyond those computed, 7 to 26 for k = 1 to 7.
+
 ### 216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.
 
 ### 216.2.1 Omega42 is pre-semantic structural mapping. Three positive clarifications distinguish it from neighboring frameworks.
@@ -4236,25 +4238,26 @@ C.1.61 records/nine_zero/compute.py — Nine and zero (Companion Part 39): every
 C.1.62 records/opal/compute.py — the reproducible witness behind CERT-0008.
 C.1.63 records/osl/o30_depth5_check.py — O-30 settled (paper, Theorem 5.7 and Lemma 5.6): six native phases of the aperture a mod 7 separate all 59,049 states of W_5 (Claude, 27 November 2026).
 C.1.64 records/osl/r05_check.py — R-05 check: Claude's review of ChatGPT's R-03 response.
-C.1.65 records/osl/reach_theorem_check.py — Research record R-03 (Claude, 27 November 2026): generative reach at every depth.
-C.1.66 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
-C.1.67 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
-C.1.68 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
-C.1.69 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
-C.1.70 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
-C.1.71 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
-C.1.72 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
-C.1.73 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
-C.1.74 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
-C.1.75 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
-C.1.76 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
-C.1.77 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
-C.1.78 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
-C.1.79 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
-C.1.80 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
-C.1.81 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
-C.1.82 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
-C.1.83 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
+C.1.65 records/osl/r10_check.py — R-10 check: the inverse limit W_inf = Z_3^2 = Z_3[phi] (depth programme D-4).
+C.1.66 records/osl/reach_theorem_check.py — Research record R-03 (Claude, 27 November 2026): generative reach at every depth.
+C.1.67 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
+C.1.68 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
+C.1.69 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
+C.1.70 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
+C.1.71 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
+C.1.72 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
+C.1.73 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
+C.1.74 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
+C.1.75 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
+C.1.76 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
+C.1.77 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
+C.1.78 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
+C.1.79 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
+C.1.80 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
+C.1.81 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
+C.1.82 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
+C.1.83 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
+C.1.84 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
 C.2 The golden navigations (14 October 2026), as issued and frozen: three navigations of the peer questions on the matrix of φ, the discrimination of the canonical orbit and the physical systems, nine further navigations, and the peer review with its disposition. Their computations are C.1 records/golden_navigations/compute.py and compute_further.py.
 C.2.1 records/golden_navigations/00_freeze.txt — the freeze of the golden navigations (14 October 2026).
 C.2.2 records/golden_navigations/01_navigations.txt — the three golden navigations, as issued.
@@ -5490,92 +5493,96 @@ X.4.2 site/assets/doorway.js — website code (doorway.js).
 X.4.3 site/assets/integrity.js — website code (integrity.js).
 X.4.4 site/assets/lexicon.js — website code (lexicon.js).
 X.4.5 site/assets/observatory.js — website code (observatory.js).
-X.4.6 site/assets/playground.js — website code (playground.js).
-X.4.7 site/assets/research-integration.js — website code (research-integration.js).
-X.4.8 site/assets/site.js — website code (site.js).
-X.4.9 site/assets/strike.js — website code (strike.js).
-X.4.10 site/assets/style.css — website code (style.css).
-X.4.11 site/assets/symbols.js — website code (symbols.js).
-X.4.12 site/assets/units.js — website code (units.js).
-X.4.13 site/config.json — the data of site.
-X.4.14 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
-X.4.15 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
-X.4.16 site/layout.html — a page of the website (layout.html).
-X.4.17 site/pages/404.html — a page of the website (404.html).
-X.4.18 site/pages/ambition.html — a page of the website (ambition.html).
-X.4.19 site/pages/aperture.html — a page of the website (aperture.html).
-X.4.20 site/pages/apps.html — a page of the website (apps.html).
-X.4.21 site/pages/arcana.html — a page of the website (arcana.html).
-X.4.22 site/pages/archive-report.html — a page of the website (archive-report.html).
-X.4.23 site/pages/being-human.html — a page of the website (being-human.html).
-X.4.24 site/pages/bulletin.html — a page of the website (bulletin.html).
-X.4.25 site/pages/catalogue.html — a page of the website (catalogue.html).
-X.4.26 site/pages/cobuilder.html — a page of the website (cobuilder.html).
-X.4.27 site/pages/collection.html — a page of the website (collection.html).
-X.4.28 site/pages/community.html — a page of the website (community.html).
-X.4.29 site/pages/companion.html — a page of the website (companion.html).
-X.4.30 site/pages/concordia.html — a page of the website (concordia.html).
-X.4.31 site/pages/consciousness.html — a page of the website (consciousness.html).
-X.4.32 site/pages/construct-x.html — a page of the website (construct-x.html).
-X.4.33 site/pages/core-proposed.html — a page of the website (core-proposed.html).
-X.4.34 site/pages/creative.html — a page of the website (creative.html).
-X.4.35 site/pages/derivations.html — a page of the website (derivations.html).
-X.4.36 site/pages/discovery-register.html — a page of the website (discovery-register.html).
-X.4.37 site/pages/dispatch.html — a page of the website (dispatch.html).
-X.4.38 site/pages/elements.html — a page of the website (elements.html).
-X.4.39 site/pages/enroll.html — a page of the website (enroll.html).
-X.4.40 site/pages/expert-desk.html — a page of the website (expert-desk.html).
-X.4.41 site/pages/explore.html — a page of the website (explore.html).
-X.4.42 site/pages/faq.html — a page of the website (faq.html).
-X.4.43 site/pages/for-ai.html — a page of the website (for-ai.html).
-X.4.44 site/pages/forum.html — a page of the website (forum.html).
-X.4.45 site/pages/geometria.html — a page of the website (geometria.html).
-X.4.46 site/pages/governance.html — a page of the website (governance.html).
-X.4.47 site/pages/history.html — a page of the website (history.html).
-X.4.48 site/pages/hypotheses.html — a page of the website (hypotheses.html).
-X.4.49 site/pages/imagination.html — a page of the website (imagination.html).
-X.4.50 site/pages/index.html — a page of the website (index.html).
-X.4.51 site/pages/innovation.html — a page of the website (innovation.html).
-X.4.52 site/pages/integrity.html — a page of the website (integrity.html).
-X.4.53 site/pages/intelligence.html — a page of the website (intelligence.html).
-X.4.54 site/pages/lexicon.html — a page of the website (lexicon.html).
-X.4.55 site/pages/library.html — a page of the website (library.html).
-X.4.56 site/pages/living-theory.html — a page of the website (living-theory.html).
-X.4.57 site/pages/manual.html — a page of the website (manual.html).
-X.4.58 site/pages/mathematics.html — a page of the website (mathematics.html).
-X.4.59 site/pages/observatory.html — a page of the website (observatory.html).
-X.4.60 site/pages/omegasl.html — a page of the website (omegasl.html).
-X.4.61 site/pages/paper-register.html — a page of the website (paper-register.html).
-X.4.62 site/pages/paper.html — a page of the website (paper.html).
-X.4.63 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
-X.4.64 site/pages/philosophy.html — a page of the website (philosophy.html).
-X.4.65 site/pages/playground.html — a page of the website (playground.html).
-X.4.66 site/pages/prior-art.html — a page of the website (prior-art.html).
-X.4.67 site/pages/protocol.html — a page of the website (protocol.html).
-X.4.68 site/pages/questions.html — a page of the website (questions.html).
-X.4.69 site/pages/record.html — a page of the website (record.html).
-X.4.70 site/pages/research-center.html — a page of the website (research-center.html).
-X.4.71 site/pages/research-development.html — a page of the website (research-development.html).
-X.4.72 site/pages/research-integration.html — a page of the website (research-integration.html).
-X.4.73 site/pages/research.html — a page of the website (research.html).
-X.4.74 site/pages/seven-veils.html — a page of the website (seven-veils.html).
-X.4.75 site/pages/sky.html — a page of the website (sky.html).
-X.4.76 site/pages/solve.html — a page of the website (solve.html).
-X.4.77 site/pages/speculate.html — a page of the website (speculate.html).
-X.4.78 site/pages/strike.html — a page of the website (strike.html).
-X.4.79 site/pages/submit.html — a page of the website (submit.html).
-X.4.80 site/pages/symbols.html — a page of the website (symbols.html).
-X.4.81 site/pages/units.html — a page of the website (units.html).
-X.4.82 site/pages/vision-chatgpt.html — a page of the website (vision-chatgpt.html).
-X.4.83 site/pages/vision-qwen.html — a page of the website (vision-qwen.html).
-X.4.84 site/pages/vision.html — a page of the website (vision.html).
-X.4.85 site/pages/workbench.html — a page of the website (workbench.html).
-X.4.86 site/pages/worlds.html — a page of the website (worlds.html).
-X.4.87 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
-X.4.88 site/test/domains.json — the data of site/test.
-X.4.89 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
-X.4.90 site/test/strike_node.mjs — website code (strike_node.mjs).
-X.4.91 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
+X.4.6 site/assets/omega42-kernel.js — website code (omega42-kernel.js).
+X.4.7 site/assets/playground.js — website code (playground.js).
+X.4.8 site/assets/research-integration.js — website code (research-integration.js).
+X.4.9 site/assets/sentinel.js — website code (sentinel.js).
+X.4.10 site/assets/site.js — website code (site.js).
+X.4.11 site/assets/strike.js — website code (strike.js).
+X.4.12 site/assets/style.css — website code (style.css).
+X.4.13 site/assets/symbols.js — website code (symbols.js).
+X.4.14 site/assets/units.js — website code (units.js).
+X.4.15 site/config.json — the data of site.
+X.4.16 site/construct_x_lab.html — a page of the website (construct_x_lab.html).
+X.4.17 site/construct_x_lab.src.html — a page of the website (construct_x_lab.src.html).
+X.4.18 site/layout.html — a page of the website (layout.html).
+X.4.19 site/pages/404.html — a page of the website (404.html).
+X.4.20 site/pages/ambition.html — a page of the website (ambition.html).
+X.4.21 site/pages/aperture.html — a page of the website (aperture.html).
+X.4.22 site/pages/apps.html — a page of the website (apps.html).
+X.4.23 site/pages/arcana.html — a page of the website (arcana.html).
+X.4.24 site/pages/archive-report.html — a page of the website (archive-report.html).
+X.4.25 site/pages/being-human.html — a page of the website (being-human.html).
+X.4.26 site/pages/bulletin.html — a page of the website (bulletin.html).
+X.4.27 site/pages/catalogue.html — a page of the website (catalogue.html).
+X.4.28 site/pages/cobuilder.html — a page of the website (cobuilder.html).
+X.4.29 site/pages/collection.html — a page of the website (collection.html).
+X.4.30 site/pages/community.html — a page of the website (community.html).
+X.4.31 site/pages/companion.html — a page of the website (companion.html).
+X.4.32 site/pages/concordia.html — a page of the website (concordia.html).
+X.4.33 site/pages/consciousness.html — a page of the website (consciousness.html).
+X.4.34 site/pages/construct-x.html — a page of the website (construct-x.html).
+X.4.35 site/pages/core-proposed.html — a page of the website (core-proposed.html).
+X.4.36 site/pages/creative.html — a page of the website (creative.html).
+X.4.37 site/pages/derivations.html — a page of the website (derivations.html).
+X.4.38 site/pages/discovery-register.html — a page of the website (discovery-register.html).
+X.4.39 site/pages/dispatch.html — a page of the website (dispatch.html).
+X.4.40 site/pages/elements.html — a page of the website (elements.html).
+X.4.41 site/pages/enroll.html — a page of the website (enroll.html).
+X.4.42 site/pages/expert-desk.html — a page of the website (expert-desk.html).
+X.4.43 site/pages/explore.html — a page of the website (explore.html).
+X.4.44 site/pages/faq.html — a page of the website (faq.html).
+X.4.45 site/pages/for-ai.html — a page of the website (for-ai.html).
+X.4.46 site/pages/forum.html — a page of the website (forum.html).
+X.4.47 site/pages/geometria.html — a page of the website (geometria.html).
+X.4.48 site/pages/governance.html — a page of the website (governance.html).
+X.4.49 site/pages/history.html — a page of the website (history.html).
+X.4.50 site/pages/hypotheses.html — a page of the website (hypotheses.html).
+X.4.51 site/pages/imagination.html — a page of the website (imagination.html).
+X.4.52 site/pages/index.html — a page of the website (index.html).
+X.4.53 site/pages/innovation.html — a page of the website (innovation.html).
+X.4.54 site/pages/integrity.html — a page of the website (integrity.html).
+X.4.55 site/pages/intelligence.html — a page of the website (intelligence.html).
+X.4.56 site/pages/lexicon.html — a page of the website (lexicon.html).
+X.4.57 site/pages/library.html — a page of the website (library.html).
+X.4.58 site/pages/living-theory.html — a page of the website (living-theory.html).
+X.4.59 site/pages/manual.html — a page of the website (manual.html).
+X.4.60 site/pages/mathematics.html — a page of the website (mathematics.html).
+X.4.61 site/pages/observatory.html — a page of the website (observatory.html).
+X.4.62 site/pages/omegasl.html — a page of the website (omegasl.html).
+X.4.63 site/pages/paper-register.html — a page of the website (paper-register.html).
+X.4.64 site/pages/paper.html — a page of the website (paper.html).
+X.4.65 site/pages/philosophy-journey.html — a page of the website (philosophy-journey.html).
+X.4.66 site/pages/philosophy.html — a page of the website (philosophy.html).
+X.4.67 site/pages/playground.html — a page of the website (playground.html).
+X.4.68 site/pages/prior-art.html — a page of the website (prior-art.html).
+X.4.69 site/pages/protocol.html — a page of the website (protocol.html).
+X.4.70 site/pages/questions.html — a page of the website (questions.html).
+X.4.71 site/pages/record.html — a page of the website (record.html).
+X.4.72 site/pages/research-center.html — a page of the website (research-center.html).
+X.4.73 site/pages/research-development.html — a page of the website (research-development.html).
+X.4.74 site/pages/research-integration.html — a page of the website (research-integration.html).
+X.4.75 site/pages/research.html — a page of the website (research.html).
+X.4.76 site/pages/sentinel.html — a page of the website (sentinel.html).
+X.4.77 site/pages/seven-veils.html — a page of the website (seven-veils.html).
+X.4.78 site/pages/sky.html — a page of the website (sky.html).
+X.4.79 site/pages/solve.html — a page of the website (solve.html).
+X.4.80 site/pages/speculate.html — a page of the website (speculate.html).
+X.4.81 site/pages/strike.html — a page of the website (strike.html).
+X.4.82 site/pages/submit.html — a page of the website (submit.html).
+X.4.83 site/pages/symbols.html — a page of the website (symbols.html).
+X.4.84 site/pages/tower-frontier.html — a page of the website (tower-frontier.html).
+X.4.85 site/pages/units.html — a page of the website (units.html).
+X.4.86 site/pages/vision-chatgpt.html — a page of the website (vision-chatgpt.html).
+X.4.87 site/pages/vision-qwen.html — a page of the website (vision-qwen.html).
+X.4.88 site/pages/vision.html — a page of the website (vision.html).
+X.4.89 site/pages/workbench.html — a page of the website (workbench.html).
+X.4.90 site/pages/worlds.html — a page of the website (worlds.html).
+X.4.91 site/py/strike.py — strike.py -- the free Strike app's computation (site/strike.html). Runs the unchanged reference script.
+X.4.92 site/test/domains.json — the data of site/test.
+X.4.93 site/test/strike_cpython.py — Prints the Strike app's output for the test domains under CPython (compared with Pyodide in site-check.yml).
+X.4.94 site/test/strike_node.mjs — website code (strike_node.mjs).
+X.4.95 site/test/units_check.py — Independent check of the converter's unit table (records/units/units.json).
 X.5 The research areas: the page of each open area of the network.
 X.5.1 research/ai-safety-and-sovereignty/README.md — AI safety and sovereignty.
 X.5.2 research/arts-music-and-literature/README.md — Arts, music and literature.
