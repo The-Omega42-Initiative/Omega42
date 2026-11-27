@@ -54,16 +54,16 @@
     {
       "id": "W08",
       "directive": "Multilingual experience",
-      "page": "",
-      "source": "",
-      "status": "OUTSTANDING"
+      "page": "international",
+      "source": "site/pages/international.html",
+      "status": "PARTIAL"
     },
     {
       "id": "W09",
       "directive": "Research services",
-      "page": "",
-      "source": "",
-      "status": "OUTSTANDING"
+      "page": "intelligence",
+      "source": "site/pages/intelligence.html",
+      "status": "PARTIAL"
     },
     {
       "id": "W10",
