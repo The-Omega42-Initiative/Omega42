@@ -177,6 +177,7 @@ def build(out, repo):
     if os.path.exists(regp):
         rr = json.load(open(regp, encoding='utf-8'))['results']; e = lambda x: html.escape(str(x or '—'))
         subs['{{REGISTER_COUNT}}'] = str(len(rr))
+        subs['{{LATEST_MATH_BODY}}'] = ''.join('<article class="panel"><h3><a href="paper-register.html#%s">%s</a> · %s</h3><p>%s</p></article>' % (e(x['id'].lower()), e(x['id']), e(x['status']), e(x['statement'])) for x in reversed(rr[-6:]))
         subs['{{REGISTER_FULL}}'] = ''.join(
             '<article class="mf" id="%s"><h3><a href="#%s">%s</a> <span class="cbs s-%s">%s</span></h3><p class="mf-st">%s</p><dl>'
             '<dt>Derivation</dt><dd>%s</dd><dt>Domain</dt><dd>%s</dd><dt>Depends on</dt><dd>%s</dd><dt>Recompute</dt><dd><code>%s</code></dd>'
