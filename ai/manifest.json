@@ -2,14 +2,14 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1354457,
-   "tokens_est": 338615,
-   "sha256": "be237c6687c0cb504ba50c58ee9dfd913f55d05bafe828a369e76d6e311c214b"
+   "chars": 1354776,
+   "tokens_est": 338694,
+   "sha256": "2e2993de7ed49255df5d0814b206813d8c538192dcc0b229442a274546d03e2d"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2044022,
-   "tokens_est": 511006,
-   "sha256": "5a68e499898b17d8b52d987d38670c9237bd365aa9f86f993aac63dd8fcdffe5"
+   "chars": 2044182,
+   "tokens_est": 511046,
+   "sha256": "f6d6ee01de1b8ace170a0a57a43610081904c4ad5092401c165a315ce22ccdf6"
   },
   "Omega42_Navigator_Pack.md": {
    "chars": 479288,
@@ -1076,9 +1076,9 @@
   {
    "doc": "Core",
    "heading": "5.2 Key Constitutional Laws",
-   "chars": 192172,
-   "tokens_est": 48043,
-   "sha256": "de5ac2ff72639db45e9b863e46bb139fc070df6478a62f8edcccac768abf72fa"
+   "chars": 192491,
+   "tokens_est": 48123,
+   "sha256": "6fb7480d60bd5966856ce281d2a8ad4f69d38b7ef85aabe6b88e2f6e38460366"
   },
   {
    "doc": "Core",
@@ -5437,9 +5437,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
-   "chars": 197069,
-   "tokens_est": 49267,
-   "sha256": "a7d888815e03b48b1d9bb5dba6a60419b5c5f5c0ab171a859d0a512db0d39dfd"
+   "chars": 197229,
+   "tokens_est": 49307,
+   "sha256": "7ab90d8abaec9ab704f720f48335d7cfe611049800aa27465fd9abb0156c70a1"
   }
  ]
 }
