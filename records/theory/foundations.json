@@ -1,0 +1,53 @@
+{
+ "_about": "The mathematical foundations of the Living Theory of Existence: for each territory, the exact results a chapter may cite, by register number. Statements, statuses and recompute commands are read from records/math/results.json by tools/theory_foundations.py, never copied by hand. A reading built on a result is marked GENERATED-Omega42 (Core L-551 (5)); a correspondence with the observable world is PENDING, FOR APPLICATION (L-490).",
+ "territories": [
+  {"name": "Origin", "question": "Why does existence possess structure?",
+   "cites": [
+    {"mf": "MF-01", "role": "the 81 states are the ring Z[phi]/9, the law is multiplication by phi"},
+    {"mf": "MF-02", "role": "the norm N(a + b phi) = a^2 + ab - b^2, the invariant that tells the orbits apart"},
+    {"mf": "MF-10", "role": "the five orbits carry the only invariant measures: the structure has exactly five sectors"},
+    {"ref": "Companion 130.2 and 131.2", "tool": "records/necessity/nine.py", "role": "the premise's two numbers, the 24-cycle and the 81 states, force the arithmetic Z/9"}
+   ]},
+  {"name": "Time", "question": "How do succession, recurrence and direction arise?",
+   "cites": [
+    {"mf": "MF-11", "role": "the law's generator has spectrum k(2 pi/24), k = -11 to 12: time in 24 steps"},
+    {"mf": "MF-204", "role": "the half turn A^12 = -I: every state meets its negative at mid-cycle"},
+    {"mf": "MF-198", "role": "at each finer depth every moving orbit lifts to three orbits three times as long: the cycle deepens without changing its law"},
+    {"mf": "MF-13", "role": "a coarse entropy is constant for a kept partition and returns with period 12 otherwise"}
+   ]},
+  {"name": "The Infinite Tower", "question": "Can complexity grow without changing the law?",
+   "cites": [
+    {"mf": "MF-31", "role": "the worlds mod 3^m number (3^m + 1)/2, labeled by the norm"},
+    {"mf": "MF-32", "role": "each world embeds in the next, with its law, by s -> 3s"},
+    {"mf": "MF-42", "role": "the law and the shear generate exactly the group of determinant +-1 over <A mod 3>, at every depth"},
+    {"mf": "MF-195", "role": "the harmonic multiplicities of the law's shift"},
+    {"mf": "MF-201", "role": "the counting bound for observation at every depth"}
+   ]},
+  {"name": "Observation", "question": "How much must be seen to know a state?",
+   "cites": [
+    {"mf": "MF-193", "role": "three seven-symbol readings separate the 81 states, and two never can"},
+    {"mf": "MF-194", "role": "the native aperture a mod 7 resolves 7, 49, 73, 77, 80 and 81 states in turn"},
+    {"mf": "MF-202", "role": "fixed native teams reach the bound at depths 2 to 4"},
+    {"mf": "MF-207", "role": "and at depth 5, with six readings"},
+    {"mf": "MF-208", "role": "at depth 6 eight readings suffice; whether seven do is open"}
+   ]},
+  {"name": "Generation", "question": "How much diversity arises from few operations, and how fast is it reached?",
+   "cites": [
+    {"mf": "MF-35", "role": "every primitive state generates the whole; the units act freely and transitively"},
+    {"mf": "MF-209", "role": "exactly three sets of the four native operations reach every state, at every depth"},
+    {"mf": "MF-210", "role": "with doubling the farthest state is 2*3^k - 2 steps away: the world is exponentially wide"},
+    {"mf": "MF-211", "role": "with the shear at least about 3.17k steps are needed; paper Theorem 20.6 (awaiting audit) gives at most c*k"}
+   ]},
+  {"name": "Space", "question": "How does geometry emerge from relationships?",
+   "cites": [
+    {"mf": "MF-05", "role": "the Hermitian matrices over Z[phi]/9 form a 3 + 1 space with an interval"},
+    {"mf": "MF-06", "role": "the law keeps that interval, mod 9 and mod 81"},
+    {"mf": "MF-07", "role": "its identification with the real Lorentz group is conditional on AP-SPACE"},
+    {"mf": "MF-15", "role": "the boost of rapidity 2 ln phi, conditional on AP-SPACE"}
+   ]}
+ ],
+ "not_yet": [
+  {"name": "Matter, Energy", "note": "register readings exist (MF-60 and others) but rest on AP-SPACE; the chapters are written as GENERATED-Omega42 readings until an exact ground is found"},
+  {"name": "Life, Consciousness, Intelligence (as experience), Meaning", "note": "no register entry yet; the chapters are interpretation, marked GENERATED-Omega42, and may cite the Observation and Generation results as their mathematical analogues"}
+ ]
+}
