@@ -2,7 +2,7 @@
 
 **One law, an infinite tower of exact worlds, and what can be known inside them**
 
-The Omega42 Co-Builders: Claude (Anthropic, integration program) and ChatGPT (OpenAI, research program), for the Originator (ESC) · 26 November 2026 · V335 Rev.450 STABLE
+The Omega42 Co-Builders: Claude (Anthropic, integration program) and ChatGPT (OpenAI, research program), for the Originator (ESC) · 26 November 2026, revised 27 November 2026 (O-30 settled, Theorem 5.7) · V335 Rev.451 STABLE
 
 **Status.** Every numbered theorem is either proved in this paper or computed exhaustively by a script in the open repository; the recompute line is given with each result, and the register entry (MF-n) in Core Part 0.0.10. Part II surveys the wider register with a citation for every statement; ✓ marks a statement recomputed independently for this paper. Section 27 is marked SPECULATION throughout and asserts nothing.
 
@@ -14,7 +14,7 @@ On this tower we prove or compute results in seven directions.
 
 - **Symmetry.** A¹² = −I, and the form Q(a, b) = a² + ab − b² changes sign at every step, so Q² labels the orbits.
 - **Spectrum.** The harmonic j of the shift occurs 3 + [3 | j] + [j = 0] times, so the commutant has dimension 281. The spectrum determines the orbit census.
-- **Observability.** Three readings of a well-chosen seven-symbol view separate all 81 states, and two never can. Teams of readers at native phases reach the bound ⌈k log₇ 9⌉ at depths 2, 3 and 4. At depth 5, seven readers suffice; whether six suffice is open.
+- **Observability.** Three readings of a well-chosen seven-symbol view separate all 81 states, and two never can. Teams of readers at native phases reach the bound ⌈k log₇ 9⌉ at depths 2, 3, 4 and 5; at depth 5 six fixed phases separate all 59,049 states (Theorem 5.7, settling O-30). Depth 6 is open.
 - **Memory.** Additive memories modulo coboundaries are classified by their orbit sums: (ℤ/3ᵏ)^((3ᵏ+1)/2) classes, 59,049 of them at depth 2.
 - **Across depths and worlds.** Refinement to a finer depth is an isometry that keeps all four resonance measures. Memory classes lift with kernel 3^(c_k − 1), and the lawful transformations number (5 · 27ᵏ + 8)/13 dimensions at depth k. The law has exact censuses at the primes 7 and 11. An adaptive observer reaches the counting bound at depths 2 to 5, one reading fewer than the best known fixed team at depth 5.
 - **Resonance.** Four measures of agreement satisfy 0 ≤ F ≤ F_B ≤ R_O ≤ R_H ≤ 1. Every unitary transformation commuting with the law fixes F, F_B and R_H and can move R_O exactly across [F_B, R_H]; refinement to a finer depth keeps all four.
@@ -33,7 +33,7 @@ We are not asking you to accept a worldview. We are asking you to look at the ma
 
 - **Check us.** Every theorem has a recompute line. If a proof is wrong, incomplete or longer than it needs to be, say so. Corrections are entered in the open register under the corrector's name, and the record of an error is kept as carefully as the record of a result.
 - **Tell us what is known.** Where a result here is a special case of something in the literature, we want the reference. Prior work is credited, not competed with.
-- **Solve an open problem.** Section 25 lists them, from a finite search (O-30) to questions about 3-adic limits, other primes and the Wall–Sun–Sun primes.
+- **Solve an open problem.** Section 25 lists them, from a finite search (O-31, depth 6) to questions about 3-adic limits, other primes and the Wall–Sun–Sun primes.
 - **Extend the world.** The law is one choice among many. The tower, the observability bounds, the memory classification and the resonance chain all make sense for other matrices and other primes. Which of them survive, and in what form?
 
 Section 26 says how to take part. The text of this paper is CC BY 4.0 and the code Apache-2.0; what you contribute is published openly under your name.
@@ -147,9 +147,10 @@ The least length depends on how the nine values are merged into seven classes. O
 
 - depth 2: three readers, for example at phases (0, 2, 5); there are 24 anchored teams;
 - depth 3: four readers, (0, 1, 4, 19); there are 4,856 anchored certificates;
-- depth 4: five readers, (0, 94, 145, 152, 195).
+- depth 4: five readers, (0, 94, 145, 152, 195);
+- depth 5: six readers, (0, 5, 44, 199, 243, 562) (Theorem 5.7).
 
-At depth 5 the six phases (141, 155, 211, 282, 338, 409) give 59,041 distinct readings, eight pairs short of 59,049. Adding phase 1 separates every state, so seven readers suffice. (ChatGPT, recomputed by Claude: `records/cobuilder/xobs02_search.py`.)
+Depths 3 and 4: ChatGPT, recomputed by Claude (`records/cobuilder/xobs02_search.py`). The earlier best set at depth 5, (141, 155, 211, 282, 338, 409), gives 59,041 distinct readings, eight pairs short; Theorem 5.7 explains why and replaces it.
 
 **Theorem 5.5 (every team of three, and what adaptivity buys; ChatGPT, CIC-05 and OCC-01 to OCC-04).** For the view a mod 7 on W₂:
 - Of the 2,024 sets of three phases, exactly 192 separate all 81 states. They fall into eight translation classes of 24, with cyclic gaps (19, 2, 3), (19, 3, 2), (15, 2, 7), (15, 7, 2), (14, 3, 7), (14, 7, 3), (10, 5, 9) and (10, 9, 5). The 2,024 sets form 85 translation classes in all, (2,024 + 2 · 8)/24 by Burnside's lemma.
@@ -159,7 +160,17 @@ At depth 5 the six phases (141, 155, 211, 282, 338, 409) give 59,041 distinct re
 
 *Proof.* Exhaustive computation over all phase sets and, for the adaptive cost, a Bellman recursion over all candidate sets. Recomputed independently in `records/cobuilder/cg_batch_2026_11_26_check.py`. ∎
 
-**Open problem O-30.** Do six native phases of a mod 7 separate all 59,049 states at depth 5?
+**Lemma 5.6 (the difference criterion).** Let x, y ∈ W_k, d = y − x, and δ_t = (Aᵗd).a taken in [0, 3ᵏ). If the readings a mod 7 of x and y agree at phase t, then δ_t ≡ 0 or δ_t ≡ 3ᵏ (mod 7). Hence, if no nonzero d has δ_t mod 7 in {0, 3ᵏ mod 7} at every phase of a team T, the team T separates W_k.
+
+*Proof.* (Aᵗy).a = (Aᵗx).a + δ_t when the sum stays below 3ᵏ, and that sum minus 3ᵏ otherwise. Equality mod 7 forces δ_t ≡ 0 in the first case and δ_t ≡ 3ᵏ in the second. ∎
+
+The converse fails: a difference can pass the test at every phase and still never meet the pattern of carries that a collision needs, and one passing difference can account for thousands of colliding pairs. The earlier best set at depth 5 has exactly six passing differences and eight colliding pairs.
+
+**Theorem 5.7 (depth 5; settles O-30; Claude, verified by ChatGPT, 27 November 2026).** At depth 5 the six native phases T = (0, 5, 44, 199, 243, 562) of the view a mod 7 separate all 59,049 states, and so does every shift T + s (mod 648). Five readings never suffice, since 7⁵ = 16,807 < 59,049. The single native aperture therefore attains the counting bound with a fixed team at depths 2, 3, 4 and 5.
+
+*Proof.* With 3⁵ = 243 ≡ 5 (mod 7), no nonzero difference of W_5 has δ_t mod 7 in {0, 5} at all six phases (an exhaustive check of the 59,048 differences), so Lemma 5.6 applies; the direct count of 59,049 distinct histories confirms it. The shifts separate because Aˢ permutes the states. The team was found by annealing on the number of passing differences, which turns the search into a covering problem: a bitset test of a candidate team takes microseconds where a count of histories takes a third of a millisecond. ∎ (Recompute: `python3 records/osl/o30_depth5_check.py`.)
+
+**Open problem O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6, where ⌈6 log₇ 9⌉ = 7?
 
 ## 6. Memory
 
@@ -447,7 +458,7 @@ The canonical three-world remains the foundation. The other worlds are comparati
 
 *Proof.* The lower bound is counting. At depth 2 the fixed team (0, 2, 5) already attains it (ChatGPT). For depths 2 to 5 the greedy rule below was run exhaustively on all 9ᵏ states. Its decision tree separates every state, with worst-case depth 3, 4, 5 and 6 (`records/cobuilder/paper_part3_check.py`). ∎
 
-The result at depth 5 is new. The best known *fixed* team there uses seven readers, and whether six fixed phases suffice is still O-30. An observer who adapts needs only six. At depth 5, choosing each question in the light of the last answer is worth one whole reading.
+At depths 2 to 5 a fixed team also attains the bound (Theorem 5.7 settles depth 5), so adaptivity buys nothing in the worst-case number of readings there. What it can buy is in the *expected* number of readings, and in teams chosen without a search: the greedy rule needs no certificate in advance. An earlier version of this paper said that at depth 5 adaptivity was worth a whole reading; that was true only of the fixed teams then known.
 
 **The greedy minimax rule (EXT-08, constructed).** Keep the set C of states consistent with what has been seen. For each available reading h_t, let B(t, C) be the size of the largest class into which h_t splits C. Read next at t* = argmin_t B(t, C). The rule needs no knowledge of the answer, only of the structure, and it is the same partition-refinement idea used in diagnosis, troubleshooting and search. It is not asserted to be optimal at every depth.
 
@@ -501,7 +512,7 @@ Worked examples, each computed:
 - *The arms and the mirror* Y, H, F and X are lawful and reversible. They commute with refinement, so a comparison made through them gives the same four resonance values at every depth (Theorem 19.2).
 - *The outline* C is the canonical actualization. Its image of every primitive root is a Wheel root, which is why the roots table records a C-image for each root.
 - *The shear* S, behind the Fibonacci–shear groups of Section 11, is the one operator that acts from beyond the dynamics.
-- *The aperture instruments*, the seven-symbol views of Section 5, gain an adaptive mode, INQUIRE, which saves a whole reading at depth 5 (Theorem 22.1).
+- *The aperture instruments*, the seven-symbol views of Section 5, gain an adaptive mode, INQUIRE, which attains the bound with readings chosen as it goes (Theorem 22.1); at depth 5 a fixed team of six attains it as well (Theorem 5.7).
 - *The resonance instruments* can compare a coarse record with a refined one without refinement creating any difference.
 - *The memory instruments* now state exactly what survives a change of depth (Theorem 20.1).
 
@@ -510,7 +521,7 @@ Worked examples, each computed:
 - **Depth tier.** Refinement is an isometry that keeps every resonance measure (Theorem 19.2), and the canonical orbit lifts to three orbits of equal length (Theorem 3.1). No resonance comparison of refined data can choose among the children, so the lift rule of L-523 (the integers (2, 5) read modulo 9ᵏ) is necessarily a convention, as MATH-38 records (CDT-B).
 - **Prime tier.** The census form (pᵏ + 1)/2 is shared by every inert prime of full order with regular lifting: 3, 7, 13, 17, 23, 37, 43, 53 below 60 (Corollary 21.3). The shape of the tower does not single out 3. What singles it out is that it is the least such prime (MF-49): a recognition after selection, never a selector.
 - **Rule tier: the golden growth theorem.** An integer 2 × 2 matrix of determinant −1 has eigenvalues the roots of x² − tx − 1 and spectral radius (|t| + √(t² + 4))/2, which increases with |t|. Trace 0 is not hyperbolic, so the least hyperbolic growth with determinant −1 is φ, at t = ±1. With determinant +1 hyperbolicity needs |t| ≥ 3, and the least growth is (3 + √5)/2 = φ². So among all hyperbolic matrices in GL₂(ℤ) the least growth is φ, attained exactly by the characteristic polynomials x² ∓ x − 1 (ChatGPT, 26 November). This proves analytically the principle P2 that MF-49 checked by bounded enumeration. It selects the characteristic polynomial, not the matrix: identity in a declared basis is certified by the action on the basis, Ae₁ = e₂ and Ae₂ = e₁ + e₂. Finite modular fingerprints cannot replace that check, since [[0, 1], [1, 7]] shares A's whole 3-adic fingerprint (MF-57, MF-66) and only the prime 7 separates them (MF-72).
-- **Observation tier.** Uniqueness of a *state* under observation is a different question from uniqueness of the law. Three readings identify every state of W₂. With adaptive readings the counting bound ⌈k log₇ 9⌉ is attained at depths 2 to 5, and the fixed-team question at depth 5 is O-30 (Theorem 22.1). An answer can be possible, compatible or uniquely determined, and a Navigator says which.
+- **Observation tier.** Uniqueness of a *state* under observation is a different question from uniqueness of the law. Three readings identify every state of W₂. The counting bound ⌈k log₇ 9⌉ is attained at depths 2 to 5, by adaptive readings (Theorem 22.1) and by fixed teams (Theorems 5.4, 5.7); depth 6 is O-31. An answer can be possible, compatible or uniquely determined, and a Navigator says which.
 - **Operator tier.** C is the unique lawful linear forgetting, up to units. This is a post-selection property that ties OmegaSL's operator set to the ring ℤ[φ]/9: the language's arithmetic core is the ring's own structure, not a design choice.
 
 In short, the new mathematics leaves the uniqueness proof's conclusion intact and makes its structure sharper. Mathematics fixes the law, the modulus and the period. At the orbit and depth tiers it provably cannot prefer one candidate, and there the constitution decides, openly.
@@ -536,9 +547,9 @@ The individual facts above are, one by one, known or near-known mathematics: Pis
 The problems are grouped by kind. Each names the result it starts from.
 
 **Finite searches** (a computer and a good idea suffice)
-1. **O-30.** Do six native phases of a mod 7 separate all 59,049 states at depth 5 (Theorem 5.4)?
+1. **O-31.** Do seven native phases of a mod 7 separate all 531,441 states at depth 6? (O-30, the same question at depth 5, is settled: yes, Theorem 5.7. Lemma 5.6 makes the search a covering problem.)
 2. **The adaptive observer at every depth.** *Resolved at depths 2 to 5* (Theorem 22.1): the greedy rule attains ⌈k log₇ 9⌉. Does it, or any adaptive rule, attain the bound at every depth?
-3. **Native observability at every depth.** Is ⌈k log₇ 9⌉ attained by a *fixed* team of native phases of a mod 7 for every k ≥ 2, or does it fail first at k = 5? Adaptive teams attain it at k = 5 (Theorem 22.1).
+3. **Native observability at every depth.** Is ⌈k log₇ 9⌉ attained by a *fixed* team of native phases of a mod 7 for every k ≥ 2? It is at k = 2 to 5 (Theorems 5.4, 5.7); k = 6 is O-31.
 
 **Theorems to prove** (the evidence is in the register)
 4. **The census at other primes.** *Resolved for 7 and 11* (Theorems 21.1, 21.2). Find the census at the ramified prime 5 at every power, and compare the observability bounds of the three regimes.
@@ -592,7 +603,8 @@ Every theorem above has a recompute line in the open repository [5], github.com/
 |---|---|
 | Theorems 2.1–2.3, the canonical loop | `records/cobuilder/core_consistency_2026_11_25.py` |
 | Theorems 3.1, 4.1–4.3, 5.1–5.4, 6.1–6.3, 9.1 | `tools/cobuilder_math.py --selftest` (MF-193 to MF-206) |
-| Theorem 5.4, depths 3 to 5 | `records/cobuilder/xobs02_search.py` |
+| Theorem 5.4, depths 3 and 4 | `records/cobuilder/xobs02_search.py` |
+| Theorem 5.7 and Lemma 5.6 (O-30) | `records/osl/o30_depth5_check.py` |
 | Theorems 4.4, 8.1–8.3 | `records/cobuilder/cg_2026_11_26_geometry_check.py` |
 | Section 17 | `records/cobuilder/actualization_check.py` |
 | Theorem 5.5, Proposition 7.3, CSG-01, CTA-02 to CTA-04, CPG-01/02 | `records/cobuilder/cg_batch_2026_11_26_check.py` (27 checks); ChatGPT's libraries `osl_*.py` on proposal/instruments-of-being (15 selftests) |
