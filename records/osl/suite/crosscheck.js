@@ -1,6 +1,8 @@
-/* Independent cross-check of the Research Suite kernel (proposal/research-suite-v1) against records/osl/suite/omega42-suite.js.
-   Run: node records/osl/suite/crosscheck.js <path to site/assets>. Exits after printing the number of checks and disagreements. */
-const C=require(process.argv[2]+'/research-suite-kernel.js'),M=require('./omega42-suite.js'),K=require(process.argv[2]+'/omega42-kernel.js');let n=0,bad=[];
+/* Independent cross-check of the Research Suite: ChatGPT's kernel (site/assets/research-suite-kernel.js) against Claude's
+   reference kernel (site/assets/research-suite-reference.js), with negative controls that must fail (CIVP, proposed).
+   Run: node records/osl/suite/crosscheck.js [site/assets]. Exits 0 only with no disagreement. */
+const A=require('path').resolve(process.argv[2]||'site/assets');
+const C=require(A+'/research-suite-kernel.js'),M=require(A+'/research-suite-reference.js'),K=require(A+'/omega42-kernel.js');let n=0,bad=[];
 const eq=(a,b,w)=>{n++;if(JSON.stringify(a)!==JSON.stringify(b))bad.push(w+': '+JSON.stringify(a)+' vs '+JSON.stringify(b))};
 // memory
 for(let k=1;k<=8;k++)for(let w=0;w<3**k;w+=Math.max(1,Math.floor(3**k/40)))for(let j=0;j<=6;j++){const c=C.memory(k,w,j),m=M.trajectory(w,0,k,j).rows[j];eq(c.moving,String(m.moving),'moving '+k+','+w+','+j);eq(c.extinction,M.extinctionDepth(w,k),'ext '+k+','+w)}
@@ -15,7 +17,14 @@ for(let k=1;k<=3;k++){for(let a=0;a<3**k;a++)for(let b=0;b<3**k;b++){if(!a&&!b)c
 for(let k=1;k<=4;k++)for(let r=0;r<4*3**(k-1);r++){eq(C.schedule(k,r).covered,9**k,'cover');eq(C.schedule(k,r).direction,M.round(k,r).direction,'dir')}
 // navigation
 for(let k=1;k<=5;k++)for(const o of ['AC','ACS','AVC','AVCS','AS','AV']){const c=C.navigation(k,o,1,1),m=M.navigate(o,k,[1,1]);eq([c.reached,c.eccentricityOfReached,c.targetDistance],[m.reached,m.eccentricity,m.route?m.route.length:-1],'nav '+k+o)}
-// discover closure: is it a real test?
-const xx=[2,5];let manual=xx;for(let i=0;i<24;i++)manual=K.step(manual,9);
-console.log('A^24 by stepping on W_2:',manual,'| kernel power(x,24):',K.power(xx,24,2),'| power(x,25) vs power(x,1):',K.power(xx,25,2),K.power(xx,1,2));
-console.log('checks',n,'disagreements',bad.length);bad.slice(0,8).forEach(b=>console.log(b));
+// adaptor composition: both kernels, every triple of lengths 1..30
+for(let a=1;a<=30;a++)for(let b=1;b<=30;b++)for(let c=1;c<=30;c++){const x=C.compose(a,b,c),y=M.compose(a,b,c);eq([x.L,x.composite,x.bound,x.withinBound],[y.lipschitz,y.composite,y.bound,true],'compose '+a+','+b+','+c)}
+// memory still point: 3^j s and the reduced invariant s/3^k
+for(let k=1;k<=6;k++)for(let s=0;s<3**k;s+=Math.max(1,Math.floor(3**k/20)))for(let j=0;j<=5;j++){const x=C.memory(k,0,j,s),y=M.trajectory(0,s,k,j).rows[j];eq([x.stillValue,s?x.stillFraction:'0'],[String(y.still),y.invariant],'still '+k+','+s+','+j)}
+// negative controls: each must fail
+const neg=[['false closure period 23',C.discover(2,23).closureViolations>0],['seven readings do not separate W_6',!M.partition([0,10,1346,716,147,1005,1218],6).separates],
+ ['24 -> 7 is no factor',!C.adaptor(24,7).factor&&M.defect(24,7).defect>0],['AV does not generate W_2',!M.navigate('AV',2).generates],['truncated observer does not attain',!M.adaptive(4,3).attains],
+ ['incomplete completion has no mean',M.complete([0,1],2,[2]).mean===null]];
+neg.forEach(([w,ok])=>{n++;if(!ok)bad.push('negative control did not fail: '+w)});
+const closure=(x,P)=>{let z=x;for(let i=0;i<P;i++)z=K.step(z,9);return z.join()===x.join()};n++;if(!(closure([2,5],24)&&!closure([2,5],23)))bad.push('stepped closure');
+console.log('RESEARCH SUITE CROSS-CHECK: '+n+' checks, '+bad.length+' disagreements: '+(bad.length?'FAIL':'PASS'));bad.slice(0,8).forEach(b=>console.log(b));process.exit(bad.length?1:0);

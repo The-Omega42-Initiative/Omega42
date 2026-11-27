@@ -1,4 +1,4 @@
-/* Omega42 Research Suite kernel, version 1 (27 November 2026). Claude, Mathematical Research and Statistics.
+/* Omega42 Research Suite reference kernel, version 2 (27 November 2026). Claude, Mathematical Research and Statistics.
  *
  * The shared mathematics behind the eight instruments of the Research Suite (site/pages/research-suite.html), each
  * function named by the OmegaSL operation it implements and by the register entry it computes. Integers only; no
@@ -13,7 +13,7 @@
   else root.Omega42Suite = factory();
 }(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
-  var VERSION = '1';
+  var VERSION = '2';
   var mod = function (n, q) { return ((n % q) + q) % q; };
   function depth(k, lo, hi) { if (!(k === Math.floor(k) && k >= lo && k <= hi)) throw new RangeError('depth must be ' + lo + '..' + hi); return Math.pow(3, k); }
   function order(k) { return 8 * Math.pow(3, k - 1); }
@@ -65,7 +65,7 @@
     var amb = 0, unresolved = 0, extra = 0, used = {};
     for (var c3 = 0; c3 < L.classes; c3++) if (cnt[c3] > 1) { amb++; extra += cnt[c3]; if (chosen[c3] < 0) unresolved++; else used[chosen[c3]] = (used[chosen[c3]] || 0) + 1; }
     return { ambiguous: amb, unresolved: unresolved, completionPhases: used, distinctPhases: Object.keys(used).length,
-             mean: (phases.length * n + extra) / n, worst: phases.length + (amb ? 1 : 0) };
+             mean: unresolved ? null : (phases.length * n + extra) / n, worst: unresolved ? null : phases.length + (amb ? 1 : 0) };
   }
   /* The adaptive greedy observer (MF-217): each class takes the phase whose readings leave its largest part smallest. */
   function adaptive(k, maxRounds) {
@@ -84,7 +84,8 @@
       for (var i3 = 0; i3 < n; i3++) { var key = lab[i3] * 7 + R[bp[lab[i3]]][i3], v = map.get(key); if (v === undefined) { v = map.size; map.set(key, v); } nl[i3] = v; }
       lab = nl; C = map.size; rounds++;
     }
-    return { readings: rounds, bound: bound(k), attains: rounds === bound(k), largestClassAfterEachReading: trace };
+    var separated = trace[trace.length - 1] <= 1;
+    return { readings: rounds, separated: separated, bound: bound(k), attains: separated && rounds === bound(k), largestClassAfterEachReading: trace };
   }
   /* Separation descent (Lemma 5.9): a team that separates W_k separates W_(k-1) with the same phases mod N_(k-1). */
   function descend(phases, k) {
@@ -106,9 +107,10 @@
   function invariant(s, k) { var q = Math.pow(3, k); s = mod(s, q); var d = gcd(s, q) || q; return { num: s / d, den: q / d, text: s === 0 ? '0' : (s / d) + '/' + (q / d) }; }
   /* The trajectory of one moving sum W and the still value s over a number of lifts, by the laws of Proposition 20.11. */
   function trajectory(W, s, k, lifts) {
-    if (!(k >= 1 && lifts >= 0 && k + lifts <= 16)) throw new RangeError("depth plus lifts must be at most 16");
+    if (!(k >= 1 && lifts >= 0 && k + lifts <= 33)) throw new RangeError('depth plus lifts must be at most 33, so that 3^(k+j) < 2^53');
     var rows = [];
-    for (var j = 0; j <= lifts; j++) { var q = Math.pow(3, k + j), w = mod(Math.pow(9, j) % q * mod(W, Math.pow(3, k)), q), sv = mod(Math.pow(3, j) * mod(s, Math.pow(3, k)), q);
+    var W0 = BigInt(mod(W, Math.pow(3, k))), s0 = BigInt(mod(s, Math.pow(3, k)));
+    for (var j = 0; j <= lifts; j++) { var qb = 3n ** BigInt(k + j), w = Number((9n ** BigInt(j) * W0) % qb), sv = Number((3n ** BigInt(j) * s0) % qb);
       rows.push({ lift: j, depth: k + j, moving: w, still: sv, invariant: invariant(sv, k + j).text }); }
     return { rows: rows, extinction: extinctionDepth(W, k), invariant: invariant(s, k).text };
   }
@@ -175,11 +177,16 @@
   /* The adaptor E(t) = t mod n from the native cycle Z/N (T: t -> t+1) to Z/n (U: s -> s+1): its defect
      max_t d(E(Tt), U(E t)) in the circular metric, and the number of phases where it is nonzero. */
   function defect(N, n) { var worst = 0, bad = 0; for (var t = 0; t < N; t++) { var d = circ(((t + 1) % N) % n - ((t % n) + 1), n); if (d) { bad++; if (d > worst) worst = d; } } return { defect: worst, phases: bad, exact: worst === 0 }; }
-  /* Composition Z/N -> Z/n1 -> Z/n2 by reductions: the composite defect and the bound L*d1 + d2 with L = 1. */
+  /* The Lipschitz constant of F(s) = s mod n2 from Z/n1 to Z/n2 in the circular metrics: since the source metric is the
+     path metric of the cycle, it is the largest stretch of one edge, max_s d(F(s+1), F(s)). It is 1 when n2 | n1 and can be
+     larger otherwise (Z/12 -> Z/7: the edge 11, 0 goes to 4, 0, stretch 3; ChatGPT, R-21 response). */
+  function lipschitz(n1, n2) { var L = 0; for (var s = 0; s < n1; s++) { var d = circ(((s + 1) % n1) % n2 - (s % n2), n2); if (d > L) L = d; } return L; }
+  /* Composition Z/N -> Z/n1 -> Z/n2 by reductions: the composite defect and the bound L_F*d1 + d2. */
   function compose(N, n1, n2) {
-    var d1 = defect(N, n1), d2 = defect(n1, n2), worst = 0;
+    var d1 = defect(N, n1), d2 = defect(n1, n2), L = lipschitz(n1, n2), worst = 0;
     for (var t = 0; t < N; t++) { var d = circ((((t + 1) % N) % n1) % n2 - (((t % n1) % n2) + 1), n2); if (d > worst) worst = d; }
-    return { first: d1.defect, second: d2.defect, composite: worst, bound: d1.defect + d2.defect, withinBound: worst <= d1.defect + d2.defect };
+    var b = L * d1.defect + d2.defect;
+    return { first: d1.defect, second: d2.defect, lipschitz: L, composite: worst, bound: b, withinBound: worst <= b };
   }
 
   /* ---------- Navigation (GEN.DISTANCE, GEN.MINSET; MF-209 to MF-212) ---------- */
@@ -217,7 +224,7 @@
   return { VERSION: VERSION, order: order, bound: bound, v3: v3, partition: partition, complete: complete, adaptive: adaptive, descend: descend,
            orbits: orbits, orbitSums: orbitSums, lift: lift, sampleMemory: sampleMemory, extinctionDepth: extinctionDepth, invariant: invariant,
            trajectory: trajectory, verifyMemory: verifyMemory, project: project, channel: channel, directions: directions, round: round,
-           schedule: schedule, valuation: valuation, verifyDesign: verifyDesign, compatibility: compatibility, defect: defect, compose: compose,
+           schedule: schedule, valuation: valuation, verifyDesign: verifyDesign, compatibility: compatibility, defect: defect, lipschitz: lipschitz, compose: compose,
            navigate: navigate, compareSets: compareSets, lowerBound: lowerBound, pisano: pisano, orbitCount: orbitCount,
            PROPERTIES: Object.keys(PROPERTIES), explore: explore };
 }));
