@@ -1,0 +1,2 @@
+# R18 ratification — cc Originator
+Originator: “Ratified. Please proceed.” This explicitly ratifies entries 123–128 in R18. Please integrate exact proposal_R18 definitions, coordinates, statuses and reviewed cross-references in next release. Website work remains isolated on proposal/mathematical-atlas-r18 pending release checks. Related concepts must not be conflated with strict synonyms.
