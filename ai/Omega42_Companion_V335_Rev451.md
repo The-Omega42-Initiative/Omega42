@@ -3237,6 +3237,10 @@ The review asked also for four things the record already did in part and now doe
 
 ### 216.1.219 MF-219 (Core Part 0.0.10.219). Does not follow: a balanced design: pairs meet 3^r times, not once.
 
+### 216.1.220 MF-220 (Core Part 0.0.10.220). Does not follow: every continuous or measurable memory cocycle on Z_3[phi].
+
+### 216.1.221 MF-221 (Core Part 0.0.10.221). Does not follow: that seven fixed phases separate W_6 (O-31).
+
 ### 216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.
 
 ### 216.2.1 Omega42 is pre-semantic structural mapping. Three positive clarifications distinguish it from neighboring frameworks.
@@ -4253,31 +4257,32 @@ C.1.62 records/opal/compute.py — the reproducible witness behind CERT-0008.
 C.1.63 records/osl/adaptive_observer.py — Greedy minimax adaptive observer with native phases of a mod 7 at depth k.
 C.1.64 records/osl/correspondence_check.py — R-17 check: exact values of the Omega42 <-> field correspondences (units and expressions). Pure Python.
 C.1.65 records/osl/o30_depth5_check.py — O-30 settled (paper, Theorem 5.7 and Lemma 5.6): six native phases of the aperture a mod 7 separate all 59,049 states of W_5 (Claude, 27 November 2026).
-C.1.66 records/osl/r05_check.py — R-05 check: Claude's review of ChatGPT's R-03 response.
-C.1.67 records/osl/r10_check.py — R-10 check: the inverse limit W_inf = Z_3^2 = Z_3[phi] (depth programme D-4).
-C.1.68 records/osl/r12_check.py — R-12 check: the open problems of the tower, this round (paper Lemma 5.9, Corollary 5.10, Theorem 22.1 at depth 6,.
-C.1.69 records/osl/r13_check.py — R-13 check: the golden split of E8 under the law (MF-74; paper candidate).
-C.1.70 records/osl/reach_theorem_check.py — Research record R-03 (Claude, 27 November 2026): generative reach at every depth.
-C.1.71 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
-C.1.72 records/osl/umip_check.py — R-14 check: first exact results for ChatGPT's Universal Mathematical Interface Programme. Pure Python; about a minute.
-C.1.73 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
-C.1.74 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
-C.1.75 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
-C.1.76 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
-C.1.77 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
-C.1.78 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
-C.1.79 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
-C.1.80 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
-C.1.81 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
-C.1.82 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
-C.1.83 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
-C.1.84 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
-C.1.85 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
-C.1.86 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
-C.1.87 records/theory/theory_foundations.py — the mathematical foundations of the Living Theory of Existence, rendered from the register.
-C.1.88 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
-C.1.89 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
-C.1.90 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
+C.1.66 records/osl/o35_check.py — O-35: the memory classes of the limit. Memories g: W_k -> Z/3^k modulo coboundaries are classified by orbit sums (paper.
+C.1.67 records/osl/r05_check.py — R-05 check: Claude's review of ChatGPT's R-03 response.
+C.1.68 records/osl/r10_check.py — R-10 check: the inverse limit W_inf = Z_3^2 = Z_3[phi] (depth programme D-4).
+C.1.69 records/osl/r12_check.py — R-12 check: the open problems of the tower, this round (paper Lemma 5.9, Corollary 5.10, Theorem 22.1 at depth 6,.
+C.1.70 records/osl/r13_check.py — R-13 check: the golden split of E8 under the law (MF-74; paper candidate).
+C.1.71 records/osl/reach_theorem_check.py — Research record R-03 (Claude, 27 November 2026): generative reach at every depth.
+C.1.72 records/osl/tier3_ext.py — OmegaSL Tier III extension: the operations that the mathematical paper (docs/OMEGA42_MATHEMATICAL_PAPER.md, Sections 17 to 23) adds.
+C.1.73 records/osl/umip_check.py — R-14 check: first exact results for ChatGPT's Universal Mathematical Interface Programme. Pure Python; about a minute.
+C.1.74 records/parallel/isolation_test.py — Run every CI step (a) sequentially in one tree, (b) each in its own fresh copy, all at once; compare outputs and write sets.
+C.1.75 records/phonetic/cmudict_compare.py — the frozen syllable rule of Core Part 1.11 against the CMU Pronouncing Dictionary (Companion Part 138.5).
+C.1.76 records/pilot_01/compute.py — Physical pilot 01: method calibration of the spectral screen C11, exactly as frozen in 00_freeze.txt.
+C.1.77 records/pilot_02/compute.py — Physical pilot 02: the revised screen C11' with held-out null systems, exactly as frozen in 00_freeze.txt.
+C.1.78 records/pilot_03/compute.py — Physical pilot 03: the golden screen C11'' and the S4 test on SU(9)_1 x SU(9)_1, exactly as frozen in 00_freeze.txt.
+C.1.79 records/pilot_04/compute.py — Physical pilot 04: S5 for the anyon candidate, exactly as frozen in 00_freeze.txt. Standard library only.
+C.1.80 records/positive_geometry/compute.py — Omega42 and positive geometry (Core 1.8.10, M230-K, L-492; Companion 50.6).
+C.1.81 records/positive_geometry/independent_check.py — independent exact checks of the positive-geometry record.
+C.1.82 records/resonance/cube_group_panel.py — avenue 11, the cube-group panel, run under its frozen rule (records/resonance/cube_group_panel.txt).
+C.1.83 records/resonance/polytopes.py — the object panels of M319 (Core Part 3.45; Companion Part 81), computed against the classes frozen in.
+C.1.84 records/resonance/single_figure.py — an exploration (Companion Part 82, enrichment E14): what each candidate single figure of.
+C.1.85 records/restored_math/compute.py — Restored mathematical results (Core Part 1.8.8, 0.9.1, 1.8.9). Run: python3 compute.py.
+C.1.86 records/spectral_selection/compute.py — Spectrum, the canonical selection and the instruments (Core 1.8.8, 1.8.9, Core Part 3.31; Companion 43.9).
+C.1.87 records/standing_waves/compute.py — Frequency, standing waves and the norm form (Core 1.8.9, Companion Part 43). Standard library only.
+C.1.88 records/theory/theory_foundations.py — the mathematical foundations of the Living Theory of Existence, rendered from the register.
+C.1.89 records/tower/arithmetic.py — the arithmetic of the tower, proved and checked (records/tower/; Core MATH-41 to MATH-52; Companion Part 102).
+C.1.90 records/tower/nested.py — each of the 81 places holds 81 places, and so on: the family read at depth (records/tower/).
+C.1.91 records/zero_selection/compute.py — Zero and the canonical selection (Core Part 1.8.7). Run: python3 compute.py.
 C.2 The golden navigations (14 October 2026), as issued and frozen: three navigations of the peer questions on the matrix of φ, the discrimination of the canonical orbit and the physical systems, nine further navigations, and the peer review with its disposition. Their computations are C.1 records/golden_navigations/compute.py and compute_further.py.
 C.2.1 records/golden_navigations/00_freeze.txt — the freeze of the golden navigations (14 October 2026).
 C.2.2 records/golden_navigations/01_navigations.txt — the three golden navigations, as issued.
@@ -5343,7 +5348,7 @@ X.3.471 records/oef/nested_example.txt — NESTED MANIFESTATION RECORD (M337; L-
 X.3.472 records/oef/transduction_example.txt — TRANSDUCTION RECORD (M334; L-536).
 X.3.473 records/opal/compute_output.txt — the output of records/opal, reproduced by the embedded computation.
 X.3.474 records/open/register.json — the data of records/open.
-X.3.475 records/open/register.txt — THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 34 items, each closed only when its condition is met by those named.
+X.3.475 records/open/register.txt — THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 33 items, each closed only when its condition is met by those named.
 X.3.476 records/osl/adaptor_rs.js — website code (adaptor_rs.js).
 X.3.477 records/osl/frames/L-467.osl — Core L-467, The Welcome Law, as an OmegaSL rule frame (pilot of Protocol v2.0). The English text of the Core is authoritative.
 X.3.478 records/osl/frames/L-506.osl — Core L-506, The AI Caveat Law (its placement clause), as an OmegaSL rule frame (pilot). The English text of the Core is authoritative.

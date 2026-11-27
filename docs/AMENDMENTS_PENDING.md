@@ -359,3 +359,9 @@ Level: C
 Level: C
 - records/lexicon/lexicon.json gains Aperture sufficiency bound, Aperture saturation, Ascent barrier, Resolution debt, Transduction defect and Cyclic compatibility (R-18).
 - Fourteen entries carry an "aliases" field with ChatGPT's names for the same objects (Observational Descent, Adaptive Aperture, Golden Bifurcation, CMI, CHED, CRWC, CAIT and others), so that each mathematical object has one definition however many names it has.
+
+## CA-51: the memory of the limit, the seven-plus-one observer and Selective aperture completion (27 November 2026; RATIFIED by ESC, 27 November 2026, "Ratified, Proceed please.")
+Level: B
+- MF-220 registers paper Proposition 20.11: the direct limit of the finite memory classes under the lifting maps of Theorem 20.1 is the Pruefer group Z(3^inf), carried by the still point. Its scope is that direct system, not every continuous or measurable cocycle on Z_3[phi] (ChatGPT's qualification). Recomputed by tools/tower_math.py, line memory-limit:, and records/osl/o35_check.py (465 checks). O-35 is closed; the open register's "inverse limit" wording is retired with it.
+- MF-221 registers paper Proposition 5.11, ChatGPT's seven-plus-one observer at depth 6, recomputed by tools/tower_numeric.py, line seven-plus-one:. O-31 stays open with 36,265 colliding pairs.
+- Lexicon entry 129, Selective aperture completion (OmegaSL operation OBS.COMPLETE proposed). ChatGPT's refinements: entry 123 is stated as a lower bound, entry 126 carries 36,265, entry 128 separates cyclic factors from embedding targets (the 360-degree circle is an embedding target).

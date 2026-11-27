@@ -633,6 +633,8 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.217 MF-217 [EXACT]. the greedy adaptive observer attains the bound ceil(k log_7 9) at depths 6 and 7: 7 and 8 readings (paper Theorem 22.1). Domain: W_6 and W_7. Derivation: greedy minimax over all 1,944 and 5,832 phases; depth 7 by records/osl/adaptive_observer.py 7; Claude. Depends on: MF-201. Recompute: python3 tools/tower_numeric.py --selftest, the line beginning "adaptive-depth6:".
 0.0.10.218 MF-218 [EXACT]. the law on E8 is self-adjoint with eigenvalues phi and -1/phi; the roots project onto two 600-cells in the ratio phi^2, isotropy deficit 5/8 (paper Proposition 20.9). Domain: the E8 lattice of MF-74. Derivation: GM = M^T G and M^2 = M + I exactly; the root frame is tight; Claude and ChatGPT. Depends on: MF-74. Recompute: python3 tools/tower_math.py --selftest, the line beginning "golden-split:".
 0.0.10.219 MF-219 [EXACT]. the affine plane over Z/3^k has 4*3^(k-1) directions, which the law permutes in one cycle; two states share 3^r lines, r their separation valuation (paper Proposition 20.10). Domain: the affine plane over Z/3^k, every k. Derivation: F_n = 0 mod 3^k exactly when 4*3^(k-1) divides n, so only phi^n = +-1 are scalars; ChatGPT and Claude. Depends on: MF-31, MF-35. Recompute: python3 tools/tower_math.py --selftest, the line beginning "ring-design:".
+0.0.10.220 MF-220 [EXACT]. the memory classes of the tower under the lifting maps form a direct system with limit the Pruefer group Z(3^inf), s/3^k; only the still point remembers (paper Proposition 20.11). Domain: the direct system of finite memory classes, every k. Derivation: moving sums become 9W, extinct after k - v3(W) lifts; the still point goes s to 3s injectively; Claude, verified by ChatGPT. Depends on: MF-197, MF-198. Recompute: python3 tools/tower_math.py --selftest, the line beginning "memory-limit:".
+0.0.10.221 MF-221 [EXACT]. seven phases (0,10,1346,716,147,1005,1218) leave classes of at most 3 at depth 6; one more phase from 0..14 separates each, mean 7.13575 readings (paper Proposition 5.11). Domain: W_6, 531,441 states. Derivation: exhaustive: 459,298 singletons, 35,878 pairs, 129 triples, all completed; ChatGPT, verified by Claude. Depends on: MF-208, MF-214. Recompute: python3 tools/tower_numeric.py --selftest, the line beginning "seven-plus-one:".
 ---
 
 ## PART 0.5: MATHEMATICAL UNIQUENESS AND EPISTEMIC LEGITIMACY
@@ -3257,7 +3259,7 @@ R.1.129 tools/test_seed_pairs.py — STP tests H-001..H-004: polarity of the Con
 R.1.130 tools/timestamp_check.py — chronology checks (CA-22).
 R.1.131 tools/tolerance.py — M329 Tolerance Chain Check (Core Part 3.55; Companion Part 125).
 R.1.132 tools/tower_math.py — observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;.
-R.1.133 tools/tower_numeric.py — the tower results that need NumPy (register entries MF-215 and MF-217; paper Corollary 5.10, Theorem 22.1).
+R.1.133 tools/tower_numeric.py — the tower results that need NumPy (register entries MF-215, MF-217 and MF-221; paper Corollary 5.10, Proposition 5.11, Theorem 22.1).
 R.1.134 tools/transformability.py — TP-01 and ME-02.
 R.1.135 tools/utility.py — M316 Congruence Utility (Core Part 3.42, L-500; Companion Part 54).
 R.1.136 tools/validation.py — the period pattern of the trace map, its linear part at the fixed point, the census modulo 243, the exact.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """tower_math.py -- observation and generation at every depth of the tower W_k = (Z/3^k)^2 (paper Sections 5 and 20;
-register entries MF-207 to MF-219, ratified by ESC on 27 November 2026).
+register entries MF-207 to MF-220, ratified by ESC on 27 November 2026).
 
     python3 tools/tower_math.py --selftest
 
@@ -13,6 +13,7 @@ Lines of the selftest, each named by a register entry:
   commutant-limit:  Prop. 20.8    eigenvalue multiplicities of the limit grow without bound
   golden-split:     Prop. 20.9    the law on E8: self-adjoint, tight root frame, deficit 5/8, two 600-cell shells
   ring-design:      Prop. 20.10   the affine plane over Z/3^k: the law cycles its directions; 3^r common lines
+  memory-limit:     Prop. 20.11   after k lifts a memory class depends on its still-point value s alone, carried as 3^j s
   infinite-tower:   Prop. 20.7    the limit Z_3[phi]: a domain, no root of unity, full-length primitive orbits at every finite depth
   acs-linear:       Theorem 20.6  its finite ingredients: transitivity of <A, S> on primitive states, the positive-boundary identity
   acs-lower:        Prop. 20.5    the bound ceil(log2(8*9^(k-1)+1)) - 1 sits below the BFS ACS distances 7, 10, 12, 16 (k = 1..4), and
@@ -203,6 +204,30 @@ def selftest():
             cnt = sum(1 for d in reps if any(((t * d[0]) % q, (t * d[1]) % q) == (a0, b0) for t in range(q)))
             ok &= cnt == 3 ** min(v3(a0), v3(b0))
     line('ring-design: 4*3^(k-1) directions over Z/3^k, the law transitive on them; 3^r common lines (k = 1..3)', ok)
+    import random
+    def orbs(q):
+        seen = set(); out = []
+        for a0 in range(q):
+            for b0 in range(q):
+                if (a0, b0) in seen: continue
+                x = (a0, b0); O = []
+                while x not in seen: seen.add(x); O.append(x); x = (x[1], (x[0] + x[1]) % q)
+                out.append(O)
+        return out
+    ORB = {k: orbs(3 ** k) for k in range(1, 5)}
+    def sums(g, k): return [sum(g[x] for x in O) % 3 ** k for O in ORB[k]]
+    def lift(g, k): return {x: 3 * g[(x[0] % 3 ** k, x[1] % 3 ** k)] % 3 ** (k + 1) for O in ORB[k + 1] for x in O}
+    rng = random.Random(42); ok = True
+    for k in range(1, 3):
+        for _ in range(4):
+            g = {x: rng.randrange(3 ** k) for O in ORB[k] for x in O}; s0 = g[(0, 0)]
+            h = {x: (s0 if x == (0, 0) else 0) for x in g}
+            for j in range(1, 5 - k):
+                g = lift(g, k + j - 1); h = lift(h, k + j - 1)
+                ok &= g[(0, 0)] == 3 ** j * s0 % 3 ** (k + j)
+                if j >= k: ok &= sums(g, k + j) == sums(h, k + j)
+        ok &= len({3 * s % 3 ** (k + 1) for s in range(3 ** k)}) == 3 ** k
+    line('memory-limit: after k lifts the class is a function of the still-point value s, carried injectively as 3^j s (k = 1, 2)', ok)
     print('TOWER MATHEMATICS SELFTEST: %s' % ('PASS' if all(R) else 'FAIL'))
     return all(R)
 

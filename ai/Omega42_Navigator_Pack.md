@@ -500,6 +500,8 @@ The reason is the ring: a primitive vector mod 3^r is a unit of Z[φ]/3^r, becau
 0.0.10.217 MF-217 [EXACT]. the greedy adaptive observer attains the bound ceil(k log_7 9) at depths 6 and 7: 7 and 8 readings (paper Theorem 22.1). Recompute: tools/tower_numeric.py "adaptive-depth6:"
 0.0.10.218 MF-218 [EXACT]. the law on E8 is self-adjoint with eigenvalues phi and -1/phi; the roots project onto two 600-cells in the ratio phi^2, isotropy deficit ... Recompute: tools/tower_math.py "golden-split:"
 0.0.10.219 MF-219 [EXACT]. the affine plane over Z/3^k has 4*3^(k-1) directions, which the law permutes in one cycle; two states share 3^r lines, r their separation ... Recompute: tools/tower_math.py "ring-design:"
+0.0.10.220 MF-220 [EXACT]. the memory classes of the tower under the lifting maps form a direct system with limit the Pruefer group Z(3^inf), s/3^k; only the still ... Recompute: tools/tower_math.py "memory-limit:"
+0.0.10.221 MF-221 [EXACT]. seven phases (0,10,1346,716,147,1005,1218) leave classes of at most 3 at depth 6; one more phase from 0..14 separates each, mean 7.13575 ... Recompute: tools/tower_numeric.py "seven-plus-one:"
 ---
 
 

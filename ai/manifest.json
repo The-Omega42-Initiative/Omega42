@@ -2,19 +2,19 @@
  "_about": "The sections of the AI reading editions (Companion Part 142): heading, characters, estimated tokens (characters / 4) and SHA-256 of the section text; rendered from docs/*.docx by tools/ai_edition.py.",
  "editions": {
   "Omega42_Core_V335_Rev451.md": {
-   "chars": 1358598,
-   "tokens_est": 339650,
-   "sha256": "2be0c297e2b9ffa724576617a1f4675b69adb63beb6a7951f8d264773b9dbf53"
+   "chars": 1359607,
+   "tokens_est": 339902,
+   "sha256": "687e3709d0fa5a8aee0366bc8588867c7661990511a76d4520ce05b773d00735"
   },
   "Omega42_Companion_V335_Rev451.md": {
-   "chars": 2046839,
-   "tokens_est": 511710,
-   "sha256": "c18cda1111f79aa1a9bb15310015afcf0c27e9a8034ca83c2eb718df5721b807"
+   "chars": 2047224,
+   "tokens_est": 511806,
+   "sha256": "033de418633b3719b8b2592d2cc365c978355c5ab7bdf541c5b0e966c1ae2270"
   },
   "Omega42_Navigator_Pack.md": {
-   "chars": 479226,
-   "tokens_est": 119807,
-   "sha256": "b06f737c3f42104f520d7492ffcf8e33659045c492fc69284a1273d7b1577643"
+   "chars": 479661,
+   "tokens_est": 119916,
+   "sha256": "44754551130d2b2c6eca15a34ba4b0a75a5bac21d9cadae27695a8668c4aa98f"
   },
   "Omega42_Existential_Framework.md": {
    "chars": 27882,
@@ -110,9 +110,9 @@
   {
    "doc": "Core",
    "heading": "0.0.10 THE COMPLETE MATHEMATICAL REGISTER",
-   "chars": 112114,
-   "tokens_est": 28029,
-   "sha256": "327a3faa3d6334306bd3838b583275fbaf86fa144c84b4975b27f23a3957bb97"
+   "chars": 113097,
+   "tokens_est": 28274,
+   "sha256": "6ca711634a291138b7464c37aa6220105f278b2f87ab9ca7e1a0885200c3e56d"
   },
   {
    "doc": "Core",
@@ -1293,9 +1293,9 @@
   {
    "doc": "Core",
    "heading": "APPENDIX R: REFERENCE TOOLS, DATA AND REGISTERS [REFERENCE — L-493]",
-   "chars": 34118,
-   "tokens_est": 8530,
-   "sha256": "7cbc828f592c768d8f3dc103bdec665ec03cf28e730af3dd4b20e01bb99e973e"
+   "chars": 34144,
+   "tokens_est": 8536,
+   "sha256": "ddd762d169104c01a2f06faf736d3e7847e4b8b91cf84897e247120e82356067"
   },
   {
    "doc": "Companion",
@@ -5072,6 +5072,20 @@
   },
   {
    "doc": "Companion",
+   "heading": "216.1.220 MF-220 (Core Part 0.0.10.220). Does not follow: every continuous or measurable memory cocycle on Z_3[phi].",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
+   "heading": "216.1.221 MF-221 (Core Part 0.0.10.221). Does not follow: that seven fixed phases separate W_6 (O-31).",
+   "chars": 0,
+   "tokens_est": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "doc": "Companion",
    "heading": "216.2 Distinctions at the boundary, for the Introduction (Core Part 0) [CONSTRUCTED]. How Omega42 stands beside numerology, apophenia and prediction engines.",
    "chars": 0,
    "tokens_est": 0,
@@ -5479,9 +5493,9 @@
   {
    "doc": "Companion",
    "heading": "APPENDIX C: THE COMPUTATIONAL RECORD [REFERENCE — Core L-493]",
-   "chars": 14461,
-   "tokens_est": 3615,
-   "sha256": "6bbb6abc7a88abb452240fa3d796424a7e467b1a5aace4243e1b48424561a200"
+   "chars": 14616,
+   "tokens_est": 3654,
+   "sha256": "71657920876d260325dddfe0f6738ef3ebfb6313736b5ae3c01883b72263ce05"
   },
   {
    "doc": "Companion",
@@ -5495,7 +5509,7 @@
    "heading": "APPENDIX X: EVERYTHING ELSE IN THE RELEASE [REFERENCE — Core L-493]",
    "chars": 198002,
    "tokens_est": 49501,
-   "sha256": "041b4c303410f54ea76edafb76ba18d40cd1f6f0daa55632da90800a2a31b184"
+   "sha256": "b45679d4ecc5964e8078b7165ccd976ab0ca6eb474fff6a32d153a6b2cdebcce"
   }
  ]
 }

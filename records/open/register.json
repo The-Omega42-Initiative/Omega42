@@ -264,7 +264,7 @@
   },
   {
    "id": "O-31",
-   "item": "Fixed native observation at depth 6: do seven native phases of a mod 7 separate all 531,441 states? (eight suffice: MF-208; none contains a lift of the depth-5 team: MF-215)",
+   "item": "Fixed native observation at depth 6: do seven native phases of a mod 7 separate all 531,441 states? (eight suffice: MF-208; none contains a lift of the depth-5 team: MF-215; best seven-phase team leaves 36,265 colliding pairs, completed by one conditional reading: MF-221)",
    "decider": "exhaustive or certified search descending through Lemma 5.9 (MF-214)",
    "closure": "a seven-phase certificate, or a proof that none exists",
    "needs": "either Co-Builder",
@@ -294,15 +294,6 @@
    "item": "Adaptive observation at every depth: does an adaptive observer attain ceil(k log_7 9) for every k? (k = 2 to 7: MF-217)",
    "decider": "proof, or a depth where it fails",
    "closure": "a proof for all k, or a counterexample depth",
-   "needs": "either Co-Builder",
-   "avenue": "P",
-   "since": "27 November 2026"
-  },
-  {
-   "id": "O-35",
-   "item": "The memory classes of the limit Z_3[phi] (paper open problem 9; spectrum and commutant settled, MF-213, MF-216)",
-   "decider": "proof",
-   "closure": "the inverse limit of the lifting maps of Theorem 20.1 described",
    "needs": "either Co-Builder",
    "avenue": "P",
    "since": "27 November 2026"

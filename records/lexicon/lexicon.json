@@ -1266,10 +1266,10 @@
    "term": "Aperture sufficiency bound",
    "field": "Mind and knowledge",
    "status": "EXACT",
-   "definition": "The least number of seven-symbol readings that can tell 9^k states apart, ceil(k log7 9): 3, 4, 5, 6, 7, 8, 10 for k = 2 to 8.",
-   "basis": "paper Theorem 5.3, register MF-201; ChatGPT's name; ratified by the Originator on 27 November 2026 (CA-50, R-18)",
+   "definition": "A lower bound: no team of fewer than ceil(k log7 9) seven-symbol readings can tell 9^k states apart (3, 4, 5, 6, 7, 8, 10 for k = 2 to 8); attainment is a separate result.",
+   "basis": "paper Theorem 5.3, register MF-201; ChatGPT's name; ratified by the Originator on 27 November 2026 (CA-50, R-18); refined by ChatGPT, ratified by the Originator on 27 November 2026 (CA-51)",
    "coordinate": "P6 Seed/Causal; n = (3, 24, 7)",
-   "definition_coordinate": "P7 Navigator; n = (23, 95, 29)",
+   "definition_coordinate": "P1 Fixpoint; n = (29, 132, 39)",
    "aliases": [
     "Constitutional Observability",
     "Aperture Sufficiency"
@@ -1303,10 +1303,10 @@
    "term": "Resolution debt",
    "field": "Mind and knowledge",
    "status": "EXACT",
-   "definition": "The number of pairs of states a team still cannot tell apart, its colliding pairs; zero exactly when the team separates; 44,397 for the best seven-phase team at depth 6.",
-   "basis": "R-06, R-12; ChatGPT's CCX collision count B(T); ratified by the Originator on 27 November 2026 (CA-50, R-18)",
+   "definition": "The number of pairs of states a team still cannot tell apart, its colliding pairs; zero exactly when the team separates; 36,265 for the best seven-phase team at depth 6.",
+   "basis": "R-06, R-12; ChatGPT's CCX collision count B(T); ratified by the Originator on 27 November 2026 (CA-50, R-18); refined by ChatGPT, ratified by the Originator on 27 November 2026 (CA-51)",
    "coordinate": "P7 Navigator; n = (2, 14, 5)",
-   "definition_coordinate": "P8 Generation; n = (25, 132, 39)"
+   "definition_coordinate": "P8 Generation; n = (25, 128, 37)"
   },
   {
    "n": 127,
@@ -1323,14 +1323,24 @@
    "term": "Cyclic compatibility",
    "field": "Information, language and society",
    "status": "EXACT",
-   "definition": "An external cycle of length n is a factor of the native cycle exactly when n divides 8*3^(k-1); hours, degrees and semitones are, the 7-day week and the 60-minute hour are not.",
-   "basis": "R-14 section 6, R-17; ChatGPT's Constitutional Cyclic Compatibility Principle; ratified by the Originator on 27 November 2026 (CA-50, R-18)",
+   "definition": "An external cycle of length n is a factor of the native cycle exactly when n divides 8*3^(k-1); the 24 hours and 12 semitones are factors, the 7-day week and 60-minute hour are not, and the 360-degree circle is an embedding target, not a factor.",
+   "basis": "R-14 section 6, R-17; ChatGPT's Constitutional Cyclic Compatibility Principle; ratified by the Originator on 27 November 2026 (CA-50, R-18); refined by ChatGPT, ratified by the Originator on 27 November 2026 (CA-51)",
    "coordinate": "P1 Fixpoint; n = (2, 19, 6)",
-   "definition_coordinate": "P5 Law; n = (24, 118, 37)",
+   "definition_coordinate": "P4 Unity; n = (35, 184, 53)",
    "aliases": [
     "Constitutional Cyclic Compatibility",
     "CCCP"
    ]
+  },
+  {
+   "n": 129,
+   "term": "Selective aperture completion",
+   "field": "Mind and knowledge",
+   "status": "EXACT",
+   "definition": "A fixed team of readings followed, only where a class stays ambiguous, by one reading chosen for that class; seven native phases and one of 15 complete every state at depth 6, mean 7.13575.",
+   "basis": "paper Proposition 5.11, register MF-221; ChatGPT's name and construction, OmegaSL operation OBS.COMPLETE proposed; ratified by the Originator on 27 November 2026 (CA-51, R-19)",
+   "coordinate": "P9 Fixpoint; n = (3, 27, 9)",
+   "definition_coordinate": "P7 Navigator; n = (23, 126, 35)"
   }
  ]
 }

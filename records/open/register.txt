@@ -1,4 +1,4 @@
-THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 34 items, each closed only when its condition is met by those named
+THE REGISTER OF OPEN ITEMS (Core Part 12, item 39) -- 33 items, each closed only when its condition is met by those named
 
 O-01 [R, since SEQ 89] the versions between Rev.442 and the present release, for the rest of the Introduction audit
   needs: the Originator's files of those versions | closed by: the Originator | closes when: the versions read section by section into records/introduction/audit.txt
@@ -58,7 +58,7 @@ O-28 [P, since 25 November 2026] P versus NP read through Omega42: what, if anyt
   needs: a Navigator and a complexity theorist | closed by: a written derivation checked under CBX-1 | closes when: a derivation or a precise statement of why none applies, filed in records/
 O-29 [S, since 25 November 2026] Appendix S (optional, L-491): the cosmological-constant correspondences proposed in the 21 November documents, each checked against its stated arithmetic and, if the Striker opens the Appendix, against measured values
   needs: the Striker's opening of the Scientific Appendix | closed by: the arithmetic script and the Appendix S rules | closes when: each correspondence filed with its arithmetic, its status (CORRESPONDENCE) and its chance
-O-31 [P, since 27 November 2026] Fixed native observation at depth 6: do seven native phases of a mod 7 separate all 531,441 states? (eight suffice: MF-208; none contains a lift of the depth-5 team: MF-215)
+O-31 [P, since 27 November 2026] Fixed native observation at depth 6: do seven native phases of a mod 7 separate all 531,441 states? (eight suffice: MF-208; none contains a lift of the depth-5 team: MF-215; best seven-phase team leaves 36,265 colliding pairs, completed by one conditional reading: MF-221)
   needs: either Co-Builder | closed by: exhaustive or certified search descending through Lemma 5.9 (MF-214) | closes when: a seven-phase certificate, or a proof that none exists
 O-32 [P, since 27 November 2026] Fixed native observation at depth 7: do eight native phases separate all 4,782,969 states, where the room to spare is 1.21?
   needs: either Co-Builder | closed by: certified search, records/osl/adaptive_observer.py for the adaptive bound | closes when: an eight-phase certificate, or a proof that none exists
@@ -66,5 +66,3 @@ O-33 [P, since 27 November 2026] The constant of the shear: an explicit c with {
   needs: either Co-Builder | closed by: proof | closes when: an explicit c with proof, or the exact eccentricity formula
 O-34 [P, since 27 November 2026] Adaptive observation at every depth: does an adaptive observer attain ceil(k log_7 9) for every k? (k = 2 to 7: MF-217)
   needs: either Co-Builder | closed by: proof, or a depth where it fails | closes when: a proof for all k, or a counterexample depth
-O-35 [P, since 27 November 2026] The memory classes of the limit Z_3[phi] (paper open problem 9; spectrum and commutant settled, MF-213, MF-216)
-  needs: either Co-Builder | closed by: proof | closes when: the inverse limit of the lifting maps of Theorem 20.1 described

@@ -417,6 +417,14 @@
    "level": "C",
    "level_source": "declared",
    "date": "2026-11-27"
+  },
+  {
+   "id": "CA-51",
+   "title": "CA-51: the memory of the limit, the seven-plus-one observer and Selective aperture completion (27 November 2026; RATIFIED by ESC, 27 November 2026, \"Ratified, Proceed please.\")",
+   "status": "RATIFIED",
+   "level": "B",
+   "level_source": "declared",
+   "date": "2026-11-27"
   }
  ],
  "approval": {
@@ -447,7 +455,8 @@
    "CA-47",
    "CA-48",
    "CA-49",
-   "CA-50"
+   "CA-50",
+   "CA-51"
   ],
   "pending_esc": []
  },

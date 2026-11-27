@@ -2409,6 +2409,28 @@
    "depends": "MF-31, MF-35",
    "does_not_follow": "a balanced design: pairs meet 3^r times, not once",
    "status": "EXACT"
+  },
+  {
+   "id": "MF-220",
+   "statement": "the memory classes of the tower under the lifting maps form a direct system with limit the Pruefer group Z(3^inf), s/3^k; only the still point remembers (paper Proposition 20.11)",
+   "domain": "the direct system of finite memory classes, every k",
+   "derivation": "moving sums become 9W, extinct after k - v3(W) lifts; the still point goes s to 3s injectively; Claude, verified by ChatGPT",
+   "tool": "tools/tower_math.py",
+   "check": "memory-limit:",
+   "depends": "MF-197, MF-198",
+   "does_not_follow": "every continuous or measurable memory cocycle on Z_3[phi]",
+   "status": "EXACT"
+  },
+  {
+   "id": "MF-221",
+   "statement": "seven phases (0,10,1346,716,147,1005,1218) leave classes of at most 3 at depth 6; one more phase from 0..14 separates each, mean 7.13575 readings (paper Proposition 5.11)",
+   "domain": "W_6, 531,441 states",
+   "derivation": "exhaustive: 459,298 singletons, 35,878 pairs, 129 triples, all completed; ChatGPT, verified by Claude",
+   "tool": "tools/tower_numeric.py",
+   "check": "seven-plus-one:",
+   "depends": "MF-208, MF-214",
+   "does_not_follow": "that seven fixed phases separate W_6 (O-31)",
+   "status": "EXACT"
   }
  ]
 }
