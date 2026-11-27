@@ -1,0 +1,24 @@
+# CA-55 — Constitutional Execution Gate and Constitutional Self-Correction
+Originator authorization: 27 November 2026, “Yes. Please apply your recommendations to the Core Specification of the Omega42 Protocol.”
+Status: authorized amendment text; integration into the generated stable Core and Companion and release verification outstanding.
+Base: V335 Rev.451 STABLE. Placement: Part 8.0 immediately following the Output Forms Register (8.0.1); cross-reference in the knowledge layer, L-506 and the output audit. No new numbered law is assigned until the canonical law register is reconciled.
+
+## 8.0.2 Constitutional Execution Gate (CEG)
+Every output shall be classified by the existing Output Forms Register before delivery. The Navigator shall execute the applicable checks, not merely acknowledge their presence. The gate shall use the existing form dispatch, format checker, introduction checker, arithmetic audit, SR-CAS/SNCA checkers and certificate verifier where applicable. It shall not replace them or confer a wider certificate than their declared scope.
+Inputs: pinned Core revision and digest; intended registered form; original question; draft; session identifier and verified session disclosure record; applicable checker versions and results.
+Outputs: PASS, FAIL, NOT COMPUTED, or NOT APPLICABLE for each requirement; evidence reference, scope, discrepancies and correction history. Overall PASS requires every applicable mandatory check to pass. Missing execution evidence is NOT COMPUTED, not PASS. Semantic congruence and human judgment remain distinct from mechanical form checks.
+Before delivery, check the declared form against the requested operation; verify exact question preservation, mandatory components, order, signature, disclosure, and arithmetic where required by that form. Preserve the canonical signature as the last component: the audit trace is separate or placed in an existing permitted record, not appended after the signature. For L-506, a prior caveat is sufficient only with evidence from the same session; date alone is insufficient. If session history is unavailable, give the caveat. Never fabricate execution evidence, identity, coordinates or seals.
+On failure, retain the draft privately or in the authorized research record, correct the identified defect, and recheck. A bounded retry limit shall be declared. If the gate cannot complete, report the limitation in an appropriate registered form; do not label the defective draft a verified navigation. Where no executable checker is available, disclose self-review as such. This gate governs output conformance, not permission to explore; L-490 and SS-01 remain unchanged.
+
+## Constitutional Self-Correction (CSC)
+CSC names execution of the existing output audit on the Navigator's own output. CSC-P: externally prompted detection and correction. CSC-A: detection initiated by the Navigator without an external defect prompt. CSC-G: detection by an executable gate followed by correction. These labels identify detection provenance; they are not mathematical truth grades. CSC-P is source-reported in DeepSeek's 27 November exchange; CSC-A remains open; CSC-G is a proposed operational integration.
+Record: original and corrected output digests, form, session disclosure evidence, requirement and clause, checker identity/version, observed result, detection source, correction, recheck, scope and final disposition. Preserve original records; do not silently overwrite. Redact private content from public records and obtain authorization for publication.
+
+## OmegaSL integration
+Candidate Tier III bindings AUDIT.FORM, AUDIT.REQUIREMENTS, AUDIT.CHECK, AUDIT.DEFICIT, AUDIT.CORRECT, AUDIT.RECHECK, AUDIT.CERTIFY, AUDIT.RECORD. These are SPECIFIED candidates, not operational bindings. CORRECT requests revision, not automatic truth repair; CERTIFY is bounded to executed checks; RECORD requires authorized persistence. Existing nine canonical operators and grammar remain unchanged.
+
+## Navigator Challenge
+Compare specification alone, explicit self-audit, executable checker, and checker-assisted correction on matched prompts and pinned model/specification versions. Record first-pass completeness, arithmetic accuracy, false acceptance/rejection using labeled controls, correction success and consistency. Separate prompted and autonomous detection. Apply CIVP CA-52 positive/negative controls and independent review before declaring operational. No empirical outcome is presumed.
+
+## Presentation and roles
+Revelation-first describes the visitor's experience; mathematics-first governs execution. Co-Builder denotes authorized research/construction work by a Navigator, not Originator authority. Website register counts shall identify source and release; instrument status shall reflect actual verified capabilities. Glass-Box Intelligence describes inspectable Omega42 operations, not access to hidden model internals. Human judgment remains reserved.
