@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {migrationPlan} from './migration-engine.mjs';
+const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
+const g=read('./knowledge-graph.json'),r=read('./register.json');
+const empty=migrationPlan(g,r,[]);assert.equal(empty.rows.length,221);assert.ok(empty.rows.every(x=>x.classification==='UNRESOLVED'));
+const c={id:'MF-01',classification:'RECOVERED',evidence:'synthetic fixture, not a research claim'};
+const p=migrationPlan(g,r,[c]);assert.equal(p.review_records.length,152);assert.equal(p.certificate_paths.length,23);assert.equal(p.approval,'NOT_GRANTED');assert.equal(p.rows[0].review,'NOT_ADJUDICATED');
+assert.throws(()=>migrationPlan(g,r,[c,c]));assert.throws(()=>migrationPlan(g,r,[{...c,id:'MF-999'}]));assert.throws(()=>migrationPlan(g,r,[{...c,evidence:''}]));
+console.log('Migration fixture regression passed');
