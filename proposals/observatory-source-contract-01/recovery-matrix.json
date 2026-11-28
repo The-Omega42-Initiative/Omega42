@@ -1,0 +1,75 @@
+{
+  "schema": "omega42.recovery.matrix.v1",
+  "source": {
+    "path": "records/math/results.json",
+    "blob": "5db44e140940ffb935a1ded423c9c4f7f69a528f"
+  },
+  "status": "PROPOSAL",
+  "method": "Direct enumeration of Fibonacci action; checks correspondence targets, not independent emergence from unified axioms.",
+  "rows": [
+    {
+      "id": "MF-166",
+      "coverage": "PARTIAL",
+      "assertion": "81-state orbit census",
+      "observed": {
+        "1": 1,
+        "8": 1,
+        "24": 3
+      },
+      "unresolved": "Trace-map census and comparison"
+    },
+    {
+      "id": "MF-204",
+      "coverage": "PARTIAL",
+      "assertion": "A^12=-I modulo 9",
+      "checked_states": 81,
+      "unresolved": "Operator eigenspaces and norm classification"
+    },
+    {
+      "id": "MF-198",
+      "coverage": "PARTIAL",
+      "assertion": "Orbit census consistent with lifting through modulus 243",
+      "observed": {
+        "1": {
+          "1": 1,
+          "8": 1
+        },
+        "2": {
+          "1": 1,
+          "8": 1,
+          "24": 3
+        },
+        "3": {
+          "1": 1,
+          "8": 1,
+          "24": 3,
+          "72": 9
+        },
+        "4": {
+          "1": 1,
+          "8": 1,
+          "24": 3,
+          "72": 9,
+          "216": 27
+        },
+        "5": {
+          "1": 1,
+          "8": 1,
+          "24": 3,
+          "72": 9,
+          "216": 27,
+          "648": 81
+        }
+      },
+      "unresolved": "Individual orbit lifts, general proof, harmonic multiplicities and memory pullback"
+    },
+    {
+      "id": "MF-49",
+      "coverage": "UNRESOLVED",
+      "assertion": "Selection under P1–P4",
+      "unresolved": "Derivation of all selection premises from unified axioms"
+    }
+  ],
+  "execution": "EXECUTED_INLINE",
+  "approval": "NOT_GRANTED"
+}
