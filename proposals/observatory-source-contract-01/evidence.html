@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mathematical Evidence Explorer | Omega42</title>
+<style>body{font:1rem/1.6 system-ui,sans-serif;background:#f8fafc;color:#172033;max-width:56rem;margin:auto;padding:1rem}section{background:white;border:1px solid #aab8cb;border-radius:12px;padding:1rem;margin:1rem 0}a{color:#164c9c}label{display:block;font-weight:600}select,input,button{font:inherit;max-width:100%;margin:.5rem 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}:focus-visible{outline:3px solid #164c9c}</style>
+<main><nav aria-label="Observatory"><a href="observatory.html">Mathematical register</a> · <a href="audit.html">Independent audit</a></nav><h1>Mathematical Evidence Explorer</h1><p>Inspect pinned mathematical certificates and compare local evidence. This pilot does not execute certificates, upload files or authenticate the author of an evidence file.</p>
+<section><h2>1. Select a pilot result</h2><label for="record">Mathematical record</label><select id="record" disabled></select><p id="statement"></p><pre id="source"></pre><p><a id="certificate">Pinned certificate source</a></p></section>
+<section><h2>2. Compare execution evidence</h2><label for="evidence">Local runner JSON (maximum 256 KiB)</label><input type="file" id="evidence" accept=".json,application/json" disabled><button id="compare" disabled>Compare evidence</button><p id="status" role="status" aria-live="polite">Loading source contract…</p><pre id="result"></pre></section>
+<section><h2>3. Independent assessment</h2><p>A matching output is not a proof or authenticated execution. Inspect the source, reproduce the computation in a trusted isolated environment and record your reasoning.</p><p><a href="audit.html">Prepare a redacted independent audit</a></p></section></main>
+<script type="module">
+import {manifest,compareEvidence} from './certificate-pilot.mjs';
+const el=id=>document.getElementById(id);
+try{
+const response=await fetch('./register.json');if(!response.ok)throw Error('Register unavailable');
+const register=await response.json();
+if(register.schema!=='omega42.observatory.source.v1'||register.source?.blob!==manifest.source_blob||!Array.isArray(register.records))throw Error('Source contract mismatch');
+for(const r of manifest.records){if(!register.records.some(x=>x.id===r.id))throw Error('Missing pilot record');const o=document.createElement('option');o.value=r.id;o.textContent=r.id;el('record').append(o)}
+function show(){const r=register.records.find(x=>x.id===el('record').value);el('statement').textContent=r.statement;el('source').textContent=['Inherited classification: '+r.status,'Boundary: '+r.boundary,'Revision: '+manifest.revision,'Register blob: '+manifest.source_blob,'Certificate blob: '+manifest.certificate.blob,'Expected marker: '+manifest.records.find(x=>x.id===r.id).marker].join('\n');el('result').textContent='';el('status').textContent='No evidence compared for selected record.'}
+el('certificate').href='https://github.com/The-Omega42-Initiative/Omega42/blob/'+manifest.revision+'/'+manifest.certificate.path;
+el('record').addEventListener('change',show);el('evidence').addEventListener('change',()=>{el('result').textContent='';el('status').textContent='File selected; not yet compared.'});
+el('compare').addEventListener('click',async()=>{const id=el('record').value,file=el('evidence').files[0];el('compare').disabled=true;el('record').disabled=true;el('evidence').disabled=true;el('result').textContent='';try{if(!file||file.size>262144)throw Error('Select a JSON file no larger than 256 KiB');const e=JSON.parse(await file.text());const result=compareEvidence(manifest,id,e);el('result').textContent=JSON.stringify(result,null,2);el('status').textContent=result.status+' — local comparison only; execution not independently authenticated.'}catch(e){el('status').textContent='Rejected: '+e.message}finally{el('compare').disabled=false;el('record').disabled=false;el('evidence').disabled=false}});
+for(const id of ['record','evidence','compare'])el(id).disabled=false;show();
+}catch(e){el('status').textContent='Unavailable: '+e.message}
+</script></html>
