@@ -1,0 +1,2471 @@
+{
+  "schema": "omega42.observatory.graph.v1",
+  "source": {
+    "path": "records/math/results.json",
+    "blob": "5db44e140940ffb935a1ded423c9c4f7f69a528f"
+  },
+  "semantics": "Declared literal MF references only; not independently proved dependencies. Other references retained verbatim.",
+  "nodes": [
+    {
+      "id": "MF-01",
+      "status": "EXACT",
+      "domain": "residues mod 9",
+      "dependencies": "—"
+    },
+    {
+      "id": "MF-02",
+      "status": "EXACT",
+      "domain": "residues mod 9",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-03",
+      "status": "EXACT",
+      "domain": "residues mod 9",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-04",
+      "status": "EXACT",
+      "domain": "3-adic limit",
+      "dependencies": "MF-03"
+    },
+    {
+      "id": "MF-05",
+      "status": "EXACT",
+      "domain": "residues mod 9 and mod 81",
+      "dependencies": "MF-03"
+    },
+    {
+      "id": "MF-06",
+      "status": "EXACT",
+      "domain": "residues",
+      "dependencies": "MF-05"
+    },
+    {
+      "id": "MF-07",
+      "status": "CONDITIONAL on AP-SPACE",
+      "domain": "reals with AP-SPACE",
+      "dependencies": "MF-06, L-544 (3)"
+    },
+    {
+      "id": "MF-08",
+      "status": "EXACT",
+      "domain": "residues mod 9",
+      "dependencies": "MF-03"
+    },
+    {
+      "id": "MF-09",
+      "status": "EXACT",
+      "domain": "reals",
+      "dependencies": "L-544 (3), (4)"
+    },
+    {
+      "id": "MF-10",
+      "status": "EXACT",
+      "domain": "residues mod 9; l2(81)",
+      "dependencies": "L-544 (10)"
+    },
+    {
+      "id": "MF-11",
+      "status": "EXACT",
+      "domain": "l2(81)",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-12",
+      "status": "EXACT",
+      "domain": "l2(81)",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-13",
+      "status": "EXACT",
+      "domain": "residues mod 9",
+      "dependencies": "L-544 (1)"
+    },
+    {
+      "id": "MF-14",
+      "status": "CONDITIONAL on AP-SPACE, AP-METRIC",
+      "domain": "reals with AP-SPACE and AP-METRIC",
+      "dependencies": "MF-05, Core Part 0.0.8.3"
+    },
+    {
+      "id": "MF-15",
+      "status": "CONDITIONAL on AP-SPACE",
+      "domain": "reals with AP-SPACE",
+      "dependencies": "MF-07"
+    },
+    {
+      "id": "MF-16",
+      "status": "EXACT",
+      "domain": "Z[i]/9 and AP-SPACE",
+      "dependencies": "MF-01, MF-15"
+    },
+    {
+      "id": "MF-17",
+      "status": "EXACT",
+      "domain": "Z/9^k, k = 1 to 3",
+      "dependencies": "MF-07"
+    },
+    {
+      "id": "MF-18",
+      "status": "EXACT",
+      "domain": "Z[i]/9 module",
+      "dependencies": "MF-17"
+    },
+    {
+      "id": "MF-19",
+      "status": "EXACT",
+      "domain": "finite Hilbert spaces",
+      "dependencies": "MF-10, MF-11, MF-18"
+    },
+    {
+      "id": "MF-20",
+      "status": "EXACT",
+      "domain": "Z/9",
+      "dependencies": "MF-07, MF-17"
+    },
+    {
+      "id": "MF-21",
+      "status": "CONDITIONAL on AP-SPACE",
+      "domain": "reals with AP-SPACE",
+      "dependencies": "MF-15"
+    },
+    {
+      "id": "MF-22",
+      "status": "CONDITIONAL on AP-SPACE, AP-METRIC",
+      "domain": "reals with AP-SPACE and AP-METRIC",
+      "dependencies": "MF-14"
+    },
+    {
+      "id": "MF-23",
+      "status": "EXACT",
+      "domain": "Z/3^k",
+      "dependencies": "MF-06"
+    },
+    {
+      "id": "MF-24",
+      "status": "EXACT",
+      "domain": "Z[φ]/3^12",
+      "dependencies": "MF-03"
+    },
+    {
+      "id": "MF-25",
+      "status": "EXACT",
+      "domain": "Z/3^m",
+      "dependencies": "MF-20"
+    },
+    {
+      "id": "MF-26",
+      "status": "EXACT",
+      "domain": "Z/3^m",
+      "dependencies": "MF-25"
+    },
+    {
+      "id": "MF-27",
+      "status": "EXACT",
+      "domain": "Z/3^m, m to 40",
+      "dependencies": "MF-17, MF-26"
+    },
+    {
+      "id": "MF-28",
+      "status": "EXACT",
+      "domain": "F_p, p < 100",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-29",
+      "status": "EXACT",
+      "domain": "Q(sqrt 5)",
+      "dependencies": "MF-28"
+    },
+    {
+      "id": "MF-30",
+      "status": "EXACT",
+      "domain": "reals",
+      "dependencies": "MF-28, MF-15"
+    },
+    {
+      "id": "MF-31",
+      "status": "EXACT",
+      "domain": "Z/3^m, m = 1 to 6",
+      "dependencies": "MF-10, MF-26"
+    },
+    {
+      "id": "MF-32",
+      "status": "EXACT",
+      "domain": "Z/3^m, m = 2 to 5",
+      "dependencies": "MF-31"
+    },
+    {
+      "id": "MF-33",
+      "status": "EXACT",
+      "domain": "Z_3[phi]",
+      "dependencies": "MF-03"
+    },
+    {
+      "id": "MF-34",
+      "status": "EXACT",
+      "domain": "l2(81)",
+      "dependencies": "MF-11, MF-19"
+    },
+    {
+      "id": "MF-35",
+      "status": "EXACT",
+      "domain": "Z/3^m, m = 1 to 3",
+      "dependencies": "MF-26, MF-32"
+    },
+    {
+      "id": "MF-36",
+      "status": "EXACT",
+      "domain": "Z/9, the canonical cycle",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-37",
+      "status": "EXACT",
+      "domain": "Z/9, the canonical cycle",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-38",
+      "status": "EXACT",
+      "domain": "Z/9, the canonical cycle",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-39",
+      "status": "EXACT",
+      "domain": "O/3^m, m = 1..4",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-40",
+      "status": "EXACT",
+      "domain": "P^1(Z/3^k), k = 1..4",
+      "dependencies": "MF-39"
+    },
+    {
+      "id": "MF-41",
+      "status": "EXACT",
+      "domain": "Z/p^k, the primes named",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-42",
+      "status": "EXACT",
+      "domain": "(Z/3^k)^2, all k (proof: conjugated shears span sl2(F_3), cubing lifts each layer); computed k = 1..5",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-43",
+      "status": "EXACT",
+      "domain": "(Z/3^k)^2; proof as MF-42 with the kernel at level r; computed r = 2..4, k <= 5",
+      "dependencies": "MF-42"
+    },
+    {
+      "id": "MF-44",
+      "status": "EXACT",
+      "domain": "Z/9",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-45",
+      "status": "EXACT",
+      "domain": "Z/9, Z/27",
+      "dependencies": "MF-39"
+    },
+    {
+      "id": "MF-46",
+      "status": "EXACT",
+      "domain": "Z/9, Z/81, Z/729",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-47",
+      "status": "EXACT",
+      "domain": "Z/9^k, k = 1..3",
+      "dependencies": "MF-46"
+    },
+    {
+      "id": "MF-48",
+      "status": "EXACT",
+      "domain": "Z, the symmetric module",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-49",
+      "status": "EXACT",
+      "domain": "2x2 integer matrices with entries |.| <= 3; primes < 60",
+      "dependencies": "MF-41"
+    },
+    {
+      "id": "MF-50",
+      "status": "EXACT",
+      "domain": "the 78,498 primes below 10^6; CI checks below 20,000",
+      "dependencies": "MF-41"
+    },
+    {
+      "id": "MF-51",
+      "status": "EXACT",
+      "domain": "(Z/3^k)^2, k <= 5",
+      "dependencies": "MF-43"
+    },
+    {
+      "id": "MF-52",
+      "status": "EXACT",
+      "domain": "(Z/9)^2, (Z/27)^2; all directions",
+      "dependencies": "MF-42"
+    },
+    {
+      "id": "MF-53",
+      "status": "EXACT",
+      "domain": "(Z/9)^2 and (Z/27)^2; every c mod 9, nine c mod 27",
+      "dependencies": "MF-42, MF-43"
+    },
+    {
+      "id": "MF-54",
+      "status": "EXACT",
+      "domain": "homogeneous polynomials in two variables over Q, degrees 1 to 12",
+      "dependencies": "MF-48"
+    },
+    {
+      "id": "MF-55",
+      "status": "EXACT",
+      "domain": "Z_3^2; checked modulo 3^k for k <= 5",
+      "dependencies": "MF-39"
+    },
+    {
+      "id": "MF-56",
+      "status": "EXACT",
+      "domain": "P^1(Z/3^k), k <= 6; P^1(Z_3)",
+      "dependencies": "MF-40"
+    },
+    {
+      "id": "MF-57",
+      "status": "EXACT",
+      "domain": "2x2 integer matrices congruent to A mod 3 with an inert polynomial of first-lift valuation 1",
+      "dependencies": "MF-44"
+    },
+    {
+      "id": "MF-58",
+      "status": "EXACT",
+      "domain": "single challenges (k, s, n) with s uniform in (Z/3^k)^2 and n < 10^6",
+      "dependencies": "MF-57"
+    },
+    {
+      "id": "MF-59",
+      "status": "EXACT",
+      "domain": "real symmetric 2x2 matrices, 2+1 Minkowski; n < 40",
+      "dependencies": "MF-20, MF-25"
+    },
+    {
+      "id": "MF-60",
+      "status": "EXACT",
+      "domain": "the unit mass shell of 2+1 Minkowski space; n < 30",
+      "dependencies": "MF-15, MF-59"
+    },
+    {
+      "id": "MF-61",
+      "status": "EXACT",
+      "domain": "2+1 Minkowski space",
+      "dependencies": "MF-42"
+    },
+    {
+      "id": "MF-62",
+      "status": "EXACT",
+      "domain": "SL2(Z) acting on the hyperbolic plane",
+      "dependencies": "MF-49"
+    },
+    {
+      "id": "MF-63",
+      "status": "EXACT",
+      "domain": "Z^2 and real symmetric 2x2 matrices; |a|, |b| <= 15; n < 60",
+      "dependencies": "MF-02, MF-60"
+    },
+    {
+      "id": "MF-64",
+      "status": "EXACT",
+      "domain": "(Z/9)^2 and symmetric 2x2 matrices mod 9",
+      "dependencies": "MF-16, MF-17, MF-20"
+    },
+    {
+      "id": "MF-65",
+      "status": "EXACT",
+      "domain": "the 81 states mod 9 and symmetric 2x2 matrices mod 9",
+      "dependencies": "MF-63, MF-64"
+    },
+    {
+      "id": "MF-66",
+      "status": "EXACT",
+      "domain": "bijections of the 81 states mod 9",
+      "dependencies": "MF-57"
+    },
+    {
+      "id": "MF-67",
+      "status": "EXACT",
+      "domain": "triangle groups (p, q, r), p <= q <= r < 60; the hyperbolic plane on which the law acts (MF-62)",
+      "dependencies": "MF-62"
+    },
+    {
+      "id": "MF-68",
+      "status": "EXACT",
+      "domain": "GL2(Z/7)",
+      "dependencies": "MF-42, MF-67"
+    },
+    {
+      "id": "MF-69",
+      "status": "EXACT",
+      "domain": "Fibonacci numbers and Pisano periods",
+      "dependencies": "MF-67, Theorem 3.1 of the foundations paper"
+    },
+    {
+      "id": "MF-70",
+      "status": "EXACT",
+      "domain": "positive integer sequences of length 7 with sum 15",
+      "dependencies": "MF-68"
+    },
+    {
+      "id": "MF-71",
+      "status": "EXACT",
+      "domain": "GL2(Z/p), p <= 19",
+      "dependencies": "MF-42, MF-68"
+    },
+    {
+      "id": "MF-72",
+      "status": "EXACT",
+      "domain": "GL2(Z/7); the handshake fingerprint (M375)",
+      "dependencies": "MF-57, MF-66"
+    },
+    {
+      "id": "MF-73",
+      "status": "EXACT",
+      "domain": "Z[phi]/9",
+      "dependencies": "MF-39"
+    },
+    {
+      "id": "MF-74",
+      "status": "EXACT",
+      "domain": "the icosian ring in the quaternions over Q(sqrt5)",
+      "dependencies": "MF-01, MF-73"
+    },
+    {
+      "id": "MF-75",
+      "status": "EXACT",
+      "domain": "E8/9E8",
+      "dependencies": "MF-74"
+    },
+    {
+      "id": "MF-76",
+      "status": "EXACT",
+      "domain": "the E8 lattice of MF-74",
+      "dependencies": "MF-74"
+    },
+    {
+      "id": "MF-77",
+      "status": "EXACT",
+      "domain": "P^1(F7); binary codes of length 8 and 7",
+      "dependencies": "MF-68, MF-71"
+    },
+    {
+      "id": "MF-78",
+      "status": "EXACT",
+      "domain": "the E6 root lattice modulo 3E6*",
+      "dependencies": "MF-73"
+    },
+    {
+      "id": "MF-79",
+      "status": "EXACT",
+      "domain": "binary forms of degree 1 to 3 over Z and Z/9",
+      "dependencies": "MF-02, MF-64"
+    },
+    {
+      "id": "MF-80",
+      "status": "EXACT",
+      "domain": "the hereditarily finite sets V_omega",
+      "dependencies": "MF-10"
+    },
+    {
+      "id": "MF-81",
+      "status": "EXACT",
+      "domain": "the icosian E8 of MF-74",
+      "dependencies": "MF-74"
+    },
+    {
+      "id": "MF-82",
+      "status": "EXACT",
+      "domain": "the first 2000 letters",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-83",
+      "status": "EXACT",
+      "domain": "n = 1 to 59",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-84",
+      "status": "EXACT",
+      "domain": "SL2(Z); the figure-eight knot",
+      "dependencies": "MF-62"
+    },
+    {
+      "id": "MF-85",
+      "status": "EXACT",
+      "domain": "n = 1 to 20",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-86",
+      "status": "EXACT",
+      "domain": "k = 1 to 40",
+      "dependencies": "MF-84"
+    },
+    {
+      "id": "MF-87",
+      "status": "EXACT",
+      "domain": "n < 20000",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-88",
+      "status": "EXACT",
+      "domain": "the Fibonacci braided fusion category",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-89",
+      "status": "EXACT",
+      "domain": "affine Lie algebras at level 1",
+      "dependencies": "MF-88, MF-74"
+    },
+    {
+      "id": "MF-90",
+      "status": "EXACT",
+      "domain": "the E8 Dynkin diagram",
+      "dependencies": "MF-76"
+    },
+    {
+      "id": "MF-91",
+      "status": "EXACT",
+      "domain": "the modular function R(q)",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-92",
+      "status": "EXACT",
+      "domain": "Virasoro minimal models",
+      "dependencies": "MF-88"
+    },
+    {
+      "id": "MF-93",
+      "status": "EXACT",
+      "domain": "the 2+1 Minkowski space of symmetric matrices",
+      "dependencies": "MF-61, MF-65"
+    },
+    {
+      "id": "MF-94",
+      "status": "EXACT",
+      "domain": "the real plane with the symplectic form dq dp",
+      "dependencies": "MF-02, MF-09"
+    },
+    {
+      "id": "MF-95",
+      "status": "EXACT",
+      "domain": "PSL2(Z) and the hyperbolic plane",
+      "dependencies": "MF-62"
+    },
+    {
+      "id": "MF-96",
+      "status": "EXACT",
+      "domain": "l2((Z/9)^2)",
+      "dependencies": "MF-10, MF-11"
+    },
+    {
+      "id": "MF-97",
+      "status": "EXACT",
+      "domain": "(Z/9)^2",
+      "dependencies": "MF-42"
+    },
+    {
+      "id": "MF-98",
+      "status": "EXACT",
+      "domain": "59 pairs of integer matrices",
+      "dependencies": "MF-79"
+    },
+    {
+      "id": "MF-99",
+      "status": "EXACT",
+      "domain": "2 x 2 x 2 integer tensors",
+      "dependencies": "MF-79"
+    },
+    {
+      "id": "MF-100",
+      "status": "EXACT",
+      "domain": "odd N, 3 to 25",
+      "dependencies": "MF-84, MF-86"
+    },
+    {
+      "id": "MF-101",
+      "status": "EXACT",
+      "domain": "m, n = 1 to 24, exact rationals",
+      "dependencies": "MF-09, MF-60"
+    },
+    {
+      "id": "MF-102",
+      "status": "EXACT",
+      "domain": "the E8 root system of MF-74",
+      "dependencies": "MF-76"
+    },
+    {
+      "id": "MF-103",
+      "status": "EXACT",
+      "domain": "the de Bruijn pentagrid with generic offsets",
+      "dependencies": "MF-84"
+    },
+    {
+      "id": "MF-104",
+      "status": "EXACT",
+      "domain": "GL2(Z/p), p = 23 to 97",
+      "dependencies": "MF-71"
+    },
+    {
+      "id": "MF-105",
+      "status": "EXACT",
+      "domain": "P^1(F23); binary codes of length 24",
+      "dependencies": "MF-77"
+    },
+    {
+      "id": "MF-106",
+      "status": "EXACT",
+      "domain": "binary codes of length 8; the 8-cube",
+      "dependencies": "MF-77"
+    },
+    {
+      "id": "MF-107",
+      "status": "EXACT",
+      "domain": "the E8 Adinkra and the E8 lattice",
+      "dependencies": "MF-74, MF-77"
+    },
+    {
+      "id": "MF-108",
+      "status": "EXACT",
+      "domain": "the octonions; 8 x 8 integer matrices",
+      "dependencies": "MF-77"
+    },
+    {
+      "id": "MF-109",
+      "status": "EXACT",
+      "domain": "binary codes of length 24",
+      "dependencies": "MF-77"
+    },
+    {
+      "id": "MF-110",
+      "status": "EXACT",
+      "domain": "ribbon graphs and Riemann surfaces",
+      "dependencies": "MF-77"
+    },
+    {
+      "id": "MF-111",
+      "status": "EXACT",
+      "domain": "Vogel's model of phyllotaxis",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-112",
+      "status": "EXACT",
+      "domain": "the honeybee pedigree, k = 1 to 19",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-113",
+      "status": "EXACT",
+      "domain": "linear population models",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-114",
+      "status": "EXACT",
+      "domain": "Hueckel theory of conjugated rings",
+      "dependencies": "MF-88"
+    },
+    {
+      "id": "MF-115",
+      "status": "EXACT",
+      "domain": "pairs a, b < 700",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-116",
+      "status": "EXACT",
+      "domain": "the integers below 3000",
+      "dependencies": "MF-87"
+    },
+    {
+      "id": "MF-117",
+      "status": "EXACT",
+      "domain": "pitch classes Z/12; words",
+      "dependencies": "MF-82"
+    },
+    {
+      "id": "MF-118",
+      "status": "EXACT",
+      "domain": "(Z/9)^2 with marks in Z/9",
+      "dependencies": "MF-80"
+    },
+    {
+      "id": "MF-119",
+      "status": "EXACT",
+      "domain": "branching processes",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-120",
+      "status": "EXACT",
+      "domain": "input-output economics",
+      "dependencies": "MF-01"
+    },
+    {
+      "id": "MF-121",
+      "status": "EXACT",
+      "domain": "reaction networks; the law on Z^2",
+      "dependencies": "MF-02, MF-94"
+    },
+    {
+      "id": "MF-122",
+      "status": "EXACT",
+      "domain": "binary rhythms",
+      "dependencies": "MF-82"
+    },
+    {
+      "id": "MF-123",
+      "status": "EXACT",
+      "domain": "OmegaSL transmission",
+      "dependencies": "MF-80"
+    },
+    {
+      "id": "MF-124",
+      "status": "EXACT",
+      "domain": "the octonions with integer coordinates; the Albert algebra of 3 x 3 Hermitian octonionic matrices",
+      "dependencies": "MF-77; MF-106"
+    },
+    {
+      "id": "MF-125",
+      "status": "EXACT",
+      "domain": "the 16-vertex Adinkra of the extended Hamming code",
+      "dependencies": "MF-106"
+    },
+    {
+      "id": "MF-126",
+      "status": "EXACT",
+      "domain": "linear laws on the 81 states and on any (Z/m)^2",
+      "dependencies": "MF-66"
+    },
+    {
+      "id": "MF-127",
+      "status": "EXACT",
+      "domain": "the Fibonacci words",
+      "dependencies": "MF-82"
+    },
+    {
+      "id": "MF-128",
+      "status": "EXACT",
+      "domain": "the transfer matrices over the rationals; four exact pairs (E, V)",
+      "dependencies": "the law; MF-127"
+    },
+    {
+      "id": "MF-129",
+      "status": "EXACT",
+      "domain": "the half-traces of the transfer matrices",
+      "dependencies": "MF-128"
+    },
+    {
+      "id": "MF-130",
+      "status": "EXACT",
+      "domain": "the triples of rationals",
+      "dependencies": "MF-128"
+    },
+    {
+      "id": "MF-131",
+      "status": "EXACT",
+      "domain": "the approximant Hamiltonian of length 377, periodic and antiperiodic boundary",
+      "dependencies": "MF-127; MF-128"
+    },
+    {
+      "id": "MF-132",
+      "status": "EXACT",
+      "domain": "the approximants of lengths 34, 144 and 610",
+      "dependencies": "MF-131"
+    },
+    {
+      "id": "MF-133",
+      "status": "EXACT",
+      "domain": "the half-trace orbits at V = 1",
+      "dependencies": "MF-128; MF-131"
+    },
+    {
+      "id": "MF-134",
+      "status": "EXACT",
+      "domain": "permutations of a finite set; binary codes of length 8",
+      "dependencies": "MF-77; MF-106; MF-126"
+    },
+    {
+      "id": "MF-135",
+      "status": "EXACT",
+      "domain": "2 + 1 Minkowski space; energy-momentum (t, x, y) = (E/mc^2, p_x/mc, p_y/mc)",
+      "dependencies": "MF-02"
+    },
+    {
+      "id": "MF-136",
+      "status": "EXACT",
+      "domain": "the boost of MF-135",
+      "dependencies": "MF-135"
+    },
+    {
+      "id": "MF-137",
+      "status": "EXACT",
+      "domain": "the powers of the golden boost",
+      "dependencies": "MF-136"
+    },
+    {
+      "id": "MF-138",
+      "status": "EXACT",
+      "domain": "2 + 1 Minkowski space",
+      "dependencies": "MF-135"
+    },
+    {
+      "id": "MF-139",
+      "status": "EXACT",
+      "domain": "the form Q as a point of Minkowski space",
+      "dependencies": "MF-02; MF-135; MF-138"
+    },
+    {
+      "id": "MF-140",
+      "status": "EXACT",
+      "domain": "the words of length 1 to 7 in A^2, B and their inverses",
+      "dependencies": "MF-135"
+    },
+    {
+      "id": "MF-141",
+      "status": "EXACT",
+      "domain": "pairs of non-collinear golden boosts",
+      "dependencies": "MF-136"
+    },
+    {
+      "id": "MF-142",
+      "status": "EXACT",
+      "domain": "integer light-cone coordinates modulo 9",
+      "dependencies": "MF-137"
+    },
+    {
+      "id": "MF-143",
+      "status": "EXACT",
+      "domain": "the spin and vector representations of SL2(R)",
+      "dependencies": "MF-100; MF-135"
+    },
+    {
+      "id": "MF-144",
+      "status": "EXACT",
+      "domain": "3 + 1 Minkowski space",
+      "dependencies": "MF-135"
+    },
+    {
+      "id": "MF-145",
+      "status": "EXACT",
+      "domain": "Fibonacci multilayers of two dielectrics at normal incidence in air",
+      "dependencies": "MF-130"
+    },
+    {
+      "id": "MF-146",
+      "status": "EXACT",
+      "domain": "the transfer matrices of the stacks at phases with rational cosine and sine",
+      "dependencies": "MF-129; MF-145"
+    },
+    {
+      "id": "MF-147",
+      "status": "EXACT",
+      "domain": "the stack of generation 16",
+      "dependencies": "MF-145; MF-146"
+    },
+    {
+      "id": "MF-148",
+      "status": "EXACT",
+      "domain": "the triples of Z/9",
+      "dependencies": "MF-128; MF-129"
+    },
+    {
+      "id": "MF-149",
+      "status": "EXACT",
+      "domain": "SL2(Z[phi]) acting on 2 + 1 Minkowski space",
+      "dependencies": "MF-136; MF-138"
+    },
+    {
+      "id": "MF-150",
+      "status": "EXACT",
+      "domain": "SL2(Z[phi]) and SL2(Z)",
+      "dependencies": "MF-140; MF-149"
+    },
+    {
+      "id": "MF-151",
+      "status": "EXACT",
+      "domain": "the off-diagonal Fibonacci tight-binding model",
+      "dependencies": "MF-128; MF-129"
+    },
+    {
+      "id": "MF-152",
+      "status": "EXACT",
+      "domain": "layered acoustic and optical media at normal incidence",
+      "dependencies": "MF-145"
+    },
+    {
+      "id": "MF-153",
+      "status": "EXACT",
+      "domain": "the four wave systems of the engine",
+      "dependencies": "MF-130; MF-151; MF-152"
+    },
+    {
+      "id": "MF-154",
+      "status": "EXACT",
+      "domain": "the approximant 55/89 of the Fibonacci chain with periodic boundary",
+      "dependencies": "MF-131"
+    },
+    {
+      "id": "MF-155",
+      "status": "EXACT",
+      "domain": "integer triples and their residues modulo 9",
+      "dependencies": "MF-148"
+    },
+    {
+      "id": "MF-156",
+      "status": "EXACT",
+      "domain": "the free group F2, its abelianization and its SL2 character variety",
+      "dependencies": "MF-127; MF-128"
+    },
+    {
+      "id": "MF-157",
+      "status": "EXACT",
+      "domain": "the triples modulo 3, 9, 27 and 81",
+      "dependencies": "MF-148"
+    },
+    {
+      "id": "MF-158",
+      "status": "EXACT",
+      "domain": "approximants of lengths 13 to 1597 at four couplings",
+      "dependencies": "MF-132"
+    },
+    {
+      "id": "MF-159",
+      "status": "EXACT",
+      "domain": "approximants of lengths 233 to 987 at V = 1.5",
+      "dependencies": "MF-131"
+    },
+    {
+      "id": "MF-160",
+      "status": "EXACT",
+      "domain": "the separable square Fibonacci Hamiltonian, approximants 233 and 610",
+      "dependencies": "MF-131"
+    },
+    {
+      "id": "MF-161",
+      "status": "EXACT",
+      "domain": "Penrose patches from the pentagrid with |K| <= 4, 8, 12",
+      "dependencies": "MF-150"
+    },
+    {
+      "id": "MF-162",
+      "status": "EXACT",
+      "domain": "the adjacency matrix of each patch",
+      "dependencies": "MF-02; MF-161"
+    },
+    {
+      "id": "MF-163",
+      "status": "EXACT",
+      "domain": "the trace map on the triples modulo 27 moduli",
+      "dependencies": "MF-157"
+    },
+    {
+      "id": "MF-164",
+      "status": "EXACT",
+      "domain": "the trace map near its fixed point",
+      "dependencies": "MF-128"
+    },
+    {
+      "id": "MF-165",
+      "status": "EXACT",
+      "domain": "the triples modulo 243",
+      "dependencies": "MF-157"
+    },
+    {
+      "id": "MF-166",
+      "status": "EXACT",
+      "domain": "the law and the trace map modulo 9",
+      "dependencies": "MF-148"
+    },
+    {
+      "id": "MF-167",
+      "status": "EXACT",
+      "domain": "the vertex model on the patches with |K| <= 4 and 8",
+      "dependencies": "MF-162"
+    },
+    {
+      "id": "MF-168",
+      "status": "EXACT",
+      "domain": "the Fourier transform of the letter sequence",
+      "dependencies": "MF-159"
+    },
+    {
+      "id": "MF-169",
+      "status": "EXACT",
+      "domain": "the Fibonacci Hamiltonian at weak coupling",
+      "dependencies": "MF-168"
+    },
+    {
+      "id": "MF-170",
+      "status": "EXACT",
+      "domain": "the approximants of lengths 89 to 1597",
+      "dependencies": "MF-158"
+    },
+    {
+      "id": "MF-171",
+      "status": "EXACT",
+      "domain": "the approximant Hamiltonian on the torus of Bloch phase and phason",
+      "dependencies": "MF-154"
+    },
+    {
+      "id": "MF-172",
+      "status": "EXACT",
+      "domain": "the off-diagonal chain and the quarter-wave stacks with golden contrast",
+      "dependencies": "MF-146; MF-151"
+    },
+    {
+      "id": "MF-173",
+      "status": "EXACT",
+      "domain": "five wave models at chosen frequencies",
+      "dependencies": "MF-153"
+    },
+    {
+      "id": "MF-174",
+      "status": "EXACT",
+      "domain": "the transfer matrix of one period",
+      "dependencies": "MF-140"
+    },
+    {
+      "id": "MF-175",
+      "status": "EXACT",
+      "domain": "the letter matrices of the engine",
+      "dependencies": "MF-152"
+    },
+    {
+      "id": "MF-176",
+      "status": "EXACT",
+      "domain": "the free group on two letters and its SL2 representations",
+      "dependencies": "MF-156"
+    },
+    {
+      "id": "MF-177",
+      "status": "EXACT",
+      "domain": "the Fibonacci anyon model",
+      "dependencies": "MF-92"
+    },
+    {
+      "id": "MF-178",
+      "status": "EXACT",
+      "domain": "the nine-level quantum system and its discrete phase space",
+      "dependencies": "MF-100"
+    },
+    {
+      "id": "MF-179",
+      "status": "EXACT",
+      "domain": "the nine-level quantum system",
+      "dependencies": "MF-138; MF-178"
+    },
+    {
+      "id": "MF-180",
+      "status": "EXACT",
+      "domain": "the bases of the nine-level system reached by the law",
+      "dependencies": "MF-178"
+    },
+    {
+      "id": "MF-181",
+      "status": "EXACT",
+      "domain": "states of the nine-level system",
+      "dependencies": "MF-178"
+    },
+    {
+      "id": "MF-182",
+      "status": "EXACT",
+      "domain": "SL2(Z[phi]) acting on spinors and on vectors",
+      "dependencies": "MF-150"
+    },
+    {
+      "id": "MF-183",
+      "status": "EXACT",
+      "domain": "the groups (Z/9)^2 and (Z/3)^4",
+      "dependencies": "MF-178"
+    },
+    {
+      "id": "MF-184",
+      "status": "EXACT",
+      "domain": "the states modulo 3^k as Z[phi]/3^k",
+      "dependencies": "MF-02; MF-148"
+    },
+    {
+      "id": "MF-185",
+      "status": "EXACT",
+      "domain": "the quantum cat map at dimensions 3^k",
+      "dependencies": "MF-184"
+    },
+    {
+      "id": "MF-186",
+      "status": "EXACT",
+      "domain": "the quantum cat map at odd N from 3 to 19",
+      "dependencies": "MF-100"
+    },
+    {
+      "id": "MF-187",
+      "status": "EXACT",
+      "domain": "the qutrit and its nine Weyl labels",
+      "dependencies": "MF-184"
+    },
+    {
+      "id": "MF-188",
+      "status": "EXACT",
+      "domain": "the KCBS scenario of five projectors on a qutrit",
+      "dependencies": "MF-02"
+    },
+    {
+      "id": "MF-189",
+      "status": "EXACT",
+      "domain": "the composite of two nine-level systems",
+      "dependencies": "MF-178"
+    },
+    {
+      "id": "MF-190",
+      "status": "EXACT",
+      "domain": "two qutrit states",
+      "dependencies": "MF-178"
+    },
+    {
+      "id": "MF-191",
+      "status": "EXACT",
+      "domain": "A^2 in its two-dimensional and symmetric-square representations",
+      "dependencies": "MF-135; MF-143"
+    },
+    {
+      "id": "MF-192",
+      "status": "EXACT",
+      "domain": "the discrete-time quantum walk with reflecting coins",
+      "dependencies": "MF-127"
+    },
+    {
+      "id": "MF-193",
+      "status": "EXACT",
+      "domain": "seven-symbol apertures on the 81 states mod 9",
+      "dependencies": "MF-31"
+    },
+    {
+      "id": "MF-194",
+      "status": "EXACT",
+      "domain": "the aperture a mod 7 on the 81 states; the law on (Z/7)^2",
+      "dependencies": "MF-193"
+    },
+    {
+      "id": "MF-195",
+      "status": "EXACT",
+      "domain": "the permutation representation of the law on l^2(81)",
+      "dependencies": "MF-34"
+    },
+    {
+      "id": "MF-196",
+      "status": "EXACT",
+      "domain": "the operators on l^2(81) built from the shift",
+      "dependencies": "MF-195"
+    },
+    {
+      "id": "MF-197",
+      "status": "EXACT",
+      "domain": "the memory extensions of the law mod 9 (CRM-02, CB-003)",
+      "dependencies": "MF-31"
+    },
+    {
+      "id": "MF-198",
+      "status": "EXACT",
+      "domain": "the tower mod 3, 9, 27, 81 (CRC-01 to CRC-04, CB-004)",
+      "dependencies": "MF-31, MF-197"
+    },
+    {
+      "id": "MF-199",
+      "status": "EXACT",
+      "domain": "teams of the aperture a mod 7 on the 81 states (COT-04, CB-005)",
+      "dependencies": "MF-194"
+    },
+    {
+      "id": "MF-200",
+      "status": "EXACT",
+      "domain": "coordinate apertures of seven classes on the 81 states (CB-010)",
+      "dependencies": "MF-194"
+    },
+    {
+      "id": "MF-201",
+      "status": "EXACT",
+      "domain": "observers with seven outcomes on (Z/3^k)^2 (COT-06, CB-007)",
+      "dependencies": "MF-193"
+    },
+    {
+      "id": "MF-202",
+      "status": "EXACT",
+      "domain": "the aperture a mod 7 at phases of the law mod 3^k, k = 2 to 5 (X-OBS-02, CB-008, CB-022)",
+      "dependencies": "MF-199, MF-201"
+    },
+    {
+      "id": "MF-203",
+      "status": "EXACT",
+      "domain": "the law mod 11",
+      "dependencies": "MF-28"
+    },
+    {
+      "id": "MF-204",
+      "status": "EXACT",
+      "domain": "the 81 states mod 9 (SR-01)",
+      "dependencies": "MF-03"
+    },
+    {
+      "id": "MF-205",
+      "status": "EXACT",
+      "domain": "two-outcome distributions under attenuation (CB-006, corrected)",
+      "dependencies": "none"
+    },
+    {
+      "id": "MF-206",
+      "status": "EXACT",
+      "domain": "hyperbolic triangles with angles pi over integers (CB-009)",
+      "dependencies": "MF-67"
+    },
+    {
+      "id": "MF-207",
+      "status": "EXACT",
+      "domain": "W_5 under the law",
+      "dependencies": "MF-201, MF-202"
+    },
+    {
+      "id": "MF-208",
+      "status": "EXACT",
+      "domain": "W_6 under the law",
+      "dependencies": "MF-201, MF-207"
+    },
+    {
+      "id": "MF-209",
+      "status": "EXACT",
+      "domain": "W_k, every k",
+      "dependencies": "MF-35, MF-42"
+    },
+    {
+      "id": "MF-210",
+      "status": "EXACT",
+      "domain": "W_k, every k",
+      "dependencies": "MF-35, MF-209"
+    },
+    {
+      "id": "MF-211",
+      "status": "EXACT",
+      "domain": "W_k, every k",
+      "dependencies": "MF-42, MF-209"
+    },
+    {
+      "id": "MF-212",
+      "status": "EXACT",
+      "domain": "W_k, every k",
+      "dependencies": "MF-42, MF-209, MF-211"
+    },
+    {
+      "id": "MF-213",
+      "status": "EXACT",
+      "domain": "the inverse limit Z_3^2 = Z_3[phi] with Haar measure",
+      "dependencies": "MF-31, MF-35"
+    },
+    {
+      "id": "MF-214",
+      "status": "EXACT",
+      "domain": "W_k, every k",
+      "dependencies": "MF-32, MF-201"
+    },
+    {
+      "id": "MF-215",
+      "status": "EXACT",
+      "domain": "W_6",
+      "dependencies": "MF-207, MF-214"
+    },
+    {
+      "id": "MF-216",
+      "status": "EXACT",
+      "domain": "the limit Z_3[phi] with Haar measure",
+      "dependencies": "MF-213"
+    },
+    {
+      "id": "MF-217",
+      "status": "EXACT",
+      "domain": "W_6 and W_7",
+      "dependencies": "MF-201"
+    },
+    {
+      "id": "MF-218",
+      "status": "EXACT",
+      "domain": "the E8 lattice of MF-74",
+      "dependencies": "MF-74"
+    },
+    {
+      "id": "MF-219",
+      "status": "EXACT",
+      "domain": "the affine plane over Z/3^k, every k",
+      "dependencies": "MF-31, MF-35"
+    },
+    {
+      "id": "MF-220",
+      "status": "EXACT",
+      "domain": "the direct system of finite memory classes, every k",
+      "dependencies": "MF-197, MF-198"
+    },
+    {
+      "id": "MF-221",
+      "status": "EXACT",
+      "domain": "W_6, 531,441 states",
+      "dependencies": "MF-208, MF-214"
+    }
+  ],
+  "edges": [
+    {
+      "from": "MF-02",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-03",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-04",
+      "to": "MF-03"
+    },
+    {
+      "from": "MF-05",
+      "to": "MF-03"
+    },
+    {
+      "from": "MF-06",
+      "to": "MF-05"
+    },
+    {
+      "from": "MF-07",
+      "to": "MF-06"
+    },
+    {
+      "from": "MF-08",
+      "to": "MF-03"
+    },
+    {
+      "from": "MF-11",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-12",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-14",
+      "to": "MF-05"
+    },
+    {
+      "from": "MF-15",
+      "to": "MF-07"
+    },
+    {
+      "from": "MF-16",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-16",
+      "to": "MF-15"
+    },
+    {
+      "from": "MF-17",
+      "to": "MF-07"
+    },
+    {
+      "from": "MF-18",
+      "to": "MF-17"
+    },
+    {
+      "from": "MF-19",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-19",
+      "to": "MF-11"
+    },
+    {
+      "from": "MF-19",
+      "to": "MF-18"
+    },
+    {
+      "from": "MF-20",
+      "to": "MF-07"
+    },
+    {
+      "from": "MF-20",
+      "to": "MF-17"
+    },
+    {
+      "from": "MF-21",
+      "to": "MF-15"
+    },
+    {
+      "from": "MF-22",
+      "to": "MF-14"
+    },
+    {
+      "from": "MF-23",
+      "to": "MF-06"
+    },
+    {
+      "from": "MF-24",
+      "to": "MF-03"
+    },
+    {
+      "from": "MF-25",
+      "to": "MF-20"
+    },
+    {
+      "from": "MF-26",
+      "to": "MF-25"
+    },
+    {
+      "from": "MF-27",
+      "to": "MF-17"
+    },
+    {
+      "from": "MF-27",
+      "to": "MF-26"
+    },
+    {
+      "from": "MF-28",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-29",
+      "to": "MF-28"
+    },
+    {
+      "from": "MF-30",
+      "to": "MF-28"
+    },
+    {
+      "from": "MF-30",
+      "to": "MF-15"
+    },
+    {
+      "from": "MF-31",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-31",
+      "to": "MF-26"
+    },
+    {
+      "from": "MF-32",
+      "to": "MF-31"
+    },
+    {
+      "from": "MF-33",
+      "to": "MF-03"
+    },
+    {
+      "from": "MF-34",
+      "to": "MF-11"
+    },
+    {
+      "from": "MF-34",
+      "to": "MF-19"
+    },
+    {
+      "from": "MF-35",
+      "to": "MF-26"
+    },
+    {
+      "from": "MF-35",
+      "to": "MF-32"
+    },
+    {
+      "from": "MF-36",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-37",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-38",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-39",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-40",
+      "to": "MF-39"
+    },
+    {
+      "from": "MF-41",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-42",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-43",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-44",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-45",
+      "to": "MF-39"
+    },
+    {
+      "from": "MF-46",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-47",
+      "to": "MF-46"
+    },
+    {
+      "from": "MF-48",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-49",
+      "to": "MF-41"
+    },
+    {
+      "from": "MF-50",
+      "to": "MF-41"
+    },
+    {
+      "from": "MF-51",
+      "to": "MF-43"
+    },
+    {
+      "from": "MF-52",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-53",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-53",
+      "to": "MF-43"
+    },
+    {
+      "from": "MF-54",
+      "to": "MF-48"
+    },
+    {
+      "from": "MF-55",
+      "to": "MF-39"
+    },
+    {
+      "from": "MF-56",
+      "to": "MF-40"
+    },
+    {
+      "from": "MF-57",
+      "to": "MF-44"
+    },
+    {
+      "from": "MF-58",
+      "to": "MF-57"
+    },
+    {
+      "from": "MF-59",
+      "to": "MF-20"
+    },
+    {
+      "from": "MF-59",
+      "to": "MF-25"
+    },
+    {
+      "from": "MF-60",
+      "to": "MF-15"
+    },
+    {
+      "from": "MF-60",
+      "to": "MF-59"
+    },
+    {
+      "from": "MF-61",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-62",
+      "to": "MF-49"
+    },
+    {
+      "from": "MF-63",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-63",
+      "to": "MF-60"
+    },
+    {
+      "from": "MF-64",
+      "to": "MF-16"
+    },
+    {
+      "from": "MF-64",
+      "to": "MF-17"
+    },
+    {
+      "from": "MF-64",
+      "to": "MF-20"
+    },
+    {
+      "from": "MF-65",
+      "to": "MF-63"
+    },
+    {
+      "from": "MF-65",
+      "to": "MF-64"
+    },
+    {
+      "from": "MF-66",
+      "to": "MF-57"
+    },
+    {
+      "from": "MF-67",
+      "to": "MF-62"
+    },
+    {
+      "from": "MF-68",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-68",
+      "to": "MF-67"
+    },
+    {
+      "from": "MF-69",
+      "to": "MF-67"
+    },
+    {
+      "from": "MF-70",
+      "to": "MF-68"
+    },
+    {
+      "from": "MF-71",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-71",
+      "to": "MF-68"
+    },
+    {
+      "from": "MF-72",
+      "to": "MF-57"
+    },
+    {
+      "from": "MF-72",
+      "to": "MF-66"
+    },
+    {
+      "from": "MF-73",
+      "to": "MF-39"
+    },
+    {
+      "from": "MF-74",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-74",
+      "to": "MF-73"
+    },
+    {
+      "from": "MF-75",
+      "to": "MF-74"
+    },
+    {
+      "from": "MF-76",
+      "to": "MF-74"
+    },
+    {
+      "from": "MF-77",
+      "to": "MF-68"
+    },
+    {
+      "from": "MF-77",
+      "to": "MF-71"
+    },
+    {
+      "from": "MF-78",
+      "to": "MF-73"
+    },
+    {
+      "from": "MF-79",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-79",
+      "to": "MF-64"
+    },
+    {
+      "from": "MF-80",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-81",
+      "to": "MF-74"
+    },
+    {
+      "from": "MF-82",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-83",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-84",
+      "to": "MF-62"
+    },
+    {
+      "from": "MF-85",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-86",
+      "to": "MF-84"
+    },
+    {
+      "from": "MF-87",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-88",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-89",
+      "to": "MF-88"
+    },
+    {
+      "from": "MF-89",
+      "to": "MF-74"
+    },
+    {
+      "from": "MF-90",
+      "to": "MF-76"
+    },
+    {
+      "from": "MF-91",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-92",
+      "to": "MF-88"
+    },
+    {
+      "from": "MF-93",
+      "to": "MF-61"
+    },
+    {
+      "from": "MF-93",
+      "to": "MF-65"
+    },
+    {
+      "from": "MF-94",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-94",
+      "to": "MF-09"
+    },
+    {
+      "from": "MF-95",
+      "to": "MF-62"
+    },
+    {
+      "from": "MF-96",
+      "to": "MF-10"
+    },
+    {
+      "from": "MF-96",
+      "to": "MF-11"
+    },
+    {
+      "from": "MF-97",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-98",
+      "to": "MF-79"
+    },
+    {
+      "from": "MF-99",
+      "to": "MF-79"
+    },
+    {
+      "from": "MF-100",
+      "to": "MF-84"
+    },
+    {
+      "from": "MF-100",
+      "to": "MF-86"
+    },
+    {
+      "from": "MF-101",
+      "to": "MF-09"
+    },
+    {
+      "from": "MF-101",
+      "to": "MF-60"
+    },
+    {
+      "from": "MF-102",
+      "to": "MF-76"
+    },
+    {
+      "from": "MF-103",
+      "to": "MF-84"
+    },
+    {
+      "from": "MF-104",
+      "to": "MF-71"
+    },
+    {
+      "from": "MF-105",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-106",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-107",
+      "to": "MF-74"
+    },
+    {
+      "from": "MF-107",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-108",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-109",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-110",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-111",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-112",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-113",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-114",
+      "to": "MF-88"
+    },
+    {
+      "from": "MF-115",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-116",
+      "to": "MF-87"
+    },
+    {
+      "from": "MF-117",
+      "to": "MF-82"
+    },
+    {
+      "from": "MF-118",
+      "to": "MF-80"
+    },
+    {
+      "from": "MF-119",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-120",
+      "to": "MF-01"
+    },
+    {
+      "from": "MF-121",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-121",
+      "to": "MF-94"
+    },
+    {
+      "from": "MF-122",
+      "to": "MF-82"
+    },
+    {
+      "from": "MF-123",
+      "to": "MF-80"
+    },
+    {
+      "from": "MF-124",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-124",
+      "to": "MF-106"
+    },
+    {
+      "from": "MF-125",
+      "to": "MF-106"
+    },
+    {
+      "from": "MF-126",
+      "to": "MF-66"
+    },
+    {
+      "from": "MF-127",
+      "to": "MF-82"
+    },
+    {
+      "from": "MF-128",
+      "to": "MF-127"
+    },
+    {
+      "from": "MF-129",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-130",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-131",
+      "to": "MF-127"
+    },
+    {
+      "from": "MF-131",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-132",
+      "to": "MF-131"
+    },
+    {
+      "from": "MF-133",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-133",
+      "to": "MF-131"
+    },
+    {
+      "from": "MF-134",
+      "to": "MF-77"
+    },
+    {
+      "from": "MF-134",
+      "to": "MF-106"
+    },
+    {
+      "from": "MF-134",
+      "to": "MF-126"
+    },
+    {
+      "from": "MF-135",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-136",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-137",
+      "to": "MF-136"
+    },
+    {
+      "from": "MF-138",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-139",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-139",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-139",
+      "to": "MF-138"
+    },
+    {
+      "from": "MF-140",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-141",
+      "to": "MF-136"
+    },
+    {
+      "from": "MF-142",
+      "to": "MF-137"
+    },
+    {
+      "from": "MF-143",
+      "to": "MF-100"
+    },
+    {
+      "from": "MF-143",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-144",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-145",
+      "to": "MF-130"
+    },
+    {
+      "from": "MF-146",
+      "to": "MF-129"
+    },
+    {
+      "from": "MF-146",
+      "to": "MF-145"
+    },
+    {
+      "from": "MF-147",
+      "to": "MF-145"
+    },
+    {
+      "from": "MF-147",
+      "to": "MF-146"
+    },
+    {
+      "from": "MF-148",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-148",
+      "to": "MF-129"
+    },
+    {
+      "from": "MF-149",
+      "to": "MF-136"
+    },
+    {
+      "from": "MF-149",
+      "to": "MF-138"
+    },
+    {
+      "from": "MF-150",
+      "to": "MF-140"
+    },
+    {
+      "from": "MF-150",
+      "to": "MF-149"
+    },
+    {
+      "from": "MF-151",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-151",
+      "to": "MF-129"
+    },
+    {
+      "from": "MF-152",
+      "to": "MF-145"
+    },
+    {
+      "from": "MF-153",
+      "to": "MF-130"
+    },
+    {
+      "from": "MF-153",
+      "to": "MF-151"
+    },
+    {
+      "from": "MF-153",
+      "to": "MF-152"
+    },
+    {
+      "from": "MF-154",
+      "to": "MF-131"
+    },
+    {
+      "from": "MF-155",
+      "to": "MF-148"
+    },
+    {
+      "from": "MF-156",
+      "to": "MF-127"
+    },
+    {
+      "from": "MF-156",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-157",
+      "to": "MF-148"
+    },
+    {
+      "from": "MF-158",
+      "to": "MF-132"
+    },
+    {
+      "from": "MF-159",
+      "to": "MF-131"
+    },
+    {
+      "from": "MF-160",
+      "to": "MF-131"
+    },
+    {
+      "from": "MF-161",
+      "to": "MF-150"
+    },
+    {
+      "from": "MF-162",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-162",
+      "to": "MF-161"
+    },
+    {
+      "from": "MF-163",
+      "to": "MF-157"
+    },
+    {
+      "from": "MF-164",
+      "to": "MF-128"
+    },
+    {
+      "from": "MF-165",
+      "to": "MF-157"
+    },
+    {
+      "from": "MF-166",
+      "to": "MF-148"
+    },
+    {
+      "from": "MF-167",
+      "to": "MF-162"
+    },
+    {
+      "from": "MF-168",
+      "to": "MF-159"
+    },
+    {
+      "from": "MF-169",
+      "to": "MF-168"
+    },
+    {
+      "from": "MF-170",
+      "to": "MF-158"
+    },
+    {
+      "from": "MF-171",
+      "to": "MF-154"
+    },
+    {
+      "from": "MF-172",
+      "to": "MF-146"
+    },
+    {
+      "from": "MF-172",
+      "to": "MF-151"
+    },
+    {
+      "from": "MF-173",
+      "to": "MF-153"
+    },
+    {
+      "from": "MF-174",
+      "to": "MF-140"
+    },
+    {
+      "from": "MF-175",
+      "to": "MF-152"
+    },
+    {
+      "from": "MF-176",
+      "to": "MF-156"
+    },
+    {
+      "from": "MF-177",
+      "to": "MF-92"
+    },
+    {
+      "from": "MF-178",
+      "to": "MF-100"
+    },
+    {
+      "from": "MF-179",
+      "to": "MF-138"
+    },
+    {
+      "from": "MF-179",
+      "to": "MF-178"
+    },
+    {
+      "from": "MF-180",
+      "to": "MF-178"
+    },
+    {
+      "from": "MF-181",
+      "to": "MF-178"
+    },
+    {
+      "from": "MF-182",
+      "to": "MF-150"
+    },
+    {
+      "from": "MF-183",
+      "to": "MF-178"
+    },
+    {
+      "from": "MF-184",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-184",
+      "to": "MF-148"
+    },
+    {
+      "from": "MF-185",
+      "to": "MF-184"
+    },
+    {
+      "from": "MF-186",
+      "to": "MF-100"
+    },
+    {
+      "from": "MF-187",
+      "to": "MF-184"
+    },
+    {
+      "from": "MF-188",
+      "to": "MF-02"
+    },
+    {
+      "from": "MF-189",
+      "to": "MF-178"
+    },
+    {
+      "from": "MF-190",
+      "to": "MF-178"
+    },
+    {
+      "from": "MF-191",
+      "to": "MF-135"
+    },
+    {
+      "from": "MF-191",
+      "to": "MF-143"
+    },
+    {
+      "from": "MF-192",
+      "to": "MF-127"
+    },
+    {
+      "from": "MF-193",
+      "to": "MF-31"
+    },
+    {
+      "from": "MF-194",
+      "to": "MF-193"
+    },
+    {
+      "from": "MF-195",
+      "to": "MF-34"
+    },
+    {
+      "from": "MF-196",
+      "to": "MF-195"
+    },
+    {
+      "from": "MF-197",
+      "to": "MF-31"
+    },
+    {
+      "from": "MF-198",
+      "to": "MF-31"
+    },
+    {
+      "from": "MF-198",
+      "to": "MF-197"
+    },
+    {
+      "from": "MF-199",
+      "to": "MF-194"
+    },
+    {
+      "from": "MF-200",
+      "to": "MF-194"
+    },
+    {
+      "from": "MF-201",
+      "to": "MF-193"
+    },
+    {
+      "from": "MF-202",
+      "to": "MF-199"
+    },
+    {
+      "from": "MF-202",
+      "to": "MF-201"
+    },
+    {
+      "from": "MF-203",
+      "to": "MF-28"
+    },
+    {
+      "from": "MF-204",
+      "to": "MF-03"
+    },
+    {
+      "from": "MF-206",
+      "to": "MF-67"
+    },
+    {
+      "from": "MF-207",
+      "to": "MF-201"
+    },
+    {
+      "from": "MF-207",
+      "to": "MF-202"
+    },
+    {
+      "from": "MF-208",
+      "to": "MF-201"
+    },
+    {
+      "from": "MF-208",
+      "to": "MF-207"
+    },
+    {
+      "from": "MF-209",
+      "to": "MF-35"
+    },
+    {
+      "from": "MF-209",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-210",
+      "to": "MF-35"
+    },
+    {
+      "from": "MF-210",
+      "to": "MF-209"
+    },
+    {
+      "from": "MF-211",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-211",
+      "to": "MF-209"
+    },
+    {
+      "from": "MF-212",
+      "to": "MF-42"
+    },
+    {
+      "from": "MF-212",
+      "to": "MF-209"
+    },
+    {
+      "from": "MF-212",
+      "to": "MF-211"
+    },
+    {
+      "from": "MF-213",
+      "to": "MF-31"
+    },
+    {
+      "from": "MF-213",
+      "to": "MF-35"
+    },
+    {
+      "from": "MF-214",
+      "to": "MF-32"
+    },
+    {
+      "from": "MF-214",
+      "to": "MF-201"
+    },
+    {
+      "from": "MF-215",
+      "to": "MF-207"
+    },
+    {
+      "from": "MF-215",
+      "to": "MF-214"
+    },
+    {
+      "from": "MF-216",
+      "to": "MF-213"
+    },
+    {
+      "from": "MF-217",
+      "to": "MF-201"
+    },
+    {
+      "from": "MF-218",
+      "to": "MF-74"
+    },
+    {
+      "from": "MF-219",
+      "to": "MF-31"
+    },
+    {
+      "from": "MF-219",
+      "to": "MF-35"
+    },
+    {
+      "from": "MF-220",
+      "to": "MF-197"
+    },
+    {
+      "from": "MF-220",
+      "to": "MF-198"
+    },
+    {
+      "from": "MF-221",
+      "to": "MF-208"
+    },
+    {
+      "from": "MF-221",
+      "to": "MF-214"
+    }
+  ],
+  "unresolved_mf_references": []
+}
