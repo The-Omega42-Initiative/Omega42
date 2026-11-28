@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+const mod=(x,n)=>(x%n+n)%n;
+const exchange=([a,b])=>[b,a];
+const accumulate=([a,b])=>[a,a+b];
+const step=(x,n)=>accumulate(exchange(x)).map(y=>mod(y,n));
+const prime=p=>p>=2&&Array.from({length:Math.max(0,p-2)},(_,i)=>i+2).every(d=>p%d);
+const candidates=[];
+for(let p=2;p<=3;p++)if(prime(p)&&p!==2&&Array.from({length:p},(_,x)=>mod(x*x-x-1,p)).every(Boolean))candidates.push(p);
+assert.deepEqual(candidates,[3]);
+const p=candidates[0],n=p*p;
+const seen=new Set(),census={};
+for(let a=0;a<n;a++)for(let b=0;b<n;b++){let x=[a,b],l=0;if(seen.has(x.join(',')))continue;do{seen.add(x.join(','));x=step(x,n);l++}while(x[0]!==a||x[1]!==b);census[l]=(census[l]||0)+1}
+assert.deepEqual(census,{1:1,8:1,24:3});
+const pow=(a,k)=>{let x=1;while(k--)x=x*a%n;return x};
+const primitive=Array.from({length:n-1},(_,i)=>i+1).filter(a=>new Set(Array.from({length:6},(_,k)=>pow(a,k))).size===6&&pow(a,6)===1);
+assert.deepEqual(primitive,[2,5]);assert.equal(primitive[0]*primitive[1]%n,1);
+let x=primitive.slice();for(let i=0;i<12;i++)x=step(x,n);assert.deepEqual(x,primitive.map(a=>mod(-a,n)));
+const fieldSizes=[p**2,p**3,p**6],h=(fieldSizes[0]-1)*(fieldSizes[1]-1)/(p-1),index=(fieldSizes[2]-1)/h;
+assert.equal(index,7);assert.equal(fieldSizes[1]*(fieldSizes[1]-1),702);
+console.log(JSON.stringify({schema:'omega42.generative-recovery.v1',premises:['exchange','unit accumulation','least odd prime with irreducible characteristic polynomial','depth two','primitive reciprocal seed pair in increasing representative order','degree three companion field'],derived:{prime:p,modulus:n,census,seed:primitive,fieldSizes,separableGroupOrder:h,quotientIndex:index,affineGroupOrder:702},boundary:'Field sizes and group counts use standard finite-field theorems; degree three and depth two are selected, not derived. No physical correspondence claimed.'},null,2));
