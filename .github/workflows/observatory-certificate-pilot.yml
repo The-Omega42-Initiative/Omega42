@@ -20,6 +20,8 @@ jobs:
           path: pinned
       - name: Regression tests
         run: python3 proposal/proposals/observatory-source-contract-01/test-certificate-pilot.py
+      - name: Structural impact regression
+        run: node proposal/proposals/observatory-source-contract-01/test-impact.mjs
       - name: Execute pinned certificate
         run: |
           mkdir -p evidence
