@@ -1,0 +1,42 @@
+name: Observatory certificate pilot
+on:
+  push:
+    branches: [proposal/observatory-source-contract-01]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          path: proposal
+      - uses: actions/checkout@v4
+        with:
+          ref: bf72fe90290481fbdd0194a3b57cf060105f9540
+          persist-credentials: false
+          path: pinned
+      - name: Regression tests
+        run: python3 proposal/proposals/observatory-source-contract-01/test-certificate-pilot.py
+      - name: Execute pinned certificate
+        run: |
+          mkdir -p evidence
+          python3 proposal/proposals/observatory-source-contract-01/run-certificate-pilot.py pinned > evidence/certificate.json
+      - name: Check expected certificate output
+        run: |
+          python3 - <<'PY'
+          import json
+          with open("evidence/certificate.json") as f:
+              e=json.load(f)
+          assert e["exit_code"] == 0
+          assert "SPACE AND PROBABILITY SELFTEST: 8 of 8" in e["stdout"]
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observatory-pilot-evidence
+          path: evidence/certificate.json
+          if-no-files-found: warn
+          retention-days: 30
