@@ -1,0 +1,32 @@
+{
+  "schema": "omega42.observatory.instrument.v1",
+  "status": "PROPOSAL",
+  "source": {
+    "path": "records/math/results.json",
+    "blob": "5db44e140940ffb935a1ded423c9c4f7f69a528f"
+  },
+  "register_blob": "4d675aeaf7f72fc3cb3e4eb9b789db154be55ec3",
+  "operations": [
+    {
+      "name": "RECORD_LOOKUP",
+      "input": {
+        "id": "MF record identifier"
+      },
+      "output": "Registered statement, status, boundary, certificate path and expected marker",
+      "execution": "READ_ONLY"
+    },
+    {
+      "name": "CERTIFICATE_PLAN",
+      "input": {
+        "id": "MF record identifier"
+      },
+      "output": "Source blob, certificate path, expected marker and execution status NOT_EXECUTED",
+      "execution": "PLAN_ONLY"
+    }
+  ],
+  "limitations": [
+    "No certificate execution or canonical mutation",
+    "Source blob pins register content, not an entire executable revision",
+    "Resolve and verify certificate revision independently"
+  ]
+}
