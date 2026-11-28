@@ -1,0 +1,3 @@
+# Historical Source Consultation Rule
+
+Originator directive, 2026-11-28: consult the connected drives whenever more information is needed. For Omega42 research, retrieve relevant original Construct materials, archived specifications, spreadsheets and prior research alongside current repository sources. Record source title, revision, locator and discrepancies; distinguish historical claims from current ratified definitions. Do not publish private drive content or personal identifiers without authorization. If access fails, record the limitation rather than inventing provenance. Apply to Navigator research and Co-Builder review. This records a standing research instruction; canonical specification integration remains subject to ratification.
