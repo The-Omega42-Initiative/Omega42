@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Independent mathematical audit | Omega42</title>
+<style>body{font:1rem/1.6 system-ui,sans-serif;max-width:48rem;margin:auto;padding:1rem;color:#172033;background:#fff}label{display:block;margin-top:1rem;font-weight:600}input,select,textarea,button{font:inherit;max-width:100%;box-sizing:border-box}input:not([type=checkbox]),select,textarea{width:100%;padding:.5rem}button{padding:.6rem;margin:.5rem 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#1646a0}:focus-visible{outline:3px solid #1646a0;outline-offset:3px}</style>
+<main><h1>Independent mathematical audit</h1><p><a href="observatory.html">Return to Observatory</a></p><p>Prepare a local audit envelope. Nothing is uploaded or executed here. Validation checks format and claimed evidence, not mathematical truth. Review and remove personal or confidential information before exporting.</p>
+<form id="audit"><fieldset id="fields" disabled><legend>Audit evidence</legend>
+<label for="record">Mathematical record</label><select id="record"></select><pre id="details"></pre>
+<label for="revision">Exact source commit (40 hexadecimal characters)</label><input id="revision" required pattern="[a-f0-9]{40}" maxlength="40">
+<label for="execution">Execution status</label><select id="execution"><option>NOT_EXECUTED</option><option>SELF_REPORTED_EXECUTION</option></select>
+<label for="command">Command actually run</label><textarea id="command" maxlength="2000"></textarea>
+<label for="environment">Environment and versions</label><textarea id="environment" maxlength="2000"></textarea>
+<label for="output">Output (redacted)</label><textarea id="output" maxlength="50000"></textarea>
+<label for="exit">Exit code (blank if not executed)</label><input id="exit" type="number" min="0" max="255" step="1">
+<label for="verdict">Proposed verdict</label><select id="verdict"><option>INCONCLUSIVE</option><option>ACCEPTED</option><option>CORRECTED</option><option>DECLINED</option></select>
+<label for="reason">Reason and limitations</label><textarea id="reason" required maxlength="4000"></textarea>
+<label><input id="consent" type="checkbox" required> I have reviewed and redacted this record and consent to local export only.</label>
+<button type="submit">Validate and export JSON</button></fieldset></form><p id="status" role="status" aria-live="polite">Loading register…</p></main>
+<script type="module">
+import {validateAudit} from './audit-validator.mjs';
+const el=id=>document.getElementById(id), status=el('status');
+try{
+ const response=await fetch('./register.json'); if(!response.ok)throw Error('Register unavailable');
+ const register=await response.json();
+ if(register.schema!=='omega42.observatory.source.v1'||!Array.isArray(register.records)||register.source.blob!=='5db44e140940ffb935a1ded423c9c4f7f69a528f')throw Error('Source contract mismatch');
+ for(const r of register.records){const o=document.createElement('option');o.value=r.id;o.textContent=r.id+' — '+r.status;el('record').append(o)}
+ const selected=()=>register.records.find(r=>r.id===el('record').value);
+ const show=()=>{const r=selected();el('details').textContent=[r.statement,'Certificate: '+r.certificate_path,'Expected marker: '+r.expected_marker,'Boundary: '+r.boundary,'Source blob: '+register.source.blob].join('\n')};
+ el('record').addEventListener('change',show);show();el('fields').disabled=false;status.textContent='Ready. No evidence has been submitted.';
+ el('audit').addEventListener('submit',e=>{e.preventDefault();const r=selected(),v=id=>el(id).value;
+ const a={schema:'omega42.observatory.audit.v1',source_blob:register.source.blob,revision:v('revision'),record_id:r.id,certificate_path:r.certificate_path,command:v('command'),environment:v('environment'),execution:v('execution'),output:v('output'),exit_code:v('exit')===''?null:Number(v('exit')),verdict:v('verdict'),reason:v('reason'),consent:el('consent').checked};
+ const errors=validateAudit(a,register);if(errors.length){status.textContent='Not exported: '+errors.join(', ');return}
+ const url=URL.createObjectURL(new Blob([JSON.stringify(a,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='omega42-audit-'+r.id+'.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Local export requested. No upload or canonical change.';});
+}catch(e){status.textContent='Unable to initialize audit form: '+e.message}
+</script></html>
